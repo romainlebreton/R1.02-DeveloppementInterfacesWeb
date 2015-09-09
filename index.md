@@ -1,6 +1,6 @@
 ---
-title: Squelette de sites Web
+title: Cours de programmation Web - HTML, CSS
 layout: main
 ---
 
-# Squelette de sites Web pour des cours
+# Cours de programmation Web - HTML, CSS
