@@ -1,1 +1,1 @@
-# Squelette de sites Web pour des cours
+# Cours de programmation Web - HTML, CSS
