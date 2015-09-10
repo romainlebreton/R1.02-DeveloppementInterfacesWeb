@@ -1,4 +1,4 @@
-baseurl: /ProgWeb-CoteServeur
+baseurl: /ProgWeb-HTMLCSS
 permalink: /:categories/:title
 
 kramdown:
