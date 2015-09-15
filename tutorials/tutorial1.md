@@ -246,9 +246,11 @@ dans le fichier HTML.
 
 Mettre en emphase la phrase qui suit le commentaire : `<!-- mettre en emphase cette phrase -->`.
 
-Nous en avons fini en ce qui concerne le contenu et la struture de notre site.
 
-Une remarque peut être informulée de votre part : mais pourquoi le fait de rajouter <h1> a mon titre chnage effectivement l'apparence des titres ? cela n'est pas à la charge du CSS justement ?
-Les navigateurs appliquent des css par défaut associés aux balises HTML (exemple : par convention les liens <a> sont en bleus et soulignés sans que l'on est rien à faire).
-Cela évite d'avoir justement TOUT à refaire en CSS : des styles par défauts sont proposés.
+## Fini !
+
+Nous en avons fini en ce qui concerne le contenu et la struture de notre site.
+Nous savons ajouter de la structure à une page HTML avec les balises spécifiques.
+
+Une remarque peut être informulée de votre part : mais pourquoi le fait de rajouter `<h1>` a mon titre change effectivement l'apparence des titres ? cela n'est pas à la charge du CSS justement ? Les navigateurs appliquent des css par défaut associés aux balises HTML. Cela évite d'avoir justement TOUT à refaire en CSS : des styles par défauts sont proposés.
 Dans le TD suivant nous verrons comment améliorer l'aspect du site.

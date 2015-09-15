@@ -47,6 +47,11 @@ Car sélectionner un élement html avec l'outil des dévellopeurs ne permet pas 
 il permet aussi de les CHANGER. Autant dire qu'il est conseiller d'abuser de cet outil pendant le TD pour bidouiller tout et n'importe quoi.
 
 
+## Commentaires
+
+En CSS, seul les commentaires avec `/*` et `*/` sont autorisés.
+Si vous utilisez `//` dans votre fichier CSS vous allez avoir des surprises. Les règles suivantes ne seront pas appliquées.
+
 ## Bloc de déclaration
 
 ### Couleurs
@@ -65,6 +70,12 @@ Comme ces nombres sont en hexadécimal (base 16) sur deux chiffres, les valeurs 
 
 Vous pouvez aussi définir les couleurs par les composantes sur 256 valeurs en décimal (de 0 à 255) avec le format suivant `RGB(255,0,255)` (encore du rose !)
 
+
+### Dimensions
+
+
+Pixels percentages vh,...em...
+
 ### Fontes
 
 référence : http://www.w3.org/TR/CSS21/fonts.html
@@ -75,7 +86,7 @@ référence : http://www.w3.org/TR/CSS21/fonts.html
 Rajouter maintenant la règle suivante :
 
 ~~~
-p{ font-family: "lucida calligraphy", "Arial", "sans-serif"; }
+p { font-family: "lucida calligraphy", "Arial", "sans-serif"; }
 ~~~
 {.css}
 
@@ -105,7 +116,6 @@ Aligner la citation en début de document à droite de la page.
 ## Sélecteurs
 
 
-
 On peut avoir plusieurs selecteurs CSS et plusieurs bloc de déclaration pour une même règle CSS.
 
 Par exemple  : la règle ci-contre permet de définir deux blocs de déclarations `color:red` et `background:white`.
@@ -121,51 +131,80 @@ h1 {
 {:.css}
 
 
+<a id="selectors"></a>
+
 ### Selecteurs de bases 
 
+Il nous faut completer nos connaissance sur le HTML.
+Toutes les balises peuvent se voir adjoindre différents attributs.
+Suivant le type (i.e `<span>`, `<div>`, `<a>`,....) des balises, ces attributs auront des sens différents.
+Deux attributs sont très important pour les règles CSS : l'id et la class d'un élément.
 
-#### type
-
-
-#### id
-
-
-#### Classes
-
-Côté HTML on peut assigner un élément à une classe en définissant pour cet élément son attribut
-class :
+Par exemple :
 
 ~~~
-<p class="important"> Texte du paragraphe... </p>
-~~~
-{:.html}
-
-Il est alors possible de définir un style pour un sous-ensemble (une classe) d'éléments de même
-type. Par exemple la règle ci-dessous ne concerne que les paragraphes appartenant à la classe des
-paragraphes importants :
-
-~~~
-p.important{ border-style: solid }
+<div id="monidentifiant" class="skill feature" ></div>
 ~~~
 {:.css}
 
 
-#### Pseudo-Classes
+Ce code HTML déclare un élément de type `div` avec comme identifiant unique `monidentifiant` et ayant deux classes : `skill` et `feature`.
+Un identifiant est unique pour toute la page HTML. Un élément peut avoir plusieurs classes comme dans l'exemple précédent et ces classes ont du sens si elles sont attribuées à de multiples élement de la page.
+
+Les classes, id et type permettent de construire 95 % des règles CSS.
+Voyons la syntaxe pour les utiliser.
+
+#### type
+
+Il s'agit juste d'utiliser le type sans autre décorateur.
+si l'on veut donner la couleur rose à tous les liens d'une page, il faut écrire
+
+~~~
+a {
+  color: pink ;
+}
+~~~
+{.css}
+
+
+#### id
+
+Le décorateur associé à l'id est le caractère `'#'`.
+si l'on veut donner une widht de 100px à notre div déclaré plus haut il faut écrire
+
+~~~
+#monidentifiant {
+  width: 100px;
+}
+~~~
+{.css}
+
+#### Classes
+
+
+Le décorateur associé aux classes est le caractère `'.'`.
+si l'on veut donner une height de 200px à tous les éléments qui ont la classe `skill`,  il faut écrire
+
+~~~
+.skill {
+  height: 200px;
+}
+~~~
+{.css}
 
 
 
-### Selecteur complexes 
+<a id="select_complex"></a>
+### Sélecteur complexes 
 
-
-
-#### Regroupement
 Un selecteur CSS peut être plus ou moins compliqué. Sa sémantique peut aller de :
 
-* je vais appliqué la règle à tous les div
-* je vais appliqué la règle à tous :
+* je vais appliquer la règle à tous les div de la page
+* je vais appliquer la règle à tous :
 	* les div ayant la class "toto" et qui sont fils d'un élement d'id #titi mais aussi fils directs d'un element de type span.
-	* ou qui ont l'id "my_id".
+	* <b>ou</b> l'élement qui a pour id "my_id".
 
+#### Regroupement
 
 Il est possible de regrouper les sélecteurs :
 
@@ -195,11 +234,12 @@ div.toto
 
 ##### InDirecte
 
-
-
-
 ## Comment se décline les CSS appliquables sur un site.
 
+Il est possible d'ajouter plusieurs fichiers CSS dans une page et même si l'on n'a qu'un seul fichier, plusieurs règles peuvent être contradictoires.
+Pour complexifier le tout, nous verrons que l'on peut ajouter du CSS dit "inline" directement dans le HTML...
+et que les navigateurs appliquent des styles par défaut.
+Enfin on peut finir une règle CSS avec le code `important!` ce qu'il lui 
 ### Style par defaut des navigateurs 
 
 (reset CSS),
@@ -208,7 +248,7 @@ div.toto
 
 ### Styles dans un fichier css,
 
-### ordre de priorité de tout cela ?
+### Ordre de priorité de tout cela ?
 
 <ul>
 <li>Style inline,</li>
