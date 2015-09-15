@@ -20,10 +20,10 @@ Pour afficher ce type de page internet, on utilise deux types de fichiers : HTML
  * Le fichier contenant des CSS est responsable de a présenation de ces éléments (mettre ce paragraphe en rose, utiliser la fonte "San Serif" pour ce titre,... )
 
 Le but de ce TD est de démystifier la façon d'ont est interprétée par le navigateur ces deux types de fichiers.
-Pour cela nous allons réaliser un site dont le rendu correspond au fichier [target.png](../target.png), en partant du fichier [index.txt](../index.txt), qui contient
+Pour cela nous allons réaliser un site dont le rendu correspond au fichier [target.png]({{site.baseurl}}/assets/target.png), en partant du fichier [index.txt]({{site.baseurl}}/index.txt), qui contient
 le contenu quasiement "brut" du site à réaliser.
 Nous allons tout d'abord nous consacrer à préciser la structure (le HTML donc) que l'on peut ajouter à notre contenu brut.
-Nous verrons ensuite comment attendre le rendu proposer par [target.png](../target.png) en réalisant un fichier CSS.
+Nous verrons ensuite comment attendre le rendu proposer par [target.png]({{site.baseurl}}/target.png) en réalisant un fichier CSS.
 
 
 ## Transformation d'un document texte en un document HTML
@@ -41,7 +41,7 @@ Exemple pour un paragraphe on écrit :
 
 
 
-Récupérer le fichier [index.txt](../index.txt) (fichier de base de travail).
+Récupérer le fichier [index.txt]({{site.baseurl}}/index.txt) (fichier de base de travail).
 
  1. Ouvrer ce fichier "index.txt" dans le navigateur.
  2. Sauvegarder ce fichier en local, et renommer le fichier en index.html, ouvrir le fichier dans un
@@ -160,15 +160,17 @@ Ce qui donne une fois interprété par le moteur de rendu du navigateur :
 
 
 <b>Exercice : </b>
-Télécharger l'image [chuck-jeune.jpg]({{site.baseurl}}/assets/chuck-jeune.jpg). Ajouter la via la balise `<img>` en début de section (voir le fichier [target.png](../target.png))
+Télécharger l'image [chuck-jeune.jpg]({{site.baseurl}}/assets/chuck-jeune.jpg). Copier là dans un repertoire assets/img 
+à partide votre fichier index.html.
+Ajouter la via la balise `<img>` en début de section (voir le fichier [target.png]({{site.baseurl}}/assets/target.png))
 en lieu et place du commentaire `<!--l'image de Chuck Young doit être positionnée ici  -->`.
 
 ~~~
-<img src="./chuck-jeune.jpg" alt="Chuck Jeune, la légende est en marche."/>
+<img src="./assets/img/chuck-jeune.jpg" alt="Chuck Jeune, la légende est en marche."/>
 ~~~
 {:.html}
 
-Faite de même avec l'image "assets/img/beware.jpg": positionner là en lieu et place du commentaire `<!--l'image de Chuck Beware ici   -->`.
+Faite de même avec l'image [beware.jpg]({{site.baseurl}}/assets/beware.jpg) : positionner là en lieu et place du commentaire `<!--l'image de Chuck Beware ici   -->`.
 
 
 src et alt sont des attributs de l'élément img.
