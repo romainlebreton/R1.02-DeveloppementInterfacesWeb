@@ -24,8 +24,6 @@ Il ne s'agit donc pas ici de faire une étude poussée mais bien d'une initiatio
 
 ## Tutoriel d'introduction
 
-
-
 Pour indiquer au navigateur qu'il doit utiliser les règles de style de ce fichier pour le document
 HTML il faut ajouter la ligne suivante dans l'en-tête du document HTML (dans la partie `head`) :
 
@@ -85,13 +83,33 @@ Comme ces nombres sont en hexadécimal (base 16) sur deux chiffres, les valeurs 
 Vous pouvez aussi définir les couleurs par les composantes sur 256 valeurs en décimal (de 0 à 255) avec le format suivant `RGB(255,0,255)` (encore du rose !)
 
 
+Les couleurs peuvent s'utiliser sur plusieurs attributs d'un élément HTML :
+
+ * la couleur du text : color:red;
+ * la couleur du fond : background-color:pink;
+ * la couleur de bordure : border-color:grey;
+ * ...
+
+
+<a id="dimensions"></a>
+
 ### Dimensions
 
-Certains éléments peuvent avoir une taille définie par CSS, d'autre épousent la place minimale nécesssaire à leur rendu. Cela caractérise entre autres chose des élements inline et block. Nous préciserons ces notions dans le TD suivant, en attendant on s'en tiendra à expliciter les unités de dimensions applicables.
-L'unité la plus utilisée pour les CSS 
+Certains éléments peuvent avoir une taille définie par CSS, d'autres épousent la place minimale nécesssaire à leur rendu.
+Cela caractérise entre autres chose des élements inline et block. Nous préciserons ces notions dans le TD suivant, en attendant on s'en tiendra à 
+expliciter les unités de dimensions applicables.
 
-L'unité la plus utilisée est le pixel "px". On pr
-Pixels, percentages vh,...em...
+L'unité la plus utilisée est le pixel "px" pour pixel CSS. Cette unitée ne compte pas le nombre de pixels physique à l'écran mais est plutôt basée sur une échelle de bonne lisibilité pour le média en cours (i.e il est différent pour un écran d'ordinateur, pour un smartphone, pour une tablette,...).
+
+Pour plus de détails sur ce qu'est cette unité : http://www.w3.org/TR/css3-values/
+
+
+On peut aussi donner des dimensions relatives en pourcentages.
+
+
+On utilisera dans le reste du TD des unités de dimensions en px, en se souvenant juste qu'elle convient quelque soit la densité physique 
+de pixels de votre média.
+
 
 ### Fontes
 
@@ -107,9 +125,9 @@ p { font-family: "lucida calligraphy", "Arial", "sans-serif"; }
 ~~~
 {.css}
 
-Les dexu dernières fontes précisées par la règle sont des "fall-back" : Si le navigateur ne permet pas d'afficher la fonte "lucida calligraphy" il sera utiliser, "Arial",...et si cette dernière n'est pas disponible alors le "sans-serif" sera utilisé.
+Les deux dernières fontes précisées par la règle sont des "fall-back" : elles seront utilisées si et seulement si les précédentes ne sont pas disponibles sur le navigateur.
 
-<b> la propriété font-size</b>
+<b> La propriété font-size</b>
 
 Utiliser la propriété font-size pour changer la taille de la citation.
 
@@ -120,15 +138,9 @@ Tester les règles ci-dessous :
 ~~~
 p {
   text-align: justify ;
-  text-indent: 1em;
 }
-
-h1 { text-transform : uppercase;}
 ~~~
 {.css}
-
-Aligner la citation en début de document à droite de la page.
-
 
 <a id="selectors"></a>
 
@@ -219,7 +231,6 @@ Un selecteur CSS peut être plus ou moins compliqué. Sa sémantique peut aller 
 
 Pseudo Classes des liens 
 
-
 ~~~
 .skill {
 a:link {color: yellow;}
@@ -230,14 +241,21 @@ a:visited {color: pink;}
 Pseudo Classes d'interaction
 
 
-
 ~~~
 .skill {
 a:hover {text-decoration: underline;}
 ~~~
 {.css}
 
-#### Regroupement
+#### Les combinaisons (Combinators) 
+
+http://www.w3.org/TR/css3-selectors/#combinators
+
+A partir des sélecteurs de bases précédents, il est possible de créer des sélecteurs complexes.
+Nous présentons dans la suite les sélecteurs qui sont utilisés en moyenne 95 % du temps.
+
+
+#### Regroupement 
 
 La première façon de "composer" des selecteurs et juste le regroupement :
 
@@ -255,16 +273,70 @@ h1,h2,h3 {color: red}
 ~~~
 {:.css}
 
+Il ne s'agit pas vraiment de combinaison, mais plutôt d'une factorisation de règles CSS.
+
 
 #### Combinaison
 
+On veut parfois préciser un élement au travers de plusieurs sélecteurs de bases sur ce dernier, il suffit pour cela de coller les sélecteurs de base.
+
+Par exemple :
+
+~~~
 div.toto
+~~~
+{:.css}
+
+Signifie le div qui a la classe toto
+
+Ou encore 
+
+~~~
+.titi.toto
+~~~
+{:.css}
+
+L'élement qui a la classe toto ET titi.
+
 
 #### Descendance
 
-##### Directe
+Pour discriminer certains éléments sur lequel on veut que porte un selecteur il est très courant de préciser de quoi il est descendant dans le code HTML.
+Pour expliciter ce chemin on ajoute un espace entre les sélecteurs de base.
 
-##### InDirecte
+##### Directe (enfant)
+
+Par exemple 
+
+~~~
+#titi>.toto
+~~~
+{:.css}
+
+##### Indirecte
+
+Par exemple 
+
+~~~
+#titi .toto
+~~~
+{:.css}
+
+Signifie les éléments qui ont la classe toto ET qui sont descendants d'un élement d'id titi.
+
+
+##### Fréres/adjacents
+
+Les deux élements sont ous deux fils directs d'un même élement.
+
+Par exemple 
+
+~~~
+#titi + .toto
+~~~
+{:.css}
+
+Signifie que l'élement ayant la classe toto et qui est frère de l'élement d'id titi doit avoir son texte en rouge.
 
 ## Comment se décline les CSS appliquables sur un site.
 
@@ -283,6 +355,17 @@ Enfin on peut finir une règle CSS avec le code `important!` ce qu'il lui
 ### Styles dans un fichier css,
 
 ### Ordre de priorité de tout cela ?
+
+9. Calculating a selector's specificity
+
+A selector's specificity is calculated as follows:
+
+count the number of ID selectors in the selector (= a)
+count the number of class selectors, attributes selectors, and pseudo-classes in the selector (= b)
+count the number of type selectors and pseudo-elements in the selector (= c)
+ignore the universal selector
+
+
 
 <ul>
 <li>Style inline,</li>
