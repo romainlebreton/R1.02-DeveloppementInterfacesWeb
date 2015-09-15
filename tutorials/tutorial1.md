@@ -1,6 +1,6 @@
 ---
 title: Les bases du HTML / CSS
-subtitle: .
+subtitle: Le HTML, responsable de la structure.
 layout: tutorial
 ---
 
@@ -19,11 +19,11 @@ Pour afficher ce type de page internet, on utilise deux types de fichiers : HTML
  * Le fichier contenant du HTML contient la structure de la page et son contenu ;  il précise au dela d'un texte brut ce qui relève d'un paragraphe, d'un titre à l'aide de balises (exemple `<p>`, `<title>`,...).
  * Le fichier contenant des CSS est responsable de a présenation de ces éléments (mettre ce paragraphe en rose, utiliser la fonte "San Serif" pour ce titre,... )
 
-Le but de ce TD est de démystifier la façon d'ont est interprétée par le navigateur ces deux types de fichiers.
+Le but de ce TD est de démystifier la façon dont est interprétée ces deux types de fichiers par le navigateur.
 Pour cela nous allons réaliser un site dont le rendu correspond au fichier [target.png]({{site.baseurl}}/assets/target.png), en partant du fichier [index.txt]({{site.baseurl}}/index.txt), qui contient
 le contenu quasiement "brut" du site à réaliser.
 Nous allons tout d'abord nous consacrer à préciser la structure (le HTML donc) que l'on peut ajouter à notre contenu brut.
-Nous verrons ensuite comment attendre le rendu proposer par [target.png]({{site.baseurl}}/target.png) en réalisant un fichier CSS.
+Nous verrons ensuite comment attendre le rendu proposer par [target.png]({{site.baseurl}}/assets/target.png) en réalisant un fichier CSS.
 
 
 ## Transformation d'un document texte en un document HTML
@@ -39,7 +39,9 @@ Exemple pour un paragraphe on écrit :
 ~~~
 {:.html}
 
-
+Nous allons commencer par des balises un peu particulières, car elles sont de type "meta", elles sont plus là pour que le navigateur et le serveur s'entendent bien lors des transferts.
+Par exemple nous préciserons l'encodage des fichiers, le doctype,...
+Cela n'est pas très passionnant et nous resterons succinct sur cet aspect.
 
 Récupérer le fichier [index.txt]({{site.baseurl}}/index.txt) (fichier de base de travail).
 
@@ -211,6 +213,10 @@ Et remplacer les par des balises `<a>`.
 
 <a id="citation"></a>
 
+### Table 
+
+Les tables.
+
 
 ### Citation
 
@@ -241,132 +247,8 @@ dans le fichier HTML.
 Mettre en emphase la phrase qui suit le commentaire : `<!-- mettre en emphase cette phrase -->`.
 
 Nous en avons fini en ce qui concerne le contenu et la struture de notre site.
-Nous allons maintenant passer à améliorer la présentation.
 
-# CSS: un langage pour définir la mise en forme
-
-Définition (source : Wikipedia) : CSS (Cascading Style Sheets : feuilles de
-style en cascade) est un langage informatique qui sert à décrire la présentation
-des documents HTML et XML. Les standards définissant CSS sont publiés par le
-World Wide Web Consortium (W3C). Introduit au milieu des années 1990, CSS
-devient couramment utilisé dans la conception de sites web et bien pris en
-charge par les navigateurs web dans les années 2000.
-
-En pratique, les CSS servent à séparer les données (HTML) de la présentation
-(CSS). Cela permet de concevoir des sites évolutifs et maintenables ! Vous
-pouvez voir sur le site http://www.csszengarden.com à quel point l'utilisation
-des CSS est importante.  Pour vérifier que vos documents respectent les
-standards, une seule adresse : http://validator.w3.org.
-
-
-Comme dit en introduction il y a une spéaration nette entre les roles du HTML (Contenu) et des CSS (Présentation)
-Cette césure en apparence très nette cache en fait plusieurs entre-deux au travers l'utiliation de certaines balises HTML dénuées de sémantiques (n'ayant qu'un but de présentation) ainsi que la possibilité au travers des styles inlines (du style ajouté directement dans le HTML) de se substituer aux CSS.
-
-
-La complexité des CSS est parfois "artificielle" au sens où elle repose sur de l'existant, sur des différences entre navigateurs
-
-Maitriser tous les aspects des CSS est un metier (on parle d'integrateur Web, qui s'occupe aussi d'autre problématiques).
-Il ne s'agit donc pas ici de faire une étude poussée mais d'une initiation.
-
-
-## Tutoriel d'introduction
-Le code ci-dessous, appelé règle css, permet de définir des titres de couleur rouge sur
-fond blanc.
-
-~~~
-h1 {
-  color: red;
-  background: white
-}
-~~~
-{:.css}
-
-Recopier la règle ci-dessus dans un fichier etudes.css à mettre le même répertoire que le
-fichier HTML.
-
-Pour indiquer au navigateur qu'il doit utiliser les règles de style de ce fichier pour le document
-HTML il faut ajouter la ligne suivante dans l'en-tête du document HTML :
-
-~~~
-<link rel=‘’stylesheet’’ type=‘’text/css’’ href=‘’etudes.css’’>
-~~~
-{:.html}
-
-## Couleurs
-
-Les mots aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, orange, purple, red,
-silver, teal, white, et yellow peuvent être utilisés pour définir une couleur.
-
-Définir une couleur pour le fond du corps du document.
-
-## Fontes
-
-référence : http://www.w3.org/TR/CSS21/fonts.html
-
-### La propriété font-family
-
-Rajouter maintenant la règle suivante :
-
-~~~
-p{ font-family: "lucida calligraphy", "Arial", sans-serif; }
-~~~
-{.css}
-
-### la propriété font-size
-
-Utiliser la propriété font-size pour changer la taille de la citation.
-
-## Textes
-
-Tester les règles ci-dessous :
-
-~~~
-p {
-  text-align: justify ;
-  text-indent: 1em;
-}
-
-h1 { text-transform : uppercase;}
-~~~
-{.css}
-
-Aligner la citation en début de document à droite de la page.
-
-# Sélecteurs
-
-## Regroupement
-
-Il est possible de regrouper les sélecteurs :
-
-~~~
-h1 {color: red}
-h2 {color: red}
-h3 {color: red}
-~~~
-{:.css}
-
-peut s'écrire :
-
-~~~
-h1,h2,h3 {color: red}
-~~~
-{:.css}
-
-### Classes
-
-Il est aussi possible de définir un style pour un sous-ensemble (une classe) d'éléments de même
-type. Par exemple la règle ci-dessous ne concerne que les paragraphes appartenant à la classe des
-paragraphes importants :
-
-~~~
-p.important{ border-style: solid }
-~~~
-{:.css}
-
-Côté HTML on peut assigner un élément à une classe en définissant pour cet élément son attribut
-class :
-
-~~~
-<p class="important"> Texte du paragraphe... </p>
-~~~
-{:.html}
+Une remarque peut être informulée de votre part : mais pourquoi le fait de rajouter <h1> a mon titre chnage effectivement l'apparence des titres ? cela n'est pas à la charge du CSS justement ?
+Les navigateurs appliquent des css par défaut associés aux balises HTML (exemple : par convention les liens <a> sont en bleus et soulignés sans que l'on est rien à faire).
+Cela évite d'avoir justement TOUT à refaire en CSS : des styles par défauts sont proposés.
+Dans le TD suivant nous verrons comment améliorer l'aspect du site.
