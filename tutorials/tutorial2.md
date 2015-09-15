@@ -35,7 +35,7 @@ Pour indiquer au navigateur qu'il doit utiliser les règles de style de ce fichi
 HTML il faut ajouter la ligne suivante dans l'en-tête du document HTML :
 
 ~~~
-<link rel=‘’stylesheet’’ type=‘’text/css’’ href=‘’styles.css’’>
+<link rel=‘stylesheet’ type=‘text/css’ href=‘styles.css’>
 ~~~
 {:.html}
 
@@ -50,7 +50,7 @@ il permet aussi de les CHANGER. Autant dire qu'il est conseiller d'abuser de cet
 ## Commentaires
 
 En CSS, seul les commentaires avec `/*` et `*/` sont autorisés.
-Si vous utilisez `//` dans votre fichier CSS vous allez avoir des surprises. Les règles suivantes ne seront pas appliquées.
+Si vous utilisez `//` dans votre fichier CSS vous allez avoir des problèmes (les règles CSS suivantes ne seront pas appliquées).
 
 ## Bloc de déclaration
 
@@ -73,6 +73,9 @@ Vous pouvez aussi définir les couleurs par les composantes sur 256 valeurs en d
 
 ### Dimensions
 
+Certains éléments peuvent avoir une taille définie par CSS, d'auter non. Cela caractérise entre autres chose des élements inline et block.
+
+Nous préciserons ces notions dans le TD suivant, en attendant on s'en tiendra à expliciter les unités de dimensions applicables.
 
 Pixels percentages vh,...em...
 
@@ -90,8 +93,7 @@ p { font-family: "lucida calligraphy", "Arial", "sans-serif"; }
 ~~~
 {.css}
 
-Les trois fontes préciser par la règle ne vont pas fusionner. Leur ordre défini juste la précédence en fonction des disponibilités sur le navigateur.
-Si le navigateur permet d'afficher du "lucida calligraphy" il sera utiliser, sinon le "Arial",...et sinon le "sans-serif".
+Les dexu dernières fontes précisées par la règle sont des "fall-back" : Si le navigateur ne permet pas d'afficher la fonte "lucida calligraphy" il sera utiliser, "Arial",...et si cette dernière n'est pas disponible alors le "sans-serif" sera utilisé.
 
 <b> la propriété font-size</b>
 
@@ -113,25 +115,21 @@ h1 { text-transform : uppercase;}
 
 Aligner la citation en début de document à droite de la page.
 
-## Sélecteurs
-
-
-On peut avoir plusieurs selecteurs CSS et plusieurs bloc de déclaration pour une même règle CSS.
-
-Par exemple  : la règle ci-contre permet de définir deux blocs de déclarations `color:red` et `background:white`.
-Cela produira des titres de couleur rouge sur fond blanc.
-Enfin cette règle s'applique via le selecteur `h1` sur les balises... `<h1>` :
-
-~~~
-h1 {
-  color: red;
-  background: white
-}
-~~~
-{:.css}
-
 
 <a id="selectors"></a>
+
+## Les Sélecteurs CSS
+
+
+Les selecteurs CSS permettent de préciser les éléments qui vont être impactés par la règle CSS.
+Les selecteurs CSS sont aussi utilisés sur d'autres problématiques du dévellopement Web que nous verrons l'année prochaine.
+Bref vous en aurez au partiel, c'est sûr.
+
+
+On peut construire un sélecteurs CSS complexe à partide selecteurs de bases et de règles de compositions.
+
+
+{:.css}
 
 ### Selecteurs de bases 
 
@@ -195,7 +193,7 @@ si l'on veut donner une height de 200px à tous les éléments qui ont la classe
 
 
 <a id="select_complex"></a>
-### Sélecteur complexes 
+### Règles de compositions, Sélecteurs complexes.
 
 Un selecteur CSS peut être plus ou moins compliqué. Sa sémantique peut aller de :
 
@@ -204,9 +202,10 @@ Un selecteur CSS peut être plus ou moins compliqué. Sa sémantique peut aller 
 	* les div ayant la class "toto" et qui sont fils d'un élement d'id #titi mais aussi fils directs d'un element de type span.
 	* <b>ou</b> l'élement qui a pour id "my_id".
 
+
 #### Regroupement
 
-Il est possible de regrouper les sélecteurs :
+La première façon de "composer" des selecteurs et juste le regroupement :
 
 ~~~
 h1 {color: red}
@@ -227,7 +226,6 @@ h1,h2,h3 {color: red}
 
 div.toto
 
-
 #### Descendance
 
 ##### Directe
@@ -240,7 +238,9 @@ Il est possible d'ajouter plusieurs fichiers CSS dans une page et même si l'on 
 Pour complexifier le tout, nous verrons que l'on peut ajouter du CSS dit "inline" directement dans le HTML...
 et que les navigateurs appliquent des styles par défaut.
 Enfin on peut finir une règle CSS avec le code `important!` ce qu'il lui 
+
 ### Style par defaut des navigateurs 
+
 
 (reset CSS),
 
