@@ -14,7 +14,10 @@ devient couramment utilisé dans la conception de sites web et bien pris en
 charge par les navigateurs web dans les années 2000.
 
 
-Le css permet de préciser pour chaque élement HTML un style associé.
+Le CSS permet de préciser pour chaque élement HTML un style associé.
+Les CSS sont aussi utilisés pour les impressions papier du site (des règles spécifiques seront alors utilisées). 
+
+
 
 Si savoir les bases des CSS est relativement facile, en maitriser tous les aspects est un metier (on parle d'integrateur Web).
 Il ne s'agit donc pas ici de faire une étude poussée mais bien d'une initiation.
@@ -22,23 +25,34 @@ Il ne s'agit donc pas ici de faire une étude poussée mais bien d'une initiatio
 ## Tutoriel d'introduction
 
 
-Une regle CSS est composé de deux parties: 
-
- * un selecteur CSS
- * un bloc de déclaration
-
-
-Recopier la règle ci-dessus dans un fichier styles.css à mettre le même répertoire que le
-fichier HTML.
 
 Pour indiquer au navigateur qu'il doit utiliser les règles de style de ce fichier pour le document
-HTML il faut ajouter la ligne suivante dans l'en-tête du document HTML :
+HTML il faut ajouter la ligne suivante dans l'en-tête du document HTML (dans la partie `head`) :
 
 ~~~
 <link rel=‘stylesheet’ type=‘text/css’ href=‘styles.css’>
 ~~~
 {:.html}
 
+Nous travaillerons donc maintenant sur le fichier styles.css.
+Nous déclarerons dans ce fichier des règles CSS.
+
+Une règle CSS est composée de deux parties: 
+
+ * un selecteur CSS,
+ * un bloc de déclaration.
+
+Par exemple la règle css suivante donne à tous les div la hauteur de 200 pixels et de couleur de fond bleu : 
+
+~~~
+div { height:200px;background-color:blue;}
+~~~
+{.css}
+
+ * le selecteur est `div`,
+ * le bloc de déclaration est `height : 200px; background-color:blue;`.
+
+Nous consacrerons plus loin deux sections aux sélecteurs CSS et aux blocs de déclaration.
 
 ## L'outil pour les dévellopeurs sur Chrome ou Firefox est votre ami.
 
@@ -73,11 +87,11 @@ Vous pouvez aussi définir les couleurs par les composantes sur 256 valeurs en d
 
 ### Dimensions
 
-Certains éléments peuvent avoir une taille définie par CSS, d'auter non. Cela caractérise entre autres chose des élements inline et block.
+Certains éléments peuvent avoir une taille définie par CSS, d'autre épousent la place minimale nécesssaire à leur rendu. Cela caractérise entre autres chose des élements inline et block. Nous préciserons ces notions dans le TD suivant, en attendant on s'en tiendra à expliciter les unités de dimensions applicables.
+L'unité la plus utilisée pour les CSS 
 
-Nous préciserons ces notions dans le TD suivant, en attendant on s'en tiendra à expliciter les unités de dimensions applicables.
-
-Pixels percentages vh,...em...
+L'unité la plus utilisée est le pixel "px". On pr
+Pixels, percentages vh,...em...
 
 ### Fontes
 
@@ -191,7 +205,6 @@ si l'on veut donner une height de 200px à tous les éléments qui ont la classe
 {.css}
 
 
-
 <a id="select_complex"></a>
 ### Règles de compositions, Sélecteurs complexes.
 
@@ -202,6 +215,27 @@ Un selecteur CSS peut être plus ou moins compliqué. Sa sémantique peut aller 
 	* les div ayant la class "toto" et qui sont fils d'un élement d'id #titi mais aussi fils directs d'un element de type span.
 	* <b>ou</b> l'élement qui a pour id "my_id".
 
+### Pseudo Classes
+
+Pseudo Classes des liens 
+
+
+~~~
+.skill {
+a:link {color: yellow;}
+a:visited {color: pink;}
+~~~
+{.css}
+
+Pseudo Classes d'interaction
+
+
+
+~~~
+.skill {
+a:hover {text-decoration: underline;}
+~~~
+{.css}
 
 #### Regroupement
 

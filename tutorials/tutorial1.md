@@ -35,7 +35,7 @@ Une balise commence par `<mabalise>`. La plupart des balises demandent d'ajouter
 Exemple pour un paragraphe on écrit :
 
 ~~~
-<p>Ceci est un paragraphe HTML puisqu'il est entouré des balises p </p>
+<p>Ceci est un paragraphe HTML puisqu'il est entouré des balises 'p' </p>
 ~~~
 {:.html}
 
@@ -252,5 +252,7 @@ Mettre en emphase la phrase qui suit le commentaire : `<!-- mettre en emphase ce
 Nous en avons fini en ce qui concerne le contenu et la struture de notre site.
 Nous savons ajouter de la structure à une page HTML avec les balises spécifiques.
 
-Une remarque peut être informulée de votre part : mais pourquoi le fait de rajouter `<h1>` a mon titre change effectivement l'apparence des titres ? cela n'est pas à la charge du CSS justement ? Les navigateurs appliquent des css par défaut associés aux balises HTML. Cela évite d'avoir justement TOUT à refaire en CSS : des styles par défauts sont proposés.
-Dans le TD suivant nous verrons comment améliorer l'aspect du site.
+
+Une remarque que l'on peut se faire ic est la suivante : pourquoi le fait de rajouter un `<h2>` à mes titres change visuellement ces titres ? cela n'est pas à la charge du CSS justement ? on avait pas dit qu'il y avait séparation strcuture présentation entre HTML et CSS ?
+En fait les navigateurs appliquent des CSS par défaut associés aux balises HTML. Cela évite d'avoir justement à TOUT refaire en CSS (et cela dégage des conventions de présentations implicites).
+Dans le TD suivant nous verrons comment améliorer l'aspect du site en proposant nos propres CSS.
