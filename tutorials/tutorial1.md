@@ -229,7 +229,7 @@ y a la vie potentielle.
 </blockquote>
 
 Les citations permettent d'identifier un court texte sur lequel on veut attirer l'attention.
-C'est utiliser notamment pour montrer qu'on a du 'spirit'.
+Cela est utilisé notamment pour montrer qu'on a du 'spirit'.
 
 <b>Exercice : </b>
 

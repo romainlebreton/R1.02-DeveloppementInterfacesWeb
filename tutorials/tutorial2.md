@@ -6,33 +6,34 @@ layout: tutorial
 
 # CSS: un langage pour définir la mise en forme
 
+
+Le CSS permet de préciser pour chaque élement HTML un style associé. Les CSS sont responsables du rendu du site sur votre écran, sur un smartphone et aussi pour les impressions papier, ... (les css peuvent être spécifiées pour chacun de ces média).
+
+
 Définition (source : Wikipedia) : CSS (Cascading Style Sheets : feuilles de
 style en cascade) est un langage informatique qui sert à décrire la présentation
-des documents HTML et XML. Les standards définissant CSS sont publiés par le
+des documents HTML. Les standards définissant CSS sont publiés par le
 World Wide Web Consortium (W3C). Introduit au milieu des années 1990, CSS
 devient couramment utilisé dans la conception de sites web et bien pris en
 charge par les navigateurs web dans les années 2000.
 
 
-Le CSS permet de préciser pour chaque élement HTML un style associé.
-Les CSS sont aussi utilisés pour les impressions papier du site (des règles spécifiques seront alors utilisées). 
-
-
-
-Si savoir les bases des CSS est relativement facile, en maitriser tous les aspects est un metier (on parle d'integrateur Web).
-Il ne s'agit donc pas ici de faire une étude poussée mais bien d'une initiation.
+Si savoir les bases des CSS est relativement facile, en maitriser tous les aspects est un métier (celui d''integrateur Web, qui traduit en HTML et CSS le travail du Webdesigner).
+Il s'agit donc ici de faire une initiation.
 
 ## Tutoriel d'introduction
 
-Pour indiquer au navigateur qu'il doit utiliser les règles de style de ce fichier pour le document
-HTML il faut ajouter la ligne suivante dans l'en-tête du document HTML (dans la partie `head`) :
+Nous allons travailler principalement sur ce TD sur un fichier `styles.css`.
+Créer ce fichier à partir du fichier index.html dans le repertoire `assets/css/`.
+Les assets sont tous les médias 
 
+Dans le fichier index.html, il faut ajouter la ligne suivante dans l'en-tête du document HTML (dans la partie `head`) :
 ~~~
-<link rel=‘stylesheet’ type=‘text/css’ href=‘styles.css’>
+<link rel=‘stylesheet’ type=‘text/css’ href=‘assets/css/styles.css’>
 ~~~
 {:.html}
 
-Nous travaillerons donc maintenant sur le fichier styles.css.
+
 Nous déclarerons dans ce fichier des règles CSS.
 
 Une règle CSS est composée de deux parties: 
@@ -40,7 +41,7 @@ Une règle CSS est composée de deux parties:
  * un selecteur CSS,
  * un bloc de déclaration.
 
-Par exemple la règle css suivante donne à tous les div la hauteur de 200 pixels et de couleur de fond bleu : 
+Par exemple la règle css suivante donne à tous les div la hauteur de 200 pixels et définie comme couleur de fond le bleu : 
 
 ~~~
 div { height:200px;background-color:blue;}
@@ -335,8 +336,8 @@ Par exemple
 #titi + .toto
 ~~~
 {:.css}
-
-Signifie que l'élement ayant la classe toto et qui est frère de l'élement d'id titi doit avoir son texte en rouge.
+S
+ignifie que l'élement ayant la classe toto et qui est frère de l'élement d'id titi doit avoir son texte en rouge.
 
 ## Comment se décline les CSS appliquables sur un site.
 
