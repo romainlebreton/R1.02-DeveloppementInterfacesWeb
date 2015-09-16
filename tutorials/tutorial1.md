@@ -7,11 +7,16 @@ layout: tutorial
 # HTML : un langage à balises pour structurer logiquement les documents
 
 
-Le navigateur/browser est le logiciel que nous utilisons pour consulté les documents disponibles sur le World Wide Web (on cite principalement Chrome, Firefox et Internet Explorer/Edge).
-Il sert principalement à visualiser via un moteur de rendu des sites dont le contenu est obtenu par le protocole HTTP.
-Le but de ce TD est de comprendre comment se génère des pages du web "1.0" dites aussi statiques.
-Il s'agit de pages dont le contenu est déjà connu et stocké sous forme de fichier HTML (par exemple, une base encyclopédique) et que l'utilisateur va consulter.
-Il peut s'agir plus généralement de votre site internet à vous ou d'un petit site de fan qui n'a pas vocation à être modifier tous les jours.
+Le navigateur/browser est le logiciel que nous utilisons pour consulté les
+documents disponibles sur le World Wide Web (on cite principalement Chrome,
+Firefox et Internet Explorer/Edge).  Il sert principalement à visualiser via un
+moteur de rendu des sites dont le contenu est obtenu par le protocole HTTP.  Le
+but de ce TD est de comprendre comment se génère des pages du web "1.0" dites
+aussi statiques.  Il s'agit de pages dont le contenu est déjà connu et stocké
+sous forme de fichier HTML (par exemple, une base encyclopédique) et que
+l'utilisateur va consulter.  Il peut s'agir plus généralement de votre site
+internet à vous ou d'un petit site de fan qui n'a pas vocation à être modifier
+tous les jours.
 
 
 Pour afficher ce type de page internet, on utilise deux types de fichiers : HTML et CSS.
@@ -252,3 +257,8 @@ Une remarque peut être informulée de votre part : mais pourquoi le fait de raj
 Les navigateurs appliquent des css par défaut associés aux balises HTML (exemple : par convention les liens <a> sont en bleus et soulignés sans que l'on est rien à faire).
 Cela évite d'avoir justement TOUT à refaire en CSS : des styles par défauts sont proposés.
 Dans le TD suivant nous verrons comment améliorer l'aspect du site.
+
+<!--
+1. Passer le document sous l'encodage utf-8 (que nous priviligierons désormais).
+2. Travaillez sur votre projet en définissant les structures HTML des pages de votre site web.
+-->
