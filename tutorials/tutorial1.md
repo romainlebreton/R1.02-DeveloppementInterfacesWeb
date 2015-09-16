@@ -1,48 +1,74 @@
 ---
-title: Les bases du HTML / CSS
-subtitle: Le HTML, responsable de la structure.
+title: HTML &ndash; un langage à balises pour structurer les documents
+subtitle: Doctype et premières balises
 layout: tutorial
 ---
 
-# HTML : un langage à balises pour structurer logiquement les documents
+Le but de ce TD est de comprendre comment sont écrites les pages Web basiques,
+aussi appellées pages du web "1.0" statiques. Une telle page Web contient deux
+partie :
 
+1. **HTML** : Le fichier HTML contient la structure de la page et son contenu ;
+En plus du texte brute, il donne du sens au texte en indiquant ce qui relève
+d'un paragraphe, d'un titre, *etc*, à l'aide de balises (exemple `<p>`,
+`<title>`,...);
 
-Le navigateur/browser est le logiciel que nous utilisons pour consulté les
-documents disponibles sur le World Wide Web (on cite principalement Chrome,
-Firefox et Internet Explorer/Edge).  Il sert principalement à visualiser via un
-moteur de rendu des sites dont le contenu est obtenu par le protocole HTTP.  Le
-but de ce TD est de comprendre comment se génère des pages du web "1.0" dites
-aussi statiques.  Il s'agit de pages dont le contenu est déjà connu et stocké
+2. **CSS** : Le fichier CSS est responsable de la mise en page de ces éléments
+   (mettre ce paragraphe en rose, utiliser la fonte "Sans Serif" pour ce
+   titre,... )
+
+Le navigateur (Firefox, Chrome, Safari, IE/Edge, ...) est le logiciel qui nous
+permet de visualiser les pages Web. Le but de ce TD est de démystifier la façon
+dont est interprétée ces deux types de fichiers par le navigateur.
+
+Pour cela nous allons réaliser un site dont le rendu correspond au fichier
+[target.png]({{site.baseurl}}/assets/target.png), en partant du fichier
+[index.txt]({{site.baseurl}}/index.txt), qui contient le contenu quasiment
+"brut" du site à réaliser.
+
+Nous allons tout d'abord nous consacrer à préciser la structure (le HTML donc)
+que l'on peut ajouter à notre contenu brut. Nous verrons ensuite dans la
+[deuxième partie du TD](tutorial2.html) comment atteindre le rendu proposé par
+[target.png]({{site.baseurl}}/assets/target.png) en réalisant un fichier CSS.
+
+<!--
+utilisons pour consulter les documents disponibles sur le World Wide Web (on
+cite principalement Chrome, Firefox et Internet Explorer/Edge).  Il sert
+principalement à visualiser via un moteur de rendu des sites dont le contenu est
+obtenu par le protocole HTTP.
+
+Internet =/ WWW
+
+  Il s'agit de pages dont le contenu est déjà connu et stocké
 sous forme de fichier HTML (par exemple, une base encyclopédique) et que
 l'utilisateur va consulter.  Il peut s'agir plus généralement de votre site
 internet à vous ou d'un petit site de fan qui n'a pas vocation à être modifier
 tous les jours.
-
-
-Pour afficher ce type de page internet, on utilise deux types de fichiers : HTML et CSS.
-
- * Le fichier contenant du HTML contient la structure de la page et son contenu ;  il précise au dela d'un texte brut ce qui relève d'un paragraphe, d'un titre à l'aide de balises (exemple `<p>`, `<title>`,...).
- * Le fichier contenant des CSS est responsable de a présenation de ces éléments (mettre ce paragraphe en rose, utiliser la fonte "San Serif" pour ce titre,... )
-
-Le but de ce TD est de démystifier la façon dont est interprétée ces deux types de fichiers par le navigateur.
-Pour cela nous allons réaliser un site dont le rendu correspond au fichier [target.png]({{site.baseurl}}/assets/target.png), en partant du fichier [index.txt]({{site.baseurl}}/index.txt), qui contient
-le contenu quasiement "brut" du site à réaliser.
-Nous allons tout d'abord nous consacrer à préciser la structure (le HTML donc) que l'on peut ajouter à notre contenu brut.
-Nous verrons ensuite comment attendre le rendu proposer par [target.png]({{site.baseurl}}/assets/target.png) en réalisant un fichier CSS.
+-->
 
 
 ## Transformation d'un document texte en un document HTML
 
-Pour ajouter de la structure à notre document, nous allons rajouter des balises.
-Une balise commence par `<mabalise>`. La plupart des balises demandent d'ajouter aussi un pendant fermant : `</mabalise>`.
+Le HTML, qui signifie *HyperText Markup Language* (langage de balisage
+d’hypertexte), est donc un langage à balise contenant des liens, dits
+*hypertextes*, vers d'autres documents.
 
+Les balises permettent de structurer le document. La plupart des balises
+commencent par une *balise ouvrante* `<mabalise>`, puis du *contenu* et
+finissent par une *balise fermante*
+`</mabalise>`. [Certaines balises](http://www.w3.org/TR/html5/syntax.html#void-elements)
+n'acceptent pas de contenu et consistent juste d'une balise ouvrante.
 
-Exemple pour un paragraphe on écrit :
+<!--  http://www.w3.org/TR/html5/syntax.html#void-elements -->
+
+**Exemple :**
 
 ~~~
 <p>Ceci est un paragraphe HTML puisqu'il est entouré des balises 'p' </p>
+La balise 'br' du saut de ligne ne prend pas de contenu <br>
 ~~~
 {:.html}
+
 
 Nous allons commencer par des balises un peu particulières, car elles sont de type "meta", elles sont plus là pour que le navigateur et le serveur s'entendent bien lors des transferts.
 Par exemple nous préciserons l'encodage des fichiers, le doctype,...
@@ -50,7 +76,7 @@ Cela n'est pas très passionnant et nous resterons succinct sur cet aspect.
 
 Récupérer le fichier [index.txt]({{site.baseurl}}/index.txt) (fichier de base de travail).
 
- 1. Ouvrer ce fichier "index.txt" dans le navigateur.
+ 1. Ouvrir le fichier [index.txt]({{site.baseurl}}/index.txt) dans le navigateur.
  2. Sauvegarder ce fichier en local, et renommer le fichier en index.html, ouvrir le fichier dans un
    navigateur et observer le résultat.
  3. Observer la différence de rendu, 
