@@ -7,27 +7,27 @@ layout: tutorial
 # CSS: un langage pour définir la mise en forme
 
 
-Le CSS permet de préciser pour chaque élement HTML un style associé. Les CSS sont responsables du rendu du site sur votre écran, sur un smartphone et aussi pour les impressions papier, ... (les css peuvent être spécifiées pour chacun de ces média).
+Les standards définissant le CSS sont publiés par le World Wide Web Consortium (<a href="http://www.w3.org/">W3C</a>). 
 
 
-Définition (source : Wikipedia) : CSS (Cascading Style Sheets : feuilles de
-style en cascade) est un langage informatique qui sert à décrire la présentation
-des documents HTML. Les standards définissant CSS sont publiés par le
-World Wide Web Consortium (W3C). Introduit au milieu des années 1990, CSS
-devient couramment utilisé dans la conception de sites web et bien pris en
-charge par les navigateurs web dans les années 2000.
+> <i>Cascading Style Sheets (CSS) est un mécanisme simple pour ajouter du style (exemple fonte, couleurs, espace) à un document web.</i>
+>
+> <cite><a href="http://www.w3.org/Style/CSS/">W3C</a></cite>
+
+Le CSS est responsable du rendu du site sur votre écran, mais aussi sur un smartphone et des impressions papier (des ensembles de règles css peuvent être spécifiés pour chacun de ces média).
 
 
-Si savoir les bases des CSS est relativement facile, en maitriser tous les aspects est un métier (celui d''integrateur Web, qui traduit en HTML et CSS le travail du Webdesigner).
-Il s'agit donc ici de faire une initiation.
+Bien que l'acronyme signifie donc <b>des</b> feuilles de style, on parlera <b>du</b> CSS (le langage utilisé ou le mécanisme), mais on fera pas les pédants tant les deux sont confondus à l'usage (l'usage fait très souvent loi losque l'on fait du CSS !).
+
+Savoir les bases du CSS est relativement facile et indispensable pour qui veut travailler dans les métiers du Web. En maitriser tous les aspects est un métier (celui d'intégrateur Web, qui traduit en HTML et CSS le travail du Webdesigner).
 
 ## Tutoriel d'introduction
 
 Nous allons travailler principalement sur ce TD sur un fichier `styles.css`.
 Créer ce fichier à partir du fichier index.html dans le repertoire `assets/css/`.
-Les assets sont tous les médias 
 
 Dans le fichier index.html, il faut ajouter la ligne suivante dans l'en-tête du document HTML (dans la partie `head`) :
+
 ~~~
 <link rel=‘stylesheet’ type=‘text/css’ href=‘assets/css/styles.css’>
 ~~~
@@ -38,7 +38,7 @@ Nous déclarerons dans ce fichier des règles CSS.
 
 Une règle CSS est composée de deux parties: 
 
- * un selecteur CSS,
+ * un sélecteur CSS,
  * un bloc de déclaration.
 
 Par exemple la règle css suivante donne à tous les div la hauteur de 200 pixels et définie comme couleur de fond le bleu : 
@@ -48,47 +48,50 @@ div { height:200px;background-color:blue;}
 ~~~
 {.css}
 
- * le selecteur est `div`,
- * le bloc de déclaration est `height : 200px; background-color:blue;`.
+ * le sélecteur est `div`,
+ * le bloc de déclaration est `height:200px;background-color:blue;`.
 
-Nous consacrerons plus loin deux sections aux sélecteurs CSS et aux blocs de déclaration.
+
+ Nous allons plus amplement présenter quelques bloc de <a href="#declarations">déclarations</a> et la façon de concevoir des <a href="#selectors" >sélecteurs</a>.
+ Nous passerons ensuite à la mise en pratique dans la section <a href="#exercice">Exercices</a> .
+
 
 ## L'outil pour les dévellopeurs sur Chrome ou Firefox est votre ami.
 
-Pour la partie HTML c'était votre ami; pour les CSS, il est promu au grade de "best-friend-ever".
-Car sélectionner un élement html avec l'outil des dévellopeurs ne permet pas seulement de voir les CSS appliqués à ce dernier, 
+Pour la partie HTML, l'outil de dévellopeurs c'était votre ami ; pour le CSS, il est promu au grade de "best-friend-ever".
+Sélectionner un élement html avec l'outil des dévellopeurs ne permet pas seulement de voir les règles CSS appliquées à ce dernier, 
 il permet aussi de les CHANGER. Autant dire qu'il est conseiller d'abuser de cet outil pendant le TD pour bidouiller tout et n'importe quoi.
+
 
 
 ## Commentaires
 
 En CSS, seul les commentaires avec `/*` et `*/` sont autorisés.
-Si vous utilisez `//` dans votre fichier CSS vous allez avoir des problèmes (les règles CSS suivantes ne seront pas appliquées).
+Si vous utilisez `//` dans votre fichier `styles.css` vous allez avoir des problèmes (les règles CSS suivantes ne seront pas appliquées).
+
+
+<a id="declarations"></a>
 
 ## Bloc de déclaration
+
+
+Les blocs de déclarations porte sur des ensemble "`attributs:valeur`" séparés par des "`;`" (exemple `height:200px;background-color:blue;`).
+Nous présentons ici quelques exemples valides de  valeurs et des attributs associés.
 
 ### Couleurs
 
 Les mots `aqua`, `black`, `blue`, `fuchsia`, `gray`, `green` ...  peuvent être utilisés pour définir une couleur.
-Mais votre palette risque de faire pauvre au final.
+Vous pouvez être plus précis et définir une couleur avec le format #RRVVBB ou #RVB. R, V et B sont les valeurs en hexadécimal de la composante respectivement Rouge, Vert et Bleue.
 
-Vous pouvez être plus précis et définir une couleur avec le format #RRVVBB ou RR, VV et BB sont les valeurs en hexadécimal de la composante respectivement Rouge, Vert et Bleue.
-Comme ces nombres sont en hexadécimal (base 16) sur deux chiffres, les valeurs vont de 00 à FF en passent par A8).
-
- * `#000000` est noir
- * `#FFFFFF` est blanc
- * `#FF0000` est rouge
- * `#FF00FF` est rose (c'est beau le rose)
-
-
-Vous pouvez aussi définir les couleurs par les composantes sur 256 valeurs en décimal (de 0 à 255) avec le format suivant `RGB(255,0,255)` (encore du rose !)
-
+ * `#000000` est noir,
+ * `#FFFFFF` est blanc,
+ * `#F00` ou `#FF0000` est rouge,
+ * `#FF00FF` est rose (c'est beau le rose).
 
 Les couleurs peuvent s'utiliser sur plusieurs attributs d'un élément HTML :
 
  * la couleur du text : color:red;
- * la couleur du fond : background-color:pink;
- * la couleur de bordure : border-color:grey;
+ * la couleur du fond : background-color:#FF00FF;
  * ...
 
 
@@ -100,21 +103,36 @@ Certains éléments peuvent avoir une taille définie par CSS, d'autres épousen
 Cela caractérise entre autres chose des élements inline et block. Nous préciserons ces notions dans le TD suivant, en attendant on s'en tiendra à 
 expliciter les unités de dimensions applicables.
 
-L'unité la plus utilisée est le pixel "px" pour pixel CSS. Cette unitée ne compte pas le nombre de pixels physique à l'écran mais est plutôt basée sur une échelle de bonne lisibilité pour le média en cours (i.e il est différent pour un écran d'ordinateur, pour un smartphone, pour une tablette,...).
+L'unité la plus utilisée est le pixel "px" pour pixel CSS. Cette unitée ne compte pas le nombre de pixels physique à l'écran mais est plutôt basée sur une échelle de bonne lisibilité pour le média de rendu (i.e il est donc relativmeent adapté pour un écran d'ordinateur, un smartphone, une tablette,...).
 
-Pour plus de détails sur ce qu'est cette unité : http://www.w3.org/TR/css3-values/
+Pour plus de détails sur ce qu'est cette unité : http://www.w3.org/TR/css3-values/#absolute-lengths
+
+On peut aussi donner des dimensions relatives en pourcentages (`width:50%`).
+
+D'autres unités de mesures sont possibles (`pt`, `cm`, ...), mais nous nous en tiendrons aux `px`.
 
 
-On peut aussi donner des dimensions relatives en pourcentages.
 
+Les dimensions sont utilisées sur différentes parties d'un élément.
+Exemple :
 
-On utilisera dans le reste du TD des unités de dimensions en px, en se souvenant juste qu'elle convient quelque soit la densité physique 
-de pixels de votre média.
+~~~ 
+ .ma_class {
+ 			height:150px;
+ 			width:50px;
+ 			padding:15px;
+ 			border-width:1px;
+ 			}
+~~~
+{.css}
+
 
 
 ### Fontes
 
 référence : http://www.w3.org/TR/CSS21/fonts.html
+
+
 
 
 <b> La propriété font-family</b>
@@ -148,17 +166,17 @@ p {
 ## Les Sélecteurs CSS
 
 
-Les selecteurs CSS permettent de préciser les éléments qui vont être impactés par la règle CSS.
-Les selecteurs CSS sont aussi utilisés sur d'autres problématiques du dévellopement Web que nous verrons l'année prochaine.
+Les sélecteurs CSS permettent de préciser les éléments qui vont être impactés par la règle CSS.
+Les sélecteurs CSS sont aussi utilisés sur d'autres problématiques du dévellopement Web que nous verrons l'année prochaine.
 Bref vous en aurez au partiel, c'est sûr.
 
 
-On peut construire un sélecteurs CSS complexe à partide selecteurs de bases et de règles de compositions.
+On peut construire un sélecteurs CSS complexe à partide sélecteurs de bases et de règles de compositions.
 
 
 {:.css}
 
-### Selecteurs de bases 
+### Sélecteurs de bases 
 
 Il nous faut completer nos connaissance sur le HTML.
 Toutes les balises peuvent se voir adjoindre différents attributs.
@@ -181,7 +199,7 @@ Voyons la syntaxe pour les utiliser.
 
 #### type
 
-Il s'agit juste d'utiliser le type sans autre décorateur.
+Il s'agit juste d'utiliser le type (`a`, `p`, `img`,...) sans autre décorateur.
 si l'on veut donner la couleur rose à tous les liens d'une page, il faut écrire
 
 ~~~
@@ -221,7 +239,7 @@ si l'on veut donner une height de 200px à tous les éléments qui ont la classe
 <a id="select_complex"></a>
 ### Règles de compositions, Sélecteurs complexes.
 
-Un selecteur CSS peut être plus ou moins compliqué. Sa sémantique peut aller de :
+Un sélecteur CSS peut être plus ou moins compliqué. Sa sémantique peut aller de :
 
 * je vais appliquer la règle à tous les div de la page
 * je vais appliquer la règle à tous :
@@ -258,7 +276,7 @@ Nous présentons dans la suite les sélecteurs qui sont utilisés en moyenne 95 
 
 #### Regroupement 
 
-La première façon de "composer" des selecteurs et juste le regroupement :
+La première façon de "composer" des sélecteurs et juste le regroupement :
 
 ~~~
 h1 {color: red}
@@ -302,7 +320,7 @@ L'élement qui a la classe toto ET titi.
 
 #### Descendance
 
-Pour discriminer certains éléments sur lequel on veut que porte un selecteur il est très courant de préciser de quoi il est descendant dans le code HTML.
+Pour discriminer certains éléments sur lequel on veut que porte un sélecteur il est très courant de préciser de quoi il est descendant dans le code HTML.
 Pour expliciter ce chemin on ajoute un espace entre les sélecteurs de base.
 
 ##### Directe (enfant)
@@ -371,10 +389,54 @@ ignore the universal selector
 <ul>
 <li>Style inline,</li>
 <li>Style marqué important!,</li>
-<li>Style avec le selecteur le plus précis
-(si plusieurs fois le même selecteur pour des déclarations non compatibles, la dernière gagne),</li>
+<li>Style avec le sélecteur le plus précis
+(si plusieurs fois le même sélecteur pour des déclarations non compatibles, la dernière gagne),</li>
 <li>Style du navigateur.</li>
 </ul>
+
+
+<a id="exercice"></a>
+
+## Exercices : 
+
+Tout va principalement se passer dans styles.css.
+
+
+
+### Couleurs :
+
+Le fond de notre page est tout blanc par défaut.
+Nous allons changer cela en donner au body la couleur qu'à choisi le graphiste/webdesigner : `#838892`.
+
+
+
+En ce qui concerne les paragraphes, vous avez reçu comme consigne d'alterner leurs couleurs entre #5BBDBF et #FF5850.
+
+
+
+### Dimensions : 
+<a href="https://viget.com/inspire/the-line-length-misconception" >Plusieurs</a> études <a href="https://en.wikipedia.org/wiki/Line_length">suggèrent</a>  que des lignes trop longues ou trop courtes nuisent gravement à la lisibilité d'un site. Pour traiter grossièrement le problème, limitez en CSS la largeur de l'élement body à 600px.
+
+Le centrer au milieu avec des marges auto, lui donner du padding et une line-height de 150%
+
+
+L'image beware.jpg a du style, mais elle prend un peu trop de place, limitez sa hauteur à 300px.
+
+
+
+H2 et H3 du padding et du border radius
+
+
+### Fontes : 
+
+p { font-family: "lucida calligraphy", "Arial", "sans-serif"; }
+
+
+### Liens visités
+
+Faire en sorte que les liens visités appraissent en gris.
+Lorsque la souris passe sur un lien, doner lui la couleur orange (sauf s'il a déjà été visité, auquel cas il reste en gris).
+
 
 ## CSS et HTML des rôles bien distincts et complémentaires.
 
