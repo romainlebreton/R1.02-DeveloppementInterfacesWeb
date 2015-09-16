@@ -40,7 +40,7 @@ Une balise commence par `<mabalise>`. La plupart des balises demandent d'ajouter
 Exemple pour un paragraphe on écrit :
 
 ~~~
-<p>Ceci est un paragraphe HTML puisqu'il est entouré des balises p </p>
+<p>Ceci est un paragraphe HTML puisqu'il est entouré des balises 'p' </p>
 ~~~
 {:.html}
 
@@ -234,7 +234,7 @@ y a la vie potentielle.
 </blockquote>
 
 Les citations permettent d'identifier un court texte sur lequel on veut attirer l'attention.
-C'est utiliser notamment pour montrer qu'on a du 'spirit'.
+Cela est utilisé notamment pour montrer qu'on a du 'spirit'.
 
 <b>Exercice : </b>
 
@@ -251,7 +251,12 @@ dans le fichier HTML.
 
 Mettre en emphase la phrase qui suit le commentaire : `<!-- mettre en emphase cette phrase -->`.
 
+
+## Fini !
+
 Nous en avons fini en ce qui concerne le contenu et la struture de notre site.
+Nous savons ajouter de la structure à une page HTML avec les balises spécifiques.
+
 
 Une remarque peut être informulée de votre part : mais pourquoi le fait de rajouter <h1> a mon titre chnage effectivement l'apparence des titres ? cela n'est pas à la charge du CSS justement ?
 Les navigateurs appliquent des css par défaut associés aux balises HTML (exemple : par convention les liens <a> sont en bleus et soulignés sans que l'on est rien à faire).
