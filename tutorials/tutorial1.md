@@ -5,7 +5,7 @@ layout: tutorial
 ---
 
 Le but de ce TD est de comprendre comment sont écrites les pages Web basiques,
-aussi appelées pages du Web "1.0" statiques. Une telle page Web contient deux
+aussi appelées pages statiques (Web 1.0). Une telle page Web contient deux
 partie :
 
 1. **HTML** : Le fichier HTML contient la structure de la page et son contenu ;
@@ -76,9 +76,6 @@ bien lors des transferts. Par exemple nous préciserons l'encodage des fichiers,
 le doctype,...  Cela n'est pas très passionnant et nous resterons succinct sur
 cet aspect.
 
-Récupérer le fichier [index.txt]({{site.baseurl}}/assets/index.txt) (fichier de
-base de travail).
-
 1. Ouvrez le fichier [index.txt]({{site.baseurl}}/assets/index.txt) dans le navigateur.
 
 2. Sauvegardez ce fichier en local en le renommant `index.html`. Ouvrir le
@@ -93,8 +90,9 @@ fichier dans un navigateur. Quelles différences observez-vous ?
   
 3. Notre document `index.html` est bien interprété comme un document HTML par le
 navigateur. Cependant que se passe-t-il lorsque l'on teste sa conformité au
-standard html à l'aide du validateur http://validator.w3.org/ . Quelles sont les
-erreurs indiquées ?
+standard html à l'aide du validateur
+[http://validator.w3.org/](http://validator.w3.org/) . Quelles sont les erreurs
+indiquées ?
 
    **Note :** Le HTML5 est un standard, c'est-à-dire un langage complètement
    décrit. N'hésitez pas à jeter un rapide coup d'œil
@@ -141,60 +139,101 @@ Corrigez votre page Web en insérant un titre après le `<meta>`.
    ~~~
    {:.html}
 
-À ce stade, le validateur indique que le fichier index.html est un document
+À ce stade, le validateur indique que le fichier `index.html` est un document
 HTML5 valide.
 
 
 ## Structure standard d'un document HTML
 
 Nous allons utiliser notre navigateur pour "inspecter" notre page internet.
-Pour cela nous conseillons Chrome ou Firefox. Appuyer sur la touche F12. Une partie de la page doit maintenant être utilisée
-par l'outil de développement. Ce dernier doit présenter deux parties bien distinctes, une dédie au HTML et l'autre...aux CSS.
-Ces outils sont fabuleux pour apprendre comment se construisent une page internet. Nous vous conseillons de jouer un peu avec pendant un quart d'heure.
-Un clic droit avec la souris sur un élément du html d'une page suivi d'un "Examiner l'élément" vous permettra de jouer avec le HTML et les CSS.
+Pour cela nous conseillons Chrome ou Firefox. Appuyer sur la touche `F12`. Les
+outils de développement affichent deux parties bien distinctes, une dédie au
+HTML et l'autre...aux CSS.  Ces outils sont fabuleux pour apprendre comment se
+construit une page internet.
 
-1. Encadrer par les balises `<body>` et `</body>` toute la partie du document se trouvant
-en dessous de `</head>`.
-2. Insérer une balise `<html>` avant la balise `<head>` et une balise `</html>` après la
-balise `</body>`.
+Il y a trois façons de passer de la page affichée à son code HTML dans les outils :
 
-Les balises HTML définissent une structure arborescente du document où :
+* Un clic droit avec la souris dans la page affichée, suivi d'un "Examiner l'élément", permet de voir le code HTML correspondant.
+* Alternativement, un clic sur
+![inspecteur]({{site.baseurl}}/assets/magnifying.png) (dans Chrome) permet
+d'inspecter l'affichage.
+* Quand on passe la souris au dessus d'un élément du code HTML dans les outils,
+  il le colore dans l'affichage.
+
+1. Familiarisez-vous avec ces trois techniques en inspectant la page du TD.
+2. Inspectez le code HTML de votre page `index.html`. Quelles différences
+remarquez-vous avec votre code source ?
+
+Comme vous l'avez constaté, des balises `<html>`, `<head>` et `<body>` ont été rajoutés. En fait, même si ces balises sont optionnelles, la bonne structure d'une page HTML est :
+
+~~~
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- L'en-tête du document avec au moins un titre -->
+        <title>Un titre qui s'affiche tout en haut</title>
+    </head>
+    <body>
+	   <!-- Le corps du document -->
+	</body>
+</html>
+~~~
+{:.html}
+
+
+Après la ligne `<!DOCTYPE html>` de déclaration du langage, le document est
+inclus dans la balise `<html>` et est composé de deux parties :
+
+* l'en-tête `<head>` contient des informations sur le document HTML
+* le corps `<body>` contient le vrai contenu
+
+Les balises HTML donnent une structure d'arbre au document. Dans notre exemple
+`index.html`
+
+~~~
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Le site non officiel de Chuck Norris</title>
+    </head>
+    <body>
+	   ...
+	</body>
+</html>
+~~~
+{:.html}
+
+<div style="float:right">
+<p style="margin:0">
+<img alt="Structure d'arbre" src="{{site.baseurl}}/assets/arbre.svg">
+</p>
+</div>
+
+l'arbre est le suivant :
+
 
 * html est l'élément racine
 * head et body sont les deux fils de l'élément html
 * title et meta sont deux fils de l'élément head
 * "Le site non officiel de Chuck Norris" est un fils de l'élément title.
 
-----------------------
+<div style="clear:both">
+1. Mettez à jour votre page `index.html` pour qu'elle respecte la structure HTML
+ci-dessus. (Vous devez rajouter les balises `<html>`, `<head>` et `<body>`)
+</div>
 
- Cependant   
-Voici un squelette de page HTML5 :
-   
-~~~
-<!DOCTYPE html>
-<html>
-    <head>
-        <!-- L'en-tête du document avec au moins un titre -->
-        <title></title>
-    </head>
-    <body>
-	   <!-- Le corps du document -->
-	</body>
-</html>
 
-~~~
-{:.html}
-
-La ligne `<!DOCTYPE html>` signifie que le langage du document est HTML5. Le document en lui-même est inclus dans la balise `<html>` et est composé de deux parties :
-
-* l'en-tête contient des informations sur le document HTML
-* le corps contient le vrai contenu
 
 <!-- parle-t-on des attributs des balises ? -->
 
 ## Les Commentaires en HTML
-Il est possible de rajouter des commentaires dans le HTML. Cela n'est pas interpréter par le navigateur, et n'est donc pas visible par l'utilisateur. 
-Il s'agit donc d'information laissées par des développeurs pour des développeurs. On les places entre les balises `<!--` et `-->` : 
+
+Il est possible de rajouter des commentaires dans le HTML. Ces commentaires ne
+sont interprétés par le navigateur, et ne sont donc pas affichés (mais ils
+restent présent dans le code source).  Il s'agit donc d'information laissées par
+des développeurs pour des développeurs. On les places entre les balises `<!--`
+et `-->` :
 
 
 ~~~
@@ -207,45 +246,53 @@ Nous expliciterons ces dernières dans les sections suivantes.
 
 ## Titres
 
-Nous allons commencer par rajouter de la structure à notre page.
-Pour ce faire nous allons utiliser les balises `<h2>` à `<h3>` pour identifier les différentes sections (`<h1>` est utilisé pour le titre du document).
-Si vous cherchez un bon exemple d'utilisation de balises `<h2>`, faites un clic droit sur le titre 'Titres' juste au dessus puis "inspecter l'élément".
+Nous allons commencer par rajouter de la structure à notre page.  Pour ce faire
+nous allons utiliser les balises `<h1>` à `<h6>` pour identifier les différentes
+sections :
+
+* `<h1>` est utilisé pour les gros titres du document
+* `<h2>` est utilisé pour les sections du document
+* `<h3>` est utilisé pour les sous-sections du document et ainsi de suite.
+
+Si vous cherchez un bon exemple d'utilisation de balises `<h2>`, inspectez le
+titre **Titres** juste au dessus en faisant un clic droit dessus.
 
 
-<b>Exercice : </b>
+1. Ajoutez la balise `<h2>` aux éléments de `index.html` marqués par les commentaires : `<!-- section -->`.
 
-Ajouter la balise `<h2>` à ces éléments signifiées par les commentaires : `<!--section -->`. 
-
-Les sous sections `<h3>` sont associés quant à eux aux commentaires : `<!--sous section -->`, ajouter les et recharger la page.
-
+2. Ajoutez la balise `<h3>` aux élémentsde  `index.html` marqués par les commentaires : `<!-- sous section -->`. 
 
 ## Éléments de regroupement
 
 ### Paragraphes
 
-Utiliser maintenant les balises `<p>` et `</p>` autour des paragraphes du document.
-Les paragraphes vous sont signifiés par `<!--début paragraphe -->` et `<!--fin paragraphe -->`. Si vous faites un clic droit inspecter l'élément sur ce paragraphe, 
-vous verrez justement que ce texte est dans un paragraphe.
+Utilisez maintenant les balises `<p>` et `</p>` autour des paragraphes du
+document. Les paragraphes vous sont signifiés par `<!--début paragraphe -->` et
+`<!--fin paragraphe -->`.
+
+**Note :** Si vous faites un clic droit inspecter l'élément sur
+ce paragraphe, vous verrez justement que ce texte est dans un paragraphe.
 
 
-<a name="ul"></a>
 ### Listes
 
-En HTML nous pouvons faire des listes ordonnées ou pas :
+En HTML nous pouvons faire des listes ordonnées (numérotées) ou non ordonnées :
 
 ~~~
-<ul>
-  <li>premier item</li>
+<ul> <!-- ul pour unordered list -->
+  <li>premier item non ordonné </li> <!-- li pour list item -->
   <li>deuxième item</li>
 </ul>
-<ol>
-  <li>premier item</li>
+<ol> <!-- ol pour ordered list -->
+  <li>premier item ordonné </li>
   <li>deuxième item</li>
 </ol>
 ~~~
 {:.html}
 
-Ce qui donne une fois interprété par le moteur de rendu du navigateur : 
+Ce qui donne une fois interprété par le moteur de rendu du navigateur :
+
+<div class="codeexample">
 <ul>
   <li>premier item</li>
   <li>deuxième item</li>
@@ -254,76 +301,139 @@ Ce qui donne une fois interprété par le moteur de rendu du navigateur :
   <li>premier item</li>
   <li>deuxième item</li>
 </ol>
+</div>
 
 <b>Exercice : </b>
 
-1. Utiliser les balises `<ul>` et `<li>` pour structurer la liste à puces `<!--liste -->` dans index.html. (ne vous soucier pas encore des commentaires <!-- lien externe` pour l'instant )
-2. Utiliser les balises `<ol>` et `<li>` pour structurer la liste numérotée `<!--liste numérotée -->` dans index.html.
+1. Utilisez les balises `<ul>` et `<li>` pour structurer la liste à puces
+`<!--liste -->` dans `index.html`.  
+(Ne vous souciez pas encore des commentaires `<!-- lien externe -->`)
+2. Utiliser les balises `<ol>` et `<li>` pour structurer la liste numérotée
+   `<!--liste numérotée -->` dans `index.html`.
 
 
 ## Image : un exemple d'élément embarqué
 
-
-<b>Exercice : </b>
-Télécharger l'image [chuck-jeune.jpg]({{site.baseurl}}/assets/chuck-jeune.jpg). Copier là dans un répertoire assets/img 
-à partir de votre fichier index.html.
-Ajouter la via la balise `<img>` en début de section (voir le fichier [target.png]({{site.baseurl}}/assets/target.png))
-en lieu et place du commentaire `<!--l'image de Chuck Young doit être positionnée ici  -->`.
+Pour insérer une image, on peut utiliser la balise
 
 ~~~
-<img src="./assets/img/chuck-jeune.jpg" alt="Chuck Jeune, la légende est en marche."/>
+<img src="adresse_image" alt="texte alternatif mais obligatoire">
 ~~~
 {:.html}
 
-Faite de même avec l'image [beware.jpg]({{site.baseurl}}/assets/beware.jpg) : positionner là en lieu et place du commentaire `<!--l'image de Chuck Beware ici   -->`.
+Cette balise n'a pas de balise fermante car elle ne peut avoir de contenu
+(cf. [le début du TD](#transformation-dun-document-texte-en-un-document-html)).
+On remarque qu'elle possède deux "champs* `src` et `alt` que l'on appelle les
+*attributs* de la balise. Précédement, on avait vu une autre balise avec un
+attribut: `<meta>` avec l'attribut `charset`. Les attributs se trouvent toujours
+dans la balise ouvrante.
+
+L'attribut `src` doit contenir l'adresse de l'image. L'attribut `alt` permet
+d'ajouter un texte alternatif pour les navigateurs ne pouvant les afficher
+(navigateur textuel <a href="http://lynx.browser.org/">Lynx</a>) ou pour les
+personnes ne peuvent pas bien les voir (aveugles ou déficits visuels légers).
 
 
-src et alt sont des attributs de l'élément img.
 
-L'attribut alt permet d'ajouter un texte alternatif :
+1. Enregistrez l'image
+[chuck-jeune.jpg]({{site.baseurl}}/assets/chuck-jeune.jpg) dans un
+répertoire `images` par rapport à votre fichier `index.html`.
 
- * pour les navigateurs ne pouvant les afficher (navigateur textuel <a href="http://lynx.browser.org/">Lynx</a>)
- * pour les personnes ne peuvent pas bien les voir (aveugles ou déficits visuels légers). 
+2. Remplacez le commentaire `<!--l'image de Chuck Young doit être positionnée
+ici -->` par la balise `<img>` suivante
+
+   ~~~
+   <img src="./images/chuck-jeune.jpg" alt="Chuck Jeune, la légende est en marche."/>
+   ~~~
+   {:.html}
+
+3. Faites de même avec l'image [beware.jpg]({{site.baseurl}}/assets/beware.jpg)
+   à positionner en lieu et place du commentaire `<!--l'image de Chuck Beware
+   ici -->`.
 
 ## Éléments sémantiques
 
+### Liens externes
 
-<a name="semantic"></a>
+L'un des éléments les plus emblématique du HTML est sans doute la balise
+`<a>`. Elle permet de faire des liens hypertextes (le HT dans HTML).
 
-### Liens
-
-L'un des éléments les plus emblématique du HTML est sans doute la balise `<a>`.
-
-Un lien est composé principalement par une url cible et un libellé (qui sera visible par l'utilisateur et souligné en bleu):
-
+Un lien est composé principalement d'une URL cible et d'un libellé (le texte
+cliquable souvent souligné en bleu):
 
 ~~~
-<a href="http:://urlcible.com">le libellé</a>
+<a href="http://urlcible">le libellé</a>
 ~~~
 {:.html}
 
- * Dans le cas d'un lien externe, il suffit de renseigner tel quel l'url de la cible : `<a href="http://lynx.browser.org/">Lynx</a>`
+On peut renseigner l'URL complète de la
+cible (URL en chemin absolue):
 
+~~~
+<a href="http://lynx.browser.org/">Lynx</a>
+~~~
+{:.html}
+   
+ou donner une adresse relative à la page courante (URL en chemin relatif)
+   
+~~~
+<a href="images/chuck-jeune.png">Image</a>
+~~~
+{:.html}
 
- * Dans le cas d'un lien interne, on va utiliser les ancres `#monancre`.
-On aura positionné quelque par dans le document  un lien cible :
-`<a id="mon_ancre_en_debut_de_fichier"></a>`. Notre lien interne sera 
-alors : `<a href="#mon_ancre_en_debut_de_fichier">Retour au haut de page</a>`
+1. Remplacez les commentaires `<!-- lien externe ...` par des balises `<a>` avec
+   la bonne adresse.
 
+### Liens internes
 
-Chercher dans votre fichier index.html les commentaires `<!-- lien interne ...` et `<!-- lien externe ...`.
-Et remplacer les par des balises `<a>`.
+On peut rajouter à ces *liens externes* une partie *lien interne* basée sur les
+ancres `#monancre`. Toutes les balises peuvent prendre un attribut `id` comme
+dans l'exemple suivant
 
-<a id="citation"></a>
+~~~
+<h2 id="un_identifiant">
+~~~
+{:.html}
 
+Attention, la valeur de cet attribut doit être unique dans le document. On peut
+alors faire un lien vers cette balise en rajoutant `#un_identifiant` à la fin
+de l'URL. Exemple :
+
+~~~
+<a href="http://fr.wikipedia.org/wiki/HTML#ancre">les ancres</a>
+~~~
+{:.html}
+
+<!-- verif cette adresse -->
+
+Un exemple important est l'URL `#ancre` : le lien externe est vide, ce qui
+correspond au document courant. Donc ce lien va vers la balise d'identifiant
+`id="ancre"` du document courant.
+
+1. Remplacez le commentaire `<!-- lien interne -->` de `index.html` par une
+balise `<a>` qui pointera sur l'une des premières balises. Vous aurez donc
+besoin de rajouter un identifiant à cette balise.
+
+<!--
 ### Table 
 
 Les tables.
+-->
+
+### Emphase
+
+La balise `<em>` permet de mettre en évidence des passages importants dans un
+texte. Identifier les mots en gras dans le document .pdf et les marquer avec cette balise
+dans le fichier HTML.
+
+<b>Exercice : </b>
+
+Mettre en emphase la phrase qui suit le commentaire : `<!-- mettre en emphase cette phrase -->`.
 
 
 ### Citation
 
-<blockquote > 
+<blockquote> 
 Un biscuit ça n'a pas de 'spirit', c'est juste un biscuit. 
 Mais avant c'était du lait, des oeufs. Et dans les oeufs, il 
 y a la vie potentielle. 
@@ -339,15 +449,6 @@ Cela est utilisé notamment pour montrer qu'on a du 'spirit'.
 
 Utiliser la balise `blockquote` et `<cite>` pour mettre en avant la citation en tout début de document (rechercher `<!-- utiliser blockquote ici  -->`).
 
-### Emphase
-
-La balise `<em>` permet de mettre en évidence des passages importants dans un
-texte. Identifier les mots en gras dans le document .pdf et les marquer avec cette balise
-dans le fichier HTML.
-
-<b>Exercice : </b>
-
-Mettre en emphase la phrase qui suit le commentaire : `<!-- mettre en emphase cette phrase -->`.
 
 
 ## Fini !
@@ -364,4 +465,11 @@ Dans le TD suivant nous verrons comment améliorer l'aspect du site.
 <!--
 1. Passer le document sous l'encodage UTF-8 (que nous privilégierons désormais).
 2. Travaillez sur votre projet en définissant les structures HTML des pages de votre site Web.
+-->
+
+<!--
+iframe
+span
+div
+table
 -->

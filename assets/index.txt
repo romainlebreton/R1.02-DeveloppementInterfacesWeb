@@ -56,7 +56,7 @@
 		
 				Il a également pratiqué le Karaté(7 fois champion du monde des poids moyens de 1968 à 1974)
 		
-				il a aussi fait du <span class="fighting_skill">Judo</span> et du <span class="fighting_skill">Ju-jitsu</span>
+				il a aussi fait du Judo et du Ju-jitsu
 	
 		
 		 <!--fin paragraphe -->
@@ -68,7 +68,7 @@ Le cinéma
 			<!--l'image de Chuck Beware ici   -->
 			
 
-			Lee. Malgré une amitié affichée entre les deux hommes, il semble cependant que leurs relations ont été parfois tumultueuses. En 1968, Norris devient champion de <span class="fighting_skill">Karaté</span> dans la catégorie poids moyen, et en 1969, il remporte la triple couronne en <span class="fighting_skill">Karaté</span>
+			Lee. Malgré une amitié affichée entre les deux hommes, il semble cependant que leurs relations ont été parfois tumultueuses. En 1968, Norris devient champion de Karaté dans la catégorie poids moyen, et en 1969, il remporte la triple couronne en Karaté
 			pour le record des tournois remportés dans l'année, et le titre de combattant de l'année par le Black Belt Magazine. C'est en 1968 qu'il débute au cinéma, dans The Wrecking Crew. En 1970, son plus jeune frère Weiland meurt au Viêt Nam : Chuck lui dédiera
 			plus tard son film Portés disparus. En 1972, il joue avec Bruce Lee dans 
 			<!-- lien externe vers  "http://www.imdb.com/title/tt0068935/" libellé par "La Fureur du dragon".  -->
@@ -81,7 +81,7 @@ Le cinéma
 <!--sous section -->
 		Ces vingt dernières années
 		<!--début paragraphe -->
-		En 1994, aux Survivor Series (pay-per-view de la WWE), il arbitre un Special Guest Referee Casket Match entre The Undertaker et Yokozuna. En 1997, il obtient un 8e dan (degré) en <span class="fighting_skill">Taekwondo</span>, qui en comporte 10. 
+		En 1994, aux Survivor Series (pay-per-view de la WWE), il arbitre un Special Guest Referee Casket Match entre The Undertaker et Yokozuna. En 1997, il obtient un 8e dan (degré) en Taekwondo, qui en comporte 10. 
 		<!-- mettre en emphase cette phrase -->
 		Cette distinction le hisse au rang de Grand
 			Maître. Il est un des premiers occidentaux à qui elle a été attribuée. 
