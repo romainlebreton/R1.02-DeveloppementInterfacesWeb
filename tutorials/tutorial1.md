@@ -9,7 +9,7 @@ aussi appelées pages statiques (Web 1.0). Une telle page Web contient deux
 partie :
 
 1. **HTML** : Le fichier HTML contient la structure de la page et son contenu ;
-En plus du texte brute, il donne du sens au texte en indiquant ce qui relève
+En plus du texte brut, il donne du sens au texte en indiquant ce qui relève
 d'un paragraphe, d'un titre, *etc*, à l'aide de balises (exemple `<p>`,
 `<title>`,...);
 
@@ -96,7 +96,7 @@ indiquées ?
 
    **Note :** Le HTML5 est un standard, c'est-à-dire un langage complètement
    décrit. N'hésitez pas à jeter un rapide coup d'œil
-   [au standard](http://www.w3.org/TR/html5/). Ce document est très technique
+   [à sa spécification](http://www.w3.org/TR/html5/). Ce document est très technique
    mais complet.
 
 4. Commençons par l'erreur **Unable to Determine Parse Mode!**. La validateur
@@ -164,7 +164,7 @@ d'inspecter l'affichage.
 2. Inspectez le code HTML de votre page `index.html`. Quelles différences
 remarquez-vous avec votre code source ?
 
-Comme vous l'avez constaté, des balises `<html>`, `<head>` et `<body>` ont été rajoutés. En fait, même si ces balises sont optionnelles, la bonne structure d'une page HTML est :
+Comme vous l'avez constaté, des balises `<html>`, `<head>` et `<body>` ont été rajoutées. En fait, même si ces balises sont optionnelles, la bonne structure d'une page HTML est :
 
 ~~~
 <!DOCTYPE html>
@@ -230,8 +230,8 @@ ci-dessus. (Vous devez rajouter les balises `<html>`, `<head>` et `<body>`)
 ## Les Commentaires en HTML
 
 Il est possible de rajouter des commentaires dans le HTML. Ces commentaires ne
-sont interprétés par le navigateur, et ne sont donc pas affichés (mais ils
-restent présent dans le code source).  Il s'agit donc d'information laissées par
+sont pas interprétés par le navigateur, et ne sont donc pas affichés (mais ils
+restent présent dans le code source).  Il s'agit donc d'informations laissées par
 des développeurs pour des développeurs. On les places entre les balises `<!--`
 et `-->` :
 
@@ -260,7 +260,7 @@ titre **Titres** juste au dessus en faisant un clic droit dessus.
 
 1. Ajoutez la balise `<h2>` aux éléments de `index.html` marqués par les commentaires : `<!-- section -->`.
 
-2. Ajoutez la balise `<h3>` aux élémentsde  `index.html` marqués par les commentaires : `<!-- sous section -->`. 
+2. Ajoutez la balise `<h3>` aux éléments de `index.html` marqués par les commentaires : `<!-- sous section -->`. 
 
 ## Éléments de regroupement
 
@@ -270,7 +270,7 @@ Utilisez maintenant les balises `<p>` et `</p>` autour des paragraphes du
 document. Les paragraphes vous sont signifiés par `<!--début paragraphe -->` et
 `<!--fin paragraphe -->`.
 
-**Note :** Si vous faites un clic droit inspecter l'élément sur
+**Note :** Si vous faites un clic droit suivit de "inspecter l'élément" sur
 ce paragraphe, vous verrez justement que ce texte est dans un paragraphe.
 
 
@@ -331,7 +331,7 @@ dans la balise ouvrante.
 L'attribut `src` doit contenir l'adresse de l'image. L'attribut `alt` permet
 d'ajouter un texte alternatif pour les navigateurs ne pouvant les afficher
 (navigateur textuel <a href="http://lynx.browser.org/">Lynx</a>) ou pour les
-personnes ne peuvent pas bien les voir (aveugles ou déficits visuels légers).
+personnes ne pouvant pas bien les distinguer (aveugles ou déficits visuels légers).
 
 
 
@@ -343,7 +343,7 @@ répertoire `images` par rapport à votre fichier `index.html`.
 ici -->` par la balise `<img>` suivante
 
    ~~~
-   <img src="./images/chuck-jeune.jpg" alt="Chuck Jeune, la légende est en marche."/>
+   <img src="./images/chuck-jeune.jpg" alt="Une photo de Chuck Jeune, la légende est en marche."/>
    ~~~
    {:.html}
 
@@ -410,9 +410,9 @@ Un exemple important est l'URL `#ancre` : le lien externe est vide, ce qui
 correspond au document courant. Donc ce lien va vers la balise d'identifiant
 `id="ancre"` du document courant.
 
-1. Remplacez le commentaire `<!-- lien interne -->` de `index.html` par une
+1. Remplacez le commentaire `<!-- lien interne ...-->` de `index.html` par une
 balise `<a>` qui pointera sur l'une des premières balises. Vous aurez donc
-besoin de rajouter un identifiant à cette balise.
+besoin de rajouter un identifiant à cette balise cible.
 
 <!--
 ### Table 
@@ -423,12 +423,10 @@ Les tables.
 ### Emphase
 
 La balise `<em>` permet de mettre en évidence des passages importants dans un
-texte. Identifier les mots en gras dans le document .pdf et les marquer avec cette balise
-dans le fichier HTML.
+texte. 
 
-<b>Exercice : </b>
-
-Mettre en emphase la phrase qui suit le commentaire : `<!-- mettre en emphase cette phrase -->`.
+1. Justement, il faut mettre en exerge le fait que Chuck Norris est très fort dans différents arts martiaux.
+Pour cela il faut mettre en emphase la phrase qui suit le commentaire : `<!-- mettre en emphase cette phrase -->` dans le fichier index.html.
 
 
 ### Citation
@@ -444,10 +442,7 @@ y a la vie potentielle.
 Les citations permettent d'identifier un court texte sur lequel on veut attirer l'attention.
 Cela est utilisé notamment pour montrer qu'on a du 'spirit'.
 
-<b>Exercice : </b>
-
-
-Utiliser la balise `blockquote` et `<cite>` pour mettre en avant la citation en tout début de document (rechercher `<!-- utiliser blockquote ici  -->`).
+1. Utiliser la balise `blockquote` et `<cite>` pour mettre en avant la citation en tout début de document (rechercher `<!-- utiliser blockquote ici  -->`).
 
 
 
@@ -457,15 +452,10 @@ Nous en avons fini en ce qui concerne le contenu et la structure de notre site.
 Nous savons ajouter de la structure à une page HTML avec les balises spécifiques.
 
 
-Une remarque peut être informulée de votre part : mais pourquoi le fait de rajouter <h1> a mon titre change effectivement l'apparence des titres ? cela n'est pas à la charge du CSS justement ?
+Une remarque peut être informulée de votre part : mais pourquoi le fait de rajouter `<h1>` a mon titre change effectivement l'apparence des titres ? cela n'est pas à la charge du CSS justement ?
 Les navigateurs appliquent des CSS par défaut associés aux balises HTML (exemple : par convention les liens <a> sont en bleus et soulignés sans que l'on est rien à faire).
 Cela évite d'avoir justement TOUT à refaire en CSS : des styles par défauts sont proposés.
-Dans le TD suivant nous verrons comment améliorer l'aspect du site.
-
-<!--
-1. Passer le document sous l'encodage UTF-8 (que nous privilégierons désormais).
-2. Travaillez sur votre projet en définissant les structures HTML des pages de votre site Web.
--->
+Dans le [TD suivant](tutorial2.html) nous verrons comment améliorer l'aspect du site.
 
 <!--
 iframe
