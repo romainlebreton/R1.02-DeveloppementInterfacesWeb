@@ -1,5 +1,5 @@
 ---
-title: HTML &ndash; un langage à balises pour structurer les documents
+title: TD1 Partie 1 &ndash; HTML - un langage à balises pour structurer les documents
 subtitle: Doctype et premières balises
 layout: tutorial
 ---
@@ -425,8 +425,16 @@ Les tables.
 La balise `<em>` permet de mettre en évidence des passages importants dans un
 texte. 
 
+<<<<<<< Updated upstream
 1. Justement, il faut mettre en exerge le fait que Chuck Norris est très fort dans différents arts martiaux.
 Pour cela il faut mettre en emphase la phrase qui suit le commentaire : `<!-- mettre en emphase cette phrase -->` dans le fichier index.html.
+=======
+<!-- ICI : qu'est-ce qu'on met en emphase ?? Pas de mots en gras. Et ils vont être en italique -->
+
+<b>Exercice : </b>
+
+Mettre en emphase la phrase qui suit le commentaire : `<!-- mettre en emphase cette phrase -->`.
+>>>>>>> Stashed changes
 
 
 ### Citation
@@ -452,10 +460,15 @@ Nous en avons fini en ce qui concerne le contenu et la structure de notre site.
 Nous savons ajouter de la structure à une page HTML avec les balises spécifiques.
 
 
-Une remarque peut être informulée de votre part : mais pourquoi le fait de rajouter `<h1>` a mon titre change effectivement l'apparence des titres ? cela n'est pas à la charge du CSS justement ?
-Les navigateurs appliquent des CSS par défaut associés aux balises HTML (exemple : par convention les liens <a> sont en bleus et soulignés sans que l'on est rien à faire).
-Cela évite d'avoir justement TOUT à refaire en CSS : des styles par défauts sont proposés.
-Dans le [TD suivant](tutorial2.html) nous verrons comment améliorer l'aspect du site.
+Une remarque peut être informulée de votre part : mais pourquoi le fait de
+rajouter `<h1>` a mon titre change effectivement l'apparence des titres ? cela
+n'est pas à la charge du CSS justement ?  Les navigateurs appliquent des CSS par
+défaut associés aux balises HTML (exemple : par convention les liens <a> sont en
+bleus et soulignés sans que l'on est rien à faire).  Cela évite d'avoir
+justement TOUT à refaire en CSS : des styles par défauts sont proposés.  Dans le
+[TD suivant](tutorial2.html) nous verrons comment améliorer l'aspect du site.
+
+<!-- Dans le devtools, elles s'appelent user agent rules -->
 
 <!--
 iframe
