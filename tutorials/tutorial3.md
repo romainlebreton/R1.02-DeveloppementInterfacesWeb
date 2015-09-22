@@ -4,6 +4,10 @@ subtitle: s
 layout: tutorial
 ---
 
+
+<!-- modèle de boite + auto -->
+
+
 La suite et fin des sélecteurs
 
 ### Règles de compositions, Sélecteurs complexes

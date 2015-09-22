@@ -108,8 +108,9 @@ suivant :
 ![Symétrie des 16 couleurs]({{site.baseurl}}/assets/HSL14colors.png).
 </div>
 
-Le CSS3 les a completés par 147 mots clés de couleurs que vous pouvez retrouver à
-l'adresse <!-- compléter l'adresse -->.
+Le CSS3 les a completés par 147 mots clés de couleurs que vous pouvez retrouver
+à l'adresse
+[http://www.w3.org/TR/css3-color/#svg-color](http://www.w3.org/TR/css3-color/#svg-color).
 
 Vous pouvez être plus précis et définir une couleur avec le format #RRVVBB ou
 #RVB. R, V et B sont les valeurs en hexadécimal des composantes Rouge, Verte et
@@ -127,40 +128,74 @@ place minimale nécessaire à leur rendu.
 <!-- Cela caractérise entre autres choses des éléments inline et block.  Nous -->
 <!-- préciserons ces notions dans le TD suivant, en attendant on s'en tiendra à -->
 <!-- expliciter les unités de dimensions applicables. -->
-L'unité la plus utilisée est le pixel "px" pour pixel CSS. Cette unité ne compte
-pas le nombre de pixels physique à l'écran mais est plutôt basée sur une échelle
-de bonne lisibilité pour le média de rendu (i.e. il est donc relativement adapté
-pour un écran d'ordinateur, un smartphone, une tablette,...).
 
-<!-- mais alors, qu'est-ce que teste une media-query >150px ? -->
-
+L'unité absolue de mesure la plus utilisée est le "pixel CSS" `px`. Cette unité
+correspond souvent avec les pixels physiques de l'écran mais avec certaines
+subtilités. Premièrement, les navigateurs actuels permettent de zoomer, ce qui a
+pour effet d'afficher un "pixel CSS" sur plusieurs pixels. Deuxièmement,
+certains médias comme l'imprimante ne disposent pas de pixels ; le pixel CSS est
+alors définie comme une échelle permettant une bonne lisibilité sur le média.  
 Pour plus de détails sur ce qu'est cette unité :
 [http://www.w3.org/TR/css3-values/#absolute-lengths](http://www.w3.org/TR/css3-values/#absolute-lengths)
 
-On peut aussi donner des dimensions relatives en pourcentages (`width:50%`).
+<!-- les autres unitées sont in cm mm pt pc => font de plus de sens pour
+d'autres médias-->
+<!-- D'autres unités de mesures sont possibles (`pt`, `cm`, ...), mais nous nous en
+tiendrons aux `px`  -->
 
-<!-- distance relative à quoi ? -->
-<!-- auto -->
+On peut aussi donner des dimensions relatives en pourcentages ; `width:50%` va
+diminuer de moitié la largeur par rapport à celle qui aurait été calculée
+normalement.
+<!-- 50 % de quoi ? De la taille calculée normalement -->
 
-D'autres unités de mesures sont possibles (`pt`, `cm`, ...), mais nous nous en
-tiendrons aux `px`.
+<!-- Parle-t-on de em ex rem ch viewport-width ... -->
+
+<!--
+First, let’s consider em and ex , which are closely related. In CSS, one “em” is defined to
+be the value of font-size for a given font. If the font-size of an element is 14 pixels,
+then for that element, 1em is equal to 14 pixels.
+Obviously, this value can change from element to element. For example, let’s say you
+have an h1 with a font size of 24 pixels, an h2 element with a font size of 18 pixels, and
+a paragraph with a font size of 12 pixels. If you set the left margin of all three at 1em ,
+they will have left margins of 24 pixels, 18 pixels, and 12 pixels, respectively:
+h1 {font-size: 24px;}
+h2 {font-size: 18px;}
+p {font-size: 12px;}
+h1, h2, p {margin-left: 1em;}
+small {font-size: 0.8em;}
+<h1>Left margin = <small>24 pixels</small></h1>
+<h2>Left margin = <small>18 pixels</small></h2>
+<p>Left margin = <small>12 pixels</small></p>
+-->
+
 
 Les dimensions sont utilisées sur différentes parties d'un élément.
-Exemple :
+**Exemple :**
 
 ~~~ 
- .ma_class {
- 			height:150px;
- 			width:50px;
- 			padding:15px;
- 			border-width:1px;
- 			}
+.ma_class {
+  height:150px;
+  width:50px;
+  padding:15px;
+  border-width:1px;
+}
 ~~~
 {:.css}
 
 <!-- padding -->
 
 ### Fontes
+
+<!-- font family @font-face
+font-size
+font-style normal Distinguishes between normal, italic, and oblique faces
+font-weight normal Distinguishes between various weights (e.g., bold)
+font-variant normal Distinguishes between a staggeringly wide range of potential variant faces (e.g.,
+small-caps); in most ways, a more “CSS-like” version of font-feature-
+settings
+
+toutes regroupés dans la propriété font :
+-->
 
 **Référence :** [http://www.w3.org/TR/CSS21/fonts.html](http://www.w3.org/TR/CSS21/fonts.html)
 
