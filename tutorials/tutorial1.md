@@ -425,17 +425,10 @@ Les tables.
 La balise `<em>` permet de mettre en évidence des passages importants dans un
 texte. 
 
-<<<<<<< Updated upstream
 1. Justement, il faut mettre en exerge le fait que Chuck Norris est très fort dans différents arts martiaux.
-Pour cela il faut mettre en emphase la phrase qui suit le commentaire : `<!-- mettre en emphase cette phrase -->` dans le fichier index.html.
-=======
-<!-- ICI : qu'est-ce qu'on met en emphase ?? Pas de mots en gras. Et ils vont être en italique -->
+Pour cela il faut mettre en emphase la phrase qui suit le commentaire : `<!-- mettre en emphase cette phrase -->` dans le fichier `index.html`.
 
-<b>Exercice : </b>
-
-Mettre en emphase la phrase qui suit le commentaire : `<!-- mettre en emphase cette phrase -->`.
->>>>>>> Stashed changes
-
+<!-- parler aussi de strong -->
 
 ### Citation
 
