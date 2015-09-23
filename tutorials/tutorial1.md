@@ -177,22 +177,27 @@ ci-dessus. (Vous devez rajouter les balises `<html>`, `<head>` et `<body>`)
 
 ## Outil de développements Web
 
-Dans la suite du TD, nous allons utiliser notre navigateur pour "inspecter" notre page internet.
-Pour cela nous conseillons Chrome ou Firefox. Appuyer sur la touche `F12`. Les
-outils de développement affichent deux parties bien distinctes, une dédie au
-HTML et l'autre...aux CSS.  Ces outils sont fabuleux pour apprendre comment se
-construit une page internet.
+Dans la suite du TD, nous allons utiliser notre navigateur pour "inspecter"
+notre page internet.  Pour cela nous conseillons Chrome ou Firefox. Appuyer sur
+la touche `F12`. Les outils de développement affichent deux parties bien
+distinctes, une dédiée au HTML et l'autre...aux CSS.  Ces outils sont fabuleux
+pour apprendre comment se construit une page internet.
 
-Il y a trois façons de s'interesser à un élément en particulier :
+Il y a trois façons de s'intéresser à un élément en particulier :
 
-* Un clic droit avec la souris dans la page affichée, suivi d'un "Inspecter/Examiner l'élément", permet de voir le code HTML correspondant dans l'outil de développement.
-* Un clic sur ![inspecteur]({{site.baseurl}}/assets/magnifying.png) dans l'outil de développement permet
-d'aller inspecter une zone d'interet dans la page (par survol avec la souris).
-* Quand on passe la souris au dessus d'un élément dans l'outil de développement, il le colore dans la page.
+* Un clic droit avec la souris dans la page affichée, suivi d'un
+  "Inspecter/Examiner l'élément", permet de voir le code HTML correspondant dans
+  l'outil de développement.
+* Un clic sur ![inspecteur]({{site.baseurl}}/assets/magnifying.png) dans l'outil
+de développement permet d'aller inspecter une zone d'intérêt dans la page (par
+survol avec la souris).
+* Quand on passe la souris au dessus d'un élément dans l'outil de développement,
+  il le colore dans la page.
 
-1. Familiarisez-vous avec ces trois techniques en inspectant la page du TD.
-Par exemple faite un clic droit sur l'élement "il y a trois façons..." puis "inspecter l'élement".
-L'outil de dévellopement doit vous présenter le code html et vous positionner directement sur `<p>Il y a `.
+1. Familiarisez-vous avec ces trois techniques en inspectant la page du TD.  Par
+exemple faite un clic droit sur l'élément "il y a trois façons..." puis
+"inspecter l'élément".  L'outil de développement doit vous présenter le code
+HTML et vous positionner directement sur `<p>Il y a `.
 
 
 <!-- Hé ! ceci est un commentaire HTML, vous n'êtes pas censé le voir, à moins que vous ne sachiez utiliser les outils de développeurs  ? -->
@@ -293,8 +298,8 @@ Pour insérer une image, on peut utiliser la balise
 
 Cette balise n'a pas de balise fermante car elle ne peut avoir de contenu
 (cf. [le début du TD](#transformation-dun-document-texte-en-un-document-html)).
-On remarque qu'elle possède deux "champs* `src` et `alt` que l'on appelle les
-*attributs* de la balise. Précédement, on avait vu une autre balise avec un
+On remarque qu'elle possède deux champs `src` et `alt` que l'on appelle les
+*attributs* de la balise. Précédemment, on avait vu une autre balise avec un
 attribut: `<meta>` avec l'attribut `charset`. Les attributs se trouvent toujours
 dans la balise ouvrante.
 
@@ -395,7 +400,7 @@ Les tables.
 La balise `<em>` permet de mettre en évidence des passages importants dans un
 texte. 
 
-1. Justement, il faut mettre en exerge le fait que Chuck Norris est très fort dans différents arts martiaux.
+1. Justement, il faut mettre en exergue le fait que Chuck Norris est très fort dans différents arts martiaux.
 Pour cela il faut mettre en emphase la phrase qui suit le commentaire : `<!-- mettre en emphase cette phrase -->` dans le fichier `index.html`.
 
 <!-- parler aussi de strong -->
