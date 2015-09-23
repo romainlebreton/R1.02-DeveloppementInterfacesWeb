@@ -90,12 +90,6 @@ Le cinéma
 			Il se remarie, en 1998, avec l'ancien mannequin Gena O'Kelley qui lui a donné des jumeaux en 2002 : Dakota Alan Norris, un garçon, et Danilee Kelly Norris, une fille.
 		<!--fin paragraphe -->
 
-<!--section -->
-		Search
-		<form id="search" >
-			<input type="text" name="search" maxlength="255" placeholder="tatanes" >
-			<button id="search_submit" type="submit">Search</button>
-		</form>
 
 <!--section -->
 		Les sites amis 
@@ -126,7 +120,7 @@ Le cinéma
 	
 
 
-<!-- lien interne qui permet de revenir par clic au début de la page avec des ancres -->
+<!-- lien interne qui permet de revenir par clic au début de la page avec des ancres et avec libellé "Retour au début" -->
  Retour au début
 		
 

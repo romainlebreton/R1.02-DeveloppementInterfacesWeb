@@ -9,7 +9,7 @@ aussi appelées pages statiques (Web 1.0). Une telle page Web contient deux
 partie :
 
 1. **HTML** : Le fichier HTML contient la structure de la page et son contenu ;
-En plus du texte brut, il donne du sens au texte en indiquant ce qui relève
+en plus du texte brut, il donne du sens au texte en indiquant ce qui relève
 d'un paragraphe, d'un titre, *etc*, à l'aide de balises (exemple `<p>`,
 `<title>`,...);
 
@@ -29,21 +29,6 @@ Nous allons tout d'abord nous consacrer à préciser la structure (le HTML donc)
 que l'on peut ajouter à notre contenu brut. Nous verrons ensuite dans la
 [deuxième partie du TD](tutorial2.html) comment atteindre le rendu proposé par
 [target.png]({{site.baseurl}}/assets/target.png) en réalisant un fichier CSS.
-
-<!--
-utilisons pour consulter les documents disponibles sur le World Wide Web (on
-cite principalement Chrome, Firefox et Internet Explorer/Edge).  Il sert
-principalement à visualiser via un moteur de rendu des sites dont le contenu est
-obtenu par le protocole HTTP.
-
-Internet =/ WWW
-
-  Il s'agit de pages dont le contenu est déjà connu et stocké
-sous forme de fichier HTML (par exemple, une base encyclopédique) et que
-l'utilisateur va consulter.  Il peut s'agir plus généralement de votre site
-internet à vous ou d'un petit site de fan qui n'a pas vocation à être modifier
-tous les jours.
--->
 
 
 ## Transformation d'un document texte en un document HTML
@@ -81,12 +66,6 @@ cet aspect.
 2. Sauvegardez ce fichier en local en le renommant `index.html`. Ouvrir le
 fichier dans un navigateur. Quelles différences observez-vous ?
 
-   <!-- 3. Saut de ligne et commentaires HTML mangées -->
-
-
-3. Rajoutez votre première balise : Écrivez un titre au document et entourez-le
-   des balises ouvrantes `<h1>` et fermant `</h1>` pour signifier que c'est bien
-   un titre.
   
 3. Notre document `index.html` est bien interprété comme un document HTML par le
 navigateur. Cependant que se passe-t-il lorsque l'on teste sa conformité au
@@ -114,7 +93,7 @@ même.
    
    au tout début du fichier. **Retestez** la conformité de votre document.
 
-1. Le validateur nous indique **The character encoding was not declared**.
+5. Le validateur nous indique **The character encoding was not declared**.
 Spécifier l'encodage des caractères est nécessaire pour que les caractères
 spéciaux (accents, œ, ...) de votre page soient bien affichés. Dans notre cas,
 nous utiliserons toujours l'encodage UTF-8.  
@@ -131,47 +110,19 @@ nous utiliserons toujours l'encodage UTF-8.
      du caractère **é** en UTF-8 correspond à **Ã©** en `iso-8859-15` (encodage
      encore très utilisé dans Windows).
 	 
-4. La dernière erreur nous parle d'un élément `head` auquel il manque un `title`.
-Corrigez votre page Web en insérant un titre après le `<meta>`.
-
-   ~~~
-   <title>Le site non officiel de Chuck Norris</title>
-   ~~~
-   {:.html}
-
-À ce stade, le validateur indique que le fichier `index.html` est un document
-HTML5 valide.
-
+La dernière erreur nous parle d'un élément `head` auquel il manque un `title`.
+Nous allons corriger cela dans la section suivante.
 
 ## Structure standard d'un document HTML
 
-Nous allons utiliser notre navigateur pour "inspecter" notre page internet.
-Pour cela nous conseillons Chrome ou Firefox. Appuyer sur la touche `F12`. Les
-outils de développement affichent deux parties bien distinctes, une dédie au
-HTML et l'autre...aux CSS.  Ces outils sont fabuleux pour apprendre comment se
-construit une page internet.
-
-Il y a trois façons de passer de la page affichée à son code HTML dans les outils :
-
-* Un clic droit avec la souris dans la page affichée, suivi d'un "Examiner l'élément", permet de voir le code HTML correspondant.
-* Alternativement, un clic sur
-![inspecteur]({{site.baseurl}}/assets/magnifying.png) (dans Chrome) permet
-d'inspecter l'affichage.
-* Quand on passe la souris au dessus d'un élément du code HTML dans les outils,
-  il le colore dans l'affichage.
-
-1. Familiarisez-vous avec ces trois techniques en inspectant la page du TD.
-2. Inspectez le code HTML de votre page `index.html`. Quelles différences
-remarquez-vous avec votre code source ?
-
-Comme vous l'avez constaté, des balises `<html>`, `<head>` et `<body>` ont été rajoutées. En fait, même si ces balises sont optionnelles, la bonne structure d'une page HTML est :
+La bonne structure d'une page HTML est :
 
 ~~~
 <!DOCTYPE html>
 <html>
     <head>
         <!-- L'en-tête du document avec au moins un titre -->
-        <title>Un titre qui s'affiche tout en haut</title>
+        <title>Un titre qui s'affiche dans l'onglet du navigateur</title>
     </head>
     <body>
 	   <!-- Le corps du document -->
@@ -224,8 +175,27 @@ ci-dessus. (Vous devez rajouter les balises `<html>`, `<head>` et `<body>`)
 </div>
 
 
+## Outil de développements Web
 
-<!-- parle-t-on des attributs des balises ? -->
+Dans la suite du TD, nous allons utiliser notre navigateur pour "inspecter" notre page internet.
+Pour cela nous conseillons Chrome ou Firefox. Appuyer sur la touche `F12`. Les
+outils de développement affichent deux parties bien distinctes, une dédie au
+HTML et l'autre...aux CSS.  Ces outils sont fabuleux pour apprendre comment se
+construit une page internet.
+
+Il y a trois façons de s'interesser à un élément en particulier :
+
+* Un clic droit avec la souris dans la page affichée, suivi d'un "Inspecter/Examiner l'élément", permet de voir le code HTML correspondant dans l'outil de développement.
+* Un clic sur ![inspecteur]({{site.baseurl}}/assets/magnifying.png) dans l'outil de développement permet
+d'aller inspecter une zone d'interet dans la page (par survol avec la souris).
+* Quand on passe la souris au dessus d'un élément dans l'outil de développement, il le colore dans la page.
+
+1. Familiarisez-vous avec ces trois techniques en inspectant la page du TD.
+Par exemple faite un clic droit sur l'élement "il y a trois façons..." puis "inspecter l'élement".
+L'outil de dévellopement doit vous présenter le code html et vous positionner directement sur `<p>Il y a `.
+
+
+<!-- Hé ! ceci est un commentaire HTML, vous n'êtes pas censé le voir, à moins que vous ne sachiez utiliser les outils de développeurs  ? -->
 
 ## Les Commentaires en HTML
 
