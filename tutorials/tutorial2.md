@@ -16,11 +16,11 @@ Les standards définissant le CSS sont publiés par le World Wide Web Consortium
 
 Le CSS est responsable du rendu du site sur votre écran, mais aussi sur un
 smartphone et des impressions papier (des ensembles de règles CSS peuvent être
-spécifiés pour chacun de ces média).
+spécifiés pour chacun de ces médias).
 
 
 Bien que l'acronyme signifie donc **des** feuilles de style, on parlera
-**du** CSS (le langage utilisé ou le mécanisme), mais on fera pas les pédants
+**du** CSS (le langage utilisé ou le mécanisme), mais on ne fera pas les pédants
 tant les deux sont confondus à l'usage (l'usage fait très souvent loi lorsque
 l'on fait du CSS !).
 
@@ -38,7 +38,7 @@ Dans le fichier `index.html`, il faut ajouter la ligne suivante dans l'en-tête 
 document HTML (dans la partie `head`) :
 
 ~~~
-<link rel=‘stylesheet’ type=‘text/css’ href=‘css/styles.css’>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 ~~~
 {:.html}
 
@@ -50,16 +50,15 @@ Une règle CSS est composée de deux parties:
  * un sélecteur CSS,
  * un bloc de déclaration.
 
-Par exemple la règle CSS suivante donne à tous les div la hauteur de 200 pixels
-et définie comme couleur de fond le bleu :
+Par exemple la règle CSS suivante donne à tous les `h3` le style italique et défini comme couleur de texte le bleu : 
 
 ~~~
-div { height:200px;background-color:blue;}
+h3 {  font-style:italic;color:blue;}
 ~~~
 {:.css}
 
- * le sélecteur est `div`,
- * le bloc de déclaration est `height:200px;background-color:blue;`.
+ * le sélecteur est `h3`,
+ * le bloc de déclaration est `font-style:italic;color:blue;`.
 
 
  Nous allons plus amplement présenter quelques blocs de
@@ -79,7 +78,7 @@ n'importe quoi.
 
 ## Commentaires
 
-En CSS, seul les commentaires avec `/*` et `*/` sont autorisés.  Si vous
+En CSS, seuls les commentaires avec `/*` et `*/` sont autorisés.  Si vous
 utilisez `//` dans votre fichier `styles.css` vous allez avoir des problèmes
 (les règles CSS suivantes ne seront pas appliquées).
 
@@ -109,7 +108,7 @@ suivant :
 ![Symétrie des 16 couleurs]({{site.baseurl}}/assets/HSL14colors.png).
 </div>
 
-Le CSS3 les a completés par 147 mots clés de couleurs que vous pouvez retrouver
+Le CSS3 les a complétés par 147 mots-clés de couleurs que vous pouvez retrouver
 à l'adresse
 [http://www.w3.org/TR/css3-color/#svg-color](http://www.w3.org/TR/css3-color/#svg-color).
 
@@ -135,7 +134,7 @@ correspond souvent avec les pixels physiques de l'écran mais avec certaines
 subtilités. Premièrement, les navigateurs actuels permettent de zoomer, ce qui a
 pour effet d'afficher un "pixel CSS" sur plusieurs pixels. Deuxièmement,
 certains médias comme l'imprimante ne disposent pas de pixels ; le pixel CSS est
-alors définie comme une échelle permettant une bonne lisibilité sur le média.  
+alors défini comme une échelle permettant une bonne lisibilité sur le média.  
 Pour plus de détails sur ce qu'est cette unité :
 [http://www.w3.org/TR/css3-values/#absolute-lengths](http://www.w3.org/TR/css3-values/#absolute-lengths)
 
@@ -281,7 +280,7 @@ des paragraphes de texte :
    Si l'on donne un pourcentage comme valeur de `text-indent`, celui-ci est
    compris comme un pourcentage de la largeur de l'élément parent.
 
-## Les Sélecteurs CSS de base
+## Les sélecteurs CSS de base
 
 Les sélecteurs CSS permettent de préciser les éléments qui vont être impactés
 par la règle CSS.  Ils sont aussi utilisés sur d'autres problématiques du
@@ -306,7 +305,7 @@ est unique pour toute la page HTML. Un élément peut avoir plusieurs classes
 comme dans l'exemple précédent et ces classes sont faites pour être attribuées à
 de multiples éléments de la page.
 
-Les classes, identifiant et types permettent de construire 95 % des sélecteurs
+Les classes, identifiant et le type des balises permettent de construire 95 % des sélecteurs
 CSS de base. Voyons la syntaxe pour les utiliser.
 
 ### Les sélecteurs de balises
@@ -358,11 +357,12 @@ couleur des codes, la marge des blocs de codes, la taille de la police, ...
 Tout va principalement se passer dans `styles.css`.
 
 1. **Couleurs :** Le fond de notre page est tout blanc par défaut. Nous allons
-changer cela en donner au body la couleur qu'à choisi le graphiste / Web-designer :
+changer cela en donner au `<body>` la couleur qu'à choisi le graphiste / Web-designer :
 `#838892`.  
-   En ce qui concerne les paragraphes, vous avez reçu comme consigne d'alterner leurs couleurs entre #5BBDBF et #FF5850.
+2. Conformément à la maquette du designer [target.png]({{site.baseurl}}/assets/target.png), il faut alterner comme couleurs de fonds pour les titres des sections les valeurs #5BBDBF et #FF5850.
+Pour cela il nous faudra rajouter une classe "pair" et "impair" aux elements `h2` et `h3` et leurs associés le style adéquat dans styles.css.
 
-2. **Dimensions :** Plusieurs études (cf.
+2. **Dimensions :** plusieurs études (cf.
 [1](https://viget.com/inspire/the-line-length-misconception) et
 [2](https://en.wikipedia.org/wiki/Line_length) ) suggèrent que des lignes trop
 longues ou trop courtes nuisent gravement à la lisibilité d'un site. Pour
@@ -384,20 +384,19 @@ limitez sa hauteur à 300px.
    Pas abordé !!!
    -->
 
-3. **Fontes :**
+4. Les titres des sections doivent avoir leur texte centré.
 
-   ~~~
-   p { font-family: "lucida calligraphy", "Arial", "sans-serif"; }
-   ~~~
-   {:.css}
+5. le texte doit être aéré : utiliser une hauteur de ligne de 150%.
 
-   **Allez chercher une fonte de votre choix sur www.???.com et appliquez-la au
-   titre `<h1>` en n'oubliant pas de mettre des fontes en *fall-back* (fonte de
-   recours ?).**
+6. Chaque paragraphe doit être indenté de 5px.
+
+3. Allez chercher une fonte de votre choix sur http://www.fontsquirrel.com/ et appliquez-la aux
+   titres de section `<h2>` en n'oubliant pas de mettre des fontes en *fall-back* (fonte de
+   recours ).
 
 5. On veut mettre en avant les innombrables arts martiaux que maîtrise Chuck
    Norris. Pour ce faire, on va entourer chacun de ces arts martiaux (Taekwondo,
-   Ju-jitsu, ...) d'une balise `<span>` avec la classe `skill` dans le fichier
+   Ju-Jitsu, ...) d'une balise `<span>` avec la classe `skill` dans le fichier
    HTML. D'un autre côté, il faut créer dans le CSS la règle qui associe à la
    classe `skill` la mise en page suivante : texte en rouge et en italique (ou
    ce qui vous fait plaisir).
