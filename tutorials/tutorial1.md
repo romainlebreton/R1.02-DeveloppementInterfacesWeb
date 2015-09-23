@@ -6,7 +6,7 @@ layout: tutorial
 
 Le but de ce TD est de comprendre comment sont écrites les pages Web basiques,
 aussi appelées pages statiques (Web 1.0). Une telle page Web contient deux
-partie :
+parties :
 
 1. **HTML** : Le fichier HTML contient la structure de la page et son contenu ;
 en plus du texte brut, il donne du sens au texte en indiquant ce qui relève
@@ -19,7 +19,7 @@ d'un paragraphe, d'un titre, *etc*, à l'aide de balises (exemple `<p>`,
 
 Le navigateur (Firefox, Chrome, Safari, IE/Edge, ...) est le logiciel qui nous
 permet de visualiser les pages Web. Le but de ce TD est de démystifier la façon
-dont est interprétée ces deux types de fichiers par le navigateur.
+dont sont interprétés ces deux types de fichiers par le navigateur.
 Pour cela nous allons réaliser un site dont le rendu correspond au fichier
 [target.png]({{site.baseurl}}/assets/target.png), en partant du fichier
 [index.txt]({{site.baseurl}}/assets/index.txt), qui contient le contenu quasiment
@@ -58,7 +58,7 @@ La balise 'br' du saut de ligne ne prend pas de contenu <br>
 Nous allons commencer par des balises un peu particulières, car elles sont de
 type "meta", elles sont plus là pour que le navigateur et le serveur s'entendent
 bien lors des transferts. Par exemple nous préciserons l'encodage des fichiers,
-le doctype,...  Cela n'est pas très passionnant et nous resterons succinct sur
+le doctype,...  Cela n'est pas très passionnant et nous resterons succincts sur
 cet aspect.
 
 1. Ouvrez le fichier [index.txt]({{site.baseurl}}/assets/index.txt) dans le navigateur.
@@ -191,7 +191,7 @@ Il y a trois façons de s'intéresser à un élément en particulier :
 * Un clic sur ![inspecteur]({{site.baseurl}}/assets/magnifying.png) dans l'outil
 de développement permet d'aller inspecter une zone d'intérêt dans la page (par
 survol avec la souris).
-* Quand on passe la souris au dessus d'un élément dans l'outil de développement,
+* Quand on passe la souris au-dessus d'un élément dans l'outil de développement,
   il le colore dans la page.
 
 1. Familiarisez-vous avec ces trois techniques en inspectant la page du TD.  Par
@@ -206,8 +206,8 @@ HTML et vous positionner directement sur `<p>Il y a `.
 
 Il est possible de rajouter des commentaires dans le HTML. Ces commentaires ne
 sont pas interprétés par le navigateur, et ne sont donc pas affichés (mais ils
-restent présent dans le code source).  Il s'agit donc d'informations laissées par
-des développeurs pour des développeurs. On les places entre les balises `<!--`
+restent présents dans le code source).  Il s'agit donc d'informations laissées par
+des développeurs pour des développeurs. On les place entre les balises `<!--`
 et `-->` :
 
 
@@ -230,7 +230,7 @@ sections :
 * `<h3>` est utilisé pour les sous-sections du document et ainsi de suite.
 
 Si vous cherchez un bon exemple d'utilisation de balises `<h2>`, inspectez le
-titre **Titres** juste au dessus en faisant un clic droit dessus.
+titre **Titres** juste au-dessus en faisant un clic droit dessus.
 
 
 1. Ajoutez la balise `<h2>` aux éléments de `index.html` marqués par les commentaires : `<!-- section -->`.
@@ -330,7 +330,7 @@ ici -->` par la balise `<img>` suivante
 
 ### Liens externes
 
-L'un des éléments les plus emblématique du HTML est sans doute la balise
+L'un des éléments les plus emblématiques du HTML est sans doute la balise
 `<a>`. Elle permet de faire des liens hypertextes (le HT dans HTML).
 
 Un lien est composé principalement d'une URL cible et d'un libellé (le texte
@@ -342,7 +342,7 @@ cliquable souvent souligné en bleu):
 {:.html}
 
 On peut renseigner l'URL complète de la
-cible (URL en chemin absolue):
+cible (URL en chemin absolu):
 
 ~~~
 <a href="http://lynx.browser.org/">Lynx</a>
@@ -412,7 +412,7 @@ Un biscuit ça n'a pas de 'spirit', c'est juste un biscuit.
 Mais avant c'était du lait, des oeufs. Et dans les oeufs, il 
 y a la vie potentielle. 
 
-<cite>Jean Claude Van Damme</cite>
+<cite>Jean-Claude Van Damme</cite>
 </blockquote>
 
 Les citations permettent d'identifier un court texte sur lequel on veut attirer l'attention.
@@ -429,11 +429,11 @@ Nous savons ajouter de la structure à une page HTML avec les balises spécifiqu
 
 
 Une remarque peut être informulée de votre part : mais pourquoi le fait de
-rajouter `<h1>` a mon titre change effectivement l'apparence des titres ? cela
+rajouter `<h1>` à un titre change effectivement l'apparence des titres ? cela
 n'est pas à la charge du CSS justement ?  Les navigateurs appliquent des CSS par
 défaut associés aux balises HTML (exemple : par convention les liens <a> sont en
 bleus et soulignés sans que l'on est rien à faire).  Cela évite d'avoir
-justement TOUT à refaire en CSS : des styles par défauts sont proposés.  Dans le
+justement TOUT à refaire en CSS : des styles par défaut sont proposés.  Dans le
 [TD suivant](tutorial2.html) nous verrons comment améliorer l'aspect du site.
 
 <!-- Dans le devtools, elles s'appelent user agent rules -->
