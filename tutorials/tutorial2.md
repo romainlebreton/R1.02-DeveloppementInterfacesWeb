@@ -50,7 +50,8 @@ Une règle CSS est composée de deux parties:
  * un sélecteur CSS,
  * un bloc de déclaration.
 
-Par exemple la règle CSS suivante donne à tous les div la hauteur de 200 pixels et définie comme couleur de fond le bleu : 
+Par exemple la règle CSS suivante donne à tous les div la hauteur de 200 pixels
+et définie comme couleur de fond le bleu :
 
 ~~~
 div { height:200px;background-color:blue;}
@@ -186,52 +187,99 @@ Les dimensions sont utilisées sur différentes parties d'un élément.
 
 ### Fontes
 
-<!-- font family @font-face
-font-size
-font-style normal Distinguishes between normal, italic, and oblique faces
-font-weight normal Distinguishes between various weights (e.g., bold)
-font-variant normal Distinguishes between a staggeringly wide range of potential variant faces (e.g.,
-small-caps); in most ways, a more “CSS-like” version of font-feature-
-settings
+Nous allons lister ici les propriétés les plus utilisées sur les fontes :
 
-toutes regroupés dans la propriété font :
--->
+1. **`font-family` :** Cette propriété permet de choisir la fonte que vous
+   souhaitez utiliser. Exemple :
 
-**Référence :** [http://www.w3.org/TR/CSS21/fonts.html](http://www.w3.org/TR/CSS21/fonts.html)
+   ~~~
+   font-family: "Lucida Sans Unicode", "Arial", "sans-serif";
+   ~~~
+   {:.css}
 
-**La propriété font-family**
+   **Important :** Les deux dernières fontes précisées par la règle sont des
+fontes de secours (fallback) : elles seront utilisées si et seulement si les
+précédentes ne sont pas disponibles sur le navigateur. Quelques fontes
+classiques sont répertoriées sur
+[http://www.w3schools.com/cssref/css_websafe_fonts.asp](http://www.w3schools.com/cssref/css_websafe_fonts.asp).
 
-Rajouter maintenant la règle suivante :
+1. **`font-size` :** Cette propriété permet de définir la taille de la police. Exemple :
+
+   ~~~
+   font-size:12px;
+   ~~~
+   {:.css}
+
+1. **`font-weight` :** Cette propriété permet de passer en mode **gras**. Exemple :
+
+   ~~~
+   font-weight:bold;
+   ~~~
+   {:.css}
+
+1. **`font-style` :** Cette propriété permet de définir le style de la fonte
+   (*i.e.* italique ou non). Exemple :
+
+   ~~~
+   font-style:italic;
+   ~~~
+   {:.css}
+
+
+**Référence :** [http://www.w3.org/TR/CSS21/fonts.html](http://www.w3.org/TR/CSS21/fonts.html) et [http://www.w3.org/TR/css-fonts-3/](http://www.w3.org/TR/css-fonts-3/).
+
+**Note optionnelle :** Vous pouvez associer à votre page Web de nouvelles fontes
+  à l'aide de la règle `@font-face`. Exemple :
 
 ~~~
-p { font-family: "lucida calligraphy", "Arial", "sans-serif"; }
-~~~
-{:.css}
-
-Les deux dernières fontes précisées par la règle sont des "fall-back" : elles
-seront utilisées si et seulement si les précédentes ne sont pas disponibles sur
-le navigateur.
-
-<!-- Quelles sont les fontes par défaut de la plupart des navigateurs ?  Dire
-qu'on trouve facilement des fontes sur internet et qu'on peut les lier à ces
-CSS. On l'expliquera plus tard dans une note séparée -->
-
-**La propriété font-size**
-
-Utiliser la propriété font-size pour changer la taille de la citation.
-
-### Textes
-
-Tester la règle ci-dessous :
-
-~~~
-p {
-  text-align: justify ;
+@font-face {
+    font-family: myFont;
+    src: url(path/to/font/font.otf);
 }
 ~~~
 {:.css}
 
-<!-- lister les règles similaires et choisir desquelles on souhaite parler -->
+Si vous souhaitez en savoir plus, allez sur
+[https://developer.mozilla.org/fr/docs/Web/CSS/@font-face](https://developer.mozilla.org/fr/docs/Web/CSS/@font-face). Voici
+deux sites pratiques pour télécharger de nouvelles fontes : 
+[http://www.1001fonts.com](http://www.1001fonts.com) et 
+[http://www.fontsquirrel.com](http://www.fontsquirrel.com).
+
+### Textes
+
+Nous allons lister ici les propriétés les plus utilisées concernant l'affichage
+des paragraphes de texte :
+
+1. **`text-align` :** Cette propriété affecte l'alignement des lignes de texte. Exemple :
+
+   ~~~
+   text-align:center; \* ou left, right, justify *\
+   ~~~
+   {:.css}
+   
+   Pour rappel, un paragraphe justifié est un paragraphe où les lignes s'arrêtent à
+   la marge à droite et à gauche.
+
+1. **`line-height` :** Cette propriété permet d'espacer vertivalement les lignes
+   de texte. Exemple :
+
+   ~~~
+   line-height:150%;
+   ~~~
+   {:.css}
+   
+1. **`text-indent` :** Cette propriété indente la première ligne du texte,
+   c'est-à-dire qu'elle la décale horizontaliement. Exemple :
+
+   ~~~
+   text-indent:12px;
+   ~~~
+   {:.css}
+
+   <!--  text-indent:1em; serait plus naturel -->
+
+   Si l'on donne un pourcentage comme valeur de `text-indent`, celui-ci est
+   compris comme un pourcentage de la largeur de l'élément parent.
 
 ## Les Sélecteurs CSS de base
 
@@ -262,8 +310,6 @@ Les classes, identifiant et types permettent de construire 95 % des sélecteurs
 CSS de base. Voyons la syntaxe pour les utiliser.
 
 ### Les sélecteurs de balises
-
-<!-- Eric : pourquoi tu les appelles types ? -->
 
 Il s'agit juste d'utiliser le nom de la balise (`a`, `p`, `img`,...) sans autre
 décorateur. Si on veut donner la couleur rose à tous les liens d'une page, il
@@ -349,10 +395,20 @@ limitez sa hauteur à 300px.
    titre `<h1>` en n'oubliant pas de mettre des fontes en *fall-back* (fonte de
    recours ?).**
 
-4. **Liens visités :** Faire en sorte que les liens visités apparaissent en
-gris. Lorsque la souris passe sur un lien, donner lui la couleur orange (sauf
-s'il a déjà été visité, auquel cas il reste en gris).
- <!-- Attention -->**On n'a pas parlé des :visited :hover ...
+5. On veut mettre en avant les innombrables arts martiaux que maîtrise Chuck
+   Norris. Pour ce faire, on va entourer chacun de ces arts martiaux (Taekwondo,
+   Ju-jitsu, ...) d'une balise `<span>` avec la classe `skill` dans le fichier
+   HTML. D'un autre côté, il faut créer dans le CSS la règle qui associe à la
+   classe `skill` la mise en page suivante : texte en rouge et en italique (ou
+   ce qui vous fait plaisir).
+
+<!--
+Exercices avec les fontes ou le texte (text-align, line-height, text-indent) ?
+-->
+
+<!--
+Bord rond : sans encore parler de box model
+-->
 
 ## CSS et HTML des rôles bien distincts et complémentaires
 

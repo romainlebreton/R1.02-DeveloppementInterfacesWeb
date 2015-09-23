@@ -8,6 +8,15 @@ layout: tutorial
 <!-- modèle de boite + auto -->
 
 
+Exercice :
+
+4. **Liens visités :** Faire en sorte que les liens visités apparaissent en
+gris. Lorsque la souris passe sur un lien, donner lui la couleur orange (sauf
+s'il a déjà été visité, auquel cas il reste en gris).
+ <!-- Attention -->**On n'a pas parlé des :visited :hover ...
+
+-------------------
+
 La suite et fin des sélecteurs
 
 ### Règles de compositions, Sélecteurs complexes
