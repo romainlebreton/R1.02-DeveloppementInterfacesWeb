@@ -74,6 +74,8 @@ indiquées ?
    [à sa spécification](http://www.w3.org/TR/html5/). Ce document est très technique
    mais complet.
 
+<!-- un autre validateur est https://html5.validator.nu/ -->
+
 4. Commençons par l'erreur **Unable to Determine Parse Mode!**. La validateur
 veut vous dire qu'il ne sait pas dans quel langage est écrit votre document. Il
 existe plusieurs standards de "langages HTML" : HTML4, XHTML, HTML5,
@@ -183,6 +185,7 @@ l'arbre est le suivant :
 ci-dessus. (Vous devez rajouter les balises `<html>`, `<head>` et `<body>`)
 </div>
 
+<!-- Explication orale sur l'importance de la validation : standard, uniformité -->
 
 ## Outil de développements Web
 
@@ -294,7 +297,8 @@ Ce qui donne une fois interprété par le moteur de rendu du navigateur :
 (Ne vous souciez pas encore des commentaires `<!-- lien externe -->`)
 2. Utiliser les balises `<ol>` et `<li>` pour structurer la liste numérotée
    `<!--liste numérotée -->` dans `index.html`.
-
+3. Pensez à valider régulièrement votre page pour la vérifier. Rappel : adresse
+   du validateur [https://validator.w3.org/nu/](https://validator.w3.org/nu/).
 
 ## Image : un exemple d'élément embarqué
 
@@ -384,7 +388,7 @@ alors faire un lien vers cette balise en rajoutant `#un_identifiant` à la fin
 de l'URL. Exemple :
 
 ~~~
-<a href="http://fr.wikipedia.org/wiki/HTML#ancre">les ancres</a>
+<a href="https://fr.wikibooks.org/wiki/Le_langage_HTML/Liens#Liens_vers_une_ancre">les ancres</a>
 ~~~
 {:.html}
 
@@ -428,9 +432,16 @@ y a la vie potentielle.
 Les citations permettent d'identifier un court texte sur lequel on veut attirer l'attention.
 Cela est utilisé notamment pour montrer qu'on a du 'spirit'.
 
-1. Utiliser la balise `blockquote` et `<cite>` pour mettre en avant la citation en tout début de document (rechercher `<!-- utiliser blockquote ici  -->`).
+1. Allez voir le code source de notre citation à l'aide des outils de
+développement. Quels sont les deux balises utilisées ?
+<!-- `<blockquote>` et `<cite>` -->
 
+1. La première balise entoure la citation complète tandis que la deuxième
+   contient uniquement la référence. Utilisez ces deux balises pour mettre en
+   avant la citation en tout début de document (rechercher `<!-- utiliser
+   blockquote ici -->`).
 
+2. Avez-vous vérifié tout au long du TD que votre page HTML reste valide ?
 
 ## Fini !
 
@@ -454,3 +465,15 @@ span
 div
 table
 -->
+
+<!--
+Questions complémentaires :
+- em et exemple avec marge de taille différentes à cause d'une taille de fonte parente différente
+- comprendre les subtilités de px
+- favicon
+- background image (il m'a fait une valeur cover qui étire l'image)
+- bord rond
+- inclusion de mp3
+<audio controls="controls><source ..> texte alternatif ..
+-->
+

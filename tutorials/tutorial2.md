@@ -5,13 +5,14 @@ layout: tutorial
 ---
 
 Les standards définissant le CSS sont publiés par le World Wide Web Consortium
-(<a href="http://www.w3.org/">W3C</a>).
+(<a href="http://www.w3.org/">W3C</a>) à l'adresse
+[http://www.w3.org/Style/CSS/](http://www.w3.org/Style/CSS/).
 
 <!-- lien pour HTML et compléter le lien pour CSS -->
 
 
-> <i>Cascading Style Sheets (CSS) est un mécanisme simple pour ajouter du style
-> (exemple fonte, couleurs, espace) à un document web.</i>  
+> Cascading Style Sheets (CSS) est un mécanisme simple pour ajouter du style
+> (exemple fonte, couleurs, espace) à un document web.  
 > <cite><a href="http://www.w3.org/Style/CSS/">W3C</a></cite>
 
 Le CSS est responsable du rendu du site sur votre écran, mais aussi sur un
@@ -397,9 +398,10 @@ limitez sa hauteur à `300px`.
 6. Chaque paragraphe doit être indenté de `5px`.
 
 3. Allez chercher une fonte de votre choix sur
-   [http://www.fontsquirrel.com](http://www.fontsquirrel.com) et appliquez-la
-   aux titres de section `<h2>` en n'oubliant pas de mettre des fontes en
-   *fallback* (fonte de recours).
+   [http://www.fontsquirrel.com](http://www.fontsquirrel.com). Liez-là à votre
+   document avec la règle `@font-face`. Appliquez-la aux titres de section
+   `<h2>` en n'oubliant pas de mettre des fontes en *fallback* (fonte de
+   recours).
 
 5. On veut mettre en avant les innombrables arts martiaux que maîtrise Chuck
    Norris. Pour ce faire, on va entourer chacun de ces arts martiaux (Taekwondo,
@@ -407,6 +409,10 @@ limitez sa hauteur à `300px`.
    HTML. D'un autre côté, il faut créer dans le CSS la règle qui associe à la
    classe `skill` la mise en page suivante : texte en rouge et en italique (ou
    ce qui vous fait plaisir).
+
+10. Le CSS est un standard au même titre que le HTML. Testez la conformité de
+    votre fichier CSS avec le validateur
+    [https://jigsaw.w3.org/css-validator](https://jigsaw.w3.org/css-validator).
 
 <!--
 Exercices avec les fontes ou le texte (text-align, line-height, text-indent) ?
