@@ -53,18 +53,14 @@ La balise 'br' du saut de ligne ne prend pas de contenu <br>
 ~~~
 {:.html}
 
-
-
-Nous allons commencer par des balises un peu particulières, car elles sont de
-type "meta", elles sont plus là pour que le navigateur et le serveur s'entendent
-bien lors des transferts. Par exemple nous préciserons l'encodage des fichiers,
-le doctype,...  Cela n'est pas très passionnant et nous resterons succincts sur
-cet aspect.
+Nous allons commencer par des balises un peu particulières qui sont là pour
+donner des informations sur le document.
 
 1. Ouvrez le fichier [index.txt]({{site.baseurl}}/assets/index.txt) dans le navigateur.
 
-2. Sauvegardez ce fichier en local en le renommant `index.html`. Ouvrir le
-fichier dans un navigateur. Quelles différences observez-vous ?
+2. Sauvegardez ce fichier en local dans un dossier `HTMLCSS/TD1/` en le
+renommant `index.html`. Ouvrir le fichier dans un navigateur. Quelles
+différences observez-vous ?
 
   
 3. Notre document `index.html` est bien interprété comme un document HTML par le
@@ -109,9 +105,22 @@ nous utiliserons toujours l'encodage UTF-8.
      .... Ceci est dû à une mauvaise détection de l'encodage. En effet, le code
      du caractère **é** en UTF-8 correspond à **Ã©** en `iso-8859-15` (encodage
      encore très utilisé dans Windows).
-	 
+
+4. La dernière erreur nous parle d'un élément `head` auquel il manque un `title`.
+Corrigez votre page Web en insérant un titre après le `<meta>`.
+
+   ~~~
+   <title>Le site non officiel de Chuck Norris</title>
+   ~~~
+   {:.html}
+
+À ce stade, le validateur indique que le fichier `index.html` est un document
+HTML5 valide.
+
+<!--
 La dernière erreur nous parle d'un élément `head` auquel il manque un `title`.
 Nous allons corriger cela dans la section suivante.
+-->
 
 ## Structure standard d'un document HTML
 
@@ -403,15 +412,16 @@ texte.
 1. Justement, il faut mettre en exergue le fait que Chuck Norris est très fort dans différents arts martiaux.
 Pour cela il faut mettre en emphase la phrase qui suit le commentaire : `<!-- mettre en emphase cette phrase -->` dans le fichier `index.html`.
 
-<!-- parler aussi de strong -->
+**Note :** Il existe un autre type d'emphase qui s'obtient avec la balise `<strong>`.
 
 ### Citation
+
+Voici un magnifique exemple de citation :
 
 <blockquote> 
 Un biscuit ça n'a pas de 'spirit', c'est juste un biscuit. 
 Mais avant c'était du lait, des oeufs. Et dans les oeufs, il 
-y a la vie potentielle. 
-
+y a la vie potentielle.  
 <cite>Jean-Claude Van Damme</cite>
 </blockquote>
 
@@ -431,7 +441,7 @@ Nous savons ajouter de la structure à une page HTML avec les balises spécifiqu
 Une remarque peut être informulée de votre part : mais pourquoi le fait de
 rajouter `<h1>` à un titre change effectivement l'apparence des titres ? cela
 n'est pas à la charge du CSS justement ?  Les navigateurs appliquent des CSS par
-défaut associés aux balises HTML (exemple : par convention les liens <a> sont en
+défaut associés aux balises HTML (exemple : par convention les liens `<a>` sont en
 bleus et soulignés sans que l'on est rien à faire).  Cela évite d'avoir
 justement TOUT à refaire en CSS : des styles par défaut sont proposés.  Dans le
 [TD suivant](tutorial2.html) nous verrons comment améliorer l'aspect du site.

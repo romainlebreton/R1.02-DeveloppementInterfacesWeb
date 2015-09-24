@@ -31,20 +31,6 @@ Web-designer).
 
 ## Tutoriel d'introduction
 
-Nous allons travailler principalement sur ce TD sur un fichier `styles.css`.
-Créer ce fichier à partir du fichier `index.html` dans le répertoire `css/`.
-
-Dans le fichier `index.html`, il faut ajouter la ligne suivante dans l'en-tête du
-document HTML (dans la partie `head`) :
-
-~~~
-<link rel="stylesheet" type="text/css" href="css/styles.css">
-~~~
-{:.html}
-
-
-Nous déclarerons dans ce fichier des règles CSS.
-
 Une règle CSS est composée de deux parties: 
 
  * un sélecteur CSS,
@@ -59,6 +45,23 @@ h3 {  font-style:italic;color:blue;}
 
  * le sélecteur est `h3`,
  * le bloc de déclaration est `font-style:italic;color:blue;`.
+
+Mettons en place nos règles CSS :
+
+1. Nous allons travailler principalement sur ce TD sur un fichier `styles.css`.
+Créer ce fichier à partir du fichier `index.html` dans le répertoire `css/`.
+Nous déclarerons dans ce fichier des règles CSS.
+
+2. Dans le fichier `index.html`, ajouter la ligne suivante dans l'en-tête du
+document HTML (dans la partie `head`) :
+
+   ~~~
+   <link rel="stylesheet" type="text/css" href="css/styles.css">
+   ~~~
+   {:.html}
+
+   Cette ligne permet de lier notre fichier de style CSS à la page Web. Il sera
+   donc chargé avec la page.
 
 
  Nous allons plus amplement présenter quelques blocs de
@@ -359,8 +362,11 @@ Tout va principalement se passer dans `styles.css`.
 1. **Couleurs :** Le fond de notre page est tout blanc par défaut. Nous allons
 changer cela en donner au `<body>` la couleur qu'à choisi le graphiste / Web-designer :
 `#838892`.  
-2. Conformément à la maquette du designer [target.png]({{site.baseurl}}/assets/target.png), il faut alterner comme couleurs de fonds pour les titres des sections les valeurs #5BBDBF et #FF5850.
-Pour cela il nous faudra rajouter une classe "pair" et "impair" aux elements `h2` et `h3` et leurs associés le style adéquat dans styles.css.
+2. Conformément à la maquette du designer
+[target.png]({{site.baseurl}}/assets/target.png), il faut alterner comme
+couleurs de fonds pour les titres des sections les valeurs `#5BBDBF` et `#FF5850`.
+Pour cela il nous faudra rajouter une classe "pair" et "impair" aux éléments
+`h2` et `h3` et leur associer le style adéquat dans styles.css.
 
 2. **Dimensions :** plusieurs études (cf.
 [1](https://viget.com/inspire/the-line-length-misconception) et
@@ -377,7 +383,7 @@ traiter grossièrement le problème, limitez la largeur de l'élément `<body>` 
 
 
 3. L'image `beware.jpg` a du style, mais elle prend un peu trop de place : 
-limitez sa hauteur à 300px.
+limitez sa hauteur à `300px`.
 
    <!--
    > H2 et H3 du padding et du border radius
@@ -386,13 +392,14 @@ limitez sa hauteur à 300px.
 
 4. Les titres des sections doivent avoir leur texte centré.
 
-5. le texte doit être aéré : utiliser une hauteur de ligne de 150%.
+5. le texte doit être aéré : utiliser une hauteur de ligne de `150%`.
 
-6. Chaque paragraphe doit être indenté de 5px.
+6. Chaque paragraphe doit être indenté de `5px`.
 
-3. Allez chercher une fonte de votre choix sur http://www.fontsquirrel.com/ et appliquez-la aux
-   titres de section `<h2>` en n'oubliant pas de mettre des fontes en *fall-back* (fonte de
-   recours ).
+3. Allez chercher une fonte de votre choix sur
+   [http://www.fontsquirrel.com](http://www.fontsquirrel.com) et appliquez-la
+   aux titres de section `<h2>` en n'oubliant pas de mettre des fontes en
+   *fallback* (fonte de recours).
 
 5. On veut mettre en avant les innombrables arts martiaux que maîtrise Chuck
    Norris. Pour ce faire, on va entourer chacun de ces arts martiaux (Taekwondo,
