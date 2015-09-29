@@ -181,3 +181,106 @@ ignore the universal selector
 </ul>
 
 
+# Ancien td 4 &ndash; Les tableaux en HTML
+
+Nous décidons de structurer le contenu de la première section du document
+(POST-BAC) à l'aide d'un tableau.
+
+Référence pour ce tp :
+[http://www.w3.org/html/wg/drafts/html/CR/tabular-data.html](http://www.w3.org/html/wg/drafts/html/CR/tabular-data.html)
+
+## Les éléments *table*, *tr*, et *td*
+
+Supprimez le contenu de la première section et remplacez-le par le code ci-dessous :
+
+~~~
+<table>
+   <tr>
+      <td>FAC</td>
+      <td>Licence</td>
+      <td>Informatique</td>
+      <td>L'institut Universitaire de Technologie permet aussi à ceux qui ont besoin d'aspect... semaines.</td>
+   </tr>
+   <tr>
+      <td>IUT</td>
+      <td>DUT</td>
+      <td>GEII</td>
+      <td>Le DUT Informatique est le diplôme... cette discipline.</td>
+   </tr>
+</table>
+~~~
+{:.html}
+
+Observez le résultat et trouvez un sens aux éléments HTML *table*, *tr* et *td*.
+
+Ecrivez une règle CSS pour faire apparaître les bords de chaque cellule en
+définissant à *solid* leur propriété *border-style*.
+
+## L'élément *th*
+
+Dans l'arborescence du document, un élément *th* doit être le fils d'un élément
+*tr*. Il représente une cellule en-tête (le titre d'une colonne ou le titre d'une
+ligne du tableau). Il peut être utilisé à la place d'un élément *td*.
+
+Ajoutez au tableau les titres de colonne **Composante, Diplôme, Spécialité** et **Le +
+du DUT Informatique**.
+
+## Les éléments *thead* et *tbody*
+
+Ajoutez la ligne suivante en dessous de la ligne de titre pour expliciter des
+titres de colonne :
+
+| Unité ou Institut | Universitaire | limités aux domaines voisins de l'informatique | avantages du DUT Informatique |
+
+Remarquez que les deux premières lignes constituent un groupement particulier
+dans ce tableau, mais qu'à moins de comprendre le sens du contenu des cellule,
+rien ne l'indique dans le document. Il est possible de spécifier en HTML cette
+structure en utilisant les éléments *thead*, *tbody* ou *tfoot*.
+
+Rattachez dans l'arborescence les deux premières lignes à un même élément *thead*
+et les deux autres à un élément *tbody*.
+
+Par défaut cette structuration n'a pas d'implication sur le rendu par le
+navigateur mais elle ajoute du sens à la structure.
+
+Définissez un fond gris pour la partie en-tête du tableau.
+
+## L'attribut rowspan
+
+Modifiez le tableau de la façon suivante où on ajoute un établissement non
+universitaire :
+
+
+Etablissement |	Composante | Diplôme | Spécialité |	Le + du DUT Informatique
+ | Unité, Institut, Section | | limités aux domaines voisins de l'informatique | 
+Université | FAC | Licence | Informatique | 
+Université | IUT | DUT | GEII | 
+Lycée | STS | BTS | SIO | 
+
+Il faudrait fusionner les deux cellules "Université" dans la première
+colonne. Supprimez pour cela la deuxième occurrence et définir l'attribut
+*rowspan* de la première avec la valeur 2.
+
+Vérifiez la validité.
+
+## L'attribut colspan
+
+Ajoutez une sixième ligne au tableau :
+
+Etablissement |	Composante | Diplôme | Spécialité |	Le + du DUT Informatique
+ | Unité, Institut, Section | | limités aux domaines voisins de l'informatique | 
+Université | FAC | Licence | Informatique | 
+Université | IUT | DUT | GEII | 
+Lycée | STS | BTS | SIO | 
+Ecole privée | sans objet | Bachelor | Informatique | Formation gratuite, diplôme Universitaire et National
+
+Utilisez l'attribut *colspan* pour fusionner les deux premières cellules de la
+dernière ligne en conservant uniquement le contenu de la première.
+
+Vérifiez la validité de votre document.
+
+## Pour les plus avancés
+
+1. Remplacez ce tableau par le tableau du document *etudes2_tableau.pdf*
+1. Avancez sur votre projet
+
