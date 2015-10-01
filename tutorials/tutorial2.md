@@ -401,7 +401,9 @@ limitez sa hauteur à `300px`.
    [http://www.fontsquirrel.com](http://www.fontsquirrel.com). Liez-là à votre
    document avec la règle `@font-face`. Appliquez-la aux titres de section
    `<h2>` en n'oubliant pas de mettre des fontes en *fallback* (fonte de
-   recours).
+   recours).  
+   **Attention :** Ne mettez pas d'espaces dans le nom de votre fonte, ou sinon
+   entourez-là avec des guillemets.
 
 5. On veut mettre en avant les innombrables arts martiaux que maîtrise Chuck
    Norris. Pour ce faire, on va entourer chacun de ces arts martiaux (Taekwondo,
