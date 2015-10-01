@@ -8,12 +8,58 @@ layout: tutorial
 <!-- modèle de boite + auto -->
 
 
-Exercice :
+## Exercice :
 
-4. **Liens visités :** Faire en sorte que les liens visités apparaissent en
-gris. Lorsque la souris passe sur un lien, donner lui la couleur orange (sauf
+
+### Ajouter dans le nav deux liens :
+Un qui pointe sur la page courante ("./index.html") et un qui pointe vers une page contact.html
+
+
+### Box:
+
+ * Centrer le body avec des margin auto
+
+
+
+### Position:
+
+ * Ajouter les icônes de réseaux sociaux toujours positionnées en bas à droite.
+
+
+
+### Float:
+
+ * Placer l'image de Chuck jeune à gauche du texte, 
+ * Placer l'image beware à droite du texte.
+
+### Table
+
+* Créer une table avec les sept noms de colonne suivants :
+
+```Acteurs, Karaté, Taekwondo, Judo, Chun Kuk Do, Tangsudo, Ju-jitsu```
+
+
+ Avec les six lignes suivantes (les nombres correspondent à la valeur de l'acteur dans l'art martial correspondant) :
+
+     * Chuck Norris, 5, 5, 5, 5, 5, 5
+     * Steven Seagal, 3, 5, 3, 2, 3, 5
+     * Bruce Lee, 5, 3, 3, 3, 4, 3
+     * Jean-Claude Van Damne, 5, 3, 3, 3, 4, 3
+     * Bolo Yeung, 2, 4, 4, 2, 5, 3
+     * Dolph Lundgren, 2, 4, 4, 2, 5, 3
+
+ * Ajouter la classe span "skill" au noms des arts martiaux.
+
+### Selecteurs Css.
+
+ 
+ * Ajouter une règle pour que coll span nowrap,
+ et la couleur noire aux skill (mais il ne faut pas que votre regle change le style des skill du texte)
+
+ * Faire en sorte que les liens visités apparaissent en
+gris. Lorsque la souris passe sur un lien, lui donner la couleur orange (sauf
 s'il a déjà été visité, auquel cas il reste en gris).
- <!-- Attention -->**On n'a pas parlé des :visited :hover ...
+ 
 
 -------------------
 
@@ -196,16 +242,16 @@ Supprimez le contenu de la première section et remplacez-le par le code ci-dess
 ~~~
 <table>
    <tr>
-      <td>FAC</td>
-      <td>Licence</td>
-      <td>Informatique</td>
-      <td>L'institut Universitaire de Technologie permet aussi à ceux qui ont besoin d'aspect... semaines.</td>
+      FAC</td>
+      Licence</td>
+      Informatique</td>
+      L'institut Universitaire de Technologie permet aussi à ceux qui ont besoin d'aspect... semaines.</td>
    </tr>
    <tr>
-      <td>IUT</td>
-      <td>DUT</td>
-      <td>GEII</td>
-      <td>Le DUT Informatique est le diplôme... cette discipline.</td>
+      IUT</td>
+      DUT</td>
+      GEII</td>
+      Le DUT Informatique est le diplôme... cette discipline.</td>
    </tr>
 </table>
 ~~~
