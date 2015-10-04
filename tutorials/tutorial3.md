@@ -33,14 +33,14 @@ Quelques exemples :
 * balises de structure :
 
    * `<div>` : cette balise est « neutre », à savoir qu'elle permet de distinguer
-une section qui ne revêt aucune signification particulière. A utiliser quand
+une section qui ne revêt aucune signification particulière. À utiliser quand
 aucune des autres balises de structure ne convient. Typiquement utilisé pour
 donner à la page sa structure visuelle à l'aide de règles CSS header : section
 contenant l'en-tête affiché de la page
    * `<nav>` : section contenant une série de liens hypertextes pour la navigation
      sur le site
    * `<main>` : section principale de la page, celle qui contient le contenu
-     spécifique à cette page. Cette balise ne peut-être présente dans une autre
+     spécifique à cette page. Cette balise ne peut être présente dans une autre
      balise présentée ici à l'exception de « div ». Elle n'est pas supportée par
      Internet Explorer <= 10 mais le support peut en être ajouté grâce à
      Javascript et en utilisant la règle css « main {display : block} ».
@@ -49,7 +49,7 @@ contenant l'en-tête affiché de la page
      page peut contenir plusieurs articles, dans le cas d'un blog par exemple,
      de commentaires, d'une page listant les publications récentes ...
    * `<aside>` : section contenant du matériel périphérique au contenu
-     principal. Cela peut-être par ex. une série de liens spécifique au document
+     principal. Cela peut-être par ex. une série de liens spécifiques au document
      principal, un bandeau de publicités …
    * `<footer>` : section contenant le pied de page.
    * `<section>` : une section non spécifique, ou une sous-section d'un article,
@@ -78,41 +78,41 @@ contenant l'en-tête affiché de la page
 
 Vous allez d'abord structurer logiquement le contenu du site à l'aide des balises de structure.
 
-1. Ajouter une balise header. Son contenu sera la citation du TD1 et une barre de navigation nav
-2. Ajouter une balise main et une balise article et aside
-3. Ajouter une balise « footer » qui continent le lien vers le retour au haud du site.
-4. Ajouter dans la balise nav deux liens :
+1. Ajouter une balise `<header>`. Son contenu sera la citation du TD1 et une barre de navigation `<nav>`,
+2. Ajouter une balise `<main>` et une balise `<article>` et `<aside>`,
+3. Ajouter une balise `<footer>` qui contient le lien vers le retour au début du site.
+4. Ajouter dans la balise `<nav>` deux liens :
 Un qui pointe sur la page courante ("./index.html") et un qui pointe vers une page contact.html
-5. Construire cette page contact.html au même niveau que index.html. Y ajouter l'adresse avec la balise `adress`
+5. Construire cette page contact.html au même niveau que index.html. Y ajouter l'adresse avec la balise `<adress>`
 Contenant  :
  * Email chuckn@caramail.com
- * IUT de Montpellier Sete
+ * IUT de Montpellier Sète
  * 99 avenue d'Occitanie
  * 34296 Montpellier Cedex 5
  Ainsi que l'image contanct.jpg pour bien illustrer que nous sommes à l'écoute.
 
 
-A ce point, le travail de division du site n'a pas encore de résultat visuel
+À ce point, le travail de division du site n'a pas encore de résultat visuel
 marquant. C'est avant tout un travail de structuration logique qui permet au
 navigateur, à un moteur de recherche de mieux comprendre votre page web.
-Nous verrons comment structurer la page dans les tds suivants, nous allons ajouter du style aux élément de la page courante.
+Nous verrons comment structurer la page dans les tds suivants, nous allons ajouter du style aux éléments de la page courante.
 
 
 # Table
 
-L'élement ```table``` correspond à une structuration récurrente des données, qui sert notamment à comparer des entitiés sur différentes caractéristiques.
+L'élément `<table>` correspond à une structuration récurrente des données, qui sert notamment à comparer des entités sur différentes caractéristiques.
 
-## Les éléments ```table```, ```tr```, et ```td```
+## Les éléments `<table>`, `<tr>`, et `<td>`
 
-L'élement ```table``` contient la table.
-La table est composée de ligne (l'élement ```td```) contenant des cellules (élément ```td```).
+L'élément `<table>` contient la table.
+La table est composée de ligne (l'élément `<td>`) contenant des cellules (élément `<td>`).
 
 
-## L'élément *th*
+## L'élément `<th>`
 
-Dans l'arborescence du document, un élément *th* doit être le fils d'un élément
-*tr*. Il représente une cellule en-tête (le titre d'une colonne ou le titre d'une
-ligne du tableau). Il peut être utilisé à la place d'un élément *td*.
+Dans l'arborescence du document, un élément `<th>` doit être le fils d'un élément
+`<tr>`. Il représente une cellule en-tête (le titre d'une colonne ou le titre d'une
+ligne du tableau). Il peut être utilisé à la place d'un élément `<td>`.
 
 Voici un squelette de table :
 
@@ -143,9 +143,9 @@ Voici un squelette de table :
 
 
 
-1. Créer une table avec les sept noms de colonne suivants :
-```Acteurs, Karaté, Taekwondo, Judo, Chun Kuk Do, Tangsudo, Ju-jitsu```
-1. Ajouter la classe span "skill" au noms des arts martiaux.
+1. Créer une table avec les sept noms de colonnes suivants :
+```Acteurs, Karaté, Taekwondo, Judo, Chun Kuk Do, Tangsudo, Ju-jitsu```. Les noms doivent être contenus dans des balises ```<span>```
+1. Ajouter la classe  "skill" aux ```<span>``` contenant les noms des arts martiaux.
 1. Ajouter les six lignes suivantes (les nombres correspondent à la valeur de l'acteur dans l'art martial correspondant) :
 
      * Chuck Norris, 5, 5, 5, 5, 5, 5
@@ -157,35 +157,35 @@ Voici un squelette de table :
 
 
 
-## Les éléments ```<thead>``` et ```<tbody>```
+## Les éléments `<thead>` et `<tbody>`
 
-Les éléments ```<thead>``` et ```<tbody>``` servent à séparer :
+Les éléments `<thead>` et `<tbody>` servent à définir plus explicitement la structure de notre table:
 
  * la définition des colonnes (```Acteurs, Karaté,```...) 
- *  les lignes (nos héros et leurs niveaux de compétences).
+ *  les lignes (nos héros et leurs niveaux de compétence).
 
 1. Ajouter ces balises pour englober ces deux parties (en oubliant pas pour se faire leurs balises fermantes ```</thead>``` et ```</tbody>```)
 
 
 ## Les attributs ```rowspan``` et ```colspan``` 
 
-Les attributs ```rowspan et colspan``` permettent de fusionner les cellules adjacentes :
+Les attributs ```rowspan``` et ```colspan``` permettent de fusionner les cellules adjacentes :
 
  * ```rowspan``` permet de fusionner les cellules sur plusieurs lignes (i.e rows),
  * ```collspan``` permet de fusionner les cellules sur plusieurs colonnes.
 
 
 
-1. Il apparaît que Chuck Norris est toujours au top (niveau 5) dans tous les martiaux. Fusionner les cellules representant ses valeurs de manières à 
+1. Il apparaît que Chuck Norris est toujours au top (niveau 5) dans tous les martiaux. Fusionner les cellules représentant ses valeurs de manières à 
 mettre cela encore plus en exergue.
 
 
-A ce stade la structure de votre table reflete le sens que vous vouliez y mettre.
+À ce stade la structure de votre table reflète le sens que vous vouliez y mettre.
 Nous verrons plus bas comment styliser cette table.
 
 
 
-# Les contenus flottants Float:
+# Les contenus flottant Float:
 
 Pour une balise de contenu, donc positionné en ligne, il est possible de spécifier pour un élément une position complètement à gauche ou à droite à l'aide de 
 la propriété float.
@@ -247,7 +247,7 @@ a:hover {text-decoration: underline;}
 
 http://www.w3.org/TR/css3-selectors/#combinators
 
-A partir des sélecteurs de bases précédents, il est possible de créer des sélecteurs complexes.
+À partir des sélecteurs de bases présentés [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html), il est possible de créer des sélecteurs complexes.
 Nous présentons dans la suite les sélecteurs qui sont utilisés en moyenne 95 % du temps.
 
 
@@ -382,12 +382,12 @@ ignore the universal selector
  1. Ajouter une règle pour que coll span nowrap,
  1.   et la couleur noire aux skill (mais il ne faut pas que votre regle change le style des skill du texte)
 
- 1. Ecrivez une règle CSS pour faire apparaître les bords de chaque cellule en
+ 1. Érivez une règle CSS pour faire apparaître les bords de chaque cellule en
    définissant à *solid* leur propriété *border-style*.
 
  1. Définissez une couleur de fond #00aaff pour la partie en-tête ```thead``` du tableau.
  1. il va falloir maintenant centrer le texte des cellules, sinon le 5 de Chuck est trop discret. Utiliser pour cela ```text-align```
- 1. Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages wikipedia.
+ 1. Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages Wikipedia.
  1. Faire en sorte que les liens visités apparaissent en
 gris. Lorsque la souris passe sur un lien, lui donner la couleur orange (sauf
 s'il a déjà été visité, auquel cas il reste en gris).
