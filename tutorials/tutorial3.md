@@ -74,7 +74,7 @@ contenant l'en-tête affiché de la page
    * `<sup>` : un exposant
    * `<time>` : mise en valeur d'une date
 
-## Mise en page
+## Structuration de la page
 
 Vous allez d'abord structurer logiquement le contenu du site à l'aide des balises de structure.
 
@@ -96,6 +96,173 @@ Contenant  :
 marquant. C'est avant tout un travail de structuration logique qui permet au
 navigateur, à un moteur de recherche de mieux comprendre votre page web.
 Nous verrons comment structurer la page dans les tds suivants, nous allons ajouter du style aux éléments de la page courante.
+
+
+## Règles de compositions des CSS
+
+
+À partir des sélecteurs de bases présentés [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html), il est possible de créer des [sélecteurs complexes](http://www.w3.org/TR/css3-selectors/#combinators), par exemple :
+
+  * les `<div>` ayant la class "toto" et qui sont fils d'un élément d'id #titi mais aussi fils directs d'un élément de type `<span>`.
+
+
+Nous esposons dans cette section les principaux oyens de composéer un sélecteur css complexe.
+
+
+### Regroupement 
+
+La première façon de "composer" des sélecteurs est le regroupement :
+
+~~~
+h1 {color: red}
+h2 {color: red}
+h3 {color: red}
+~~~
+{:.css}
+
+peut s'écrire :
+
+~~~
+h1,h2,h3 {color: red}
+~~~
+{:.css}
+
+Il ne s'agit pas vraiment de combinaison, mais plutôt d'une factorisation de règles CSS.
+
+
+### Combinaison
+
+On veut parfois préciser un élément au travers de plusieurs sélecteurs de bases sur ce dernier, il suffit pour cela de coller les sélecteurs de base. Par exemple :
+
+~~~
+div.toto
+~~~
+{:.css}
+
+Correspond au sélecteur des `<div>` qui ont la classe 'toto'.
+
+Ou encore 
+
+~~~
+.titi.toto
+~~~
+{:.css}
+
+Les éléments qui ont la classe 'toto' ET 'titi'.
+
+
+### Descendance
+
+Pour discriminer certains éléments sur lequel on veut que porte un sélecteur il est très courant de préciser de quoi il est descendant dans le code HTML.
+Pour expliciter ce chemin on ajoute un espace entre les sélecteurs de base.
+
+#### Directe (enfant)
+
+
+La relation de descendance directe est signifiée par le caractère `>`. Par exemple :
+
+~~~
+#titi>.toto
+~~~
+{:.css}
+
+Correspond au sélecteurs des éléments qui ont la classe 'toto' et qui ont pour parents l'élément d'id 'titi'.
+
+#### Indirecte
+
+
+La relation de descendance directe est signifiée par le caractère d'espacement. Par exemple :
+Par exemple :
+
+~~~
+#titi .toto
+~~~
+{:.css}
+
+Signifie les éléments qui ont la classe toto ET qui sont descendants de l'élément d'id 'titi'.
+
+
+### Pseudo Classes
+
+Pseudo Classes des liens 
+
+~~~
+/*le premier caractère d'un texte*/
+p:first-child   {color:red;}
+
+a:link {color: yellow;}
+a:visited {color: purple;}
+a:hover {text-decoration: underline;}
+~~~
+{:.css}
+
+
+
+### Ordre d'application des sélecteurs CSS.
+
+Nous avons utilisé un ficher de style externe styles.css pour ajouter des règles css.
+Il est aussi possible d'ajouter du CSS directement dans le HTML via l'attribut `style` :
+
+~~~
+<p style="font-size: 12pt; color: fuchsia">
+   Aren't style sheets wonderful?
+</p>
+~~~
+{:.html}
+
+Ou d'inclure des règles css dans une balise `<style>` (internal style):
+
+~~~
+<style type="text/css">
+   p {font-size: 12pt; color: pink}
+</style>
+~~~
+{:.html}
+
+Enfin les navigateurs appliquent un style par défaut sur les éléments.
+
+L'ordre de priorité d'application des règles css est la suivante :
+
+1. styles 'inline' par l'attribut `style`,
+1. styles contenu dans les fichiers css (external style),
+1. styles définis dans une balise `<style>` dans le fichier html (internal style),
+1. style par défaut des navigateurs.
+
+
+En pratique on préférera les styles externes comme "styles.css", cela respecte mieux la césure entre la structure HTML et le style css. 
+
+Mais même en ce limitant à un fichier css il est possible d'avoir des règles qui rentrent en conflit :
+
+~~~
+div {color: yellow;}
+div.toto {color: red;}
+~~~
+{:.css}
+
+Afin de savoir la couleur qui sera appliquée sur les éléments `<div>`, les sélecteurs css bénéficient d'une priorité.
+
+Cette priorité de spécificitée est une valeur (a,b,c) définie comme cela :
+ 
+ * a est le nombre de sélecteur d'id (`#`),
+ * b est le nombre de class (`.`) ou pseudo class (`:over`,`:visited`,...)
+ * c est le nombre d'élement contenu dans le sélecteur (`div` , `span`, `p`, ...)
+
+L'ordre de priorité est défini comme lexicographique (la valeur de a est plus discriminante que b qui lui même est plus discriminant que c). 
+
+
+# Selecteurs CSS.
+
+ 1. Ajouter une règle pour que  `<span>` nowrap,
+ 1. et la couleur noire aux skill (mais il ne faut pas que votre regle change le style des skill du texte)
+ 1. Érivez une règle CSS pour faire apparaître les bords de chaque cellule en
+   définissant à *solid* leur propriété *border-style*.
+ 1. Définissez une couleur de fond #00aaff pour la partie en-tête `thead` du tableau.
+ 1. il va falloir maintenant centrer le texte des cellules, sinon le 5 de Chuck est trop discret. Utiliser pour cela `text-align`
+ 1. Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages Wikipedia.
+ 1. Faire en sorte que les liens visités apparaissent en
+gris. Lorsque la souris passe sur un lien, lui donner la couleur orange (sauf
+s'il a déjà été visité, auquel cas il reste en gris).
+ 
 
 
 # Table
@@ -142,7 +309,6 @@ Voici un squelette de table :
 {:.html}
 
 
-
 1. Créer une table avec les sept noms de colonnes suivants :
 ```Acteurs, Karaté, Taekwondo, Judo, Chun Kuk Do, Tangsudo, Ju-jitsu```. Les noms doivent être contenus dans des balises ```<span>```
 1. Ajouter la classe  "skill" aux ```<span>``` contenant les noms des arts martiaux.
@@ -184,211 +350,25 @@ mettre cela encore plus en exergue.
 Nous verrons plus bas comment styliser cette table.
 
 
-
-# Les contenus flottant Float:
+# Les contenus flottant :
 
 Pour une balise de contenu, donc positionné en ligne, il est possible de spécifier pour un élément une position complètement à gauche ou à droite à l'aide de 
-la propriété float.
-La propriété css float peut prendre les valeurs ```left```, ```right```, ```none``` et ```inherit```.
+la propriété `float`. Cette dernière peut prendre les valeurs ```left```, ```right```, ```none``` et ```inherit```.
 
  1. Placer l'image de Chuck jeune de class ```young_chuck``` à gauche du texte, 
  1. Placer l'image beware ```beware_img``` à droite du texte.
- 1. Faire une [lettrine](https://fr.wikipedia.org/wiki/Lettrine) en début du paragraphe "Après son mariage, il rejoint... "
 
 
-<!-- modèle de boite + auto -->
 
-# Box Model :
+
+
+# Box Model
 
  * Centrer le body avec des margin auto
 
 
-# Position:
+# Position
 
 
  * Ajouter les icônes de réseaux sociaux toujours positionnées en bas à droite.
 
-
-
--------------------
-
-La suite et fin des sélecteurs
-
-### Règles de compositions, Sélecteurs complexes
-
-Un sélecteur CSS peut être plus ou moins compliqué. Sa sémantique peut aller de :
-
-* je vais appliquer la règle à tous les div de la page
-* je vais appliquer la règle à tous :
-	* les div ayant la class "toto" et qui sont fils d'un élément d'id #titi mais aussi fils directs d'un élément de type span.
-	* **ou** l'élément qui a pour id "my_id".
-
-### Pseudo Classes
-
-Pseudo Classes des liens 
-
-~~~
-.skill {
-a:link {color: yellow;}
-a:visited {color: purple;}
-~~~
-{:.css}
-
-Pseudo Classes d'interaction
-
-
-~~~
-.skill {
-a:hover {text-decoration: underline;}
-~~~
-{:.css}
-
-#### Les combinaisons (Combinators) 
-
-http://www.w3.org/TR/css3-selectors/#combinators
-
-À partir des sélecteurs de bases présentés [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html), il est possible de créer des sélecteurs complexes.
-Nous présentons dans la suite les sélecteurs qui sont utilisés en moyenne 95 % du temps.
-
-
-#### Regroupement 
-
-La première façon de "composer" des sélecteurs et juste le regroupement :
-
-~~~
-h1 {color: red}
-h2 {color: red}
-h3 {color: red}
-~~~
-{:.css}
-
-peut s'écrire :
-
-~~~
-h1,h2,h3 {color: red}
-~~~
-{:.css}
-
-Il ne s'agit pas vraiment de combinaison, mais plutôt d'une factorisation de règles CSS.
-
-
-#### Combinaison
-
-On veut parfois préciser un élément au travers de plusieurs sélecteurs de bases sur ce dernier, il suffit pour cela de coller les sélecteurs de base.
-
-Par exemple :
-
-~~~
-div.toto
-~~~
-{:.css}
-
-Signifie le div qui a la classe toto
-
-Ou encore 
-
-~~~
-.titi.toto
-~~~
-{:.css}
-
-L'élément qui a la classe toto ET titi.
-
-
-#### Descendance
-
-Pour discriminer certains éléments sur lequel on veut que porte un sélecteur il est très courant de préciser de quoi il est descendant dans le code HTML.
-Pour expliciter ce chemin on ajoute un espace entre les sélecteurs de base.
-
-##### Directe (enfant)
-
-Par exemple 
-
-~~~
-#titi>.toto
-~~~
-{:.css}
-
-##### Indirecte
-
-Par exemple 
-
-~~~
-#titi .toto
-~~~
-{:.css}
-
-Signifie les éléments qui ont la classe toto ET qui sont descendants d'un
-élément d'id titi.
-
-
-##### Fréres/adjacents
-
-Les deux éléments sont tous deux fils directs d'un même élément.
-
-Par exemple 
-
-~~~
-#titi + .toto
-~~~
-{:.css}
-
-Signifie que l'élément ayant la classe toto et qui est frère de l'élément d'id
-titi doit avoir son texte en rouge.
-
-## Comment se décline les CSS applicables sur un site.
-
-Il est possible d'ajouter plusieurs fichiers CSS dans une page et même si l'on
-n'a qu'un seul fichier, plusieurs règles peuvent être contradictoires.  Pour
-complexifier le tout, nous verrons que l'on peut ajouter du CSS dit "inline"
-directement dans le HTML...  et que les navigateurs appliquent des styles par
-défaut.  Enfin on peut finir une règle CSS avec le code `important!` ce qu'il
-lui
-
-### Style par défaut des navigateurs 
-
-
-(reset CSS),
-
-### Style inline,
-
-### Styles dans un fichier css,
-
-### Ordre de priorité de tout cela ?
-
-9. Calculating a selector's specificity
-
-A selector's specificity is calculated as follows:
-
-count the number of ID selectors in the selector (= a)
-count the number of class selectors, attributes selectors, and pseudo-classes in the selector (= b)
-count the number of type selectors and pseudo-elements in the selector (= c)
-ignore the universal selector
-
-
-
-<ul>
-<li>Style inline,</li>
-<li>Style marqué important!,</li>
-<li>Style avec le sélecteur le plus précis
-(si plusieurs fois le même sélecteur pour des déclarations non compatibles, la dernière gagne),</li>
-<li>Style du navigateur.</li>
-</ul>
-
-
-
-# Selecteurs CSS.
-
- 1. Ajouter une règle pour que coll span nowrap,
- 1.   et la couleur noire aux skill (mais il ne faut pas que votre regle change le style des skill du texte)
-
- 1. Érivez une règle CSS pour faire apparaître les bords de chaque cellule en
-   définissant à *solid* leur propriété *border-style*.
-
- 1. Définissez une couleur de fond #00aaff pour la partie en-tête ```thead``` du tableau.
- 1. il va falloir maintenant centrer le texte des cellules, sinon le 5 de Chuck est trop discret. Utiliser pour cela ```text-align```
- 1. Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages Wikipedia.
- 1. Faire en sorte que les liens visités apparaissent en
-gris. Lorsque la souris passe sur un lien, lui donner la couleur orange (sauf
-s'il a déjà été visité, auquel cas il reste en gris).
- 
