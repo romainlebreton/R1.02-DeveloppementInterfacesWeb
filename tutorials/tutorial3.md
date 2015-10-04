@@ -1,11 +1,11 @@
 ---
 title: TD2
-subtitle: stylisation des éléments.
+subtitle: structuration et stylisation.
 layout: tutorial
 ---
 
 
-Comme vous avez pu le constater au cours du TP précédent, certains éléments
+Comme vous avez pu le constater au cours du TD précédent, certains éléments
 peuvent cohabiter sur une même ligne et d'autres non. La spécification HTML5
 propose différentes manières de classer les balises/éléments selon leurs
 caractéristiques
@@ -98,6 +98,93 @@ navigateur, à un moteur de recherche de mieux comprendre votre page web.
 Nous verrons comment structurer la page dans les tds suivants, nous allons ajouter du style aux élément de la page courante.
 
 
+# Table
+
+L'élement ```table``` correspond à une structuration récurrente des données, qui sert notamment à comparer des entitiés sur différentes caractéristiques.
+
+## Les éléments ```table```, ```tr```, et ```td```
+
+L'élement ```table``` contient la table.
+La table est composée de ligne (l'élement ```td```) contenant des cellules (élément ```td```).
+
+
+## L'élément *th*
+
+Dans l'arborescence du document, un élément *th* doit être le fils d'un élément
+*tr*. Il représente une cellule en-tête (le titre d'une colonne ou le titre d'une
+ligne du tableau). Il peut être utilisé à la place d'un élément *td*.
+
+Voici un squelette de table :
+
+~~~
+<table>
+   <tr>
+      <th>Caract1</th>
+      <th>Caract2</th>
+      <th>Caract3</th>
+      <th>Caract4</th>
+   </tr>
+   <tr>
+      <td>Val1_1</td>
+      <td>Val1_2</td>
+      <td>Val1_3</td>
+      <td>Val1_4</td>
+   </tr>
+   <tr>
+      <td>Val2_1</td>
+      <td>Val2_2</td>
+      <td>Val2_3</td>
+      <td>Val2_4</td>
+   </tr>
+   ...
+</table>
+~~~
+{:.html}
+
+
+
+1. Créer une table avec les sept noms de colonne suivants :
+```Acteurs, Karaté, Taekwondo, Judo, Chun Kuk Do, Tangsudo, Ju-jitsu```
+1. Ajouter la classe span "skill" au noms des arts martiaux.
+1. Ajouter les six lignes suivantes (les nombres correspondent à la valeur de l'acteur dans l'art martial correspondant) :
+
+     * Chuck Norris, 5, 5, 5, 5, 5, 5
+     * Steven Seagal, 3, 5, 3, 2, 3, 5
+     * Bruce Lee, 5, 3, 3, 3, 4, 3
+     * Jean-Claude Van Damne, 5, 3, 3, 3, 4, 3
+     * Bolo Yeung, 2, 4, 4, 2, 5, 3
+     * Dolph Lundgren, 2, 4, 4, 2, 5, 3
+
+
+
+## Les éléments ```<thead>``` et ```<tbody>```
+
+Les éléments ```<thead>``` et ```<tbody>``` servent à séparer :
+
+ * la définition des colonnes (```Acteurs, Karaté,```...) 
+ *  les lignes (nos héros et leurs niveaux de compétences).
+
+1. Ajouter ces balises pour englober ces deux parties (en oubliant pas pour se faire leurs balises fermantes ```</thead>``` et ```</tbody>```)
+
+
+## Les attributs ```rowspan``` et ```colspan``` 
+
+Les attributs ```rowspan et colspan``` permettent de fusionner les cellules adjacentes :
+
+ * ```rowspan``` permet de fusionner les cellules sur plusieurs lignes (i.e rows),
+ * ```collspan``` permet de fusionner les cellules sur plusieurs colonnes.
+
+
+
+1. Il apparaît que Chuck Norris est toujours au top (niveau 5) dans tous les martiaux. Fusionner les cellules representant ses valeurs de manières à 
+mettre cela encore plus en exergue.
+
+
+A ce stade la structure de votre table reflete le sens que vous vouliez y mettre.
+Nous verrons plus bas comment styliser cette table.
+
+
+
 # Les contenus flottants Float:
 
 Pour une balise de contenu, donc positionné en ligne, il est possible de spécifier pour un élément une position complètement à gauche ou à droite à l'aide de 
@@ -105,9 +192,8 @@ la propriété float.
 La propriété css float peut prendre les valeurs ```left```, ```right```, ```none``` et ```inherit```.
 
  1. Placer l'image de Chuck jeune de class ```young_chuck``` à gauche du texte, 
- 2. Placer l'image beware ```beware_img``` à droite du texte.
- 3. Faire une [lettrine](https://fr.wikipedia.org/wiki/Lettrine) en début du paragraphe "Après son mariage, il rejoint... "
-
+ 1. Placer l'image beware ```beware_img``` à droite du texte.
+ 1. Faire une [lettrine](https://fr.wikipedia.org/wiki/Lettrine) en début du paragraphe "Après son mariage, il rejoint... "
 
 
 <!-- modèle de boite + auto -->
@@ -122,77 +208,7 @@ La propriété css float peut prendre les valeurs ```left```, ```right```, ```no
 
  * Ajouter les icônes de réseaux sociaux toujours positionnées en bas à droite.
 
-# Table
 
-## Les éléments *table*, *tr*, et *td*
-
-## L'élément *th*
-
-Dans l'arborescence du document, un élément *th* doit être le fils d'un élément
-*tr*. Il représente une cellule en-tête (le titre d'une colonne ou le titre d'une
-ligne du tableau). Il peut être utilisé à la place d'un élément *td*.
-
-
-1. Créer une table avec les sept noms de colonne suivants :
-```Acteurs, Karaté, Taekwondo, Judo, Chun Kuk Do, Tangsudo, Ju-jitsu```
-1. Ajouter la classe span "skill" au noms des arts martiaux.
-
-1. Ajouter les six lignes suivantes (les nombres correspondent à la valeur de l'acteur dans l'art martial correspondant) :
-
-     * Chuck Norris, 5, 5, 5, 5, 5, 5
-     * Steven Seagal, 3, 5, 3, 2, 3, 5
-     * Bruce Lee, 5, 3, 3, 3, 4, 3
-     * Jean-Claude Van Damne, 5, 3, 3, 3, 4, 3
-     * Bolo Yeung, 2, 4, 4, 2, 5, 3
-     * Dolph Lundgren, 2, 4, 4, 2, 5, 3
-
-
-
-## Les éléments ```<thead>``` et ```<tbody>```
-
-
-Les éléments ```<thead>``` et ```<tbody>``` servent à séparer la définition des colonnes (```Acteurs, Karaté,...```) des lignes (nos héros et leurs niveaux de compétences).
-
-
-Remarquez que la première ligne constitue un groupement particulier
-dans ce tableau, mais qu'à moins de comprendre le sens du contenu des cellule,
-rien ne l'indique dans le document. Il est possible de spécifier en HTML cette
-structure en utilisant les éléments *thead*, *tbody* ou *tfoot*.
-
-Rattachez dans l'arborescence les deux premières lignes à un même élément *thead*
-et les deux autres à un élément *tbody*.
-
-Par défaut cette structuration n'a pas d'implication sur le rendu par le
-navigateur mais elle ajoute du sens à la structure.
-
-
-1. Définissez un fond gris pour la partie en-tête du tableau.
-
-
-
-## Les attributs rowspan et colspan 
-
-
-Utilisez l'attribut *colspan* pour fusionner les deux premières cellules de la
-dernière ligne en conservant uniquement le contenu de la première.
-
-Vérifiez la validité de votre document.
-
-
-
-# Selecteurs CSS.
-
- * Ajouter une règle pour que coll span nowrap,
-  et la couleur noire aux skill (mais il ne faut pas que votre regle change le style des skill du texte)
-
- * Ecrivez une règle CSS pour faire apparaître les bords de chaque cellule en
-   définissant à *solid* leur propriété *border-style*.
-
-
- * Faire en sorte que les liens visités apparaissent en
-gris. Lorsque la souris passe sur un lien, lui donner la couleur orange (sauf
-s'il a déjà été visité, auquel cas il reste en gris).
- 
 
 -------------------
 
@@ -359,3 +375,20 @@ ignore the universal selector
 <li>Style du navigateur.</li>
 </ul>
 
+
+
+# Selecteurs CSS.
+
+ 1. Ajouter une règle pour que coll span nowrap,
+ 1.   et la couleur noire aux skill (mais il ne faut pas que votre regle change le style des skill du texte)
+
+ 1. Ecrivez une règle CSS pour faire apparaître les bords de chaque cellule en
+   définissant à *solid* leur propriété *border-style*.
+
+ 1. Définissez une couleur de fond #00aaff pour la partie en-tête ```thead``` du tableau.
+ 1. il va falloir maintenant centrer le texte des cellules, sinon le 5 de Chuck est trop discret. Utiliser pour cela ```text-align```
+ 1. Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages wikipedia.
+ 1. Faire en sorte que les liens visités apparaissent en
+gris. Lorsque la souris passe sur un lien, lui donner la couleur orange (sauf
+s'il a déjà été visité, auquel cas il reste en gris).
+ 
