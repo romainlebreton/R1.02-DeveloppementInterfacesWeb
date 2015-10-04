@@ -190,6 +190,13 @@ Pseudo Classes des liens
 /*le premier caractère d'un texte*/
 p:first-child   {color:red;}
 
+/*le troisième paragraphe */
+p:nth-child(3) { color: green;}
+
+/*les textes des éléments li impairs seront verts et les pairs rouges*/
+li:nth-child(odd) { color: green;}
+li:nth-child(even) { color: red;}
+
 a:link {color: yellow;}
 a:visited {color: purple;}
 a:hover {text-decoration: underline;}
@@ -250,32 +257,21 @@ Cette priorité de spécificitée est une valeur (a,b,c) définie comme cela :
 L'ordre de priorité est défini comme lexicographique (la valeur de a est plus discriminante que b qui lui même est plus discriminant que c). 
 
 
-# Selecteurs CSS.
-
- 1. Ajouter une règle pour que  `<span>` nowrap,
- 1. et la couleur noire aux skill (mais il ne faut pas que votre regle change le style des skill du texte)
- 1. Érivez une règle CSS pour faire apparaître les bords de chaque cellule en
-   définissant à *solid* leur propriété *border-style*.
- 1. Définissez une couleur de fond #00aaff pour la partie en-tête `thead` du tableau.
- 1. il va falloir maintenant centrer le texte des cellules, sinon le 5 de Chuck est trop discret. Utiliser pour cela `text-align`
- 1. Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages Wikipedia.
- 1. Faire en sorte que les liens visités apparaissent en
-gris. Lorsque la souris passe sur un lien, lui donner la couleur orange (sauf
+ 1. Faire en sorte que les liens `<a>` visités apparaissent en gris. Lorsque la souris passe sur un lien, lui donner la couleur orange (sauf
 s'il a déjà été visité, auquel cas il reste en gris).
- 
 
 
-# Table
+## Table
 
 L'élément `<table>` correspond à une structuration récurrente des données, qui sert notamment à comparer des entités sur différentes caractéristiques.
 
-## Les éléments `<table>`, `<tr>`, et `<td>`
+### Les éléments `<table>`, `<tr>`, et `<td>`
 
 L'élément `<table>` contient la table.
 La table est composée de ligne (l'élément `<td>`) contenant des cellules (élément `<td>`).
 
 
-## L'élément `<th>`
+### L'élément `<th>`
 
 Dans l'arborescence du document, un élément `<th>` doit être le fils d'un élément
 `<tr>`. Il représente une cellule en-tête (le titre d'une colonne ou le titre d'une
@@ -322,8 +318,7 @@ Voici un squelette de table :
      * Dolph Lundgren, 2, 4, 4, 2, 5, 3
 
 
-
-## Les éléments `<thead>` et `<tbody>`
+### Les éléments `<thead>` et `<tbody>`
 
 Les éléments `<thead>` et `<tbody>` servent à définir plus explicitement la structure de notre table:
 
@@ -333,7 +328,7 @@ Les éléments `<thead>` et `<tbody>` servent à définir plus explicitement la 
 1. Ajouter ces balises pour englober ces deux parties (en oubliant pas pour se faire leurs balises fermantes ```</thead>``` et ```</tbody>```)
 
 
-## Les attributs ```rowspan``` et ```colspan``` 
+### Les attributs ```rowspan``` et ```colspan``` 
 
 Les attributs ```rowspan``` et ```colspan``` permettent de fusionner les cellules adjacentes :
 
@@ -341,16 +336,25 @@ Les attributs ```rowspan``` et ```colspan``` permettent de fusionner les cellule
  * ```collspan``` permet de fusionner les cellules sur plusieurs colonnes.
 
 
-
 1. Il apparaît que Chuck Norris est toujours au top (niveau 5) dans tous les martiaux. Fusionner les cellules représentant ses valeurs de manières à 
 mettre cela encore plus en exergue.
 
 
 À ce stade la structure de votre table reflète le sens que vous vouliez y mettre.
-Nous verrons plus bas comment styliser cette table.
+Voyons maintenant comment la styliser.
+
+ 1. Érivez une règle CSS pour faire apparaître les bords de chaque cellule en
+   définissant à *solid* leur propriété *border-style*.
+ 1. Définissez une couleur de fond #00aaff pour la partie en-tête `thead` du tableau.
+ 1. Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages Wikipedia.
+ 1. Ajouter une règle pour que les textes dans les colonnes ne soient pas sur plusieurs lignes (notamment 'Chun Kuk Do') en utilisant la bonne valeur pour la propriété `white-space`,
+ 1. donner la couleur noire aux skill sans modifier le style des éléments ayant la class `skill` dans les paragraphes,
+ (voir la [section]({{site.baseurl}}/tutorials/tutorial3.html#rgles-de-compositions-des-css))
+ 1. ajouter une règle pour qu'un row de la table sur deux apparaisse blanc et l'autre avec la couleur `#CCC` SANS modifier de quelque façon le HTML 
+ (voir la [section]({{site.baseurl}}/tutorials/tutorial3.html#rgles-de-compositions-des-css))
 
 
-# Les contenus flottant :
+## Les contenus flottant :
 
 Pour une balise de contenu, donc positionné en ligne, il est possible de spécifier pour un élément une position complètement à gauche ou à droite à l'aide de 
 la propriété `float`. Cette dernière peut prendre les valeurs ```left```, ```right```, ```none``` et ```inherit```.
@@ -359,16 +363,44 @@ la propriété `float`. Cette dernière peut prendre les valeurs ```left```, ```
  1. Placer l'image beware ```beware_img``` à droite du texte.
 
 
+## Le modèle de boite
+
+Comme vous l'avez vu précédemment, les balises de type structure définissent des
+boîtes. Ces boîtes disposent toutes des propriétés suivantes en CSS :
+
+* padding : marge entre le contenu est la bordure de la boîte. Le padding est de
+  la couleur de la boîte, donc il a le même background que la boîte,
+* border : bordure qui entoure le contenu,
+* margin : marge à l’extérieur de la bordure, entre cette boîte et la
+  suivante. La margin est de la même couleur que la balise mère qui encapsule
+  celui pour lequel la marge est définie,
+* width : la largeur du contenu,
+* height : la hauteur du contenu
+
+<img alt="Box model" src="{{site.baseurl}}/assets/boxmodel.png" style="margin:0
+auto;display: block;">
 
 
-
-# Box Model
-
- * Centrer le body avec des margin auto
+A noter que la taille réelle d'une boîte est égale à la taille du content
+(width, height) additionnée de l'épaisseur du padding, du bord et de la marge.
 
 
-# Position
+### Centrer horizontalement :
+
+Pour centrer le contenu d'une balise :
+
+* si le contenu occupe toute la largeur de la balise : text-align: center
+* si le contenu est lui-même dans une balise moins large que la balise parent :
+  margin : auto sur la balise du contenu.
+
+ 1. Centrer le body horizontalement,
+ 1. dans la table, le texte des cellules, (le 5 de Chuck notamment est trop discret)
+ 1. ajouter du padding horizontal de 5 px aux skill dans la table (pas dans les paragraphes)
 
 
- * Ajouter les icônes de réseaux sociaux toujours positionnées en bas à droite.
+## Position
+
+
+ 1. Ajouter les icônes de réseaux sociaux toujours positionnées en bas à droite.
+ Pour ce faire nous n'allons pas utiliser plusieurs images mais une seule.
 
