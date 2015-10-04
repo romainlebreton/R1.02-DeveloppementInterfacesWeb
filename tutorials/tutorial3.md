@@ -1,6 +1,6 @@
 ---
 title: TD2
-subtitle: s
+subtitle: stylisation des éléments.
 layout: tutorial
 ---
 
@@ -76,43 +76,7 @@ contenant l'en-tête affiché de la page
 
 ## Mise en page
 
-Comme expliqué ci-dessus, les balises dites « de structure » permettent de
-produire un premier découpage logique de la page en différentes sections
-horizontales. Toutefois, ce n'est pas suffisant par exemple pour produire des
-pages contenant plusieurs colonnes puisque chaque section occupe exclusivement
-tout l'espace horizontal qu'elle crée (autrement dit on ne peut avoir de base
-qu'une page à une colonne).
-
-Nous allons maintenant voir au travers d'un exemple complexe abordé pas à pas
-comment utiliser les règles CSS pour obtenir l'apparence visuelle qui vous
-convient.
-
-### Contenu de base
-
-Créez le contenu de base de la page tel que décrit dans le document « Maquette
-site webA1 - Commentaires.pdf ». Vous ajouterez successivement les différents
-éléments formant le contenu de la page en commençant en haut à gauche et en
-procédant ligne par ligne (éléments approximativement à la même position
-verticale dans la page). Vous introduirez les éléments de la colonne de droite
-(liens) après ceux du contenu principal et avant ceux du pied de page.
-
-* Pour créer des images qui peuvent être cliquées pour naviguer vers un autre
-  site, procédez comme suit : `<a href="lien vers ma page"><img src="lien vers
-  mon image" alt="mon texte alternatif"></a>`
-
-* Pour créer le menu de navigation en haut de la page, utilisez une liste non
-  ordonnée (« ul ») dont chaque élément sera un lien.
-
-* Les titres utiliseront « h1 » (textes en gras ou bleu) et « h2 » (texte en
-  vert).
-
-* Les autres textes sont délimités par des balides « p ».
-
-### Structuration logique du contenu
-
-Vous allez d'abord sectionner logiquement le contenu que vous venez de créer à
-l'aide des balises de structure introduites ci-dessus.
-
+Vous allez d'abord structurer logiquement le contenu du site à l'aide des balises de structure.
 
 1. Ajouter une balise header. Son contenu sera la citation du TD1 et une barre de navigation nav
 2. Ajouter une balise main et une balise article et aside
@@ -128,41 +92,52 @@ Contenant  :
  Ainsi que l'image contanct.jpg pour bien illustrer que nous sommes à l'écoute.
 
 
-A ce point, le travail de division de la page n'a pas encore de résultat visuel
+A ce point, le travail de division du site n'a pas encore de résultat visuel
 marquant. C'est avant tout un travail de structuration logique qui permet au
 navigateur, à un moteur de recherche de mieux comprendre votre page web.
+Nous verrons comment structurer la page dans les tds suivants, nous allons ajouter du style aux élément de la page courante.
 
 
+# Les contenus flottants Float:
 
-## Les contenus flottants Float:
+Pour une balise de contenu, donc positionné en ligne, il est possible de spécifier pour un élément une position complètement à gauche ou à droite à l'aide de 
+la propriété float.
+La propriété css float peut prendre les valeurs ```left```, ```right```, ```none``` et ```inherit```.
 
-
- 1. Placer l'image de Chuck jeune à gauche du texte, 
- 2. Placer l'image beware à droite du texte.
+ 1. Placer l'image de Chuck jeune de class ```young_chuck``` à gauche du texte, 
+ 2. Placer l'image beware ```beware_img``` à droite du texte.
  3. Faire une [lettrine](https://fr.wikipedia.org/wiki/Lettrine) en début du paragraphe "Après son mariage, il rejoint... "
 
 
 
 <!-- modèle de boite + auto -->
-### Box:
+
+# Box Model :
 
  * Centrer le body avec des margin auto
 
 
-### Position:
+# Position:
+
 
  * Ajouter les icônes de réseaux sociaux toujours positionnées en bas à droite.
 
+# Table
+
+## Les éléments *table*, *tr*, et *td*
+
+## L'élément *th*
+
+Dans l'arborescence du document, un élément *th* doit être le fils d'un élément
+*tr*. Il représente une cellule en-tête (le titre d'une colonne ou le titre d'une
+ligne du tableau). Il peut être utilisé à la place d'un élément *td*.
 
 
-### Table
-
-* Créer une table avec les sept noms de colonne suivants :
-
+1. Créer une table avec les sept noms de colonne suivants :
 ```Acteurs, Karaté, Taekwondo, Judo, Chun Kuk Do, Tangsudo, Ju-jitsu```
+1. Ajouter la classe span "skill" au noms des arts martiaux.
 
-
- Avec les six lignes suivantes (les nombres correspondent à la valeur de l'acteur dans l'art martial correspondant) :
+1. Ajouter les six lignes suivantes (les nombres correspondent à la valeur de l'acteur dans l'art martial correspondant) :
 
      * Chuck Norris, 5, 5, 5, 5, 5, 5
      * Steven Seagal, 3, 5, 3, 2, 3, 5
@@ -171,13 +146,47 @@ navigateur, à un moteur de recherche de mieux comprendre votre page web.
      * Bolo Yeung, 2, 4, 4, 2, 5, 3
      * Dolph Lundgren, 2, 4, 4, 2, 5, 3
 
- * Ajouter la classe span "skill" au noms des arts martiaux.
 
 
-### Selecteurs Css.
+## Les éléments ```<thead>``` et ```<tbody>```
+
+Les éléments ```<thead>``` et ```<tbody>``` servent à séparer la définition des colonnes (```Acteurs, Karaté,...```) des lignes (nos héros et leurs niveaux de compétences).
+
+
+Remarquez que la première ligne constitue un groupement particulier
+dans ce tableau, mais qu'à moins de comprendre le sens du contenu des cellule,
+rien ne l'indique dans le document. Il est possible de spécifier en HTML cette
+structure en utilisant les éléments *thead*, *tbody* ou *tfoot*.
+
+Rattachez dans l'arborescence les deux premières lignes à un même élément *thead*
+et les deux autres à un élément *tbody*.
+
+Par défaut cette structuration n'a pas d'implication sur le rendu par le
+navigateur mais elle ajoute du sens à la structure.
+
+
+1. Définissez un fond gris pour la partie en-tête du tableau.
+
+
+
+## Les attributs rowspan et colspan 
+
+
+Utilisez l'attribut *colspan* pour fusionner les deux premières cellules de la
+dernière ligne en conservant uniquement le contenu de la première.
+
+Vérifiez la validité de votre document.
+
+
+
+# Selecteurs CSS.
 
  * Ajouter une règle pour que coll span nowrap,
- et la couleur noire aux skill (mais il ne faut pas que votre regle change le style des skill du texte)
+  et la couleur noire aux skill (mais il ne faut pas que votre regle change le style des skill du texte)
+
+ * Ecrivez une règle CSS pour faire apparaître les bords de chaque cellule en
+   définissant à *solid* leur propriété *border-style*.
+
 
  * Faire en sorte que les liens visités apparaissent en
 gris. Lorsque la souris passe sur un lien, lui donner la couleur orange (sauf
@@ -348,108 +357,4 @@ ignore the universal selector
 (si plusieurs fois le même sélecteur pour des déclarations non compatibles, la dernière gagne),</li>
 <li>Style du navigateur.</li>
 </ul>
-
-
-# Ancien td 4 &ndash; Les tableaux en HTML
-
-Nous décidons de structurer le contenu de la première section du document
-(POST-BAC) à l'aide d'un tableau.
-
-Référence pour ce tp :
-[http://www.w3.org/html/wg/drafts/html/CR/tabular-data.html](http://www.w3.org/html/wg/drafts/html/CR/tabular-data.html)
-
-## Les éléments *table*, *tr*, et *td*
-
-Supprimez le contenu de la première section et remplacez-le par le code ci-dessous :
-
-~~~
-<table>
-   <tr>
-      FAC</td>
-      Licence</td>
-      Informatique</td>
-      L'institut Universitaire de Technologie permet aussi à ceux qui ont besoin d'aspect... semaines.</td>
-   </tr>
-   <tr>
-      IUT</td>
-      DUT</td>
-      GEII</td>
-      Le DUT Informatique est le diplôme... cette discipline.</td>
-   </tr>
-</table>
-~~~
-{:.html}
-
-Observez le résultat et trouvez un sens aux éléments HTML *table*, *tr* et *td*.
-
-Ecrivez une règle CSS pour faire apparaître les bords de chaque cellule en
-définissant à *solid* leur propriété *border-style*.
-
-## L'élément *th*
-
-Dans l'arborescence du document, un élément *th* doit être le fils d'un élément
-*tr*. Il représente une cellule en-tête (le titre d'une colonne ou le titre d'une
-ligne du tableau). Il peut être utilisé à la place d'un élément *td*.
-
-Ajoutez au tableau les titres de colonne **Composante, Diplôme, Spécialité** et **Le +
-du DUT Informatique**.
-
-## Les éléments *thead* et *tbody*
-
-Ajoutez la ligne suivante en dessous de la ligne de titre pour expliciter des
-titres de colonne :
-
-| Unité ou Institut | Universitaire | limités aux domaines voisins de l'informatique | avantages du DUT Informatique |
-
-Remarquez que les deux premières lignes constituent un groupement particulier
-dans ce tableau, mais qu'à moins de comprendre le sens du contenu des cellule,
-rien ne l'indique dans le document. Il est possible de spécifier en HTML cette
-structure en utilisant les éléments *thead*, *tbody* ou *tfoot*.
-
-Rattachez dans l'arborescence les deux premières lignes à un même élément *thead*
-et les deux autres à un élément *tbody*.
-
-Par défaut cette structuration n'a pas d'implication sur le rendu par le
-navigateur mais elle ajoute du sens à la structure.
-
-Définissez un fond gris pour la partie en-tête du tableau.
-
-## L'attribut rowspan
-
-Modifiez le tableau de la façon suivante où on ajoute un établissement non
-universitaire :
-
-
-Etablissement |	Composante | Diplôme | Spécialité |	Le + du DUT Informatique
- | Unité, Institut, Section | | limités aux domaines voisins de l'informatique | 
-Université | FAC | Licence | Informatique | 
-Université | IUT | DUT | GEII | 
-Lycée | STS | BTS | SIO | 
-
-Il faudrait fusionner les deux cellules "Université" dans la première
-colonne. Supprimez pour cela la deuxième occurrence et définir l'attribut
-*rowspan* de la première avec la valeur 2.
-
-Vérifiez la validité.
-
-## L'attribut colspan
-
-Ajoutez une sixième ligne au tableau :
-
-Etablissement |	Composante | Diplôme | Spécialité |	Le + du DUT Informatique
- | Unité, Institut, Section | | limités aux domaines voisins de l'informatique | 
-Université | FAC | Licence | Informatique | 
-Université | IUT | DUT | GEII | 
-Lycée | STS | BTS | SIO | 
-Ecole privée | sans objet | Bachelor | Informatique | Formation gratuite, diplôme Universitaire et National
-
-Utilisez l'attribut *colspan* pour fusionner les deux premières cellules de la
-dernière ligne en conservant uniquement le contenu de la première.
-
-Vérifiez la validité de votre document.
-
-## Pour les plus avancés
-
-1. Remplacez ce tableau par le tableau du document *etudes2_tableau.pdf*
-1. Avancez sur votre projet
 
