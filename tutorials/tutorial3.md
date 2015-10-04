@@ -356,8 +356,8 @@ Voyons maintenant comment la styliser.
 
 ## Les contenus flottant :
 
-Pour une balise de contenu, donc positionné en ligne, il est possible de spécifier pour un élément une position complètement à gauche ou à droite à l'aide de 
-la propriété `float`. Cette dernière peut prendre les valeurs ```left```, ```right```, ```none``` et ```inherit```.
+La propiété float associé à un élément permet de faire flotter ce dernier complètement à gauche ou à droite de la ligne où il se trouve. 
+Les valeurs de la propriété float sont  ```left```, ```right```, ```none``` et ```inherit```.
 
  1. Placer l'image de Chuck jeune de class ```young_chuck``` à gauche du texte, 
  1. Placer l'image beware ```beware_img``` à droite du texte.
