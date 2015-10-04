@@ -150,6 +150,7 @@ ligne du tableau). Il peut être utilisé à la place d'un élément *td*.
 
 ## Les éléments ```<thead>``` et ```<tbody>```
 
+
 Les éléments ```<thead>``` et ```<tbody>``` servent à séparer la définition des colonnes (```Acteurs, Karaté,...```) des lignes (nos héros et leurs niveaux de compétences).
 
 
