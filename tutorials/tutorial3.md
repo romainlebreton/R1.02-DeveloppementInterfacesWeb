@@ -79,7 +79,7 @@ contenant l'en-tête affiché de la page
 Vous allez d'abord structurer logiquement le contenu du site à l'aide des balises de structure.
 
 1. Ajouter une balise `<header>`. Son contenu sera la citation du TD1 et une barre de navigation `<nav>`,
-2. Ajouter une balise `<main>` et une balise `<article>` et `<aside>`,
+2. Ajouter une balise `<main>` et une balise `<article>` et `<aside>`, mettre l'ancien contenu de la page dans `<article>` sauf les deux dernières sections. Celles-ci ("Les sites amis" et "Le Top 10 des derniers facts proposés") sont à mettre dans `<aside>`,
 3. Ajouter une balise `<footer>` qui contient le lien vers le retour au début du site.
 4. Ajouter dans la balise `<nav>` deux liens :
 Un qui pointe sur la page courante ("./index.html") et un qui pointe vers une page contact.html
@@ -90,7 +90,6 @@ Contenant  :
  * 99 avenue d'Occitanie
  * 34296 Montpellier Cedex 5
  Ainsi que l'image contanct.jpg pour bien illustrer que nous sommes à l'écoute.
-
 
 À ce point, le travail de division du site n'a pas encore de résultat visuel
 marquant. C'est avant tout un travail de structuration logique qui permet au
@@ -358,6 +357,8 @@ Voyons maintenant comment la styliser.
 
 La propiété float associé à un élément permet de faire flotter ce dernier complètement à gauche ou à droite de la ligne où il se trouve. 
 Les valeurs de la propriété float sont  ```left```, ```right```, ```none``` et ```inherit```.
+
+
 
  1. Placer l'image de Chuck jeune de class ```young_chuck``` à gauche du texte, 
  1. Placer l'image beware ```beware_img``` à droite du texte.
