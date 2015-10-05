@@ -69,11 +69,13 @@ standard html à l'aide du validateur
 [http://validator.w3.org/](http://validator.w3.org/) . Quelles sont les erreurs
 indiquées ?
 
-   **Note :** Le HTML5 est un standard, c'est-à-dire un langage complètement
+   **Note :**
+
+   * Le HTML5 est un standard, c'est-à-dire un langage complètement
    décrit. N'hésitez pas à jeter un rapide coup d'œil
    [à sa spécification](http://www.w3.org/TR/html5/). Ce document est très technique
-   mais complet.  
-   Si le validateur est HS, un validateur alternatif est
+   mais complet.
+   * Si le validateur ne marche plus, un validateur alternatif est
    [https://html5.validator.nu/](https://html5.validator.nu/).
 
 4. Commençons par l'erreur **Unable to Determine Parse Mode!**. La validateur
@@ -187,7 +189,7 @@ ci-dessus. (Vous devez rajouter les balises `<html>`, `<head>` et `<body>`)
 
 <!-- Explication orale sur l'importance de la validation : standard, uniformité -->
 
-## Outil de développements Web
+## Outils de développement Web
 
 Dans la suite du TD, nous allons utiliser notre navigateur pour "inspecter"
 notre page internet.  Pour cela nous conseillons Chrome ou Firefox. Appuyer sur
@@ -240,6 +242,14 @@ sections :
 * `<h1>` est utilisé pour les gros titres du document
 * `<h2>` est utilisé pour les sections du document
 * `<h3>` est utilisé pour les sous-sections du document et ainsi de suite.
+
+Par exemple, le titre ci-dessus est obtenu avec le code suivant (et vous pouvez
+le vérifier en inspectant) :
+
+~~~
+<h2>Titres</h2>
+~~~
+{:.html}
 
 Si vous cherchez un bon exemple d'utilisation de balises `<h2>`, inspectez le
 titre **Titres** juste au-dessus en faisant un clic droit dessus.
@@ -436,8 +446,9 @@ Cela est utilisé notamment pour montrer qu'on a du 'spirit'.
 développement. Quels sont les deux balises utilisées ?
 <!-- `<blockquote>` et `<cite>` -->
 
-1. La première balise entoure la citation complète tandis que la deuxième
-   contient uniquement la référence. Utilisez ces deux balises pour mettre en
+1. La première balise (qui commence par un **b**) entoure la citation complète
+   tandis que la deuxième (qui commence par un **c**) contient uniquement la
+   référence (l'auteur, le livre, ...). Utilisez ces deux balises pour mettre en
    avant la citation en tout début de document (rechercher `<!-- utiliser
    blockquote ici -->`).
 
