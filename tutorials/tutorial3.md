@@ -81,8 +81,8 @@ Vous allez d'abord structurer logiquement le contenu du site à l'aide des balis
 1. Ajouter une balise `<header>`. Son contenu sera la citation du TD1 et une barre de navigation `<nav>`,
 2. Ajouter une balise `<main>` et une balise `<article>` et `<aside>`, mettre l'ancien contenu de la page dans `<article>` sauf les deux dernières sections. Celles-ci ("Les sites amis" et "Le Top 10 des derniers facts proposés") sont à mettre dans `<aside>`,
 3. Ajouter une balise `<footer>` qui contient le lien vers le retour au début du site.
-4. Ajouter dans la balise `<nav>` deux liens :
-Un qui pointe sur la page courante ("./index.html") et un qui pointe vers une page contact.html
+4. Ajouter dans la balise `<nav>` deux liens dans une structure de liste contenant :
+Un lien nommé "Accueil" qui pointe sur la page courante ("./index.html") et un nommé "Contact" qui pointe vers une page contact.html
 5. Construire cette page contact.html au même niveau que index.html. Y ajouter l'adresse avec la balise `<adress>`
 Contenant  :
  * Email chuckn@caramail.com
@@ -94,7 +94,8 @@ Contenant  :
 À ce point, le travail de division du site n'a pas encore de résultat visuel
 marquant. C'est avant tout un travail de structuration logique qui permet au
 navigateur, à un moteur de recherche de mieux comprendre votre page web.
-Nous verrons comment structurer la page dans les tds suivants, nous allons ajouter du style aux éléments de la page courante.
+Nous verrons comment structurer la page dans les tds suivants.
+Pour la suite du TD, nous allons ajouter du style aux éléments de la page courante.
 
 
 ## Règles de compositions des CSS
@@ -105,12 +106,13 @@ Nous verrons comment structurer la page dans les tds suivants, nous allons ajout
   * les `<div>` ayant la class "toto" et qui sont fils d'un élément d'id #titi mais aussi fils directs d'un élément de type `<span>`.
 
 
-Nous esposons dans cette section les principaux oyens de composéer un sélecteur css complexe.
+Nous esposons dans cette section les principaux moyens de composer un sélecteur css complexe.
 
 
 ### Regroupement 
 
-La première façon de "composer" des sélecteurs est le regroupement :
+La première façon de "composer" des sélecteurs est le regroupement.
+Les trois règles suivantes :
 
 ~~~
 h1 {color: red}
@@ -119,14 +121,12 @@ h3 {color: red}
 ~~~
 {:.css}
 
-peut s'écrire :
+peuvent s'écrire :
 
 ~~~
 h1,h2,h3 {color: red}
 ~~~
 {:.css}
-
-Il ne s'agit pas vraiment de combinaison, mais plutôt d'une factorisation de règles CSS.
 
 
 ### Combinaison
@@ -262,7 +262,7 @@ s'il a déjà été visité, auquel cas il reste en gris).
 
 ## Table
 
-L'élément `<table>` correspond à une structuration récurrente des données, qui sert notamment à comparer des entités sur différentes caractéristiques.
+L'élément `<table>` correspond à une structuration récurrente des données, qui sert à representer un ensemble de données sous forme de colonnes et de lignes.
 
 ### Les éléments `<table>`, `<tr>`, et `<td>`
 
@@ -344,20 +344,20 @@ Voyons maintenant comment la styliser.
 
  1. Érivez une règle CSS pour faire apparaître les bords de chaque cellule en
    définissant à *solid* leur propriété *border-style*.
- 1. Définissez une couleur de fond #00aaff pour la partie en-tête `thead` du tableau.
  1. Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages Wikipedia.
  1. Ajouter une règle pour que les textes dans les colonnes ne soient pas sur plusieurs lignes (notamment 'Chun Kuk Do') en utilisant la bonne valeur pour la propriété `white-space`,
+ 1. Définissez une couleur de fond #00AAFF pour la partie en-tête `thead` du tableau.
+ (voir la [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial3.html#rgles-de-compositions-des-css))
  1. donner la couleur noire aux skill sans modifier le style des éléments ayant la class `skill` dans les paragraphes,
- (voir la [section]({{site.baseurl}}/tutorials/tutorial3.html#rgles-de-compositions-des-css))
+ (voir la [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial3.html#rgles-de-compositions-des-css))
  1. ajouter une règle pour qu'un row de la table sur deux apparaisse blanc et l'autre avec la couleur `#CCC` SANS modifier de quelque façon le HTML 
- (voir la [section]({{site.baseurl}}/tutorials/tutorial3.html#rgles-de-compositions-des-css))
+ (voir la [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial3.html#rgles-de-compositions-des-css))
 
 
 ## Les contenus flottant :
 
-La propiété float associé à un élément permet de faire flotter ce dernier complètement à gauche ou à droite de la ligne où il se trouve. 
+La propiété `float` associée à un élément permet de faire flotter ce dernier complètement à gauche ou à droite de la ligne où il se trouve. 
 Les valeurs de la propriété float sont  ```left```, ```right```, ```none``` et ```inherit```.
-
 
 
  1. Placer l'image de Chuck jeune de class ```young_chuck``` à gauche du texte, 
@@ -382,9 +382,8 @@ boîtes. Ces boîtes disposent toutes des propriétés suivantes en CSS :
 auto;display: block;">
 
 
-A noter que la taille réelle d'une boîte est égale à la taille du content
+A noter que la taille réelle d'une boîte est égale à la taille du contenu `content` 
 (width, height) additionnée de l'épaisseur du padding, du bord et de la marge.
-
 
 ### Centrer horizontalement :
 
@@ -401,6 +400,7 @@ Pour centrer le contenu d'une balise :
 
 ## Position
 
+Relative, Fixed, Absolute.
 
  1. Ajouter les icônes de réseaux sociaux toujours positionnées en bas à droite.
  Pour ce faire nous n'allons pas utiliser plusieurs images mais une seule.
