@@ -72,9 +72,9 @@ indiquées ?
    **Note :** Le HTML5 est un standard, c'est-à-dire un langage complètement
    décrit. N'hésitez pas à jeter un rapide coup d'œil
    [à sa spécification](http://www.w3.org/TR/html5/). Ce document est très technique
-   mais complet.
-
-<!-- un autre validateur est https://html5.validator.nu/ -->
+   mais complet.  
+   Si le validateur est HS, un validateur alternatif est
+   [https://html5.validator.nu/](https://html5.validator.nu/).
 
 4. Commençons par l'erreur **Unable to Determine Parse Mode!**. La validateur
 veut vous dire qu'il ne sait pas dans quel langage est écrit votre document. Il
