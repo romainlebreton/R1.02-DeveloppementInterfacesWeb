@@ -50,7 +50,7 @@ h3 {  font-style:italic;color:blue;}
 Mettons en place nos règles CSS :
 
 1. Nous allons travailler principalement sur ce TD sur un fichier `styles.css`.
-Créer ce fichier à partir du fichier `index.html` dans le répertoire `css/`.
+Créer un fichier texte vide `styles.css` dans un nouveau répertoire `css/`.
 Nous déclarerons dans ce fichier des règles CSS.
 
 2. Dans le fichier `index.html`, ajouter la ligne suivante dans l'en-tête du
