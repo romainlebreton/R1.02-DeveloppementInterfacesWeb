@@ -398,7 +398,7 @@ alors faire un lien vers cette balise en rajoutant `#un_identifiant` à la fin
 de l'URL. Exemple :
 
 ~~~
-<a href="https://fr.wikibooks.org/wiki/Le_langage_HTML/Liens#Liens_vers_une_ancre">les ancres</a>
+<a href="index.html#un_identifiant">Exemple de lien interne</a>
 ~~~
 {:.html}
 
