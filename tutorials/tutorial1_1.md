@@ -395,7 +395,7 @@ dans l'exemple suivant
 
 Attention, la valeur de cet attribut doit être unique dans le document. On peut
 alors faire un lien vers cette balise en rajoutant `#un_identifiant` à la fin
-de l'URL. Exemple :
+de l'URL. Exemple de lien interne à la page Web courante `index.html` :
 
 ~~~
 <a href="index.html#un_identifiant">Exemple de lien interne</a>
