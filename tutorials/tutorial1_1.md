@@ -27,7 +27,7 @@ Pour cela nous allons réaliser un site dont le rendu correspond au fichier
 
 Nous allons tout d'abord nous consacrer à préciser la structure (le HTML donc)
 que l'on peut ajouter à notre contenu brut. Nous verrons ensuite dans la
-[deuxième partie du TD](tutorial2.html) comment atteindre le rendu proposé par
+[deuxième partie du TD](tutorial1_2.html) comment atteindre le rendu proposé par
 [target.png]({{site.baseurl}}/assets/target.png) en réalisant un fichier CSS.
 
 
@@ -466,7 +466,7 @@ n'est pas à la charge du CSS justement ?  Les navigateurs appliquent des CSS pa
 défaut associés aux balises HTML (exemple : par convention les liens `<a>` sont en
 bleus et soulignés sans que l'on est rien à faire).  Cela évite d'avoir
 justement TOUT à refaire en CSS : des styles par défaut sont proposés.  Dans le
-[TD suivant](tutorial2.html) nous verrons comment améliorer l'aspect du site.
+[TD suivant](tutorial1_2.html) nous verrons comment améliorer l'aspect du site.
 
 <!-- Dans le devtools, elles s'appelent user agent rules -->
 

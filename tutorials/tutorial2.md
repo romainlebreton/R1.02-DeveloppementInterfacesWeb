@@ -1,471 +1,407 @@
 ---
-title: TD1 Partie 2 &ndash; Les bases du CSS
-subtitle: Un langage de mise en page
+title: TD2
+subtitle: structuration et stylisation.
 layout: tutorial
 ---
 
-Les standards définissant le CSS sont publiés par le World Wide Web Consortium
-(<a href="http://www.w3.org/">W3C</a>) à l'adresse
-[http://www.w3.org/Style/CSS/](http://www.w3.org/Style/CSS/).
 
-<!-- lien pour HTML et compléter le lien pour CSS -->
+Comme vous avez pu le constater au cours du TD précédent, certains éléments
+peuvent cohabiter sur une même ligne et d'autres non. La spécification HTML5
+propose différentes manières de classer les balises/éléments selon leurs
+caractéristiques
+([Liste des balises par catégorie](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories)). Nous
+allons ici nous intéresser à deux types spécifiques :
+
+* les balises de structure : elles permettent de délimiter l'articulation
+  logique de la page web en la découpant en différentes sections. Par défaut,
+  ces balises découpent la page web en sections horizontales qu'elles occupent
+  en entier (du bord gauche au bord droit de la section). Deux balises de flux
+  ne peuvent pas partager une même section horizontale aussi les espaces
+  qu'elles délimitent dans la page s'enchaînent-ils verticalement. Elles peuvent
+  contenir d'autres balises de structure ou des balises de contenu.
+
+* les balises de contenu : elles permettent de délimiter le texte de la page et
+  d'en altérer le formatage. Par défaut, ces balises n'occupent que l'espace
+  horizontal minimum nécessaire à afficher le texte qu'elles contiennent, et
+  plusieurs balises de contenu peuvent partager une même ligne
+  horizontale. Lorsque le contenu d'une de ces balises est trop grand pour tenir
+  sur une ligne, il se poursuit automatiquement à la ligne suivante. Les balises
+  de contenu peuvent contenir d'autres balises de contenu.
+
+Quelques exemples :
+
+* balises de structure :
+
+   * `<div>` : cette balise est « neutre », à savoir qu'elle permet de distinguer
+une section qui ne revêt aucune signification particulière. À utiliser quand
+aucune des autres balises de structure ne convient. Typiquement utilisé pour
+donner à la page sa structure visuelle à l'aide de règles CSS header : section
+contenant l'en-tête affiché de la page
+   * `<nav>` : section contenant une série de liens hypertextes pour la navigation
+     sur le site
+   * `<main>` : section principale de la page, celle qui contient le contenu
+     spécifique à cette page. Cette balise ne peut être présente dans une autre
+     balise présentée ici à l'exception de « div ». Elle n'est pas supportée par
+     Internet Explorer <= 10 mais le support peut en être ajouté grâce à
+     Javascript et en utilisant la règle css « main {display : block} ».
+   * `<article>` : section contenant un document « auto-suffisant », i.e. qui peut
+     être séparé du reste de la page et gardera cependant tout son sens. Une
+     page peut contenir plusieurs articles, dans le cas d'un blog par exemple,
+     de commentaires, d'une page listant les publications récentes ...
+   * `<aside>` : section contenant du matériel périphérique au contenu
+     principal. Cela peut-être par ex. une série de liens spécifiques au document
+     principal, un bandeau de publicités …
+   * `<footer>` : section contenant le pied de page.
+   * `<section>` : une section non spécifique, ou une sous-section d'un article,
+     d'un menu... Doit typiquement commencer par un titre hX.
+   * `<figure>` : une illustration (au sens large) « auto-suffisante » illustrant le
+     document principal ou un article, et qui doit pouvoir être placée librement
+     dans la page sans en altérer le déroulement (par ex. dans le texte, dans un
+     appendice...)
+   * `<h1>`- `<h6>` : titres de section
+   * `<p>` : paragraphes du texte
+   * `<address>` : coordonnées de contact de l'auteur. Il ne peut y avoir qu'un bloc
+     « address » par article et un pour le restant de la page
+
+* balises de contenu :
+
+   * `<span>` : cette balise est neutre, sans signification particulièrement. Permet
+     entre autres de créer des règles de formatage spécifiques du contenu
+     textuel, par exemple une lettre plus grande pour la 1e lettre d'un
+     paragraphe.
+   * `<quote>` : une citation
+   * `<img>` : une image
+   * `<sup>` : un exposant
+   * `<time>` : mise en valeur d'une date
+
+## Structuration de la page
+
+Vous allez d'abord structurer logiquement le contenu du site à l'aide des balises de structure.
+
+1. Ajouter une balise `<header>`. Son contenu sera la citation du TD1 et une barre de navigation `<nav>`,
+2. Ajouter une balise `<main>` et une balise `<article>` et `<aside>`, mettre l'ancien contenu de la page dans `<article>` sauf les deux dernières sections. Celles-ci ("Les sites amis" et "Le Top 10 des derniers facts proposés") sont à mettre dans `<aside>`,
+3. Ajouter une balise `<footer>` qui contient le lien vers le retour au début du site.
+4. Ajouter dans la balise `<nav>` deux liens dans une structure de liste contenant :
+Un lien nommé "Accueil" qui pointe sur la page courante ("./index.html") et un nommé "Contact" qui pointe vers une page contact.html
+5. Construire cette page contact.html au même niveau que index.html. Y ajouter l'adresse avec la balise `<adress>`
+Contenant  :
+ * Email chuckn@caramail.com
+ * IUT de Montpellier Sète
+ * 99 avenue d'Occitanie
+ * 34296 Montpellier Cedex 5
+ Ainsi que l'image contanct.jpg pour bien illustrer que nous sommes à l'écoute.
+
+À ce point, le travail de division du site n'a pas encore de résultat visuel
+marquant. C'est avant tout un travail de structuration logique qui permet au
+navigateur, à un moteur de recherche de mieux comprendre votre page web.
+Nous verrons comment structurer la page dans les tds suivants.
+Pour la suite du TD, nous allons ajouter du style aux éléments de la page courante.
 
 
-> Cascading Style Sheets (CSS) est un mécanisme simple pour ajouter du style
-> (exemple fonte, couleurs, espace) à un document web.  
-> <cite><a href="http://www.w3.org/Style/CSS/">W3C</a></cite>
-
-Le CSS est responsable du rendu du site sur votre écran, mais aussi sur un
-smartphone et des impressions papier (des ensembles de règles CSS peuvent être
-spécifiés pour chacun de ces médias).
+## Règles de compositions des CSS
 
 
-Bien que l'acronyme signifie donc **des** feuilles de style, on parlera
-**du** CSS (le langage utilisé ou le mécanisme), mais on ne fera pas les pédants
-tant les deux sont confondus à l'usage (l'usage fait très souvent loi lorsque
-l'on fait du CSS !).
+À partir des sélecteurs de bases présentés [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial1_2.html), il est possible de créer des [sélecteurs complexes](http://www.w3.org/TR/css3-selectors/#combinators), par exemple :
 
-Savoir les bases du CSS est relativement facile et indispensable pour qui veut
-travailler dans les métiers du Web. En maîtriser tous les aspects est un métier
-(celui d'intégrateur Web, qui traduit en HTML et CSS le travail du
-Web-designer).
+  * les `<div>` ayant la class "toto" et qui sont fils d'un élément d'id #titi mais aussi fils directs d'un élément de type `<span>`.
 
-## Tutoriel d'introduction
 
-Une règle CSS est composée de deux parties: 
+Nous esposons dans cette section les principaux moyens de composer un sélecteur css complexe.
 
- * un sélecteur CSS,
- * un bloc de déclaration.
 
-Par exemple la règle CSS suivante donne à tous les `h3` le style italique et défini comme couleur de texte le bleu : 
+### Regroupement 
+
+La première façon de "composer" des sélecteurs est le regroupement.
+Les trois règles suivantes :
 
 ~~~
-h3 {  font-style:italic;color:blue;}
-~~~
-{:.css}
-
- * le sélecteur est `h3`,
- * le bloc de déclaration est `font-style:italic;color:blue;`.
-
-Mettons en place nos règles CSS :
-
-1. Nous allons travailler principalement sur ce TD sur un fichier `styles.css`.
-Créer ce fichier à partir du fichier `index.html` dans le répertoire `css/`.
-Nous déclarerons dans ce fichier des règles CSS.
-
-2. Dans le fichier `index.html`, ajouter la ligne suivante dans l'en-tête du
-document HTML (dans la partie `head`) :
-
-   ~~~
-   <link rel="stylesheet" type="text/css" href="css/styles.css">
-   ~~~
-   {:.html}
-
-   Cette ligne permet de lier notre fichier de style CSS à la page Web. Il sera
-   donc chargé avec la page.
-
-
- Nous allons plus amplement présenter quelques blocs de
- [déclarations](#bloc-de-dclaration) et la façon de concevoir des
- [sélecteurs](#les-slecteurs-css).  Nous passerons ensuite à la mise en pratique
- dans la section [Exercices](#exercices).
-
-
-## Les outils de développement sont vos amis
-
-Pour la partie HTML, les outils de développement étaient déjà vos amis ; pour le
-CSS, ils sont promus au grade de "best-friend-forever".  Sélectionner un élément
-HTML avec les outils de développement ne permet pas seulement de voir les règles
-CSS appliquées à ce dernier, il permet aussi de les **changer**. Autant dire
-qu'il est conseillé d'abuser de cet outil pendant le TD pour bidouiller tout et
-n'importe quoi.
-
-## Commentaires
-
-En CSS, seuls les commentaires avec `/*` et `*/` sont autorisés.  Si vous
-utilisez `//` dans votre fichier `styles.css` vous allez avoir des problèmes
-(les règles CSS suivantes ne seront pas appliquées).
-
-
-## Bloc de déclaration
-
-
-Les blocs de déclarations portent sur des ensembles "`attributs:valeur`" séparés
-par des "`;`" (exemple `height:200px;background-color:blue;`).  Nous présentons
-ici quelques exemples valides de valeurs et des attributs associés.
-
-### Couleurs
-
-Les couleurs peuvent s'utiliser sur plusieurs attributs d'un élément HTML :
-
- * la couleur du texte : `color:red`;
- * la couleur du fond : `background-color:#FF00FF`;
- * la couleur de la bordure : `border-color:#F0F` ...
-
-Les 16 mots clés suivants peuvent être utilisés pour définir une couleur :
-`aqua`, `gray`, `navy`, `silver`, `black`, `green`, `olive`, `teal`, `blue`,
-`lime`, `purple`, `white`, `fuchsia`, `maroon`, `red`, `yellow`. Ils ont été
-choisis pour désigner 16 couleurs bien réparties comme le montre le diagramme
-suivant :
-
-<div style="text-align:center">
-![Symétrie des 16 couleurs]({{site.baseurl}}/assets/HSL14colors.png).
-</div>
-
-Le CSS3 les a complétés par 147 mots-clés de couleurs que vous pouvez retrouver
-à l'adresse
-[http://www.w3.org/TR/css3-color/#svg-color](http://www.w3.org/TR/css3-color/#svg-color).
-
-Vous pouvez être plus précis et définir une couleur avec le format #RRVVBB ou
-#RVB. R, V et B sont les valeurs en hexadécimal des composantes Rouge, Verte et
-Bleue respectivement.
-
- * `#000000` est noir,
- * `#FFFFFF` est blanc,
- * `#F00`, qui est un raccourci pour `#FF0000`, est rouge,
- * `#FF00FF` est rose, que l'on peut aussi accéder avec le mot clé `pink`.
-
-### Dimensions
-
-Certains éléments peuvent avoir une taille définie par CSS, d'autres épousent la
-place minimale nécessaire à leur rendu.
-<!-- Cela caractérise entre autres choses des éléments inline et block.  Nous -->
-<!-- préciserons ces notions dans le TD suivant, en attendant on s'en tiendra à -->
-<!-- expliciter les unités de dimensions applicables. -->
-
-L'unité absolue de mesure la plus utilisée est le "pixel CSS" `px`. Cette unité
-correspond souvent avec les pixels physiques de l'écran mais avec certaines
-subtilités. Premièrement, les navigateurs actuels permettent de zoomer, ce qui a
-pour effet d'afficher un "pixel CSS" sur plusieurs pixels. Deuxièmement,
-certains médias comme l'imprimante ne disposent pas de pixels ; le pixel CSS est
-alors défini comme une échelle permettant une bonne lisibilité sur le média.  
-Pour plus de détails sur ce qu'est cette unité :
-[http://www.w3.org/TR/css3-values/#absolute-lengths](http://www.w3.org/TR/css3-values/#absolute-lengths)
-
-<!-- les autres unitées sont in cm mm pt pc => font de plus de sens pour
-d'autres médias-->
-<!-- D'autres unités de mesures sont possibles (`pt`, `cm`, ...), mais nous nous en
-tiendrons aux `px`  -->
-
-On peut aussi donner des dimensions relatives en pourcentages ; `width:50%` va
-diminuer de moitié la largeur par rapport à celle qui aurait été calculée
-normalement.
-<!-- 50 % de quoi ? De la taille calculée normalement -->
-
-<!-- Parle-t-on de em ex rem ch viewport-width ... -->
-
-<!--
-First, let’s consider em and ex , which are closely related. In CSS, one “em” is defined to
-be the value of font-size for a given font. If the font-size of an element is 14 pixels,
-then for that element, 1em is equal to 14 pixels.
-Obviously, this value can change from element to element. For example, let’s say you
-have an h1 with a font size of 24 pixels, an h2 element with a font size of 18 pixels, and
-a paragraph with a font size of 12 pixels. If you set the left margin of all three at 1em ,
-they will have left margins of 24 pixels, 18 pixels, and 12 pixels, respectively:
-h1 {font-size: 24px;}
-h2 {font-size: 18px;}
-p {font-size: 12px;}
-h1, h2, p {margin-left: 1em;}
-small {font-size: 0.8em;}
-<h1>Left margin = <small>24 pixels</small></h1>
-<h2>Left margin = <small>18 pixels</small></h2>
-<p>Left margin = <small>12 pixels</small></p>
--->
-
-
-Les dimensions sont utilisées sur différentes parties d'un élément.
-**Exemple :**
-
-~~~ 
-.ma_class {
-  height:150px;
-  width:50px;
-  padding:15px;
-  border-width:1px;
-}
+h1 {color: red}
+h2 {color: red}
+h3 {color: red}
 ~~~
 {:.css}
 
-<!-- padding -->
-
-### Fontes
-
-Nous allons lister ici les propriétés les plus utilisées sur les fontes :
-
-1. **`font-family` :** Cette propriété permet de choisir la fonte que vous
-   souhaitez utiliser. Exemple :
-
-   ~~~
-   font-family: "Lucida Sans Unicode", "Arial", "sans-serif";
-   ~~~
-   {:.css}
-
-   **Important :** Les deux dernières fontes précisées par la règle sont des
-fontes de secours (fallback) : elles seront utilisées si et seulement si les
-précédentes ne sont pas disponibles sur le navigateur. Quelques fontes
-classiques sont répertoriées sur
-[http://www.w3schools.com/cssref/css_websafe_fonts.asp](http://www.w3schools.com/cssref/css_websafe_fonts.asp).
-
-1. **`font-size` :** Cette propriété permet de définir la taille de la police. Exemple :
-
-   ~~~
-   font-size:12px;
-   ~~~
-   {:.css}
-
-1. **`font-weight` :** Cette propriété permet de passer en mode **gras**. Exemple :
-
-   ~~~
-   font-weight:bold;
-   ~~~
-   {:.css}
-
-1. **`font-style` :** Cette propriété permet de définir le style de la fonte
-   (*i.e.* italique ou non). Exemple :
-
-   ~~~
-   font-style:italic;
-   ~~~
-   {:.css}
-
-
-**Référence :** [http://www.w3.org/TR/CSS21/fonts.html](http://www.w3.org/TR/CSS21/fonts.html) et [http://www.w3.org/TR/css-fonts-3/](http://www.w3.org/TR/css-fonts-3/).
-
-**Note optionnelle :** Vous pouvez associer à votre page Web de nouvelles fontes
-  à l'aide de la règle `@font-face`. Exemple :
+peuvent s'écrire :
 
 ~~~
-@font-face {
-    font-family: myFont;
-    src: url(path/to/font/font.otf);
-}
+h1,h2,h3 {color: red}
 ~~~
 {:.css}
 
-Si vous souhaitez en savoir plus, allez sur
-[https://developer.mozilla.org/fr/docs/Web/CSS/@font-face](https://developer.mozilla.org/fr/docs/Web/CSS/@font-face). Voici
-deux sites pratiques pour télécharger de nouvelles fontes : 
-[http://www.1001fonts.com](http://www.1001fonts.com) et 
-[http://www.fontsquirrel.com](http://www.fontsquirrel.com).
 
-### Textes
+### Combinaison
 
-Nous allons lister ici les propriétés les plus utilisées concernant l'affichage
-des paragraphes de texte :
+On veut parfois préciser un élément au travers de plusieurs sélecteurs de bases sur ce dernier, il suffit pour cela de coller les sélecteurs de base. Par exemple :
 
-1. **`text-align` :** Cette propriété affecte l'alignement des lignes de texte. Exemple :
+~~~
+div.toto
+~~~
+{:.css}
 
-   ~~~
-   text-align:center; \* ou left, right, justify *\
-   ~~~
-   {:.css}
-   
-   Pour rappel, un paragraphe justifié est un paragraphe où les lignes s'arrêtent à
-   la marge à droite et à gauche.
+Correspond au sélecteur des `<div>` qui ont la classe 'toto'.
 
-1. **`line-height` :** Cette propriété permet d'espacer vertivalement les lignes
-   de texte. Exemple :
+Ou encore 
 
-   ~~~
-   line-height:150%;
-   ~~~
-   {:.css}
-   
-1. **`text-indent` :** Cette propriété indente la première ligne du texte,
-   c'est-à-dire qu'elle la décale horizontaliement. Exemple :
+~~~
+.titi.toto
+~~~
+{:.css}
 
-   ~~~
-   text-indent:12px;
-   ~~~
-   {:.css}
+Les éléments qui ont la classe 'toto' ET 'titi'.
 
-   <!--  text-indent:1em; serait plus naturel -->
 
-   Si l'on donne un pourcentage comme valeur de `text-indent`, celui-ci est
-   compris comme un pourcentage de la largeur de l'élément parent.
+### Descendance
 
-## Les sélecteurs CSS de base
+Pour discriminer certains éléments sur lequel on veut que porte un sélecteur il est très courant de préciser de quoi il est descendant dans le code HTML.
+Pour expliciter ce chemin on ajoute un espace entre les sélecteurs de base.
 
-Les sélecteurs CSS permettent de préciser les éléments qui vont être impactés
-par la règle CSS.  Ils sont aussi utilisés sur d'autres problématiques du
-développement Web que nous verrons l'année prochaine.  Bref vous en aurez au
-partiel, c'est sûr.
+#### Directe (enfant)
 
-Comme vous le savez depuis le
-[TD1 HTML]({{site.baseurl}}/tutorials/tutorial1.md) une balise peut prendre des
-attributs. Deux attributs sont très importants pour les règles CSS :
-l'identifiant `id` et la classe `class` d'une balise.
 
+La relation de descendance directe est signifiée par le caractère `>`. Par exemple :
+
+~~~
+#titi>.toto
+~~~
+{:.css}
+
+Correspond au sélecteurs des éléments qui ont la classe 'toto' et qui ont pour parents l'élément d'id 'titi'.
+
+#### Indirecte
+
+
+La relation de descendance directe est signifiée par le caractère d'espacement. Par exemple :
 Par exemple :
 
 ~~~
-<div id="monidentifiant" class="skill feature">...</div>
+#titi .toto
+~~~
+{:.css}
+
+Signifie les éléments qui ont la classe toto ET qui sont descendants de l'élément d'id 'titi'.
+
+
+### Pseudo Classes
+
+Pseudo Classes des liens 
+
+~~~
+/*le premier caractère d'un texte*/
+p:first-child   {color:red;}
+
+/*le troisième paragraphe */
+p:nth-child(3) { color: green;}
+
+/*les textes des éléments li impairs seront verts et les pairs rouges*/
+li:nth-child(odd) { color: green;}
+li:nth-child(even) { color: red;}
+
+a:link {color: yellow;}
+a:visited {color: purple;}
+a:hover {text-decoration: underline;}
+~~~
+{:.css}
+
+
+
+### Ordre d'application des sélecteurs CSS.
+
+Nous avons utilisé un ficher de style externe styles.css pour ajouter des règles css.
+Il est aussi possible d'ajouter du CSS directement dans le HTML via l'attribut `style` :
+
+~~~
+<p style="font-size: 12pt; color: fuchsia">
+   Aren't style sheets wonderful?
+</p>
 ~~~
 {:.html}
 
-Ce code HTML déclare un élément de type `div` avec comme identifiant unique
-`monidentifiant` et ayant deux classes : `skill` et `feature`.  Un identifiant
-est unique pour toute la page HTML. Un élément peut avoir plusieurs classes
-comme dans l'exemple précédent et ces classes sont faites pour être attribuées à
-de multiples éléments de la page.
-
-Les classes, identifiant et le type des balises permettent de construire 95 % des sélecteurs
-CSS de base. Voyons la syntaxe pour les utiliser.
-
-### Les sélecteurs de balises
-
-Il s'agit juste d'utiliser le nom de la balise (`a`, `p`, `img`,...) sans autre
-décorateur. Si on veut donner la couleur rose à tous les liens d'une page, il
-faut écrire
+Ou d'inclure des règles css dans une balise `<style>` (internal style):
 
 ~~~
-a {
-  color: purple ;
-}
+<style type="text/css">
+   p {font-size: 12pt; color: pink}
+</style>
 ~~~
-{:.css}
+{:.html}
+
+Enfin les navigateurs appliquent un style par défaut sur les éléments.
+
+L'ordre de priorité d'application des règles css est la suivante :
+
+1. styles 'inline' par l'attribut `style`,
+1. styles contenu dans les fichiers css (external style),
+1. styles définis dans une balise `<style>` dans le fichier html (internal style),
+1. style par défaut des navigateurs.
 
 
-### Les sélecteurs d'identifiant
+En pratique on préférera les styles externes comme "styles.css", cela respecte mieux la césure entre la structure HTML et le style css. 
 
-Le décorateur associé à l'identifiant est le caractère `'#'`. Si on veut
-donner une largeur de `100px` à l'unique balise d'identifiant `monidentifiant`,
-il faut écrire
+Mais même en ce limitant à un fichier css il est possible d'avoir des règles qui rentrent en conflit :
 
 ~~~
-#monidentifiant {
-  width: 100px;
-}
+div {color: yellow;}
+div.toto {color: red;}
 ~~~
 {:.css}
 
-### Les sélecteurs de classes
+Afin de savoir la couleur qui sera appliquée sur les éléments `<div>`, les sélecteurs css bénéficient d'une priorité.
 
-Le décorateur associé aux classes est le caractère `.`. Si on veut donner une
-hauteur de `200px` à tous les éléments qui ont la classe `skill`, il faut écrire
+Cette priorité de spécificitée est une valeur (a,b,c) définie comme cela :
+ 
+ * a est le nombre de sélecteur d'id (`#`),
+ * b est le nombre de class (`.`) ou pseudo class (`:over`,`:visited`,...)
+ * c est le nombre d'élement contenu dans le sélecteur (`div` , `span`, `p`, ...)
+
+L'ordre de priorité est défini comme lexicographique (la valeur de a est plus discriminante que b qui lui même est plus discriminant que c). 
+
+
+ 1. Faire en sorte que les liens `<a>` visités apparaissent en gris. Lorsque la souris passe sur un lien, lui donner la couleur orange (sauf
+s'il a déjà été visité, auquel cas il reste en gris).
+
+
+## Table
+
+L'élément `<table>` correspond à une structuration récurrente des données, qui sert à representer un ensemble de données sous forme de colonnes et de lignes.
+
+### Les éléments `<table>`, `<tr>`, et `<td>`
+
+L'élément `<table>` contient la table.
+La table est composée de ligne (l'élément `<td>`) contenant des cellules (élément `<td>`).
+
+
+### L'élément `<th>`
+
+Dans l'arborescence du document, un élément `<th>` doit être le fils d'un élément
+`<tr>`. Il représente une cellule en-tête (le titre d'une colonne ou le titre d'une
+ligne du tableau). Il peut être utilisé à la place d'un élément `<td>`.
+
+Voici un squelette de table :
 
 ~~~
-.skill {
-  height: 200px;
-}
+<table>
+   <tr>
+      <th>Caract1</th>
+      <th>Caract2</th>
+      <th>Caract3</th>
+      <th>Caract4</th>
+   </tr>
+   <tr>
+      <td>Val1_1</td>
+      <td>Val1_2</td>
+      <td>Val1_3</td>
+      <td>Val1_4</td>
+   </tr>
+   <tr>
+      <td>Val2_1</td>
+      <td>Val2_2</td>
+      <td>Val2_3</td>
+      <td>Val2_4</td>
+   </tr>
+   ...
+</table>
 ~~~
-{:.css}
-
-## Exercices 
-
-<!--
-Exercice sur les outils de développement : changer temporairement la
-couleur des codes, la marge des blocs de codes, la taille de la police, ...
--->
-
-Tout va principalement se passer dans `styles.css`.
-
-1. **Couleurs :** Le fond de notre page est tout blanc par défaut. Nous allons
-changer cela en donner au `<body>` la couleur qu'à choisi le graphiste / Web-designer :
-`#838892`.  
-2. Conformément à la maquette du designer
-[target.png]({{site.baseurl}}/assets/target.png), il faut alterner comme
-couleurs de fonds pour les titres des sections les valeurs `#5BBDBF` et `#FF5850`.
-Pour cela il nous faudra rajouter une classe "pair" et "impair" aux éléments
-`h2` et `h3` et leur associer le style adéquat dans styles.css.
-
-2. **Dimensions :** plusieurs études (cf.
-[1](https://viget.com/inspire/the-line-length-misconception) et
-[2](https://en.wikipedia.org/wiki/Line_length) ) suggèrent que des lignes trop
-longues ou trop courtes nuisent gravement à la lisibilité d'un site. Pour
-traiter grossièrement le problème, limitez la largeur de l'élément `<body>` à
-`600px`.
-
-   <!--
-   > Le centrer au milieu avec des marges auto, lui donner du padding et une
-   > line-height de 150%
-   On n'a pas parlé de marge, de padding ni de ligne-height pour l'instant !!!
-   -->
+{:.html}
 
 
-3. L'image `beware.jpg` a du style, mais elle prend un peu trop de place : 
-limitez sa hauteur à `300px`.
+1. Créer une table avec les sept noms de colonnes suivants :
+```Acteurs, Karaté, Taekwondo, Judo, Chun Kuk Do, Tangsudo, Ju-jitsu```. Les noms doivent être contenus dans des balises ```<span>```
+1. Ajouter la classe  "skill" aux ```<span>``` contenant les noms des arts martiaux.
+1. Ajouter les six lignes suivantes (les nombres correspondent à la valeur de l'acteur dans l'art martial correspondant) :
 
-   <!--
-   > H2 et H3 du padding et du border radius
-   Pas abordé !!!
-   -->
-
-4. Les titres des sections doivent avoir leur texte centré.
-
-5. le texte doit être aéré : utiliser une hauteur de ligne de `150%`.
-
-6. Chaque paragraphe doit être indenté de `5px`.
-
-3. Allez chercher une fonte de votre choix sur
-   [http://www.fontsquirrel.com](http://www.fontsquirrel.com). Liez-là à votre
-   document avec la règle `@font-face`. Appliquez-la aux titres de section
-   `<h2>` en n'oubliant pas de mettre des fontes en *fallback* (fonte de
-   recours).  
-   **Attention :** Ne mettez pas d'espaces dans le nom de votre fonte, ou sinon
-   entourez-là avec des guillemets.
-
-5. On veut mettre en avant les innombrables arts martiaux que maîtrise Chuck
-   Norris. Pour ce faire, on va entourer chacun de ces arts martiaux (Taekwondo,
-   Ju-Jitsu, ...) d'une balise `<span>` avec la classe `skill` dans le fichier
-   HTML. D'un autre côté, il faut créer dans le CSS la règle qui associe à la
-   classe `skill` la mise en page suivante : texte en rouge et en italique (ou
-   ce qui vous fait plaisir).
-
-10. Le CSS est un standard au même titre que le HTML. Testez la conformité de
-    votre fichier CSS avec le validateur
-    [https://jigsaw.w3.org/css-validator](https://jigsaw.w3.org/css-validator).
-
-<!--
-Exercices avec les fontes ou le texte (text-align, line-height, text-indent) ?
--->
-
-<!--
-Bord rond : sans encore parler de box model
--->
-
-## CSS et HTML des rôles bien distincts et complémentaires
-
-Il y a une séparation claire entre les rôles du HTML (Contenu avec des balises
-pour donner du sens ) et des CSS (présentation / mise en page). Ce choix n'est
-pas évident au premier abord : par exemple votre document "Word" ne sépare pas
-la présentation du contenu. Mais cette séparation est indispensable et très puissante :
-
- * Elle permet de changer la présentation d'un document suivant s'il est destiné à
- 	l'impression ou à être visualisé avec un navigateur ; 
- * Elle permet de refaire un site Web en se concentrant sur les CSS sans (trop)
-   toucher au HTML ;
- * Elle permet de réutiliser une présentation d'une page à l'autre. Par exemple
-   quand *lemonde.fr* publie un nouvel article, il ne refait pas le style
-   expressément pour ce dernier: il s'agit d'un nouveau document HTML partageant
-   le même CSS que les articles précédents.
-
-<!--
-## CSS et HTML, Entre la césure...
-
-Souvent le CSS empiète sur le HTML et inversement. Quand le premier s'en
-offusque et dit au deuxième de faire attention où il met les pieds, ce dernier
-répond "je mets pieds où je veux,....".
+     * Chuck Norris, 5, 5, 5, 5, 5, 5
+     * Steven Seagal, 3, 5, 3, 2, 3, 5
+     * Bruce Lee, 5, 3, 3, 3, 4, 3
+     * Jean-Claude Van Damne, 5, 3, 3, 3, 4, 3
+     * Bolo Yeung, 2, 4, 4, 2, 5, 3
+     * Dolph Lundgren, 2, 4, 4, 2, 5, 3
 
 
-Car la césure en apparence très nette cache en fait plusieurs entre-deux au
-travers l'utilisation de certaines balises HTML dénuées de sémantiques (n'ayant
-qu'un but de présentation) ainsi que la possibilité au travers des styles
-inlines (du style ajouté directement dans le HTML) de se substituer aux CSS.
+### Les éléments `<thead>` et `<tbody>`
 
-## Mon navigateur, mes règles
+Les éléments `<thead>` et `<tbody>` servent à définir plus explicitement la structure de notre table:
 
-La complexité des CSS est parfois "artificielle" au sens où elle repose sur de
-l'existant, sur des différences entre navigateurs.
+ * la définition des colonnes (```Acteurs, Karaté,```...) 
+ *  les lignes (nos héros et leurs niveaux de compétence).
 
-### Utiliser le HTML pour la présentation
+1. Ajouter ces balises pour englober ces deux parties (en oubliant pas pour se faire leurs balises fermantes ```</thead>``` et ```</tbody>```)
 
-Par le passé, les navigateurs étant tous à des degrés différents conformes aux
-directives CSS. Il est probable que les intégrateurs ayant eu affaire à
-Internet Explorer 6 par exemple soient plus souvent chauves que la moyenne.  Il
-était courant de voir des sites utiliser des tables pour faire des layouts entre
-autre exemple.  Cela n'est pas forcément du à une méconnaissance de la part de
-l'intégrateur, mais bien au contraire parfois d'une expertise sur des solutions
-qui marchent sur des navigateurs mais pas sur d'autres.
 
--->
+### Les attributs ```rowspan``` et ```colspan``` 
+
+Les attributs ```rowspan``` et ```colspan``` permettent de fusionner les cellules adjacentes :
+
+ * ```rowspan``` permet de fusionner les cellules sur plusieurs lignes (i.e rows),
+ * ```collspan``` permet de fusionner les cellules sur plusieurs colonnes.
+
+
+1. Il apparaît que Chuck Norris est toujours au top (niveau 5) dans tous les martiaux. Fusionner les cellules représentant ses valeurs de manières à 
+mettre cela encore plus en exergue.
+
+
+À ce stade la structure de votre table reflète le sens que vous vouliez y mettre.
+Voyons maintenant comment la styliser.
+
+ 1. Érivez une règle CSS pour faire apparaître les bords de chaque cellule en
+   définissant à *solid* leur propriété *border-style*.
+ 1. Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages Wikipedia.
+ 1. Ajouter une règle pour que les textes dans les colonnes ne soient pas sur plusieurs lignes (notamment 'Chun Kuk Do') en utilisant la bonne valeur pour la propriété `white-space`,
+ 1. Définissez une couleur de fond #00AAFF pour la partie en-tête `thead` du tableau.
+ (voir la [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
+ 1. donner la couleur noire aux skill sans modifier le style des éléments ayant la class `skill` dans les paragraphes,
+ (voir la [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
+ 1. ajouter une règle pour qu'un row de la table sur deux apparaisse blanc et l'autre avec la couleur `#CCC` SANS modifier de quelque façon le HTML 
+ (voir la [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
+
+
+## Les contenus flottant :
+
+La propiété `float` associée à un élément permet de faire flotter ce dernier complètement à gauche ou à droite de la ligne où il se trouve. 
+Les valeurs de la propriété float sont  ```left```, ```right```, ```none``` et ```inherit```.
+
+
+ 1. Placer l'image de Chuck jeune de class ```young_chuck``` à gauche du texte, 
+ 1. Placer l'image beware ```beware_img``` à droite du texte.
+
+
+## Le modèle de boite
+
+Comme vous l'avez vu précédemment, les balises de type structure définissent des
+boîtes. Ces boîtes disposent toutes des propriétés suivantes en CSS :
+
+* padding : marge entre le contenu est la bordure de la boîte. Le padding est de
+  la couleur de la boîte, donc il a le même background que la boîte,
+* border : bordure qui entoure le contenu,
+* margin : marge à l’extérieur de la bordure, entre cette boîte et la
+  suivante. La margin est de la même couleur que la balise mère qui encapsule
+  celui pour lequel la marge est définie,
+* width : la largeur du contenu,
+* height : la hauteur du contenu
+
+<img alt="Box model" src="{{site.baseurl}}/assets/boxmodel.png" style="margin:0
+auto;display: block;">
+
+
+A noter que la taille réelle d'une boîte est égale à la taille du contenu `content` 
+(width, height) additionnée de l'épaisseur du padding, du bord et de la marge.
+
+### Centrer horizontalement :
+
+Pour centrer le contenu d'une balise :
+
+* si le contenu occupe toute la largeur de la balise : text-align: center
+* si le contenu est lui-même dans une balise moins large que la balise parent :
+  margin : auto sur la balise du contenu.
+
+ 1. Centrer le body horizontalement,
+ 1. dans la table, le texte des cellules, (le 5 de Chuck notamment est trop discret)
+ 1. ajouter du padding horizontal de 5 px aux skill dans la table (pas dans les paragraphes)
+
+
+## Position
+
+Relative, Fixed, Absolute.
+
+ 1. Ajouter les icônes de réseaux sociaux toujours positionnées en bas à droite.
+ Pour ce faire nous n'allons pas utiliser plusieurs images mais une seule.
+
