@@ -44,9 +44,9 @@
 
 	<!--début paragraphe -->
 	 À son retour, il travaille pour la société Northrop Grumman et ouvre une école de Karaté fréquentée par de nombreuses célébrités, dont Steve McQueen. Son fils Mike naît en 1963 suivi par sa fille Dina en 1964 et d'un second fils, Eric, en 1965.
-
 	
-		Le palmarès de Chuck est impressionnant :
+	Le palmarès de Chuck est impressionnant :
+	<!--fin paragraphe -->
 
 				<!--liste  -->
 
@@ -59,7 +59,6 @@
 				il a aussi fait du Judo et du Ju-jitsu
 	
 		
-		 <!--fin paragraphe -->
 <!--sous section -->
 Le cinéma
 		<!--début paragraphe -->
