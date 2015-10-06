@@ -1,6 +1,6 @@
 ---
-title: TD2
-subtitle: structuration et stylisation.
+title: TD2 &ndash; HTML / CSS avancé 1/2
+subtitle: structuration et stylisation, block & inline, combinaison de sélecteurs
 layout: tutorial
 ---
 
@@ -35,15 +35,16 @@ Quelques exemples :
    * `<div>` : cette balise est « neutre », à savoir qu'elle permet de distinguer
 une section qui ne revêt aucune signification particulière. À utiliser quand
 aucune des autres balises de structure ne convient. Typiquement utilisé pour
-donner à la page sa structure visuelle à l'aide de règles CSS header : section
-contenant l'en-tête affiché de la page
+donner à la page sa structure visuelle à l'aide de règles CSS
+   * `<header>` : section contenant l'en-tête affiché de la page
    * `<nav>` : section contenant une série de liens hypertextes pour la navigation
      sur le site
    * `<main>` : section principale de la page, celle qui contient le contenu
      spécifique à cette page. Cette balise ne peut être présente dans une autre
-     balise présentée ici à l'exception de « div ». Elle n'est pas supportée par
-     Internet Explorer <= 10 mais le support peut en être ajouté grâce à
-     Javascript et en utilisant la règle css « main {display : block} ».
+     balise présentée ici à l'exception de « div ».
+     <!-- Elle n'est pas supportée par Internet Explorer <= 10 mais le support peut -->
+     <!-- en être ajouté grâce à Javascript et en utilisant la règle css « main -->
+     <!-- {display : block} ». -->
    * `<article>` : section contenant un document « auto-suffisant », i.e. qui peut
      être séparé du reste de la page et gardera cependant tout son sens. Une
      page peut contenir plusieurs articles, dans le cas d'un blog par exemple,
@@ -76,20 +77,27 @@ contenant l'en-tête affiché de la page
 
 ## Structuration de la page
 
-Vous allez d'abord structurer logiquement le contenu du site à l'aide des balises de structure.
+Vous allez d'abord structurer logiquement le contenu du site à l'aide des
+balises de structure.
 
-1. Ajouter une balise `<header>`. Son contenu sera la citation du TD1 et une barre de navigation `<nav>`,
-2. Ajouter une balise `<main>` et une balise `<article>` et `<aside>`, mettre l'ancien contenu de la page dans `<article>` sauf les deux dernières sections. Celles-ci ("Les sites amis" et "Le Top 10 des derniers facts proposés") sont à mettre dans `<aside>`,
+1. Ajouter une balise `<header>`. Son contenu sera la citation du TD1 et une
+   barre de navigation `<nav>`,
+2. Ajouter une balise `<main>` et une balise `<article>` et `<aside>`, mettre
+   l'ancien contenu de la page dans `<article>` sauf les deux dernières
+   sections. Celles-ci ("Les sites amis" et "Le Top 10 des derniers facts
+   proposés") sont à mettre dans `<aside>`,
 3. Ajouter une balise `<footer>` qui contient le lien vers le retour au début du site.
-4. Ajouter dans la balise `<nav>` deux liens dans une structure de liste contenant :
-Un lien nommé "Accueil" qui pointe sur la page courante ("./index.html") et un nommé "Contact" qui pointe vers une page contact.html
-5. Construire cette page contact.html au même niveau que index.html. Y ajouter l'adresse avec la balise `<adress>`
-Contenant  :
+4. Ajouter dans la balise `<nav>` deux liens dans une structure de liste
+contenant : Un lien nommé "Accueil" qui pointe sur la page courante
+("./index.html") et un nommé "Contact" qui pointe vers une page contact.html
+5. Construire cette page contact.html au même niveau que index.html. Y ajouter
+l'adresse avec la balise `<adress>` contenant :
  * Email chuckn@caramail.com
  * IUT de Montpellier Sète
  * 99 avenue d'Occitanie
  * 34296 Montpellier Cedex 5
- Ainsi que l'image contanct.jpg pour bien illustrer que nous sommes à l'écoute.
+ 
+   Ainsi que l'image contanct.jpg pour bien illustrer que nous sommes à l'écoute.
 
 À ce point, le travail de division du site n'a pas encore de résultat visuel
 marquant. C'est avant tout un travail de structuration logique qui permet au
@@ -101,12 +109,17 @@ Pour la suite du TD, nous allons ajouter du style aux éléments de la page cour
 ## Règles de compositions des CSS
 
 
-À partir des sélecteurs de bases présentés [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial1_2.html), il est possible de créer des [sélecteurs complexes](http://www.w3.org/TR/css3-selectors/#combinators), par exemple :
+À partir des sélecteurs de bases présentés
+[dans le TD précédent]({{site.baseurl}}/tutorials/tutorial1_2.html), il est
+possible de créer des
+[sélecteurs complexes](http://www.w3.org/TR/css3-selectors/#combinators), par
+exemple :
 
   * les `<div>` ayant la class "toto" et qui sont fils d'un élément d'id #titi mais aussi fils directs d'un élément de type `<span>`.
 
 
-Nous esposons dans cette section les principaux moyens de composer un sélecteur css complexe.
+Nous exposons dans cette section les principaux moyens de composer un sélecteur
+css complexe.
 
 
 ### Regroupement 
@@ -170,7 +183,7 @@ Correspond au sélecteurs des éléments qui ont la classe 'toto' et qui ont pou
 #### Indirecte
 
 
-La relation de descendance directe est signifiée par le caractère d'espacement. Par exemple :
+La relation de descendance indirecte est signifiée par le caractère d'espacement. Par exemple :
 Par exemple :
 
 ~~~
@@ -178,7 +191,9 @@ Par exemple :
 ~~~
 {:.css}
 
-Signifie les éléments qui ont la classe toto ET qui sont descendants de l'élément d'id 'titi'.
+Signifie les éléments qui ont la classe toto ET qui sont descendants de
+l'élément d'id 'titi'. C'est-à-dire qu'on n'est plus limité aux fils puisqu'on
+intègre aussi les petits-fils, arrières petits-fils ... .
 
 
 ### Pseudo Classes
