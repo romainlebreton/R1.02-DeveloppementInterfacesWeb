@@ -206,8 +206,13 @@ a:hover {text-decoration: underline;}
 
 ### Ordre d'application des sélecteurs CSS.
 
+
+Il a plusieurs emplacements pour déclarer du style CSS.
+Nous commençons par préciser ces dernères et donner leurs ordre de priorité.
+
+#### priorité du style par emplacement.
 Nous avons utilisé un ficher de style externe styles.css pour ajouter des règles css.
-Il est aussi possible d'ajouter du CSS directement dans le HTML via l'attribut `style` :
+Il est aussi possible d'ajouter du CSS directement dans le HTML via l'attribut `style` (on parle de style "inline") :
 
 ~~~
 <p style="font-size: 12pt; color: fuchsia">
@@ -216,7 +221,7 @@ Il est aussi possible d'ajouter du CSS directement dans le HTML via l'attribut `
 ~~~
 {:.html}
 
-Ou d'inclure des règles css dans une balise `<style>` (internal style):
+Ou d'inclure des règles css dans une balise `<style>` (on parle de "internal style"):
 
 ~~~
 <style type="text/css">
@@ -226,10 +231,11 @@ Ou d'inclure des règles css dans une balise `<style>` (internal style):
 {:.html}
 
 Enfin les navigateurs appliquent un style par défaut sur les éléments.
+Cela permet de ne pas avoir à définir pour chaque balise tou le style qui doit lui être associé.
 
 L'ordre de priorité d'application des règles css est la suivante :
 
-1. styles 'inline' par l'attribut `style`,
+1. styles 'inline' par l'attribut `style` à même le HTML,
 1. styles contenu dans les fichiers css (external style),
 1. styles définis dans une balise `<style>` dans le fichier html (internal style),
 1. style par défaut des navigateurs.
@@ -237,7 +243,10 @@ L'ordre de priorité d'application des règles css est la suivante :
 
 En pratique on préférera les styles externes comme "styles.css", cela respecte mieux la césure entre la structure HTML et le style css. 
 
-Mais même en ce limitant à un fichier css il est possible d'avoir des règles qui rentrent en conflit :
+
+#### Priorité des règles par leurs sélecteurs.
+
+Des règles css rentrent inévitablement en conflit sur certains éléments :
 
 ~~~
 div {color: yellow;}
@@ -245,19 +254,68 @@ div.toto {color: red;}
 ~~~
 {:.css}
 
-Afin de savoir la couleur qui sera appliquée sur les éléments `<div>`, les sélecteurs css bénéficient d'une priorité.
+Afin de savoir la couleur qui sera appliquée sur les éléments `<div>` ayant la classe toto, des priorités sont définis sur les sélecteurs css.
 
-Cette priorité de spécificitée est une valeur (a,b,c) définie comme cela :
- 
- * a est le nombre de sélecteur d'id (`#`),
- * b est le nombre de class (`.`) ou pseudo class (`:over`,`:visited`,...)
- * c est le nombre d'élement contenu dans le sélecteur (`div` , `span`, `p`, ...)
+Cette priorité est une valeur (a,b,c,d) définie comme suit :
 
-L'ordre de priorité est défini comme lexicographique (la valeur de a est plus discriminante que b qui lui même est plus discriminant que c). 
+ * soit a la règle est dans un style inline (voir plus haut), (a=1 si le style est inline, 0 sinon)
+ * soit b est le nombre de sélecteur d'id (`#`),
+ * soit c est le nombre de class (`.`) ou pseudo class (`:over`,`:visited`,...)
+ * soit d est le nombre d'élement contenu dans le sélecteur (`div` , `span`, `p`, ...)
+
+l'ordre de priorité est défini comme lexicographique (la valeur de a est plus discriminante que b qui lui même est plus discriminant que c). 
+
+Pour revenir à l'exemple précédent, les règles ont donc comme priorité  :
+
+~~~
+ div -> (0,0,0,1) (un élément div)
+ div.toto -> (0,0,1,1) (une classe toto et un élément div)
+~~~
+{:.html}
+
+
+Soit la fonction `cssprior` qui à un sélcteur css donne sa priorité `(a,b,c,d)`, 
+voici quelques exemples d'ordre.
+Vérifier bien que les ordres suivants vous semblent normal :
+
+~~~
+ cssprior(.titi span ) >= cssprior(div span)
+ cssprior( nav.titi .tata + div div div div div  > ul li div.toto) 
+    <= cssprior(#truc)
+ cssprior(div > a) == cssprior(div + a)
+~~~
+{:.html}
+
+
+
+C'est donc la deuxième qui sera appliquée (sur les div ayant la classe toto bien sûr).
+
+
+Remarque si deux règles ont la même priorité, alors c'est l'emplacement de leurs déclaration (inline, ficher externe, tyle interne, style par défaut) qui prévaut 
+et si les deux règles sont dans le même emplacement, alors c'est le dernier qui l'emporte.
+
+#### le joker en cas d'impasse !important
+
+
+Le style inline ne peut être dépassé par les règles css dans notre fichier styles.css.
+Deplus nous pourrions utiliser des css externes et vouloir écraser certaines de ces règles pourtant très précises.
+Pour cela le css propose la règle !important :
+
+~~~
+div {color: yellow !important;}
+div.toto {color: red;}
+~~~
+{:.css}
+
+Elle permet de rendre la règle plus prioritaire que l'ordre (a,b,c,d) de n'importe quelle règle qui n'a pas le `!important`.
+Nous en parlons juste pour être exhaustif sur les règles de priorité : en pratique, `!important` est très peu utilisé, c'est le dernier recours, 
+le joker, un aveu d'échec...
+
 
 
  1. Faire en sorte que les liens `<a>` visités apparaissent en gris. Lorsque la souris passe sur un lien, lui donner la couleur orange (sauf
 s'il a déjà été visité, auquel cas il reste en gris).
+ 1. Aller sur http://flukeout.github.io/ et obtenez le score de 10. (vous pouvez faire les exos de 1 à 10 et de 14 à 18 vous pouvez mettre le numéro de l'exo en lui est place du sélecteur)
 
 
 ## Table
@@ -396,6 +454,25 @@ Pour centrer le contenu d'une balise :
  1. Centrer le body horizontalement,
  1. dans la table, le texte des cellules, (le 5 de Chuck notamment est trop discret)
  1. ajouter du padding horizontal de 5 px aux skill dans la table (pas dans les paragraphes)
+
+<!--
+Si on repousse cet exo on peut parler plus en profondeur des contraintes de tailles sur le premier  block avec une size, et les ordres 
+de contraintes sur auto entre width et margin
+-->
+
+## L'attribut display
+
+
+### block
+
+### inline
+
+### inline-bloc
+
+### les autres (tables, flex)
+
+
+Flex ser présenté dans les td suivants.
 
 
 ## Position
