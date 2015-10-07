@@ -65,15 +65,15 @@ Quelques exemples :
 Les balises au niveau du texte sont souvent liées par le navigateur à un style
 associé (les `<em>` seront mis en emphase, les `<sup>` en exposants,...).
 
-Il existe encore beaucoup d'autres balises HTML. Cela dit il arrive qu'aucune ne
+Il existe encore beaucoup d'autres balises HTML. Cela dit, il arrive qu'aucune ne
 corresponde à ce que l'on veut exprimer. Deux balises neutres ont été ajoutées
 pour ces constructions :
 
-   * `<span>` : cette balise est neutre, sans signification particulièrement. Permet
+   * `<span>` : cette balise est neutre, sans signification particulièrement. Son utilisation permet
      entre autres de créer des règles de formatage spécifiques du contenu
      textuel, par exemple une lettre plus grande pour la 1e lettre d'un
      paragraphe.
-   * `<div>` : cette balise est « neutre », à savoir qu'elle permet de
+   * `<div>` : cette balise est « neutre », son utilisation permet de
 distinguer une section qui ne revêt aucune signification
 particulière. Typiquement utilisé pour donner à la page sa structure visuelle à
 l'aide de règles CSS
@@ -224,7 +224,7 @@ La relation de descendance indirecte est signifiée par le caractère d'espaceme
 
 signifie les éléments qui ont la classe `toto` ET qui sont descendants de
 l'élément d'identifiant 'titi'. La différence avec `>` est qu'on n'est plus
-limité aux fils puisqu'on intègre aussi les petits-fils, arrières petits-fils
+limité aux fils puisqu'on intègre aussi les petits-fils, arrières-petits-fils
 ...
 
 <div class="exercise">
@@ -361,7 +361,7 @@ Les attributs ```rowspan``` et ```colspan``` permettent de fusionner les cellule
 <div class="exercise">
 
 Il apparaît que Chuck Norris est toujours au top (niveau 5) dans tous les martiaux. Fusionner les cellules représentant ses valeurs de manières à 
-mettre cela encore plus en exergue. Et puis mettez le 5 de Chuck en exerge avec une balise `<strong>` pour bien montrer qui est le patron.
+mettre cela encore plus en exergue. Et puis mettez le 5 de Chuck en avant avec une balise `<strong>` pour bien montrer qui est le patron.
 
 </div>
 
@@ -398,7 +398,7 @@ Les valeurs de la propriété float sont  ```left```, ```right```, ```none``` et
 </div>
 
 <div class="exercise">
-1. Rajoutez un nouveau paragraphe commence à la phrase "Spécialiste en arts
+1. Rajoutez un nouveau paragraphe qui commence à la phrase "Spécialiste en arts
 martiaux, ..." de la section "L'enfance".
 
    Vous devez alors avoir le rendu suivant :
@@ -436,7 +436,7 @@ boîtes. Ces boîtes disposent toutes des propriétés suivantes en CSS :
 auto;display: block;">
 
 
-A noter que la taille réelle d'une boîte est égale à la taille du contenu `content` 
+À noter que la taille réelle d'une boîte est égale à la taille du contenu `content` 
 (width, height) additionnée de l'épaisseur du padding, du bord et de la marge.
 
 <div class="exercise">
@@ -466,15 +466,15 @@ La propriété CSS `position` offre de nouvelles possibilités pour le
 positionnement des éléments. Ses valeurs sont :
 
 * `static` : Comportement normal (par défaut), l'élément est inséré normalement.
-* `relative` : Le reste de la page fait comme si l'élément était positionné
+* `relative` : le reste de la page fait comme si l'élément était positionné
   "normalement". De son côté, l'élément est positionné *relativement* à la
   position où il aurait dû être. On voit donc un espace où l'élément aurait dû
   être s'il n'ont pas écrit `position:relative;`.
-* `absolute` : Le reste de la page fait comme si l'élément n'existait
+* `absolute` : le reste de la page fait comme si l'élément n'existait
 pas. L'élément se positionne relativement à `<body>` (ou plus généralement à son
 plus proche ancêtre positionné).
-* `fixed` : Le reste de la page fait comme si l'élément n'existait
-pas. L'élément se positionne relativement à la fenêtre d'affichage ; il parait donc *fixé* lors d'un défilement de la page.
+* `fixed` : le reste de la page fait comme si l'élément n'existait
+pas. L'élément se positionne relativement à la fenêtre d'affichage ; il paraît donc *fixé* lors d'un défilement de la page.
 
 Pour indiquer le décalage de position, on utilise les propriétés `top`, `left`,
 `right` et `bottom`. Par exemple, les propriétés
@@ -499,7 +499,7 @@ Référence : [Mozilla Developer Network (MDN)](https://developer.mozilla.org/fr
 [facebook.png ![Facebook]({{site.baseurl}}/assets/facebook.png)]({{site.baseurl}}/assets/facebook.png)
 et
 [twitter.png ![Twitter]({{site.baseurl}}/assets/twitter.png)]({{site.baseurl}}/assets/twitter.png)
-toujours positionnées en bas à droite de la fenêtre d'affichage l'une au dessus
+toujours positionnées en bas à droite de la fenêtre d'affichage l'une au-dessus
 de l'autre. Essayez aussi temporairement de les afficher tout en bas à droite du
 document.
 
