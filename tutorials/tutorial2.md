@@ -319,11 +319,14 @@ Voici un squelette de table :
 ~~~
 {:.html}
 
+<div class="exercise">
 
-1. Créer une table avec les sept noms de colonnes suivants :
-```Acteurs, Karaté, Taekwondo, Judo, Chun Kuk Do, Tangsudo, Ju-jitsu```. Les noms doivent être contenus dans des balises ```<span>```
+1. Créer une table avec les sept noms de colonnes suivants : ```Acteurs, Karaté,
+Taekwondo, Judo, Chun Kuk Do, Tangsudo, Ju-jitsu```. Les noms doivent être
+contenus dans des balises ```<span>```
 1. Ajouter la classe  "skill" aux ```<span>``` contenant les noms des arts martiaux.
-1. Ajouter les six lignes suivantes (les nombres correspondent à la valeur de l'acteur dans l'art martial correspondant) :
+1. Ajouter les six lignes suivantes (les nombres correspondent à la valeur de
+   l'acteur dans l'art martial correspondant) :
 
      * Chuck Norris, 5, 5, 5, 5, 5, 5
      * Steven Seagal, 3, 5, 3, 2, 3, 5
@@ -332,6 +335,7 @@ Voici un squelette de table :
      * Bolo Yeung, 2, 4, 4, 2, 5, 3
      * Dolph Lundgren, 2, 4, 4, 2, 5, 3
 
+</div>
 
 ### Les éléments `<thead>` et `<tbody>`
 
@@ -340,8 +344,12 @@ Les éléments `<thead>` et `<tbody>` servent à définir plus explicitement la 
  * la définition des colonnes (```Acteurs, Karaté,```...) 
  *  les lignes (nos héros et leurs niveaux de compétence).
 
-1. Ajouter ces balises pour englober ces deux parties (en oubliant pas pour se faire leurs balises fermantes ```</thead>``` et ```</tbody>```)
+<div class="exercise">
 
+Ajouter ces balises pour englober ces deux parties (en oubliant pas pour se
+faire leurs balises fermantes ```</thead>``` et ```</tbody>```)
+
+</div>
 
 ### Les attributs ```rowspan``` et ```colspan``` 
 
@@ -350,13 +358,17 @@ Les attributs ```rowspan``` et ```colspan``` permettent de fusionner les cellule
  * ```rowspan``` permet de fusionner les cellules sur plusieurs lignes (i.e rows),
  * ```collspan``` permet de fusionner les cellules sur plusieurs colonnes.
 
+<div class="exercise">
 
-1. Il apparaît que Chuck Norris est toujours au top (niveau 5) dans tous les martiaux. Fusionner les cellules représentant ses valeurs de manières à 
+Il apparaît que Chuck Norris est toujours au top (niveau 5) dans tous les martiaux. Fusionner les cellules représentant ses valeurs de manières à 
 mettre cela encore plus en exergue. Et puis mettez le 5 de Chuck en exerge avec une balise `<strong>` pour bien montrer qui est le patron.
 
+</div>
 
 À ce stade la structure de votre table reflète le sens que vous vouliez y mettre.
 Voyons maintenant comment la styliser.
+
+<div class="exercise">
 
  1. Écrivez une règle CSS pour faire apparaître les bords de chaque cellule en
    définissant à *solid* leur propriété *border-style*.
@@ -371,16 +383,40 @@ Voyons maintenant comment la styliser.
  HTML (voir la
  [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
 
+</div>
 
 ## Les contenus flottant
 
 La propriété `float` associée à un élément permet de faire flotter ce dernier complètement à gauche ou à droite de la ligne où il se trouve. 
 Les valeurs de la propriété float sont  ```left```, ```right```, ```none``` et ```inherit```.
 
+<div class="exercise">
 
  1. Placer l'image de Chuck jeune de class ```young_chuck``` à gauche du texte, 
  1. Placer l'image beware ```beware_img``` à droite du texte.
 
+</div>
+
+<div class="exercise">
+1. Rajoutez un nouveau paragraphe commence à la phrase "Spécialiste en arts
+martiaux, ..." de la section "L'enfance".
+
+   Vous devez alors avoir le rendu suivant :
+   
+   <img src="{{site.baseurl}}/assets/noclear.png" alt="Sans clear"
+   style="display:block;margin:0 auto;">
+   
+2. Nous souhaitons plutôt ce rendu :
+   
+   <img src="{{site.baseurl}}/assets/clear.png" alt="Sans clear"
+   style="display:block;margin:0 auto;">
+
+   Pour interdire à notre paragraphe d'avoir un élément flottant sur son côté gauche,
+rajoutez-lui la règle `clear:left`.  
+**Note :** On peut aussi interdire le côté droit avec `clear:right` et les deux
+  en même temps avec `clear:both`.
+
+</div>
 
 ## Le modèle de boite
 
