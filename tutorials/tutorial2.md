@@ -108,18 +108,16 @@ Pour la suite du TD, nous allons ajouter du style aux éléments de la page cour
 
 ## Règles de compositions des CSS
 
-
 À partir des sélecteurs de bases présentés
-[dans le TD précédent]({{site.baseurl}}/tutorials/tutorial1_2.html), il est
+[dans le TD précédent]({{site.baseurl}}/tutorials/tutorial1_2.html#les-slecteurs-css-de-base), il est
 possible de créer des
-[sélecteurs complexes](http://www.w3.org/TR/css3-selectors/#combinators), par
-exemple :
-
-  * les `<div>` ayant la class "toto" et qui sont fils d'un élément d'id #titi mais aussi fils directs d'un élément de type `<span>`.
+[sélecteurs complexes](http://www.w3.org/TR/css3-selectors/#combinators).
+Par exemple, nous allons voir comment sélectionner les `<div>` ayant la classe `toto` et
+qui sont fils d'un élément d'identifiant `titi`.
 
 
 Nous exposons dans cette section les principaux moyens de composer un sélecteur
-css complexe.
+CSS complexe.
 
 
 ### Regroupement 
@@ -178,7 +176,7 @@ La relation de descendance directe est signifiée par le caractère `>`. Par exe
 ~~~
 {:.css}
 
-Correspond au sélecteurs des éléments qui ont la classe 'toto' et qui ont pour parents l'élément d'id 'titi'.
+Correspond au sélecteurs des éléments qui ont la classe 'toto' et qui ont pour parents l'élément d'identifiant 'titi'.
 
 #### Indirecte
 
@@ -192,7 +190,7 @@ Par exemple :
 {:.css}
 
 Signifie les éléments qui ont la classe toto ET qui sont descendants de
-l'élément d'id 'titi'. C'est-à-dire qu'on n'est plus limité aux fils puisqu'on
+l'élément d'identifiant 'titi'. C'est-à-dire qu'on n'est plus limité aux fils puisqu'on
 intègre aussi les petits-fils, arrières petits-fils ... .
 
 
@@ -223,10 +221,10 @@ a:hover {text-decoration: underline;}
 
 
 Il a plusieurs emplacements pour déclarer du style CSS.
-Nous commençons par préciser ces dernères et donner leurs ordre de priorité.
+Nous commençons par préciser ces dernières et donner leurs ordre de priorité.
 
 #### priorité du style par emplacement.
-Nous avons utilisé un ficher de style externe styles.css pour ajouter des règles css.
+Nous avons utilisé un ficher de style externe styles.css pour ajouter des règles CSS.
 Il est aussi possible d'ajouter du CSS directement dans le HTML via l'attribut `style` (on parle de style "inline") :
 
 ~~~
@@ -236,7 +234,7 @@ Il est aussi possible d'ajouter du CSS directement dans le HTML via l'attribut `
 ~~~
 {:.html}
 
-Ou d'inclure des règles css dans une balise `<style>` (on parle de "internal style"):
+Ou d'inclure des règles CSS dans une balise `<style>` (on parle de "internal style"):
 
 ~~~
 <style type="text/css">
@@ -246,22 +244,22 @@ Ou d'inclure des règles css dans une balise `<style>` (on parle de "internal st
 {:.html}
 
 Enfin les navigateurs appliquent un style par défaut sur les éléments.
-Cela permet de ne pas avoir à définir pour chaque balise tou le style qui doit lui être associé.
+Cela permet de ne pas avoir à définir pour chaque balise tout le style qui doit lui être associé.
 
-L'ordre de priorité d'application des règles css est la suivante :
+L'ordre de priorité d'application des règles CSS est la suivante :
 
 1. styles 'inline' par l'attribut `style` à même le HTML,
-1. styles contenu dans les fichiers css (external style),
-1. styles définis dans une balise `<style>` dans le fichier html (internal style),
+1. styles contenu dans les fichiers CSS (external style),
+1. styles définis dans une balise `<style>` dans le fichier HTML (internal style),
 1. style par défaut des navigateurs.
 
 
-En pratique on préférera les styles externes comme "styles.css", cela respecte mieux la césure entre la structure HTML et le style css. 
+En pratique on préférera les styles externes comme "styles.css", cela respecte mieux la césure entre la structure HTML et le style CSS. 
 
 
 #### Priorité des règles par leurs sélecteurs.
 
-Des règles css rentrent inévitablement en conflit sur certains éléments :
+Des règles CSS rentrent inévitablement en conflit sur certains éléments :
 
 ~~~
 div {color: yellow;}
@@ -269,14 +267,14 @@ div.toto {color: red;}
 ~~~
 {:.css}
 
-Afin de savoir la couleur qui sera appliquée sur les éléments `<div>` ayant la classe toto, des priorités sont définis sur les sélecteurs css.
+Afin de savoir la couleur qui sera appliquée sur les éléments `<div>` ayant la classe toto, des priorités sont définis sur les sélecteurs CSS.
 
 Cette priorité est une valeur (a,b,c,d) définie comme suit :
 
  * soit a la règle est dans un style inline (voir plus haut), (a=1 si le style est inline, 0 sinon)
- * soit b est le nombre de sélecteur d'id (`#`),
- * soit c est le nombre de class (`.`) ou pseudo class (`:over`,`:visited`,...)
- * soit d est le nombre d'élement contenu dans le sélecteur (`div` , `span`, `p`, ...)
+ * soit b est le nombre de sélecteur d'identifiant (`#`),
+ * soit c est le nombre de classe (`.`) ou pseudo classe (`:over`,`:visited`,...)
+ * soit d est le nombre d'élément contenu dans le sélecteur (`div` , `span`, `p`, ...)
 
 l'ordre de priorité est défini comme lexicographique (la valeur de a est plus discriminante que b qui lui même est plus discriminant que c). 
 
@@ -289,7 +287,7 @@ Pour revenir à l'exemple précédent, les règles ont donc comme priorité  :
 {:.html}
 
 
-Soit la fonction `cssprior` qui à un sélcteur css donne sa priorité `(a,b,c,d)`, 
+Soit la fonction `cssprior` qui à un sélecteur CSS donne sa priorité `(a,b,c,d)`, 
 voici quelques exemples d'ordre.
 Vérifier bien que les ordres suivants vous semblent normal :
 
@@ -306,15 +304,15 @@ Vérifier bien que les ordres suivants vous semblent normal :
 C'est donc la deuxième qui sera appliquée (sur les div ayant la classe toto bien sûr).
 
 
-Remarque si deux règles ont la même priorité, alors c'est l'emplacement de leurs déclaration (inline, ficher externe, tyle interne, style par défaut) qui prévaut 
+Remarque si deux règles ont la même priorité, alors c'est l'emplacement de leurs déclaration (inline, ficher externe, style interne, style par défaut) qui prévaut 
 et si les deux règles sont dans le même emplacement, alors c'est le dernier qui l'emporte.
 
 #### le joker en cas d'impasse !important
 
 
-Le style inline ne peut être dépassé par les règles css dans notre fichier styles.css.
-Deplus nous pourrions utiliser des css externes et vouloir écraser certaines de ces règles pourtant très précises.
-Pour cela le css propose la règle !important :
+Le style inline ne peut être dépassé par les règles CSS dans notre fichier styles.css.
+De plus nous pourrions utiliser des CSS externes et vouloir écraser certaines de ces règles pourtant très précises.
+Pour cela le CSS propose la règle !important :
 
 ~~~
 div {color: yellow !important;}
@@ -335,7 +333,7 @@ s'il a déjà été visité, auquel cas il reste en gris).
 
 ## Table
 
-L'élément `<table>` correspond à une structuration récurrente des données, qui sert à representer un ensemble de données sous forme de colonnes et de lignes.
+L'élément `<table>` correspond à une structuration récurrente des données, qui sert à représenter un ensemble de données sous forme de colonnes et de lignes.
 
 ### Les éléments `<table>`, `<tr>`, et `<td>`
 
@@ -415,21 +413,23 @@ mettre cela encore plus en exergue.
 À ce stade la structure de votre table reflète le sens que vous vouliez y mettre.
 Voyons maintenant comment la styliser.
 
- 1. Érivez une règle CSS pour faire apparaître les bords de chaque cellule en
+ 1. Écrivez une règle CSS pour faire apparaître les bords de chaque cellule en
    définissant à *solid* leur propriété *border-style*.
  1. Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages Wikipedia.
  1. Ajouter une règle pour que les textes dans les colonnes ne soient pas sur plusieurs lignes (notamment 'Chun Kuk Do') en utilisant la bonne valeur pour la propriété `white-space`,
  1. Définissez une couleur de fond #00AAFF pour la partie en-tête `thead` du tableau.
  (voir la [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
- 1. donner la couleur noire aux skill sans modifier le style des éléments ayant la class `skill` dans les paragraphes,
+ 1. donner la couleur noire aux skill sans modifier le style des éléments ayant la classe `skill` dans les paragraphes,
  (voir la [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
- 1. ajouter une règle pour qu'un row de la table sur deux apparaisse blanc et l'autre avec la couleur `#CCC` SANS modifier de quelque façon le HTML 
- (voir la [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
+ 1. ajouter une règle pour qu'une ligne (*row*) de la table sur deux apparaisse
+ en blanc et l'autre avec la couleur `#CCC` SANS modifier de quelque façon le
+ HTML (voir la
+ [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
 
 
 ## Les contenus flottant :
 
-La propiété `float` associée à un élément permet de faire flotter ce dernier complètement à gauche ou à droite de la ligne où il se trouve. 
+La propriété `float` associée à un élément permet de faire flotter ce dernier complètement à gauche ou à droite de la ligne où il se trouve. 
 Les valeurs de la propriété float sont  ```left```, ```right```, ```none``` et ```inherit```.
 
 
@@ -487,7 +487,7 @@ de contraintes sur auto entre width et margin
 ### les autres (tables, flex)
 
 
-Flex ser présenté dans les td suivants.
+Flex sera présenté dans les td suivants.
 
 
 ## Position
