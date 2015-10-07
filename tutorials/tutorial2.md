@@ -5,9 +5,8 @@ layout: tutorial
 ---
 
 
-La spécification HTML5
-propose différentes manières de classer les balises/éléments selon leurs
-caractéristiques
+La spécification HTML5 propose différentes manières de classer les
+balises/éléments selon leurs caractéristiques
 ([Liste des balises par catégorie](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories)). Nous
 allons ici nous intéresser à deux types spécifiques :
 
@@ -19,7 +18,8 @@ allons ici nous intéresser à deux types spécifiques :
   qu'elles délimitent dans la page s'enchaînent-ils verticalement. Elles peuvent
   contenir d'autres balises de structure ou des balises de contenu.
 
-* les balises au niveau du texte : elles apportent une précision sur la sémantique d'une partie du texte (mise en exposant, mise en exergue,...). 
+* les balises au niveau du texte : elles apportent une précision sur la
+  sémantique d'une partie du texte (mise en exposant, mise en exergue,...).
 
 Quelques exemples :
 
@@ -62,17 +62,21 @@ Quelques exemples :
    * `<br>` : saut de ligne
 
 
-Les balises au niveau du texte sont souvent liées par le navigateur à un style associé (les `<em>` seront mis en emphase, les `<sup>` en exposants,...).
+Les balises au niveau du texte sont souvent liées par le navigateur à un style
+associé (les `<em>` seront mis en emphase, les `<sup>` en exposants,...).
 
-Il existe encore beaucoup d'autres balises HTML. Cela dit il arrive qu'aucune ne corresponde à ce que l'on veut exprimer. Deux balises neutres ont été ajoutées pour ces constructions :
+Il existe encore beaucoup d'autres balises HTML. Cela dit il arrive qu'aucune ne
+corresponde à ce que l'on veut exprimer. Deux balises neutres ont été ajoutées
+pour ces constructions :
 
    * `<span>` : cette balise est neutre, sans signification particulièrement. Permet
      entre autres de créer des règles de formatage spécifiques du contenu
      textuel, par exemple une lettre plus grande pour la 1e lettre d'un
      paragraphe.
-   * `<div>` : cette balise est « neutre », à savoir qu'elle permet de distinguer
-une section qui ne revêt aucune signification particulière. Typiquement utilisé pour
-donner à la page sa structure visuelle à l'aide de règles CSS
+   * `<div>` : cette balise est « neutre », à savoir qu'elle permet de
+distinguer une section qui ne revêt aucune signification
+particulière. Typiquement utilisé pour donner à la page sa structure visuelle à
+l'aide de règles CSS
 
 ## Structuration de la page
 
@@ -111,31 +115,32 @@ l'exemple précédent :
 <div class="exercise">
 
 1. Ajouter une balise `<header>`. Son contenu sera la citation du TD1 et une
-   barre de navigation `<nav>`,
-2. Ajouter une balise `<main>` et une balise `<article>` et `<aside>`, mettre
-   l'ancien contenu de la page dans `<article>` sauf les deux dernières
-   sections. Celles-ci ("Les sites amis" et "Le Top 10 des derniers facts
-   proposés") sont à mettre dans `<aside>`,
-3. Ajouter une balise `<footer>` qui contient le lien vers le retour au début du site.
+   barre de navigation `<nav>` vide pour l'instant,
+2. Ajouter une balise `<main>`, une balise `<article>` et une balise `<aside>`
+   comme dans le *template* précédent. Mettez l'ancien contenu de la page dans
+   `<article>` sauf les deux dernières sections ("Les sites amis" et
+   "Le Top 10 des derniers facts proposés") qui vont dans `<aside>`,
+3. Ajouter une balise `<footer>` qui contient le lien vers le retour au début du site,
 4. Ajouter dans la balise `<nav>` deux liens dans une structure de liste
-contenant : Un lien nommé "Accueil" qui pointe sur la page courante
-("./index.html") et un nommé "Contact" qui pointe vers une page contact.html
-5. Construire cette page contact.html au même niveau que index.html. Y ajouter
-l'adresse avec la balise `<adress>` contenant :
- * Email chuckn@caramail.com
- * IUT de Montpellier Sète
- * 99 avenue d'Occitanie
- * 34296 Montpellier Cedex 5
+   contenant : Un lien nommé "Accueil" qui pointe sur la page courante `index.html`
+   et un nommé "Contact" qui pointe vers une page `contact.html`,
+5. Construire cette page `contact.html` au même niveau que `index.html`. Elle
+   doit contenir l'image [contact.jpg]({{site.baseurl}}/assets/contact.jpg) pour
+   illustrer que nous sommes bien à l'écoute. Ajouter l'adresse avec la balise
+   `<adress>` contenant :
+ * Email : chuckn@yopmail.com
+ * IUT de Montpellier Sète <br>
+   99 avenue d'Occitanie <br>
+   34296 Montpellier Cedex 5
  
-   Ainsi que l'image contanct.jpg pour bien illustrer que nous sommes à l'écoute.
+</div>
 
 À ce point, le travail de division du site n'a pas encore de résultat visuel
 marquant. C'est avant tout un travail de structuration logique qui permet au
-navigateur, à un moteur de recherche de mieux comprendre votre page web.
-Nous verrons comment structurer la page dans les tds suivants.
-Pour la suite du TD, nous allons ajouter du style aux éléments de la page courante.
+navigateur, à un moteur de recherche de mieux comprendre votre page web.  Nous
+verrons comment structurer la page dans les TDs suivants. Pour la suite du TD,
+nous allons ajouter du style aux éléments de la page courante.
 
-</div>
 
 ## Règles de compositions des CSS
 
@@ -246,15 +251,15 @@ a:link {color: yellow;}
 /* Style des liens <a> ayant été visités */
 a:visited {color: purple;}
 /* Style des liens <a> si la souris les survole */
-a:hover {text-decoration: underline;}
+a:hover {text-decoration: underline;} 
 
 /* le premier caractère d'un texte */
-p:first-child   {color:red;}
+p:first-child {color:red;}
 /* le troisième paragraphe */
-p:nth-child(3) { color: green;}
+p:nth-child(3) {color: green;}
 /* les textes des éléments li impairs seront verts et les pairs rouges */
-li:nth-child(odd) { color: green;}
-li:nth-child(even) { color: red;}
+li:nth-child(odd) {color: green;}
+li:nth-child(even) {color: red;}
 ~~~
 {:.css}
 

@@ -56,6 +56,8 @@ La balise 'br' du saut de ligne ne prend pas de contenu <br>
 Nous allons commencer par des balises un peu particulières qui sont là pour
 donner des informations sur le document.
 
+<div class="exercise">
+
 1. Ouvrez le fichier [index.txt]({{site.baseurl}}/assets/index.txt) dans le navigateur.
 
 2. Sauvegardez ce fichier en local dans un dossier `HTMLCSS/TD1/` en le
@@ -117,6 +119,8 @@ Corrigez votre page Web en insérant un titre après le `<meta>`.
    <title>Le site non officiel de Chuck Norris</title>
    ~~~
    {:.html}
+
+</div>
 
 À ce stade, le validateur indique que le fichier `index.html` est un document
 HTML5 valide.
@@ -182,8 +186,8 @@ l'arbre est le suivant :
 * title et meta sont deux fils de l'élément head
 * "Le site non officiel de Chuck Norris" est un fils de l'élément title.
 
-<div style="clear:both">
-1. Mettez à jour votre page `index.html` pour qu'elle respecte la structure HTML
+<div style="clear:both" class="exercise">
+Mettez à jour votre page `index.html` pour qu'elle respecte la structure HTML
 ci-dessus. (Vous devez rajouter les balises `<html>`, `<head>` et `<body>`)
 </div>
 
@@ -208,13 +212,17 @@ survol avec la souris).
 * Quand on passe la souris au-dessus d'un élément dans l'outil de développement,
   il le colore dans la page.
 
-1. Familiarisez-vous avec ces trois techniques en inspectant la page du TD.  Par
+<div class="exercise">
+
+Familiarisez-vous avec ces trois techniques en inspectant la page du TD.  Par
 exemple faite un clic droit sur l'élément "il y a trois façons..." puis
 "inspecter l'élément".  L'outil de développement doit vous présenter le code
 HTML et vous positionner directement sur `<p>Il y a `.
 
+</div>
 
-<!-- Hé ! ceci est un commentaire HTML, vous n'êtes pas censé le voir, à moins que vous ne sachiez utiliser les outils de développeurs  ? -->
+<!-- Hé ! ceci est un commentaire HTML, vous n'êtes pas censé le voir, à moins
+que vous ne sachiez utiliser les outils de développeurs ? -->
 
 ## Les Commentaires en HTML
 
@@ -254,10 +262,12 @@ le vérifier en inspectant) :
 Si vous cherchez un bon exemple d'utilisation de balises `<h2>`, inspectez le
 titre **Titres** juste au-dessus en faisant un clic droit dessus.
 
+<div class="exercise">
 
 1. Ajoutez la balise `<h2>` aux éléments de `index.html` marqués par les commentaires : `<!-- section -->`.
-
 2. Ajoutez la balise `<h3>` aux éléments de `index.html` marqués par les commentaires : `<!-- sous section -->`. 
+
+</div>
 
 ## Éléments de regroupement
 
