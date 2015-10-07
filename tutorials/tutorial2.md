@@ -467,7 +467,7 @@ positionnement des éléments. Ses valeurs sont :
 
 * `static` : Comportement normal (par défaut), l'élément est inséré normalement.
 * `relative` : Le reste de la page fait comme si l'élément était positionné
-  "normalement". De son côté, l'élement est positionné *relativement* à la
+  "normalement". De son côté, l'élément est positionné *relativement* à la
   position où il aurait dû être. On voit donc un espace où l'élément aurait dû
   être s'il n'ont pas écrit `position:relative;`.
 * `absolute` : Le reste de la page fait comme si l'élément n'existait
