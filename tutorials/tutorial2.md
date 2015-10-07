@@ -15,17 +15,16 @@ allons ici nous intéresser à deux types spécifiques :
   ces balises découpent la page web en sections horizontales qu'elles occupent
   en entier (du bord gauche au bord droit de la section). Deux balises de flux
   ne peuvent pas partager une même section horizontale aussi les espaces
-  qu'elles délimitent dans la page s'enchaînent-ils verticalement. Elles peuvent
-  contenir d'autres balises de structure ou des balises de contenu.
+  qu'elles délimitent dans la page s'enchaînent-ils verticalement.
 
 * les balises au niveau du texte : elles apportent une précision sur la
-  sémantique d'une partie du texte (mise en exposant, mise en exergue,...).
+  sémantique d'une partie du texte (mise en avant d'une partie de texte importante, ajout d'un type exposant, time,...).
 
 Quelques exemples :
 
 * balises de structure :
 
-   * `<header>` : section contenant l'en-tête affiché de la page
+   * `<header>` : section contenant l'en-tête affichée de la page
    * `<nav>` : section contenant une série de liens hypertextes pour la navigation
      sur le site
    * `<main>` : section principale de la page, celle qui contient le contenu
@@ -62,26 +61,24 @@ Quelques exemples :
    * `<br>` : saut de ligne
 
 
-Les balises au niveau du texte sont souvent liées par le navigateur à un style
-associé (les `<em>` seront mis en emphase, les `<sup>` en exposants,...).
+Ces balises au niveau du texte sont souvent naturelement liées à un style
+associé (les `<em>` seront stylisées par une mise en italique, les `<sup>` en exposants,...).
+Les navigateurs se chargent d'ajouter pour nous ce style ad-hoc.
 
 Il existe encore beaucoup d'autres balises HTML. Cela dit, il arrive qu'aucune ne
-corresponde à ce que l'on veut exprimer. Deux balises neutres ont été ajoutées
+corresponde à ce que l'on veut exprimer (lors d'une construction de layout par exemple). Deux balises neutres ont été ajoutées
 pour ces constructions :
 
-   * `<span>` : cette balise est neutre, sans signification particulièrement. Son utilisation permet
+   * `<span>` : cette balise est neutre, sans signification particulière. Son utilisation permet
      entre autres de créer des règles de formatage spécifiques du contenu
-     textuel, par exemple une lettre plus grande pour la 1e lettre d'un
-     paragraphe.
+     textuel (par exemple lorsque nous avons ajouter la class `skill`).
    * `<div>` : cette balise est « neutre », son utilisation permet de
 distinguer une section qui ne revêt aucune signification
-particulière. Typiquement utilisé pour donner à la page sa structure visuelle à
-l'aide de règles CSS
+particulière. Contrairement au `span` elle provoque un saut de ligne.
 
 ## Structuration de la page
 
-Vous allez d'abord structurer logiquement le contenu du site à l'aide des
-balises de structure. Voici un *template* HTML d'une structuration classique de
+Vous allez d'abord structurer logiquement le contenu du site. Voici un *template* HTML d'une structuration classique de
 page Web.
 
 
@@ -178,7 +175,7 @@ h1,h2,h3 {color: red}
 
 ### Combinaison
 
-Pour préciser un élément, il suffit de coller plusieurs sélecteurs de base
+Pour préciser un élément, il suffit d'apposer plusieurs sélecteurs de base
 (balise, classe ou identifiant). Par exemple :
 
 ~~~
@@ -193,12 +190,13 @@ correspond au sélecteur des `<div>` qui ont la classe 'toto'. Ou encore
 ~~~
 {:.css}
 
-correspond aux éléments qui ont la classe `toto` ET `titi`.
+correspond aux éléments qui ont la classe `toto` <strong>ET</strong> `titi`.
 
 ### Descendance
 
-Pour discriminer certains éléments sur lequel on veut que porte un sélecteur, il
-est très courant de préciser de quoi il est descendant dans le code HTML.
+
+On veut pouvoir limiter une règle css à une sous partie de l'arborescence HTML, pour cela on utilise la relation de descendance.
+
 
 #### Directe (enfant)
 
@@ -209,7 +207,7 @@ La relation de descendance directe est signifiée par le caractère `>`. Par exe
 ~~~
 {:.css}
 
-sélectionne les éléments de la classe `toto` ET qui ont pour parent l'élément
+sélectionne les éléments de la classe `toto` qui sont  <strong>enfant</strong> (direct) de l'élément
 d'identifiant `titi`.
 
 #### Indirecte
@@ -222,8 +220,8 @@ La relation de descendance indirecte est signifiée par le caractère d'espaceme
 ~~~
 {:.css}
 
-signifie les éléments qui ont la classe `toto` ET qui sont descendants de
-l'élément d'identifiant 'titi'. La différence avec `>` est qu'on n'est plus
+signifie les éléments qui ont la classe `toto` qui sont <strong>descendants</strong> (direct ou indirect) de
+l'élément d'identifiant 'titi'. Donc la différence avec `>` est qu'on n'est plus
 limité aux fils puisqu'on intègre aussi les petits-fils, arrières-petits-fils
 ...
 
@@ -237,6 +235,7 @@ les niveaux de 1 à 11 et le niveau 14.
 * Vous pouvez passer directement à l'exercice que vous voulez en rentrant le
    numéro de l'exercice à la place du sélecteur ;
 * La partie de droite de la page est là pour vous aider.
+
 
 </div>
 
@@ -278,7 +277,7 @@ l'ordre qui va importer.  -->
 
 ## Table
 
-L'élément `<table>` correspond à une structuration récurrente des données, qui sert à représenter un ensemble de données sous forme de colonnes et de lignes.
+L'élément `<table>` correspond à une structuration récurrente, qui sert à représenter un ensemble de données sous forme de colonnes et de lignes.
 
 ### Les éléments `<table>`, `<tr>`, et `<td>`
 
@@ -360,8 +359,9 @@ Les attributs ```rowspan``` et ```colspan``` permettent de fusionner les cellule
 
 <div class="exercise">
 
-Il apparaît que Chuck Norris est toujours au top (niveau 5) dans tous les martiaux. Fusionner les cellules représentant ses valeurs de manières à 
+1. Il apparaît que Chuck Norris est toujours au top (niveau 5) dans tous les martiaux. Fusionner les cellules représentant ses valeurs de manières à 
 mettre cela encore plus en exergue. Et puis mettez le 5 de Chuck en avant avec une balise `<strong>` pour bien montrer qui est le patron.
+1. Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages Wikipedia.
 
 </div>
 
@@ -369,17 +369,12 @@ mettre cela encore plus en exergue. Et puis mettez le 5 de Chuck en avant avec u
 Voyons maintenant comment la styliser.
 
 <div class="exercise">
-
- 1. Écrivez une règle CSS pour faire apparaître les bords de chaque cellule en
-   définissant à *solid* leur propriété *border-style*.
- 1. Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages Wikipedia.
  1. Ajouter une règle pour que les textes dans les colonnes ne soient pas sur plusieurs lignes (notamment 'Chun Kuk Do') en utilisant la bonne valeur pour la propriété `white-space`,
  1. Définissez une couleur de fond #00AAFF pour la partie en-tête `thead` du tableau.
- (voir la [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
  1. donner la couleur noire aux skill sans modifier le style des éléments ayant la classe `skill` dans les paragraphes,
  (voir la [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
  1. ajouter une règle pour qu'une ligne (*row*) de la table sur deux apparaisse
- en blanc et l'autre avec la couleur `#CCC` SANS modifier de quelque façon le
+ en blanc et l'autre avec la couleur `#CCC` <strong>SANS</strong> modifier de quelque façon le
  HTML (voir la
  [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
 
@@ -423,12 +418,11 @@ rajoutez-lui la règle `clear:left`.
 Comme vous l'avez vu précédemment, les balises de type structure définissent des
 boîtes. Ces boîtes disposent toutes des propriétés suivantes en CSS :
 
-* padding : marge entre le contenu est la bordure de la boîte. Le padding est de
-  la couleur de la boîte, donc il a le même background que la boîte,
+* padding : espacement entre le contenu est la bordure de la boîte. Le padding est de
+  la couleur de la boîte, donc il a le même arrière plan (background-color) que la boîte,
 * border : bordure qui entoure le contenu,
 * margin : marge à l’extérieur de la bordure, entre cette boîte et la
-  suivante. La margin est de la même couleur que la balise mère qui encapsule
-  celui pour lequel la marge est définie,
+  suivante ou avec la boite contenante,
 * width : la largeur du contenu,
 * height : la hauteur du contenu
 
@@ -439,10 +433,28 @@ auto;display: block;">
 À noter que la taille réelle d'une boîte est égale à la taille du contenu `content` 
 (width, height) additionnée de l'épaisseur du padding, du bord et de la marge.
 
+Le margin et le padding peuvent accepter trois arités : 
+
+ * margin : t r b l (t est associé à la valeur du haut (top), r est la valeur droite (right), ...)
+ * padding : v h (v est associé aux valeurs verticales, h horzontales)
+ * padding : a (la valeur de a est associé aux quatres coté de la boite)
+
+Exemples : 
+
+~~~
+ div {margin: 10px 5px;}
+.toto {padding : 5px}
+#titi {margin : 5px 0 4px 7px;}
+
+~~~
+{:.css}
+
+on peut aussi préciser (péniblement) les valeurs unitaires des propriétés `margin-top`, `margin-left`, `padding-bottom`,...
+
 <div class="exercise">
- 1. ajouter du padding vertical de 10 px aux titres de sections.
- 1. ajouter du margin vertical de 30 px aux paragraphes.
- 1. ajouter du padding horizontal de 5 px aux éléments ayant la class skill dans la table (mais pas aux élements ayant la class skill dans les paragraphes)
+ 1. Ajouter du padding vertical de `10px` aux titres de sections,
+ 1. Ajouter du margin vertical de `30px` aux paragraphes,
+ 1. Ajouter du padding horizontal de `5px` aux éléments ayant la class `skill` dans la table (mais pas aux élements ayant la class `skill` dans les paragraphes).
 </div>
 
 
