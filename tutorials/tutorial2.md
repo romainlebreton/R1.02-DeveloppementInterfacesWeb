@@ -462,7 +462,45 @@ Pour centrer le contenu d'une balise :
 
 ## Position
 
-Relative, Fixed, Absolute.
+La propriété CSS `position` offre de nouvelles possibilités pour le
+positionnement des éléments. Ses valeurs sont :
 
- 1. Ajouter les icônes de réseaux sociaux toujours positionnées en bas à droite.
- Pour ce faire nous n'allons pas utiliser plusieurs images mais une seule.
+* `static` : Comportement normal (par défaut), l'élément est inséré normalement.
+* `relative` : Le reste de la page fait comme si l'élément était positionné
+  "normalement". De son côté, l'élement est positionné *relativement* à la
+  position où il aurait dû être. On voit donc un espace où l'élément aurait dû
+  être s'il n'ont pas écrit `position:relative;`.
+* `absolute` : Le reste de la page fait comme si l'élément n'existait
+pas. L'élément se positionne relativement à `<body>` (ou plus généralement à son
+plus proche ancêtre positionné).
+* `fixed` : Le reste de la page fait comme si l'élément n'existait
+pas. L'élément se positionne relativement à la fenêtre d'affichage ; il parait donc *fixé* lors d'un défilement de la page.
+
+Pour indiquer le décalage de position, on utilise les propriétés `top`, `left`,
+`right` et `bottom`. Par exemple, les propriétés
+
+~~~
+position:relative; 
+top:20px; 
+left:20px; 
+~~~
+
+vont positionner un élément `20px` plus à droite et en bas qu'il n'aurait dû l'être.
+
+Référence : [Mozilla Developer Network (MDN)](https://developer.mozilla.org/fr/docs/Web/CSS/position)
+
+<div class="exercise">
+
+1. Testez votre compréhension des propriétés `position:
+   relative;top:20px;left:20px;` précédente en les appliquant temporairement sur
+   l'image `chuck-jeune.jpg`.
+
+2. Ajouter les icônes de réseaux sociaux
+[facebook.png ![Facebook]({{site.baseurl}}/assets/facebook.png)]({{site.baseurl}}/assets/facebook.png)
+et
+[twitter.png ![Twitter]({{site.baseurl}}/assets/twitter.png)]({{site.baseurl}}/assets/twitter.png)
+toujours positionnées en bas à droite de la fenêtre d'affichage l'une au dessus
+de l'autre. Essayez aussi temporairement de les afficher tout en bas à droite du
+document.
+
+</div>
