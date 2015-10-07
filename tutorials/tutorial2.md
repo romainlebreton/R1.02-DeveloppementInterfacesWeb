@@ -122,7 +122,7 @@ CSS complexe.
 
 ### Regroupement 
 
-La première façon de "composer" des sélecteurs est le regroupement.
+La première façon de composer des sélecteurs est le regroupement.
 Les trois règles suivantes :
 
 ~~~
@@ -142,57 +142,67 @@ h1,h2,h3 {color: red}
 
 ### Combinaison
 
-On veut parfois préciser un élément au travers de plusieurs sélecteurs de bases sur ce dernier, il suffit pour cela de coller les sélecteurs de base. Par exemple :
+Pour préciser un élément, il suffit de coller plusieurs sélecteurs de base
+(balise, classe ou identifiant). Par exemple :
 
 ~~~
 div.toto
 ~~~
 {:.css}
 
-Correspond au sélecteur des `<div>` qui ont la classe 'toto'.
-
-Ou encore 
+correspond au sélecteur des `<div>` qui ont la classe 'toto'. Ou encore 
 
 ~~~
 .titi.toto
 ~~~
 {:.css}
 
-Les éléments qui ont la classe 'toto' ET 'titi'.
-
+correspond aux éléments qui ont la classe `toto` ET `titi`.
 
 ### Descendance
 
-Pour discriminer certains éléments sur lequel on veut que porte un sélecteur il est très courant de préciser de quoi il est descendant dans le code HTML.
-Pour expliciter ce chemin on ajoute un espace entre les sélecteurs de base.
+Pour discriminer certains éléments sur lequel on veut que porte un sélecteur, il
+est très courant de préciser de quoi il est descendant dans le code HTML.
 
 #### Directe (enfant)
 
-
-La relation de descendance directe est signifiée par le caractère `>`. Par exemple :
+La relation de descendance directe est signifiée par le caractère `>`. Par exemple,
 
 ~~~
 #titi>.toto
 ~~~
 {:.css}
 
-Correspond au sélecteurs des éléments qui ont la classe 'toto' et qui ont pour parents l'élément d'identifiant 'titi'.
+sélectionne les éléments de la classe `toto` ET qui ont pour parent l'élément
+d'identifiant `titi`.
 
 #### Indirecte
 
 
-La relation de descendance indirecte est signifiée par le caractère d'espacement. Par exemple :
-Par exemple :
+La relation de descendance indirecte est signifiée par le caractère d'espacement. Par exemple, 
 
 ~~~
 #titi .toto
 ~~~
 {:.css}
 
-Signifie les éléments qui ont la classe toto ET qui sont descendants de
-l'élément d'identifiant 'titi'. C'est-à-dire qu'on n'est plus limité aux fils puisqu'on
-intègre aussi les petits-fils, arrières petits-fils ... .
+signifie les éléments qui ont la classe `toto` ET qui sont descendants de
+l'élément d'identifiant 'titi'. La différence avec `>` est qu'on n'est plus
+limité aux fils puisqu'on intègre aussi les petits-fils, arrières petits-fils
+...
 
+<div class="exercise">
+
+Aller sur [http://flukeout.github.io/](http://flukeout.github.io/) et passez
+les niveaux de 1 à 11 et le niveau 14.
+
+**Notes :**
+
+* Vous pouvez passer directement à l'exercice que vous voulez en rentrant le
+   numéro de l'exercice à la place du sélecteur ;
+* La partie de droite de la page est là pour vous aider.
+
+</div>
 
 ### Pseudo Classes
 
@@ -216,120 +226,17 @@ a:hover {text-decoration: underline;}
 {:.css}
 
 
+<div class="exercise">
 
-### Ordre d'application des sélecteurs CSS.
+1. Dans la page de Chuck Norris de la semaine dernière, faites en sorte que les
+liens `<a>` visités apparaissent en gris.
+2. Lorsque la souris passe sur un lien, lui donner la couleur orange.
 
+</div>
 
-Il a plusieurs emplacements pour déclarer du style CSS.
-Nous commençons par préciser ces dernières et donner leurs ordre de priorité.
-
-#### priorité du style par emplacement.
-Nous avons utilisé un ficher de style externe styles.css pour ajouter des règles CSS.
-Il est aussi possible d'ajouter du CSS directement dans le HTML via l'attribut `style` (on parle de style "inline") :
-
-~~~
-<p style="font-size: 12pt; color: fuchsia">
-   Aren't style sheets wonderful?
-</p>
-~~~
-{:.html}
-
-Ou d'inclure des règles CSS dans une balise `<style>` (on parle de "internal style"):
-
-~~~
-<style type="text/css">
-   p {font-size: 12pt; color: pink}
-</style>
-~~~
-{:.html}
-
-Enfin les navigateurs appliquent un style par défaut sur les éléments.
-Cela permet de ne pas avoir à définir pour chaque balise tout le style qui doit lui être associé.
-
-L'ordre de priorité d'application des règles CSS est la suivante :
-
-1. styles 'inline' par l'attribut `style` à même le HTML,
-1. styles contenu dans les fichiers CSS (external style),
-1. styles définis dans une balise `<style>` dans le fichier HTML (internal style),
-1. style par défaut des navigateurs.
-
-
-En pratique on préférera les styles externes comme "styles.css", cela respecte mieux la césure entre la structure HTML et le style CSS. 
-
-
-#### Priorité des règles par leurs sélecteurs.
-
-Des règles CSS rentrent inévitablement en conflit sur certains éléments :
-
-~~~
-div {color: yellow;}
-div.toto {color: red;}
-~~~
-{:.css}
-
-Afin de savoir la couleur qui sera appliquée sur les éléments `<div>` ayant la classe toto, des priorités sont définis sur les sélecteurs CSS.
-
-Cette priorité est une valeur (a,b,c,d) définie comme suit :
-
- * soit a la règle est dans un style inline (voir plus haut), (a=1 si le style est inline, 0 sinon)
- * soit b est le nombre de sélecteur d'identifiant (`#`),
- * soit c est le nombre de classe (`.`) ou pseudo classe (`:over`,`:visited`,...)
- * soit d est le nombre d'élément contenu dans le sélecteur (`div` , `span`, `p`, ...)
-
-l'ordre de priorité est défini comme lexicographique (la valeur de a est plus discriminante que b qui lui même est plus discriminant que c). 
-
-Pour revenir à l'exemple précédent, les règles ont donc comme priorité  :
-
-~~~
- div -> (0,0,0,1) (un élément div)
- div.toto -> (0,0,1,1) (une classe toto et un élément div)
-~~~
-{:.html}
-
-
-Soit la fonction `cssprior` qui à un sélecteur CSS donne sa priorité `(a,b,c,d)`, 
-voici quelques exemples d'ordre.
-Vérifier bien que les ordres suivants vous semblent normal :
-
-~~~
- cssprior(.titi span ) >= cssprior(div span)
- cssprior( nav.titi .tata + div div div div div  > ul li div.toto) 
-    <= cssprior(#truc)
- cssprior(div > a) == cssprior(div + a)
-~~~
-{:.html}
-
-
-
-C'est donc la deuxième qui sera appliquée (sur les div ayant la classe toto bien sûr).
-
-
-Remarque si deux règles ont la même priorité, alors c'est l'emplacement de leurs déclaration (inline, ficher externe, style interne, style par défaut) qui prévaut 
-et si les deux règles sont dans le même emplacement, alors c'est le dernier qui l'emporte.
-
-#### le joker en cas d'impasse !important
-
-
-Le style inline ne peut être dépassé par les règles CSS dans notre fichier styles.css.
-De plus nous pourrions utiliser des CSS externes et vouloir écraser certaines de ces règles pourtant très précises.
-Pour cela le CSS propose la règle !important :
-
-~~~
-div {color: yellow !important;}
-div.toto {color: red;}
-~~~
-{:.css}
-
-Elle permet de rendre la règle plus prioritaire que l'ordre (a,b,c,d) de n'importe quelle règle qui n'a pas le `!important`.
-Nous en parlons juste pour être exhaustif sur les règles de priorité : en pratique, `!important` est très peu utilisé, c'est le dernier recours, 
-le joker, un aveu d'échec...
-
-
-
- 1. Faire en sorte que les liens `<a>` visités apparaissent en gris. Lorsque la souris passe sur un lien, lui donner la couleur orange (sauf
-s'il a déjà été visité, auquel cas il reste en gris).
- 1. Aller sur http://flukeout.github.io/ et obtenez le score de 10. (vous pouvez faire les exos de 1 à 10 et de 14 à 18 vous pouvez mettre le numéro de l'exo en lui est place du sélecteur)
-
+<!-- Les règles hover et visited peuvent être en conflit en cas de lien visité
+sur lequel on passe la souris. Comme les deux règles ont la priorité, c'est
+l'ordre qui va importer.  -->
 
 ## Table
 
