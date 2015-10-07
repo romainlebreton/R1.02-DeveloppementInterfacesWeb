@@ -1,4 +1,15 @@
+<!--
+Si on repousse cet exo on peut parler plus en profondeur des contraintes de tailles sur le premier  block avec une size, et les ordres 
+de contraintes sur auto entre width et margin
+-->
 
+1. select
+
+1. button
+
+1. textarea 
+
+1. Form
 
 1 Cacher un élément 
 différence entre
@@ -8,6 +19,18 @@ différence entre
 
 1. Faire une [lettrine](https://fr.wikipedia.org/wiki/Lettrine) en début du paragraphe "Après son mariage, il rejoint... " (il vous sera nécessaire de rajouter une classe `<span>` autours de la lettre A)
 
+
+
+## L'attribut display
+
+
+### block
+
+### inline
+
+### inline-bloc
+
+### les autres (tables, flex)
 1. Flex Layout
 
 Exemple de site en flex layout
@@ -15,13 +38,13 @@ Exemple de site en flex layout
 http://heckhouse.com/
 
 
-### Ordre d'application des sélecteurs CSS.
+## Ordre d'application des sélecteurs CSS.
 
 
 Il a plusieurs emplacements pour déclarer du style CSS.
 Nous commençons par préciser ces dernières et donner leurs ordre de priorité.
 
-#### priorité du style par emplacement.
+### priorité du style par emplacement.
 Nous avons utilisé un ficher de style externe styles.css pour ajouter des règles CSS.
 Il est aussi possible d'ajouter du CSS directement dans le HTML via l'attribut `style` (on parle de style "inline") :
 
@@ -55,7 +78,7 @@ L'ordre de priorité d'application des règles CSS est la suivante :
 En pratique on préférera les styles externes comme "styles.css", cela respecte mieux la césure entre la structure HTML et le style CSS. 
 
 
-#### Priorité des règles par leurs sélecteurs.
+### Priorité des règles par leurs sélecteurs.
 
 Des règles CSS rentrent inévitablement en conflit sur certains éléments :
 
@@ -105,7 +128,7 @@ C'est donc la deuxième qui sera appliquée (sur les div ayant la classe toto bi
 Remarque si deux règles ont la même priorité, alors c'est l'emplacement de leurs déclaration (inline, ficher externe, style interne, style par défaut) qui prévaut 
 et si les deux règles sont dans le même emplacement, alors c'est le dernier qui l'emporte.
 
-#### le joker en cas d'impasse !important
+### le joker en cas d'impasse !important
 
 
 Le style inline ne peut être dépassé par les règles CSS dans notre fichier styles.css.
@@ -121,5 +144,7 @@ div.toto {color: red;}
 Elle permet de rendre la règle plus prioritaire que l'ordre (a,b,c,d) de n'importe quelle règle qui n'a pas le `!important`.
 Nous en parlons juste pour être exhaustif sur les règles de priorité : en pratique, `!important` est très peu utilisé, c'est le dernier recours, 
 le joker, un aveu d'échec...
+
+
 
 
