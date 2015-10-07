@@ -76,8 +76,39 @@ donner à la page sa structure visuelle à l'aide de règles CSS
 
 ## Structuration de la page
 
+
+<div class="exercise">
+
 Vous allez d'abord structurer logiquement le contenu du site à l'aide des
 balises de structure.
+
+
+~~~
+<!DOCTYPE html>
+<html>
+    <head>...</head>
+    <body>
+        <header>
+            ...
+            <nav>...</nav>
+        </header>
+        <main>
+            <article>...</article>
+            <article>...</article>
+            <aside>...</aside>
+        </main>
+        <footer>
+            ...
+        </footer>
+    </body>
+</html>
+~~~
+{:.html}
+
+Pour fixer les idées, voici un aperçu d'une mise en page correspondante à l'exemple précédent :
+
+<img src="{{site.baseurl}}/assets/sections.png" alt="Structuration d'une page" style="margin: 0 auto">
+
 
 1. Ajouter une balise `<header>`. Son contenu sera la citation du TD1 et une
    barre de navigation `<nav>`,
@@ -104,6 +135,7 @@ navigateur, à un moteur de recherche de mieux comprendre votre page web.
 Nous verrons comment structurer la page dans les tds suivants.
 Pour la suite du TD, nous allons ajouter du style aux éléments de la page courante.
 
+</div>
 
 ## Règles de compositions des CSS
 
@@ -313,7 +345,7 @@ Les attributs ```rowspan``` et ```colspan``` permettent de fusionner les cellule
 
 
 1. Il apparaît que Chuck Norris est toujours au top (niveau 5) dans tous les martiaux. Fusionner les cellules représentant ses valeurs de manières à 
-mettre cela encore plus en exergue.
+mettre cela encore plus en exergue. Et puis mettez le 5 de Chuck en exerge avec une balise `<strong>` pour bien montrer qui est le patron.
 
 
 À ce stade la structure de votre table reflète le sens que vous vouliez y mettre.
@@ -333,7 +365,7 @@ Voyons maintenant comment la styliser.
  [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
 
 
-## Les contenus flottant :
+## Les contenus flottant
 
 La propriété `float` associée à un élément permet de faire flotter ce dernier complètement à gauche ou à droite de la ligne où il se trouve. 
 Les valeurs de la propriété float sont  ```left```, ```right```, ```none``` et ```inherit```.
@@ -364,6 +396,13 @@ auto;display: block;">
 A noter que la taille réelle d'une boîte est égale à la taille du contenu `content` 
 (width, height) additionnée de l'épaisseur du padding, du bord et de la marge.
 
+<div class="exercise">
+ 1. ajouter du padding vertical de 10 px aux titres de sections.
+ 1. ajouter du margin vertical de 30 px aux paragraphes.
+ 1. ajouter du padding horizontal de 5 px aux éléments ayant la class skill dans la table (mais pas aux élements ayant la class skill dans les paragraphes)
+</div>
+
+
 ### Centrer horizontalement :
 
 Pour centrer le contenu d'une balise :
@@ -372,10 +411,11 @@ Pour centrer le contenu d'une balise :
 * si le contenu est lui-même dans une balise moins large que la balise parent :
   margin : auto sur la balise du contenu.
 
- 1. Centrer le body horizontalement,
- 1. dans la table, le texte des cellules, (le 5 de Chuck notamment est trop discret)
- 1. ajouter du padding horizontal de 5 px aux skill dans la table (pas dans les paragraphes)
 
+<div class="exercise">
+ 1. Centrer le body horizontalement,
+ 1. Dans la table, centrer le texte des cellules, (le 5 de Chuck notamment est trop encore trop discret)
+</div>
 
 ## Position
 
@@ -387,29 +427,3 @@ Relative, Fixed, Absolute.
 ## À intégrer
 
 Voici un *template* HTML d'une structuration classique de page Web.
-
-~~~
-<!DOCTYPE html>
-<html>
-    <head>...</head>
-    <body>
-        <header>
-            ...
-            <nav>...</nav>
-        </header>
-        <main>
-            <article>...</article>
-            <article>...</article>
-            <aside>...</aside>
-        </main>
-        <footer>
-            ...
-        </footer>
-    </body>
-</html>
-~~~
-{:.html}
-
-Pour fixer les idées, voici un aperçu d'une mise en page correspondante à l'exemple précédent :
-
-<img src="{{site.baseurl}}/assets/sections.png" alt="Structuration d'une page" style="margin: 0 auto">

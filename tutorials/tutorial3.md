@@ -40,6 +40,7 @@ http://heckhouse.com/
 
 ## Ordre d'application des sélecteurs CSS.
 
+<<<<<<< Updated upstream
 
 Il a plusieurs emplacements pour déclarer du style CSS.
 Nous commençons par préciser ces dernières et donner leurs ordre de priorité.
@@ -56,6 +57,9 @@ Il est aussi possible d'ajouter du CSS directement dans le HTML via l'attribut `
 {:.html}
 
 Ou d'inclure des règles CSS dans une balise `<style>` (on parle de "internal style"):
+=======
+1. select
+>>>>>>> Stashed changes
 
 ~~~
 <style type="text/css">
