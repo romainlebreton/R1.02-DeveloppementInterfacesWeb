@@ -420,9 +420,9 @@ boîtes. Ces boîtes disposent toutes des propriétés suivantes en CSS :
 
 * padding : espacement entre le contenu est la bordure de la boîte. Le padding est de
   la couleur de la boîte, donc il a le même arrière plan (background-color) que la boîte,
-* border : bordure qui entoure le contenu,
+* border : bordure qui entoure le contenu, un border correspond à une width, un style et une couleur.
 * margin : marge à l’extérieur de la bordure, entre cette boîte et la
-  suivante ou avec la boite contenante,
+  suivante, et/ou entre cette boite et son parent. La zone couverte par la marge est de la même couleur que sont parent,
 * width : la largeur du contenu,
 * height : la hauteur du contenu
 
@@ -432,6 +432,7 @@ auto;display: block;">
 
 À noter que la taille réelle d'une boîte est égale à la taille du contenu `content` 
 (width, height) additionnée de l'épaisseur du padding, du bord et de la marge.
+Un border n'a pas de style par défaut, donc lui donner une width ne suffit pas pour le voir.
 
 Le margin et le padding peuvent accepter trois arités : 
 
@@ -455,6 +456,7 @@ on peut aussi préciser (péniblement) les valeurs unitaires des propriétés `m
  1. Ajouter du padding vertical de `10px` aux titres de sections,
  1. Ajouter du margin vertical de `30px` aux paragraphes,
  1. Ajouter du padding horizontal de `5px` aux éléments ayant la class `skill` dans la table (mais pas aux élements ayant la class `skill` dans les paragraphes).
+ 1. ajouter une bordure aux titres `<H3>` de `1px`, de style `solid` et de couleur `#CCCCCC`. 
 </div>
 
 
