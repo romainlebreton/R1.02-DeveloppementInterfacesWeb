@@ -76,11 +76,9 @@ donner à la page sa structure visuelle à l'aide de règles CSS
 
 ## Structuration de la page
 
-
-<div class="exercise">
-
 Vous allez d'abord structurer logiquement le contenu du site à l'aide des
-balises de structure.
+balises de structure. Voici un *template* HTML d'une structuration classique de
+page Web.
 
 
 ~~~
@@ -105,10 +103,12 @@ balises de structure.
 ~~~
 {:.html}
 
-Pour fixer les idées, voici un aperçu d'une mise en page correspondante à l'exemple précédent :
+Pour fixer les idées, voici un aperçu d'une mise en page correspondante à
+l'exemple précédent :
 
-<img src="{{site.baseurl}}/assets/sections.png" alt="Structuration d'une page" style="margin: 0 auto">
+<img src="{{site.baseurl}}/assets/sections.png" alt="Structuration d'une page" style="margin: 0 auto;display: block;">
 
+<div class="exercise">
 
 1. Ajouter une balise `<header>`. Son contenu sera la citation du TD1 et une
    barre de navigation `<nav>`,
@@ -237,22 +237,24 @@ les niveaux de 1 à 11 et le niveau 14.
 
 ### Pseudo Classes
 
-Pseudo Classes des liens 
+Une pseudo-classe est un moyen d'indiquer un état particulier de l'élément qui
+doit être sélectionné. Voici quelques exemples :
 
 ~~~
-/*le premier caractère d'un texte*/
+/* Style des liens <a> n'ayant pas été visités */
+a:link {color: yellow;}
+/* Style des liens <a> ayant été visités */
+a:visited {color: purple;}
+/* Style des liens <a> si la souris les survole */
+a:hover {text-decoration: underline;}
+
+/* le premier caractère d'un texte */
 p:first-child   {color:red;}
-
-/*le troisième paragraphe */
+/* le troisième paragraphe */
 p:nth-child(3) { color: green;}
-
-/*les textes des éléments li impairs seront verts et les pairs rouges*/
+/* les textes des éléments li impairs seront verts et les pairs rouges */
 li:nth-child(odd) { color: green;}
 li:nth-child(even) { color: red;}
-
-a:link {color: yellow;}
-a:visited {color: purple;}
-a:hover {text-decoration: underline;}
 ~~~
 {:.css}
 
@@ -423,7 +425,3 @@ Relative, Fixed, Absolute.
 
  1. Ajouter les icônes de réseaux sociaux toujours positionnées en bas à droite.
  Pour ce faire nous n'allons pas utiliser plusieurs images mais une seule.
-
-## À intégrer
-
-Voici un *template* HTML d'une structuration classique de page Web.

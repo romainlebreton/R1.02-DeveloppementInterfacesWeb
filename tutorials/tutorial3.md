@@ -40,7 +40,27 @@ http://heckhouse.com/
 
 ## Ordre d'application des sélecteurs CSS.
 
-<<<<<<< Updated upstream
+<!-- On peut aussi parler des sélecteurs de base sur les attributs -->
+
+<!--
+
+Rajouter référence MDN ???
+
+Parler aussi des pseudo-éléments type ::first-letter ?
+::after
+::before
+::first-letter
+::first-line
+
+MDN : Tout comme les pseudo-classes, les pseudo-éléments sont ajoutés aux
+sélecteurs. Mais au lieu de décrire un état spécial, ils permettent de styler
+certaines parties du document.
+
+<style type="text/css">
+p::first-letter { font-size:1.4em; }
+</style>
+
+-->
 
 Il a plusieurs emplacements pour déclarer du style CSS.
 Nous commençons par préciser ces dernières et donner leurs ordre de priorité.
@@ -132,22 +152,22 @@ C'est donc la deuxième qui sera appliquée (sur les div ayant la classe toto bi
 Remarque si deux règles ont la même priorité, alors c'est l'emplacement de leurs déclaration (inline, ficher externe, style interne, style par défaut) qui prévaut 
 et si les deux règles sont dans le même emplacement, alors c'est le dernier qui l'emporte.
 
-### le joker en cas d'impasse !important
 
+<!-- ### le joker en cas d'impasse !important -->
 
-Le style inline ne peut être dépassé par les règles CSS dans notre fichier styles.css.
-De plus nous pourrions utiliser des CSS externes et vouloir écraser certaines de ces règles pourtant très précises.
-Pour cela le CSS propose la règle !important :
+<!-- Le style inline ne peut être dépassé par les règles CSS dans notre fichier styles.css. -->
+<!-- De plus nous pourrions utiliser des CSS externes et vouloir écraser certaines de ces règles pourtant très précises. -->
+<!-- Pour cela le CSS propose la règle !important : -->
 
-~~~
-div {color: yellow !important;}
-div.toto {color: red;}
-~~~
-{:.css}
+<!-- ~~~ -->
+<!-- div {color: yellow !important;} -->
+<!-- div.toto {color: red;} -->
+<!-- ~~~ -->
+<!-- {:.css} -->
 
-Elle permet de rendre la règle plus prioritaire que l'ordre (a,b,c,d) de n'importe quelle règle qui n'a pas le `!important`.
-Nous en parlons juste pour être exhaustif sur les règles de priorité : en pratique, `!important` est très peu utilisé, c'est le dernier recours, 
-le joker, un aveu d'échec...
+<!-- Elle permet de rendre la règle plus prioritaire que l'ordre (a,b,c,d) de n'importe quelle règle qui n'a pas le `!important`. -->
+<!-- Nous en parlons juste pour être exhaustif sur les règles de priorité : en pratique, `!important` est très peu utilisé, c'est le dernier recours,  -->
+<!-- le joker, un aveu d'échec... -->
 
 
 
