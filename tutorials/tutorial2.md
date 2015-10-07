@@ -497,3 +497,32 @@ Relative, Fixed, Absolute.
  1. Ajouter les icônes de réseaux sociaux toujours positionnées en bas à droite.
  Pour ce faire nous n'allons pas utiliser plusieurs images mais une seule.
 
+## À intégrer
+
+Voici un *template* HTML d'une structuration classique de page Web.
+
+~~~
+<!DOCTYPE html>
+<html>
+    <head>...</head>
+    <body>
+        <header>
+            ...
+            <nav>...</nav>
+        </header>
+        <main>
+            <article>...</article>
+            <article>...</article>
+            <aside>...</aside>
+        </main>
+        <footer>
+            ...
+        </footer>
+    </body>
+</html>
+~~~
+{:.html}
+
+Pour fixer les idées, voici un aperçu d'une mise en page correspondante à l'exemple précédent :
+
+<img src="{{site.baseurl}}/assets/sections.png" alt="Structuration d'une page" style="margin: 0 auto">
