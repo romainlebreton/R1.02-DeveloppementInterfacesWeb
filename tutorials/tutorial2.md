@@ -5,8 +5,7 @@ layout: tutorial
 ---
 
 
-Comme vous avez pu le constater au cours du TD précédent, certains éléments
-peuvent cohabiter sur une même ligne et d'autres non. La spécification HTML5
+La spécification HTML5
 propose différentes manières de classer les balises/éléments selon leurs
 caractéristiques
 ([Liste des balises par catégorie](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories)). Nous
@@ -20,22 +19,12 @@ allons ici nous intéresser à deux types spécifiques :
   qu'elles délimitent dans la page s'enchaînent-ils verticalement. Elles peuvent
   contenir d'autres balises de structure ou des balises de contenu.
 
-* les balises de contenu : elles permettent de délimiter le texte de la page et
-  d'en altérer le formatage. Par défaut, ces balises n'occupent que l'espace
-  horizontal minimum nécessaire à afficher le texte qu'elles contiennent, et
-  plusieurs balises de contenu peuvent partager une même ligne
-  horizontale. Lorsque le contenu d'une de ces balises est trop grand pour tenir
-  sur une ligne, il se poursuit automatiquement à la ligne suivante. Les balises
-  de contenu peuvent contenir d'autres balises de contenu.
+* les balises au niveau du texte : elles apportent une précision sur la sémantique d'une partie du texte (mise en exposant, mise en exergue,...). 
 
 Quelques exemples :
 
 * balises de structure :
 
-   * `<div>` : cette balise est « neutre », à savoir qu'elle permet de distinguer
-une section qui ne revêt aucune signification particulière. À utiliser quand
-aucune des autres balises de structure ne convient. Typiquement utilisé pour
-donner à la page sa structure visuelle à l'aide de règles CSS
    * `<header>` : section contenant l'en-tête affiché de la page
    * `<nav>` : section contenant une série de liens hypertextes pour la navigation
      sur le site
@@ -60,20 +49,30 @@ donner à la page sa structure visuelle à l'aide de règles CSS
      dans la page sans en altérer le déroulement (par ex. dans le texte, dans un
      appendice...)
    * `<h1>`- `<h6>` : titres de section
+   * `<blockquote>` : une citation
    * `<p>` : paragraphes du texte
    * `<address>` : coordonnées de contact de l'auteur. Il ne peut y avoir qu'un bloc
      « address » par article et un pour le restant de la page
 
-* balises de contenu :
+* balises au niveau du texte :
+   * `<sup>` : un exposant
+   * `<time>` : mise en valeur d'une date
+   * `<em>` : emphase sur du texte
+   * `<strong>` : mise en gras du texte
+   * `<br>` : saut de ligne
+
+
+Les balises au niveau du texte sont souvent liées par le navigateur à un style associé (les `<em>` seront mis en emphase, les `<sup>` en exposants,...).
+
+Il existe encore beaucoup d'autres balises HTML. Cela dit il arrive qu'aucune ne corresponde à ce que l'on veut exprimer. Deux balises neutres ont été ajoutées pour ces constructions :
 
    * `<span>` : cette balise est neutre, sans signification particulièrement. Permet
      entre autres de créer des règles de formatage spécifiques du contenu
      textuel, par exemple une lettre plus grande pour la 1e lettre d'un
      paragraphe.
-   * `<quote>` : une citation
-   * `<img>` : une image
-   * `<sup>` : un exposant
-   * `<time>` : mise en valeur d'une date
+   * `<div>` : cette balise est « neutre », à savoir qu'elle permet de distinguer
+une section qui ne revêt aucune signification particulière. Typiquement utilisé pour
+donner à la page sa structure visuelle à l'aide de règles CSS
 
 ## Structuration de la page
 
@@ -469,25 +468,6 @@ Pour centrer le contenu d'une balise :
  1. Centrer le body horizontalement,
  1. dans la table, le texte des cellules, (le 5 de Chuck notamment est trop discret)
  1. ajouter du padding horizontal de 5 px aux skill dans la table (pas dans les paragraphes)
-
-<!--
-Si on repousse cet exo on peut parler plus en profondeur des contraintes de tailles sur le premier  block avec une size, et les ordres 
-de contraintes sur auto entre width et margin
--->
-
-## L'attribut display
-
-
-### block
-
-### inline
-
-### inline-bloc
-
-### les autres (tables, flex)
-
-
-Flex sera présenté dans les td suivants.
 
 
 ## Position
