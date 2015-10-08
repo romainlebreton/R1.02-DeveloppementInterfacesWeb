@@ -369,7 +369,9 @@ mettre cela encore plus en exergue. Et puis mettez le 5 de Chuck en avant avec u
 Voyons maintenant comment la styliser.
 
 <div class="exercise">
+<!--
  1. Ajouter une règle pour que les textes dans les colonnes ne soient pas sur plusieurs lignes (notamment 'Chun Kuk Do') en utilisant la bonne valeur pour la propriété `white-space`,
+ -->
  1. Définissez une couleur de fond #00AAFF pour la partie en-tête `thead` du tableau.
  1. donner la couleur noire aux skill sans modifier le style des éléments ayant la classe `skill` dans les paragraphes,
  (voir la [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
