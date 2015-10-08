@@ -355,7 +355,7 @@ faire leurs balises fermantes ```</thead>``` et ```</tbody>```)
 Les attributs ```rowspan``` et ```colspan``` permettent de fusionner les cellules adjacentes :
 
  * ```rowspan``` permet de fusionner les cellules sur plusieurs lignes (i.e rows),
- * ```collspan``` permet de fusionner les cellules sur plusieurs colonnes.
+ * ```colspan``` permet de fusionner les cellules sur plusieurs colonnes.
 
 <div class="exercise">
 
