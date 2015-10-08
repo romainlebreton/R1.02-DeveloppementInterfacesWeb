@@ -464,14 +464,14 @@ on peut aussi préciser (péniblement) les valeurs unitaires des propriétés `m
 
 Pour centrer le contenu d'une balise :
 
-* si le contenu occupe toute la largeur de la balise : text-align: center
+* si l'on veut centrer du texte dans une balise : `text-align: center`
 * si le contenu est lui-même dans une balise moins large que la balise parent :
-  margin : auto sur la balise du contenu.
+  `margin : auto` sur la balise du contenu.
 
 
 <div class="exercise">
  1. Centrer le body horizontalement,
- 1. Dans la table, centrer le texte des cellules, (le 5 de Chuck notamment est trop encore trop discret)
+ 1. Dans la table, centrer le texte des cellules, (le 5 de Chuck notamment est encore trop discret)
 </div>
 
 ## Position
@@ -479,11 +479,11 @@ Pour centrer le contenu d'une balise :
 La propriété CSS `position` offre de nouvelles possibilités pour le
 positionnement des éléments. Ses valeurs sont :
 
-* `static` : Comportement normal (par défaut), l'élément est inséré normalement.
-* `relative` : le reste de la page fait comme si l'élément était positionné
+* `static` : comportement normal (par défaut), l'élément est inséré normalement.
+* `relative`: le reste de la page fait comme si l'élément était positionné
   "normalement". De son côté, l'élément est positionné *relativement* à la
   position où il aurait dû être. On voit donc un espace où l'élément aurait dû
-  être s'il n'ont pas écrit `position:relative;`.
+  être en `position:static`.
 * `absolute` : le reste de la page fait comme si l'élément n'existait
 pas. L'élément se positionne relativement à `<body>` (ou plus généralement à son
 plus proche ancêtre positionné).
