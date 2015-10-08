@@ -437,8 +437,8 @@ Un border n'a pas de style par défaut, donc lui donner une width ne suffit pas 
 Le margin et le padding peuvent accepter trois arités : 
 
  * margin : t r b l (t est associé à la valeur du haut (top), r est la valeur droite (right), ...)
- * padding : v h (v est associé aux valeurs verticales, h horzontales)
- * padding : a (la valeur de a est associé aux quatres coté de la boite)
+ * padding : v h (v est associé aux valeurs verticales, h horizontales)
+ * padding : a (la valeur de a est associé aux quatre coté de la boite)
 
 Exemples : 
 
@@ -455,7 +455,7 @@ on peut aussi préciser (péniblement) les valeurs unitaires des propriétés `m
 <div class="exercise">
  1. Ajouter du padding vertical de `10px` aux titres de sections,
  1. Ajouter du margin vertical de `30px` aux paragraphes,
- 1. Ajouter du padding horizontal de `5px` aux éléments ayant la class `skill` dans la table (mais pas aux élements ayant la class `skill` dans les paragraphes).
+ 1. Ajouter du padding horizontal de `5px` aux élements ayant la class `skill` dans la table (mais pas aux élements ayant la class `skill` dans les paragraphes).
  1. ajouter une bordure aux titres `<H3>` de `1px`, de style `solid` et de couleur `#CCCCCC`. 
 </div>
 
