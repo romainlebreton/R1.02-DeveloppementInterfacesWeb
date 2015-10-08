@@ -282,7 +282,7 @@ L'élément `<table>` correspond à une structuration récurrente, qui sert à r
 ### Les éléments `<table>`, `<tr>`, et `<td>`
 
 L'élément `<table>` contient la table.
-La table est composée de ligne (l'élément `<td>`) contenant des cellules (élément `<td>`).
+La table est composée de ligne (l'élément `<tr>`) contenant des cellules (élément `<td>`).
 
 
 ### L'élément `<th>`
