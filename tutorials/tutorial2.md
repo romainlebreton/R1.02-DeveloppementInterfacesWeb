@@ -359,9 +359,12 @@ Les attributs ```rowspan``` et ```colspan``` permettent de fusionner les cellule
 
 <div class="exercise">
 
-1. Il apparaît que Chuck Norris est toujours au top (niveau 5) dans tous les martiaux. Fusionner les cellules représentant ses valeurs de manières à 
-mettre cela encore plus en exergue. Et puis mettez le 5 de Chuck en avant avec une balise `<strong>` pour bien montrer qui est le patron.
-1. Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages Wikipedia.
+Il apparaît que Chuck Norris est toujours au top (niveau 5) dans tous les
+martiaux. Fusionner les cellules représentant ses valeurs de manières à mettre
+cela encore plus en exergue. Et puis mettez le 5 de Chuck en avant avec une
+balise `<strong>` pour bien montrer qui est le patron.
+
+<!-- Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages Wikipedia. -->
 
 </div>
 
@@ -379,39 +382,6 @@ Voyons maintenant comment la styliser.
  en blanc et l'autre avec la couleur `#CCC` <strong>SANS</strong> modifier de quelque façon le
  HTML (voir la
  [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
-
-</div>
-
-## Les contenus flottant
-
-La propriété `float` associée à un élément permet de faire flotter ce dernier complètement à gauche ou à droite de la ligne où il se trouve. 
-Les valeurs de la propriété float sont  ```left```, ```right```, ```none``` et ```inherit```.
-
-<div class="exercise">
-
- 1. Placer l'image de Chuck jeune de class ```young_chuck``` à gauche du texte, 
- 1. Placer l'image beware ```beware_img``` à droite du texte.
-
-</div>
-
-<div class="exercise">
-1. Rajoutez un nouveau paragraphe qui commence à la phrase "Spécialiste en arts
-martiaux, ..." de la section "L'enfance".
-
-   Vous devez alors avoir le rendu suivant :
-   
-   <img src="{{site.baseurl}}/assets/noclear.png" alt="Sans clear"
-   style="display:block;margin:0 auto;">
-   
-2. Nous souhaitons plutôt ce rendu :
-   
-   <img src="{{site.baseurl}}/assets/clear.png" alt="Sans clear"
-   style="display:block;margin:0 auto;">
-
-   Pour interdire à notre paragraphe d'avoir un élément flottant sur son côté gauche,
-rajoutez-lui la règle `clear:left`.  
-**Note :** On peut aussi interdire le côté droit avec `clear:right` et les deux
-  en même temps avec `clear:both`.
 
 </div>
 
@@ -474,6 +444,39 @@ Pour centrer le contenu d'une balise :
 <div class="exercise">
  1. Centrer le body horizontalement,
  1. Dans la table, centrer le texte des cellules, (le 5 de Chuck notamment est encore trop discret)
+</div>
+
+## Les contenus flottant
+
+La propriété `float` associée à un élément permet de faire flotter ce dernier complètement à gauche ou à droite de la ligne où il se trouve. 
+Les valeurs de la propriété float sont  ```left```, ```right```, ```none``` et ```inherit```.
+
+<div class="exercise">
+
+ 1. Placer l'image de Chuck jeune de class ```young_chuck``` à gauche du texte, 
+ 1. Placer l'image beware ```beware_img``` à droite du texte.
+
+</div>
+
+<div class="exercise">
+1. Rajoutez un nouveau paragraphe qui commence à la phrase "Spécialiste en arts
+martiaux, ..." de la section "L'enfance".
+
+   Vous devez alors avoir le rendu suivant :
+   
+   <img src="{{site.baseurl}}/assets/noclear.png" alt="Sans clear"
+   style="display:block;margin:0 auto;">
+   
+2. Nous souhaitons plutôt ce rendu :
+   
+   <img src="{{site.baseurl}}/assets/clear.png" alt="Sans clear"
+   style="display:block;margin:0 auto;">
+
+   Pour interdire à notre paragraphe d'avoir un élément flottant sur son côté gauche,
+rajoutez-lui la règle `clear:left`.  
+**Note :** On peut aussi interdire le côté droit avec `clear:right` et les deux
+  en même temps avec `clear:both`.
+
 </div>
 
 ## Position

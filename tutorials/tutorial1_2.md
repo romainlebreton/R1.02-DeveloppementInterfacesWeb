@@ -242,6 +242,11 @@ classiques sont répertoriées sur
 ~~~
 {:.css}
 
+<!--
+L'URL est relative au fichier CSS
+Attention aux extensions non reconnues par Firefox (comme .eot)
+-->
+
 Si vous souhaitez en savoir plus, allez sur
 [https://developer.mozilla.org/fr/docs/Web/CSS/@font-face](https://developer.mozilla.org/fr/docs/Web/CSS/@font-face). Voici
 deux sites pratiques pour télécharger de nouvelles fontes : 
