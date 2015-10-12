@@ -1,44 +1,30 @@
-<!--
-Si on repousse cet exo on peut parler plus en profondeur des contraintes de tailles sur le premier  block avec une size, et les ordres 
-de contraintes sur auto entre width et margin
--->
-
-1. select
-
-1. button
-
-1. textarea 
-
-1. Form
-
-1 Cacher un élément 
-différence entre
- * display:none 
- * visibility:hidden
+---
+title: TD3 &ndash; HTML / CSS avancé 2/2
+subtitle: display property and Layout
+layout: tutorial
+---
 
 
-1. Faire une [lettrine](https://fr.wikipedia.org/wiki/Lettrine) en début du paragraphe "Après son mariage, il rejoint... " (il vous sera nécessaire de rajouter une classe `<span>` autours de la lettre A)
+## Cacher ou Enlever un élément du rendu
+
+Il existe plusieurs façons de faire disparaitre de l'écran un élément HTML.
+
+### cacher display:none 
+
+### enlever visibility:hidden
 
 
+<div class="exercise">
 
-## L'attribut display
+1.
 
 
-### block
+</div>
 
-### inline
-
-### inline-bloc
-
-### les autres (tables, flex)
-1. Flex Layout
-
-Exemple de site en flex layout
-
-http://heckhouse.com/
 
 
 ## Ordre d'application des sélecteurs CSS.
+
 
 <!-- On peut aussi parler des sélecteurs de base sur les attributs -->
 
@@ -77,9 +63,7 @@ Il est aussi possible d'ajouter du CSS directement dans le HTML via l'attribut `
 {:.html}
 
 Ou d'inclure des règles CSS dans une balise `<style>` (on parle de "internal style"):
-=======
-1. select
->>>>>>> Stashed changes
+
 
 ~~~
 <style type="text/css">
@@ -153,22 +137,71 @@ Remarque si deux règles ont la même priorité, alors c'est l'emplacement de le
 et si les deux règles sont dans le même emplacement, alors c'est le dernier qui l'emporte.
 
 
-<!-- ### le joker en cas d'impasse !important -->
+### le joker en cas d'impasse !important 
 
-<!-- Le style inline ne peut être dépassé par les règles CSS dans notre fichier styles.css. -->
-<!-- De plus nous pourrions utiliser des CSS externes et vouloir écraser certaines de ces règles pourtant très précises. -->
-<!-- Pour cela le CSS propose la règle !important : -->
+ Le style inline ne peut être dépassé par les règles CSS dans notre fichier styles.css. 
+De plus nous pourrions utiliser des CSS externes et vouloir écraser certaines de ces règles pourtant très précises. 
+ Pour cela le CSS propose la règle !important : 
 
-<!-- ~~~ -->
-<!-- div {color: yellow !important;} -->
-<!-- div.toto {color: red;} -->
-<!-- ~~~ -->
-<!-- {:.css} -->
+~~~ 
+div {color: yellow !important;} 
+div.toto {color: red;} 
+~~~ 
+ {:.css} 
 
-<!-- Elle permet de rendre la règle plus prioritaire que l'ordre (a,b,c,d) de n'importe quelle règle qui n'a pas le `!important`. -->
-<!-- Nous en parlons juste pour être exhaustif sur les règles de priorité : en pratique, `!important` est très peu utilisé, c'est le dernier recours,  -->
-<!-- le joker, un aveu d'échec... -->
-
+Elle permet de rendre la règle plus prioritaire que l'ordre (a,b,c,d) de n'importe quelle règle qui n'a pas le `!important`. 
+Nous en parlons juste pour être exhaustif sur les règles de priorité : en pratique, `!important` est très peu utilisé, c'est le dernier recours,  
 
 
+## Display 
+
+A chaque élément HTML d'un page lui correspond une boite (voir le box model du TD précédent).
+La façon dont cette boite va occuper l'espace est géré par l'attribut display.
+Nous verrons dans cette section les quatres valeurs princpales de display.
+
+Par exemple : 
+
+ * un paragraphe `<p>` va il voir son espace grandir par le texte qu'il contient ?
+ * Lorsque l'on ajoute un header qui va contenir la navigation d'un site, sa place est elle dictée par son contenu ou a elle plutôt tendance à occuper un espace fixe ?
+
+
+### block
+
+Lors du TD1, nous sommes parti d'un texte d'un seul tenant illisible.
+Afin de spérarer ce texte en sections séparées par des titres nous avons ajouter des titres `<h2>` et `<h3>`.
+L'ajout de cette structure au HTML a e uun impacte visuel sur le rendu  : les titres ont occupé une ligne complète, forcant un retour à la ligne avant et après eux.
+C'est que ces éléments sont de type block.
+
+
+### inline
+
+### inline-block
+
+### Flexbox
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+## Layout
+
+### Column layout
+
+
+### holly grail layout
+
+Nous sommes en 2015, et jusquà peu il n'est toujours pas évident de faire ce layout (d'où son nom).
+
+
+## Media Object
+
+
+## vertical centering
+
+
+## box-model
+
+
+## le model par défaut
+
+## le border-layout
 
