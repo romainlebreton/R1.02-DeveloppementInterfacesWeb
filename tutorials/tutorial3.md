@@ -7,30 +7,81 @@ layout: tutorial
 ## Display 
 
 A chaque élément HTML d'un page lui correspond une boite (voir le box model du TD précédent).
-La façon dont cette boite va occuper l'espace est géré par l'attribut display.
-Nous verrons dans cette section les quatres valeurs princpales de display.
+La façon dont cette boite va occuper l'espace est gérée par l'attribut display.
+Nous allons voir dans cette partie les trois valeurs principales de la propriété display.
+
 
 Par exemple : 
 
  * un paragraphe `<p>` va il voir son espace grandir par le texte qu'il contient ?
  * Lorsque l'on ajoute un header qui va contenir la navigation d'un site, sa place est elle dictée par son contenu ou a elle plutôt tendance à occuper un espace fixe ?
 
-
 ### block
 
-Lors du TD1, nous sommes parti d'un texte d'un seul tenant illisible.
-Afin de spérarer ce texte en sections séparées par des titres nous avons ajouter des titres `<h2>` et `<h3>`.
-L'ajout de cette structure au HTML a e uun impacte visuel sur le rendu  : les titres ont occupé une ligne complète, forcant un retour à la ligne avant et après eux.
-C'est que ces éléments sont de type block.
+Les éléments block sont des élements :
 
+ * dont on peut définir la taille en css via les propriétés `height` et `width`.
+ * qui par défaut vont prendre toute la largeur (si l'on a pas donné de `height` donc) de son <strong>container</strong>
+ * provoque un saut de ligne avant et après son affichage (que l'on est diminué sa largeur ou pas)
+
+Le <strong>container</strong> est le premier élement de type block des ancètres de cet élément, en général il s'agit de son père.
+
+On utilise à l'usage des éléments de display block : 
+
+ * dès que l'on veut exliciter l'agencement (layout) de certains éléments HTML d'une page. (nous voulons que l'en-tête (header) soit de hauteur `200px`, cet élément doit prendre 50% de la largeur,...).
+ * dès qu'il est naturel de prendre toute la place par défaut (un titre `<h2>`).
+ 
 
 ### inline
 
-...
+Les éléments inline sont des élements :
 
-### Exercices ?
+ * dont on ne peut pas définir la taille en css via les propriétés `height` et `width`,
+ * qui prenent leur taille en fonction de leur contenu,
+ * qui ne provoque pas un saut de ligne.
 
 
+On utilise à l'usage des éléments de display inline : 
+
+ 1. dans du texte, pour ajouter de la sémantique sans couper la lecture du lecteur (mettre en exposant `<sup>`, mettre de l'importance `<strong>`,associer un lien `<a>`),
+ 1. lorsque l'on veut posiotnner à la suite des éléments.
+
+### à propos de HTML et CSS 
+
+Puisque assocé au texte (`<strong>`, `<a>`, ...), on trouve en majorité les éléments `inline` comme feuilles de l'arboresence du HTML.
+Jusqu'il y a peu, les validateurs HTML interdisaient même aux éléments `inline` de contenir des éléments `block`.
+Celà a été relaché dans HTML5 dans [certains cas](http://html5doctor.com/block-level-links-in-html-5/).
+
+Cela dit la propriété CSS `display` permet de modifier la valeur par défaut d'un élément, et cela n'est pas pris en compte par les validateurs HTML (qui se basent sur les display par défaut), mais modifier sempiternellement le display naturel du HTML signifie que l'on a pas utiliser la bonne méthode (et que le code risque d'être incompréhensible, immentenable).
+
+
+<div class="exercise">
+
+Nous allons créer un menu de navigation pour notre site.
+Pour l'instant le menu que vous devez avoir pour votre site est le suivant 
+
+
+~~~
+<nav>
+	<a href="./index.html">Accueil</a>
+	<a href="./contact.html">Contact</a>
+</nav>
+~~~
+{:.html}
+
+(Si ce n'est pas le cas remplacer le contenu de votre menu par celui-ci).
+
+ 1. puisque `<nav>` est de type `block`, nous pouvons fixer ces diemsnsions. Donnez lui la hauteur `50px`,
+
+ 1. Encapsuler vos liens `<a>` par des `<div>`, que constatez vous ?
+
+ 1. Utiliser la propriété `display` sur ces `<div>` de manière à remettre la navigation en ligne.
+
+
+Conserver ces `<div>` dans la navigation avec la propriété `display` pour les mettre en ligne.
+Même s'ils ne semblent pas servir à grand chose pour l'instant.
+
+</div>
 
 ## Cacher ou Enlever un élément du rendu
 
