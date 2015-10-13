@@ -498,3 +498,6 @@ Questions complémentaires :
 <audio controls="controls><source ..> texte alternatif ..
 -->
 
+<!-- Pour afficher les extensions de fichier Dans l'explorateur : alt pour
+afficher les menus, outils, options des dossiers, affichage, décocher cacher les
+extentions dont le type est connu -->

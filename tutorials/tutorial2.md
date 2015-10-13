@@ -4,6 +4,17 @@ subtitle: structuration et stylisation, block & inline, combinaison de sélecteu
 layout: tutorial
 ---
 
+<!--
+comprennent pas le colspan
+
+parler de centrer le 5 avec text-align:center
+nth-child odd sur ie 11 background color
+
+liens en gris
+
+skill en noir
+-->
+
 
 La spécification HTML5 propose différentes manières de classer les
 balises/éléments selon leurs caractéristiques
@@ -24,32 +35,34 @@ Quelques exemples :
 
 * balises de structure :
 
-   * `<header>` : section contenant l'en-tête affichée de la page
+   * `<header>` : section contenant l'en-tête affichée de la page (à ne pas
+     confondre avec `<head>`, qui sont les méta-informations de la page Web)
    * `<nav>` : section contenant une série de liens hypertextes pour la navigation
      sur le site
    * `<main>` : section principale de la page, celle qui contient le contenu
      spécifique à cette page. Cette balise ne peut être présente dans une autre
-     balise présentée ici à l'exception de « div ».
+     balise présentée ici à l'exception de `<div>`.
      <!-- Elle n'est pas supportée par Internet Explorer <= 10 mais le support peut -->
      <!-- en être ajouté grâce à Javascript et en utilisant la règle css « main -->
      <!-- {display : block} ». -->
-   * `<article>` : section contenant un document « auto-suffisant », i.e. qui peut
-     être séparé du reste de la page et gardera cependant tout son sens. Une
-     page peut contenir plusieurs articles, dans le cas d'un blog par exemple,
-     de commentaires, d'une page listant les publications récentes ...
+   * `<article>` : section contenant un document « auto-suffisant », *i.e.* qui
+     peut être séparé du reste de la page et gardera cependant tout son
+     sens. Une page peut contenir plusieurs articles, dans le cas d'un blog par
+     exemple, de commentaires, d'une page listant les publications récentes ...
    * `<aside>` : section contenant du matériel périphérique au contenu
      principal. Cela peut-être par ex. une série de liens spécifiques au document
      principal, un bandeau de publicités …
    * `<footer>` : section contenant le pied de page.
    * `<section>` : une section non spécifique, ou une sous-section d'un article,
-     d'un menu... Doit typiquement commencer par un titre hX.
+     d'un menu... Doit typiquement commencer par un titre `<hX>`.
    * `<figure>` : une illustration (au sens large) « auto-suffisante » illustrant le
      document principal ou un article, et qui doit pouvoir être placée librement
      dans la page sans en altérer le déroulement (par ex. dans le texte, dans un
      appendice...)
    * `<h1>`- `<h6>` : titres de section
-   * `<blockquote>` : une citation
-   * `<p>` : paragraphes du texte
+   * `<blockquote>` : une citation avec en particulier `<cite>` pour la
+     référence de la citation.
+   * `<p>` : paragraphes de texte
    * `<address>` : coordonnées de contact de l'auteur. Il ne peut y avoir qu'un bloc
      « address » par article et un pour le restant de la page
 
@@ -57,23 +70,25 @@ Quelques exemples :
    * `<sup>` : un exposant
    * `<time>` : mise en valeur d'une date
    * `<em>` : emphase sur du texte
-   * `<strong>` : mise en gras du texte
+   * `<strong>` : on rajoute de l'importance à un texte
    * `<br>` : saut de ligne
 
 
-Ces balises au niveau du texte sont souvent naturelement liées à un style
-associé (les `<em>` seront stylisées par une mise en italique, les `<sup>` en exposants,...).
-Les navigateurs se chargent d'ajouter pour nous ce style ad-hoc.
+Ces balises au niveau du texte sont souvent naturellement liées à un style
+associé (les `<em>` seront stylisées par une mise en italique, les `<sup>` en
+exposants,...).  Les navigateurs se chargent d'ajouter pour nous certains styles
+par défaut très courant.
 
 Il existe encore beaucoup d'autres balises HTML. Cela dit, il arrive qu'aucune ne
 corresponde à ce que l'on veut exprimer (lors d'une construction de layout par exemple). Deux balises neutres ont été ajoutées
 pour ces constructions :
 
-   * `<span>` : cette balise est neutre, sans signification particulière. Son utilisation permet
-     entre autres de créer des règles de formatage spécifiques du contenu
-     textuel (par exemple lorsque nous avons ajouter la class `skill`).
-   * `<div>` : cette balise est « neutre », son utilisation permet de
-distinguer une section qui ne revêt aucune signification
+   * Au niveau du texte : `<span>` : cette balise est neutre, sans signification
+     particulière. Son utilisation permet entre autres de créer des règles de
+     formatage spécifiques du contenu textuel (par exemple lorsque nous avons
+     ajouter la class `skill`).
+   * Balise de structure : `<div>` : cette balise est « neutre », son
+utilisation permet de distinguer une section qui ne revêt aucune signification
 particulière. Contrairement au `span` elle provoque un saut de ligne.
 
 ## Structuration de la page
@@ -124,19 +139,22 @@ l'exemple précédent :
 5. Construire cette page `contact.html` au même niveau que `index.html`. Elle
    doit contenir l'image [contact.jpg]({{site.baseurl}}/assets/contact.jpg) pour
    illustrer que nous sommes bien à l'écoute. Ajouter l'adresse avec la balise
-   `<adress>` contenant :
+   `<address>` contenant :
  * Email : chuckn@yopmail.com
  * IUT de Montpellier Sète <br>
    99 avenue d'Occitanie <br>
    34296 Montpellier Cedex 5
- 
+6. Valider vos pages HTML sur le validateur
+[https://html5.validator.nu/](https://html5.validator.nu/). (Faites-le
+systématiquement sans qu'on vous le demande :-) ).
+
 </div>
 
 À ce point, le travail de division du site n'a pas encore de résultat visuel
 marquant. C'est avant tout un travail de structuration logique qui permet au
-navigateur, à un moteur de recherche de mieux comprendre votre page web.  Nous
-verrons comment structurer la page dans les TDs suivants. Pour la suite du TD,
-nous allons ajouter du style aux éléments de la page courante.
+navigateur, ou à un moteur de recherche, de mieux comprendre votre page web.
+Nous verrons comment structurer la page dans les TDs suivants. Pour la suite du
+TD, nous allons ajouter du style aux éléments de la page courante.
 
 
 ## Règles de compositions des CSS
@@ -320,10 +338,11 @@ Voici un squelette de table :
 
 <div class="exercise">
 
-1. Créer une table avec les sept noms de colonnes suivants : ```Acteurs, Karaté,
-Taekwondo, Judo, Chun Kuk Do, Tangsudo, Ju-jitsu```. Les noms doivent être
-contenus dans des balises ```<span>```
-1. Ajouter la classe  "skill" aux ```<span>``` contenant les noms des arts martiaux.
+1. Créer une table avec les sept noms de colonnes suivants : `Acteurs, Karaté,
+Taekwondo, Judo, Chun Kuk Do, Tangsudo, Ju-jitsu`. Cette table doit se trouver
+en bas de la page `index.html`, dans la partie complémentaire `<aside>`. Les noms
+doivent être contenus dans des balises `<span>`.
+1. Ajouter la classe  "skill" aux `<span>` contenant les noms des arts martiaux.
 1. Ajouter les six lignes suivantes (les nombres correspondent à la valeur de
    l'acteur dans l'art martial correspondant) :
 
@@ -340,22 +359,23 @@ contenus dans des balises ```<span>```
 
 Les éléments `<thead>` et `<tbody>` servent à définir plus explicitement la structure de notre table:
 
- * la définition des colonnes (```Acteurs, Karaté,```...) 
- *  les lignes (nos héros et leurs niveaux de compétence).
+ * `<thead>` : la définition des colonnes (`Acteurs, Karaté,`...) 
+ * `<tbody>` : le corps du tableau, c'est-à-dire les lignes (nos héros et leurs
+   niveaux de compétence).
 
 <div class="exercise">
 
 Ajouter ces balises pour englober ces deux parties (en oubliant pas pour se
-faire leurs balises fermantes ```</thead>``` et ```</tbody>```)
+faire leurs balises fermantes `</thead>` et `</tbody>`)
 
 </div>
 
-### Les attributs ```rowspan``` et ```colspan``` 
+### Les attributs `rowspan` et `colspan` 
 
-Les attributs ```rowspan``` et ```colspan``` permettent de fusionner les cellules adjacentes :
+Les attributs `rowspan` et `colspan` permettent de fusionner les cellules adjacentes :
 
- * ```rowspan``` permet de fusionner les cellules sur plusieurs lignes (i.e rows),
- * ```colspan``` permet de fusionner les cellules sur plusieurs colonnes.
+ * `rowspan` permet de fusionner les cellules sur plusieurs lignes (i.e rows),
+ * `colspan` permet de fusionner les cellules sur plusieurs colonnes.
 
 <div class="exercise">
 
@@ -449,12 +469,12 @@ Pour centrer le contenu d'une balise :
 ## Les contenus flottant
 
 La propriété `float` associée à un élément permet de faire flotter ce dernier complètement à gauche ou à droite de la ligne où il se trouve. 
-Les valeurs de la propriété float sont  ```left```, ```right```, ```none``` et ```inherit```.
+Les valeurs de la propriété float sont  `left`, `right`, `none` et `inherit`.
 
 <div class="exercise">
 
- 1. Placer l'image de Chuck jeune de class ```young_chuck``` à gauche du texte, 
- 1. Placer l'image beware ```beware_img``` à droite du texte.
+ 1. Placer l'image de Chuck jeune de class `young_chuck` à gauche du texte, 
+ 1. Placer l'image beware `beware_img` à droite du texte.
 
 </div>
 

@@ -4,6 +4,33 @@ subtitle: display property and Layout
 layout: tutorial
 ---
 
+## Display 
+
+A chaque élément HTML d'un page lui correspond une boite (voir le box model du TD précédent).
+La façon dont cette boite va occuper l'espace est géré par l'attribut display.
+Nous verrons dans cette section les quatres valeurs princpales de display.
+
+Par exemple : 
+
+ * un paragraphe `<p>` va il voir son espace grandir par le texte qu'il contient ?
+ * Lorsque l'on ajoute un header qui va contenir la navigation d'un site, sa place est elle dictée par son contenu ou a elle plutôt tendance à occuper un espace fixe ?
+
+
+### block
+
+Lors du TD1, nous sommes parti d'un texte d'un seul tenant illisible.
+Afin de spérarer ce texte en sections séparées par des titres nous avons ajouter des titres `<h2>` et `<h3>`.
+L'ajout de cette structure au HTML a e uun impacte visuel sur le rendu  : les titres ont occupé une ligne complète, forcant un retour à la ligne avant et après eux.
+C'est que ces éléments sont de type block.
+
+
+### inline
+
+...
+
+### Exercices ?
+
+
 
 ## Cacher ou Enlever un élément du rendu
 
@@ -16,12 +43,14 @@ Il existe plusieurs façons de faire disparaitre de l'écran un élément HTML.
 
 <div class="exercise">
 
-1.
+1. combiner avec li:hover img, visibility:default pour liker un lien (ou un site)
 
 
 </div>
 
+### suite des positions
 
+menu avec position:absolute pour ne pas décaler le corps de la page
 
 ## Ordre d'application des sélecteurs CSS.
 
@@ -153,27 +182,7 @@ Elle permet de rendre la règle plus prioritaire que l'ordre (a,b,c,d) de n'impo
 Nous en parlons juste pour être exhaustif sur les règles de priorité : en pratique, `!important` est très peu utilisé, c'est le dernier recours,  
 
 
-## Display 
-
-A chaque élément HTML d'un page lui correspond une boite (voir le box model du TD précédent).
-La façon dont cette boite va occuper l'espace est géré par l'attribut display.
-Nous verrons dans cette section les quatres valeurs princpales de display.
-
-Par exemple : 
-
- * un paragraphe `<p>` va il voir son espace grandir par le texte qu'il contient ?
- * Lorsque l'on ajoute un header qui va contenir la navigation d'un site, sa place est elle dictée par son contenu ou a elle plutôt tendance à occuper un espace fixe ?
-
-
-### block
-
-Lors du TD1, nous sommes parti d'un texte d'un seul tenant illisible.
-Afin de spérarer ce texte en sections séparées par des titres nous avons ajouter des titres `<h2>` et `<h3>`.
-L'ajout de cette structure au HTML a e uun impacte visuel sur le rendu  : les titres ont occupé une ligne complète, forcant un retour à la ligne avant et après eux.
-C'est que ces éléments sont de type block.
-
-
-### inline
+## Display avancés
 
 ### inline-block
 
@@ -191,6 +200,7 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 Nous sommes en 2015, et jusquà peu il n'est toujours pas évident de faire ce layout (d'où son nom).
 
+https://philipwalton.github.io/solved-by-flexbox/
 
 ## Media Object
 
