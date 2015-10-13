@@ -373,14 +373,15 @@ Voyons maintenant comment la styliser.
  1. Ajouter une règle pour que les textes dans les colonnes ne soient pas sur plusieurs lignes (notamment 'Chun Kuk Do') en utilisant la bonne valeur pour la propriété `white-space`,
  -->
  1. Définissez une couleur de fond `#00AAFF` pour la partie en-tête `thead` du tableau.
- 1. donner la couleur violette `#640051` aux skills dans le tableau sans
+ 1. Donner la couleur violette `#640051` au texte des skills dans le tableau sans
  modifier le style des éléments ayant la classe `skill` dans les paragraphes,
  (voir la
  [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
- 1. ajouter une règle pour qu'une ligne (*row*) de la table sur deux apparaisse
- en blanc et l'autre avec la couleur `#CCC` <strong>SANS</strong> modifier de quelque façon le
- HTML (voir la
- [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
+ 1. ajouter une règle pour que le fond d'une ligne (*row*) sur deux du corps de
+ la table apparaisse en blanc et l'autre avec la couleur `#CCC`
+ <strong>SANS</strong> modifier de quelque façon le HTML (voir la
+ [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))  
+ **Attention :** La ligne du `<thead>` doit rester bleue.
 
 </div>
 
