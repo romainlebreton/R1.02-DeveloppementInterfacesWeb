@@ -106,12 +106,11 @@ Au niveau de la composition l'élément se comporte comme `block` :
 ### none
 
 
-La valeur `none` enlève complètment du rendu l'élément en le sortant du flux. Il ne laisse donc pas d'espace marquant sa disparition.
+La valeur `none` enlève complètement du rendu. L'élément en le sortant du flux, il ne laisse donc pas d'espace manquant à son emplacement.
 
 
 <div class="exercise">
 
-1. combiner avec li:hover img, visibility:default pour liker un lien (ou un site)
 1. ajouter des sous menu aux éléments de la navigation (frères des liens `<a>`) dont le contenu est :
 
  * pour l'ancre "Accueil" 
@@ -145,35 +144,15 @@ La valeur `none` enlève complètment du rendu l'élément en le sortant du flux
 </div>
 
 A ce stade les sous-menus apparaissent bien lorsque l'on passe sur les éléments censés les ouvrir.
-Par contre il n'est pas possible d'entrer dans ces sous-menus. Nous verrons avec la propriété suivante améliorer notre menu et remédier à ce problème.
+Par contre il n'est pas possible d'entrer dans ces sous-menus. 
+Nous consacrons toute une section à cette valeur de display flex, elle va permettre d'améliorer notre menu et remédier à ce problème d'accesibilité.
+
 
 ## flex
 
-La propriété flex porte à la fois sur l'élement et ses enfants.
-
-La propriété flex placée sur l'élement permet de positionner différentes valeurs sur ce dernier ou sur ces enfants comme autant de contraintes.
-Nous précisons par la suite quelque unes de ces contraintes en se concentrant sur celles définies sur l'élément parent.
-
-
-
-### align-items
-
-
-<div class="exercise" >
-
-1. Donner à l'élement `<nav>` la valeur de display `flex`.
-
-1. Centrer les éléments enfants à l'aide de la propriété align-items. Que constatez vous ?
- Si rien de ne se passe utiliser l'inspecteur du navigateur pour comprendre ce qui est centré.
-
-1. utilisez maintenant la valeur `stretch`. Que constatez vous à propos de l'accessibilité des sous menus avec la souris ?
-
-1. Comment faire pour que le menu reste accessible et que le texte "Accueil" et "Contact" soient centrés dans la barre de navigation ? (les enfants n'héritent pas de la propriété flex de leur parent par défaut...)
-</div>
-
+La valeur flex de display porte à la fois sur l'élement et ses enfants. Nous précisons par la suite quelque unes de ces contraintes en se concentrant sur celles définies sur l'élément parent.
 
 ### flex-direction
-
 
 Elle permet de préciser si les enfants vont se mettre en ligne ou en colonne. Ses valeurs sont  :
 
@@ -182,21 +161,34 @@ Elle permet de préciser si les enfants vont se mettre en ligne ou en colonne. S
  * `column`
  * `column-reverse`
 
- 
- L'attribut `flex-direction` d'un élément prend le pas sur les propriétés `block` ou `inline` de ses enfants.
+L'attribut `flex-direction` d'un élément prend le pas sur les propriétés `block` ou `inline` de ses enfants.
 
 
 <div class="exercise" >
+ 1. Donner à l'élement `<nav>` la valeur de display `flex`.
  1. Changer la valeur du display des `<div>` diretement enfant de `<nav>` en `block` puis en `inline`. Que cela change t il ?
  1. donner à l'élement `<nav>` la valeur de flex-direction:column, que cela change t'il ? (sachant que la valeur de flex-direction est `row` supprimer cette propriété)
 </div>
 
 
+### align-items
+
+La propriété `align-items` permet de préciser comment les enfants vont venir occuper l'espace perpendiculaire à la direction donnée par `flex-direction`.
+Dans notre cas (`flex-direction:row`), `align-items` va donc nous permettre de préciser comment occuper l'espace vertical.
+
+<div class="exercise" >
+
+1. Centrer les éléments enfants à l'aide de la propriété align-items. Que constatez vous ?
+Si rien de ne se passe utiliser l'inspecteur du navigateur pour comprendre ce qui est centré.
+
+1. utilisez maintenant la valeur `stretch`. Que constatez vous à propos de l'accessibilité des sous menus avec la souris ?
+
+1. Comment faire pour que les sous-menus restent accessibles et que les textes "Accueil" et "Contact" soient centrés dans la barre de navigation ? (les enfants n'héritent pas de la propriété flex de leur parent par défaut...)
+</div>
+
 ### justify-content
 
-
-La propriété `justify-content` s'applique sur l'élement. Elle permet de préciser la façon dont les enfants vont se disposer dans l'espace de leur parent.
-
+Elle permet de préciser la façon dont les enfants vont se disposer dans la direction donnée par `flex-direction`.
 
 Les valeurs possibles sont :
 
@@ -208,65 +200,27 @@ Les valeurs possibles sont :
 
 <div class="exercise" >
 
-Placer les éléments de navigation non pas en début de ligne comme flex le posiotnne par défaut mais en fin.
+Placer les éléments de navigation non pas en début de ligne (valeur par défaut) mais en fin.
 
 </div>
 
-
-
 ### Les autres propriétés 
 
-Il y a d'autres valeurs interessantes autour de flex, la référence suivante est très instructive :
+Il y a d'autres valeurs intéressantes autour de flex, la référence suivante est très instructive :
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 
- * le comportement des boites des enfants lorsqu'il n'y a pas assez d'espace,
- * le comportement des boites des enfants lorsque la parent dispose de trop d'espace,
- * comment les éléments vont être justifier (à droite, à gauche, centrer,...),
- * de centrer les enfants horizontalement <strong>et/ou</strong> verticalement,
- * etc.
+### flex, une valeur relativement rescente
 
-Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles, elles représentent en fait une avancée majeure dans le monde du CSS, ou ces différents aspects relevés jusque là d'une véritable expertise de la part de l'integrateur (le centrage vertical), ou même de l'ordre du fantasme (les justifications et le centrage en une simple valeur css, le comportement des éléments sur l'espace restant,...').
+Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles, elles représentent en pratique une avancée majeure dans le monde du CSS, ou ces différents aspects relevés jusque là d'une expertise véritable reposant sur l'integrateur (exemple : le centrage vertical), ou été même confinées dans le domaine du fantasme (les justifications, le comportement des éléments sur l'espace restant,...').
 
-
-
-### une valeur relativement rescente, 
-
-Citer can i use
-Quand seriez vous sur le marché ?
-
-Toutes ces contraintes n'ont soit pas d'équivalent dans les autres modes de display (`display:inline` ou `display:block`) , soit artificiellement absconses (`display:table`) soit entachées de cas particuliers (`display:inline-block`).
+Aujourd'hui flex est bien implémenté dans [les différents navigateurs](http://caniuse.com/#search=flexbox). 
+Il le sera encore plus si lorsque vous entrerez dans le monde professionel (et si vous êtes amenés à en faire).
+Nous ne vous présenterons donc pas d'autres valeurs de display (`display:inline-block`, `display:table*`), car elles sont techiquement merdiques.
 
 
-
-### suite des positions
-
-menu avec position:absolute pour ne pas décaler le corps de la page
 
 ## Ordre d'application des sélecteurs CSS.
-
-
-<!-- On peut aussi parler des sélecteurs de base sur les attributs -->
-
-<!--
-
-Rajouter référence MDN ???
-
-Parler aussi des pseudo-éléments type ::first-letter ?
-::after
-::before
-::first-letter
-::first-line
-
-MDN : Tout comme les pseudo-classes, les pseudo-éléments sont ajoutés aux
-sélecteurs. Mais au lieu de décrire un état spécial, ils permettent de styler
-certaines parties du document.
-
-<style type="text/css">
-p::first-letter { font-size:1.4em; }
-</style>
-
--->
 
 Il a plusieurs emplacements pour déclarer du style CSS.
 Nous commençons par préciser ces dernières et donner leurs ordre de priorité.
@@ -349,7 +303,6 @@ Vérifier bien que les ordres suivants vous semblent normal :
 {:.html}
 
 
-
 C'est donc la deuxième qui sera appliquée (sur les div ayant la classe toto bien sûr).
 
 
@@ -373,41 +326,6 @@ Elle permet de rendre la règle plus prioritaire que l'ordre (a,b,c,d) de n'impo
 Nous en parlons juste pour être exhaustif sur les règles de priorité : en pratique, `!important` est très peu utilisé, c'est le dernier recours,  
 
 
-## Display avancés
-
-### inline-block
-
-### Flexbox
-
-https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-
-
-## Layout
-
-### Column layout
-
-
-### holly grail layout
-
-Nous sommes en 2015, et jusquà peu il n'est toujours pas évident de faire ce layout (d'où son nom).
-
-https://philipwalton.github.io/solved-by-flexbox/
-
-## Media Object
-
-
-## vertical centering
-
-
-## box-model
-
-
-## le model par défaut
-
-## le border-layout
-
-
-
 ## Cacher ou Enlever un élément du rendu
 
 Il existe plusieurs façons de faire disparaitre de l'écran un élément HTML.
@@ -415,3 +333,10 @@ Il existe plusieurs façons de faire disparaitre de l'écran un élément HTML.
 ### cacher display:none 
 
 ### enlever visibility:hidden
+
+<div class="exercise">
+
+1. Nous voulons marquer visuellement le menu sous la souris par une petite puce sur le `<div>` fils de `<nav>`. Elle se positionne à gauche de l'intitulé "accueil" ou "contact".
+Utiliser visiblity:hidden ou display:none pour gouverner son apparition. Lequel préférer pour ne pas que son apparition bouscule le flow et perturbe l'utilisateur.
+
+</div>

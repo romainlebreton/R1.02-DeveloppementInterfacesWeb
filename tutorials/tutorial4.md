@@ -1,5 +1,53 @@
 
 
+## Layout
+
+### Column layout
+
+
+### holly grail layout
+
+Nous sommes en 2015, et jusquà peu il n'est toujours pas évident de faire ce layout (d'où son nom).
+
+https://philipwalton.github.io/solved-by-flexbox/
+
+## Media Object
+
+
+## vertical centering
+
+
+## box-model
+
+
+## le model par défaut
+
+## le border-layout
+
+<!-- On peut aussi parler des sélecteurs de base sur les attributs -->
+
+<!--
+
+Rajouter référence MDN ???
+
+Parler aussi des pseudo-éléments type ::first-letter ?
+::after
+::before
+::first-letter
+::first-line
+
+MDN : Tout comme les pseudo-classes, les pseudo-éléments sont ajoutés aux
+sélecteurs. Mais au lieu de décrire un état spécial, ils permettent de styler
+certaines parties du document.
+
+<style type="text/css">
+p::first-letter { font-size:1.4em; }
+</style>
+
+-->
+
+
+
 #horizontal centering 
 
 les ordres  de contraintes sur auto entre width et margin pour un élément sur contraint
