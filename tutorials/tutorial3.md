@@ -16,12 +16,11 @@ Nous allons voir dans cette partie les trois valeurs principales de la propriét
 Les éléments block sont des élements :
 
  * dont on peut définir la taille en css via les propriétés `height` et `width`.
- * qui par défaut occupe toute la largeur (si l'on a pas précisé de `height`) de son <strong>container</strong>
+ * qui par défaut occupe toute la largeur (si l'on a pas précisé de `height`) de son parent,
  * provoque un saut de ligne avant et après son affichage (que l'on est diminué sa largeur ou pas)
 
-Le <strong>container</strong> est le premier élement de type block des ancètres de cet élément, en général il s'agit de son père.
 
-On utilise à l'usage des éléments de display block : 
+On utilise à l'usage des éléments de display `block` : 
 
  * dès que l'on veut exliciter l'agencement (layout) de certains éléments HTML d'une page. (exemple nous voulons que l'en-tête (header) ait une hauteur de `200px`, nous voulons 
  qu'un paragraphe prenne 50% de la largeur,...).
@@ -37,7 +36,7 @@ Les éléments inline sont des élements :
  * qui ne provoque pas un saut de ligne.
 
 
-On utilise à l'usage des éléments de display inline : 
+On utilise à l'usage des éléments de display `inline` : 
 
  1. dans du texte, pour ajouter de la sémantique sans couper la lecture du lecteur (mettre en exposant `<sup>`, mettre de l'importance `<strong>`,associer un lien `<a>`),
  1. lorsque l'on veut positionner à la suite des éléments.
@@ -81,21 +80,164 @@ Même s'ils ne semblent pas servir à grand chose pour l'instant.
 
 </div>
 
-## Cacher ou Enlever un élément du rendu
 
-Il existe plusieurs façons de faire disparaitre de l'écran un élément HTML.
 
-### cacher display:none 
 
-### enlever visibility:hidden
+<!--
+
+### inline-block
+
+signifie que l'élément bénéficie du mode hybride suivant :
+ 
+  * on peut fixer la `width` et la `height` de l'élément (hérité de `block`),
+  * par défaut la taille de l'élément est définie par son contenu (hérité de `inline`),
+  * l'élement reste en ligne, il n'y a pas de saut de ligne avant lui et après lui (hérité de `inline`)
+
+
+Au niveau de la composition l'élément se comporte comme `block` : 
+
+ * Un élément `inline-block` peut contenir des éléments `block` ou `inline`.
+ * Un élément `inline` ne peut contenir d'élement `inline-block`.
+
+
+-->
+
+
+### none
+
+
+La valeur `none` enlève complètment du rendu l'élément en le sortant du flux. Il ne laisse donc pas d'espace marquant sa disparition.
 
 
 <div class="exercise">
 
 1. combiner avec li:hover img, visibility:default pour liker un lien (ou un site)
+1. ajouter des sous menu aux éléments de la navigation (frères des liens `<a>`) dont le contenu est :
 
+ * pour l'ancre "Accueil" 
+
+~~~
+<div class="submenu">
+	<div>one</div>
+	<div>two</div>
+	<div>tree</div>
+</div>
+~~~
+{:.html}
+
+ * pour l'ancre "Contact".
+
+~~~
+<div class="submenu">
+	<div>other</div>
+	<div>another</div>
+</div>
+~~~
+{:.html}
+
+
+
+1. positionner ces menus juste en dessous des éléments qui leurs correspondent (vous aurez besoin d'utiliser l'attribut `position` vu [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position))
+
+1. masquer ces menus par défaut
+1. rendez le premier menu (repsectivement le deuxième) `inline` lorsque la souris passe au dessus de accueil (resp contact).
 
 </div>
+
+A ce stade les sous-menus apparaissent bien lorsque l'on passe sur les éléments censés les ouvrir.
+Par contre il n'est pas possible d'entrer dans ces sous-menus. Nous verrons avec la propriété suivante améliorer notre menu et remédier à ce problème.
+
+## flex
+
+La propriété flex porte à la fois sur l'élement et ses enfants.
+
+La propriété flex placée sur l'élement permet de positionner différentes valeurs sur ce dernier ou sur ces enfants comme autant de contraintes.
+Nous précisons par la suite quelque unes de ces contraintes en se concentrant sur celles définies sur l'élément parent.
+
+
+
+### align-items
+
+
+<div class="exercise" >
+
+1. Donner à l'élement `<nav>` la valeur de display `flex`.
+
+1. Centrer les éléments enfants à l'aide de la propriété align-items. Que constatez vous ?
+ Si rien de ne se passe utiliser l'inspecteur du navigateur pour comprendre ce qui est centré.
+
+1. utilisez maintenant la valeur `stretch`. Que constatez vous à propos de l'accessibilité des sous menus avec la souris ?
+
+1. Comment faire pour que le menu reste accessible et que le texte "Accueil" et "Contact" soient centrés dans la barre de navigation ? (les enfants n'héritent pas de la propriété flex de leur parent par défaut...)
+</div>
+
+
+### flex-direction
+
+
+Elle permet de préciser si les enfants vont se mettre en ligne ou en colonne. Ses valeurs sont  :
+
+ * `row`
+ * `row-reverse`
+ * `column`
+ * `column-reverse`
+
+ 
+ L'attribut `flex-direction` d'un élément prend le pas sur les propriétés `block` ou `inline` de ses enfants.
+
+
+<div class="exercise" >
+ 1. Changer la valeur du display des `<div>` diretement enfant de `<nav>` en `block` puis en `inline`. Que cela change t il ?
+ 1. donner à l'élement `<nav>` la valeur de flex-direction:column, que cela change t'il ? (sachant que la valeur de flex-direction est `row` supprimer cette propriété)
+</div>
+
+
+### justify-content
+
+
+La propriété `justify-content` s'applique sur l'élement. Elle permet de préciser la façon dont les enfants vont se disposer dans l'espace de leur parent.
+
+
+Les valeurs possibles sont :
+
+ * `flex_start`
+ * `flex_end`
+ * `center`
+ * `space-between`
+ * `space-around`
+
+<div class="exercise" >
+
+Placer les éléments de navigation non pas en début de ligne comme flex le posiotnne par défaut mais en fin.
+
+</div>
+
+
+
+### Les autres propriétés 
+
+Il y a d'autres valeurs interessantes autour de flex, la référence suivante est très instructive :
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+ * le comportement des boites des enfants lorsqu'il n'y a pas assez d'espace,
+ * le comportement des boites des enfants lorsque la parent dispose de trop d'espace,
+ * comment les éléments vont être justifier (à droite, à gauche, centrer,...),
+ * de centrer les enfants horizontalement <strong>et/ou</strong> verticalement,
+ * etc.
+
+Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles, elles représentent en fait une avancée majeure dans le monde du CSS, ou ces différents aspects relevés jusque là d'une véritable expertise de la part de l'integrateur (le centrage vertical), ou même de l'ordre du fantasme (les justifications et le centrage en une simple valeur css, le comportement des éléments sur l'espace restant,...').
+
+
+
+### une valeur relativement rescente, 
+
+Citer can i use
+Quand seriez vous sur le marché ?
+
+Toutes ces contraintes n'ont soit pas d'équivalent dans les autres modes de display (`display:inline` ou `display:block`) , soit artificiellement absconses (`display:table`) soit entachées de cas particuliers (`display:inline-block`).
+
+
 
 ### suite des positions
 
@@ -264,3 +406,12 @@ https://philipwalton.github.io/solved-by-flexbox/
 
 ## le border-layout
 
+
+
+## Cacher ou Enlever un élément du rendu
+
+Il existe plusieurs façons de faire disparaitre de l'écran un élément HTML.
+
+### cacher display:none 
+
+### enlever visibility:hidden
