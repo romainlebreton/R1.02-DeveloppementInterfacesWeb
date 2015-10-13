@@ -5,14 +5,7 @@ layout: tutorial
 ---
 
 <!--
-comprennent pas le colspan
-
-parler de centrer le 5 avec text-align:center
 nth-child odd sur ie 11 background color
-
-liens en gris
-
-skill en noir
 -->
 
 
@@ -282,11 +275,12 @@ li:nth-child(even) {color: red;}
 
 
 <div class="exercise">
-
+3. Enlever le fait que (tous) les liens soient soulignés. Pour cela, aller vous
+renseigner sur
+[la propriété text-decoration](https://developer.mozilla.org/fr/docs/Web/CSS/text-decoration).
 1. Dans la page de Chuck Norris de la semaine dernière, faites en sorte que les
-liens `<a>` visités apparaissent en gris.
+liens `<a>` visités apparaissent en bleu plus léger `#0088FF`.
 2. Lorsque la souris passe sur un lien, lui donner la couleur orange.
-
 </div>
 
 <!-- Les règles hover et visited peuvent être en conflit en cas de lien visité
@@ -365,28 +359,11 @@ Les éléments `<thead>` et `<tbody>` servent à définir plus explicitement la 
 
 <div class="exercise">
 
-Ajouter ces balises pour englober ces deux parties (en oubliant pas pour se
-faire leurs balises fermantes `</thead>` et `</tbody>`)
+Ajouter ces balises pour englober ces deux parties (en oubliant pas leurs
+balises fermantes `</thead>` et `</tbody>`)
 
 </div>
 
-### Les attributs `rowspan` et `colspan` 
-
-Les attributs `rowspan` et `colspan` permettent de fusionner les cellules adjacentes :
-
- * `rowspan` permet de fusionner les cellules sur plusieurs lignes (i.e rows),
- * `colspan` permet de fusionner les cellules sur plusieurs colonnes.
-
-<div class="exercise">
-
-Il apparaît que Chuck Norris est toujours au top (niveau 5) dans tous les
-martiaux. Fusionner les cellules représentant ses valeurs de manières à mettre
-cela encore plus en exergue. Et puis mettez le 5 de Chuck en avant avec une
-balise `<strong>` pour bien montrer qui est le patron.
-
-<!-- Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages Wikipedia. -->
-
-</div>
 
 À ce stade la structure de votre table reflète le sens que vous vouliez y mettre.
 Voyons maintenant comment la styliser.
@@ -395,9 +372,11 @@ Voyons maintenant comment la styliser.
 <!--
  1. Ajouter une règle pour que les textes dans les colonnes ne soient pas sur plusieurs lignes (notamment 'Chun Kuk Do') en utilisant la bonne valeur pour la propriété `white-space`,
  -->
- 1. Définissez une couleur de fond #00AAFF pour la partie en-tête `thead` du tableau.
- 1. donner la couleur noire aux skill sans modifier le style des éléments ayant la classe `skill` dans les paragraphes,
- (voir la [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
+ 1. Définissez une couleur de fond `#00AAFF` pour la partie en-tête `thead` du tableau.
+ 1. donner la couleur violette `#640051` aux skills dans le tableau sans
+ modifier le style des éléments ayant la classe `skill` dans les paragraphes,
+ (voir la
+ [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
  1. ajouter une règle pour qu'une ligne (*row*) de la table sur deux apparaisse
  en blanc et l'autre avec la couleur `#CCC` <strong>SANS</strong> modifier de quelque façon le
  HTML (voir la
@@ -405,49 +384,100 @@ Voyons maintenant comment la styliser.
 
 </div>
 
+### Les attributs `rowspan` et `colspan` 
+
+Les balises `<th>` et `<td>` peuvent prendre des attribut `rowspan` et/ou
+`colspan`, qui permettent d'étirer la cellule courante pour prendre la place de
+plusieurs cellules :
+
+ * `rowspan` permet d'étirer la cellule sur plusieurs lignes (i.e rows),
+ * `colspan` permet d'étirer la cellule sur plusieurs colonnes.
+
+<div class="exercise">
+
+Il apparaît que Chuck Norris est toujours au top (niveau 5) dans tous les
+martiaux.
+
+1. Faites une cellule qui prend toute la largeur de manière à mettre cela encore
+plus en exergue.
+2. Mettez le 5 de Chuck en avant avec une balise `<strong>` pour bien montrer
+qui est le patron.
+3. (Optionnel) Si vous souhaitez centrer le 5, allez voir
+   [dans la suite du TD](#centrer-horizontalement-) comme faire.
+
+<!-- Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages Wikipedia. -->
+
+</div>
+
 ## Le modèle de boite
 
 Comme vous l'avez vu précédemment, les balises de type structure définissent des
-boîtes. Ces boîtes disposent toutes des propriétés suivantes en CSS :
+boîtes. Ces boîtes disposent toutes des propriétés CSS suivantes :
 
-* padding : espacement entre le contenu est la bordure de la boîte. Le padding est de
-  la couleur de la boîte, donc il a le même arrière plan (background-color) que la boîte,
-* border : bordure qui entoure le contenu, un border correspond à une width, un style et une couleur.
-* margin : marge à l’extérieur de la bordure, entre cette boîte et la
+* `padding` : espacement entre le contenu et la bordure de la boîte. Le padding
+  partage le même arrière plan (`background-color`) que la boîte,
+* `border` : bordure qui entoure le contenu. Cette propriété attend trois
+  valeurs : un width (par ex. `1px`), un style (par ex. `solid`, `dotted`, `dashed`
+  ...) et une couleur (par ex. `black`).  
+   **Attention :** Un border n'a pas de style par défaut, donc lui donner une
+width ne suffit pas pour le voir.
+* `margin` : marge à l’extérieur de la bordure, entre cette boîte et la
   suivante, et/ou entre cette boite et son parent. La zone couverte par la marge est de la même couleur que sont parent,
-* width : la largeur du contenu,
-* height : la hauteur du contenu
+* `width` : la largeur du contenu, *i.e.* de la boîte *content*
+* `height` : la hauteur du contenu, *i.e.* de la boîte *content*
 
 <img alt="Box model" src="{{site.baseurl}}/assets/boxmodel.png" style="margin:0
 auto;display: block;">
 
+Par exemple le code suivant
 
-À noter que la taille réelle d'une boîte est égale à la taille du contenu `content` 
-(width, height) additionnée de l'épaisseur du padding, du bord et de la marge.
-Un border n'a pas de style par défaut, donc lui donner une width ne suffit pas pour le voir.
+~~~
+.maboite {
+  padding:20px 50px 20px 50px;
+  border:5px solid green;
+  background-color:gold;
+}
+~~~
+{:.css}
 
-Le margin et le padding peuvent accepter trois arités : 
+s'affiche comme ceci (inspectez l'élément)
 
- * margin : t r b l (t est associé à la valeur du haut (top), r est la valeur droite (right), ...)
- * padding : v h (v est associé aux valeurs verticales, h horizontales)
- * padding : a (la valeur de a est associé aux quatre coté de la boite)
+<div style="text-align:center">
+<div style="display:inline-block;padding:20px 50px;border:5px solid green;background-color:gold;">
+La zone de contenu
+</div>
+</div>
+
+<!-- À noter que la taille réelle d'une boîte est égale à la taille du contenu -->
+<!-- `content` (width, height) additionnée de l'épaisseur du padding, du bord et de -->
+<!-- la marge.   -->
+
+Il y a trois syntaxes différentes pour donner des valeurs au `margin`, au
+`padding` et au `border` :
+
+ * `margin : t r b l;` : Si on donne 4 tailles t, r, b et l, alors t est associé
+   à la valeur du haut (top), r est la valeur droite (right), b au bas (bottom)
+   et l à la gauche (left);
+ * `padding : v h;` : Si on ne donne que 2 tailles v et h alors v est associé aux valeurs verticales et  h horizontales. C'est donc équivalent à `padding: v h v h;`.
+ * `padding : a;` Si on donne une seule valeur, elle sera associée aux quatre
+   coté de la boite, comme si on avait écrit `padding: a a a a;`.
 
 Exemples : 
 
 ~~~
- div {margin: 10px 5px;}
-.toto {padding : 5px}
 #titi {margin : 5px 0 4px 7px;}
-
+ div {margin: 10px 5px;} // Marges verticales (haute et basse) de 10px et horizontales de 5px
+.toto {padding : 5px}    // Le padding dans toutes les directions est de 5px
 ~~~
 {:.css}
 
-on peut aussi préciser (péniblement) les valeurs unitaires des propriétés `margin-top`, `margin-left`, `padding-bottom`,...
+**Note :** On peut aussi préciser (péniblement) les valeurs unitaires des
+  propriétés `margin-top`, `margin-left`, `margin-bottom`,...
 
 <div class="exercise">
  1. Ajouter du padding vertical de `10px` aux titres de sections,
  1. Ajouter du margin vertical de `30px` aux paragraphes,
- 1. Ajouter du padding horizontal de `5px` aux élements ayant la class `skill` dans la table (mais pas aux élements ayant la class `skill` dans les paragraphes).
+ 1. Ajouter du padding horizontal de `5px` aux éléments ayant la class `skill` dans la table (mais pas aux éléments ayant la class `skill` dans les paragraphes).
  1. ajouter une bordure aux titres `<H3>` de `1px`, de style `solid` et de couleur `#CCCCCC`. 
 </div>
 
@@ -456,9 +486,10 @@ on peut aussi préciser (péniblement) les valeurs unitaires des propriétés `m
 
 Pour centrer le contenu d'une balise :
 
-* si l'on veut centrer du texte dans une balise : `text-align: center`
-* si le contenu est lui-même dans une balise moins large que la balise parent :
-  `margin : auto` sur la balise du contenu.
+* si l'on veut centrer du texte (ou une balise au niveau du texte) dans une
+  balise : `text-align: center`
+* si le contenu est lui-même dans une balise de structure moins large que la
+  balise parent : `margin : auto` sur la balise de structure.
 
 
 <div class="exercise">
