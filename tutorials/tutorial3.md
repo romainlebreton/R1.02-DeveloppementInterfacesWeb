@@ -6,29 +6,25 @@ layout: tutorial
 
 ## Display 
 
-A chaque élément HTML d'un page lui correspond une boite (voir le box model du TD précédent).
+A chaque élément HTML d'un page lui correspond une boite [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#le-modle-de-boite).
 La façon dont cette boite va occuper l'espace est gérée par l'attribut display.
 Nous allons voir dans cette partie les trois valeurs principales de la propriété display.
 
-
-Par exemple : 
-
- * un paragraphe `<p>` va il voir son espace grandir par le texte qu'il contient ?
- * Lorsque l'on ajoute un header qui va contenir la navigation d'un site, sa place est elle dictée par son contenu ou a elle plutôt tendance à occuper un espace fixe ?
 
 ### block
 
 Les éléments block sont des élements :
 
  * dont on peut définir la taille en css via les propriétés `height` et `width`.
- * qui par défaut vont prendre toute la largeur (si l'on a pas donné de `height` donc) de son <strong>container</strong>
+ * qui par défaut occupe toute la largeur (si l'on a pas précisé de `height`) de son <strong>container</strong>
  * provoque un saut de ligne avant et après son affichage (que l'on est diminué sa largeur ou pas)
 
 Le <strong>container</strong> est le premier élement de type block des ancètres de cet élément, en général il s'agit de son père.
 
 On utilise à l'usage des éléments de display block : 
 
- * dès que l'on veut exliciter l'agencement (layout) de certains éléments HTML d'une page. (nous voulons que l'en-tête (header) soit de hauteur `200px`, cet élément doit prendre 50% de la largeur,...).
+ * dès que l'on veut exliciter l'agencement (layout) de certains éléments HTML d'une page. (exemple nous voulons que l'en-tête (header) ait une hauteur de `200px`, nous voulons 
+ qu'un paragraphe prenne 50% de la largeur,...).
  * dès qu'il est naturel de prendre toute la place par défaut (un titre `<h2>`).
  
 
@@ -44,15 +40,17 @@ Les éléments inline sont des élements :
 On utilise à l'usage des éléments de display inline : 
 
  1. dans du texte, pour ajouter de la sémantique sans couper la lecture du lecteur (mettre en exposant `<sup>`, mettre de l'importance `<strong>`,associer un lien `<a>`),
- 1. lorsque l'on veut posiotnner à la suite des éléments.
+ 1. lorsque l'on veut positionner à la suite des éléments.
+
+
+Puisque associé au texte (`<strong>`, `<a>`, ...), on trouve en majorité les éléments `inline` comme feuilles de l'arboresence du HTML.
 
 ### à propos de HTML et CSS 
 
-Puisque assocé au texte (`<strong>`, `<a>`, ...), on trouve en majorité les éléments `inline` comme feuilles de l'arboresence du HTML.
-Jusqu'il y a peu, les validateurs HTML interdisaient même aux éléments `inline` de contenir des éléments `block`.
-Celà a été relaché dans HTML5 dans [certains cas](http://html5doctor.com/block-level-links-in-html-5/).
+[^somesamplefootnote]: En fait le HTML5 permet cette inclusion dans [certains cas](http://html5doctor.com/block-level-links-in-html-5/).
 
-Cela dit la propriété CSS `display` permet de modifier la valeur par défaut d'un élément, et cela n'est pas pris en compte par les validateurs HTML (qui se basent sur les display par défaut), mais modifier sempiternellement le display naturel du HTML signifie que l'on a pas utiliser la bonne méthode (et que le code risque d'être incompréhensible, immentenable).
+Inclure des éléments `block` dans des éléments `inline` n'est pas conforme en HTML [^somesamplefootnote]. Cela dit du point du vue du CSS, cela est conforme.
+En modifiant la propriétée `display` d'un élément, nous pouvons donc inclure des éléments `block` dans des éléments `inline`. Mais modifier sempiternellement le `display` naturel du HTML signifie que l'on a pas utiliser la bonne méthode (et que le code risque d'être incompréhensible, immentenable). Nous nous imposons donc de respecter la règle HTML.
 
 
 <div class="exercise">
