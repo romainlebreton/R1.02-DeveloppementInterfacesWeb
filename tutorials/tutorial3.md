@@ -6,50 +6,50 @@ layout: tutorial
 
 ## Display 
 
-A chaque élément HTML d'un page lui correspond une boite [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#le-modle-de-boite).
-La façon dont cette boite va occuper l'espace est gérée par l'attribut display.
+À chaque élément HTML d'un page lui correspond une boîte [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#le-modle-de-boite).
+La façon dont cette boîte va occuper l'espace est gérée par l'attribut display.
 Nous allons voir dans cette partie les trois valeurs principales de la propriété display.
 
 
 ### block
 
-Les éléments block sont des élements :
+Les éléments block sont des éléments :
 
  * dont on peut définir la taille en css via les propriétés `height` et `width`.
- * qui par défaut occupe toute la largeur (si l'on a pas précisé de `height`) de son parent,
+ * qui par défaut occupe toute la largeur (si l'on n'a pas précisé de `height`) de son parent,
  * provoque un saut de ligne avant et après son affichage (que l'on est diminué sa largeur ou pas)
 
 
 On utilise à l'usage des éléments de display `block` : 
 
- * dès que l'on veut exliciter l'agencement (layout) de certains éléments HTML d'une page. (exemple nous voulons que l'en-tête (header) ait une hauteur de `200px`, nous voulons 
- qu'un paragraphe prenne 50% de la largeur,...).
+ * dès que l'on veut expliciter l'agencement (layout) de certains éléments HTML d'une page. (exemple nous voulons que l'en-tête (header) ait une hauteur de `200px`, nous voulons 
+ qu'un paragraphe prenne `50%` de la largeur,...).
  * dès qu'il est naturel de prendre toute la place par défaut (un titre `<h2>`).
  
 
 ### inline
 
-Les éléments inline sont des élements :
+Les éléments inline sont des éléments :
 
  * dont on ne peut pas définir la taille en css via les propriétés `height` et `width`,
- * qui prenent leur taille en fonction de leur contenu,
+ * qui prennent leur taille en fonction de leur contenu,
  * qui ne provoque pas un saut de ligne.
 
 
 On utilise à l'usage des éléments de display `inline` : 
 
- 1. dans du texte, pour ajouter de la sémantique sans couper la lecture du lecteur (mettre en exposant `<sup>`, mettre de l'importance `<strong>`,associer un lien `<a>`),
+ 1. dans du texte, pour ajouter de la sémantique sans couper la lecture du lecteur (mettre en exposant un nombre par `<sup>`, préciser l'importance d'une partie du texte par `<strong>`,associer un lien `<a>`),
  1. lorsque l'on veut positionner à la suite des éléments.
 
 
-Puisque associé au texte (`<strong>`, `<a>`, ...), on trouve en majorité les éléments `inline` comme feuilles de l'arboresence du HTML.
+Puisque associé au texte (`<strong>`, `<a>`, ...), on trouve en majorité les éléments `inline` comme feuilles de l'arborescence du HTML.
 
 ### à propos de HTML et CSS 
 
 [^somesamplefootnote]: En fait le HTML5 permet cette inclusion dans [certains cas](http://html5doctor.com/block-level-links-in-html-5/).
 
 Inclure des éléments `block` dans des éléments `inline` n'est pas conforme en HTML [^somesamplefootnote]. Cela dit du point du vue du CSS, cela est conforme.
-En modifiant la propriétée `display` d'un élément, nous pouvons donc inclure des éléments `block` dans des éléments `inline`. Mais modifier sempiternellement le `display` naturel du HTML signifie que l'on a pas utiliser la bonne méthode (et que le code risque d'être incompréhensible, immentenable). Nous nous imposons donc de respecter la règle HTML.
+En modifiant la propriété `display` d'un élément, nous pouvons donc inclure des éléments `block` dans des éléments `inline`. Mais modifier sempiternellement le `display` naturel du HTML signifie que l'on n'a pas utilisé la bonne méthode (et que le code risque d'être incompréhensible). Nous nous imposons donc de respecter la règle HTML.
 
 
 <div class="exercise">
@@ -68,15 +68,15 @@ Pour l'instant le menu que vous devez avoir pour votre site est le suivant
 
 (Si ce n'est pas le cas remplacer le contenu de votre menu par celui-ci).
 
- 1. puisque `<nav>` est de type `block`, nous pouvons fixer ces diemsnsions. Donnez lui la hauteur `50px`,
+ 1. puisque `<nav>` est de type `block`, nous pouvons fixer ces diemsnsions. Donnez-lui la hauteur `50px`,
 
- 1. Encapsuler vos liens `<a>` par des `<div>`, que constatez vous ?
+ 1. Encapsuler vos liens `<a>` par des `<div>`, que constatez-vous ?
 
  1. Utiliser la propriété `display` sur ces `<div>` de manière à remettre la navigation en ligne.
 
 
 Conserver ces `<div>` dans la navigation avec la propriété `display` pour les mettre en ligne.
-Même s'ils ne semblent pas servir à grand chose pour l'instant.
+Même s'ils ne semblent pas servir à grand-chose pour l'instant.
 
 </div>
 
@@ -136,21 +136,21 @@ La valeur `none` enlève complètement du rendu. L'élément en le sortant du fl
 
 
 
-1. positionner ces menus juste en dessous des éléments qui leurs correspondent (vous aurez besoin d'utiliser l'attribut `position` vu [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position))
+1. positionner ces menus en dessous des éléments qui leur correspondent (vous aurez besoin d'utiliser l'attribut `position` vu [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position))
 
 1. masquer ces menus par défaut
-1. rendez le premier menu (repsectivement le deuxième) `inline` lorsque la souris passe au dessus de accueil (resp contact).
+1. rendez le premier menu (repsectivement le deuxième) `inline` lorsque la souris passe au-dessus de accueil (resp contact).
 
 </div>
 
-A ce stade les sous-menus apparaissent bien lorsque l'on passe sur les éléments censés les ouvrir.
-Par contre il n'est pas possible d'entrer dans ces sous-menus. 
-Nous consacrons toute une section à cette valeur de display flex, elle va permettre d'améliorer notre menu et remédier à ce problème d'accesibilité.
+À ce stade les sous menus apparaissent bien lorsque l'on passe sur les éléments censés les ouvrir.
+Par contre il n'est pas possible d'entrer dans ces sous menus. 
+Nous consacrons toute une section à cette valeur de display flex, elle va permettre d'améliorer notre menu et remédier à ce problème d'accessibilité.
 
 
 ## flex
 
-La valeur flex de display porte à la fois sur l'élement et ses enfants. Nous précisons par la suite quelque unes de ces contraintes en se concentrant sur celles définies sur l'élément parent.
+La valeur flex de display porte à la fois sur l'élément et ses enfants. Nous précisons par la suite quelque-unes de ces contraintes en se concentrant sur celles définies sur l'élément parent.
 
 ### flex-direction
 
@@ -165,9 +165,9 @@ L'attribut `flex-direction` d'un élément prend le pas sur les propriétés `bl
 
 
 <div class="exercise" >
- 1. Donner à l'élement `<nav>` la valeur de display `flex`.
- 1. Changer la valeur du display des `<div>` diretement enfant de `<nav>` en `block` puis en `inline`. Que cela change t il ?
- 1. donner à l'élement `<nav>` la valeur de flex-direction:column, que cela change t'il ? (sachant que la valeur de flex-direction est `row` supprimer cette propriété)
+ 1. Donner à l'élément `<nav>` la valeur de display `flex`.
+ 1. Changer la valeur du display des `<div>` directement enfant de `<nav>` en `block` puis en `inline`. Que cela change-t-il ?
+ 1. donner à l'élément `<nav>` la valeur de flex-direction:column, que cela change-t-il ? (sachant que la valeur de flex-direction est `row` supprimer cette propriété)
 </div>
 
 
@@ -178,10 +178,10 @@ Dans notre cas (`flex-direction:row`), `align-items` va donc nous permettre de p
 
 <div class="exercise" >
 
-1. Centrer les éléments enfants à l'aide de la propriété align-items. Que constatez vous ?
+1. Centrer les éléments enfants à l'aide de la propriété align-items. Que constatez-vous ?
 Si rien de ne se passe utiliser l'inspecteur du navigateur pour comprendre ce qui est centré.
 
-1. utilisez maintenant la valeur `stretch`. Que constatez vous à propos de l'accessibilité des sous menus avec la souris ?
+1. utilisez maintenant la valeur `stretch`. Que constatez-vous à propos de l'accessibilité des sous menus avec la souris ?
 
 1. Comment faire pour que les sous-menus restent accessibles et que les textes "Accueil" et "Contact" soient centrés dans la barre de navigation ? (les enfants n'héritent pas de la propriété flex de leur parent par défaut...)
 </div>
@@ -212,18 +212,18 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 ### flex, une valeur relativement rescente
 
-Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles, elles représentent en pratique une avancée majeure dans le monde du CSS, ou ces différents aspects relevés jusque là d'une expertise véritable reposant sur l'integrateur (exemple : le centrage vertical), ou été même confinées dans le domaine du fantasme (les justifications, le comportement des éléments sur l'espace restant,...').
+Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles, elles représentent en pratique une avancée majeure dans le monde du CSS, ou ces différents aspects relevés jusque-là d'une expertise véritable reposant sur l'intégrateur (exemple : le centrage vertical), ou été même confiné dans le domaine du fantasme (les justifications, le comportement des éléments sur l'espace restant,...').
 
 Aujourd'hui flex est bien implémenté dans [les différents navigateurs](http://caniuse.com/#search=flexbox). 
 Il le sera encore plus si lorsque vous entrerez dans le monde professionel (et si vous êtes amenés à en faire).
-Nous ne vous présenterons donc pas d'autres valeurs de display (`display:inline-block`, `display:table*`), car elles sont techiquement merdiques.
+Nous ne vous présenterons donc pas d'autres valeurs de display (`display:inline-block`, `display:table*`), car elles sont techniquement merdiques.
 
 
 
 ## Ordre d'application des sélecteurs CSS.
 
 Il a plusieurs emplacements pour déclarer du style CSS.
-Nous commençons par préciser ces dernières et donner leurs ordre de priorité.
+Nous commençons par préciser ces dernières et donner leur ordre de priorité.
 
 ### priorité du style par emplacement.
 Nous avons utilisé un ficher de style externe styles.css pour ajouter des règles CSS.
@@ -292,7 +292,7 @@ Pour revenir à l'exemple précédent, les règles ont donc comme priorité  :
 
 Soit la fonction `cssprior` qui à un sélecteur CSS donne sa priorité `(a,b,c,d)`, 
 voici quelques exemples d'ordre.
-Vérifier bien que les ordres suivants vous semblent normal :
+Vérifier bien que les ordres suivants vous semblent normaux :
 
 ~~~
  cssprior(.titi span ) >= cssprior(div span)
@@ -306,7 +306,7 @@ Vérifier bien que les ordres suivants vous semblent normal :
 C'est donc la deuxième qui sera appliquée (sur les div ayant la classe toto bien sûr).
 
 
-Remarque si deux règles ont la même priorité, alors c'est l'emplacement de leurs déclaration (inline, ficher externe, style interne, style par défaut) qui prévaut 
+Remarque si deux règles ont la même priorité, alors c'est l'emplacement de leurs déclarations (inline, ficher externe, style interne, style par défaut) qui prévaut 
 et si les deux règles sont dans le même emplacement, alors c'est le dernier qui l'emporte.
 
 
