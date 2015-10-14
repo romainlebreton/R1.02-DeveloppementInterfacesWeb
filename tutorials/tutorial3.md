@@ -12,11 +12,10 @@ balises sur lesquels on applique une règle CSS. Nous avons appris lors du
 [TD1 les sélecteurs de base](tutorial1_2.html#les-slecteurs-css-de-base) et lors
 du
 [TD2 la combinaison de sélecteurs](tutorial2.html#rgles-de-compositions-des-css).
-Mais il peut arriver sur plusieurs blocs de règles s'appliquent sur une même
-balise. **Quelle règle est appliquée quand une ambiguïté se présente ?**
+Plusieurs règles CSS peuvent porter sur un même élément HTML. Si ces règles peuvent cohexister, elles sont toutes appliquées.
+Mais il peut aussi arriver que ces dernières soient contradictoires. 
 
-Par exemple, si vous avez dans votre fichier HTML une balise `<div
-class="skill">` et dans votre fichier CSS le code suivant
+Par exemple, si vous avez dans votre fichier CSS le code suivant : 
 
 ~~~
 div    { color:blue; }
@@ -24,7 +23,7 @@ div    { color:blue; }
 ~~~
 {:.css}
 
-alors de quelle couleur est le texte ?
+de quelle sera la couleur du texte d'un `<div>` de classe `skill` ?
 
 Pour régler ces conflits, le CSS définit une notion de priorité basée sur
 l'emplacement des règles CSS puis sur la spécificité des sélecteurs CSS.
@@ -140,18 +139,19 @@ pour `div.toto`.
 
 Dans un fichier texte ou sur papier, écrivez-les
 priorités des sélecteurs suivants et classez-les du plus prioritaire au moins
-prioritaire.
+prioritaire. 
 
 ~~~
-.titi span
-div span
-nav.titi .tata div div div div div
-ul li div.toto
-#id
-div > a
-div + a
+ .titi span
+ div span
+ nav.titi .tata div div div div div
+ ul li div.toto
+ #id
+ div > a
+ div + a
 ~~~
 {:.css}
+
 
 </div>
 
@@ -220,7 +220,7 @@ Les éléments inline sont des éléments :
 
 On utilise à l'usage des éléments de display `inline` : 
 
- 1. dans du texte, pour ajouter de la sémantique sans couper la lecture du lecteur (mettre en exposant un nombre par `<sup>`, préciser l'importance d'une partie du texte par `<strong>`,associer un lien avec `<a>`),
+ 1. dans du texte, pour ajouter de la sémantique sans interrompre la lecture du lecteur (mettre en exposant un nombre par `<sup>`, préciser l'importance d'une partie du texte par `<strong>`,associer un lien avec `<a>`),
  1. lorsque l'on veut positionner des éléments à la suite.
 
 
@@ -428,7 +428,7 @@ Les valeurs possibles sont :
 Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles pour le néophyte, elles représentent en pratique une avancée majeure dans le monde du CSS. Avant flex, certains propriétés relevés jusque-là d'une expertise véritable de l'intégrateur (exemple : le centrage vertical), ou été même confiné dans le domaine du fantasme (les justifications, le comportement des éléments sur l'espace restant, etc.). 
 
 Aujourd'hui flex est bien implémenté dans [les différents navigateurs](http://caniuse.com/#search=flexbox). 
-Nous ne vous présenterons donc pas d'autres valeurs de display, car elles sont devenues inutiles (`display:inline-block`) ou ont toujours été merdiques (`display:table`).
+Nous ne vous présenterons donc pas d'autres valeurs de display, car elles sont devenues inutiles (`display:inline-block`) ou ont toujours été techniquement merdiques (`display:table`).
 
 Il y a d'autres propriétés intéressantes autour de flex, la référence suivante est très instructive :
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
@@ -449,6 +449,19 @@ Il est temps d'avoir un layout (aménagement de l'espace) pour notre site.
  1. Donnez à l'image la hauteur de `300px`, centrez le texte verticalement.
 -->
 </div>
+
+
+## Fini !
+
+Le mot de la fin à propos de flex ? 
+
+<blockquote> 
+
+Moi je stoppe sur mon flex.
+Quand je sticks ma vibes le dancefloor se breaks et se fluxe dans la vibes
+
+<cite>Gad Elmaleh</cite>
+</blockquote>
 
 
 
