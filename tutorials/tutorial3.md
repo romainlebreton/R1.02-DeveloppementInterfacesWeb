@@ -139,7 +139,7 @@ La valeur `none` enlève complètement du rendu. L'élément en le sortant du fl
 1. positionner ces menus en dessous des éléments qui leur correspondent (vous aurez besoin d'utiliser l'attribut `position` vu [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position))
 
 1. masquer ces menus par défaut en css.
-1. rendez le premier menu (repsectivement le deuxième) `inline` lorsque la souris passe au-dessus de accueil (resp contact) en css.
+1. rendez le premier menu (repsectivement le deuxième) `inline` lorsque la souris passe au-dessus de "accueil" (resp "contact") en css.
 
 </div>
 
@@ -167,7 +167,7 @@ L'exercice suivant va nous permettre entre autre de savoir qui surcharge l'autre
 <div class="exercise" >
  1. Donner à l'élément `<nav>` la valeur de display `flex`.
  1. Changer la valeur du display des `<div>` directement enfant de `<nav>` en `block` puis en `inline`. Que cela change-t-il ?
- 1. donner à l'élément `<nav>` la valeur de flex-direction:column, que cela change-t-il ? (sachant que la valeur de flex-direction est `row` supprimer cette propriété, et supprimer le display aux div enfants puisqu'ils ne servent plus à grand chose)
+ 1. donner à l'élément `<nav>` la valeur de flex-direction:column, que cela change-t-il ? (sachant que la valeur de flex-direction est `row` supprimez cette propriété, et supprimez le display aux div enfants puisqu'ils ne servent plus à grand chose)
 </div>
 
 
@@ -207,7 +207,7 @@ Placer les éléments de navigation non pas en début de ligne (valeur par défa
 
 ### flex, une valeur relativement rescente
 
-Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles pour le néophyte, elles représentent en pratique une avancée majeure dans le monde du CSS. Avant flex, certains propriétés relevés jusque-là d'une expertise véritable reposant sur l'intégrateur (exemple : le centrage vertical), ou été même confiné dans le domaine du fantasme (les justifications, le comportement des éléments sur l'espace restant,...'). 
+Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles pour le néophyte, elles représentent en pratique une avancée majeure dans le monde du CSS. Avant flex, certains propriétés relevés jusque-là d'une expertise véritable de l'intégrateur (exemple : le centrage vertical), ou été même confiné dans le domaine du fantasme (les justifications, le comportement des éléments sur l'espace restant, etc.). 
 
 
 Aujourd'hui flex est bien implémenté dans [les différents navigateurs](http://caniuse.com/#search=flexbox). 
