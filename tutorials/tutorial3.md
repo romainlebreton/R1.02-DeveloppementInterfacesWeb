@@ -211,7 +211,7 @@ Si ces dernières possibilités offertes par `flex` semblent triviales voire nat
 
 
 Aujourd'hui flex est bien implémenté dans [les différents navigateurs](http://caniuse.com/#search=flexbox). 
-Il le sera encore plus lorsque vous entrerez dans le monde professionel (et si vous êtes amenés à faire du HTML).
+Il le sera encore plus lorsque vous entrerez dans le monde professionel si vous êtes amenés à faire du HTML.
 Nous ne vous présenterons donc pas d'autres valeurs de display, car elles sont devenues inutiles (`display:inline-block`) ou ont toujours été merdiques (`display:table`).
 
 
