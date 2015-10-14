@@ -328,15 +328,17 @@ Nous en parlons juste pour être exhaustif sur les règles de priorité : en pra
 
 ## Cacher ou Enlever un élément du rendu
 
-Il existe plusieurs façons de faire disparaitre de l'écran un élément HTML.
+Il existe plusieurs façons de faire disparaitre de l'écran un élément HTML : 
 
-### cacher display:none 
+ * display:none 
+ * visibility:hidden
 
-### enlever visibility:hidden
+Nous avons déjà utiliser la propriété display:none dans le menu pour cacher un menu qui ne venait pas s'intercaler dans le flow. 
+Voyons un usage de visibility:hidden :
 
 <div class="exercise">
 
 1. Nous voulons marquer visuellement le menu sous la souris par une petite puce sur le `<div>` fils de `<nav>`. Elle se positionne à gauche de l'intitulé "accueil" ou "contact".
-Utiliser visiblity:hidden ou display:none pour gouverner son apparition. Lequel préférer pour ne pas que son apparition bouscule le flow et perturbe l'utilisateur.
+nous ne voulons pas que son apparition déplace le texte contenu dans accueil ni dans contact et perturbe l'utilisateur.
 
 </div>
