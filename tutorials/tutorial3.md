@@ -333,11 +333,9 @@ du flux, il ne laisse donc pas d'espace manquant à son emplacement.
    aurez besoin d'utiliser l'attribut `position` vu
    [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position))
 
-1. Masquer ces menus par défaut en css.
+1. Donnez leurs la couleurs de fond `#aca, puis masquer ces menus par défaut en css. 
 1. Réaffichez le premier sous-menu (resp. le deuxième) avec `display:block`
    lorsque la souris passe au-dessus de "accueil" (resp. "contact") en css.
-
-1. **Colorier les div pour bien voir les différents blocks**
 
 </div>
 
@@ -346,9 +344,18 @@ du flux, il ne laisse donc pas d'espace manquant à son emplacement.
 display : `flex`. L'utilisation de cette dernière va permettre d'améliorer notre
 menu et remédier à ce problème d'accessibilité.
 
-## flex
+## La valeur de display flex
 
-Appliquée à un élément, la valeur de display `flex` va modifier la disposition de ses enfants. C'est donc une différence fondamentale avec les valeurs `block` et `inline`, qui eux avaient un impact directement sur l'élément lui-même. Lorsque le display est `flex`, on peut utiliser un ensemble de propriétés spécifiques pour par exemple fixer le sens de rendu des enfants, l'espace entre ces derniers, etc. 
+Appliquée à un élément, la valeur de display `flex` va permettre de modifier la disposition <strong>de ses enfants</strong>. C'est donc une différence fondamentale avec les valeurs `block` et `inline`, qui eux avaient un impact directement <strong>sur l'élément lui-même</strong>. 
+
+Lorsque le display est `flex`, on peut par exemple :
+
+ * fixer le sens de rendu des enfants, 
+ * l'espace entre ces derniers, 
+ * leurs centrage dans les différentes directions,
+ * modifier leurs ordre d'aparition,
+ * etc. 
+
 Nous précisons par la suite quelques-unes de ces contraintes/propriétés.
 
 ### flex-direction
@@ -394,7 +401,7 @@ Si rien de ne se passe utiliser l'inspecteur du navigateur pour comprendre ce qu
 
 1. Utilisez maintenant la valeur `stretch`. Que constatez-vous à propos de l'accessibilité des sous-menus avec la souris ?
 
-1. Comment faire pour que les sous-menus restent accessibles et que les textes "Accueil" et "Contact" soient centrés dans la barre de navigation ? (les enfants n'héritent pas de la propriété flex de leur parent par défaut...)
+1. Comment faire pour que les sous-menus restent accessibles et que les textes "Accueil" et "Contact" soient centrés dans la barre de navigation ? (les enfants n'héritent pas de la propriété flex de leur parent par défaut, il faudra donc peut-être donner cette valeur de display à d'autres éléments...)
 </div>
 
 ### justify-content
@@ -432,18 +439,20 @@ Il est temps d'avoir un layout (aménagement de l'espace) pour notre site.
 
 <div class="exercise" > 
  1. Donnez au body la `width` de `900px`.
- 1. Déplacez la table comparative de `<aside>` vers `<article>` 
+ 1. Déplacez dans le HTML la table comparative de `<aside>` vers `<article>` 
  1. Utilisez la valeur de display `flex` sur la balise `<main>`, et comme pour la navigation mettez ses enfants `<article>` et `<aside>` en colonne.
  1. Fixez la largeur de `<article>` à `60%`, et celle de `<aside>` à `30%`. Ce dernier élément aura une marge gauche de `10%`.
  1. Donnez à `<aside>` la couleur de fond `#CCC` et à `<article>` la couleur de fond `#731373`.
+
+ <!--
  1. Dans la page "contact", alignez l'image de Chuck avec l'adresse de contact.
  1. Donnez à l'image la hauteur de `300px`, centrez le texte verticalement.
-
+-->
 </div>
 
 
 
-
+<!--
 ## Cacher ou Enlever un élément du rendu
 
 <span class="puce">■</span>
@@ -463,7 +472,7 @@ nous ne voulons pas que son apparition déplace le texte contenu dans accueil ni
 
 </div>
 
-
+-->
 <!--
 
 Rajouter référence MDN ???
