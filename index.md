@@ -14,6 +14,7 @@ Cours à l'IUT de Montpellier - 1ère année
    * [Partie 1 -- Introduction à HTML](tutorials/tutorial1_1.html)
    * [Partie 2 -- Introduction à CSS](tutorials/tutorial1_2.html)
 2. Semaine du 12 Octobre 2015 -- [TD 2 -- CSS Avancés 1/2](tutorials/tutorial2.html)
+2. Semaine du 19 Octobre 2015 -- [TD 3 -- CSS Avancés 2/2](tutorials/tutorial3.html)
 
 
 
