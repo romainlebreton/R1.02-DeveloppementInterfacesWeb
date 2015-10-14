@@ -1,5 +1,6 @@
 
 
+<<<<<<< Updated upstream
 ## Layout
 
 ### Column layout
@@ -28,6 +29,9 @@ https://philipwalton.github.io/solved-by-flexbox/
 
 
 
+=======
+max-wdth max-height
+>>>>>>> Stashed changes
 
 #horizontal centering 
 
@@ -75,3 +79,7 @@ Un layout grid avec Flex
 
 Les images
 
+## Fini !
+
+Mais que se passe t il lorsque l'on visualise notre superbe layout sur un petit écran genre mon smartphone ?
+et pls généralement comment avoir un layout intelligent qui s'adapte à ma tablette ? ma smartwatch ? mon smartphone ? mon rétro projecteur ?
