@@ -199,7 +199,7 @@ Les éléments block sont des éléments :
 
  * dont on peut définir la taille en css via les propriétés `height` et `width`.
  * qui par défaut occupe toute la largeur (si l'on n'a pas précisé de `height`) de son parent,
- * provoque un saut de ligne avant et après son affichage (que l'on est diminué sa largeur ou pas)
+ * qui provoque un saut de ligne avant et après son affichage (que l'on est diminué sa largeur ou pas)
 
 
 On utilise à l'usage des éléments de display `block` : 
@@ -228,8 +228,7 @@ Puisque associé au texte (`<strong>`, `<a>`, ...), on trouve en majorité les �
 
 ### règle d'inclusion des éléments `inline` et `block` du point de vue du HTML et du CSS 
 
-[^somesamplefootnote]: En fait le HTML5 permet cette inclusion dans
-[certains cas](http://html5doctor.com/block-level-links-in-html-5/).
+[^somesamplefootnote]: En fait le HTML5 permet cette inclusion dans [certains cas](http://html5doctor.com/block-level-links-in-html-5/).
 
 Inclure des éléments `block` dans des éléments `inline` n'est pas conforme en
 HTML [^somesamplefootnote], mais cela l'est du point du vue du CSS.  En
@@ -244,141 +243,60 @@ Nous allons mettre en page le menu de navigation de notre site de plusieurs faç
 
 <div class="exercise">
 
-Dans ce premier exercice, créons mettons notre menu dans un style "en ligne".
+Dans ce premier exercice, nous allons créer un menu dans un style "block".
 
-1. Changer le menu de votre site en le suivant
+
+
+1. Changer le menu de votre site par le suivant
 
    ~~~
    <nav>
-   	<a href="./index.html">Accueil</a>
-   	<a href="./facts.html">Facts</a>
-   	<a href="./news.html">Actualités</a>
-   	<a href="./contact.html">Contact</a>
+   	<div><a href="./index.html">Accueil</a></div>
+   	<div><a href="./facts.html">Facts</a></div>
+   	<div><a href="./news.html">Actualités</a></div>
+   	<div><a href="./contact.html">Contact</a></div>
    </nav>
    ~~~
    {:.html}
 
-2. Donner la classe `menuinline` au `<header>`. Rajoutez des règles CSS pour que
-les `<nav>` de classe `menuinline` aient une couleur de fond `#7F8C8D`.
-puis .menuinline nav a {
-    background-color: #5BBDBF;
-}
-
-2. * Note : blague des espaces en display: inline ! *
-Solution : soit </div><div> soit  </div><!--  --><div>
-
-3. Par défaut, le `<nav>` a la propriété `display:block` et nos liens `<a>` sont
-en `display:inline`.
-	
-
-4.
-.menuinline nav a {
-    padding: 0 10px;
-    border-left: 2px solid black;
-}
-
-5. (Optionnel)
-.menuinline nav a:first-child {
-    border-left: inherit;
-}
-
+1. puisque `<nav>` est de type `block`, nous pouvons fixer ses
+dimensions. Donnez-lui la largeur `50%`. Que constatez-vous ? Explication : la largeur en pourcentage est relative à la taille de la boîte de
+ contenu du parent (du 1er parent en display:block). Quelle est cette boîte ?
+ quel est sa largeur ? vérifiez que la largeur est bien de 50%.
+1. Rajoutez des règles CSS pour que les fils `<div>` aient une couleur de fond `#5BBDBF`,
+1. Ajouter une règle CSS pour que les éléments `<a>` aient la couleur de fond `#7F8C8D`.
+1. Pour centrer le nav dans son parent header, on va lui donner des marges horizontales `auto` (garder marges verticales 0)
 </div>
+
 
 <div class="exercise">
 
-Nouvelle mise en page `<nav class="menublock">` . Toutes les règles CSS doivent
-être valable pour les fils d'un <header class="menublock">
+Nouvelle mise en page en `inline` cette fois-ci.
 
-1. .menublock nav {
-    background-color: #7F8C8D;
-}
+1. Donner au nav la hauteurn `50px`,
+1. Donnez aux `<div>` enfants de `<nav>` le display `inline`.
+1. Vous constatez des espaces entre les entrées du menu, ces derniers sont du au espaces dans le HTML, conservé lorsque les élément sont inline.
+Solution : pour supprimer les espaces changer le code des `<div>` enfant de la balise `<nav>` en mettant des commentaires :
 
-.menublock nav a {
-    background-color: #5BBDBF;
-	}
+   ~~~
+   <nav>
+   	<div><a href="./index.html">Accueil</a></div><!--
+   	--><div><a href="./facts.html">Facts</a></div><!--
+   	.....
+   	--><div><a href="./contact.html">Contact</a></div>
+   </nav>
+   ~~~
+   {:.html}
 
-1. .menublock nav a {
-    display:block;
-	}
- Que constatez-vous ?
-
-2. puisque `<nav>` est de type `block`, nous pouvons fixer ses
-dimensions. Donnez-lui la hauteur `50px`, et largeur `25%` .
-
- Explication : la largeur en pourcentage est relative à la taille de la boîte de
- contenu du parent (du 1er parent en display:block). Quelle est cette boîte,
- quel est sa largeur, vérifiez que la largeur est bien 25% ?
-
-3. Pour centrer le nav dans son parent header, on va lui donner des marges horizontales `auto` (garder marges verticales 0)
-
-Explication : Règle des 7 distances qui donnent la largeur du contenu du
-parent. auto permet d'ajuster les marges pour satisfaire la règle.
-
-4. .menublock nav a {
-text-align:center;
-}
-
-5. .menublock nav a {
-    border-style: solid;
-    border-color: black;
-    border-width: 1px 1px 0 1px;
-}
-
-6. .menublock nav a:last-child {
-    border-width: 1px;
-}
+1. (Optionnel) Ajouter du padding horizontal de `10px` sur les éléments `<a>`.
+1. (Optionnel) Ajoutez à ces mêmes éléments `<a>` une bordure sur la gauche de `2px` de style solid et de couleur noir.
+1. (Optionnel) Enlevez le border sur le premier de ces éléments.
 
 </div>
 
-anciens exos  : 
- 1. Encapsuler vos liens `<a>` par des `<div>`, que constatez-vous ?
- 1. Utiliser la propriété `display` sur ces `<div>` de manière à remettre la navigation en ligne.
-
-<!-- Conserver ces `<div>` dans la navigation avec la propriété `display` pour les mettre en ligne. -->
-<!-- Même s'ils ne semblent pas servir à grand-chose pour l'instant. -->
-
-
-
-<!-- TODO: faire le menu "burger" comme exo -->
-
-
-<!--
-inline-block
-
-signifie que l'élément bénéficie du mode hybride suivant :
- 
-  * on peut fixer la `width` et la `height` de l'élément (hérité de `block`),
-  * par défaut la taille de l'élément est définie par son contenu (hérité de `inline`),
-  * l'élement reste en ligne, il n'y a pas de saut de ligne avant lui et après lui (hérité de `inline`)
-
-
-Au niveau de la composition l'élément se comporte comme `block` : 
-
- * Un élément `inline-block` peut contenir des éléments `block` ou `inline`.
- * Un élément `inline` ne peut contenir d'élement `inline-block`.
--->
 
 
 ### none
-
-#### Cacher ou Enlever un élément du rendu
-
-Il existe plusieurs façons de faire disparaitre de l'écran un élément HTML : 
-
- * display:none 
- * visibility:hidden
-
-Nous avons déjà utiliser la propriété display:none dans le menu pour cacher un menu qui ne venait pas s'intercaler dans le flow. 
-Voyons un usage de visibility:hidden :
-
-<div class="exercise">
-
-1. Nous voulons marquer visuellement le menu sous la souris par une petite puce sur le `<div>` fils de `<nav>`. Elle se positionne à gauche de l'intitulé "accueil" ou "contact".
-nous ne voulons pas que son apparition déplace le texte contenu dans accueil ni dans contact et perturbe l'utilisateur.
-
-</div>
-
-#### Display:none
 
 La valeur `display:none` enlève complètement du rendu. L'élément en le sortant
 du flux, il ne laisse donc pas d'espace manquant à son emplacement.
@@ -524,6 +442,26 @@ Il est temps d'avoir un layout (aménagement de l'espace) pour notre site.
 </div>
 
 
+
+
+## Cacher ou Enlever un élément du rendu
+
+<span class="puce">■</span>
+
+Il existe plusieurs façons de faire disparaitre de l'écran un élément HTML : 
+
+ * display:none 
+ * visibility:hidden
+
+Nous avons déjà utiliser la propriété display:none dans le menu pour cacher un menu qui ne venait pas s'intercaler dans le flow. 
+Voyons un usage de visibility:hidden :
+
+<div class="exercise">
+
+1. Nous voulons marquer visuellement le menu sous la souris par une petite puce sur le `<div>` fils de `<nav>`. Elle se positionne à gauche de l'intitulé "accueil" ou "contact".
+nous ne voulons pas que son apparition déplace le texte contenu dans accueil ni dans contact et perturbe l'utilisateur.
+
+</div>
 
 
 <!--
