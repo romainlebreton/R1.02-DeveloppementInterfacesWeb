@@ -127,7 +127,7 @@ alors la règle CSS est plus prioritaire. En cas d'égalité,
 strictement plus grand (et donc *a* égal) alors la règle CSS est plus
 prioritaire. En cas d'égalité sur *a* et *b*,
 * on regarde la "troisième lettre" *c*. En cas d'égalité,
-* on regarde la "troisième lettre" *d*.
+* on regarde la "quatrième lettre" *d*.
 * **en cas d'égalité absolue**, la règle écrite en dernier est prioritaire.
 
 Ce mécanisme de priorité s'appelle la cascade et correspond au C de CSS (Cascading Style Sheet).
@@ -147,6 +147,7 @@ prioritaire.
 div span
 nav.titi .tata div div div div div
 ul li div.toto
+#id
 div > a
 div + a
 ~~~
@@ -175,6 +176,7 @@ div + a
 
 <!--
 
+#id                                   (0,1,0,0)
 nav.titi .tata div div div div div    (0,0,2,6)
 ul li div.toto                        (0,0,1,3)
 .titi span                            (0,0,1,1)
@@ -226,42 +228,119 @@ Puisque associé au texte (`<strong>`, `<a>`, ...), on trouve en majorité les �
 
 ### règle d'inclusion des éléments `inline` et `block` du point de vue du HTML et du CSS 
 
-[^somesamplefootnote]: En fait le HTML5 permet cette inclusion dans [certains cas](http://html5doctor.com/block-level-links-in-html-5/).
+[^somesamplefootnote]: En fait le HTML5 permet cette inclusion dans
+[certains cas](http://html5doctor.com/block-level-links-in-html-5/).
 
-Inclure des éléments `block` dans des éléments `inline` n'est pas conforme en HTML [^somesamplefootnote], mais cela l'est du point du vue du CSS.
-En modifiant la propriété `display` d'un élément, nous pouvons donc inclure des éléments `block` dans des éléments `inline`. Mais modifier sempiternellement le `display` naturel du HTML signifie que l'on n'a pas utilisé la bonne méthode (et que le code risque d'être incompréhensible). Nous nous imposons donc de respecter la règle HTML.
+Inclure des éléments `block` dans des éléments `inline` n'est pas conforme en
+HTML [^somesamplefootnote], mais cela l'est du point du vue du CSS.  En
+modifiant la propriété `display` d'un élément, nous pouvons donc inclure des
+éléments `block` dans des éléments `inline`. Mais modifier sempiternellement le
+`display` naturel du HTML signifie que l'on n'a pas utilisé la bonne méthode (et
+que le code risque d'être incompréhensible). Nous nous imposons donc de
+respecter la règle HTML.
+
+Nous allons mettre en page le menu de navigation de notre site de plusieurs façons différentes.
 
 
 <div class="exercise">
 
-Nous allons créer un menu de navigation pour notre site.
-Pour l'instant le menu que vous devez avoir pour votre site est le suivant 
+Dans ce premier exercice, créons mettons notre menu dans un style "en ligne".
 
+1. Changer le menu de votre site en le suivant
 
-~~~
-<nav>
-	<a href="./index.html">Accueil</a>
-	<a href="./contact.html">Contact</a>
-</nav>
-~~~
-{:.html}
+   ~~~
+   <nav>
+   	<a href="./index.html">Accueil</a>
+   	<a href="./facts.html">Facts</a>
+   	<a href="./news.html">Actualités</a>
+   	<a href="./contact.html">Contact</a>
+   </nav>
+   ~~~
+   {:.html}
 
-(Si ce n'est pas le cas remplacer le contenu de votre menu par celui-ci).
+2. Donner la classe `menuinline` au `<header>`. Rajoutez des règles CSS pour que
+les `<nav>` de classe `menuinline` aient une couleur de fond `#7F8C8D`.
+puis .menuinline nav a {
+    background-color: #5BBDBF;
+}
 
- 1. puisque `<nav>` est de type `block`, nous pouvons fixer ses dimensions. Donnez-lui la hauteur `50px`,
+2. * Note : blague des espaces en display: inline ! *
+Solution : soit </div><div> soit  </div><!--  --><div>
 
+3. Par défaut, le `<nav>` a la propriété `display:block` et nos liens `<a>` sont
+en `display:inline`.
+	
+
+4.
+.menuinline nav a {
+    padding: 0 10px;
+    border-left: 2px solid black;
+}
+
+5. (Optionnel)
+.menuinline nav a:first-child {
+    border-left: inherit;
+}
+
+</div>
+
+<div class="exercise">
+
+Nouvelle mise en page `<nav class="menublock">` . Toutes les règles CSS doivent
+être valable pour les fils d'un <header class="menublock">
+
+1. .menublock nav {
+    background-color: #7F8C8D;
+}
+
+.menublock nav a {
+    background-color: #5BBDBF;
+	}
+
+1. .menublock nav a {
+    display:block;
+	}
+ Que constatez-vous ?
+
+2. puisque `<nav>` est de type `block`, nous pouvons fixer ses
+dimensions. Donnez-lui la hauteur `50px`, et largeur `25%` .
+
+ Explication : La largeur en pourcentage est relative à la taille de la boîte de
+ contenu du parent (du 1er parent en display:block). Quelle est cette boite,
+ quel est sa largeur, vérifiez que la largeur est bien 25% ?
+
+3. Pour centrer le nav dans son parent header, on va lui donner des marges horizontales `auto` (garder marges verticales 0)
+
+Explication : Règle des 7 distances qui donnent la largeur du contenu du
+parent. auto permet d'ajuster les marges pour satisfaire la règle.
+
+4. .menublock nav a {
+text-align:center;
+}
+
+5. .menublock nav a {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 1px 0 1px;
+}
+
+6. .menublock nav a:last-child {
+    border-width: 1px;
+}
+
+</div>
+
+anciens exos  : 
  1. Encapsuler vos liens `<a>` par des `<div>`, que constatez-vous ?
-
  1. Utiliser la propriété `display` sur ces `<div>` de manière à remettre la navigation en ligne.
-
 
 <!-- Conserver ces `<div>` dans la navigation avec la propriété `display` pour les mettre en ligne. -->
 <!-- Même s'ils ne semblent pas servir à grand-chose pour l'instant. -->
 
-</div>
 
 
 <!-- TODO: faire le menu "burger" comme exo -->
+
 
 <!--
 inline-block
