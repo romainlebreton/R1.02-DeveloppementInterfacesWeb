@@ -1,51 +1,86 @@
 ---
 title: TD3 &ndash; HTML / CSS avancé 2/2
-subtitle: display property and Layout
+subtitle: display et mise-en-page
 layout: tutorial
 ---
 
 
 ## Ordre d'application des sélecteurs CSS.
 
-Il a plusieurs emplacements possible pour déclarer du style CSS.
-Nous commençons par préciser ces dernières et donner leur ordre de priorité.
+Comme vous vous en souvenez, les sélecteurs servent à sélectionner un ensemble de
+balises sur lesquels on applique une règle CSS. Nous avons appris lors du
+[TD1 les sélecteurs de base](tutorial1_2.html#les-slecteurs-css-de-base) et lors
+du
+[TD2 la combinaison de sélecteurs](tutorial2.html#rgles-de-compositions-des-css).
+Mais il peut arriver sur plusieurs blocs de règles s'appliquent sur une même
+balise. **Quelle règle est appliquée quand une ambiguité se présente ?**
 
-### priorité du style par emplacement.
-Nous avons utilisé un ficher de style externe styles.css pour ajouter des règles CSS.
-Il est aussi possible d'ajouter du CSS directement dans le HTML via l'attribut `style` (on parle de style "inline" à ne pas confondre avec un élément de valeur de display `inline`) :
-
-~~~
-<p style="font-size: 12pt; color: fuchsia">
-   Aren't style sheets wonderful?
-</p>
-~~~
-{:.html}
-
-Ou d'inclure des règles CSS dans une balise `<style>` (on parle de "internal style"):
-
+Par exemple, si vous avez dans votre fichier HTML un balise `<div
+class="skill">` et dans votre fichier CSS le code suivant
 
 ~~~
-<style type="text/css">
-   p {font-size: 12pt; color: pink}
-</style>
+div    { color:blue; }
+.skill { color:red; }
 ~~~
-{:.html}
+{:.css}
 
-Enfin les navigateurs appliquent un style par défaut sur les éléments.
-Cela permet de ne pas avoir à définir pour chaque balise tout le style qui doit lui être associé.
+alors de quelle couleur est le texte ?
 
-L'ordre de priorité d'application des règles CSS est la suivante :
+Pour régler ces conflits, le CSS définit une notion de priorité basée sur
+l'emplacement des règles CSS puis sur la spécificité des sélecteurs CSS.
 
-1. styles 'inline' par l'attribut `style` à même le HTML,
-1. styles contenu dans les fichiers CSS (external style),
-1. styles définis dans une balise `<style>` dans le fichier HTML (internal style),
-1. style par défaut des navigateurs.
+### Différents emplacements
+
+En fait, il y a plusieurs emplacements possible pour déclarer du style CSS :
+
+1. **Style externe** : (Conseillé) On peut utiliser un fichier de style externe et le lier au
+document HTML avec la balise suivante dans le `<head>` :
+
+   ~~~
+   <link rel="stylesheet" type="text/css" href="css/styles.css">
+   ~~~
+   {:.html}
+
+1. **Style interne** : (Déconseillé) On peut inclure des règles CSS directement dans
+   le `<head>` à l'aide de la balise `<style>` :
+
+   ~~~
+   <html>
+     <head>
+       <style type="text/css">
+         p {font-size: 12pt; color: pink}
+       </style>
+     </head>
+     <body> ... </body>
+   </html>
+   ~~~
+   {:.html}
+
+1. **Style inline** : (Déconseillé) On peut inclure du style CSS directement
+   dans une balise avec l'attribut `style` :
+ 
+   ~~~
+   <p style="font-size: 12pt; color: fuchsia">
+      Aren't style sheets wonderful?
+   </p>
+   ~~~
+   {:.html}
+
+   Attention à ne pas confondre le style "inline" avec le futur
+   `display:inline`.
+
+Enfin les navigateurs appliquent un style par défaut sur les éléments. Cela
+permet de ne pas avoir à définir pour chaque balise tout le style qui doit lui
+être associé. On peut observer ce style par défaut dans les outils de
+développement de Chrome.
+
+Pour prendre de bonnes habitudes, on préférera les styles externes comme
+"styles.css", qui respectent mieux la distinction entre la structure HTML et le
+style CSS.
 
 
-En pratique on préférera les styles externes comme "styles.css", cela respecte mieux la césure entre la structure HTML et le style CSS. 
+### Priorité des sélecteurs
 
-
-### Priorité des règles par leurs sélecteurs.
 
 Des règles CSS rentrent inévitablement en conflit sur certains éléments :
 
@@ -55,16 +90,24 @@ div.toto {color: red;}
 ~~~
 {:.css}
 
-Afin de savoir la couleur qui sera appliquée sur les éléments `<div>` ayant la classe toto, des priorités sont définies sur les sélecteurs CSS.
+Afin de savoir la couleur qui sera appliquée sur les éléments `<div
+class="toto">`, des priorités sont définies sur les sélecteurs CSS.  Comme le
+sélecteur `div.toto` est plus spécifique que le sélecteur `div`, on va appliquer
+en priorité la règle `color:red;`.
 
-Cette valeur (a,b,c,d) de priorité est définie comme suit :
+Cette valeur *(a,b,c,d)* de priorité d'un sélecteur CSS est définie comme suit :
 
- * soit a la règle est dans un style inline (voir plus haut), (a=1 si le style est inline, 0 sinon)
- * soit b est le nombre de sélecteur d'identifiant (`#`),
- * soit c est le nombre de classe (`.`) ou pseudo classe (`:over`,`:visited`,...)
- * soit d est le nombre d'élément contenu dans le sélecteur (`div` , `span`, `p`, ...)
-
-l'ordre de priorité est défini comme lexicographique (la valeur de a est plus discriminante que b qui lui même est plus discriminant que c). 
+* la valeur *a* code la priorité basé sur l'emplacement de la règle. Par ordre
+de priorité décroissante, nous avons
+   * *a*=2, les styles inline,
+   * *a*=1, les styles externes et internes,
+   * *a*=0, le style par défaut du navigateur.
+ * soit *b* est le nombre de sélecteur d'identifiant (`#`),
+ * soit *c* est le nombre de classe (`.`) ou pseudo classe
+   (`:over`,`:visited`,...) <!-- et sélecteur d'attribut -->
+ * soit *d* est le nombre d'élément contenu dans le sélecteur (`div` , `span`,
+   `p`, ...) <!-- et pseudo-éléments -->
+   * les opérateurs de combinaison ne contribuent pas à la priorité <!-- ni le sélecteur universel -->
 
 Pour revenir à l'exemple précédent, les règles ont donc comme priorité  :
 
@@ -74,23 +117,42 @@ Pour revenir à l'exemple précédent, les règles ont donc comme priorité  :
 ~~~
 {:.html}
 
+### L'ordre de priorité
 
-Soit la fonction `cssprior` qui à un sélecteur CSS donne sa priorité `(a,b,c,d)`, 
-voici quelques exemples d'ordre.
-Vérifier bien que les ordres suivants vous semblent normaux :
+L'ordre de priorité est défini comme l'ordre du dictionnaire (ordre *lexicographique*) :
+
+* on regarde d'abord la "première lettre" *a*. Si *a* est strictement plus grand
+alors la règle CSS est plus prioritaire. En cas d'égalité,
+* on regarde la "deuxième lettre" *b* pour déterminer la priorité. Si *b* est
+strictement plus grand (et donc *a* égal) alors la règle CSS est plus
+prioritaire. En cas d'égalité sur *a* et *b*,
+* on regarde la "troisième lettre" *c*. En cas d'égalité,
+* on regarde la "troisième lettre" *d*.
+* **en cas d'égalité absolue**, la règle écrite en dernier est prioritaire.
+
+Ce mécanisme de priorité s'appelle la cascade et correspond au C de CSS (Cascading Style Sheet).
+
+**Exemple :** `div.toto` (priorité (0,0,1,1)) est plus prioritaire que `div`
+(priorité (0,0,0,1)) car on a égalité sur *a* et *b* mais *c* est plus grand
+pour `div.toto`.
+
+<div class="exercise">
+
+Dans un fichier texte ou sur papier, écrivez les
+priorités des sélecteurs suivants et classez-les du plus prioritaire au moins
+prioritaire.
 
 ~~~
- cssprior(.titi span ) >= cssprior(div span)
- cssprior( nav.titi .tata div div div div div  > ul li div.toto) 
-    <= cssprior(#truc)
- cssprior(div > a) == cssprior(div + a)
+.titi span
+div span
+nav.titi .tata div div div div div
+ul li div.toto
+div > a
+div + a
 ~~~
-{:.html}
+{:.css}
 
-
-
-Si deux règles ont la même priorité, alors c'est l'emplacement de leurs déclarations (inline, ficher externe, style interne, style par défaut) qui prévaut 
-et si les deux règles sont dans le même emplacement, alors c'est la dernière déclaration qui l'emporte.
+</div>
 
 
 <!-- ### le joker en cas d'impasse !important  -->
@@ -111,6 +173,16 @@ et si les deux règles sont dans le même emplacement, alors c'est la dernière 
 <!-- être exhaustif sur les règles de priorité : en pratique, `!important` est très -->
 <!-- peu utilisé, c'est le dernier recours, -->
 
+<!--
+
+nav.titi .tata div div div div div    (0,0,2,6)
+ul li div.toto                        (0,0,1,3)
+.titi span                            (0,0,1,1)
+div span                              (0,0,0,2)
+div > a                               (0,0,0,2)
+div + a                               (0,0,0,2)
+
+-->
 
 ## Display 
 
