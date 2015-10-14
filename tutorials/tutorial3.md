@@ -6,7 +6,7 @@ layout: tutorial
 
 ## Display 
 
-À chaque élément HTML d'un page lui correspond une boîte [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#le-modle-de-boite).
+À chaque élément HTML d'un page lui correspond une boîte ([voir la section sur le modèle de boîte du TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#le-modle-de-boite)).
 La façon dont cette boîte va occuper l'espace est gérée par l'attribut display.
 Nous allons voir dans cette partie les trois valeurs principales de la propriété display.
 
@@ -24,7 +24,7 @@ On utilise à l'usage des éléments de display `block` :
 
  * dès que l'on veut expliciter l'agencement (layout) de certains éléments HTML d'une page. (exemple nous voulons que l'en-tête (header) ait une hauteur de `200px`, nous voulons 
  qu'un paragraphe prenne `50%` de la largeur,...).
- * dès qu'il est naturel de prendre toute la place par défaut (un titre `<h2>`).
+ * dès qu'il est naturel de prendre toute la place par défaut (exemple un titre `<h2>`).
  
 
 ### inline
@@ -33,22 +33,22 @@ Les éléments inline sont des éléments :
 
  * dont on ne peut pas définir la taille en css via les propriétés `height` et `width`,
  * qui prennent leur taille en fonction de leur contenu,
- * qui ne provoque pas un saut de ligne.
+ * qui ne provoquent pas un saut de ligne.
 
 
 On utilise à l'usage des éléments de display `inline` : 
 
- 1. dans du texte, pour ajouter de la sémantique sans couper la lecture du lecteur (mettre en exposant un nombre par `<sup>`, préciser l'importance d'une partie du texte par `<strong>`,associer un lien `<a>`),
- 1. lorsque l'on veut positionner à la suite des éléments.
+ 1. dans du texte, pour ajouter de la sémantique sans couper la lecture du lecteur (mettre en exposant un nombre par `<sup>`, préciser l'importance d'une partie du texte par `<strong>`,associer un lien avec `<a>`),
+ 1. lorsque l'on veut positionner des éléments à la suite.
 
 
 Puisque associé au texte (`<strong>`, `<a>`, ...), on trouve en majorité les éléments `inline` comme feuilles de l'arborescence du HTML.
 
-### à propos de HTML et CSS 
+### règle d'inclusion des éléments `inline` et `block` du point de vue du HTML et du CSS 
 
 [^somesamplefootnote]: En fait le HTML5 permet cette inclusion dans [certains cas](http://html5doctor.com/block-level-links-in-html-5/).
 
-Inclure des éléments `block` dans des éléments `inline` n'est pas conforme en HTML [^somesamplefootnote]. Cela dit du point du vue du CSS, cela est conforme.
+Inclure des éléments `block` dans des éléments `inline` n'est pas conforme en HTML [^somesamplefootnote], mais cela l'est du point du vue du CSS.
 En modifiant la propriété `display` d'un élément, nous pouvons donc inclure des éléments `block` dans des éléments `inline`. Mais modifier sempiternellement le `display` naturel du HTML signifie que l'on n'a pas utilisé la bonne méthode (et que le code risque d'être incompréhensible). Nous nous imposons donc de respecter la règle HTML.
 
 
@@ -68,7 +68,7 @@ Pour l'instant le menu que vous devez avoir pour votre site est le suivant
 
 (Si ce n'est pas le cas remplacer le contenu de votre menu par celui-ci).
 
- 1. puisque `<nav>` est de type `block`, nous pouvons fixer ces diemsnsions. Donnez-lui la hauteur `50px`,
+ 1. puisque `<nav>` est de type `block`, nous pouvons fixer ses dimensions. Donnez-lui la hauteur `50px`,
 
  1. Encapsuler vos liens `<a>` par des `<div>`, que constatez-vous ?
 
@@ -138,43 +138,43 @@ La valeur `none` enlève complètement du rendu. L'élément en le sortant du fl
 
 1. positionner ces menus en dessous des éléments qui leur correspondent (vous aurez besoin d'utiliser l'attribut `position` vu [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position))
 
-1. masquer ces menus par défaut
-1. rendez le premier menu (repsectivement le deuxième) `inline` lorsque la souris passe au-dessus de accueil (resp contact).
+1. masquer ces menus par défaut en css.
+1. rendez le premier menu (repsectivement le deuxième) `inline` lorsque la souris passe au-dessus de accueil (resp contact) en css.
 
 </div>
 
-À ce stade les sous menus apparaissent bien lorsque l'on passe sur les éléments censés les ouvrir.
-Par contre il n'est pas possible d'entrer dans ces sous menus. 
-Nous consacrons toute une section à cette valeur de display flex, elle va permettre d'améliorer notre menu et remédier à ce problème d'accessibilité.
-
+À ce stade les sous menus apparaissent bien lorsque l'on survole les éléments "accueil" et "contact". Par contre il n'est pas possible d'entrer dans ces sous menus. 
+Nous consacrons toute la prochaine section à une autre valeur de display : `flex`. L'utilisation de cette dernière va permettre d'améliorer notre menu et remédier à ce problème d'accessibilité.
 
 ## flex
 
-La valeur flex de display porte à la fois sur l'élément et ses enfants. Nous précisons par la suite quelque-unes de ces contraintes en se concentrant sur celles définies sur l'élément parent.
+La valeur de display `flex` appliquée à un élément influence plus le comportement de ses enfants que l'élément lui-même. Lorsque le display est `flex`, on peut utiliser un ensemble de propriétés spécifiques pour par exemple fixer le sens de rendu des enfants, l'espace entre ces derniers, etc... 
+Nous précisons par la suite quelque-unes de ces contraintes/propriétés.
 
 ### flex-direction
 
-Elle permet de préciser si les enfants vont se mettre en ligne ou en colonne. Ses valeurs sont  :
+La propriété `flex-direction` permet de préciser si les enfants vont se mettre en ligne ou en colonne et dans quel sens. Ses valeurs sont  :
 
  * `row`
  * `row-reverse`
  * `column`
  * `column-reverse`
 
-L'attribut `flex-direction` d'un élément prend le pas sur les propriétés `block` ou `inline` de ses enfants.
+L'attribut `flex-direction` s'appliquant aux enfants, il rentre en conflit avec les valeurs de display `block` ou `inline` de ces derniers.
+L'exercice suivant va nous permettre entre autre de savoir qui surcharge l'autre en cas de conflit.
 
 
 <div class="exercise" >
  1. Donner à l'élément `<nav>` la valeur de display `flex`.
  1. Changer la valeur du display des `<div>` directement enfant de `<nav>` en `block` puis en `inline`. Que cela change-t-il ?
- 1. donner à l'élément `<nav>` la valeur de flex-direction:column, que cela change-t-il ? (sachant que la valeur de flex-direction est `row` supprimer cette propriété)
+ 1. donner à l'élément `<nav>` la valeur de flex-direction:column, que cela change-t-il ? (sachant que la valeur de flex-direction est `row` supprimer cette propriété, et supprimer le display aux div enfants puisqu'ils ne servent plus à grand chose)
 </div>
 
 
 ### align-items
 
 La propriété `align-items` permet de préciser comment les enfants vont venir occuper l'espace perpendiculaire à la direction donnée par `flex-direction`.
-Dans notre cas (`flex-direction:row`), `align-items` va donc nous permettre de préciser comment occuper l'espace vertical.
+Dans notre cas (`flex-direction:row`), `align-items` va donc nous permettre de préciser comment occuper l'espace vertical des `<div>` contenus dans le `<nav>`.
 
 <div class="exercise" >
 
@@ -204,30 +204,51 @@ Placer les éléments de navigation non pas en début de ligne (valeur par défa
 
 </div>
 
-### Les autres propriétés 
+
+### flex, une valeur relativement rescente
+
+Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles pour le néophyte, elles représentent en pratique une avancée majeure dans le monde du CSS. Avant flex, certains propriétés relevés jusque-là d'une expertise véritable reposant sur l'intégrateur (exemple : le centrage vertical), ou été même confiné dans le domaine du fantasme (les justifications, le comportement des éléments sur l'espace restant,...'). 
+
+
+Aujourd'hui flex est bien implémenté dans [les différents navigateurs](http://caniuse.com/#search=flexbox). 
+Il le sera encore plus lorsque vous entrerez dans le monde professionel (et si vous êtes amenés à faire du HTML).
+Nous ne vous présenterons donc pas d'autres valeurs de display, car elles sont devenues inutiles (`display:inline-block`) ou ont toujours été merdiques (`display:table`).
+
 
 Il y a d'autres valeurs intéressantes autour de flex, la référence suivante est très instructive :
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 
-### flex, une valeur relativement rescente
 
-Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles, elles représentent en pratique une avancée majeure dans le monde du CSS, ou ces différents aspects relevés jusque-là d'une expertise véritable reposant sur l'intégrateur (exemple : le centrage vertical), ou été même confiné dans le domaine du fantasme (les justifications, le comportement des éléments sur l'espace restant,...').
+<!--
 
-Aujourd'hui flex est bien implémenté dans [les différents navigateurs](http://caniuse.com/#search=flexbox). 
-Il le sera encore plus si lorsque vous entrerez dans le monde professionel (et si vous êtes amenés à en faire).
-Nous ne vous présenterons donc pas d'autres valeurs de display (`display:inline-block`, `display:table*`), car elles sont techniquement merdiques.
+Rajouter référence MDN ???
 
+Parler aussi des pseudo-éléments type ::first-letter ?
+::after
+::before
+::first-letter
+::first-line
+
+MDN : Tout comme les pseudo-classes, les pseudo-éléments sont ajoutés aux
+sélecteurs. Mais au lieu de décrire un état spécial, ils permettent de styler
+certaines parties du document.
+
+<style type="text/css">
+p::first-letter { font-size:1.4em; }
+</style>
+
+-->
 
 
 ## Ordre d'application des sélecteurs CSS.
 
-Il a plusieurs emplacements pour déclarer du style CSS.
+Il a plusieurs emplacements possible pour déclarer du style CSS.
 Nous commençons par préciser ces dernières et donner leur ordre de priorité.
 
 ### priorité du style par emplacement.
 Nous avons utilisé un ficher de style externe styles.css pour ajouter des règles CSS.
-Il est aussi possible d'ajouter du CSS directement dans le HTML via l'attribut `style` (on parle de style "inline") :
+Il est aussi possible d'ajouter du CSS directement dans le HTML via l'attribut `style` (on parle de style "inline" à ne pas confondre avec un élément de valeur de display `inline`) :
 
 ~~~
 <p style="font-size: 12pt; color: fuchsia">
@@ -270,9 +291,9 @@ div.toto {color: red;}
 ~~~
 {:.css}
 
-Afin de savoir la couleur qui sera appliquée sur les éléments `<div>` ayant la classe toto, des priorités sont définis sur les sélecteurs CSS.
+Afin de savoir la couleur qui sera appliquée sur les éléments `<div>` ayant la classe toto, des priorités sont définies sur les sélecteurs CSS.
 
-Cette priorité est une valeur (a,b,c,d) définie comme suit :
+Cette valeur (a,b,c,d) de priorité est définie comme suit :
 
  * soit a la règle est dans un style inline (voir plus haut), (a=1 si le style est inline, 0 sinon)
  * soit b est le nombre de sélecteur d'identifiant (`#`),
@@ -296,18 +317,16 @@ Vérifier bien que les ordres suivants vous semblent normaux :
 
 ~~~
  cssprior(.titi span ) >= cssprior(div span)
- cssprior( nav.titi .tata + div div div div div  > ul li div.toto) 
+ cssprior( nav.titi .tata div div div div div  > ul li div.toto) 
     <= cssprior(#truc)
  cssprior(div > a) == cssprior(div + a)
 ~~~
 {:.html}
 
 
-C'est donc la deuxième qui sera appliquée (sur les div ayant la classe toto bien sûr).
 
-
-Remarque si deux règles ont la même priorité, alors c'est l'emplacement de leurs déclarations (inline, ficher externe, style interne, style par défaut) qui prévaut 
-et si les deux règles sont dans le même emplacement, alors c'est le dernier qui l'emporte.
+Si deux règles ont la même priorité, alors c'est l'emplacement de leurs déclarations (inline, ficher externe, style interne, style par défaut) qui prévaut 
+et si les deux règles sont dans le même emplacement, alors c'est la dernière déclaration qui l'emporte.
 
 
 ### le joker en cas d'impasse !important 

@@ -26,25 +26,6 @@ https://philipwalton.github.io/solved-by-flexbox/
 
 <!-- On peut aussi parler des sélecteurs de base sur les attributs -->
 
-<!--
-
-Rajouter référence MDN ???
-
-Parler aussi des pseudo-éléments type ::first-letter ?
-::after
-::before
-::first-letter
-::first-line
-
-MDN : Tout comme les pseudo-classes, les pseudo-éléments sont ajoutés aux
-sélecteurs. Mais au lieu de décrire un état spécial, ils permettent de styler
-certaines parties du document.
-
-<style type="text/css">
-p::first-letter { font-size:1.4em; }
-</style>
-
--->
 
 
 
