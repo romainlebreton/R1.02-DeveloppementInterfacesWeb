@@ -13,9 +13,9 @@ balises sur lesquels on applique une règle CSS. Nous avons appris lors du
 du
 [TD2 la combinaison de sélecteurs](tutorial2.html#rgles-de-compositions-des-css).
 Mais il peut arriver sur plusieurs blocs de règles s'appliquent sur une même
-balise. **Quelle règle est appliquée quand une ambiguité se présente ?**
+balise. **Quelle règle est appliquée quand une ambiguïté se présente ?**
 
-Par exemple, si vous avez dans votre fichier HTML un balise `<div
+Par exemple, si vous avez dans votre fichier HTML une balise `<div
 class="skill">` et dans votre fichier CSS le code suivant
 
 ~~~
@@ -31,7 +31,7 @@ l'emplacement des règles CSS puis sur la spécificité des sélecteurs CSS.
 
 ### Différents emplacements
 
-En fait, il y a plusieurs emplacements possible pour déclarer du style CSS :
+En fait, il y a plusieurs emplacements possibles pour déclarer du style CSS :
 
 1. **Style externe** : (Conseillé) On peut utiliser un fichier de style externe et le lier au
 document HTML avec la balise suivante dans le `<head>` :
@@ -97,13 +97,13 @@ en priorité la règle `color:red;`.
 
 Cette valeur *(a,b,c,d)* de priorité d'un sélecteur CSS est définie comme suit :
 
-* la valeur *a* code la priorité basé sur l'emplacement de la règle. Par ordre
+* la valeur *a* code la priorité basée sur l'emplacement de la règle. Par ordre
 de priorité décroissante, nous avons
    * *a*=2, les styles inline,
    * *a*=1, les styles externes et internes,
    * *a*=0, le style par défaut du navigateur.
  * soit *b* est le nombre de sélecteur d'identifiant (`#`),
- * soit *c* est le nombre de classe (`.`) ou pseudo classe
+ * soit *c* est le nombre de classes (`.`) ou pseudo-classes
    (`:over`,`:visited`,...) <!-- et sélecteur d'attribut -->
  * soit *d* est le nombre d'élément contenu dans le sélecteur (`div` , `span`,
    `p`, ...) <!-- et pseudo-éléments -->
@@ -138,7 +138,7 @@ pour `div.toto`.
 
 <div class="exercise">
 
-Dans un fichier texte ou sur papier, écrivez les
+Dans un fichier texte ou sur papier, écrivez-les
 priorités des sélecteurs suivants et classez-les du plus prioritaire au moins
 prioritaire.
 
@@ -305,8 +305,8 @@ Nouvelle mise en page `<nav class="menublock">` . Toutes les règles CSS doivent
 2. puisque `<nav>` est de type `block`, nous pouvons fixer ses
 dimensions. Donnez-lui la hauteur `50px`, et largeur `25%` .
 
- Explication : La largeur en pourcentage est relative à la taille de la boîte de
- contenu du parent (du 1er parent en display:block). Quelle est cette boite,
+ Explication : la largeur en pourcentage est relative à la taille de la boîte de
+ contenu du parent (du 1er parent en display:block). Quelle est cette boîte,
  quel est sa largeur, vérifiez que la largeur est bien 25% ?
 
 3. Pour centrer le nav dans son parent header, on va lui donner des marges horizontales `auto` (garder marges verticales 0)
@@ -386,7 +386,7 @@ du flux, il ne laisse donc pas d'espace manquant à son emplacement.
 
 <div class="exercise">
 
-1. ajouter des sous menu aux éléments de la navigation (frères des liens `<a>`) dont le contenu est :
+1. ajouter des sous-menu aux éléments de la navigation (frères des liens `<a>`) dont le contenu est :
 
  * pour l'ancre "Accueil" 
 
@@ -411,11 +411,11 @@ du flux, il ne laisse donc pas d'espace manquant à son emplacement.
 
 
 
-1. positionner ces menus en dessous des éléments qui leur correspondent (vous
+1. Positionnez ces menus en dessous des éléments qui leur correspondent (vous
    aurez besoin d'utiliser l'attribut `position` vu
    [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position))
 
-1. masquer ces menus par défaut en css.
+1. Masquer ces menus par défaut en css.
 1. Réaffichez le premier sous-menu (resp. le deuxième) avec `display:block`
    lorsque la souris passe au-dessus de "accueil" (resp. "contact") en css.
 
@@ -423,16 +423,15 @@ du flux, il ne laisse donc pas d'espace manquant à son emplacement.
 
 </div>
 
-À ce stade les sous menus apparaissent bien lorsque l'on survole les éléments
-"accueil" et "contact". Par contre il n'est pas possible d'entrer dans ces sous
-menus.  Nous consacrons toute la prochaine section à une autre valeur de
+À ce stade les sous-menus apparaissent bien lorsque l'on survole les éléments
+"accueil" et "contact". Par contre il n'est pas possible d'entrer dans ces sous-menus.  Nous consacrons toute la prochaine section à une autre valeur de
 display : `flex`. L'utilisation de cette dernière va permettre d'améliorer notre
 menu et remédier à ce problème d'accessibilité.
 
 ## flex
 
-Appliquée à un élément, la valeur de display `flex` va modifier la disposition de ses enfants. C'est donc une différence fondamentale avec les valeurs `block` et `inline`, qui eux avaient un impact directement sur l'élement lui-même. Lorsque le display est `flex`, on peut utiliser un ensemble de propriétés spécifiques pour par exemple fixer le sens de rendu des enfants, l'espace entre ces derniers, etc... 
-Nous précisons par la suite quelque-unes de ces contraintes/propriétés.
+Appliquée à un élément, la valeur de display `flex` va modifier la disposition de ses enfants. C'est donc une différence fondamentale avec les valeurs `block` et `inline`, qui eux avaient un impact directement sur l'élément lui-même. Lorsque le display est `flex`, on peut utiliser un ensemble de propriétés spécifiques pour par exemple fixer le sens de rendu des enfants, l'espace entre ces derniers, etc. 
+Nous précisons par la suite quelques-unes de ces contraintes/propriétés.
 
 ### flex-direction
 
@@ -444,7 +443,7 @@ La propriété `flex-direction` permet de préciser si les enfants vont se mettr
  * `column-reverse`
 
 L'attribut `flex-direction` s'appliquant aux enfants, il rentre en conflit avec les valeurs de display `block` ou `inline` de ces derniers.
-L'exercice suivant va nous permettre entre autre de savoir qui surcharge l'autre en cas de conflit.
+L'exercice suivant va nous permettre entre autres de savoir qui surcharge l'autre en cas de conflit.
 
 
 <div class="exercise" >
@@ -475,7 +474,7 @@ Ses valeurs sont  :
 1. Centrez les éléments enfants à l'aide de la propriété align-items. Que constatez-vous ?
 Si rien de ne se passe utiliser l'inspecteur du navigateur pour comprendre ce qui est centré.
 
-1. Utilisez maintenant la valeur `stretch`. Que constatez-vous à propos de l'accessibilité des sous menus avec la souris ?
+1. Utilisez maintenant la valeur `stretch`. Que constatez-vous à propos de l'accessibilité des sous-menus avec la souris ?
 
 1. Comment faire pour que les sous-menus restent accessibles et que les textes "Accueil" et "Contact" soient centrés dans la barre de navigation ? (les enfants n'héritent pas de la propriété flex de leur parent par défaut...)
 </div>
@@ -494,9 +493,9 @@ Les valeurs possibles sont :
 
 <div class="exercise" >
 
- 1. Placer les éléments de navigation non pas en début de ligne (valeur par défaut) mais en fin.
- 1. Placer la citation et la navigation sur le même plan (toujours avec votre display favoris)
- 1. Re-Positionner le menu pour qu'il soit en bas de la balise `<header>`.
+ 1. Placez les éléments de navigation non pas en début de ligne (valeur par défaut) mais en fin.
+ 1. Placez la citation et la navigation sur le même plan (toujours avec votre display favoris)
+ 1. Re-Positionnez le menu pour qu'il soit en bas de la balise `<header>`.
 </div>
 
 ### flex, une valeur relativement récente
@@ -511,7 +510,7 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 ## Two columns layout
 
-Il est temps d'avoir un layout (amnénagement de l'espace) pour notre site.
+Il est temps d'avoir un layout (aménagement de l'espace) pour notre site.
 
 <div class="exercise" > 
  1. Donnez au body la `width` de `900px`.
@@ -520,7 +519,7 @@ Il est temps d'avoir un layout (amnénagement de l'espace) pour notre site.
  1. Fixez la largeur de `<article>` à `60%`, et celle de `<aside>` à `30%`. Ce dernier élément aura une marge gauche de `10%`.
  1. Donnez à `<aside>` la couleur de fond `#CCC` et à `<article>` la couleur de fond `#731373`.
  1. Dans la page "contact", alignez l'image de Chuck avec l'adresse de contact.
- 1. Donnnez à l'image la hauteur de `300px`, centrez le texte verticalement.
+ 1. Donnez à l'image la hauteur de `300px`, centrez le texte verticalement.
 
 </div>
 
