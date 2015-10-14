@@ -449,6 +449,43 @@ Il est temps d'avoir un layout (aménagement de l'espace) pour notre site.
 </div>
 
 
+
+
+## Cacher ou Enlever un élément du rendu
+
+
+
+Il existe plusieurs façons de faire disparaitre de l'écran un élément HTML : 
+
+ * display:none 
+ * visibility:hidden
+
+Nous avons déjà utiliser le bloc de déclaration `display:none` dans le menu pour cacher un sous-menu sans que ce dernier marque la page par son abscence.
+Le bloc de déclaration `visibility:hidden;` quant à lui laisse l'espace innocupé à la place de l'élément.
+
+Voyons un usage de visibility:hidden :
+
+<div class="exercise">
+
+ Nous voulons marquer visuellement le menu sous la souris par une petite puce dans les `<a>` du menu. 
+
+~~~
+<span class="puce">■</span>
+~~~
+{:.html}
+Elle se positionne à gauche du texte, elle n'est visible que lorsque la souris survole le `<div>` contenenant. Dans le cas contraire l'espace reste occupé (pour ne pas faire un effet de flicker/tremblement au survol du menu)
+
+
+1. Ajoutez cette puce devant le texte des liens `<a>`,
+1. Ajoutez le style de décoration `text-decoration:none;` aux liens `<a>`,
+1. Ajoutez `visibility:hidden` à l'élement de classe `puce` et la valeur `visible` sur le survole de la souris sur le `<div>` parent.
+1. Supprimez la couleur de fond sur les balises `<a>` pour plus de lisibilité.
+
+</div>
+
+
+
+
 ## Fini !
 
 Le mot de la fin à propos de flex ? 
@@ -462,28 +499,6 @@ Quand je sticks ma vibes le dancefloor se breaks et se fluxe dans la vibes.
 </blockquote>
 
 
-
-<!--
-## Cacher ou Enlever un élément du rendu
-
-<span class="puce">■</span>
-
-Il existe plusieurs façons de faire disparaitre de l'écran un élément HTML : 
-
- * display:none 
- * visibility:hidden
-
-Nous avons déjà utiliser la propriété display:none dans le menu pour cacher un menu qui ne venait pas s'intercaler dans le flow. 
-Voyons un usage de visibility:hidden :
-
-<div class="exercise">
-
-1. Nous voulons marquer visuellement le menu sous la souris par une petite puce sur le `<div>` fils de `<nav>`. Elle se positionne à gauche de l'intitulé "accueil" ou "contact".
-nous ne voulons pas que son apparition déplace le texte contenu dans accueil ni dans contact et perturbe l'utilisateur.
-
-</div>
-
--->
 <!--
 
 Rajouter référence MDN ???
