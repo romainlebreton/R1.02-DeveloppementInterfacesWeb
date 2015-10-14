@@ -265,7 +265,7 @@ dimensions. Donnez-lui la largeur `50%`. Que constatez-vous ? Explication : la l
  quel est sa largeur ? vérifiez que la largeur est bien de 50%.
 1. Rajoutez des règles CSS pour que les fils `<div>` aient une couleur de fond `#5BBDBF`,
 1. Ajouter une règle CSS pour que les éléments `<a>` aient la couleur de fond `#7F8C8D`.
-1. Pour centrer le nav dans son parent header, on va lui donner des marges horizontales `auto` (garder marges verticales 0)
+1. Pour centrer le nav dans son parent header, on va lui donner des marges horizontales `auto` (gardez les marges verticales à 0)
 </div>
 
 
@@ -304,7 +304,7 @@ du flux, il ne laisse donc pas d'espace manquant à son emplacement.
 
 <div class="exercise">
 
-1. ajouter des sous-menus aux éléments de la navigation (frères des liens `<a>`) dont le contenu est :
+1. Ajoutez des sous-menus aux éléments de la navigation (frères des liens `<a>`) dont le contenu est :
 
  * pour l'ancre "Accueil" 
 
@@ -326,9 +326,6 @@ du flux, il ne laisse donc pas d'espace manquant à son emplacement.
 </div>
 ~~~
 {:.html}
-
-
-
 1. Positionnez ces menus en dessous des éléments qui leur correspondent (vous
    aurez besoin d'utiliser l'attribut `position` vu
    [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position))
@@ -341,8 +338,8 @@ du flux, il ne laisse donc pas d'espace manquant à son emplacement.
 
 À ce stade les sous-menus apparaissent bien lorsque l'on survole les éléments
 "accueil" et "contact". Par contre il n'est pas possible d'entrer dans ces sous-menus.  Nous consacrons toute la prochaine section à une autre valeur de
-display : `flex`. L'utilisation de cette dernière va permettre d'améliorer notre
-menu et remédier à ce problème d'accessibilité.
+display : `flex`. L'utilisation de cette dernière va permettre d'améliorer l'apparence de notre
+menu et de remédier à ce problème d'accessibilité.
 
 ## La valeur de display flex
 
@@ -401,7 +398,7 @@ Si rien de ne se passe utiliser l'inspecteur du navigateur pour comprendre ce qu
 
 1. Utilisez maintenant la valeur `stretch`. Que constatez-vous à propos de l'accessibilité des sous-menus avec la souris ?
 
-1. Comment faire pour que les sous-menus restent accessibles et que les textes "Accueil" et "Contact" soient centrés dans la barre de navigation ? (les enfants n'héritent pas de la propriété flex de leur parent par défaut, il faudra donc peut-être donner cette valeur de display à d'autres éléments...)
+1. Comment faire pour que les sous-menus restent accessibles et que les textes "Accueil" et "Contact" soient centrés dans la barre de navigation ? (les enfants n'héritent pas de la valeur flex, il faudra donc peut-être donner cette valeur de display à des enfants de `<nav>`...)
 </div>
 
 ### justify-content
@@ -425,10 +422,11 @@ Les valeurs possibles sont :
 
 ### flex, une valeur relativement récente
 
-Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles pour le néophyte, elles représentent en pratique une avancée majeure dans le monde du CSS. Avant flex, certaines propriétés relevés jusque-là d'une expertise véritable de l'intégrateur (exemple : le centrage vertical), ou été même confiné dans le domaine du fantasme (les justifications, le comportement des éléments sur l'espace restant, etc.). 
+Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles pour le néophyte, elles représentent en pratique une avancée majeure dans le monde du CSS. Avant flex, certaines propriétés relevés jusque-là d'une expertise véritable de l'intégrateur (exemple : le centrage vertical), ou été même confinées dans le domaine du fantasme (les justifications, le comportement des éléments sur l'espace restant, etc.). 
 
 Aujourd'hui flex est bien implémenté dans [les différents navigateurs](http://caniuse.com/#search=flexbox). 
-Nous ne vous présenterons donc pas d'autres valeurs de display, car elles sont devenues inutiles (`display:inline-block`) ou ont toujours été techniquement merdiques (`display:table`).
+Nous ne vous présenterons donc pas d'autres valeurs de display, car elles sont devenues inutiles (`display:inline-block`, `display:table`), ni 
+des techniques d'alignement avec des `float`, qui ont toujours été techniquement merdiques.
 
 Il y a d'autres propriétés intéressantes autour de flex, la référence suivante est très instructive :
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
@@ -458,7 +456,7 @@ Le mot de la fin à propos de flex ?
 <blockquote> 
 
 Moi je stoppe sur mon flex.
-Quand je sticks ma vibes le dancefloor se breaks et se fluxe dans la vibes
+Quand je sticks ma vibes le dancefloor se breaks et se fluxe dans la vibes.
 
 <cite>Gad Elmaleh</cite>
 </blockquote>
