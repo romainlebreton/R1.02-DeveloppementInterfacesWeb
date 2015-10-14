@@ -352,7 +352,7 @@ menu et remédier à ce problème d'accessibilité.
 
 ## flex
 
-La valeur de display `flex` appliquée à un élément influence plus le comportement de ses enfants que l'élément lui-même. Lorsque le display est `flex`, on peut utiliser un ensemble de propriétés spécifiques pour par exemple fixer le sens de rendu des enfants, l'espace entre ces derniers, etc... 
+Appliquée à un élément, la valeur de display `flex` va modifier la disposition de ses enfants. C'est donc une différence fondamentale avec les valeurs `block` et `inline`, qui eux avaient un impact directement sur l'élement lui-même. Lorsque le display est `flex`, on peut utiliser un ensemble de propriétés spécifiques pour par exemple fixer le sens de rendu des enfants, l'espace entre ces derniers, etc... 
 Nous précisons par la suite quelque-unes de ces contraintes/propriétés.
 
 ### flex-direction
@@ -369,32 +369,41 @@ L'exercice suivant va nous permettre entre autre de savoir qui surcharge l'autre
 
 
 <div class="exercise" >
- 1. Donner à l'élément `<nav>` la valeur de display `flex`.
- 1. Changer la valeur du display des `<div>` directement enfant de `<nav>` en `block` puis en `inline`. Que cela change-t-il ?
- 1. donner à l'élément `<nav>` la valeur de flex-direction:column, que cela change-t-il ? (sachant que la valeur de flex-direction est `row` supprimez cette propriété, et supprimez le display aux div enfants puisqu'ils ne servent plus à grand chose)
+ 1. Donnez à l'élément `<nav>` la valeur de display `flex`.
+ 1. Changez la valeur du display des `<div>` directement enfants de `<nav>` en `block` puis en `inline`. Que cela change-t-il ?
+ 1. Donnez à l'élément `<nav>` la valeur de flex-direction:column, que cela change-t-il ? 
+ 1. Remettez la direction dans sa valeur par défaut, `row`.
 </div>
 
 
 ### align-items
 
-Rajouter valeurs : stretch, center, baseline, flex-start, flex-end
 
-La propriété `align-items` permet de préciser comment les enfants vont venir occuper l'espace perpendiculaire à la direction donnée par `flex-direction`.
-Dans notre cas (`flex-direction:row`), `align-items` va donc nous permettre de préciser comment occuper l'espace vertical des `<div>` contenus dans le `<nav>`.
+La propriété `align-items` permet de préciser comment les enfants vont venir occuper l'espace perpendiculairement à la direction donnée par `flex-direction`. Dans notre cas (`flex-direction:row`), `align-items` va donc nous permettre de préciser comment occuper l'espace vertical des `<div>` contenus dans le `<nav>`.
+
+
+Ses valeurs sont  :
+
+ * `stretch`
+ * `center`
+ * `baseline`
+ * `flex-start`
+ * `flex-end`
+
 
 <div class="exercise" >
 
-1. Centrer les éléments enfants à l'aide de la propriété align-items. Que constatez-vous ?
+1. Centrez les éléments enfants à l'aide de la propriété align-items. Que constatez-vous ?
 Si rien de ne se passe utiliser l'inspecteur du navigateur pour comprendre ce qui est centré.
 
-1. utilisez maintenant la valeur `stretch`. Que constatez-vous à propos de l'accessibilité des sous menus avec la souris ?
+1. Utilisez maintenant la valeur `stretch`. Que constatez-vous à propos de l'accessibilité des sous menus avec la souris ?
 
 1. Comment faire pour que les sous-menus restent accessibles et que les textes "Accueil" et "Contact" soient centrés dans la barre de navigation ? (les enfants n'héritent pas de la propriété flex de leur parent par défaut...)
 </div>
 
 ### justify-content
 
-Elle permet de préciser la façon dont les enfants vont se disposer dans la direction donnée par `flex-direction`.
+Cette propriété permet de préciser la façon dont les enfants vont se disposer dans la direction donnée par `flex-direction`.
 
 Les valeurs possibles sont :
 
@@ -424,24 +433,21 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 ## Two columns layout
 
-Il est temps d'avoir un layout pour notre site.
+Il est temps d'avoir un layout (amnénagement de l'espace) pour notre site.
 
 <div class="exercise" > 
- 1. Donner au body la `width` de `900px`.
- 1. Déplacer la table comparative de `<aside>` vers `<article>` 
- 1. Utiliser la valeur de display `flex` sur la balise `<main>`, et comme pour la navigation mettez ses enfants `<article>` et `<aside>` en colonne.
- 1. Fixer la largeur de `<article>` à `60%`, et celle de `<aside>` à `30%`. Ce dernier élément aura une marge gauche de `10%`.
- 1. Donner à `<aside>` la couleur de fond `#CCC` et à `<article>` la couleur de fond `#731373`.
- 1. Dans a page contact, aligner l'image de Chuck avec l'adresse de contact.
- 1. Donnner à l'image la hauteur de `300px`, centrer le texte verticalement.
+ 1. Donnez au body la `width` de `900px`.
+ 1. Déplacez la table comparative de `<aside>` vers `<article>` 
+ 1. Utilisez la valeur de display `flex` sur la balise `<main>`, et comme pour la navigation mettez ses enfants `<article>` et `<aside>` en colonne.
+ 1. Fixez la largeur de `<article>` à `60%`, et celle de `<aside>` à `30%`. Ce dernier élément aura une marge gauche de `10%`.
+ 1. Donnez à `<aside>` la couleur de fond `#CCC` et à `<article>` la couleur de fond `#731373`.
+ 1. Dans la page "contact", alignez l'image de Chuck avec l'adresse de contact.
+ 1. Donnnez à l'image la hauteur de `300px`, centrez le texte verticalement.
 
 </div>
 
-## Fini !
 
-Mais que se passe t il lorsque l'on visualise notre superbe layout sur un petit écran genre mon smartphone ?
-et pls généralement comment avoir un layout intelligent qui s'adapte à ma tablette ? ma smartwatch ? mon smartphone ? mon rétro projecteur ?
-Vous le saurez en venant au prochain TD !
+
 
 <!--
 
