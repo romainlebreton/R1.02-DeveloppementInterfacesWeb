@@ -406,25 +406,42 @@ Les valeurs possibles sont :
 
 <div class="exercise" >
 
-Placer les éléments de navigation non pas en début de ligne (valeur par défaut) mais en fin.
-
+ 1. Placer les éléments de navigation non pas en début de ligne (valeur par défaut) mais en fin.
+ 1. Placer la citation et la navigation sur le même plan (toujours avec votre display favoris)
+ 1. Re-Positionner le menu pour qu'il soit en bas de la balise `<header>`.
 </div>
-
 
 ### flex, une valeur relativement récente
 
 Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles pour le néophyte, elles représentent en pratique une avancée majeure dans le monde du CSS. Avant flex, certains propriétés relevés jusque-là d'une expertise véritable de l'intégrateur (exemple : le centrage vertical), ou été même confiné dans le domaine du fantasme (les justifications, le comportement des éléments sur l'espace restant, etc.). 
 
-
 Aujourd'hui flex est bien implémenté dans [les différents navigateurs](http://caniuse.com/#search=flexbox). 
-Il le sera encore plus lorsque vous entrerez dans le monde professionel si vous êtes amenés à faire du HTML.
+Il le sera encore plus lorsque vous entrerez dans le monde professionel.
 Nous ne vous présenterons donc pas d'autres valeurs de display, car elles sont devenues inutiles (`display:inline-block`) ou ont toujours été merdiques (`display:table`).
 
-
-Il y a d'autres valeurs intéressantes autour de flex, la référence suivante est très instructive :
+Il y a d'autres propriétés intéressantes autour de flex, la référence suivante est très instructive :
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
-## Holy grail layout
+## Two columns layout
+
+Il est temps d'avoir un layout pour notre site.
+
+<div class="exercise" > 
+ 1. Donner au body la `width` de `900px`.
+ 1. Déplacer la table comparative de `<aside>` vers `<article>` 
+ 1. Utiliser la valeur de display `flex` sur la balise `<main>`, et comme pour la navigation mettez ses enfants `<article>` et `<aside>` en colonne.
+ 1. Fixer la largeur de `<article>` à `60%`, et celle de `<aside>` à `30%`. Ce dernier élément aura une marge gauche de `10%`.
+ 1. Donner à `<aside>` la couleur de fond `#CCC` et à `<article>` la couleur de fond `#731373`.
+ 1. Dans a page contact, aligner l'image de Chuck avec l'adresse de contact.
+ 1. Donnner à l'image la hauteur de `300px`, centrer le texte verticalement.
+
+</div>
+
+## Fini !
+
+Mais que se passe t il lorsque l'on visualise notre superbe layout sur un petit écran genre mon smartphone ?
+et pls généralement comment avoir un layout intelligent qui s'adapte à ma tablette ? ma smartwatch ? mon smartphone ? mon rétro projecteur ?
+Vous le saurez en venant au prochain TD !
 
 <!--
 
