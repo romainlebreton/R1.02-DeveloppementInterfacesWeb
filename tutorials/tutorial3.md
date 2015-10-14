@@ -12,7 +12,7 @@ balises sur lesquels on applique une règle CSS. Nous avons appris lors du
 [TD1 les sélecteurs de base](tutorial1_2.html#les-slecteurs-css-de-base) et lors
 du
 [TD2 la combinaison de sélecteurs](tutorial2.html#rgles-de-compositions-des-css).
-Plusieurs règles CSS peuvent porter sur un même élément HTML. Si ces règles peuvent cohexister, elles sont toutes appliquées.
+Plusieurs règles CSS peuvent porter sur un même élément HTML. Si ces règles peuvent coexister, elles sont toutes appliquées.
 Mais il peut aussi arriver que ces dernières soient contradictoires. 
 
 Par exemple, si vous avez dans votre fichier CSS le code suivant : 
@@ -275,7 +275,7 @@ Nouvelle mise en page en `inline` cette fois-ci.
 
 1. Donner au nav la hauteurn `50px`,
 1. Donnez aux `<div>` enfants de `<nav>` le display `inline`.
-1. Vous constatez des espaces entre les entrées du menu, ces derniers sont du au espaces dans le HTML, conservé lorsque les élément sont inline.
+1. Vous constatez des espaces entre les entrées du menu, ces derniers sont du au espaces dans le HTML, conservé lorsque les éléments sont `inline`.
 Solution : pour supprimer les espaces changer le code des `<div>` enfant de la balise `<nav>` en mettant des commentaires :
 
    ~~~
@@ -289,8 +289,8 @@ Solution : pour supprimer les espaces changer le code des `<div>` enfant de la b
    {:.html}
 
 1. (Optionnel) Ajouter du padding horizontal de `10px` sur les éléments `<a>`.
-1. (Optionnel) Ajoutez à ces mêmes éléments `<a>` une bordure sur la gauche de `2px` de style solid et de couleur noir.
-1. (Optionnel) Enlevez le border sur le premier de ces éléments.
+1. (Optionnel) Ajoutez à ces mêmes éléments `<a>` une bordure sur la gauche de `2px` de style `solid` et de couleur noire.
+1. (Optionnel) Enlevez la bordure sur le premier de ces éléments.
 
 </div>
 
@@ -304,7 +304,7 @@ du flux, il ne laisse donc pas d'espace manquant à son emplacement.
 
 <div class="exercise">
 
-1. ajouter des sous-menu aux éléments de la navigation (frères des liens `<a>`) dont le contenu est :
+1. ajouter des sous-menus aux éléments de la navigation (frères des liens `<a>`) dont le contenu est :
 
  * pour l'ancre "Accueil" 
 
@@ -333,7 +333,7 @@ du flux, il ne laisse donc pas d'espace manquant à son emplacement.
    aurez besoin d'utiliser l'attribut `position` vu
    [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position))
 
-1. Donnez leurs la couleurs de fond `#aca, puis masquer ces menus par défaut en css. 
+1. Donnez leurs la couleur de fond `#aca, puis masquer ces menus par défaut en css. 
 1. Réaffichez le premier sous-menu (resp. le deuxième) avec `display:block`
    lorsque la souris passe au-dessus de "accueil" (resp. "contact") en css.
 
@@ -352,8 +352,8 @@ Lorsque le display est `flex`, on peut par exemple :
 
  * fixer le sens de rendu des enfants, 
  * l'espace entre ces derniers, 
- * leurs centrage dans les différentes directions,
- * modifier leurs ordre d'aparition,
+ * leurs centrages dans les différentes directions,
+ * modifier leurs ordres d'apparition,
  * etc. 
 
 Nous précisons par la suite quelques-unes de ces contraintes/propriétés.
@@ -374,7 +374,7 @@ L'exercice suivant va nous permettre entre autres de savoir qui surcharge l'autr
 <div class="exercise" >
  1. Donnez à l'élément `<nav>` la valeur de display `flex`.
  1. Changez la valeur du display des `<div>` directement enfants de `<nav>` en `block` puis en `inline`. Que cela change-t-il ?
- 1. Donnez à l'élément `<nav>` la valeur de flex-direction:column, que cela change-t-il ? 
+ 1. Donnez à l'élément `<nav>` le bloc de déclaration `flex-direction:column`, que cela change-t-il ? 
  1. Remettez la direction dans sa valeur par défaut, `row`.
 </div>
 
@@ -420,12 +420,12 @@ Les valeurs possibles sont :
 
  1. Placez les éléments de navigation non pas en début de ligne (valeur par défaut) mais en fin.
  1. Placez la citation et la navigation sur le même plan (toujours avec votre display favoris)
- 1. Re-Positionnez le menu pour qu'il soit en bas de la balise `<header>`.
+ 1. Repositionnez le menu pour qu'il soit en bas de la balise `<header>`.
 </div>
 
 ### flex, une valeur relativement récente
 
-Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles pour le néophyte, elles représentent en pratique une avancée majeure dans le monde du CSS. Avant flex, certains propriétés relevés jusque-là d'une expertise véritable de l'intégrateur (exemple : le centrage vertical), ou été même confiné dans le domaine du fantasme (les justifications, le comportement des éléments sur l'espace restant, etc.). 
+Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles pour le néophyte, elles représentent en pratique une avancée majeure dans le monde du CSS. Avant flex, certaines propriétés relevés jusque-là d'une expertise véritable de l'intégrateur (exemple : le centrage vertical), ou été même confiné dans le domaine du fantasme (les justifications, le comportement des éléments sur l'espace restant, etc.). 
 
 Aujourd'hui flex est bien implémenté dans [les différents navigateurs](http://caniuse.com/#search=flexbox). 
 Nous ne vous présenterons donc pas d'autres valeurs de display, car elles sont devenues inutiles (`display:inline-block`) ou ont toujours été techniquement merdiques (`display:table`).
