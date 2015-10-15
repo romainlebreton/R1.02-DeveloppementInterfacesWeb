@@ -198,8 +198,8 @@ Nous allons voir dans cette partie les trois valeurs principales de la propriét
 Les éléments block sont des éléments :
 
  * dont on peut définir la taille en css via les propriétés `height` et `width`.
- * qui par défaut occupe toute la largeur (si l'on n'a pas précisé de `height`) de son parent,
- * qui provoque un saut de ligne avant et après son affichage (que l'on est diminué sa largeur ou pas)
+ * qui par défaut occupe toute la largeur (si l'on n'a pas précisé de `width`) de son parent,
+ * qui provoque un saut de ligne avant et après son affichage (que l'on ait diminué sa largeur ou pas)
 
 
 On utilise à l'usage des éléments de display `block` : 
@@ -215,7 +215,7 @@ Les éléments inline sont des éléments :
 
  * dont on ne peut pas définir la taille en css via les propriétés `height` et `width`,
  * qui prennent leur taille en fonction de leur contenu,
- * qui ne provoquent pas un saut de ligne.
+ * qui ne provoquent pas un saut de ligne, ils sont écrit comme du texte les uns à la suite des autres
 
 
 On utilise à l'usage des éléments de display `inline` : 
