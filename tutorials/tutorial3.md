@@ -91,7 +91,7 @@ div    { color:blue; }
 
 Afin de savoir la couleur qui sera appliquée sur les éléments `<div
 class="skill">`, des priorités sont définies sur les sélecteurs CSS.  Comme le
-sélecteur `div.skill` est plus spécifique que le sélecteur `div`, on va appliquer
+sélecteur `.skill` est plus spécifique que le sélecteur `div`, on va appliquer
 en priorité la règle `color:red;`.
 
 Cette valeur *(a,b,c,d)* de priorité d'un sélecteur CSS est définie comme suit :
