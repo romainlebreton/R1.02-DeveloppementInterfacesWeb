@@ -238,7 +238,7 @@ modifiant la propriété `display` d'un élément, nous pouvons donc inclure des
 que le code risque d'être incompréhensible). Nous nous imposons donc de
 respecter la règle HTML.
 
-Nous allons mettre en page le menu de navigation de notre site de plusieurs façons différentes.
+Nous allons mettre en page le menu de navigation de notre site en mode `block` puis en mode `inline`.
 
 
 <div class="exercise">
@@ -298,8 +298,7 @@ Solution : pour supprimer les espaces changer le code des `<div>` enfant de la b
 
 ### none
 
-La valeur `display:none` enlève complètement du rendu. L'élément en le sortant
-du flux, il ne laisse donc pas d'espace manquant à son emplacement.
+La valeur `display:none` enlève complètement un élément du rendu, sans laisser d'espace à l'endroit où il aurait du être.
 
 
 <div class="exercise">
@@ -328,11 +327,11 @@ du flux, il ne laisse donc pas d'espace manquant à son emplacement.
 {:.html}
 1. Positionnez ces menus en dessous des éléments qui leur correspondent (vous
    aurez besoin d'utiliser l'attribut `position` vu
-   [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position))
+   [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position)).
 
-1. Donnez leurs la couleur de fond `#aca, puis masquer ces menus par défaut en css. 
+1. Donnez leurs la couleur de fond `#aca`, puis masquer ces menus par défaut en CSS. 
 1. Réaffichez le premier sous-menu (resp. le deuxième) avec `display:block`
-   lorsque la souris passe au-dessus de "accueil" (resp. "contact") en css.
+   lorsque la souris passe au-dessus de "accueil" (resp. "contact") en CSS.
 
 </div>
 
@@ -425,7 +424,7 @@ Les valeurs possibles sont :
 Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles pour le néophyte, elles représentent en pratique une avancée majeure dans le monde du CSS. Avant flex, certaines propriétés relevés jusque-là d'une expertise véritable de l'intégrateur (exemple : le centrage vertical), ou été même confinées dans le domaine du fantasme (les justifications, le comportement des éléments sur l'espace restant, etc.). 
 
 Aujourd'hui flex est bien implémenté dans [les différents navigateurs](http://caniuse.com/#search=flexbox). 
-Nous ne vous présenterons donc pas d'autres valeurs de display, car elles sont devenues inutiles (`display:inline-block`, `display:table`), ni 
+Nous ne vous présenterons donc pas d'autres valeurs de display, car elles sont devenues inutiles (`display:inline-block`, `display:table`), ni encore moins
 des techniques d'alignement avec des `float`, qui ont toujours été techniquement merdiques.
 
 Il y a d'autres propriétés intéressantes autour de flex, la référence suivante est très instructive :
@@ -455,15 +454,15 @@ Il est temps d'avoir un layout (aménagement de l'espace) pour notre site.
 
 
 
-Il existe plusieurs façons de faire disparaitre de l'écran un élément HTML : 
+Il existe plusieurs façons de faire disparaitre de l'écran un élément HTML avec un bloc de déclaration : 
 
- * display:none 
- * visibility:hidden
+ * `display:none` 
+ * `visibility:hidden`
 
 Nous avons déjà utiliser le bloc de déclaration `display:none` dans le menu pour cacher un sous-menu sans que ce dernier marque la page par son abscence.
-Le bloc de déclaration `visibility:hidden;` quant à lui laisse l'espace innocupé à la place de l'élément.
+Le bloc de déclaration `visibility:hidden` quant à lui laisse l'espace innocupé à la place de l'élément.
 
-Voyons un usage de visibility:hidden :
+Voyons un usage de `visibility:hidden` :
 
 <div class="exercise">
 
@@ -480,6 +479,7 @@ Elle se positionne à gauche du texte, elle n'est visible que lorsque la souris 
 1. Ajoutez le style de décoration `text-decoration:none;` aux liens `<a>`,
 1. Ajoutez `visibility:hidden` à l'élement de classe `puce` et la valeur `visible` sur le survole de la souris sur le `<div>` parent.
 1. Supprimez la couleur de fond sur les balises `<a>` pour plus de lisibilité.
+1. (Optionnel) Styliser les sous-menus.
 
 </div>
 
