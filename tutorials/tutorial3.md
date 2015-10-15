@@ -139,7 +139,7 @@ pour `div.skill`.
 
 Dans un fichier texte ou sur papier, écrivez-les
 priorités des sélecteurs suivants et classez-les du plus prioritaire au moins
-prioritaire. 
+prioritaire. On supppose que toutes ces règles sont définies dans un fichier externe, donc a=1, et la valuation recherchée commence toujours pas `(1,....`. 
 
 ~~~
  .titi span
@@ -263,8 +263,8 @@ Dans ce premier exercice, nous allons créer un menu dans un style "block".
 dimensions. Donnez-lui la largeur `50%`. Que constatez-vous ? Explication : la largeur en pourcentage est relative à la taille de la boîte de
  contenu du parent (du 1er parent en display:block). Quelle est cette boîte ?
  quel est sa largeur ? vérifiez que la largeur est bien de 50%.
-1. Rajoutez des règles CSS pour que les fils `<div>` aient une couleur de fond `#5BBDBF`,
-1. Ajouter une règle CSS pour que les éléments `<a>` aient la couleur de fond `#7F8C8D`.
+1. Rajoutez des règles CSS pour que les fils `<div>` <strong> enfants de `<nav>` </strong> aient une couleur de fond `#5BBDBF`,
+1. Ajouter une règle CSS pour que les éléments `<a>` <strong> descendants de `<nav>` </strong> aient la couleur de fond `#7F8C8D`.
 1. Pour centrer le nav dans son parent header, on va lui donner des marges horizontales `auto` (gardez les marges verticales à 0)
 </div>
 
@@ -273,8 +273,8 @@ dimensions. Donnez-lui la largeur `50%`. Que constatez-vous ? Explication : la l
 
 Nouvelle mise en page en `inline` cette fois-ci.
 
-1. Donner au nav la hauteurn `50px`,
 1. Donnez aux `<div>` enfants de `<nav>` le display `inline`.
+1. Donner au nav une hauteur de `50px`,
 1. Vous constatez des espaces entre les entrées du menu, ces derniers sont du au espaces dans le HTML, conservé lorsque les éléments sont `inline`.
 Solution : pour supprimer les espaces changer le code des `<div>` enfant de la balise `<nav>` en mettant des commentaires :
 
@@ -329,7 +329,7 @@ La valeur `display:none` enlève complètement un élément du rendu, sans laiss
    aurez besoin d'utiliser l'attribut `position` vu
    [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position)).
 
-1. Donnez leurs la couleur de fond `#aca`, puis masquer ces menus par défaut en CSS. 
+1. Donnez leurs la couleur de fond `#aca`, puis masquer ces sous-menus par défaut en CSS. 
 1. Réaffichez le premier sous-menu (resp. le deuxième) avec `display:block`
    lorsque la souris passe au-dessus de "accueil" (resp. "contact") en CSS.
 
@@ -406,8 +406,8 @@ Cette propriété permet de préciser la façon dont les enfants vont se dispose
 
 Les valeurs possibles sont :
 
- * `flex_start`
- * `flex_end`
+ * `flex-start`
+ * `flex-end`
  * `center`
  * `space-between`
  * `space-around`

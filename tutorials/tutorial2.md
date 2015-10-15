@@ -543,10 +543,11 @@ positionnement des éléments. Ses valeurs sont :
   être en `position:static`.
 * `absolute` : le reste de la page fait comme si l'élément n'existait
 pas. L'élément se positionne relativement à `<body>` (ou plus généralement à son
-plus proche ancêtre positionné).
+plus proche ancêtre <strong>positionné</strong>).
 * `fixed` : le reste de la page fait comme si l'élément n'existait
 pas. L'élément se positionne relativement à la fenêtre d'affichage ; il paraît donc *fixé* lors d'un défilement de la page.
 
+Un élément est dit <strong>positionné</strong> s'il a une position autre que `static` (qui est la valeur par défaut).
 Pour indiquer le décalage de position, on utilise les propriétés `top`, `left`,
 `right` et `bottom`. Par exemple, les propriétés
 
