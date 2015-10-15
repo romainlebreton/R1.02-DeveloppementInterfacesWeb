@@ -459,7 +459,7 @@ Il existe plusieurs façons de faire disparaitre de l'écran un élément HTML a
  * `display:none` 
  * `visibility:hidden`
 
-Nous avons déjà utiliser le bloc de déclaration `display:none` dans le menu pour cacher un sous-menu sans que ce dernier marque la page par son abscence.
+Nous avons déjà utilisé le bloc de déclaration `display:none` dans le menu pour cacher un sous-menu sans que ce dernier marque la page par son abscence.
 Le bloc de déclaration `visibility:hidden` quant à lui laisse l'espace innocupé à la place de l'élément.
 
 Voyons un usage de `visibility:hidden` :
