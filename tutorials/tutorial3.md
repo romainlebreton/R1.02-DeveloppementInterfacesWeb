@@ -81,17 +81,17 @@ style CSS.
 ### Priorité des sélecteurs
 
 
-Des règles CSS rentrent inévitablement en conflit sur certains éléments :
+Reprenons l'exemple précédent :
 
 ~~~
-div {color: yellow;}
-div.toto {color: red;}
+div    { color:blue; }
+.skill { color:red; }
 ~~~
 {:.css}
 
 Afin de savoir la couleur qui sera appliquée sur les éléments `<div
-class="toto">`, des priorités sont définies sur les sélecteurs CSS.  Comme le
-sélecteur `div.toto` est plus spécifique que le sélecteur `div`, on va appliquer
+class="skill">`, des priorités sont définies sur les sélecteurs CSS.  Comme le
+sélecteur `div.skill` est plus spécifique que le sélecteur `div`, on va appliquer
 en priorité la règle `color:red;`.
 
 Cette valeur *(a,b,c,d)* de priorité d'un sélecteur CSS est définie comme suit :
@@ -112,7 +112,7 @@ Pour revenir à l'exemple précédent, les règles ont donc comme priorité  :
 
 ~~~
  div -> (0,0,0,1) (un élément div)
- div.toto -> (0,0,1,1) (une classe toto et un élément div)
+ div.skill -> (0,0,1,1) (une classe skill et un élément div)
 ~~~
 {:.html}
 
@@ -131,9 +131,9 @@ prioritaire. En cas d'égalité sur *a* et *b*,
 
 Ce mécanisme de priorité s'appelle la cascade et correspond au C de CSS (Cascading Style Sheet).
 
-**Exemple :** `div.toto` (priorité (0,0,1,1)) est plus prioritaire que `div`
+**Exemple :** `div.skill` (priorité (0,0,1,1)) est plus prioritaire que `div`
 (priorité (0,0,0,1)) car on a égalité sur *a* et *b* mais *c* est plus grand
-pour `div.toto`.
+pour `div.skill`.
 
 <div class="exercise">
 
@@ -145,7 +145,7 @@ prioritaire.
  .titi span
  div span
  nav.titi .tata div div div div div
- ul li div.toto
+ ul li div.skill
  #id
  div > a
  div + a
@@ -165,7 +165,7 @@ prioritaire.
 
 <!-- ~~~  -->
 <!-- div {color: yellow !important;}  -->
-<!-- div.toto {color: red;}  -->
+<!-- div.skill {color: red;}  -->
 <!-- ~~~  -->
 <!--  {:.css}  -->
 
@@ -178,7 +178,7 @@ prioritaire.
 
 #id                                   (0,1,0,0)
 nav.titi .tata div div div div div    (0,0,2,6)
-ul li div.toto                        (0,0,1,3)
+ul li div.skill                        (0,0,1,3)
 .titi span                            (0,0,1,1)
 div span                              (0,0,0,2)
 div > a                               (0,0,0,2)
