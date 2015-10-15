@@ -112,7 +112,7 @@ Pour revenir à l'exemple précédent, les règles ont donc comme priorité  :
 
 ~~~
  div -> (0,0,0,1) (un élément div)
- div.skill -> (0,0,1,1) (une classe skill et un élément div)
+ .skill -> (0,0,1,0) (une classe skill)
 ~~~
 {:.html}
 
