@@ -29,7 +29,7 @@ CSS columns
 
 
 max-wdth max-height
-
+--->on pourrait utiliser vmin pour faire un sticky footer (pour la page contact on veut que le footer soit en bas de la page no même si le contenu de la page est inférieur à la taille écran).
 ---> dans le responsive design cela arrive plus ou moins naturellement je crois.
 
 
