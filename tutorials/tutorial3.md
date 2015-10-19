@@ -240,50 +240,82 @@ deux cas suivant ? Quelle règle de priorité CSS explique votre réponse ?
 
 
 
-## Display 
+## La propriété `display`
 
-À chaque élément HTML d'un page lui correspond une boîte
-([voir la section sur le modèle de boîte du TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#le-modle-de-boite)).
-La façon dont cette boîte va occuper l'espace est gérée par l'attribut `display`.
-Nous allons voir dans cette partie les trois valeurs principales de la propriété
-`display`.
+Comme nous l'avons vu au TD précédent, à chaque balise correspond quatre boîtes
+(*content*, *padding*, *border* et *margin*,
+[voir la section sur le modèle de boîte du TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#le-modle-de-boite)).
+
+<img alt="Box model" src="{{site.baseurl}}/assets/boxmodel.png" style="margin:0
+auto;display: block;">
 
 
-### block
+La façon dont ces boîtes vont occuper l'espace est gérée par l'attribut
+`display`.  Nous allons voir dans cette partie les trois valeurs principales de
+la propriété `display`.
+
+
+### `display:block`
 
 Les éléments block sont des éléments :
 
- * dont on peut définir la taille en css via les propriétés `height` et `width`.
- * qui par défaut occupe toute la largeur (si l'on n'a pas précisé de `width`) de son parent,
- * qui provoque un saut de ligne avant et après son affichage (que l'on ait diminué sa largeur ou pas)
+ * qui par défaut occupent toute la largeur, <!-- (si l'on n'a pas précisé de
+   `width`) de son parent, -->
+ * qui provoquent un saut de ligne avant et après son affichage (que l'on ait
+   diminué sa largeur ou pas)
+ * dont on peut définir la taille en CSS via les propriétés `height` et `width`.
 
 
 On utilise à l'usage des éléments de display `block` : 
 
- * dès que l'on veut expliciter l'agencement (layout) de certains éléments HTML d'une page. (exemple nous voulons que l'en-tête (header) ait une hauteur de `200px`, nous voulons 
- qu'un paragraphe prenne `50%` de la largeur,...).
- * dès qu'il est naturel de prendre toute la place par défaut (exemple un titre `<h2>`).
- 
+ * dès que l'on veut expliciter l'agencement (layout) de certains éléments HTML
+ d'une page. Par exemple nous voulons que l'en-tête (header) ait une hauteur de
+ `200px`, qu'un paragraphe prenne `50%` de la largeur,... .
+ * dès qu'il est naturel de prendre toute la place par défaut (exemple un titre
+   `<h2>`).
 
-### inline
+
+<!--
+Horizontal formatting : Expliquer la content box du containing block, les
+largeurs relatives % de la largeur parent, la règle des 7, auto Ne pas parler
+des marges négatives
+
+Vertical formatting :
+defined height, overflow, auto=0 (pour margin ?),
+pourcentage quand parent de hauteur fixée
+
+Collapsing vertical margins : entre pères & fils, entre frères 
+-->
+
+### `display:inline`
 
 Les éléments inline sont des éléments :
 
- * dont on ne peut pas définir la taille en css via les propriétés `height` et `width`,
  * qui prennent leur taille en fonction de leur contenu,
- * qui ne provoquent pas un saut de ligne, ils sont écrit comme du texte les uns à la suite des autres
+ * qui ne provoquent pas un saut de ligne, ils sont écrit comme du texte les uns
+   à la suite des autres
+ * dont on ne peut pas définir la taille en css via les propriétés `height` et `width`,
 
 
 On utilise à l'usage des éléments de display `inline` : 
 
- 1. dans du texte, pour ajouter de la sémantique sans interrompre la lecture du lecteur (mettre en exposant un nombre par `<sup>`, préciser l'importance d'une partie du texte par `<strong>`,associer un lien avec `<a>`),
+ 1. dans du texte, pour ajouter de la sémantique sans interrompre la lecture du
+    lecteur (mettre en exposant un nombre par `<sup>`, préciser l'importance
+    d'une partie du texte par `<strong>`, associer un lien avec `<a>`),
  1. lorsque l'on veut positionner des éléments à la suite.
 
 
 Puisque associé au texte (`<strong>`, `<a>`, ...), on trouve en majorité les
 éléments `inline` comme feuilles de l'arborescence du HTML.
 
-**Exemple :** Le code HTML suivant
+<!--
+Lire Meyer
+Si on est display:inline, toutes les règles de texte s'appliquent à nous : les espaces s'affichent, line-height, text-align ...
+-->
+
+### Exemple
+
+Le code HTML suivant
 
 ~~~
 <p style="display:block;">display:block</p> 
@@ -298,50 +330,50 @@ Puisque associé au texte (`<strong>`, `<a>`, ...), on trouve en majorité les
 
 s'affiche comme suit :
 
-<div> 
-<p style="display:block;background-color:#A4AFFC;border: 1px solid black;">
+<div class="codeexample" style="padding:0;text-align:initial;"> 
+<p style="display:block;background-color:#A4AFFC;border: 1px solid black;margin:0;">
 display:block
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
 display:inline
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
 display:inline
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
 display:inline
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
 display:inline
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
 display:inline
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
 display:inline
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
 display:inline
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
 display:inline
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
 display:inline
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
 display:inline
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
 display:inline
 </p> 
-<p style="display:block;background-color:#A4AFFC;border: 1px solid black;">
+<p style="display:block;background-color:#A4AFFC;border: 1px solid black;margin:0;">
 display:block
 </p>
-<p style="display:block;background-color:#A4AFFC;border: 1px solid black;">
+<p style="display:block;background-color:#A4AFFC;border: 1px solid black;margin:0;">
 display:block
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
 display:inline
 </p> 
 </div>
@@ -350,28 +382,29 @@ On remarque bien que les `display:block` prennent toute la largeur, avec un saut
 de ligne avant et après. Tandis que les `display:inline` s'affichent les uns à
 la suite des autres comme le texte d'un paragraphe.
 
-### règle d'inclusion des éléments `inline` et `block` du point de vue du HTML et du CSS 
+**Note (optionnelle): Règle d'inclusion des éléments `inline` et `block` du point de vue du HTML et du CSS**
 
 [^somesamplefootnote]: En fait le HTML5 permet cette inclusion dans [certains cas](http://html5doctor.com/block-level-links-in-html-5/).
 
 Inclure des éléments `block` dans des éléments `inline` n'est pas conforme en
-HTML [^somesamplefootnote], mais cela l'est du point du vue du CSS.  En
-modifiant la propriété `display` d'un élément, nous pouvons donc inclure des
-éléments `block` dans des éléments `inline`. Mais modifier sempiternellement le
-`display` naturel du HTML signifie que l'on n'a pas utilisé la bonne méthode (et
-que le code risque d'être incompréhensible). Nous nous imposons donc de
-respecter la règle HTML.
+HTML[^somesamplefootnote], mais cela l'est du point du vue du CSS.  En modifiant
+la propriété `display` d'un élément, nous pouvons donc inclure des éléments
+`block` dans des éléments `inline`. Mais modifier sempiternellement le `display`
+naturel du HTML signifie que l'on n'a pas utilisé la bonne méthode (et que le
+code risque d'être incompréhensible). Nous nous imposons donc de respecter la
+règle HTML.
+
+### Exercices
 
 Nous allons mettre en page le menu de navigation de notre site en mode `block` puis en mode `inline`.
 
-
 <div class="exercise">
 
-Dans ce premier exercice, nous allons créer un menu dans un style "block".
+Dans ce premier exercice, nous allons créer un menu dans un style `block`.
 
 
 
-1. Changer le menu de votre site par le suivant
+1. Changez le menu de votre site par le suivant
 
    ~~~
    <nav>
@@ -383,44 +416,60 @@ Dans ce premier exercice, nous allons créer un menu dans un style "block".
    ~~~
    {:.html}
 
-1. puisque `<nav>` est de type `block`, nous pouvons fixer ses
-dimensions. Donnez-lui la largeur `50%`. Que constatez-vous ? Explication : la largeur en pourcentage est relative à la taille de la boîte de
- contenu du parent (du 1er parent en display:block). Quelle est cette boîte ?
- quel est sa largeur ? vérifiez que la largeur est bien de 50%.
-1. Rajoutez des règles CSS pour que les fils `<div>` <strong> enfants de `<nav>` </strong> aient une couleur de fond `#5BBDBF`,
-1. Ajouter une règle CSS pour que les éléments `<a>` <strong> descendants de `<nav>` </strong> aient la couleur de fond `#7F8C8D`.
-1. Pour centrer le nav dans son parent header, on va lui donner des marges horizontales `auto` (gardez les marges verticales à 0)
+1. Puisque `<nav>` est `display:block` par défaut (le vérifier sur Chrome si
+   possible), il doit prendre toute la largeur. **Inspectez** donc votre `<nav>` pour
+   voir si c'est le cas. Que constatez-vous ?
+
+   **Explication :** En fait, un élément `display:block` ne prend pas toute la
+     largeur de `<body>` mais de son plus proche `block` parent. Ici, le père de
+     `<nav>` est le bloc `<header>` et donc `<nav>` prend toute la largeur de
+     `<header>`.  
+     Le plus proche `block` parent s'appelle le *containing block*.
+
+1. Puisque `<nav>` est de type `block`, nous pouvons fixer ses
+dimensions. Donnez-lui la largeur `50%`. Que constatez-vous ?
+
+   **Explication :** La largeur d'une balise en `display:block`
+     est relative celle de son *containing block* (`<header>`
+     ici). **Inspectez** `<header>` puis `<nav>` pour connaître leur
+     largeurs. **Vérifiez** qu'on a bien un rapport de `50%`.
+
+1. Rajoutez des règles CSS pour que les fils `<div>` **enfants de** `<nav>` aient une couleur de fond `#5BBDBF`,
+1. Ajoutez une règle CSS pour que les éléments `<a>` **descendants de** `<nav>` aient la couleur de fond `#7F8C8D`.
+1. Pour centrer le `<nav>` dans son parent `<header>`, on va lui donner des
+marges horizontales `auto` (gardez les marges verticales à 0).
+
 </div>
 
 
 <div class="exercise">
 
-Nouvelle mise en page en `inline` cette fois-ci.
+Nouvelle mise en page du menu en `inline` cette fois-ci.
 
 1. Donnez aux `<div>` enfants de `<nav>` le display `inline`.
-1. Donner au nav une hauteur de `50px`,
-1. Vous constatez des espaces entre les entrées du menu, ces derniers sont du au espaces dans le HTML, conservé lorsque les éléments sont `inline`.
-Solution : pour supprimer les espaces changer le code des `<div>` enfant de la balise `<nav>` en mettant des commentaires :
+1. Vous constatez des espaces entre les entrées du menu, ces derniers sont dû aux
+espaces dans le HTML, qui sont affichés lorsque les éléments sont `inline`.  
+**Solution :** pour supprimer les espaces, changez le code des `<div>` enfant de
+la balise `<nav>` en mettant des commentaires :
 
    ~~~
    <nav>
    	<div><a href="./index.html">Accueil</a></div><!--
-   	--><div><a href="./facts.html">Facts</a></div><!--
-   	.....
-   	--><div><a href="./contact.html">Contact</a></div>
+ --><div><a href="./facts.html">Facts</a></div><!--
+ --><div><a href="./news.html">Actualités</a></div><!--
+ --><div><a href="./contact.html">Contact</a></div>
    </nav>
    ~~~
    {:.html}
 
-1. (Optionnel) Ajouter du padding horizontal de `10px` sur les éléments `<a>`.
+1. Donnez au `<nav>` une hauteur de `50px`,
+1. (Optionnel) Ajoutez du padding horizontal de `10px` sur les éléments `<a>`.
 1. (Optionnel) Ajoutez à ces mêmes éléments `<a>` une bordure sur la gauche de `2px` de style `solid` et de couleur noire.
 1. (Optionnel) Enlevez la bordure sur le premier de ces éléments.
 
 </div>
 
-
-
-### none
+### `display:none`
 
 La valeur `display:none` enlève complètement un élément du rendu, sans laisser d'espace à l'endroit où il aurait du être.
 
@@ -431,13 +480,11 @@ La valeur `display:none` enlève complètement un élément du rendu, sans laiss
 
  * pour l'ancre "Accueil" 
 
-**changer ici**
-
 ~~~
 <div class="submenu">
-	<div>one</div>
-	<div>two</div>
-	<div>tree</div>
+	<div><a href="./one.html">one</a></div>
+	<div><a href="./two.html">two</a></div>
+	<div><a href="./tree.html">tree</a></div>
 </div>
 ~~~
 {:.html}
@@ -446,8 +493,8 @@ La valeur `display:none` enlève complètement un élément du rendu, sans laiss
 
 ~~~
 <div class="submenu">
-	<div>other</div>
-	<div>another</div>
+	<div><a href="./other.html">other</a></div>
+	<div><a href="./another.html">another</a></div>
 </div>
 ~~~
 {:.html}
@@ -455,7 +502,8 @@ La valeur `display:none` enlève complètement un élément du rendu, sans laiss
    aurez besoin d'utiliser l'attribut `position` vu
    [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position)).
 
-1. Donnez leurs la couleur de fond `#aca`, puis masquer ces sous-menus par défaut en CSS. 
+1. Donnez leur la couleur de fond `#aca`, puis masquer ces sous-menus par défaut en CSS.
+
 1. Réaffichez le premier sous-menu (resp. le deuxième) avec `display:block`
    lorsque la souris passe au-dessus de "accueil" (resp. "contact") en CSS.
 
