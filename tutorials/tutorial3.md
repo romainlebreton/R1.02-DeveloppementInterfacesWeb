@@ -7,15 +7,27 @@ layout: tutorial
 
 ## Ordre d'application des sélecteurs CSS.
 
-Comme vous vous en souvenez, les sélecteurs servent à sélectionner un ensemble de
-balises sur lesquels on applique une règle CSS. Nous avons appris lors du
+Comme vous vous en souvenez, les sélecteurs servent à sélectionner un ensemble
+de balises sur lesquels on applique une règle CSS. Nous avons appris lors du
 [TD1 les sélecteurs de base](tutorial1_2.html#les-slecteurs-css-de-base) et lors
 du
 [TD2 la combinaison de sélecteurs](tutorial2.html#rgles-de-compositions-des-css).
-Plusieurs règles CSS peuvent porter sur un même élément HTML. Si ces règles peuvent coexister, elles sont toutes appliquées.
-Mais il peut aussi arriver que ces dernières soient contradictoires. 
+Plusieurs règles CSS peuvent porter sur un même élément HTML. Si ces règles
+peuvent coexister, elles sont toutes appliquées. Par exemple, si vous avez le
+code CSS suivant :
 
-Par exemple, si vous avez dans votre fichier CSS le code suivant : 
+~~~
+div    { background-color:blue; }
+.skill { color:red; }
+~~~
+{:.css}
+
+alors un `<div class="skill">` aura les deux propriétés `background-color:blue`
+et `color:red`.
+
+Mais il peut aussi arriver que ces dernières soient contradictoires.  Par
+exemple, si vous avez le code CSS suivant, **de quelle couleur** sera le texte
+d'un `<div>` de classe `skill` ?
 
 ~~~
 div    { color:blue; }
@@ -23,7 +35,7 @@ div    { color:blue; }
 ~~~
 {:.css}
 
-de quelle sera la couleur du texte d'un `<div>` de classe `skill` ?
+
 
 Pour régler ces conflits, le CSS définit une notion de priorité basée sur
 l'emplacement des règles CSS puis sur la spécificité des sélecteurs CSS.
@@ -33,10 +45,15 @@ l'emplacement des règles CSS puis sur la spécificité des sélecteurs CSS.
 En fait, il y a plusieurs emplacements possibles pour déclarer du style CSS :
 
 1. **Style externe** : (Conseillé) On peut utiliser un fichier de style externe et le lier au
-document HTML avec la balise suivante dans le `<head>` :
+document HTML avec la balise `<link>`  dans le `<head>` :
 
    ~~~
-   <link rel="stylesheet" type="text/css" href="css/styles.css">
+   <html>
+     <head>
+       <link rel="stylesheet" type="text/css" href="css/styles.css">
+     </head>
+     <body> ... </body>
+   </html>
    ~~~
    {:.html}
 
@@ -55,7 +72,7 @@ document HTML avec la balise suivante dans le `<head>` :
    ~~~
    {:.html}
 
-1. **Style inline** : (Déconseillé) On peut inclure du style CSS directement
+1. **Style inline** : (Fortement déconseillé) On peut inclure du style CSS directement
    dans une balise avec l'attribut `style` :
  
    ~~~
@@ -65,13 +82,13 @@ document HTML avec la balise suivante dans le `<head>` :
    ~~~
    {:.html}
 
-   Attention à ne pas confondre le style "inline" avec le futur
-   `display:inline`.
+   Attention à ne pas confondre le style inline avec le futur `display:inline`.
 
 Enfin les navigateurs appliquent un style par défaut sur les éléments. Cela
-permet de ne pas avoir à définir pour chaque balise tout le style qui doit lui
-être associé. On peut observer ce style par défaut dans les outils de
-développement de Chrome.
+permet de ne pas avoir à définir à chaque fois les styles les plus
+classiques. On peut observer le style par défaut dans les outils de
+développement de Chrome : ce sont les règles de styles sont associée à *user
+agent stylesheet*.
 
 Pour prendre de bonnes habitudes, on préférera les styles externes comme
 "styles.css", qui respectent mieux la distinction entre la structure HTML et le
@@ -90,35 +107,38 @@ div    { color:blue; }
 {:.css}
 
 Afin de savoir la couleur qui sera appliquée sur les éléments `<div
-class="skill">`, des priorités sont définies sur les sélecteurs CSS.  Comme le
-sélecteur `.skill` est plus spécifique que le sélecteur `div`, on va appliquer
-en priorité la règle `color:red;`.
+class="skill">`, des priorités sont définies sur les sélecteurs CSS. Dans
+l'idée, comme le sélecteur `.skill` est plus spécifique que le sélecteur `div`,
+on va appliquer en priorité la règle `color:red;`.
 
-Cette valeur *(a,b,c,d)* de priorité d'un sélecteur CSS est définie comme suit :
+La *priorité d'un sélecteur CSS* est une valeur *(a,b,c,d)* définie comme suit :
 
 * la valeur *a* code la priorité basée sur l'emplacement de la règle. Par ordre
 de priorité décroissante, nous avons
-   * *a*=2, les styles inline,
-   * *a*=1, les styles externes et internes,
-   * *a*=0, le style par défaut du navigateur.
- * soit *b* est le nombre de sélecteur d'identifiant (`#`),
- * soit *c* est le nombre de classes (`.`) ou pseudo-classes
+   * *a*=2 pour les styles inline,
+   * *a*=1 pour les styles externes et internes,
+   * *a*=0 pour le style par défaut du navigateur.
+ * *b* compte le nombre de sélecteur d'identifiant (e.g. `#id`),
+ * *c* compte le nombre de sélecteur de classe (e.g. `.skill`) ou pseudo-classes
    (`:over`,`:visited`,...) <!-- et sélecteur d'attribut -->
- * soit *d* est le nombre d'élément contenu dans le sélecteur (`div` , `span`,
-   `p`, ...) <!-- et pseudo-éléments -->
-   * les opérateurs de combinaison ne contribuent pas à la priorité <!-- ni le sélecteur universel -->
+ * *d* compte le nombre de sélecteur de balise (e.g. `div`, `span`) ou de
+   pseudo-élements (e.g. `::first-letter`, `::after`)
+ * ni les opérateurs de combinaison, ni le sélecteur universel `*` ne
+   contribuent pas à la priorité.
 
 Pour revenir à l'exemple précédent, les règles ont donc comme priorité  :
 
 ~~~
- div -> (0,0,0,1) (un élément div)
- .skill -> (0,0,1,0) (une classe skill)
+ div    -> (0,0,0,1) (un sélecteur de balise div)
+ .skill -> (0,0,1,0) (un sélecteur de classe skill)
 ~~~
 {:.html}
 
 ### L'ordre de priorité
 
-L'ordre de priorité est défini comme l'ordre du dictionnaire (ordre *lexicographique*) :
+Il reste maintenant à expliquer comment on classe les priorités
+(*a*,*b*,*c*,*d*). L'ordre sur les priorités est défini comme l'ordre du
+dictionnaire (ordre *lexicographique*) :
 
 * on regarde d'abord la "première lettre" *a*. Si *a* est strictement plus grand
 alors la règle CSS est plus prioritaire. En cas d'égalité,
@@ -137,9 +157,10 @@ pour `div.skill`.
 
 <div class="exercise">
 
-Dans un fichier texte ou sur papier, écrivez-les
-priorités des sélecteurs suivants et classez-les du plus prioritaire au moins
-prioritaire. On supppose que toutes ces règles sont définies dans un fichier externe, donc a=1, et la valuation recherchée commence toujours pas `(1,....`. 
+Dans un fichier texte ou sur papier, écrivez les priorités des sélecteurs
+suivants et classez les du plus prioritaire au moins prioritaire. On supppose
+que toutes ces règles sont définies dans un fichier externe, donc a=1, et la
+valuation recherchée commence toujours pas `(1,...)`.
 
 ~~~
  .titi span
@@ -152,9 +173,52 @@ prioritaire. On supppose que toutes ces règles sont définies dans un fichier e
 ~~~
 {:.css}
 
-
 </div>
 
+<!--
+#id                                   (1,1,0,0)
+nav.titi .tata div div div div div    (1,0,2,6)
+ul li div.skill                       (1,0,1,3)
+.titi span                            (1,0,1,1)
+div span                              (1,0,0,2)
+div > a                               (1,0,0,2)
+div + a                               (1,0,0,2)
+-->
+
+<div class="exercise"> Quelle est la couleur du texte "Priorité CSS" dans les
+deux cas suivant ? Quelle règle de priorité CSS explique votre réponse ?
+
+1. Le fichier `styles.css` contient `p {color:blue;}`, et le fichier `index.html` contient
+
+   ~~~
+   <html>
+     <head>
+       <style type="text/css">
+         p {color: pink}
+       </style> 
+       <link rel="stylesheet" type="text/css" href="css/styles.css">
+     </head>
+     <body><p style="color:red">Priorité CSS</p></body>
+   </html>
+   ~~~
+   {:.html}
+
+1. Le même fichier `styles.css` et le fichier `index.html` sans la règle inline
+
+   ~~~
+   <html>
+     <head>
+       <style type="text/css">
+         p {color: pink}
+       </style> 
+       <link rel="stylesheet" type="text/css" href="css/styles.css">
+     </head>
+     <body><p>Priorité CSS</p></body>
+   </html>
+   ~~~
+   {:.html}
+
+</div>
 
 <!-- ### le joker en cas d'impasse !important  -->
 
@@ -174,23 +238,15 @@ prioritaire. On supppose que toutes ces règles sont définies dans un fichier e
 <!-- être exhaustif sur les règles de priorité : en pratique, `!important` est très -->
 <!-- peu utilisé, c'est le dernier recours, -->
 
-<!--
 
-#id                                   (0,1,0,0)
-nav.titi .tata div div div div div    (0,0,2,6)
-ul li div.skill                        (0,0,1,3)
-.titi span                            (0,0,1,1)
-div span                              (0,0,0,2)
-div > a                               (0,0,0,2)
-div + a                               (0,0,0,2)
-
--->
 
 ## Display 
 
-À chaque élément HTML d'un page lui correspond une boîte ([voir la section sur le modèle de boîte du TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#le-modle-de-boite)).
-La façon dont cette boîte va occuper l'espace est gérée par l'attribut display.
-Nous allons voir dans cette partie les trois valeurs principales de la propriété display.
+À chaque élément HTML d'un page lui correspond une boîte
+([voir la section sur le modèle de boîte du TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#le-modle-de-boite)).
+La façon dont cette boîte va occuper l'espace est gérée par l'attribut `display`.
+Nous allons voir dans cette partie les trois valeurs principales de la propriété
+`display`.
 
 
 ### block
@@ -224,7 +280,75 @@ On utilise à l'usage des éléments de display `inline` :
  1. lorsque l'on veut positionner des éléments à la suite.
 
 
-Puisque associé au texte (`<strong>`, `<a>`, ...), on trouve en majorité les éléments `inline` comme feuilles de l'arborescence du HTML.
+Puisque associé au texte (`<strong>`, `<a>`, ...), on trouve en majorité les
+éléments `inline` comme feuilles de l'arborescence du HTML.
+
+**Exemple :** Le code HTML suivant
+
+~~~
+<p style="display:block;">display:block</p> 
+<p style="display:inline;">display:inline</p> 
+...
+<p style="display:inline;">display:inline</p> 
+<p style="display:block;">display:block</p>
+<p style="display:block;">display:block</p> 
+<p style="display:inline;">display:inline</p> 
+~~~
+{:.html}
+
+s'affiche comme suit :
+
+<div> 
+<p style="display:block;background-color:#A4AFFC;border: 1px solid black;">
+display:block
+</p> 
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+display:inline
+</p> 
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+display:inline
+</p> 
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+display:inline
+</p> 
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+display:inline
+</p> 
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+display:inline
+</p> 
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+display:inline
+</p> 
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+display:inline
+</p> 
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+display:inline
+</p> 
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+display:inline
+</p> 
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+display:inline
+</p> 
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+display:inline
+</p> 
+<p style="display:block;background-color:#A4AFFC;border: 1px solid black;">
+display:block
+</p>
+<p style="display:block;background-color:#A4AFFC;border: 1px solid black;">
+display:block
+</p> 
+<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;">
+display:inline
+</p> 
+</div>
+
+On remarque bien que les `display:block` prennent toute la largeur, avec un saut
+de ligne avant et après. Tandis que les `display:inline` s'affichent les uns à
+la suite des autres comme le texte d'un paragraphe.
 
 ### règle d'inclusion des éléments `inline` et `block` du point de vue du HTML et du CSS 
 
@@ -306,6 +430,8 @@ La valeur `display:none` enlève complètement un élément du rendu, sans laiss
 1. Ajoutez des sous-menus aux éléments de la navigation (frères des liens `<a>`) dont le contenu est :
 
  * pour l'ancre "Accueil" 
+
+**changer ici**
 
 ~~~
 <div class="submenu">

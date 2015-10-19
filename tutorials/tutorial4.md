@@ -1,4 +1,6 @@
 
+Parler rapidement des caractères spéciaux en HTML &lt; < ... et peut-être aussi
+de l'encodage des caractères dans l'URL quand on fait les formulaires
 
 ::before
 ::after
