@@ -2,6 +2,8 @@
 Parler rapidement des caractères spéciaux en HTML &lt; < ... et peut-être aussi
 de l'encodage des caractères dans l'URL quand on fait les formulaires
 
+Faire du sass ... 
+
 ::before
 ::after
 content, numérotation automatique (voir les div.exercise dans les pages du cours)

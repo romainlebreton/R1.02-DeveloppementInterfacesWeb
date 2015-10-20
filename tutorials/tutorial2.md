@@ -214,27 +214,28 @@ On veut pouvoir limiter une règle css à une sous partie de l'arborescence HTML
 La relation de descendance directe est signifiée par le caractère `>`. Par exemple,
 
 ~~~
-#titi>.toto
+#titi > .toto
 ~~~
 {:.css}
 
-sélectionne les éléments de la classe `toto` qui sont  <strong>enfant</strong> (direct) de l'élément
-d'identifiant `titi`.
+sélectionne les éléments de la classe `toto` qui sont <strong>enfant</strong>
+(direct) de l'élément d'identifiant `titi`.
 
-#### Indirecte
+#### Indirecte (descendant)
 
 
-La relation de descendance indirecte est signifiée par le caractère d'espacement. Par exemple, 
+La relation de descendance indirecte est signifiée par le caractère
+d'espacement. Par exemple,
 
 ~~~
 #titi .toto
 ~~~
 {:.css}
 
-signifie les éléments qui ont la classe `toto` qui sont <strong>descendants</strong> (direct ou indirect) de
-l'élément d'identifiant 'titi'. Donc la différence avec `>` est qu'on n'est plus
-limité aux fils puisqu'on intègre aussi les petits-fils, arrières-petits-fils
-...
+signifie les éléments qui ont la classe `toto` qui sont
+<strong>descendants</strong> (direct ou indirect) de l'élément d'identifiant
+'titi'. Donc la différence avec `>` est qu'on n'est plus limité aux fils
+puisqu'on intègre aussi les petits-fils, arrières-petits-fils ...
 
 <div class="exercise">
 
@@ -243,6 +244,7 @@ les niveaux de 1 à 11 et le niveau 14.
 
 **Notes :**
 
+* Le jeu consiste à écrire le sélecteur qui répond à la consigne donnée ;
 * Vous pouvez passer directement à l'exercice que vous voulez en rentrant le
    numéro de l'exercice à la place du sélecteur ;
 * La partie de droite de la page est là pour vous aider.
@@ -542,8 +544,9 @@ positionnement des éléments. Ses valeurs sont :
   position où il aurait dû être. On voit donc un espace où l'élément aurait dû
   être en `position:static`.
 * `absolute` : le reste de la page fait comme si l'élément n'existait
-pas. L'élément se positionne relativement à `<body>` (ou plus généralement à son
-plus proche ancêtre <strong>positionné</strong>).
+pas. L'élément se positionne relativement à son plus proche ancêtre
+<strong>positionné</strong> (voir ci-dessous) ou sinon à `<body>` (si aucun
+ancêtre n'est positionné).
 * `fixed` : le reste de la page fait comme si l'élément n'existait
 pas. L'élément se positionne relativement à la fenêtre d'affichage ; il paraît donc *fixé* lors d'un défilement de la page.
 

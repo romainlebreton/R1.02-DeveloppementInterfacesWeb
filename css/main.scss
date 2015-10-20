@@ -171,3 +171,20 @@ blockquote.cite {
 ol ol {
   list-style-type: lower-roman;
 }
+
+/* Remove spaces before and in lists */
+/*
+p + ul {
+    margin-top: -1em;
+}
+
+ul p {
+    margin: 0;
+}
+
+/* because ul ul margin-before:0 */
+/*
+ul p + ul {
+    margin-top: 0em;
+}
+*/

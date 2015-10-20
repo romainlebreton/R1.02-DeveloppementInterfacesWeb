@@ -434,10 +434,14 @@ dimensions. Donnez-lui la largeur `50%`. Que constatez-vous ?
      ici). **Inspectez** `<header>` puis `<nav>` pour connaître leur
      largeurs. **Vérifiez** qu'on a bien un rapport de `50%`.
 
-1. Rajoutez des règles CSS pour que les fils `<div>` **enfants de** `<nav>` aient une couleur de fond `#5BBDBF`,
-1. Ajoutez une règle CSS pour que les éléments `<a>` **descendants de** `<nav>` aient la couleur de fond `#7F8C8D`.
 1. Pour centrer le `<nav>` dans son parent `<header>`, on va lui donner des
 marges horizontales `auto` (gardez les marges verticales à 0).
+
+   **Explication :** Quand les marges sont `auto`, elles se règlent
+     automatiquement pour compléter l'espace manquant.
+
+1. Rajoutez des règles CSS pour que les fils `<div>` **enfants de** `<nav>` aient une couleur de fond `#5BBDBF`,
+1. Ajoutez une règle CSS pour que les éléments `<a>` **descendants de** `<nav>` aient la couleur de fond `#7F8C8D`.
 
 </div>
 
@@ -449,8 +453,8 @@ Nouvelle mise en page du menu en `inline` cette fois-ci.
 1. Donnez aux `<div>` enfants de `<nav>` le display `inline`.
 1. Vous constatez des espaces entre les entrées du menu, ces derniers sont dû aux
 espaces dans le HTML, qui sont affichés lorsque les éléments sont `inline`.  
-**Solution :** pour supprimer les espaces, changez le code des `<div>` enfant de
-la balise `<nav>` en mettant des commentaires :
+   **Solution :** pour supprimer les espaces, changez le code des `<div>` enfant de
+   la balise `<nav>` en mettant des commentaires :
 
    ~~~
    <nav>
@@ -462,83 +466,122 @@ la balise `<nav>` en mettant des commentaires :
    ~~~
    {:.html}
 
-1. Donnez au `<nav>` une hauteur de `50px`,
+1. Donnez au `<nav>` une hauteur de `50px` (`<nav>` est `block` donc on peut lui
+   donner une hauteur),
 1. (Optionnel) Ajoutez du padding horizontal de `10px` sur les éléments `<a>`.
 1. (Optionnel) Ajoutez à ces mêmes éléments `<a>` une bordure sur la gauche de `2px` de style `solid` et de couleur noire.
-1. (Optionnel) Enlevez la bordure sur le premier de ces éléments.
+1. (Optionnel) Enlevez la bordure sur le premier de ces éléments.  
+   **Astuce :** Il faut utiliser une pseudo-classe vue
+     [au TD dernier](tutorial2.html).
 
 </div>
 
 ### `display:none`
 
-La valeur `display:none` enlève complètement un élément du rendu, sans laisser d'espace à l'endroit où il aurait du être.
+La valeur `display:none` enlève complètement un élément du rendu, sans laisser
+d'espace à l'endroit où il aurait dû être.
 
 
 <div class="exercise">
 
-1. Ajoutez des sous-menus aux éléments de la navigation (frères des liens `<a>`) dont le contenu est :
+1. Ajoutez les sous-menus suivants aux éléments de la navigation. Ces sous-menus
+   doivent être les petits frères des liens `<a>`, *c-à-d* qu'ils se placent
+   juste après `<a>` tout en ayant le même père `<div>`.
 
- * pour l'ancre "Accueil" 
+   * pour l'ancre "Accueil" 
 
-~~~
-<div class="submenu">
-	<div><a href="./one.html">one</a></div>
-	<div><a href="./two.html">two</a></div>
-	<div><a href="./tree.html">tree</a></div>
-</div>
-~~~
-{:.html}
+     ~~~
+     <div class="submenu">
+       <div><a href="./one.html">one</a></div>
+       <div><a href="./two.html">two</a></div>
+       <div><a href="./three.html">three</a></div>
+     </div>
+     ~~~
+     {:.html}
 
- * pour l'ancre "Contact".
+   * pour l'ancre "Contact"
 
-~~~
-<div class="submenu">
-	<div><a href="./other.html">other</a></div>
-	<div><a href="./another.html">another</a></div>
-</div>
-~~~
-{:.html}
-1. Positionnez ces menus en dessous des éléments qui leur correspondent (vous
-   aurez besoin d'utiliser l'attribut `position` vu
-   [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position)).
+     ~~~
+     <div class="submenu">
+       <div><a href="./other.html">other</a></div>
+       <div><a href="./another.html">another</a></div>
+     </div>
+     ~~~
+     {:.html}
 
-1. Donnez leur la couleur de fond `#aca`, puis masquer ces sous-menus par défaut en CSS.
+1. Positionnons bien ces sous-menus : nous souhaitons que ces sous-menus
+   n'influencent pas l'affichage du reste de la page, en particulier qu'ils ne
+   changent pas l'affichage précédent du menu. De plus, nous souhaitons que les
+   sous-menus se placent sous leur titre de menu (le `<div>` parent "Accueil" ou
+   "Contact"). Nous allons procéder en plusieurs étapes :
+
+   1. Quelle valeur de `position` correspond à ce comportement ? Pour plus de
+      détails sur `position`, retournez voir
+      [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position).
+   2. Créez la règle CSS qui affecte cette valeur de `position` aux balises de
+      classe `submenu` avec un décalage de `50px` par rapport au haut et de
+      `0px` par rapport à la gauche.
+   3. Les sous-menus ne sont pas encore bien placés car ils se positionnent par
+      rapport à la mauvaise balise. **Quelle est cette balise** par rapport à
+      laquelle ils se sont positionnés ? Relisez
+      [la section sur `position` du TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position)
+      pour confirmer votre impression.
+   4. Nous souhaitons que nos sous-menus se placent par rapport à leur `<div>`
+      parent. Il va donc falloir rendre ce `<div>` *positionné*, sans que cela
+      ne le déplace ni que le reste de la page ne bouge.  
+      **Quelle valeur de `position`** donnée aux `<div>` parent correspond à la
+        description précédente ? Créez la règle CSS et le menu doit être enfin
+        bien placé.
+
+1. Donnez aux sous-menus la couleur de fond `#aca`. Puis masquez-les
+   par défaut en CSS.
 
 1. Réaffichez le premier sous-menu (resp. le deuxième) avec `display:block`
-   lorsque la souris passe au-dessus de "accueil" (resp. "contact") en CSS.
+lorsque la souris passe au-dessus de "accueil" (resp. "contact") en CSS.  
+
+   **Aide :** En pratique, nous allons vérifier si le père `<div>` du sous-menu
+     est survolé (`:hover`). Nous souhaitons donc un sélecteur CSS qui
+     sélectionne les éléments de classe `submenu` qui sont fils d'un
+     `<div>` survolé qui sont fils d'un `<nav>`.
 
 </div>
 
 À ce stade les sous-menus apparaissent bien lorsque l'on survole les éléments
-"accueil" et "contact". Par contre il n'est pas possible d'entrer dans ces sous-menus.  Nous consacrons toute la prochaine section à une autre valeur de
-display : `flex`. L'utilisation de cette dernière va permettre d'améliorer l'apparence de notre
-menu et de remédier à ce problème d'accessibilité.
+"Accueil" et "Contact". Par contre il n'est pas possible d'entrer dans ces
+sous-menus.  Nous consacrons toute la prochaine section au comportement
+`display:flex` qui va permettre d'améliorer l'apparence de notre menu et de
+remédier à ce problème d'accessibilité.
 
-## La valeur de display flex
+## `display:flex`
 
-Appliquée à un élément, la valeur de display `flex` va permettre de modifier la disposition <strong>de ses enfants</strong>. C'est donc une différence fondamentale avec les valeurs `block` et `inline`, qui eux avaient un impact directement <strong>sur l'élément lui-même</strong>. 
+Appliquée à un élément, la valeur de display `flex` va permettre de modifier la
+disposition <strong>de ses enfants</strong>. C'est donc une différence
+fondamentale avec les valeurs `block` et `inline`, qui eux avaient un impact
+directement <strong>sur l'élément lui-même</strong>.
 
 Lorsque le display est `flex`, on peut par exemple :
 
  * fixer le sens de rendu des enfants, 
  * l'espace entre ces derniers, 
  * leurs centrages dans les différentes directions,
- * modifier leurs ordres d'apparition,
- * etc. 
+ * modifier leurs ordres d'apparition, ...
 
 Nous précisons par la suite quelques-unes de ces contraintes/propriétés.
 
-### flex-direction
+### La propriété `flex-direction`
 
-La propriété `flex-direction` permet de préciser si les enfants vont se mettre en ligne ou en colonne et dans quel sens. Ses valeurs sont  :
+La propriété `flex-direction` permet de préciser si les enfants vont se mettre
+en ligne ou en colonne et dans quel ordre. Ses valeurs sont :
 
- * `row`
- * `row-reverse`
- * `column`
- * `column-reverse`
+ * `row` : mise en ligne dans l'ordre classique de gauche à droite ;
+ * `row-reverse` : mise en ligne dans l'ordre inversé ;
+ * `column` : mise en colonne dans l'ordre classique de haut en bas ;
+ * `column-reverse` : mise en colonne dans l'ordre inversé.
 
-L'attribut `flex-direction` s'appliquant aux enfants, il rentre en conflit avec les valeurs de display `block` ou `inline` de ces derniers.
-L'exercice suivant va nous permettre entre autres de savoir qui surcharge l'autre en cas de conflit.
+L'attribut `flex-direction` s'appliquant aux enfants, il rentre en conflit avec
+les valeurs de display `block` ou `inline` de ces derniers.  L'exercice suivant
+va nous permettre entre autres de savoir qui surcharge l'autre en cas de
+conflit.
 
 
 <div class="exercise" >
@@ -549,32 +592,43 @@ L'exercice suivant va nous permettre entre autres de savoir qui surcharge l'autr
 </div>
 
 
-### align-items
+### La propriété `align-items`
 
 
-La propriété `align-items` permet de préciser comment les enfants vont venir occuper l'espace perpendiculairement à la direction donnée par `flex-direction`. Dans notre cas (`flex-direction:row`), `align-items` va donc nous permettre de préciser comment occuper l'espace vertical des `<div>` contenus dans le `<nav>`.
+La propriété `align-items` permet de préciser comment les enfants vont venir
+occuper l'espace perpendiculairement à la direction donnée par
+`flex-direction`. Dans notre cas (`flex-direction:row`), `align-items` va donc
+nous permettre de préciser comment occuper l'espace vertical des `<div>`
+contenus dans le `<nav>`.
 
 
 Ses valeurs sont  :
 
- * `stretch`
- * `center`
- * `baseline`
- * `flex-start`
- * `flex-end`
+ * `stretch` : étirer pour prendre tout l'espace ;
+ * `center` : centrer sans étirer ;
+ * `baseline` : aligne les lignes de base des éléments ;
+ * `flex-start` : alignement au début de l'axe perpendiculaire ;
+ * `flex-end` : alignement à la fin de l'axe perpendiculaire.
+
+Référence : [Mozilla Developper Network](https://developer.mozilla.org/fr/docs/Web/CSS/align-items)
 
 
 <div class="exercise" >
 
-1. Centrez les éléments enfants à l'aide de la propriété align-items. Que constatez-vous ?
-Si rien de ne se passe utiliser l'inspecteur du navigateur pour comprendre ce qui est centré.
+1. Centrez les éléments enfants de `<nav>` à l'aide de la propriété
+`align-items` de `<nav>`. Que constatez-vous ?  Si rien de ne se passe, utiliser
+l'inspecteur du navigateur pour comprendre ce qui est centré.
 
 1. Utilisez maintenant la valeur `stretch`. Que constatez-vous à propos de l'accessibilité des sous-menus avec la souris ?
 
-1. Comment faire pour que les sous-menus restent accessibles et que les textes "Accueil" et "Contact" soient centrés dans la barre de navigation ? (les enfants n'héritent pas de la valeur flex, il faudra donc peut-être donner cette valeur de display à des enfants de `<nav>`...)
+1. Faites en sorte que les sous-menus restent accessibles et que les textes
+"Accueil" et "Contact" soient centrés dans la barre de navigation ?  
+**Indice :** Il faut pour cela que les `<div>` enfants du `<nav>` soient `flex`,
+  ce qui va permettre de centrer verticalement ses enfants.
+
 </div>
 
-### justify-content
+### La propriété `justify-content`
 
 Cette propriété permet de préciser la façon dont les enfants vont se disposer dans la direction donnée par `flex-direction`.
 
@@ -604,7 +658,7 @@ des techniques d'alignement avec des `float`, qui ont toujours été techniqueme
 Il y a d'autres propriétés intéressantes autour de flex, la référence suivante est très instructive :
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
-## Two columns layout
+## Mise en page en deux colonnes
 
 Il est temps d'avoir un layout (aménagement de l'espace) pour notre site.
 
@@ -621,7 +675,7 @@ Il est temps d'avoir un layout (aménagement de l'espace) pour notre site.
 -->
 </div>
 
-
+<!-- besoin de box-sizing : border-box pour le two column layout ? -->
 
 
 ## Cacher ou Enlever un élément du rendu
