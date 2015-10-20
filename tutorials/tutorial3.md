@@ -126,11 +126,12 @@ de priorité décroissante, nous avons
  * ni les opérateurs de combinaison, ni le sélecteur universel `*` ne
    contribuent pas à la priorité.
 
-Pour revenir à l'exemple précédent, les règles ont donc comme priorité  :
+Pour revenir à l'exemple précédent, les règles ont donc comme priorité (en
+supposant qu'elles sont écrites dans un fichier de style externe) :
 
 ~~~
- div    -> (0,0,0,1) (un sélecteur de balise div)
- .skill -> (0,0,1,0) (un sélecteur de classe skill)
+ div    -> (1,0,0,1) (un sélecteur de balise div)
+ .skill -> (1,0,1,0) (un sélecteur de classe skill)
 ~~~
 {:.html}
 
@@ -151,8 +152,8 @@ prioritaire. En cas d'égalité sur *a* et *b*,
 
 Ce mécanisme de priorité s'appelle la cascade et correspond au C de CSS (Cascading Style Sheet).
 
-**Exemple :** `div.skill` (priorité (0,0,1,1)) est plus prioritaire que `div`
-(priorité (0,0,0,1)) car on a égalité sur *a* et *b* mais *c* est plus grand
+**Exemple :** `div.skill` (priorité (1,0,1,1)) est plus prioritaire que `div`
+(priorité (1,0,0,1)) car on a égalité sur *a* et *b* mais *c* est plus grand
 pour `div.skill`.
 
 <div class="exercise">
@@ -448,7 +449,7 @@ marges horizontales `auto` (gardez les marges verticales à 0).
 
 <div class="exercise">
 
-Nouvelle mise en page du menu en `inline` cette fois-ci.
+Nouvelle mise en page du menu en `display:inline` cette fois-ci.
 
 1. Donnez aux `<div>` enfants de `<nav>` le display `inline`.
 1. Vous constatez des espaces entre les entrées du menu, ces derniers sont dû aux
@@ -654,14 +655,23 @@ Les valeurs possibles sont :
 
 ### flex, une valeur relativement récente
 
-Si ces dernières possibilités offertes par `flex` semblent triviales voire naturelles pour le néophyte, elles représentent en pratique une avancée majeure dans le monde du CSS. Avant flex, certaines propriétés relevés jusque-là d'une expertise véritable de l'intégrateur (exemple : le centrage vertical), ou été même confinées dans le domaine du fantasme (les justifications, le comportement des éléments sur l'espace restant, etc.). 
+Si ces dernières possibilités offertes par `flex` semblent triviales voire
+naturelles pour le néophyte, elles représentent en pratique une avancée majeure
+dans le monde du CSS. Avant `flex`, certaines propriétés relevaient d'une
+expertise véritable de l'intégrateur (exemple : le centrage vertical), ou
+étaient même confinées dans le domaine du fantasme (les justifications, le
+comportement des éléments sur l'espace restant, etc.).
 
-Aujourd'hui flex est bien implémenté dans [les différents navigateurs](http://caniuse.com/#search=flexbox). 
-Nous ne vous présenterons donc pas d'autres valeurs de display, car elles sont devenues inutiles (`display:inline-block`, `display:table`), ni encore moins
-des techniques d'alignement avec des `float`, qui ont toujours été techniquement merdiques.
+Aujourd'hui flex est bien implémenté dans
+[les différents navigateurs](http://caniuse.com/#search=flexbox).  Nous ne vous
+présenterons donc pas d'autres valeurs de display, car elles sont devenues
+inutiles (`display:inline-block`, `display:table`), ni encore moins des
+techniques d'alignement avec des `float`, qui ont toujours été techniquement
+merdiques.
 
-Il y a d'autres propriétés intéressantes autour de flex, la référence suivante est très instructive :
-https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+Il y a d'autres propriétés intéressantes autour de flex, la référence suivante
+est très instructive :
+[https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ## Mise en page en deux colonnes
 
