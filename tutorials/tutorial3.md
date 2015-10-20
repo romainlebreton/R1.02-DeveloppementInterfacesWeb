@@ -607,7 +607,7 @@ Ses valeurs sont  :
  * `stretch` : étirer pour prendre tout l'espace ;
  * `center` : centrer sans étirer ;
  * `baseline` : aligne les lignes de base des éléments ;
- * `flex-start` : alignement au début de l'axe perpendiculaire ;
+ * `flex-start` : alignement au début de l'axe perpendiculaire au sens de `flex-direction` ;
  * `flex-end` : alignement à la fin de l'axe perpendiculaire.
 
 Référence : [Mozilla Developper Network](https://developer.mozilla.org/fr/docs/Web/CSS/align-items)
@@ -634,16 +634,21 @@ Cette propriété permet de préciser la façon dont les enfants vont se dispose
 
 Les valeurs possibles sont :
 
- * `flex-start`
- * `flex-end`
- * `center`
- * `space-between`
- * `space-around`
+ * `flex-start` : au début de l'axe donné par `flex-direction` ;
+ * `flex-end` : à la fin de cet axe ;
+ * `center` : centré sur cet axe ;
+ * `space-between` : les élements vont du début à la fin de l'axe en rajoutant
+   des espaces entre les éléments ;
+ * `space-around` : les élements vont du début à la fin de l'axe en rajoutant
+   des espaces autour des éléments (donc entre les éléments et avant le premier
+   et après le dernier) ;
 
 <div class="exercise" >
 
- 1. Placez les éléments de navigation non pas en début de ligne (valeur par défaut) mais en fin.
- 1. Placez la citation et la navigation sur le même plan (toujours avec votre display favoris)
+ 1. Placez les éléments de navigation non pas en début de ligne (valeur par
+    défaut) mais en fin.
+ 1. Placez la citation et le menu de navigation sur la même ligne (toujours avec votre
+    display favori)
  1. Repositionnez le menu pour qu'il soit en bas de la balise `<header>`.
 </div>
 
@@ -665,7 +670,9 @@ Il est temps d'avoir un layout (aménagement de l'espace) pour notre site.
 <div class="exercise" > 
  1. Donnez au body la `width` de `900px`.
  1. Déplacez dans le HTML la table comparative de `<aside>` vers `<article>` 
- 1. Utilisez la valeur de display `flex` sur la balise `<main>`, et comme pour la navigation mettez ses enfants `<article>` et `<aside>` en colonne.
+ 1. Utilisez la valeur de display `flex` sur la balise `<main>` et, comme pour
+    le menu de navigation, mettez ses enfants `<article>` et `<aside>` en
+    colonne.
  1. Fixez la largeur de `<article>` à `60%`, et celle de `<aside>` à `30%`. Ce dernier élément aura une marge gauche de `10%`.
  1. Donnez à `<aside>` la couleur de fond `#CCC` et à `<article>` la couleur de fond `#731373`.
 
