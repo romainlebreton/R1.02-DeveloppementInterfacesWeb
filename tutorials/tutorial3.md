@@ -619,10 +619,11 @@ Référence : [Mozilla Developper Network](https://developer.mozilla.org/fr/docs
 `align-items` de `<nav>`. Que constatez-vous ?  Si rien de ne se passe, utiliser
 l'inspecteur du navigateur pour comprendre ce qui est centré.
 
-1. Utilisez maintenant la valeur `stretch`. Que constatez-vous à propos de l'accessibilité des sous-menus avec la souris ?
+1. Utilisez maintenant la valeur `stretch`. Que constatez-vous à propos de
+   l'accessibilité des sous-menus avec la souris ?
 
 1. Faites en sorte que les sous-menus restent accessibles et que les textes
-"Accueil" et "Contact" soient centrés dans la barre de navigation ?  
+"Accueil" et "Contact" soient centrés verticalement dans la barre de navigation ?  
 **Indice :** Il faut pour cela que les `<div>` enfants du `<nav>` soient `flex`,
   ce qui va permettre de centrer verticalement ses enfants.
 
@@ -645,7 +646,7 @@ Les valeurs possibles sont :
 
 <div class="exercise" >
 
- 1. Placez les éléments de navigation non pas en début de ligne (valeur par
+ 1. Placez le menu de navigation non pas en début de ligne (valeur par
     défaut) mais en fin.
  1. Placez la citation et le menu de navigation sur la même ligne (toujours avec votre
     display favori)
