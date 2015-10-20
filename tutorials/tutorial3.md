@@ -438,8 +438,9 @@ dimensions. Donnez-lui la largeur `50%`. Que constatez-vous ?
 1. Pour centrer le `<nav>` dans son parent `<header>`, on va lui donner des
 marges horizontales `auto` (gardez les marges verticales à 0).
 
-   **Explication :** Quand les marges sont `auto`, elles se règlent
-     automatiquement pour compléter l'espace manquant.
+   **Explication :** Quand les marges horizontales sont `auto`, elles se règlent
+     automatiquement pour compléter l'espace manquant. Ceci n'est pas valable pour
+     les marges verticales.
 
 1. Rajoutez des règles CSS pour que les fils `<div>` **enfants de** `<nav>` aient une couleur de fond `#5BBDBF`,
 1. Ajoutez une règle CSS pour que les éléments `<a>` **descendants de** `<nav>` aient la couleur de fond `#7F8C8D`.
@@ -518,6 +519,7 @@ d'espace à l'endroit où il aurait dû être.
    1. Quelle valeur de `position` correspond à ce comportement ? Pour plus de
       détails sur `position`, retournez voir
       [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position).
+      <!-- position:absolute -->
    2. Créez la règle CSS qui affecte cette valeur de `position` aux balises de
       classe `submenu` avec un décalage de `50px` par rapport au haut et de
       `0px` par rapport à la gauche.
@@ -532,6 +534,7 @@ d'espace à l'endroit où il aurait dû être.
       **Quelle valeur de `position`** donnée aux `<div>` parent correspond à la
         description précédente ? Créez la règle CSS et le menu doit être enfin
         bien placé.
+      <!-- position:relative -->
 
 1. Donnez aux sous-menus la couleur de fond `#aca`. Puis masquez-les
    par défaut en CSS.
