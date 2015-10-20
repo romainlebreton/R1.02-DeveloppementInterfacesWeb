@@ -510,9 +510,8 @@ d'espace à l'endroit où il aurait dû être.
      ~~~
      {:.html}
 
-1. Positionnons bien ces sous-menus : nous souhaitons que ces sous-menus
-   n'influencent pas l'affichage du reste de la page, en particulier qu'ils ne
-   changent pas l'affichage précédent du menu. De plus, nous souhaitons que les
+1. Positionnons bien ces sous-menus : nous souhaitons que l'affichage du reste de la page
+   fasse comme si ces sous-menus n'existaient pas. De plus, nous souhaitons que les
    sous-menus se placent sous leur titre de menu (le `<div>` parent "Accueil" ou
    "Contact"). Nous allons procéder en plusieurs étapes :
 
