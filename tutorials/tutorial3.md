@@ -679,7 +679,8 @@ Il est temps d'avoir un layout (aménagement de l'espace) pour notre site.
 
 <div class="exercise" > 
  1. Donnez au body la `width` de `900px`.
- 1. Déplacez dans le HTML la table comparative de `<aside>` vers `<article>` 
+ 1. Déplacez dans le HTML la section "Un comparatif éclairant" avec sa table
+    comparative de `<aside>` vers `<article>`
  1. Utilisez la valeur de display `flex` sur la balise `<main>` et, comme pour
     le menu de navigation, mettez ses enfants `<article>` et `<aside>` en
     colonne.
