@@ -205,6 +205,7 @@ correspond aux éléments qui ont la classe `toto` <strong>ET</strong> `titi`.
 
 ### Descendance
 
+<!-- changer descendance directe en enfant  -->
 
 On veut pouvoir limiter une règle css à une sous partie de l'arborescence HTML, pour cela on utilise la relation de descendance.
 
@@ -532,6 +533,9 @@ rajoutez-lui la règle `clear:left`.
   en même temps avec `clear:both`.
 
 </div>
+
+<!-- Peut-être mettre position en début de TD et dans le même TD que l'exercice
+de positionnement du sous-menu -->
 
 ## Position
 
