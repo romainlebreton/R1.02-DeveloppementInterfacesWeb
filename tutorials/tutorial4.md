@@ -1,81 +1,46 @@
 ---
 title: TD4
-subtitle: formulaires ?
+subtitle: Les formulaires.
 layout: tutorial
 ---
 
-# Formulaires
-
-**Note de Romain :** Il y a deux documents joints
-  [formulaire.pdf]({{site.baseurl}}/assets/formulaire.pdf) [TP6
-  Maquette]({{site.baseurl}}/assets/TP_n°6_Maquette_PDF).
 
 ## Introduction
 
-Les systèmes informatiques sont des systèmes destinés à traiter de
-l'information. Pour traiter une information, il faut avant-tout commencer par en
-disposer. Le navigateur web est ainsi un système conçu pour communiquer avec un
-serveur distant, c'est-à-dire lui fournir des informations sur les intentions de
-l'utilisateur et, en contrepartie, en récupérer d'autres données utilisées pour
-afficher la page web.
+Il est temps de pouvoir obtenir un semblant d'interaction avec le visiteur de notre site à l'ide de formulaires.
 
-Il existe de nombreux canaux permettant de transférer de l'information entre
-navigateur et serveur. Ils varient par le protocole utilisé (HTTP, Ajax,
-WebSocket), l'emploi de l'une ou l'autre des méthodes disponibles dans le
-protocole (GET, POST... pour HTTP), et la nature des informations transmises
-(texte plein, cookies, JSON, HTML...). Cette liste loin d'être exhaustive est
-destinée à vous donner quelques noms comme points d'entrée si vous souhaitez
-poursuivre les recherches par vous-même.
+Le navigateur web est ainsi un système conçu pour communiquer avec un
+serveur distant.
+Parmi tous les moyens pour échanger de l'information, le formulaire occupe une place particulière. 
 
-Au cours du TP1, vous avez déjà appris une méthode pour communiquer avec un
-serveur: la balise “`<a>`”. Cette balise est un moyen d' informer le serveur que
-l'utilisateur souhaite consulter la page web dont l'URL est renseignée dans le
-champ “href”. Lorsque l'utilisateur clique dessus, le navigateur la converti en
-un message HTTP – GET.
-
-Vous allez aujourd'hui apprendre à utiliser une autre méthode pour faire
-parvenir des données au serveur: le formulaire HTML. Parmi tous les moyens pour
-échanger de l'information, le formulaire occupe une place particulière. C'est en
-effet le moyen privilégié pour échanger des données dont la nature est inconnue
-ou seulement partiellement connue à l'avance par le serveur. Il offre donc à
-l'utilisateur une relative liberté d'expression et permet au programmeur du
-serveur d'obtenir des renseignements spécifiques connus du seul utilisateur.
-
-*Réfléchissez à votre usage quotidien d'Internet. Pouvez-vous citer un exemple
-très commun où vous entrez des informations (supposément) connues de vous seul
-sur une page web ?*
-
-## Bases
+## La balise  `<form>` et les balises `input`
 
 Le coeur du formulaire est constitué par deux types de balises: `<form>` et
 `<input>`.
 
+
 La balise `<form>` délimite le contenu du formulaire et renseigne plusieurs
 attributs nécessaires au fonctionnement du formulaire:
 
-* methode: nom de la méthode HTTP utilisée pour envoyer les données. Peut prendre pour valeur “post” ou “get”.
+* `method`: nom de la méthode HTTP utilisée pour envoyer les données. Peut prendre pour valeur “post” ou “get”.
 
    *Pour voir la différence, lorsque vous aurez un formulaire fonctionnel,
    ouvrez la console de votre navigateur (F12) à l'onglet “Réseau/Network” et
    postez le formulaire en post et en get. Que constatez-vous ?*
 
-   La méthode “get” envoie les données comme composantes de l'URL du serveur et
+   La méthode `get` envoie les données comme composantes de l'URL du serveur et
    requiert par conséquent que: 1/ les données soient encodée pour être compatibles
    avec les spécifications URL, 2/ l'ensemble des données du formulaire + l'URL du
    serveur forment une chaîne de caractères de moins de 2000 caractères (limite
    imposée par certains navigateurs).
 
-   La méthode “post” envoie les données dans le corps de la requête HTTP et ne
-   présente pas la limitation de taille. Elle est donc à privilégier et sera la
+   La méthode `post` envoie les données dans le corps de la requête HTTP et ne
+   présente pas la limitation de taille. 
+   Elle est donc à privilégier, cela dit pour des raisons de tests nous serons amenés à utiliser `get`.
    seule utilisée dans ce TP après le test ci-dessus.
 
-* action: URL du serveur où les donnée du formulaire doivent être
-  adressées. Deux URL vous seront fournies pendant le TP.
-
-* enctype: le codage à utiliser pour envoyer les informations. Dans le cadre de
-  ce TP, nous n'utiliserons pas cet attribut, qui prendra alors par défaut la
-  valeur
-  [“application/x-www-urlencoded”](http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1).
+* `action` : URL du serveur où les donnée du formulaire doivent être
+  adressées. 
 
 La balise `<input>` permet de définir différents champs dans lesquels
 l'utilisateur peut entrer des données. Ces champs offrent plus ou moins de
@@ -84,13 +49,13 @@ liberté d'expression selon le type utilisé. Elle a pour attributs:
 * [type](http://www.w3schools.com/tags/att_input_type.asp): défini l'apparence
   visuelle du champ et la nature des données qui peuvent y être renseignées.
 
-* name: le nom que prendra la donnée renseignée dans ce champ côté serveur. Vous
+* `name` : le nom que prendra la donnée renseignée dans ce champ côté serveur. Vous
   comprendrez l'importance de ce paramètre quand vous aborderez la programmation
   serveur. Pour le TP, les valeurs seront fixées. Attention: il est important
   pour les types “checkbox” et “radio”d'utiliser le même nom pour les
   différentes options possibles !
 
-* value: la valeur envoyée au serveur. Cet attribut n'est pas défini dans les
+* `value` : la valeur envoyée au serveur. Cet attribut n'est pas défini dans les
   champs libres et prend des valeurs fixées dont la liste des possibles est
   connue par le serveur pour les champs de type “checkbox” et “radio” et la
   balise `<option>`. Les valeurs seront fixées pour le TP.
@@ -101,26 +66,67 @@ bouton qui, cliqué, déclenchera l'envoi des données au serveur. (note: la bal
 “submit” peut être remplacée par une balise “button” pour une utilisation
 avancée, notamment en conjugaison avec Javascript).
 
-*Sans plus attendre, créez une page HTML vierge et ajoutez-lui un formulaire
- basique comprenant une balise de type “text”. L'URL à renseigner dans “action”
- est indiquée au tableau. Pour tester votre formulaire, tapez un texte
- quelconque dans la zone de texte et envoyez le. Que constatez-vous ?*
+
+
+<div class="exercise" id="start">
+
+Le but de cet exercice est de voir succinctement est envoyé un champ lorsque l'on soumet un formulaire.
+
+ 1. Créez une nouvelle du site Chuck Norris libellé "Faire parti du club" qui renvoit à une page inscription.html.
+Elle va contenir le formulaire d'inscription aux fan club de Chuck que nous allons construire dans ce TD.
+
+ 1. Ajoutez à la page inscription.html le formulaire suivant : <br> <br>
+`<form action="sendtoMySecondYearInIut.php" method="post">`<br>&nbsp;
+	`<input name="uname" type="text" ></input>`<br>&nbsp;
+		`<input type="submit" value="Envoyer">`<br>
+	`</form>`
+
+  1. Affichez la page et ouvrez la console (F12) pour aller sur l'onglet 'Réseau',
+  Donnez la valeur `dupont` au champ texte, puis cliquez sur le bouton "Envoyer" du formulaire. 
+  Vous devez voir une requête contenant `sendToMySecondYearInIut` dans la console. Cliquez sur cette ligne et cherchez la valeur `dupont` dans les détails de la transaction.
+ 1. Donnez à l'attribut `method` du formulaire la valeur `get`. Cliquez sur le bouton "Envoyer" du formulaire, l'url doit maintenant finir par "sendToMySecondYearInIut.php?uname=dupont". 
+
+</div>
+
+Notes :
+
+ * S'il est tout indiqué d'utiliser dans le formulaire qui va suivre la valeur de method `post`, on va utiliser juste pour les tests la valeur `get` de manière à pouvoir valider via l'url dans le navigateur que nos champs sont bien envoyés.
+ 
+ * Il est normal que l'adresse `sendToMySecondYearInIut.php` n'existe pas (le fameux code de retour HTTP 404), puisque vous êtes en première année. Nous verrons en deuxième année comment le serveur récupère les données envoyées par notre formulaire.
+
+
+## `label`
+
+Notre formulaire n'est pas très explicite. On ne sait pas ce que l'on doit rentrer dans le champs texte.
+La balise [`<label>`](http://www.w3schools.com/tags/tag_label.asp) permet d'associer un nom explicite à un champ dans le formulaire. 
+Cette balise comporte un attribut `for` qui doit prendre pour valeur la valeur de l'attribut `id` du champ auquel est associée l'étiquette 
+(il faut donc penser à donner un `id` aux autres balises).
+
+
+
+
+<div class="exercise" id="exlabel">
+
+ 1. Remplacez le code de votre champs input par le code suivant : <br>
+ 			`<label for="surname">Nom</label>`<br>
+				`<input id="surname" name="uname" type="text" ></input>`
+
+ 1. Rajoutez au formulaire une entrée qui correspondra au prénom (calqué sur le précédent, avec un `label` et un champ `input`).
+ 1. Vérifiez après avoir remplis le formulaire et valider ce dernier que vos deux champs font bien parti de l'url du navigateur `sendToMySecondYearInIut.php?uname=dupont&firstname=super`.
+ 1. Les deux champs apparaissent les uns à la suite des autres. Avec quelle balise vue dans le Td précédent doit on les mettre pour qu'il y est un saut de ligne entre les deux ?
+
+</div>
 
 ## Formattage
 
-*Vous allez à présent réaliser le formulaire de contact auquel le visiteur doit
-pouvoir accéder depuis la page d'accueil de votre site web afin de poser une
-question ou de formuler une demande.*
 
-*Vous vous baserez sur la maquette disponible sur Moodle qu'il s'agira de
-reproduire de la manière la plus fidèle possible.*
 
 Remarquez que les informations du formulaire sont réparties en trois groupes
 logiques :
 
 * informations personnelles
-* formation
-* demande
+* niveau en sport de combat
+* Message personel à Chuck et mot de passe pour le compte
 
 Pour vous aider, vous trouverez sur le site de [w3schools](http://www.w3schools.com/html/html_forms.asp) une liste des balises
 utilisables dans le contexte d'un formulaire. Notez les balises:
@@ -129,11 +135,7 @@ utilisables dans le contexte d'un formulaire. Notez les balises:
   regrouper plusieurs balises du formulaire. Elle comprend par ailleurs une
   sous-balise balise `<legend>` qui permet de fixer le nom apparaissant en haut du
   cadre.
-* [`<label>`](http://www.w3schools.com/tags/tag_label.asp): permet de renseigner
-  le nom associé à un champ `<input>`, `<select>`, etc. et visible sur le formulaire
-  dans le navigateur. Cette balise comporte un attribut “for” qui doit prendre
-  pour valeur la valeur de l'attribut “id” du champ auquel est associée
-  l'étiquette (il faut donc penser à donner un “id” aux autres balises).
+* 
 * [`<textarea>`](http://www.w3schools.com/tags/tag_textarea.asp): permet de
   définir une grande zone de texte
 * [`<select>`](http://www.w3schools.com/tags/tag_select.asp): permet de définir
@@ -159,14 +161,13 @@ serveur vous aide):
 * nom: name: “lastname”
 * prénom: name: “firstname”
 * email: name: “email”
-* formation en cours:
-   * name: “cur_training”
+* Art martial préféré:
+   * name: “cur_martial”
    * values: 2nd: “2”, 1st: “1”, term: “0”, sup: “3”, autre: “4”
-* bac:
+* Pays d'origine :
    * name: “bac”,
    * values: S: “0”, ES: “1”, L: “2”, STI2D: “3”, techno: “4”, pro: “5”, autre: “6”
-* option ISN:
-   * name: “isn”
+* Avez vous vu Delta Force 2  ? :
    * values: oui: “1”, non: “0”
 * formation requête:
    * name: “req-training[]” (le [] indique que plusieurs valeurs peuvent être fournies)
@@ -175,8 +176,7 @@ serveur vous aide):
 * action du formulaire: voir au tableau
 
 *Commencez par définir la balise `<form>` et ajouter un bouton pour soumettre le
-formulaire. N'hésitez pas dès lors à tester régulièrement vos progrès en
-soumettant votre formulaire au serveur.*
+formulaire.
 
 ## Différence entre les types de champs
 
@@ -186,8 +186,6 @@ l'utilisateur le souhaite. La liste déroulante permet de base de ne sélectionn
 qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut
 “multiple” est ajouté à la balise `<select>`.
 
-Les différences ci-dessus mises à part, la différence entre ces 3 types est
-purement cosmétique.
 
 Le type “password” masque automatiquement les caractères entrés.
 
@@ -196,7 +194,8 @@ vous permet d'envoyer au serveur des informations dont il aura besoin mais dont
 vous ne souhaitez pas encombrer l'utilisateur (ex: un état de la page).
 
 Les types “email”, “url”, “tel”, “date”, “time” et “number” permettent d'adapter
-le clavier virtuel quand la page est affichée sur un smartphone.
+le clavier virtuel quand la page est affichée sur un smartphone (et les checks ?).
+
 
 ## Ergonomie et convivialité
 
@@ -211,7 +210,6 @@ spécifier au navigateur quel élément du formulaire doit avoir le focus en 1e
 quand la page est chargée. L'attribut “tabindex” permet de spécifier l'ordre
 dans lequel les éléments sont parcouris en appuyant sur “tabulation”.
 
-*Nous n'en ferons pas usage ici.*
 
 ### Contrôle du contenu
 
@@ -273,119 +271,5 @@ convivial.*
 
 Auteur du TD : Benjamin Faivre-Vuillin
 
-**Note de Romain:** Est-ce qu'il parle de disabled, input type=hidden, readonly ? Du label qui lie vers le champ avec l'id ? Que le traitement des formulaires est fait en S3 dans le cours ProgWeb Coté Serveur ?
+**Note de Romain:** Est-ce qu'il parle de disabled, readonly ? Du label qui lie vers le champ avec l'id ? Que le traitement des formulaires est fait en S3 dans le cours ProgWeb Coté Serveur ?
 
-## Autres Idées 
-
-Parler rapidement des caractères spéciaux en HTML &lt; < ... et peut-être aussi
-de l'encodage des caractères dans l'URL quand on fait les formulaires
-
-Faire du sass ... 
-
-::before
-::after
-content, numérotation automatique (voir les div.exercise dans les pages du cours)
-
-
----> + ou -.
---->J'ai peur qu'ils s'imaginent qu'on peut foutre du HTML dans du css ...
-
-
-border-image, border-shadow : c'est peu technique mais bien visuel
-
-curseur : idem
-
-inclusion d'audio, vidéo
-
-
---->Le border image et le border shadow pourrait en effet être intéressant !
---->On peut faire des choses jolies avec.
-
-CSS columns
-
-
---->Si c'est çà :
---->http://caniuse.com/#search=column
-
---->J'en ai jamais entendu parlé...et puis j'ai l'impression qu'avec flex on peut tout faire.
-
-
-max-wdth max-height
---->on pourrait utiliser vmin pour faire un sticky footer (pour la page contact on veut que le footer soit en bas de la page no même si le contenu de la page est inférieur à la taille écran).
----> dans le responsive design cela arrive plus ou moins naturellement je crois.
-
-
-overflow
-
-z-index associé à l'attribut position , lorsque les éléments se trouvent les uns sur les autres
-
-les ordres  de contraintes sur auto entre width et margin pour un élément sur contraint
-
-la fusion des marges.
-
-
-#d'autres éléments HTML
-1. select
-
-1. button
-
-1. textarea 
-
-1. Form
-
-
-
-caniuse preisentation
-
-
-
-### holly grail layout
-
-Nous sommes en 2015, et jusquà peu il n'est toujours pas évident de faire ce layout (d'où son nom).
-
-https://philipwalton.github.io/solved-by-flexbox/
-
-## Media Object
-
-
-
-## box-model
-
-## le model par défaut
-
-## le border-layout
-
-<!-- On peut aussi parler des sélecteurs de base sur les attributs -->
-
-
-
-
-1. Faire une [lettrine](https://fr.wikipedia.org/wiki/Lettrine) en début du paragraphe "Après son mariage, il rejoint... " (il vous sera nécessaire de rajouter une classe `<span>` autours de la lettre A)
-
-
-
-Exemple de site en flex layout
-
-http://heckhouse.com/
-
-quizzz
-
-http://espn.go.com/espn/feature/story/_/id/13035450/league-legends-prodigy-faker-carries-country-shoulders
-
-Comment est fait le T de Two years ago qui commence l'article ?
-Quel est le problème à propos du deuxième paragraphe ?
-
-
-## Fini !
-
-Mais que se passe t il lorsque l'on visualise notre superbe layout sur un petit écran genre mon smartphone ?
-et pls généralement comment avoir un layout intelligent qui s'adapte à ma tablette ? ma smartwatch ? mon smartphone ? mon rétro projecteur ?
-
-
-Responsive design 
-
-Un layout repsonsive simple avec Flex
-
-Un layout grid avec Flex
-
-Les images
