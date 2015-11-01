@@ -117,31 +117,66 @@ Cette balise comporte un attribut `for` qui doit prendre pour valeur la valeur d
 
 </div>
 
-## Formattage
+## Les princpaux type d'`input`
 
+
+<div class="exercise" id="exlabel">
+ 
+ 1. Ajoutez un input libellé `Sexe` avec les deux valeurs que vous connaissez.
+ 1. Ajoutez un input libellé `Date de naissance` avec le type d'input `date`.
+ 1. Ajoutez un input libellé `Mot de passe` avec le type d'input `password`.
+ 1. Ajoutez un input libellé `Email` avec le type d'input `email`.
+ 1. Ajoutez un input libellé `Niveau en Karaté` avec le type d'input `number` allant de 0 à 5.
+ 1. Ajoutez un input libellé `Message à Chuck` avec le textlabeltype d'input `email`.
+ 1. Ajoutez un input libellé `Niveau d'engagement` avec trois valeurs comme autant de case à cocher libéllées "Basique (5€) ", "Gold (15€)" et "Tatane premier (50€)".
+ 1. Ajoutez un input libellé `J'ai bien lu les clauses que j'ai pas lu` associé à une coche.
+
+
+</div>
+
+Note 
+
+ * A propos du mot de passe, remarquez que ce dernier apprait en clair dans l'url lors  de l'envoi via `sendToMySecondYearInIut`. 
+Définitivement ici un envoi avec `post` devrait être privilégié s'il s'agit d'un vrai site.
+ * Il doit y avoir un saut de ligne entre chaque input comme dans le dernier exercice de la section précédente.
+
+## `select`
+
+Voyons mantenant un autre élmement important d'un formulaire,  correspondant à la balise `select`.
+Il permet de choisir parmis un ensemble de choix imposées une ou plusieurs valeurs présentées par un menu déroulant.
+Tout comme `input`, cet élément peut aussi être libellé via un `label`.
+
+<div class="exercise" id="exlabel">
+ 1. Ajoutez un select libellé "Pays d'origine" qui prend comme valeur de pays `U.S.A` , `France`, `Chine` et `Viêt Nam`, les clées associées ne doivent pas dépendre de la langue du formulaire (la cléé associée à `France` doit être `fr` par exemple). L'utilisateur ne peut pas sélectionner plusieurs valeurs.
+
+ 1. Ajoutez à la suite de ce champs un aute sélécteur libéllé "Arts martiaux préférés". Les valeurs sont "Kun fu" , "Karaté" et "Full-contact". L'utilisateur peut sélectionner plusieurs valeurs.
+</div>
+
+## `textarea`
+* [`<textarea>`](http://www.w3schools.com/tags/tag_textarea.asp): permet de
+  définir une grande zone de texte
+
+<div class="exercise" id="exlabel">
+
+ 1. Ajoutez un champs libellé "Message pour Chuck" associé à un textarea sur lequel l'utilisateur peut s'épancher.
+</div>
+
+
+
+## `fieldset`
 
 
 Remarquez que les informations du formulaire sont réparties en trois groupes
 logiques :
 
-* informations personnelles
-* niveau en sport de combat
-* Message personel à Chuck et mot de passe pour le compte
+* informations personnelles (nom, prénom, mail,...),
+* "Sport de combat préféré"" et "Niveau en Karaté",
+* Message personel à Chuck, mot de passe pour le compte, la coche "J'ai bien lu.." et "Niveau d'engagement'.
 
-Pour vous aider, vous trouverez sur le site de [w3schools](http://www.w3schools.com/html/html_forms.asp) une liste des balises
-utilisables dans le contexte d'un formulaire. Notez les balises:
+Regouper les champs sur ces trois grands axes avec la balise `filedset`.
 
-* [`<fieldset>`](http://www.w3schools.com/tags/tag_fieldset.asp): permet de
-  regrouper plusieurs balises du formulaire. Elle comprend par ailleurs une
-  sous-balise balise `<legend>` qui permet de fixer le nom apparaissant en haut du
-  cadre.
-* 
-* [`<textarea>`](http://www.w3schools.com/tags/tag_textarea.asp): permet de
-  définir une grande zone de texte
-* [`<select>`](http://www.w3schools.com/tags/tag_select.asp): permet de définir
-  une liste déroulante. Les différentes valeurs possibles de la liste déroulante
-  sont définies dans une succession balises `<option>` inclues dans la balise
-  `<select>`
+
+
 
 *Par convention d'usage, le nom des champs obligatoires est suivi d'une *.*
 
@@ -155,25 +190,6 @@ légende.*
 Valeurs à utiliser pour les attributs (respectez les si vous voulez que le
 serveur vous aide):
 
-* sexe:
-   * name: “sex”
-   * values: féminin: “sex_fem”, masculin: “sex_male”
-* nom: name: “lastname”
-* prénom: name: “firstname”
-* email: name: “email”
-* Art martial préféré:
-   * name: “cur_martial”
-   * values: 2nd: “2”, 1st: “1”, term: “0”, sup: “3”, autre: “4”
-* Pays d'origine :
-   * name: “bac”,
-   * values: S: “0”, ES: “1”, L: “2”, STI2D: “3”, techno: “4”, pro: “5”, autre: “6”
-* Avez vous vu Delta Force 2  ? :
-   * values: oui: “1”, non: “0”
-* formation requête:
-   * name: “req-training[]” (le [] indique que plusieurs valeurs peuvent être fournies)
-   * values: DUT: “0”, DUT AS: “1”, LP: “2”
-* question: name: “request”
-* action du formulaire: voir au tableau
 
 *Commencez par définir la balise `<form>` et ajouter un bouton pour soumettre le
 formulaire.
