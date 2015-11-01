@@ -224,8 +224,6 @@ s'exprimer.
  1. Ajoutez un champ libellé "Message pour Chuck" associé à un `<textarea>` sur lequel l'utilisateur peut s'épancher.
 </div>
 
-
-
 ## La balise `<fieldset>`
 
 La balise `<fieldset>` permet de regrouper visuellement différents champs `<input>`.
@@ -235,10 +233,9 @@ La balise `<fieldset>` permet de regrouper visuellement différents champs `<inp
 Remarquez que les informations du formulaire sont réparties en trois groupes
 logiques :
 
-* les informations personnelles (Nom, Prénom, mail, etc.),
-* les sports de combat ("Sport de combat préféré" et "Niveau en karaté"),
-* les infos relatives à l'inscription ("Message personnel à Chuck", mot de
-  passe, la coche "J'ai bien lu..", "Niveau d'engagement', etc.).
+* "Informations personnelles" (contenant "Nom", "Prénom", "Email", etc.),
+* "Les sports de combat" (contenenant "Sport de combat préféré"" et "Niveau en karaté"),
+* "Inscription" (contenant "Message personnel à Chuck", "Mot de passe", la coche "J'ai bien lu..", "Niveau d'engagement', etc.).
 
 A l'aide de
 [cette page](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Comment_structurer_un_formulaire_HTML),
@@ -248,17 +245,45 @@ regroupez les champs sur ces trois grands axes avec la balise `<fieldset>`.
 
 ## Ergonomie et convivialité
 
-<div class="exercise" >
- 1. Par convention d'usage, le nom des champs obligatoires est suivi d'une "*". Ajoutez la aux label des champs "Nom" "mail" et à la coche "J'ai bien lu....".
-</div>
-
-
 ### Navigation
 
 Pour les utilisateurs avancés, la navigation à l'aide de la touche “tabulation”
 permet de parcourir très vite le formulaire. L'attribut “autofocus” permet de
 spécifier au navigateur quel élément du formulaire doit avoir le focus quand la page est chargée. L'attribut “tabindex” permet de spécifier l'ordre
 dans lequel les éléments sont parcouris en appuyant sur “tabulation”.
+
+
+### Convivialité
+
+Quelques attributs permettent d'améliorer la convivialité des champs de votre formulaire:
+
+* `placeholder`: permet d'afficher une ligne de texte dans le champ qui disparaît
+  dès lors que l'utilisateur tape une information. Cela permet de donner à
+  l'utilisateur des renseignements sur le contenu attendu. À utiliser
+  impérativement avec les champs pour lesquels vous avez spécifié un “pattern”,
+  sous peine de cause une extrême frustration à l'utilisateur. Vous devez alors
+  utiliser l'attribut `placeholder` pour spécifier le format attendu, les
+  caractères interdits/autorisés, etc.
+
+   ex:  placeholder=“Entrez votre nom ici."
+
+* `checked` / `selected` : pour les types “radio” et “checkbox”, et pour `<option>`
+respectivement. Cet attribut permet de spécifier que l'option en question est
+sélectionnée/cochée par défaut. Utile quand vous savez que l'une des options
+sera utilisée beaucoup plus fréquemment que les autres. Vous épargnez alors du
+temps à l'utilisateur.
+
+<div class="exercise" >
+
+ 1. Ajouter placeholder=“yourmail@domain.com” au champ mail.
+ 1. Ajoutez un attribut `placeholder` dans le `<textarea>` avec le texte suivant "Un inscrit sera tiré au sort, et verra son message transmis à Chuck Norris."
+ 1. Faite en sorte que le pays sélectionné par défaut dans "Pays d'origine" soit la France (et cela indépendamment de l'ordre des balises `<option>` dans le HTML).
+
+</div>
+
+
+<strong>Note : </strong> Il existe depuis peu un pseudo attribut css `::placeholder`, mais celui-ci est [moins](http://caniuse.com/#search=placeholder%20css) bien supporté que 
+l'[attribut](http://caniuse.com/#search=placeholder%20attribute).
 
 
 ### Contrôle du contenu
@@ -269,12 +294,10 @@ prochain). Toutefois, le contrôle par le serveur demande que les données soien
 envoyées, que le serveur teste, puis réponde ; l'opération peut être longue.
 
 Afin d'éviter une attente inutile aux utilisateurs de votre formulaire, vous
-pouvez demander au navigateur d'effectuer directement certains tests avant
-l'envoi du formulaire, afin de prévenir les erreurs courantes (ex: mauvais
-numéro de téléphone, mauvaise date...). **Attention :** cela ne vous dispense quand
-même pas de procéder aux vérifications côté serveur !
-
-Deux attributs permettent de vérifier le contenu du formulaire:
+pouvez demander au navigateur d'effectuer directement certains tests de validation, afin de prévenir 
+les erreurs courantes (ex: mauvais numéro de téléphone, mauvaise date...). 
+Attention: cela ne vous dispense quand même pas de procéder aux vérifications côté serveur !  Deux attributs permettent
+de vérifier le contenu du formulaire:
 
 * `required`: spécifie que le champ doit être obligatoirement rempli. Attribut à
   ajouter à tous les champs dont la légende comporte une *
@@ -296,7 +319,7 @@ Deux attributs permettent de vérifier le contenu du formulaire:
 <div class="exercise" id="regulex" >
  1. Rendre la coche "J'ai bien lu les clauses que je n'ai pas lues" obligatoire. Vérifiez si l'envoi du formulaire est bien impossible alors.
  1. Rendre aussi les champs "Nom" "Mot de passe" et "Email" obligatoires.
-
+ 1. Par convention d'usage, le nom des champs obligatoires est suivi d'une "*". Ajoutez la aux labels des `<input>` obligatoires.
  1. Ajoutez au champ “Message pour Chuck de votre formulaire un attribut pattern qui permette de vous
  assurer que les caractères `< > = ' " ( )` sont
  interdits. Cela peut fournir une protection (très primitive et en aucun cas
@@ -307,39 +330,8 @@ Deux attributs permettent de vérifier le contenu du formulaire:
 
 <strong> Note : </strong> Pour être toujours protégé contre les bugs lorsque vous cogitez sur une expression régulière, ne sortez jamais sans votre [Regulex](https://jex.im/regulex). Regulex, le visualisateur de machine d'état qu'il vous faut pour vos expressions régulières.
 
-### Convivialité
-
-Quelques attributs permettent d'améliorer la convivialité des champs de votre formulaire:
-
-* `placeholder`: permet d'afficher une ligne de texte dans le champ qui disparaît
-  dès lors que l'utilisateur tape une information. Cela permet de donner à
-  l'utilisateur des renseignements sur le contenu attendu. À utiliser
-  impérativement avec les champs pour lesquels vous avez spécifié un “pattern”,
-  sous peine de cause une extrême frustration à l'utilisateur. Vous devez alors
-  utiliser l'attribut `placeholder` pour spécifier le format attendu, les
-  caractères interdits/autorisés, etc.  
-  **Exemple :**  `placeholder=“Entrez votre nom ici."`
-
-* `checked` / `selected` : pour les types “radio” et “checkbox”, et pour `<option>`
-respectivement. Cet attribut permet de spécifier que l'option en question est
-sélectionnée/cochée par défaut. Utile quand vous savez que l'une des options
-sera utilisée beaucoup plus fréquemment que les autres. Vous épargnez alors du
-temps à l'utilisateur.
-
-<div class="exercise" >
-
- 1. Ajouter placeholder=“yourmail@domain.com” au champ mail.
- 1. Ajoutez un attribut `placeholder` dans le `<textarea>` avec le texte suivant "Un inscrit sera tiré au sort, et verra son message transmis à Chuck Norris."
-
-</div>
-
-<strong>Note : </strong> Il existe depuis peu un pseudo attribut CSS
-`::placeholder`, mais celui-ci est
-[moins](http://caniuse.com/#search=placeholder%20css) bien supporté que
-l'[attribut](http://caniuse.com/#search=placeholder%20attribute).
 
 
-<!-- ## Style -->
 
 
 
