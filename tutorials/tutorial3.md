@@ -557,6 +557,7 @@ remédier à ce problème d'accessibilité.
 
 ## `display:flex`
 
+La valeur de display `flex` correspond au layout appellé FlexBox.
 Appliquée à un élément, la valeur de display `flex` va permettre de modifier la
 disposition <strong>de ses enfants</strong>. C'est donc une différence
 fondamentale avec les valeurs `block` et `inline`, qui eux avaient un impact
@@ -656,7 +657,7 @@ Les valeurs possibles sont :
  1. Repositionnez le menu pour qu'il soit en bas de la balise `<header>`.
 </div>
 
-### flex, une valeur relativement récente
+### Flexbox, une valeur relativement récente
 
 Si ces dernières possibilités offertes par `flex` semblent triviales voire
 naturelles pour le néophyte, elles représentent en pratique une avancée majeure
@@ -665,14 +666,14 @@ expertise véritable de l'intégrateur (exemple : le centrage vertical), ou
 étaient même confinées dans le domaine du fantasme (les justifications, le
 comportement des éléments sur l'espace restant, etc.).
 
-Aujourd'hui flex est bien implémenté dans
+Aujourd'hui flexbox est bien implémenté dans
 [les différents navigateurs](http://caniuse.com/#search=flexbox).  Nous ne vous
 présenterons donc pas d'autres valeurs de display, car elles sont devenues
 inutiles (`display:inline-block`, `display:table`), ni encore moins des
 techniques d'alignement avec des `float`, qui ont toujours été techniquement
 merdiques.
 
-Il y a d'autres propriétés intéressantes autour de flex, la référence suivante
+Il y a d'autres propriétés intéressantes autour de flexbox, la référence suivante
 est très instructive :
 [https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
