@@ -40,7 +40,7 @@ liberté d'expression selon le type utilisé. Elle a pour attributs:
 * [type](http://www.w3schools.com/tags/att_input_type.asp): définit l'apparence
   visuelle du champ et la nature des données qui peuvent y être renseignées.
 
-* `name` : le nom que prendra la donnée envoyée au server. Par exemple si l'input a pour `name` firstname et pour valeur "Éric". L'envoit du formulaire contiendra une association "name-->Éric" que le serveur devra interpréter et traiter.
+* `name` : le nom que prendra la donnée envoyée au server. Par exemple si l'input a pour `name` "firstname" et pour valeur "Éric". L'envoit du formulaire contiendra une association "name-->Éric" que le serveur devra interpréter et traiter.
 
 * `value` : la valeur envoyée au serveur. Cet attribut n'est pas défini dans les
   champs libres et prend des valeurs fixées dont la liste des possibles est
@@ -71,12 +71,12 @@ Nous allons voir comment est envoyée la valeur d'un `<input>` lorsque l'on soum
 
 </div>
 
-<strong>Note</strong> : il est normal que l'adresse `sendToMySecondYearInIut.php` n'existe pas (le fameux code de retour HTTP <strong>404</strong> apparaît dans la console), puisque vous êtes en première année. Nous verrons en deuxième année dans le cours ProgWeb Côté Serveur comment le serveur récupère les données envoyées par notre formulaire. 
+<strong>Note</strong> : il est normal que l'URL `sendToMySecondYearInIut.php` n'existe pas (le fameux code de retour HTTP <strong>404</strong> apparaît dans la console), puisque vous êtes en première année. Nous verrons en deuxième année dans le cours ProgWeb Côté Serveur comment le serveur récupère les données envoyées par notre formulaire. 
 
 
 ## La balise `<label>`
 
-Il nous faut informer maintenant par un label à quoi noter champ `<input>` fait référence. La balise [`<label>`](http://www.w3schools.com/tags/tag_label.asp) permet d'associer la question sous-tendue ("Nom? ") à l'input. Cette balise comporte un attribut `for` qui doit prendre pour valeur la valeur de l'attribut `id` du champ auquel est associé le `label`  (il faut donc penser à donner un `id` à notre `<input>`).
+Il nous faut informer maintenant par un label à quoi notre champ `<input>` fait référence. La balise [`<label>`](http://www.w3schools.com/tags/tag_label.asp) permet d'associer la question sous-tendue ("Nom? ") à l'input. Cette balise comporte un attribut `for` qui doit prendre pour valeur la valeur de l'attribut `id` du champ auquel est associé le `label`  (il faut donc penser à donner un `id` à notre `<input>`).
 
 
 <div class="exercise" id="exlabel">
@@ -91,7 +91,7 @@ Il nous faut informer maintenant par un label à quoi noter champ `<input>` fait
 
 </div>
 
-## Les principaux types de balises `<input>`
+## Les principaux types de balises `<input>`, nous listons les principaux :
 
 Il existe un assez grand nombre de types d'input.
 
@@ -109,22 +109,21 @@ possibles.
 
 <div class="exercise" id="exinput">
  
-Ajoutez dans le formulaire les `<input>` libellés :
+ A l'aide de [w3schools](http://www.w3schools.com/tags/att_input_type.asp), ajoutez dans le formulaire les `<input>` libellés :
 
  1. "Sexe" avec les deux valeurs que vous connaissez.
  1. "Date de naissance" avec le type d'input `date`.
  1. "Mot de passe" avec le type d'input `password`.
  1. "Email" avec le type d'input de type ... `email`.
  1. "Niveau en karaté" avec le type d'input `number` allant de 0 à 5.
- 1. "Message à Chuck" avec un `<textarea>`.
- 1. "Niveau d'engagement" avec trois valeurs comme autant de case à cocher libellées "Basique (5 €) ", "Gold (15 €)" et "Tatane in your face (50 €)".
+ 1. "Niveau d'engagement" avec un choix parmi trois valeurs libellées "Basique (5 €) ", "Gold (15 €)" et "Tatane in your face (50 €)".
  1. "J'ai bien lu les clauses que je n'ai pas lues" associé à une case à cocher. 
  1. Vérifier par envoi du formulaire que tous les champs sont bien renseignés, on rappelle que c'est l'attribut `name` de l'input qui est utilisé.
  1. Faite en sorte qu'il y est un saut de ligne entre chaque `<input>` (comme dans le dernier exercice de la section précédente).
  
 </div>
 
-<strong>Note :</strong> A propos du mot de passe, remarquez que ce dernier apparaît en clair dans l'URL si vous êtes en `get` lors  de l'envoi via `sendToMySecondYearInIut`. 
+<strong>Note :</strong> A propos du mot de passe, remarquez que ce dernier apparaît en clair dans l'URL si vous êtes en `get` lors  de l'envoi via à `sendToMySecondYearInIut.php`. 
 Définitivement donc, un envoi avec `post` doit être privilégié.
  
 
@@ -136,14 +135,19 @@ Tout comme `<input>`, cet élément peut aussi être libellé via un `<label>`. 
 qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut `multiple` est ajouté à la balise `<select>`. Des groupes de choix peuvent être proposés avec la balise `<optgroup>`. 
 
 <div class="exercise" id="exlabel">
- 1. Ajoutez un `<select>` libellé "Pays d'origine" qui prend comme valeur de pays `U.S.A` , `France`, `Chine` et `Viêt Nam`, les clés associées ne doivent pas dépendre de la langue du formulaire (la clé associée à `France` doit être `fr` par exemple). L'utilisateur ne peut pas sélectionner plusieurs valeurs.
+
+
+ A l'aide de [cette page](https://developer.mozilla.org/fr/docs/Web/HTML/Element/select), ajoutez dans le formulaire les `<input>` libellés :
+
+ 1. Ajoutez un `<select>` libellé "Pays d'origine" qui prend comme valeur de pays `U.S.A` , `France`, `Chine` et `Viêt Nam`, les clés associées ne doivent pas dépendre de la langue du formulaire (la clé associée à `France` doit être `fr` par exemple). L'utilisateur ne peut pas sélectionner plusieurs valeurs, le pays sélectionné par défaut est la France (indépendamment de l'ordre des balises `<option>` dans le HTML).
 
  1. Ajoutez à la suite de ce champ un autre sélecteur libellé "Arts-martiaux préférés". Les valeurs sont "Kung fu" , "Karaté" et "Full-contact". L'utilisateur peut sélectionner plusieurs valeurs.
 </div>
 
 ## La balise `<textarea>`
-* [`<textarea>`](http://www.w3schools.com/tags/tag_textarea.asp): permet de
-  définir une grande zone de texte
+
+
+* [`<textarea>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Textarea): permet de proposer une grande zone de texte pour que l'utilisateur puisse s'exprimer.
 
 <div class="exercise" id="exlabel">
 
@@ -154,6 +158,7 @@ qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut `mu
 
 ## La balise `<fieldset>`
 
+La balise `<fieldset>` permet de regrouper visuellement différents champs inputs.
 
 
 <div class="exercise" id="exlabel">
@@ -164,7 +169,7 @@ logiques :
 * Les sports de combat ("Sport de combat préféré"" et "Niveau en karaté"),
 * des infos relatives à l'inscription ("Message personnel à Chuck", mot de passe, la coche "J'ai bien lu..", "Niveau d'engagement', etc.).
 
-Regroupez les champs sur ces trois grands axes avec la balise `<fieldset>`.
+A l'aide de [cette page](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Comment_structurer_un_formulaire_HTML), regroupez les champs sur ces trois grands axes avec la balise `<fieldset>`.
 </div>
 
 
@@ -215,13 +220,13 @@ de vérifier le contenu du formulaire:
 
 <div class="exercise" id="regulex" >
  1. Rendre la coche "J'ai bien lu les clauses que je n'ai pas lues" obligatoire. Vérifiez si l'envoi du formulaire est bien impossible alors.
- 1. Rendre aussi "Nom" "mail" obligatoires.
+ 1. Rendre aussi les champs "Nom" "Mot de passe" et "Email" obligatoires.
 
- 1. Ajoutez au champ “question” de votre formulaire un attribut pattern qui permette de vous
+ 1. Ajoutez au champ “Message pour Chuck de votre formulaire un attribut pattern qui permette de vous
  assurer que les caractères “<”, “>”, “=”, “ ' ”, “ '' ”, “(” et “)” sont
  interdits. Cela peut fournir une protection (très primitive et en aucun cas
  suffisante) contre certaines formes d'attaques contre le serveur.
- 1. (optionnel)Ajoutez un pattern au champ mot de passe afin que celui-ci contienne obligatoirement 8 ou plus caractères avec au moins un chiffre, une lettre majuscule et une lettre minuscule.
+ 1. (optionnel) Ajoutez un pattern au champ mot de passe afin que celui-ci contienne obligatoirement 8 ou plus caractères avec au moins un chiffre, une lettre majuscule et une lettre minuscule.
 
 </div>
 
