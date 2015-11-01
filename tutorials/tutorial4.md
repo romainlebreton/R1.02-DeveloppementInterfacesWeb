@@ -4,14 +4,13 @@ subtitle: Les formulaires.
 layout: tutorial
 ---
 
-
 ## Introduction
 
-Il est temps de pouvoir obtenir un semblant d'interaction avec le visiteur de notre site à l'ide de formulaires.
+Nous allons ajouter un formulaire d'inscription à notre site de fans de <strong>Chuck Norris</strong>, en utilisant la balise `form`.
+Cette balise `form` nous permettra d'avoir des réponses à des questions ouvertes ("Que voulez vous dire à Chuck ?") 
+au plus fermées ("Parmis ces trois choix quel est votre sport favoris ?", "Quel est votre sexe ?" ..." ).
 
-Le navigateur web est ainsi un système conçu pour communiquer avec un
-serveur distant.
-Parmi tous les moyens pour échanger de l'information, le formulaire occupe une place particulière. 
+Il y a beaucoup de type de questions, correspondant chacune à un type de balises `input` ou `textarea`.
 
 ## La balise  `<form>` et les balises `input`
 
@@ -92,17 +91,16 @@ Notes :
 
  * S'il est tout indiqué d'utiliser dans le formulaire qui va suivre la valeur de method `post`, on va utiliser juste pour les tests la valeur `get` de manière à pouvoir valider via l'url dans le navigateur que nos champs sont bien envoyés.
  
- * Il est normal que l'adresse `sendToMySecondYearInIut.php` n'existe pas (le fameux code de retour HTTP 404), puisque vous êtes en première année. Nous verrons en deuxième année comment le serveur récupère les données envoyées par notre formulaire.
+ * Il est normal que l'adresse `sendToMySecondYearInIut.php` n'existe pas (le fameux code de retour HTTP 404), puisque vous êtes en première année. Nous verrons en deuxième année dans le cours ProgWeb Coté Serveur comment le serveur récupère les données envoyées par notre formulaire.
 
 
 ## `label`
 
-Notre formulaire n'est pas très explicite. On ne sait pas ce que l'on doit rentrer dans le champs texte.
-La balise [`<label>`](http://www.w3schools.com/tags/tag_label.asp) permet d'associer un nom explicite à un champ dans le formulaire. 
+Notre formulaire n'est pas très explicite : on ne sait pas ce que l'on doit rentrer dans le champs texte.
+
+La balise [`<label>`](http://www.w3schools.com/tags/tag_label.asp) permet d'associer la question sous-tendu ("Nom? ") à l'input (on utilisera le label "Nom"). 
 Cette balise comporte un attribut `for` qui doit prendre pour valeur la valeur de l'attribut `id` du champ auquel est associée l'étiquette 
 (il faut donc penser à donner un `id` aux autres balises).
-
-
 
 
 <div class="exercise" id="exlabel">
@@ -119,25 +117,16 @@ Cette balise comporte un attribut `for` qui doit prendre pour valeur la valeur d
 
 ## Les princpaux type d'`input`
 
-
-
-Les boutons radio permettent de ne sélectionner qu'une seule des options
-possibles. Les cases à cocher permettent de sélectionner autant des options que
-l'utilisateur le souhaite. La liste déroulante permet de base de ne sélectionner
-qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut
-“multiple” est ajouté à la balise `<select>`.
-
-
-Le type “password” masque automatiquement les caractères entrés.
-
-Le type “hidden” n'est pas affiché visuellement par le navigateur, ce qui permet
+ * Le type `radio` permet de ne sélectionner qu'une seule des options
+possibles.
+ * Le type `checkbox` (Les cases à cocher) permettent de sélectionner autant des options que l'utilisateur le souhaite. 
+ * Le type `password` masque automatiquement les caractères entrés.
+ * Le type `hidden` n'est pas affiché visuellement par le navigateur, ce qui permet
 vous permet d'envoyer au serveur des informations dont il aura besoin mais dont
 vous ne souhaitez pas encombrer l'utilisateur (ex: un état de la page).
-
-Les types “email”, “url”, “tel”, “date”, “time” et “number” permettent d'adapter
-le clavier virtuel quand la page est affichée sur un smartphone (et les checks ?).
-
-
+ * Les types “email”, “url”, “tel”, “date”, “time” et “number” permettent d'adapter
+le clavier virtuel quand la page est affichée sur un smartphone. Suivant le navigateur, une présentation différente peut-être associée.
+ Des validateurs sont associés à ces champs (nous le verrons plus loin), ils vérifient pas exemple qu'une adresse mail contient bien un @.
 
 <div class="exercise" id="exlabel">
  
@@ -149,6 +138,7 @@ le clavier virtuel quand la page est affichée sur un smartphone (et les checks 
  1. Ajoutez un input libellé "Message à Chuck" avec le textlabeltype d'input `email`.
  1. Ajoutez un input libellé "Niveau d'engagement" avec trois valeurs comme autant de case à cocher libéllées "Basique (5€) ", "Gold (15€)" et "Tatane premier (50€)".
  1. Ajoutez un input libellé "J'ai bien lu les clauses que j'ai pas lu" associé à une coche.
+ 1. (optionel) rendre la coche obligatoire avec l'attribut `required`.
 
 
 </div>
@@ -164,6 +154,10 @@ Définitivement ici un envoi avec `post` devrait être privilégié s'il s'agit 
 Voyons mantenant un autre élmement important d'un formulaire,  correspondant à la balise `select`.
 Il permet de choisir parmis un ensemble de choix imposées une ou plusieurs valeurs présentées par un menu déroulant.
 Tout comme `input`, cet élément peut aussi être libellé via un `label`.
+
+La liste déroulante permet de base de ne sélectionner
+qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut
+`multiple` est ajouté à la balise `<select>`.
 
 <div class="exercise" id="exlabel">
  1. Ajoutez un select libellé "Pays d'origine" qui prend comme valeur de pays `U.S.A` , `France`, `Chine` et `Viêt Nam`, les clées associées ne doivent pas dépendre de la langue du formulaire (la cléé associée à `France` doit être `fr` par exemple). L'utilisateur ne peut pas sélectionner plusieurs valeurs.
@@ -198,16 +192,9 @@ Regouper les champs sur ces trois grands axes avec la balise `filedset`.
 ## Ergonomie et convivialité
 
 <div class="exercise" >
- 1. Par convention d'usage, le nom des champs obligatoires est suivi d'une *.*. Ajoutez le aux champs Nom mail et à la coche "J'ai bien lu....".
+ 1. Par convention d'usage, le nom des champs obligatoires est suivi d'une "*". Ajoutez le aux champs Nom mail et à la coche "J'ai bien lu....".
 
 </div>
-
-*Le formulaire doit être lisible et élégant. Pensez-donc à attribuer des “id” ou
-“class” aux différentes éléments et faire usage de vos acquis en CSS du TP2 pour
-formatter l'aspect visuel de votre formulaire. Contrairement à l'exemple donné
-dans “formulaire.pdf”, les différents champs d'entrée doivent tous avoir leur
-bord gauche aligné verticalement quand ils sont sur la même ligne que leur
-légende.*
 
 
 ### Navigation
@@ -280,10 +267,12 @@ temps à l'utilisateur.
 
 </div>
 
+## Style 
+
+
 *Faites usage de ces options dans votre formulaire pour le rendre plus
 convivial.*
 
-Auteur du TD : Benjamin Faivre-Vuillin, Éric Alvernhe
 
-**Note de Romain:** Est-ce qu'il parle de disabled, readonly ? Du label qui lie vers le champ avec l'id ? Que le traitement des formulaires est fait en S3 dans le cours ProgWeb Coté Serveur ?
+**Note de Romain:** Est-ce qu'il parle de disabled, readonly ?  
 
