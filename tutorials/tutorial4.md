@@ -91,7 +91,8 @@ Il nous faut informer maintenant par un label à quoi notre champ `<input>` fait
 
 </div>
 
-## Les principaux types de balises `<input>`, nous listons les principaux :
+## Les principaux types de balises `<input>` 
+
 
 Il existe un assez grand nombre de types d'input.
 
@@ -263,7 +264,7 @@ temps à l'utilisateur.
 l'[attribut](http://caniuse.com/#search=placeholder%20attribute).
 
 
-## Style 
+<!-- ## Style -->
 
 
 
