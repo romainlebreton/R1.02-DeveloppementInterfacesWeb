@@ -40,16 +40,12 @@ liberté d'expression selon le type utilisé. Elle a pour attributs:
 * [type](http://www.w3schools.com/tags/att_input_type.asp): défini l'apparence
   visuelle du champ et la nature des données qui peuvent y être renseignées.
 
-* `name` : le nom que prendra la donnée renseignée dans ce champ côté serveur. Vous
-  comprendrez l'importance de ce paramètre quand vous aborderez la programmation
-  serveur. Pour le TP, les valeurs seront fixées. Attention: il est important
-  pour les types “checkbox” et “radio”d'utiliser le même nom pour les
-  différentes options possibles !
+* `name` : le nom que prendra la donnée envoyée au server. Par exemple si l'input a pour `name` firstname et pour valeur "Éric". L'envoit du formulaire contiendra une association "name-->Éric" que le serveur devra interprété et traiter.
 
 * `value` : la valeur envoyée au serveur. Cet attribut n'est pas défini dans les
   champs libres et prend des valeurs fixées dont la liste des possibles est
   connue par le serveur pour les champs de type “checkbox” et “radio” et la
-  balise `<option>`. Les valeurs seront fixées pour le TP.
+  balise `<option>`.
 
 Afin de pouvoir être envoyé, votre formulaire doit obligatoirement contenir une
 balise `<input>` avec l'attribut “type” fixé à “submit”. Cette balise définit le
@@ -64,7 +60,7 @@ Nous allons voir comment est envoyé un `input` lorsque l'on soumet un formulair
 
  1. Ajoutez à la page inscription.html le formulaire suivant : <br> <br>
 `<form action="sendtoMySecondYearInIut.php" method="post">`<br>&nbsp;
-	`<input name="uname" type="text" ></input>`<br>&nbsp;
+	`<input name="uname" type="text" >`<br>&nbsp;
 		`<input type="submit" value="Envoyer">`<br>
 	`</form>`
 
@@ -75,21 +71,19 @@ Nous allons voir comment est envoyé un `input` lorsque l'on soumet un formulair
 
 </div>
 
-Note : il est normal que l'adresse `sendToMySecondYearInIut.php` n'existe pas (le fameux code de retour HTTP 404 apparaît dans la console), puisque vous êtes en première année. Nous verrons en deuxième année dans le cours ProgWeb Coté Serveur comment le serveur récupère les données envoyées par notre formulaire.
+<strong>Note</strong> : il est normal que l'adresse `sendToMySecondYearInIut.php` n'existe pas (le fameux code de retour HTTP <strong>404</strong> apparaît dans la console), puisque vous êtes en première année. Nous verrons en deuxième année dans le cours ProgWeb Coté Serveur comment le serveur récupère les données envoyées par notre formulaire. 
 
 
 ## `label`
 
-Notre formulaire n'est pas très explicite : on ne sait pas ce que l'on doit rentrer dans le champs texte. La balise [`<label>`](http://www.w3schools.com/tags/tag_label.asp) permet d'associer la question sous-tendu ("Nom? ") à l'input (on utilisera le label "Nom"). 
-Cette balise comporte un attribut `for` qui doit prendre pour valeur la valeur de l'attribut `id` du champ auquel est associée l'étiquette 
-(il faut donc penser à donner un `id` aux autres balises).
+Il nous faut informer maintenant par un label à quoi noter champ `input` fait référence. La balise [`<label>`](http://www.w3schools.com/tags/tag_label.asp) permet d'associer la question sous-tendu ("Nom? ") à l'input. Cette balise comporte un attribut `for` qui doit prendre pour valeur la valeur de l'attribut `id` du champ auquel est associée le `label`  (il faut donc penser à donner un `id` à notre `input`).
 
 
 <div class="exercise" id="exlabel">
 
  1. Remplacez le code de votre champs input par le code suivant : <br>
  			`<label for="surname">Nom</label>`<br>
-				`<input id="surname" name="uname" type="text" ></input>`
+				`<input id="surname" name="uname" type="text" >`
 
  1. Rajoutez au formulaire une entrée qui correspondra au prénom (calqué sur le précédent, avec un `label` et un champ `input`).
  1. Validez ce dernier et vérifiez que vos deux champs font bien présents dans l'url du navigateur (l'url doit finir par `sendToMySecondYearInIut.php?uname=dupont&firstname=super`).
@@ -99,20 +93,25 @@ Cette balise comporte un attribut `for` qui doit prendre pour valeur la valeur d
 
 ## Les princpaux type d'`input`
 
+Il existe un assez grand nombre de type d'input.
+
  * Le type `radio` permet de ne sélectionner qu'une seule des options
 possibles.
- * Le type `checkbox` (Les cases à cocher) permettent de sélectionner autant des options que l'utilisateur le souhaite. 
+ * Le type `checkbox` (Les cases à cocher) permettent de sélectionner autant des options que l'utilisateur le souhaite.
  * Le type `password` masque automatiquement les caractères entrés.
- * Le type `hidden` n'est pas affiché visuellement par le navigateur, ce qui permet
-vous permet d'envoyer au serveur des informations dont il aura besoin mais dont
-vous ne souhaitez pas encombrer l'utilisateur (ex: un état de la page).
- * Les types `email`, `url`, `tel`, `date`, `time` et `number` permettent d'adapter
-le clavier virtuel quand la page est affichée sur un smartphone. Suivant le navigateur, une présentation différente peut-être associée.
- Des validateurs sont associés à ces champs (nous le verrons plus loin), ils vérifient pas exemple qu'une adresse mail contient bien un "@".
+ * Les types `email`, `url`, `tel`, `date`, `time` et `number` permettent d'adapter le clavier virtuel quand la page est affichée sur un smartphone. 
+ Suivant le navigateur, une présentation différente peut-être associée. Des validateurs sont associés à ces champs (nous le verrons plus loin), 
+ ils vérifient pas exemple qu'une adresse mail contient bien un "@".
+
+
+<strong>Note :</strong> Certains de ces inputs sont issues de la norme HTML5. De fait leurs adoptions au sein des navigateurs n'est pas 
+garantie. Afin de savoir ce qui est utilisable, les développeurs web demandent au responsable des machines la nature du parc informatique (en clair ils demandent : "quel est la version d'Internet Explorer encore en cours sur votre parc ?"). Le site [caniuse](http://caniuse.com/) permet ensuite de savoir si nous pouvons utiliser tel ou tel aspect pour la réalisation d'un site. Les types date et time par exemple sont [plus ou moins bien supportés](http://caniuse.com/#search=date) par les navigateurs.
+Le type number l'est [un peu plus](http://caniuse.com/#search=number). 
+
 
 <div class="exercise" id="exinput">
  
-Ajoutez les input libellés :
+Ajoutez dans le formulaire les `input` libellés :
 
  1. "Sexe" avec les deux valeurs que vous connaissez.
  1. "Date de naissance" avec le type d'input `date`.
@@ -122,15 +121,15 @@ Ajoutez les input libellés :
  1. "Message à Chuck" avec un textlabel.
  1. "Niveau d'engagement" avec trois valeurs comme autant de case à cocher libéllées "Basique (5€) ", "Gold (15€)" et "Tatane premier (50€)".
  1. "J'ai bien lu les clauses que j'ai pas lu" associé à une coche. 
- 1. (optionnel) rendre la coche obligatoire avec l'attribut `required`.
-
-
+ 1. Vérifier par envoi du formulaire que tous les champs sont bien renseignés, on rappelle que c'est l'attribut `name` de l'input qui est utilisé.
+ 1. (optionnel) rendre la coche obligatoire avec l'attribut `required`. Vérifier si 
+ 
 </div>
 
-Note 
+<string>Note :</string>strong>
 
- * A propos du mot de passe, remarquez que ce dernier apprait en clair dans l'url lors  de l'envoi via `sendToMySecondYearInIut`. 
-Définitivement ici un envoi avec `post` doit être privilégié.
+ * A propos du mot de passe, remarquez que ce dernier apparait en clair dans l'url lors  de l'envoi via `sendToMySecondYearInIut`. 
+Définitivement donc, un envoi avec `post` doit être privilégié.
  * Il doit y avoir un saut de ligne entre chaque input comme dans le dernier exercice de la section précédente.
 
 ## `select`
@@ -201,9 +200,9 @@ numéro de téléphone, mauvaise date...). Attention: cela ne vous dispense quan
 même pas de procéder aux vérifications côté serveur !  Deux attributs permettent
 de vérifier le contenu du formulaire:
 
-* required: spécifie que le champ doit être obligatoirement rempli. Attribut à
+* `required`: spécifie que le champ doit être obligatoirement rempli. Attribut à
   ajouter à tous les champs dont la légende comporte une *
-* pattern: attribut spécifique aux champs “libres”, il permet de spécifier une
+* `pattern`: attribut spécifique aux champs “libres”, il permet de spécifier une
   [expression régulière](http://www.rexegg.com/). Cette chaîne de caractère au
   [format particulier](http://www.rexegg.com/regex-quickstart.html#ref) indique
   au navigateur tous les formats d'entrée autorisés pour le champ et le
@@ -236,7 +235,7 @@ Quelques attributs permettent d'améliorer la convivialité des champs de votre 
 
    ex:  placeholder=“Entrez votre nom ici."
 
-* checked / selected: pour les types “radio” et “checkbox”, et pour `<option>`
+* `checked` / `selected` : pour les types “radio” et “checkbox”, et pour `<option>`
 respectivement. Cet attribut permet de spécifier que l'option en question est
 sélectionnée/cochée par défaut. Utile quand vous savez que l'une des options
 sera utilisée beaucoup plus fréquemment que les autres. Vous épargnez alors du
@@ -248,6 +247,11 @@ temps à l'utilisateur.
  1. Ajouter placeholder=“abcd@gmail.com” au champ mail.
 
 </div>
+
+
+<strong>Note : </strong> Il existe depuis peu un pseudo attribut css `::placeholder`, mais celui-ci et [moins](http://caniuse.com/#search=placeholder%20css) bien supporté que 
+l'[attribut](http://caniuse.com/#search=placeholder%20attribute).
+
 
 ## Style 
 
