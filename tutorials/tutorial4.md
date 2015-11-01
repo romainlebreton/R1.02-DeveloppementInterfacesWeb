@@ -184,6 +184,39 @@ spécifier au navigateur quel élément du formulaire doit avoir le focus quand 
 dans lequel les éléments sont parcouris en appuyant sur “tabulation”.
 
 
+### Convivialité
+
+Quelques attributs permettent d'améliorer la convivialité des champs de votre formulaire:
+
+* `placeholder`: permet d'afficher une ligne de texte dans le champ qui disparaît
+  dès lors que l'utilisateur tape une information. Cela permet de donner à
+  l'utilisateur des renseignements sur le contenu attendu. À utiliser
+  impérativement avec les champs pour lesquels vous avez spécifié un “pattern”,
+  sous peine de cause une extrême frustration à l'utilisateur. Vous devez alors
+  utiliser l'attribut `placeholder` pour spécifier le format attendu, les
+  caractères interdits/autorisés, etc.
+
+   ex:  placeholder=“Entrez votre nom ici."
+
+* `checked` / `selected` : pour les types “radio” et “checkbox”, et pour `<option>`
+respectivement. Cet attribut permet de spécifier que l'option en question est
+sélectionnée/cochée par défaut. Utile quand vous savez que l'une des options
+sera utilisée beaucoup plus fréquemment que les autres. Vous épargnez alors du
+temps à l'utilisateur.
+
+<div class="exercise" >
+
+ 1. Ajouter placeholder=“yourmail@domain.com” au champ mail.
+ 1. Ajoutez un attribut `placeholder` dans le `<textarea>` avec le texte suivant "Un inscrit sera tiré au sort, et verra son message transmis à Chuck Norris."
+ 1. Faite en sorte que le pays sélectionné par défaut dans "Pays d'origine" soit la France (et cela indépendamment de l'ordre des balises `<option>` dans le HTML).
+
+</div>
+
+
+<strong>Note : </strong> Il existe depuis peu un pseudo attribut css `::placeholder`, mais celui-ci est [moins](http://caniuse.com/#search=placeholder%20css) bien supporté que 
+l'[attribut](http://caniuse.com/#search=placeholder%20attribute).
+
+
 ### Contrôle du contenu
 
 La sécurité de votre serveur et de vos utilisateurs imposent que vous contrôliez
@@ -192,10 +225,9 @@ tard). Toutefois, le contrôle par le serveur demande que les données soient
 envoyées, que le serveur teste, puis réponde; l'opération peut être longue.
 
 Afin d'éviter une attente inutile aux utilisateurs de votre formulaire, vous
-pouvez demander au navigateur d'effectuer directement certains tests avant
-l'envoi du formulaire, afin de prévenir les erreurs courantes (ex: mauvais
-numéro de téléphone, mauvaise date...). Attention: cela ne vous dispense quand
-même pas de procéder aux vérifications côté serveur !  Deux attributs permettent
+pouvez demander au navigateur d'effectuer directement certains tests de validation, afin de prévenir 
+les erreurs courantes (ex: mauvais numéro de téléphone, mauvaise date...). 
+Attention: cela ne vous dispense quand même pas de procéder aux vérifications côté serveur !  Deux attributs permettent
 de vérifier le contenu du formulaire:
 
 * `required`: spécifie que le champ doit être obligatoirement rempli. Attribut à
@@ -228,38 +260,8 @@ de vérifier le contenu du formulaire:
 
 <strong> Note : </strong> Pour être toujours protégé contre les bugs lorsque vous cogitez sur une expression régulière, ne sortez jamais sans votre [Regulex](https://jex.im/regulex). Regulex, le visualisateur de machine d'état qu'il vous faut pour vos expressions régulières.
 
-### Convivialité
-
-Quelques attributs permettent d'améliorer la convivialité des champs de votre formulaire:
-
-* `placeholder`: permet d'afficher une ligne de texte dans le champ qui disparaît
-  dès lors que l'utilisateur tape une information. Cela permet de donner à
-  l'utilisateur des renseignements sur le contenu attendu. À utiliser
-  impérativement avec les champs pour lesquels vous avez spécifié un “pattern”,
-  sous peine de cause une extrême frustration à l'utilisateur. Vous devez alors
-  utiliser l'attribut `placeholder` pour spécifier le format attendu, les
-  caractères interdits/autorisés, etc.
-
-   ex:  placeholder=“Entrez votre nom ici."
-
-* `checked` / `selected` : pour les types “radio” et “checkbox”, et pour `<option>`
-respectivement. Cet attribut permet de spécifier que l'option en question est
-sélectionnée/cochée par défaut. Utile quand vous savez que l'une des options
-sera utilisée beaucoup plus fréquemment que les autres. Vous épargnez alors du
-temps à l'utilisateur.
-
-<div class="exercise" >
-
- 1. Ajouter placeholder=“yourmail@domain.com” au champ mail.
- 1. Ajoutez un attribut `placeholder` dans le `<textarea>` avec le texte suivant "Un inscrit sera tiré au sort, et verra son message transmis à Chuck Norris."
-
-</div>
-
-<strong>Note : </strong> Il existe depuis peu un pseudo attribut css `::placeholder`, mais celui-ci est [moins](http://caniuse.com/#search=placeholder%20css) bien supporté que 
-l'[attribut](http://caniuse.com/#search=placeholder%20attribute).
 
 
-<!-- ## Style -->
 
 
 
