@@ -120,7 +120,6 @@ Ajoutez dans le formulaire les `<input>` libellés :
  1. "Niveau d'engagement" avec trois valeurs comme autant de case à cocher libellées "Basique (5€) ", "Gold (15€)" et "Tatane in your face (50€)".
  1. "J'ai bien lu les clauses que j'ai pas lu" associé à une case à cocher. 
  1. Vérifier par envoi du formulaire que tous les champs sont bien renseignés, on rappelle que c'est l'attribut `name` de l'input qui est utilisé.
- 1. (optionnel) rendre la coche obligatoire avec l'attribut `required`. Vérifiez si l'envoi du formulaire est bien impossible alors.
  
 </div>
 
@@ -215,17 +214,14 @@ de vérifier le contenu du formulaire:
   automatiquement évalués contre la totalité de l'entrée. Il est donc inutiles
   de les encadrer entre ^ et $ comme une expression régulière classique.
 
-*Ajoutez au champ “question” de votre formulaire un pattern qui permette de vous
+<div class="exercise" id="regulex" >
+ 1. Rendre la coche "J'ai bien lu les clauses que j'ai pas lu" obligatoire. Vérifiez si l'envoi du formulaire est bien impossible alors.
+
+ 1. Ajoutez au champ “question” de votre formulaire un attribut pattern qui permette de vous
  assurer que les caractères “<”, “>”, “=”, “ ' ”, “ '' ”, “(” et “)” sont
  interdits. Cela peut fournir une protection (très primitive et en aucun cas
- suffisante) contre certaines formes d'attaques contre le serveur.*
-
-<div class="exercise" id="regulex" >
-
-
-
-
- 1. Ajoutez un pattern au champ mot de passe afin que celui ci contienne obligatoirement 8 ou plus caractères avec au moins un chiffre, une lettre majuscule et une lettre minuscule.
+ suffisante) contre certaines formes d'attaques contre le serveur.
+ 1. (optionnel)Ajoutez un pattern au champ mot de passe afin que celui ci contienne obligatoirement 8 ou plus caractères avec au moins un chiffre, une lettre majuscule et une lettre minuscule.
 
 </div>
 
@@ -253,8 +249,8 @@ temps à l'utilisateur.
 
 <div class="exercise" >
 
- 1. Ajouter placeholder=“abcd@gmail.com” au champ mail.
- 1. Ajoutez un attribut `placeholder` dans le textarea avec le texte suivant "Un inscrit sera tiré au sort pour voir son message transmis à Chuck Norris"
+ 1. Ajouter placeholder=“yourmail@domain.com” au champ mail.
+ 1. Ajoutez un attribut `placeholder` dans le `<textarea>` avec le texte suivant "Un inscrit sera tiré au sort, et verra son message transmis à Chuck Norris."
 
 </div>
 
@@ -266,10 +262,4 @@ l'[attribut](http://caniuse.com/#search=placeholder%20attribute).
 ## Style 
 
 
-*Faites usage de ces options dans votre formulaire pour le rendre plus
-convivial.*
 
-
-**Note de Romain:** Est-ce qu'il parle de disabled, readonly ?  
-
-integrer l'exo sur les expressions régulières.
