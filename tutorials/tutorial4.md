@@ -147,15 +147,11 @@ qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut `mu
 
 ## La balise `<textarea>`
 
-
-* [`<textarea>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Textarea): permet de proposer une grande zone de texte pour que l'utilisateur puisse s'exprimer.
+La balise [`<textarea>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Textarea) permet de proposer une grande zone de texte pour que l'utilisateur puisse s'exprimer.
 
 <div class="exercise" id="exlabel">
-
- 1. Ajoutez un champ libellé "Message pour Chuck" associé à un `<textarea>` sur lequel l'utilisateur peut s'épancher.
+ 1. Ajoutez un champ libellé "Message pour Chuck" associé à un `<textarea>` sur lequel le futu inscrit puisse s'épancher.
 </div>
-
-
 
 ## La balise `<fieldset>`
 
@@ -166,9 +162,9 @@ La balise `<fieldset>` permet de regrouper visuellement différents champs `<inp
 Remarquez que les informations du formulaire sont réparties en trois groupes
 logiques :
 
-* "Informations personnelles" (Nom, Prénom, mail, etc.),
-* "Les sports de combat" ("Sport de combat préféré"" et "Niveau en karaté"),
-* "Inscription" ("Message personnel à Chuck", mot de passe, la coche "J'ai bien lu..", "Niveau d'engagement', etc.).
+* "Informations personnelles" (contenant "Nom", "Prénom", "Email", etc.),
+* "Les sports de combat" (contenenant "Sport de combat préféré"" et "Niveau en karaté"),
+* "Inscription" (contenant "Message personnel à Chuck", "Mot de passe", la coche "J'ai bien lu..", "Niveau d'engagement', etc.).
 
 A l'aide de [cette page](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Comment_structurer_un_formulaire_HTML), regroupez les champs sur ces trois grands axes avec la balise `<fieldset>`.
 </div>
