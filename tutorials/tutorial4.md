@@ -7,11 +7,11 @@ layout: tutorial
 ## Introduction
 
 Nous allons ajouter un formulaire d'inscription à notre site de fans de <strong>Chuck Norris</strong>, en utilisant la balise `form`.
-Cette balise `form` nous permettra d'avoir des réponses à des questions ouvertes ("Que voulez vous dire à Chuck ?") 
+Cette balise `<form>` nous permettra d'avoir des réponses à des questions ouvertes ("Que voulez vous dire à Chuck ?") 
 au plus fermées ("Parmis ces trois choix quel est votre sport favoris ?", "Quel est votre sexe ?" ..." ).
-Il y a beaucoup de type de questions, correspondant chacune à un type de balises `input` ou `textarea`.
+Il y a beaucoup de type de questions, correspondant chacune à un type de balises `<input>` ou `<textarea>`.
 
-## La balise  `<form>` et les balises `input`
+## La balise  `<form>` et les balises `<input>`
 
 Le coeur du formulaire est constitué par deux types de balises: `<form>` et `<input>`.
 
@@ -53,7 +53,7 @@ bouton qui, cliqué, déclenchera l'envoi des données au serveur.
 
 <div class="exercise" id="start">
 
-Nous allons voir comment est envoyé un `input` lorsque l'on soumet un formulaire.
+Nous allons voir comment est envoyé la valeur d'un `<input>` lorsque l'on soumet un formulaire.
 
  1. Créez une nouvelle page inscription.html au site de Chuck Norris. Cette page va contenir le formulaire d'inscription 
  aux fan club de Chuck que nous allons construire dans ce TD.
@@ -76,7 +76,7 @@ Nous allons voir comment est envoyé un `input` lorsque l'on soumet un formulair
 
 ## `label`
 
-Il nous faut informer maintenant par un label à quoi noter champ `input` fait référence. La balise [`<label>`](http://www.w3schools.com/tags/tag_label.asp) permet d'associer la question sous-tendu ("Nom? ") à l'input. Cette balise comporte un attribut `for` qui doit prendre pour valeur la valeur de l'attribut `id` du champ auquel est associée le `label`  (il faut donc penser à donner un `id` à notre `input`).
+Il nous faut informer maintenant par un label à quoi noter champ `<input>` fait référence. La balise [`<label>`](http://www.w3schools.com/tags/tag_label.asp) permet d'associer la question sous-tendu ("Nom? ") à l'input. Cette balise comporte un attribut `for` qui doit prendre pour valeur la valeur de l'attribut `id` du champ auquel est associée le `label`  (il faut donc penser à donner un `id` à notre `<input>`).
 
 
 <div class="exercise" id="exlabel">
@@ -85,13 +85,13 @@ Il nous faut informer maintenant par un label à quoi noter champ `input` fait r
  			`<label for="surname">Nom</label>`<br>
 				`<input id="surname" name="uname" type="text" >`
 
- 1. Rajoutez au formulaire une entrée qui correspondra au prénom (calqué sur le précédent, avec un `label` et un champ `input`).
+ 1. Rajoutez au formulaire une entrée qui correspondra au prénom (calqué sur le précédent).
  1. Validez ce dernier et vérifiez que vos deux champs font bien présents dans l'url du navigateur (l'url doit finir par `sendToMySecondYearInIut.php?uname=dupont&firstname=super`).
  1. Les deux champs apparaissent les uns à la suite des autres. Avec quelle balise vue dans le Td précédent doit on les mettre pour qu'il y est un saut de ligne entre les deux ?
 
 </div>
 
-## Les princpaux type d'`input`
+## Les princpaux type de balises `<input>`
 
 Il existe un assez grand nombre de type d'input.
 
@@ -104,76 +104,76 @@ possibles.
  ils vérifient pas exemple qu'une adresse mail contient bien un "@".
 
 
-<strong>Note :</strong> Certains de ces inputs sont issues de la norme HTML5. De fait leurs adoptions au sein des navigateurs n'est pas 
-garantie. Afin de savoir ce qui est utilisable, les développeurs web demandent au responsable des machines la nature du parc informatique (en clair ils demandent : "quel est la version d'Internet Explorer encore en cours sur votre parc ?"). Le site [caniuse](http://caniuse.com/) permet ensuite de savoir si nous pouvons utiliser tel ou tel aspect pour la réalisation d'un site. Les types date et time par exemple sont [plus ou moins bien supportés](http://caniuse.com/#search=date) par les navigateurs.
-Le type number l'est [un peu plus](http://caniuse.com/#search=number). 
+<strong>Note :</strong> Certains de ces inputs sont issus de la norme HTML5. De fait leurs adoptions au sein des navigateurs n'est pas uniforme. Les développeurs web peuvent être amenés à demander la nature du parc informatique cible du site web qu'ils doivent implémenter (en clair ils demandent : "quel est la version d'Internet Explorer encore en cours sur votre parc ?"). Le site [caniuse](http://caniuse.com/) permet ensuite de savoir si nous pouvons utiliser tel ou tel aspect pour la réalisation d'un site. Les types date et time par exemple sont [plus ou moins bien supportés](http://caniuse.com/#search=date) par les navigateurs. Le type number l'est [un peu plus](http://caniuse.com/#search=number). 
 
 
 <div class="exercise" id="exinput">
  
-Ajoutez dans le formulaire les `input` libellés :
+Ajoutez dans le formulaire les `<input>` libellés :
 
  1. "Sexe" avec les deux valeurs que vous connaissez.
  1. "Date de naissance" avec le type d'input `date`.
  1. "Mot de passe" avec le type d'input `password`.
- 1. "Email" avec le type d'input `email`.
+ 1. "Email" avec le type d'input de type ... `email`.
  1. "Niveau en Karaté" avec le type d'input `number` allant de 0 à 5.
- 1. "Message à Chuck" avec un textlabel.
- 1. "Niveau d'engagement" avec trois valeurs comme autant de case à cocher libéllées "Basique (5€) ", "Gold (15€)" et "Tatane premier (50€)".
- 1. "J'ai bien lu les clauses que j'ai pas lu" associé à une coche. 
+ 1. "Message à Chuck" avec un `<textarea>`.
+ 1. "Niveau d'engagement" avec trois valeurs comme autant de case à cocher libellées "Basique (5€) ", "Gold (15€)" et "Tatane in your face (50€)".
+ 1. "J'ai bien lu les clauses que j'ai pas lu" associé à une case à cocher. 
  1. Vérifier par envoi du formulaire que tous les champs sont bien renseignés, on rappelle que c'est l'attribut `name` de l'input qui est utilisé.
- 1. (optionnel) rendre la coche obligatoire avec l'attribut `required`. Vérifier si 
+ 1. (optionnel) rendre la coche obligatoire avec l'attribut `required`. Vérifiez si l'envoi du formulaire est bien impossible alors.
  
 </div>
 
 <string>Note :</string>strong>
 
- * A propos du mot de passe, remarquez que ce dernier apparait en clair dans l'url lors  de l'envoi via `sendToMySecondYearInIut`. 
+ * A propos du mot de passe, remarquez que ce dernier apparait en clair dans l'url si vous êtes en `get` lors  de l'envoi via `sendToMySecondYearInIut`. 
 Définitivement donc, un envoi avec `post` doit être privilégié.
- * Il doit y avoir un saut de ligne entre chaque input comme dans le dernier exercice de la section précédente.
+ * Il doit y avoir un saut de ligne entre chaque `<input>` comme dans le dernier exercice de la section précédente.
 
-## `select`
+## `<select>`
 
-Voyons mantenant un autre élmement important d'un formulaire,  correspondant à la balise `select`.
+Voyons mantenant un autre élmement important d'un formulaire, correspondant à la balise `<select>`.
 Il permet de choisir parmis un ensemble de choix imposées une ou plusieurs valeurs présentées par un menu déroulant.
-Tout comme `input`, cet élément peut aussi être libellé via un `label`. La liste déroulante permet de base de ne sélectionner
-qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut `multiple` est ajouté à la balise `<select>`.
+Tout comme `<input>`, cet élément peut aussi être libellé via un `label`. La liste déroulante permet de base de ne sélectionner
+qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut `multiple` est ajouté à la balise `<select>`. Des groupes de choix peuvent être proposés 
 
 <div class="exercise" id="exlabel">
- 1. Ajoutez un select libellé "Pays d'origine" qui prend comme valeur de pays `U.S.A` , `France`, `Chine` et `Viêt Nam`, les clées associées ne doivent pas dépendre de la langue du formulaire (la cléé associée à `France` doit être `fr` par exemple). L'utilisateur ne peut pas sélectionner plusieurs valeurs.
+ 1. Ajoutez un `<select>` libellé "Pays d'origine" qui prend comme valeur de pays `U.S.A` , `France`, `Chine` et `Viêt Nam`, les clées associées ne doivent pas dépendre de la langue du formulaire (la cléé associée à `France` doit être `fr` par exemple). L'utilisateur ne peut pas sélectionner plusieurs valeurs.
 
- 1. Ajoutez à la suite de ce champs un aute sélécteur libéllé "Arts martiaux préférés". Les valeurs sont "Kung fu" , "Karaté" et "Full-contact". L'utilisateur peut sélectionner plusieurs valeurs.
+ 1. Ajoutez à la suite de ce champ un aute sélecteur libellé "Arts martiaux préférés". Les valeurs sont "Kung fu" , "Karaté" et "Full-contact". L'utilisateur peut sélectionner plusieurs valeurs.
 </div>
 
-## `textarea`
+## `<textarea>`
 * [`<textarea>`](http://www.w3schools.com/tags/tag_textarea.asp): permet de
   définir une grande zone de texte
 
 <div class="exercise" id="exlabel">
 
- 1. Ajoutez un champs libellé "Message pour Chuck" associé à un textarea sur lequel l'utilisateur peut s'épancher.
+ 1. Ajoutez un champs libellé "Message pour Chuck" associé à un `<textarea>` sur lequel l'utilisateur peut s'épancher.
 </div>
 
 
 
-## `fieldset`
+## `<fieldset>`
 
 
+
+<div class="exercise" id="exlabel">
 Remarquez que les informations du formulaire sont réparties en trois groupes
 logiques :
 
-* informations personnelles (nom, prénom, mail,...),
-* "Sport de combat préféré"" et "Niveau en Karaté",
-* Message personel à Chuck, mot de passe pour le compte, la coche "J'ai bien lu.." et "Niveau d'engagement'.
+* informations personnelles (Nom, Prénom, mail, etc.),
+* Les sports de combats ("Sport de combat préféré"" et "Niveau en Karaté"),
+* des infos relatives à l'inscription ("Message personel à Chuck", mot de passe, la coche "J'ai bien lu..", "Niveau d'engagement', etc.).
 
-Regouper les champs sur ces trois grands axes avec la balise `filedset`.
+Regroupez les champs sur ces trois grands axes avec la balise `filedset`.
+</div>
 
 
 ## Ergonomie et convivialité
 
 <div class="exercise" >
  1. Par convention d'usage, le nom des champs obligatoires est suivi d'une "*". Ajoutez le aux champs Nom mail et à la coche "J'ai bien lu....".
-
 </div>
 
 
@@ -181,8 +181,7 @@ Regouper les champs sur ces trois grands axes avec la balise `filedset`.
 
 Pour les utilisateurs avancés, la navigation à l'aide de la touche “tabulation”
 permet de parcourir très vite le formulaire. L'attribut “autofocus” permet de
-spécifier au navigateur quel élément du formulaire doit avoir le focus en 1e
-quand la page est chargée. L'attribut “tabindex” permet de spécifier l'ordre
+spécifier au navigateur quel élément du formulaire doit avoir le focus quand la page est chargée. L'attribut “tabindex” permet de spécifier l'ordre
 dans lequel les éléments sont parcouris en appuyant sur “tabulation”.
 
 
@@ -221,6 +220,17 @@ de vérifier le contenu du formulaire:
  interdits. Cela peut fournir une protection (très primitive et en aucun cas
  suffisante) contre certaines formes d'attaques contre le serveur.*
 
+<div class="exercise" id="regulex" >
+
+
+
+
+ 1. Ajoutez un pattern au champ mot de passe afin que celui ci contienne obligatoirement 8 ou plus caractères avec au moins un chiffre, une lettre majuscule et une lettre minuscule.
+
+</div>
+
+<strong> Note : </strong> Pour être toujours protégé contre les bugs lorque vous cogiter une expression régulière, ne sortez jamais sans votre [Regulex](https://jex.im/regulex). Regulex, le visualisateur de machine d'état qu'il vous faut pour vos expressions régulières.
+
 ### Convivialité
 
 Quelques attributs permettent d'améliorer la convivialité des champs de votre formulaire:
@@ -243,8 +253,8 @@ temps à l'utilisateur.
 
 <div class="exercise" >
 
- 1. Ajoutez un attribut `placeholder` dans le textarea avec le texte suivant "Un inscrit sera tiré au sort pour voir son message transmis à Chuck Norris"
  1. Ajouter placeholder=“abcd@gmail.com” au champ mail.
+ 1. Ajoutez un attribut `placeholder` dans le textarea avec le texte suivant "Un inscrit sera tiré au sort pour voir son message transmis à Chuck Norris"
 
 </div>
 
