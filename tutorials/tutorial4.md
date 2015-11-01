@@ -159,27 +159,22 @@ qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut `mu
 
 ## La balise `<fieldset>`
 
-La balise `<fieldset>` permet de regrouper visuellement différents champs inputs.
+La balise `<fieldset>` permet de regrouper visuellement différents champs `<input>`.
 
 
 <div class="exercise" id="exlabel">
 Remarquez que les informations du formulaire sont réparties en trois groupes
 logiques :
 
-* informations personnelles (Nom, Prénom, mail, etc.),
-* Les sports de combat ("Sport de combat préféré"" et "Niveau en karaté"),
-* des infos relatives à l'inscription ("Message personnel à Chuck", mot de passe, la coche "J'ai bien lu..", "Niveau d'engagement', etc.).
+* "Informations personnelles" (Nom, Prénom, mail, etc.),
+* "Les sports de combat" ("Sport de combat préféré"" et "Niveau en karaté"),
+* "Inscription" ("Message personnel à Chuck", mot de passe, la coche "J'ai bien lu..", "Niveau d'engagement', etc.).
 
 A l'aide de [cette page](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Comment_structurer_un_formulaire_HTML), regroupez les champs sur ces trois grands axes avec la balise `<fieldset>`.
 </div>
 
 
 ## Ergonomie et convivialité
-
-<div class="exercise" >
- 1. Par convention d'usage, le nom des champs obligatoires est suivi d'une "*". Ajoutez la aux label des champs "Nom" "mail" et à la coche "J'ai bien lu....".
-</div>
-
 
 ### Navigation
 
@@ -222,7 +217,7 @@ de vérifier le contenu du formulaire:
 <div class="exercise" id="regulex" >
  1. Rendre la coche "J'ai bien lu les clauses que je n'ai pas lues" obligatoire. Vérifiez si l'envoi du formulaire est bien impossible alors.
  1. Rendre aussi les champs "Nom" "Mot de passe" et "Email" obligatoires.
-
+ 1. Par convention d'usage, le nom des champs obligatoires est suivi d'une "*". Ajoutez la aux labels des `<input>` obligatoires.
  1. Ajoutez au champ “Message pour Chuck de votre formulaire un attribut pattern qui permette de vous
  assurer que les caractères “<”, “>”, “=”, “ ' ”, “ '' ”, “(” et “)” sont
  interdits. Cela peut fournir une protection (très primitive et en aucun cas
