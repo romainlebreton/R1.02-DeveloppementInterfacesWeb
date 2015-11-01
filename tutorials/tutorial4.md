@@ -120,16 +120,35 @@ Cette balise comporte un attribut `for` qui doit prendre pour valeur la valeur d
 ## Les princpaux type d'`input`
 
 
+
+Les boutons radio permettent de ne sélectionner qu'une seule des options
+possibles. Les cases à cocher permettent de sélectionner autant des options que
+l'utilisateur le souhaite. La liste déroulante permet de base de ne sélectionner
+qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut
+“multiple” est ajouté à la balise `<select>`.
+
+
+Le type “password” masque automatiquement les caractères entrés.
+
+Le type “hidden” n'est pas affiché visuellement par le navigateur, ce qui permet
+vous permet d'envoyer au serveur des informations dont il aura besoin mais dont
+vous ne souhaitez pas encombrer l'utilisateur (ex: un état de la page).
+
+Les types “email”, “url”, “tel”, “date”, “time” et “number” permettent d'adapter
+le clavier virtuel quand la page est affichée sur un smartphone (et les checks ?).
+
+
+
 <div class="exercise" id="exlabel">
  
- 1. Ajoutez un input libellé `Sexe` avec les deux valeurs que vous connaissez.
- 1. Ajoutez un input libellé `Date de naissance` avec le type d'input `date`.
- 1. Ajoutez un input libellé `Mot de passe` avec le type d'input `password`.
- 1. Ajoutez un input libellé `Email` avec le type d'input `email`.
- 1. Ajoutez un input libellé `Niveau en Karaté` avec le type d'input `number` allant de 0 à 5.
- 1. Ajoutez un input libellé `Message à Chuck` avec le textlabeltype d'input `email`.
- 1. Ajoutez un input libellé `Niveau d'engagement` avec trois valeurs comme autant de case à cocher libéllées "Basique (5€) ", "Gold (15€)" et "Tatane premier (50€)".
- 1. Ajoutez un input libellé `J'ai bien lu les clauses que j'ai pas lu` associé à une coche.
+ 1. Ajoutez un input libellé "Sexe" avec les deux valeurs que vous connaissez.
+ 1. Ajoutez un input libellé "Date de naissance" avec le type d'input `date`.
+ 1. Ajoutez un input libellé "Mot de passe" avec le type d'input `password`.
+ 1. Ajoutez un input libellé "Email" avec le type d'input `email`.
+ 1. Ajoutez un input libellé "Niveau en Karaté"" avec le type d'input `number` allant de 0 à 5.
+ 1. Ajoutez un input libellé "Message à Chuck" avec le textlabeltype d'input `email`.
+ 1. Ajoutez un input libellé "Niveau d'engagement" avec trois valeurs comme autant de case à cocher libéllées "Basique (5€) ", "Gold (15€)" et "Tatane premier (50€)".
+ 1. Ajoutez un input libellé "J'ai bien lu les clauses que j'ai pas lu" associé à une coche.
 
 
 </div>
@@ -176,9 +195,12 @@ logiques :
 Regouper les champs sur ces trois grands axes avec la balise `filedset`.
 
 
+## Ergonomie et convivialité
 
+<div class="exercise" >
+ 1. Par convention d'usage, le nom des champs obligatoires est suivi d'une *.*. Ajoutez le aux champs Nom mail et à la coche "J'ai bien lu....".
 
-*Par convention d'usage, le nom des champs obligatoires est suivi d'une *.*
+</div>
 
 *Le formulaire doit être lisible et élégant. Pensez-donc à attribuer des “id” ou
 “class” aux différentes éléments et faire usage de vos acquis en CSS du TP2 pour
@@ -187,36 +209,6 @@ dans “formulaire.pdf”, les différents champs d'entrée doivent tous avoir l
 bord gauche aligné verticalement quand ils sont sur la même ligne que leur
 légende.*
 
-Valeurs à utiliser pour les attributs (respectez les si vous voulez que le
-serveur vous aide):
-
-
-*Commencez par définir la balise `<form>` et ajouter un bouton pour soumettre le
-formulaire.
-
-## Différence entre les types de champs
-
-Les boutons radio permettent de ne sélectionner qu'une seule des options
-possibles. Les cases à cocher permettent de sélectionner autant des options que
-l'utilisateur le souhaite. La liste déroulante permet de base de ne sélectionner
-qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut
-“multiple” est ajouté à la balise `<select>`.
-
-
-Le type “password” masque automatiquement les caractères entrés.
-
-Le type “hidden” n'est pas affiché visuellement par le navigateur, ce qui permet
-vous permet d'envoyer au serveur des informations dont il aura besoin mais dont
-vous ne souhaitez pas encombrer l'utilisateur (ex: un état de la page).
-
-Les types “email”, “url”, “tel”, “date”, “time” et “number” permettent d'adapter
-le clavier virtuel quand la page est affichée sur un smartphone (et les checks ?).
-
-
-## Ergonomie et convivialité
-
-Au-delà du simple aspect visuel du formulaire, le language HTML met à votre
-disposition de nombreux moyens pour le rendre plus ergonomique et convivial.
 
 ### Navigation
 
@@ -266,12 +258,12 @@ de vérifier le contenu du formulaire:
 
 Quelques attributs permettent d'améliorer la convivialité des champs de votre formulaire:
 
-* placeholder: permet d'afficher une ligne de texte dans le champ qui disparaît
+* `placeholder`: permet d'afficher une ligne de texte dans le champ qui disparaît
   dès lors que l'utilisateur tape une information. Cela permet de donner à
   l'utilisateur des renseignements sur le contenu attendu. A utiliser
   impérativement avec les champs pour lesquels vous avez spécifié un “pattern”,
   sous peine de cause une extrême frustration à l'utilisateur. Vous devez alors
-  utiliser l'attribut “placeholder” pour spéficier le format attendu, les
+  utiliser l'attribut `placeholder` pour spéficier le format attendu, les
   caractères interdits/autorisés, etc.
 
    ex:  placeholder=“abcd@gmail.com”
@@ -282,10 +274,16 @@ sélectionnée/cochée par défaut. Utile quand vous savez que l'une des options
 sera utilisée beaucoup plus fréquemment que les autres. Vous épargnez alors du
 temps à l'utilisateur.
 
+<div class="exercise" >
+
+ 1. Ajoutez un attribut `placeholder` dans le textarea avec le texte suivant "Un inscrit sera tiré au sort pour voir son message transmis à Chuck Norris"
+
+</div>
+
 *Faites usage de ces options dans votre formulaire pour le rendre plus
 convivial.*
 
-Auteur du TD : Benjamin Faivre-Vuillin
+Auteur du TD : Benjamin Faivre-Vuillin, Éric Alvernhe
 
 **Note de Romain:** Est-ce qu'il parle de disabled, readonly ? Du label qui lie vers le champ avec l'id ? Que le traitement des formulaires est fait en S3 dans le cours ProgWeb Coté Serveur ?
 
