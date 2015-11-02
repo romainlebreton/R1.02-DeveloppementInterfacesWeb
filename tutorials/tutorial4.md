@@ -309,7 +309,8 @@ de vérifier le contenu du formulaire:
  assurer que les caractères `< > = ' " ( )` sont
  interdits. Cela peut fournir une protection (très primitive et en aucun cas
  suffisante) contre certaines formes d'attaques contre le serveur.
- 1. (optionnel) Ajoutez un pattern au champ mot de passe afin que celui-ci contienne obligatoirement 8 ou plus caractères avec au moins un chiffre, une lettre majuscule et une lettre minuscule.
+ <!-- 1. (optionnel) Ajoutez un pattern au champ mot de passe afin que celui-ci contienne obligatoirement 8 ou plus caractères avec au moins un chiffre, une lettre majuscule et une lettre minuscule.
+ -->
 
 </div>
 
