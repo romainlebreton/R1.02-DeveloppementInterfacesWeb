@@ -47,24 +47,11 @@ liberté d'expression selon le type utilisé. La balise `<input>` a pour attribu
 
 * [`type`](http://www.w3schools.com/tags/att_input_type.asp) : définit l'apparence
   visuelle du champ et la nature des données qui peuvent y être renseignées.
-
-* [`name`](http://www.w3schools.com/tags/att_input_name.asp) : le nom que
-prendra la donnée envoyée au serveur.
-
-  <!-- Remarque Ro : explication à reprendre ou à voir directement en pratique -->
-  <!-- Par exemple si l'input a pour `name` "firstname" et pour valeur "Éric", -->
-  <!-- l'envoi du formulaire contiendra une association "name-\->Éric" que le serveur -->
-  <!-- devra interpréter et traiter. -->
-
 * [`value`](http://www.w3schools.com/tags/att_input_value.asp) : la valeur
-envoyée au serveur.
+envoyée au serveur. Si elle est déjà renseignée lors de la création du formulaire,
+ elle fait office de valeur par défaut.
+* [`name`](http://www.w3schools.com/tags/att_input_name.asp) : le nom que prendra la donnée envoyée au serveur.  Si l'input a pour `name` "firstname" et pour valeur "Éric", dans le cas d'une method `get` l'URL lors la soumission du formulaire contiendra 'firstname=Éric' et si la méthode est `post` ces valeurs seront transmises via les champs `Form Data` de la requête HTTP.
 
-  <!-- Remarque Ro : La phrase suivante est trop compliquée -->
-  <!-- Cet attribut n'est pas défini dans les champs libres et -->
-  <!-- prend des valeurs fixées dont la liste des possibles est connue par le serveur -->
-  <!-- pour les champs du type “checkbox” et “radio” et la balise `<option>`. -->
-
-  <!-- Value sert aussi à mettre des valeurs pré-remplies ! Différent de placeholder ! -->
 
 Afin de pouvoir être envoyé, votre formulaire doit obligatoirement contenir une
 balise `<input>` avec l'attribut `type` fixé à `“submit”`. Cette balise définit
@@ -101,7 +88,6 @@ Nous allons voir comment est envoyée la valeur d'un `<input>` lorsque l'on soum
     bouton "Envoyer" du formulaire, l'URL doit maintenant finir par
     "sendToMySecondYearInIut.php?uname=dupont".
 
-    <!-- Expliquer très rapidement ce qui se passe dans l'URL ?  -->
 
 </div>
 
@@ -155,18 +141,6 @@ possibles.
  validateurs sont associés à ces champs (nous le verrons plus loin) ; ils
  vérifient par exemple qu'une adresse mail contient bien un "@".
 
-<strong>Note :</strong> Certains de ces inputs sont issus de la norme HTML5. De
-fait leurs adoptions au sein des navigateurs n'est pas uniforme. Les
-développeurs web peuvent être amenés à demander la nature du parc informatique
-cible du site web qu'ils doivent implémenter (en clair ils demandent : "quelle
-est la version d'Internet Explorer encore en cours sur votre parc ?"). Le site
-[caniuse.com](http://caniuse.com/) permet ensuite de savoir si nous pouvons utiliser
-tel ou tel aspect pour la réalisation d'un site. Les types `date` et `time` par
-exemple sont [plus ou moins bien supportés](http://caniuse.com/#search=date) par
-les navigateurs. Le type `number` l'est
-[un peu plus](http://caniuse.com/#search=number).
-
-
 <div class="exercise" id="exinput">
  
  A l'aide de [w3schools](http://www.w3schools.com/tags/att_input_type.asp), ajoutez dans le formulaire les `<input>` libellés :
@@ -184,7 +158,18 @@ les navigateurs. Le type `number` l'est
  
 </div>
 
-<!-- Leur faire ouvrir le site sur Chromium, Firefox et Edge pour voir les différences -->
+
+<strong>Note :</strong> Certains de ces inputs sont issus de la norme HTML5. De
+fait leurs adoptions au sein des navigateurs n'est pas uniforme. Les
+développeurs web peuvent être amenés à demander la nature du parc informatique
+cible du site web qu'ils doivent implémenter (en clair ils demandent : "quelle
+est la version d'Internet Explorer encore en cours sur votre parc ?"). Le site
+[caniuse.com](http://caniuse.com/) permet ensuite de savoir si nous pouvons utiliser
+tel ou tel aspect pour la réalisation d'un site. Les types `date` et `time` par
+exemple sont [plus ou moins bien supportés](http://caniuse.com/#search=date) par
+les navigateurs. Le type `number` l'est
+[un peu plus](http://caniuse.com/#search=number). Vous pouvez constatez quelques différences d'apparence dans votre formulaire suivant si vous êtes sur Chrome, Firefox, Internet Explorer ou Edge.
+
 
 <strong>Note :</strong> A propos du mot de passe, remarquez que ce dernier
 apparaît en clair dans l'URL si vous êtes en `get` lors de l'envoi via à
@@ -329,9 +314,4 @@ de vérifier le contenu du formulaire:
 </div>
 
 <strong> Note : </strong> Pour être toujours protégé contre les bugs lorsque vous cogitez sur une expression régulière, ne sortez jamais sans votre [Regulex](https://jex.im/regulex). Regulex, le visualisateur de machine d'état qu'il vous faut pour vos expressions régulières.
-
-
-
-
-
 
