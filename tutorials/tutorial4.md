@@ -100,7 +100,7 @@ récupérer les données envoyées par notre formulaire et les traiter.
 
 ## La balise `<label>`
 
-Il nous faut informer maintenant par un label à quoi notre champ `<input>` fait référence. La balise [`<label>`](http://www.w3schools.com/tags/tag_label.asp) permet d'associer la question sous-tendue ("Nom? ") à l'input. Cette balise comporte un attribut `for` qui doit prendre pour valeur la valeur de l'attribut `id` du champ auquel est associé le `label`  (il faut donc penser à donner un `id` à notre `<input>`).
+Il serait bien de préciser à l'utilisateur à quoi notre champ `<input>` fait référence. La balise [`<label>`](http://www.w3schools.com/tags/tag_label.asp) permet d'associer la question sous-tendue ("Nom?") à l'input. Cette balise comporte un attribut `for` qui doit prendre pour valeur la valeur de l'attribut `id` du champ auquel est associé le `label`  (il faut donc penser à donner un `id` à notre `<input>`).
 
 
 <div class="exercise" id="exlabel">
@@ -119,27 +119,25 @@ Il nous faut informer maintenant par un label à quoi notre champ `<input>` fait
     `sendToMySecondYearInIut.php?uname=dupont&firstname=super` et la `method` du
     formulaire doit toujours être `get`).
  1. Les deux champs apparaissent les uns à la suite des autres. Avec quelle
-    balise vue dans le TD précédent doit-on les mettre pour qu'il y est un saut
+    balise vue dans le TD précédent peut-on les englober pour qu'il y est un saut
     de ligne entre les deux ?
-	<!-- Réponse : display:block -->
 
 </div>
 
 ## Les principaux types de balises `<input>` 
 
 
-Il existe un assez grand nombre de types d'input.
+Il existe un assez grand nombre de types d'input :
 
  * Le type `radio` permet de ne sélectionner qu'une seule des options
 possibles.
  * Le type `checkbox` (case à cocher) permettent de sélectionner autant des
    options que l'utilisateur le souhaite.
  * Le type `password` masque automatiquement les caractères entrés.
- * Les types `email`, `URL`, `tel`, `date`, `time` et `number` permettent
+ * Les types `email`, `URL`, `tel`, `date`, `time` et `number`, etc. permettent
  d'adapter le clavier virtuel quand la page est affichée sur un smartphone.
  Suivant le navigateur, une présentation différente peut être associée. Des
- validateurs sont associés à ces champs (nous le verrons plus loin) ; ils
- vérifient par exemple qu'une adresse mail contient bien un "@".
+ validateurs sont associés à ces champs (nous le verrons plus loin),  une valeur de champ email doit par exemple contenir un "@".
 
 <div class="exercise" id="exinput">
  
@@ -159,7 +157,9 @@ possibles.
 </div>
 
 
-<strong>Note :</strong> Certains de ces inputs sont issus de la norme HTML5. De
+<strong>Notes :</strong> 
+
+ * Certains de ces inputs sont issus de la norme HTML5. De
 fait leurs adoptions au sein des navigateurs n'est pas uniforme. Les
 développeurs web peuvent être amenés à demander la nature du parc informatique
 cible du site web qu'ils doivent implémenter (en clair ils demandent : "quelle
@@ -170,8 +170,7 @@ exemple sont [plus ou moins bien supportés](http://caniuse.com/#search=date) pa
 les navigateurs. Le type `number` l'est
 [un peu plus](http://caniuse.com/#search=number). Vous pouvez constatez quelques différences d'apparence dans votre formulaire suivant si vous êtes sur Chrome, Firefox, Internet Explorer ou Edge.
 
-
-<strong>Note :</strong> A propos du mot de passe, remarquez que ce dernier
+ * A propos du mot de passe, remarquez que ce dernier
 apparaît en clair dans l'URL si vous êtes en `get` lors de l'envoi via à
 `sendToMySecondYearInIut.php`.  Définitivement donc, un envoi avec `post` doit
 être privilégié, même si cela n'augmente pas vraiment la sécurité puisque le mot
@@ -189,7 +188,7 @@ qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut `mu
 <div class="exercise" id="exlabel">
 
 
- A l'aide de [cette page](https://developer.mozilla.org/fr/docs/Web/HTML/Element/select), ajoutez dans le formulaire les `<input>` libellés :
+ A l'aide de [developer.mozilla.org](https://developer.mozilla.org/fr/docs/Web/HTML/Element/select), ajoutez dans le formulaire les `<input>` libellés :
 
  1. Ajoutez un `<select>` libellé "Pays d'origine" qui prend comme valeur de pays `U.S.A` , `France`, `Chine` et `Viêt Nam`, les clés associées ne doivent pas dépendre de la langue du formulaire (la clé associée à `France` doit être `fr` par exemple). L'utilisateur ne peut pas sélectionner plusieurs valeurs, le pays sélectionné par défaut est la France (indépendamment de l'ordre des balises `<option>` dans le HTML).
 
@@ -199,14 +198,13 @@ qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut `mu
 ## La balise `<textarea>`
 
 
-La balise
-[`<textarea>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Textarea)
+La balise [`<textarea>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Textarea)
 permet de proposer une grande zone de texte pour que l'utilisateur puisse
 s'exprimer.
 
 <div class="exercise" id="exlabel">
 
- 1. Ajoutez un champ libellé "Message pour Chuck" associé à un `<textarea>` sur lequel l'utilisateur peut s'épancher.
+ 1. Ajoutez un champ à votre formulaire libellé "Message pour Chuck" associé à un `<textarea>` sur lequel l'utilisateur peut s'épancher.
 </div>
 
 ## La balise `<fieldset>`
@@ -214,17 +212,15 @@ s'exprimer.
 La balise `<fieldset>` permet de regrouper visuellement différents champs `<input>`.
 
 
-<div class="exercise" id="exlabel">
-Remarquez que les informations du formulaire sont réparties en trois groupes
-logiques :
+<div class="exercise" id="exfield">
+A l'aide de [cette page](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Comment_structurer_un_formulaire_HTML),
+regroupez les champs sur ces trois grands axes suivant :
 
 * "Informations personnelles" (contenant "Nom", "Prénom", "Email", etc.),
 * "Les sports de combat" (contenenant "Sport de combat préféré"" et "Niveau en karaté"),
 * "Inscription" (contenant "Message personnel à Chuck", "Mot de passe", la coche "J'ai bien lu..", "Niveau d'engagement', etc.).
 
-A l'aide de
-[cette page](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Comment_structurer_un_formulaire_HTML),
-regroupez les champs sur ces trois grands axes avec la balise `<fieldset>`.
+
 </div>
 
 
@@ -236,6 +232,10 @@ Pour les utilisateurs avancés, la navigation à l'aide de la touche “tabulati
 permet de parcourir très vite le formulaire. L'attribut “autofocus” permet de
 spécifier au navigateur quel élément du formulaire doit avoir le focus quand la page est chargée. L'attribut “tabindex” permet de spécifier l'ordre
 dans lequel les éléments sont parcouris en appuyant sur “tabulation”.
+
+<div class="exercise" id="extab">
+ * Vérifiez que vous pouvez accéder à tous les champs avec la touche tabulation. Modifier l'ordre de tabulation avec la propriété “tabindex”.
+</div>
 
 
 ### Convivialité
@@ -260,7 +260,7 @@ temps à l'utilisateur.
 
 <div class="exercise" >
 
- 1. Ajouter placeholder=“yourmail@domain.com” au champ mail.
+ 1. Ajouter un placeholder de valeur “yourmail@domain.com” au champ Email.
  1. Ajoutez un attribut `placeholder` dans le `<textarea>` avec le texte suivant "Un inscrit sera tiré au sort, et verra son message transmis à Chuck Norris."
  1. Faite en sorte que le pays sélectionné par défaut dans "Pays d'origine" soit la France (et cela indépendamment de l'ordre des balises `<option>` dans le HTML).
 
