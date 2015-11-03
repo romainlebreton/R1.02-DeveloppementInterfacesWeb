@@ -305,12 +305,10 @@ de vérifier le contenu du formulaire:
  1. Rendre la coche "J'ai bien lu les clauses que je n'ai pas lues" obligatoire. Vérifiez si l'envoi du formulaire est bien impossible alors.
  1. Rendre aussi les champs "Nom" "Mot de passe" et "Email" obligatoires.
  1. Par convention d'usage, le nom des champs obligatoires est suivi d'une "*". Ajoutez la aux labels des `<input>` obligatoires.
- 1. Ajoutez au champ “Message pour Chuck de votre formulaire un attribut pattern qui permette de vous
- assurer que les caractères `< > = ' " ( )` sont
- interdits. Cela peut fournir une protection (très primitive et en aucun cas
- suffisante) contre certaines formes d'attaques contre le serveur.
+ 1. Ajoutez au champ password un pattern pour que “Message pour Chuck" de votre formulaire n'accepte que des caractères de l'alphabet latin ou numériques.
+ 1. Faites en sorte que le mot de passe acceptable soit d'une longueur de 8 caractères minimum.
  <!-- 1. (optionnel) Ajoutez un pattern au champ mot de passe afin que celui-ci contienne obligatoirement 8 ou plus caractères avec au moins un chiffre, une lettre majuscule et une lettre minuscule.
- -->
+-->
 
 </div>
 
