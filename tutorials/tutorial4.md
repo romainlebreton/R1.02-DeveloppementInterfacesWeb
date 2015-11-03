@@ -78,8 +78,8 @@ Nous allons voir comment est envoyée la valeur d'un `<input>` lorsque l'on soum
    ~~~
    {:.html}
 
-  1. Affichez la page et ouvrez la console (F12) pour aller sur l'onglet
-  'Réseau', Donnez la valeur `dupont` au champ texte, puis cliquez sur le bouton
+  1. <strong>Sous Chrome relativement récent uniquement</strong> : Affichez la page et ouvrez la console (F12) pour aller sur l'onglet
+  'Réseau', cocher la case "Preserve log", donnez la valeur `dupont` au champ texte, puis cliquez sur le bouton
   "Envoyer" du formulaire.  Vous devez voir une requête contenant
   `sendToMySecondYearInIut` dans la console. Cliquez sur cette ligne et cherchez
   la valeur `dupont` dans les détails de la transaction.
@@ -190,7 +190,7 @@ qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut `mu
 
  A l'aide de [developer.mozilla.org](https://developer.mozilla.org/fr/docs/Web/HTML/Element/select), ajoutez dans le formulaire les `<input>` libellés :
 
- 1. Ajoutez un `<select>` libellé "Pays d'origine" qui prend comme valeur de pays `U.S.A` , `France`, `Chine` et `Viêt Nam`, les clés associées ne doivent pas dépendre de la langue du formulaire (la clé associée à `France` doit être `fr` par exemple). L'utilisateur ne peut pas sélectionner plusieurs valeurs, le pays sélectionné par défaut est la France (indépendamment de l'ordre des balises `<option>` dans le HTML).
+ 1. Ajoutez un `<select>` libellé "Pays d'origine" qui prend comme valeur de pays `U.S.A` , `France`, `Chine` et `Viêt Nam`, les `values` associées ne doivent pas dépendre de la langue du formulaire (la `value` associée à `France` doit être `fr` par exemple). L'utilisateur ne peut pas sélectionner plusieurs valeurs, le pays sélectionné par défaut est la France (indépendamment de l'ordre des balises `<option>` dans le HTML).
 
  1. Ajoutez à la suite de ce champ un autre sélecteur libellé "Arts-martiaux préférés". Les valeurs sont "Kung fu" , "Karaté" et "Full-contact". L'utilisateur peut sélectionner plusieurs valeurs.
 </div>
@@ -305,7 +305,7 @@ de vérifier le contenu du formulaire:
  1. Rendre la coche "J'ai bien lu les clauses que je n'ai pas lues" obligatoire. Vérifiez si l'envoi du formulaire est bien impossible alors.
  1. Rendre aussi les champs "Nom" "Mot de passe" et "Email" obligatoires.
  1. Par convention d'usage, le nom des champs obligatoires est suivi d'une "*". Ajoutez la aux labels des `<input>` obligatoires.
- 1. Ajoutez au champ password un pattern pour que “Message pour Chuck" de votre formulaire n'accepte que des caractères de l'alphabet latin ou numériques.
+ 1. Ajoutez au champ password un pattern pour que ne soit accepter que des caractères de l'alphabet latin ou numériques.
  1. Faites en sorte que le mot de passe acceptable soit d'une longueur de 8 caractères minimum.
  <!-- 1. (optionnel) Ajoutez un pattern au champ mot de passe afin que celui-ci contienne obligatoirement 8 ou plus caractères avec au moins un chiffre, une lettre majuscule et une lettre minuscule.
 -->
