@@ -1,3 +1,134 @@
+---
+title: TD5
+subtitle: OverConstraint, Fluid Layout, Responsive design, Mobile first...
+layout: tutorial
+---
+
+## Introduction
+
+
+## Overconstraint
+
+
+### `max-with` et `min-with`
+
+
+### problème complexe d'overconstraint (solution : FlexBox)
+
+
+### problèmes plus complexes ...
+
+
+Supposons maintenant que nous voulons carrément supprimer visuellement un élément d'un visuel sur notre mobile.
+Ou même changer le layout de row en column pour utiliser le défilement. 
+Ici nous n'avons pas de solution via Flex seul car nous voulons assujétir des règles CSS à certaines caractéristiques (des règles spéciales pour une taille d'écran maximum par exemple). Nous verrons dans la prochaine section comment cela est possible en CSS.
+
+
+## Les outils pour travailler ?
+
+Outil de dévellopement Chrome !
+Jusqu'ici on considéré que tus les outils de dévellopement d'Internet EXplorer Firefox et Chrome étaient égaux.
+En fait celui de Chrome était déjà unp eu meilleur :
+
+  * auto completion des règles css ajoutées dynamiquement,
+  * liste déruolante des valeurs possibles des champs,
+  * plus rapide, etc.
+
+Suivant les habitudes des devellopeurs cela peut être plus ou moins sujet à contreverse.
+Mais pour le Reponsive design il n'y a pas photo : Chrome (ou son pendant libre Chromium) devient <strong>vraiment</strong> votre "best-friend-ever".
+
+* Allez sur le site 
+* Appuyez sur F12 et cliquez sur la petite icone <img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil opur mobile" style="margin: 0 auto;display: block;">
+
+
+
+<div class="exercise" >
+
+ * Ouvrez maintenant votre site de Chuck Norris avec Chrome en choisissant un téléphone (genre Galaxy S3) pour la visualisation). 
+ Constatez que le site s'affiche en tout petit. 
+</div>
+
+
+## Que fait mon navigateur web sur téléphone par défaut pour un site ?
+
+"Gérard ? il y a des mobiles qui ont internet maintenant ? comment on fait pour afficher internet dedant ?"
+
+
+Et bien oui, la question s'est posée, et il a fallut d'abord trouver une rpéonse pour afficher TOUS LES SITES DE L'UNIVERS qui avaient été créer jusque là. Mêeme ceux qui avaient connus le minitel.
+Alors par défaut eun solution au rabai a été implémentée :
+
+ * générer le site sur un écran viruel 800 par 600 
+ * Faire un scalling pour faire "rentrer cela" dans l'écran du smartphone
+ * Considérer que l'utilisateur connait le pinch to zoom pour naviguer dans le site .
+
+ Et çà marche ! 
+
+Mais on peut faire mieux : on veut pouvoir changer completement le design du site pour un msartphone. 
+
+La première chose à faire donc c'est de demander aux navigateurs de ne plus faire l'algo précédent (puisqu'on va gérer nous-mêmes) dnas la balise `<head>` :
+
+
+ `<meta name="viewport" content="width=device-width, initial-scale=1">`
+
+<div class= "exercise">
+
+ * Ajouter cette instruction au site de Chuck Norris et visualisez avec Chrome en choissisant un smartphone. Que constatez vous ?
+
+</div>
+
+
+Bon vous devez constatez que l'algo ne se fait plus. En gros le navigateur n'essait plus d'être intelligent : il va falloir prendre le relai.
+
+
+## La solution technique :  les media queries
+
+
+
+<div class= "exercise">
+
+ * Allez sur le site  .... constater les points de ruptures 
+
+</div>
+
+
+<div class="exercise">
+
+</div>
+
+## Une solution plus pratique que les media queries 
+
+### Le classique 12 colonnes.
+
+
+
+### Responsive images 
+
+
+
+
+
+## Coment çà il est moche votre site de Chuck Norris ?
+
+Au hasard d'une conversation entendue, il semblerait que le design utilisé pour le site ne fait pas l'hunanimité.
+Certains seraient même allé jusqu'à dire que le site est môche.
+
+Comment faire du beau, ergnomique, etc ?
+et bien tout d'abord il s'agit d'autres métiers !
+
+ * le  Web Designer 
+ * l'Ergonome 
+
+
+ Cela dit il est biensur essentiel d'être sensibilié à ces aspects.
+
+Un ensemble de "guidelines" sont souvent associés à un 
+
+https://www.google.com/design/spec/material-design/introduction.html
+
+Notamment pour les couleurs :
+https://www.google.com/design/spec/style/color.html#color-color-palette
+
+
 
 ## Autres Idées 
 
