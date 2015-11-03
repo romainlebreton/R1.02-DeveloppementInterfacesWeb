@@ -650,11 +650,10 @@ Les valeurs possibles sont :
 
 <div class="exercise" >
 
- 1. Placez le menu de navigation non pas en début de ligne (valeur par
-    défaut) mais en fin.
- 1. Placez la citation et le menu de navigation sur la même ligne (toujours avec votre
-    display favori)
- 1. Repositionnez le menu pour qu'il soit en bas de la balise `<header>`.
+ 1. Justifiez le menu de navigation non à gauche mais à droite, avec votre display favori.
+ 1. Placez la citation et le menu de navigation sur la même ligne (la citation sera à gauche et le menu à sa droite) toujours avec votre
+    display favori.
+ 1. Repositionnez le menu pour qu'il soit en bas de la balise `<header>` (oui, encore avec flexBox).
 </div>
 
 ### Flexbox, une valeur relativement récente
@@ -683,8 +682,7 @@ Il est temps d'avoir un layout (aménagement de l'espace) pour notre site.
 
 <div class="exercise" > 
  1. Donnez au body la `width` de `900px`.
- 1. Déplacez dans le HTML la section "Un comparatif éclairant" avec sa table
-    comparative de `<aside>` vers `<article>`
+ 1. Déplacez dans le HTML la section contenant la `<table>` dans `<aside>` si cela n'est pas déjà fait
  1. Utilisez la valeur de display `flex` sur la balise `<main>` et, comme pour
     le menu de navigation, mettez ses enfants `<article>` et `<aside>` en
     colonne.
