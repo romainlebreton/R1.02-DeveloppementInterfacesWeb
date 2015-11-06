@@ -80,6 +80,18 @@ La première chose à faire donc c'est de demander aux navigateurs de ne plus fa
 Bon vous devez constatez que l'algo ne se fait plus. En gros le navigateur n'essait plus d'être intelligent : il va falloir prendre le relai.
 
 
+
+## Jargon plus ou moin bling-bling et/ou vraie révolution
+
+Les termes du jargon qui font plus ou moins bling-bling :
+
+ * Responsive design
+ * Mobile First
+ * Fluid Layout/grid 
+ * Progressive enhancement
+ * Graceful Degradation
+
+
 ## La solution technique :  les media queries
 
 

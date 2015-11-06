@@ -74,7 +74,7 @@ Nous allons voir comment est envoyée la valeur d'un `<input>` lorsque l'on soum
    <form action="sendToMySecondYearInIut.php" method="post">
      <input name="uname" type="text" >
      <input type="submit" value="Envoyer">
-   </form>`
+   </form>
    ~~~
    {:.html}
 

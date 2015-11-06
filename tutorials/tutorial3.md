@@ -621,9 +621,9 @@ Référence : [Mozilla Developper Network](https://developer.mozilla.org/fr/docs
 
 1. Centrez les éléments enfants de `<nav>` à l'aide de la propriété
 `align-items` de `<nav>`. Que constatez-vous ?  Si rien de ne se passe, utiliser
-l'inspecteur du navigateur pour comprendre ce qui est centré.
+l'inspecteur du navigateur pour comprendre ce qui est centré (la marge automatique placée sur le `<nav>` par exemple peut expliquer des choses).
 
-1. Utilisez maintenant la valeur `stretch`. Que constatez-vous à propos de
+1. Donnez une hauteur de `200px` et la couleur de fond `#FF00FF`  à `<nav>`, et utilisez maintenant la valeur `stretch`. Que constatez-vous à propos de
    l'accessibilité des sous-menus avec la souris ?
 
 1. Faites en sorte que les sous-menus restent accessibles et que les textes
