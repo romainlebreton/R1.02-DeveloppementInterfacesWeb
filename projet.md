@@ -79,9 +79,29 @@ questions et réponses plus bas dans la page (utilisation des ancres).
    l’utilisation des classes en CSS à l’usage d’identifiant et de règles qui ne
    s’appliquent qu’à un seul élément.
 1. L’utilisation de CSS dans le style inline est interdit. 
+1. Il est très facile de perdre des heures sur un petit détail en CSS. Il est
+   important d'avoir d'abord un site grossièrement fini plutôt qu'une section de
+   page parfaite.
 
-Une grille de notation basée sur les compétences acquises en TP vous
-sera communiquée avant la soutenance. 
+### Détails de la soutenance
+
+La soutenance sera composée d'une série questions sur votre projet (Qu'est-ce
+qui a été implémenté ? Qui a fait quoi ? Expliquez ce qui a été codé. ) et
+possiblement des questions de cours à chacun des membres de votre groupe.
+
+Voici
+[la grille de notation](https://docs.google.com/spreadsheets/d/1C_zVXJytwIJ9EVgveuuzpiyS7qjHLG0_BmbPLpxxdsk/edit?usp=sharing)
+qui sera utilisée pour vous noter et qui est basée sur les compétences acquises
+en TP. Cette grille **peut évoluer** jusqu'à la soutenance.
+
+Le site Web devra être mis en place dans le dossier existant **public_html** de
+l'un des membres de l'équipe. Un fichier compressé **sources.zip** contenant les
+sources du site Web devra aussi être placé dans le dossier **public_html**.
+
+Pour mémoire, voici
+[les groupes de projet tutoré](https://docs.google.com/spreadsheets/d/1MSJYHpXNsjZGFl1xLberYLjEJRdtej37z3JFqSnq4fY/edit?usp=sharing)
+et leurs produits vendus.
+
 
 
 
@@ -90,15 +110,6 @@ sera communiquée avant la soutenance.
 <!-- ————————————— -->
 
 <!-- Critères: -->
-<!-- squelette HTML5 -->
-<!-- validation HTML & CSS -->
-<!-- encodage des caractères -->
-<!-- balises classique (p, listes, img, a, h1, em, cite, tableaux) -->
-<!-- formulaires et ses champs classiques -->
-
-<!-- utilisation d’images d’arriere plan,  -->
-<!-- de différentes fontes, etc. -->
-
 
 <!-- sélecteurs CSS : sélecteurs de base, combinaison et règles de priorité -->
 <!-- propriétés CSS classiques (couleur, taille, fontes, text-align  -->
