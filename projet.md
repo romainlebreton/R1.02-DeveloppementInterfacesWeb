@@ -23,7 +23,8 @@ attendrons la même quantité de travail.
 
 ### Architecture minimum de votre site :
 
-1. **Menu :** Un menu de navigation (avec sous-menus) ;
+Il y aura un menu de navigation avec sous-menus commun à toutes vos pages. Voici
+une liste minimale de pages que vous devez avoir :
 
 1. **Produit :** Une page qui présente le produit avec punch line, photo,
 et le logo de l’entreprise (créé tel que vu dans le TD d’infographie) ;
