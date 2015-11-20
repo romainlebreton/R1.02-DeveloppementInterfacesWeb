@@ -24,6 +24,56 @@ Ou même changer le layout de row en column pour utiliser le défilement.
 Ici nous n'avons pas de solution via Flex seul car nous voulons assujétir des règles CSS à certaines caractéristiques (des règles spéciales pour une taille d'écran maximum par exemple). Nous verrons dans la prochaine section comment cela est possible en CSS.
 
 
+
+## Que fait mon navigateur web sur téléphone par défaut pour un site ?
+
+
+
+Comment peut on à moindre coût rendre tous les sites internets compatibles mobile ?"
+
+
+Ue solution pas chère au rabai est faitepar défaut :
+
+ * générer le site sur un écran viruel 800 par 600 
+ * Faire un scalling pour faire "rentrer cela" dans l'écran du smartphone
+ * Considérer que l'utilisateur connait le pinch to zoom pour naviguer dans le site .
+
+ Et çà marche ! 
+
+Cela marche mais on ne peut pas dire que cela est forcément le mieux.
+L'utilisateur mobile n'a pas la même attente que l'utilisateur sur ordinateur, il veut avoir accès rpidement aux informations essentielles, sans fioritures.
+On imagine que sur une smart watch par exemple un site comme méteo france serait largement plus dépouillé.
+
+Typiquement nous voulons enlever des parties entières du sites suivant la taille de l'écran.
+Nous allons voir cel dans la section suivante. 
+
+La première chose à faire donc c'est de demander aux navigateurs de ne plus faire l'algo précédent (puisqu'on va gérer nous-mêmes) dnas la balise `<head>` :
+
+
+ `<meta name="viewport" content="width=device-width, initial-scale=1">`
+
+<div class= "exercise">
+
+ * Ajouter cette instruction au site de Chuck Norris et visualisez avec Chrome en choissisant un smartphone. Que constatez vous ?
+
+</div>
+
+
+Bon vous devez constatez que l'algo ne se fait plus. En gros le navigateur n'essait plus d'être intelligent : il va falloir prendre le relai.
+
+
+## Jargon plus ou moin bling-bling et/ou vraie révolution
+
+Les termes du jargon qui font plus ou moins bling-bling :
+
+ * Responsive design
+ * Mobile First
+ * Fluid Layout/grid 
+ * Progressive enhancement
+ * Graceful Degradation
+
+
+
 ## Les outils pour travailler ?
 
 Outil de dévellopement Chrome !
@@ -41,60 +91,14 @@ Mais pour le Reponsive design il n'y a pas photo : Chrome (ou son pendant libre 
 * Appuyez sur F12 et cliquez sur la petite icone <img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil opur mobile" style="margin: 0 auto;display: block;">
 
 
+## La solution technique :  les media queries
+
 
 <div class="exercise" >
 
  * Ouvrez maintenant votre site de Chuck Norris avec Chrome en choisissant un téléphone (genre Galaxy S3) pour la visualisation). 
  Constatez que le site s'affiche en tout petit. 
 </div>
-
-
-## Que fait mon navigateur web sur téléphone par défaut pour un site ?
-
-"Gérard ? il y a des mobiles qui ont internet maintenant ? comment on fait pour afficher internet dedant ?"
-
-
-Et bien oui, la question s'est posée, et il a fallut d'abord trouver une rpéonse pour afficher TOUS LES SITES DE L'UNIVERS qui avaient été créer jusque là. Mêeme ceux qui avaient connus le minitel.
-Alors par défaut eun solution au rabai a été implémentée :
-
- * générer le site sur un écran viruel 800 par 600 
- * Faire un scalling pour faire "rentrer cela" dans l'écran du smartphone
- * Considérer que l'utilisateur connait le pinch to zoom pour naviguer dans le site .
-
- Et çà marche ! 
-
-Mais on peut faire mieux : on veut pouvoir changer completement le design du site pour un msartphone. 
-
-La première chose à faire donc c'est de demander aux navigateurs de ne plus faire l'algo précédent (puisqu'on va gérer nous-mêmes) dnas la balise `<head>` :
-
-
- `<meta name="viewport" content="width=device-width, initial-scale=1">`
-
-<div class= "exercise">
-
- * Ajouter cette instruction au site de Chuck Norris et visualisez avec Chrome en choissisant un smartphone. Que constatez vous ?
-
-</div>
-
-
-Bon vous devez constatez que l'algo ne se fait plus. En gros le navigateur n'essait plus d'être intelligent : il va falloir prendre le relai.
-
-
-
-## Jargon plus ou moin bling-bling et/ou vraie révolution
-
-Les termes du jargon qui font plus ou moins bling-bling :
-
- * Responsive design
- * Mobile First
- * Fluid Layout/grid 
- * Progressive enhancement
- * Graceful Degradation
-
-
-## La solution technique :  les media queries
-
-
 
 <div class= "exercise">
 
@@ -112,11 +116,7 @@ Les termes du jargon qui font plus ou moins bling-bling :
 ### Le classique 12 colonnes.
 
 
-
 ### Responsive images 
-
-
-
 
 
 ## Coment çà il est moche votre site de Chuck Norris ?
@@ -141,13 +141,11 @@ Notamment pour les couleurs :
 https://www.google.com/design/spec/style/color.html#color-color-palette
 
 
-
 ## Autres Idées 
 
 Parler rapidement des caractères spéciaux en HTML &lt; < ... et peut-être aussi
 de l'encodage des caractères dans l'URL quand on fait les formulaires
 
-Faire du sass ... 
 
 ::before
 ::after
@@ -159,17 +157,13 @@ content, numérotation automatique (voir les div.exercise dans les pages du cour
 
 
 border-image, border-shadow : c'est peu technique mais bien visuel
-
 curseur : idem
-
 inclusion d'audio, vidéo
-
 
 --->Le border image et le border shadow pourrait en effet être intéressant !
 --->On peut faire des choses jolies avec.
 
 CSS columns
-
 
 --->Si c'est çà :
 --->http://caniuse.com/#search=column
@@ -189,8 +183,6 @@ z-index associé à l'attribut position , lorsque les éléments se trouvent les
 les ordres  de contraintes sur auto entre width et margin pour un élément sur contraint
 
 la fusion des marges.
-
-
 
 
 #d'autres éléments HTML
