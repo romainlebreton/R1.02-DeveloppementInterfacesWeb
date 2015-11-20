@@ -12,9 +12,15 @@ layout: tutorial
 
 ### `max-with` et `min-with`
 
+Faire varier la taille de l'écran de votre site. 
 
 ### problème complexe d'overconstraint (solution : FlexBox)
 
+shrink:1, grow:0
+
+box-sizing : border-box
+
+Que se passe-t-il si on fait 2 colonnes à 50% avec flex-shrink:0 et flex-wrap:nowrap
 
 ### problèmes plus complexes ...
 
@@ -106,6 +112,22 @@ Mais pour le Reponsive design il n'y a pas photo : Chrome (ou son pendant libre 
 
 </div>
 
+Idée :
+
+* Soit supprimer le aside soit le mettre en ligne quand trop petit
+* bouton burger
+* supprimer les marges latérales  quand trop petit
+* Changer la taille de la police ?
+
+* menu burger qui arrive de la gauche, par dessus la page, et qui grise le reste
+de la page ? Le grisé avec une couche noire et de la transparence
+
+Note :
+
+* le hover sur les sous-menus n'a pas de sens sur téléphone portable. Il faudra
+  gérer le clic avec du JS. Et dire, la bonne solution est ... et vous la verrer
+  en 2ème année.
+
 
 <div class="exercise">
 
@@ -118,6 +140,7 @@ Mais pour le Reponsive design il n'y a pas photo : Chrome (ou son pendant libre 
 
 ### Responsive images 
 
+* image responsive avec srcset ? Est-ce pérenne ? Selon caniuse, c'est assez bien supporté .
 
 ## Coment çà il est moche votre site de Chuck Norris ?
 
@@ -142,6 +165,8 @@ https://www.google.com/design/spec/style/color.html#color-color-palette
 
 
 ## Autres Idées 
+
+Beau layout pour les formulaires
 
 Parler rapidement des caractères spéciaux en HTML &lt; < ... et peut-être aussi
 de l'encodage des caractères dans l'URL quand on fait les formulaires
