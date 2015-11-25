@@ -35,9 +35,10 @@ Elles prenaient déjà du sens sur des sites partculirement fournis et/ou sur de
 On peut commmencer par exprimer toutes les tailles en relatif, en prenant appui sur la taille de l'écran.
 C'est ce que nous avons déjà fait en utilisant des dimensions en `%`.
 
-
-<div class="exercices">
- - Donnez au body une width de `100%` et changer les dimensions relatives de `<article>``et `<aside>` de repectivment `67%` et `33%`
+<div class="exercise">
+ Donnez à body la width de 100%
+ Changez les dimensions relatives de `<article>` et `<aside>` de repectivment `67%` et `33%`
+ Enlevez au besoin la marge de gauche de 10% sur le aside et Changez les dimensions relatives de `<article>` et `<aside>` de repectivment `67%` et `33%`
 </div>
 
 
@@ -59,15 +60,14 @@ Les règles précédentes permettent d'avoir un rapport homogène, mais pas un r
 Pour contraindre les dimensions par des limitations, nous utiliserons `max-width`, `max-height`, `min-width` et `min-height`, qui prennent le même type de valeur que `widht` et `height`. 
 
 
-<div class="exercices">
-
- - Ajoutez une limite minimale pour les photos de Chuck Norris à `150px`, (et encore, mieux vaut ne pas en parler à Chuck).
- - Ajoutez une limite maximum de largeur à l'`<article>` et à l'`<aside>` de `600px` et de `300px`.
- - Ajoutez une limite minimum de largeur à l'`<article>` et à `<aside>` de `300px`.
+<div class="exercise">
+ 1. Ajoutez une limite minimale pour les photos de Chuck Norris à `150px`, (et encore, mieux vaut ne pas en parler à Chuck).
+ 1. Ajoutez une limite maximum de largeur à l'`<article>` et à l'`<aside>` de `500px` et de `250px`.
+ 1. Ajoutez une limite minimum de largeur à l'`<article>` et à `<aside>` de `200px`.
 </div>
 
 
-### Overconstraint (solution : FlexBox)
+### Overconstraint
 
 Evidement lorsqu'on joue avec des `min-width` et un petit écran...à un moment çà dépasse...
 
@@ -77,18 +77,13 @@ On va utiliser FlexBox pour exprimer cela en se servant de [cette super page sur
 Grosso-modo nous avons déjà vu les règles de la colonne de gauche de cette page : c'est celles qui s'appliquent aux parent.
 Nous allons maintenant découvir les règles de droites : celles qui s'appliquent aux ...éléments.
 
-Nous n'en disons pas plus sur cette page volontairement : le travail d'un devellopeur web consite pour une bonne partie à aller sur ce genre de page.
+Nous n'en disons pas plus sur cette page volontairement : le travail d'un devellopeur web consiste pour une bonne partie chercher des solutions sur le web.
 
-<div class="exercices">
- - Quand l'écran est trop petit pour afficher `<article>` et `<aside>` avec leurs contraintes de tailles minimales de la section précente, fait en sorte qu'`<article>` prenne les deux tiers de la place et `<aside>` le reste.
- - Quand l'écran est trop grand faite en sorte qu'`<article>` soit 3 fois plus grand qu'`<aside>`.
+<div class="exercise">
+ 1. Quand l'écran est trop petit pour afficher `<article>` et `<aside>` avec leurs contraintes de tailles minimales de la section précente, fait en sorte qu'`<article>` prenne les deux tiers de la place et `<aside>` le reste.
+ 1. Quand l'écran est trop grand faite en sorte qu'`<article>` soit 3 fois plus grand qu'`<aside>`.
 </div>
 
-
-<!--
-box-sizing : border-box
-Que se passe-t-il si on fait 2 colonnes à 50% avec flex-shrink:0 et flex-wrap:nowrap
--->
 
 
 ### problèmes plus complexes ...
@@ -106,12 +101,12 @@ Ici nous n'avons pas de solution via Flex seul car nous voulons assujétir des r
 
 
 
-Comment peut on à moindre coût rendre tous les sites internets compatibles mobile ?"
+Comment peut on à moindre coût rendre tous les sites internets compatibles mobile ?
 
 
 Ue solution pas chère est faite par défaut :
 
- * générer le site sur un écran viruel 800 par 600 
+ * Générer le site sur un écran viruel 800 par 600 
  * Faire un scalling pour faire "rentrer cela" dans l'écran du smartphone
  * Considérer que l'utilisateur connait le pinch to zoom pour naviguer dans le site.
 
@@ -126,13 +121,12 @@ Typiquement nous voulons enlever des parties entières du sites suivant la taill
 
 La première chose à faire donc c'est de demander aux navigateurs de ne plus faire l'algo précédent (puisqu'on va gérer nous-mêmes) dnas la balise `<head>` :
 
-
- `<meta name="viewport" content="width=device-width, initial-scale=1">`
-
-<div class= "exercise">
-
- * Ajouter cette instruction au site de Chuck Norris et visualisez avec Chrome en choissisant un smartphone. Que constatez vous ?
-
+~~~
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+~~~
+{:.html}
+<div class="exercise">
+  Ajouter cette instruction au site de Chuck Norris et visualisez avec Chrome en choissisant un smartphone. Que constatez vous ?
 </div>
 
 
@@ -154,24 +148,76 @@ En fait celui de Chrome était déjà un peu meilleur :
 Suivant les habitudes des devellopeurs cela peut être plus ou moins sujet à contreverse, Mais pour le Reponsive design il n'y a pas photo : 
 Chrome (ou son pendant libre Chromium) est <strong>vraiment</strong> votre "best-friend-ever".
 
-* Si vous n'avez pas Chrome ou Chromium, ou si en appuyant sur F12 vous ne voyez pas la petite icone <img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil opur mobile" style="margin: 0 auto;display: block;"> allez sur le [site de l'IUT](https://iutdepinfo.iutmontp.univ-montp2.fr/), identifiez vous et téléchargez directement [le lien](https://infolimon.iutmontp.univ-montp2.fr/public/windows/chrome-win32.zip).
+* Si vous n'avez pas Chrome ou Chromium, ou si en appuyant sur F12 vous ne voyez pas la petite icone :
+<img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil opur mobile" style="margin: 0 auto;display: block;"> 
+
+allez sur le [site de l'IUT](https://iutdepinfo.iutmontp.univ-montp2.fr/), identifiez vous et téléchargez directement [le lien](https://infolimon.iutmontp.univ-montp2.fr/public/windows/chrome-win32.zip).
 
 
 
 ## La solution technique CSS3 :  les media queries
 
+Les
+media queries sont un jeu d'options ajoutées à la norme CSS 3 et qui permettent
+de définir des règles CSS qui ne s'appliqueront que sous certaines conditions
+spécifiques.
 
-<div class= "exercise">
- * Ouvrez maintenant votre site de Chuck Norris avec Chrome en choisissant un téléphone (genre Galaxy S3) pour la visualisation). 
+Il existe deux manières de faire appel à une media query:
+
+* charger un fichier CSS spécifique en entier, uniquement dans certaines
+  conditions. Il faut ajouter à l'élément “head” de la page web une déclaration
+  de fichier CSS standard, à laquelle on rajoute l'attribut “media” et une
+  condition spécifique. Cette option n'est pas disponible en XHTML. N'oubliez
+  pas que le dernier CSS chargé prend le pas sur les précédents. Pensez donc à
+  toujours déclarer vos media-queries en dernier, sinon elles seront
+  systématiquement écrasées par votre CSS “standard”
+
+  ~~~
+  <link rel="stylesheet" media="[condition]" href="[mon css spécial].css"/>
+  ~~~
+  {:.html}
+
+* au sein même d'un fichier CSS, définir certains règles qui ne s'appliqueront
+  que sous certaines conditions
+
+  ~~~
+  @media ([ma condition]) {
+  	[mon sélecteur css] {
+      		[mes propriétés]: [mes valeurs];
+    	}
+  }
+  ~~~
+  {:.css}
+
+Une media query fonctionne de la manière suivante: la condition est évaluée et
+retourne une valeur “vrai” ou “faux”. Si la valeur est vraie, le fichier CSS/ la
+règle CSS (selon la méthode employée) est appliquée.
+
+Chaque condition est formée à partir d'une ou plusieurs conditions de base. Les
+conditions de base peuvent être combinées ensemble pour former des conditions
+complexes en utilisant les opérateurs logiques:
+
+* “and” (ET): les deux conditions de base doivent être vraies pour que la
+  condition soit vraie
+* “,” (OU): au moins l'un des conditions de base doit être vraie pour que la
+  condition soit vraie
+* “not” (NON): la condition de base qui suit le not doit être fausse pour que la
+  condition soit vraie
+
+Exemple : la règle media="(min-width: 500px) and (min-height: 800px)" 
+Nous nous limiterons aux média queries sur la max-width 
+
+<div class="exercise">
+ 1. Ouvrez maintenant votre site de Chuck Norris avec Chrome en choisissant un téléphone (genre Galaxy S3) pour la visualisation). 
  Constatez que le site s'affiche en tout petit. 
- * Allez sur le site  Bootstrap .... constater les points de ruptures 
+ 1. Allez sur le site  Bootstrap .... constater les points de ruptures 
 
 </div>
 
 
 ### Les points de ruptures.
 
-Afin d'organiser notre media queries, on utilise en général 3 à 4 valeurs de largeur d'écrans : 
+Afin d'organiser notre media queries, on utilise en général 3 à 4 valeurs de largeur d'écrans, par exemple : 
  
  `480px` (SmartHpone)
  `768px` (Tablette)
@@ -179,9 +225,10 @@ Afin d'organiser notre media queries, on utilise en général 3 à 4 valeurs de 
  `1200px` (écran d'ordinateur "Large")
 
 <div class="exercise">
- - en dessous de 768px ne plus afficher la table de comparaison. (De toute façon s'il ne doit rester qu'un seul, ce sera Chuck Norris)
- - supprimer les marges latérales en dessous de 768px
- - optionnel sur une smartwatch (width 168 pixels) n'affichez que les citations de Chuck Norris contenu dans le aside.
+ 1. en dessous de 768px ne plus afficher la table de comparaison. (De toute façon s'il ne doit rester qu'un seul, ce sera Chuck Norris)
+ 1. supprimer les marges latérales en dessous de 768px
+ 1. en dessous de 480px faire en sorte qu"`<aside>` et `<article>` soit en ligne et plus en colonne
+ 1. optionnel sur une smartwatch (width `168px`), n'affichez que les citations de Chuck Norris contenues dans le `<aside>`.
 </div>
 
 
@@ -208,136 +255,3 @@ Note :
 
 * image responsive avec srcset ?
 
-## Coment çà il est moche votre site de Chuck Norris ?
-
-Au hasard d'une conversation entendue, il semblerait que le design utilisé pour le site ne fait pas l'hunanimité.
-Certains seraient même allé jusqu'à dire que le site est môche.
-
-Comment faire du beau, ergnomique, etc ?
-et bien tout d'abord il s'agit d'autres métiers !
-
- * le  Web Designer 
- * l'Ergonome 
-
-
- Cela dit il est biensur essentiel d'être sensibilié à ces aspects.
-
-Un ensemble de "guidelines" sont souvent associés à un 
-
-https://www.google.com/design/spec/material-design/introduction.html
-
-Notamment pour les couleurs :
-https://www.google.com/design/spec/style/color.html#color-color-palette
-
-
-## Autres Idées 
-
-Beau layout pour les formulaires
-
-Parler rapidement des caractères spéciaux en HTML &lt; < ... et peut-être aussi
-de l'encodage des caractères dans l'URL quand on fait les formulaires
-
-
-::before
-::after
-content, numérotation automatique (voir les div.exercise dans les pages du cours)
-
-
----> + ou -.
---->J'ai peur qu'ils s'imaginent qu'on peut foutre du HTML dans du css ...
-
-
-border-image, border-shadow : c'est peu technique mais bien visuel
-curseur : idem
-inclusion d'audio, vidéo
-
---->Le border image et le border shadow pourrait en effet être intéressant !
---->On peut faire des choses jolies avec.
-
-CSS columns
-
---->Si c'est çà :
---->http://caniuse.com/#search=column
-
---->J'en ai jamais entendu parlé...et puis j'ai l'impression qu'avec flex on peut tout faire.
-
-
-max-wdth max-height
---->on pourrait utiliser vmin pour faire un sticky footer (pour la page contact on veut que le footer soit en bas de la page no même si le contenu de la page est inférieur à la taille écran).
----> dans le responsive design cela arrive plus ou moins naturellement je crois.
-
-
-overflow
-
-z-index associé à l'attribut position , lorsque les éléments se trouvent les uns sur les autres
-
-les ordres  de contraintes sur auto entre width et margin pour un élément sur contraint
-
-la fusion des marges.
-
-
-#d'autres éléments HTML
-1. select
-
-1. button
-
-1. textarea 
-
-1. Form
-
-
-
-caniuse preisentation
-
-
-
-### holly grail layout
-
-Nous sommes en 2015, et jusquà peu il n'est toujours pas évident de faire ce layout (d'où son nom).
-
-https://philipwalton.github.io/solved-by-flexbox/
-
-## Media Object
-
-
-
-## box-model
-
-## le model par défaut
-
-## le border-layout
-
-<!-- On peut aussi parler des sélecteurs de base sur les attributs -->
-
-
-
-
-1. Faire une [lettrine](https://fr.wikipedia.org/wiki/Lettrine) en début du paragraphe "Après son mariage, il rejoint... " (il vous sera nécessaire de rajouter une classe `<span>` autours de la lettre A)
-
-
-
-Exemple de site en flex layout
-
-http://heckhouse.com/
-
-quizzz
-
-http://espn.go.com/espn/feature/story/_/id/13035450/league-legends-prodigy-faker-carries-country-shoulders
-
-Comment est fait le T de Two years ago qui commence l'article ?
-Quel est le problème à propos du deuxième paragraphe ?
-
-
-## Fini !
-
-Mais que se passe t il lorsque l'on visualise notre superbe layout sur un petit écran genre mon smartphone ?
-et pls généralement comment avoir un layout intelligent qui s'adapte à ma tablette ? ma smartwatch ? mon smartphone ? mon rétro projecteur ?
-
-
-Responsive design 
-
-Un layout repsonsive simple avec Flex
-
-Un layout grid avec Flex
-
-Les images
