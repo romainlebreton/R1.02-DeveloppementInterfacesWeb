@@ -6,28 +6,99 @@ layout: tutorial
 
 ## Introduction
 
+Les mobiles, les tablettes (les smartwatch ?  les lunettes de réalité vituelles/augmentées ?) sont apparues il y a peu, 
+le CSS évolue donc aussi. Concevoir un site internet ou une web application pour tout ces médias n'est pas une tache triviale, et les solutions ne manques pas :
 
-## Overconstraint
+ - applications natives Android, IOS en Windows Phone ?
+ - utilisation de Phone Gap pour faire une application hybride (le site web est "converti" en application, on a un seul code source)
+ - coder deux sites : un pour les ordinateurs et un pour les smartphones (et un pour les tablette ? et un pour les smartwatch ?)
+ - utiliser du Javacript pour faire des layouts adaptatifs ?
+ - une solution en pur CSS ?
+ - faire le site en Flash (non !!!!)
+ - React Native,...
+
+Plus pour nous positionner dans cette jungle, que par considération de puristes, nous prendrons deux hypothèses de départ :
+
+ - "il n'y a pas besoin d'applications pour cela !". Pas besoin de faire du natif Android ou IOS.
+ - "il n'y a pas besoin de faire deux sites web pour cela!". On s'interdit de faire deux sites web : un pour mobile et un pour ordinateurs.
+
+
+Nous adopterons dans ce td une approche itérative, en rajoutant au fur et à mesure des contraintes pour arriver à ce qui se fait aujourd'hui dans le responsive design.
+
+
+## CSS2
+
+### Les pourcentages '%'
+
+On peut commmencer par exprimer toutes les tailles en relatif, en prenant appuit sur la taille de l'écran.
+Nous avons déjà utilisé le `%`. 
+
+
+<div class="exercices">
+
+ - Donnez au body une width de `100%` et changer les dimensions relatives de `<article>``et `<aside>` de repectivment `67%` et `33%`
+
+</div>
+
+
+<strong>Note</strong> : Si adapter les éléments en `%` par rapport à la largeur `width` marche bien, ce n'est pas le cas en `height`.
+Cela est du au fait que la width max est connue : c'est celle du navigateur alors que la `height` ne l'est pas encore...(puisque pas encore affichée...)
+Dans ce dernier cas nous avons en fait plus à l'esprit la taille de l'écran (`viewport`) que nous avons confondu avec la taille de la page [^somesamplefootnote].
+
+[^somesamplefootnote]: L'unité `vh` permet maintenant de définir une taille de 0 à 100 relative au viewport.
 
 
 ### `max-with` et `min-with`
 
-Faire varier la taille de l'écran de votre site. 
 
-### problème complexe d'overconstraint (solution : FlexBox)
+Les règles précédentes permettent d'avoir un rapport homogène, mais pas un rendu optimal :
 
-shrink:1, grow:0
+ - sur de petit écrans ordinateurs, des éléments ne peuvent pas être correctement affichés (des images, des colonnes, ...)
+ - sur des très grands écran, le texte devient illisible : les yeux fatiguent dans les retours à la ligne.
+ 
 
+
+<div class="exercices">
+
+ - Limitez les photos de Chuck Norris à ne pas avoir une width plus petite que `150px`, (et encore mieux vaut ne pas en parler à Chuck).
+ - Ajoutez une limite maximum de largeur à l'`<article>` et à l'`<aside>` de `600px` et de `300px`.
+ - Ajoutez une limite minimum de largeur à l'`<article>` et à `<aside>` de `300px`.
+</div>
+
+
+
+### Overconstraint (solution : FlexBox)
+
+Evidement lorsqu'on joue avec des `min-width` et un petit écran...à un moment çà dépasse...
+
+Il va falloir donc utiliser des règles subtiles pour savoir qui relache sa contrainte entre `<aside>` et `<article>`.
+
+On va utiliser cette super page sur [FlexBox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+Grosso-modo nous avons déjà vu les règles de la colonne de gauche de cette page : c'est celles qui s'appliquent aux parent.
+Nous allons maintenant découvir les règles de droites : celles qui s'appliquent aux ...éléments.
+
+Nous n'en disons pas plus sur cette page volontairement : le travail d'un devellopeur web consite pour une bonne partie à aller sur ce genre de page.
+
+<div class="exercices">
+ - Quand l'écran est trop petit pour afficher `<article>` et `<aside>` avec leurs contraintes de tailles minimales de la section précente, fait en sorte qu'`<article>` prenne les deux tiers de la place et `<aside>` le reste.
+ - Quand l'écran est trop grand faite en sorte qu'`<article>` soit 3 fois plus grand qu'`<aside>`.
+</div>
+
+
+<!--
 box-sizing : border-box
-
 Que se passe-t-il si on fait 2 colonnes à 50% avec flex-shrink:0 et flex-wrap:nowrap
+-->
+
 
 ### problèmes plus complexes ...
 
 
+Il arrive un moment ...ou diminuer encore la taille même relative n'a plus de sens. Il faut prendre des mesures draconiennes.
+
 Supposons maintenant que nous voulons carrément supprimer visuellement un élément d'un visuel sur notre mobile.
 Ou même changer le layout de row en column pour utiliser le défilement. 
-Ici nous n'avons pas de solution via Flex seul car nous voulons assujétir des règles CSS à certaines caractéristiques (des règles spéciales pour une taille d'écran maximum par exemple). Nous verrons dans la prochaine section comment cela est possible en CSS.
+Ici nous n'avons pas de solution via Flex seul car nous voulons assujétir des règles CSS à certaines caractéristiques (des règles spéciales pour une taille d'écran maximum par exemple). Nous verrons dans la prochaine section comment cela est possible en CSS3.
 
 
 
@@ -38,20 +109,20 @@ Ici nous n'avons pas de solution via Flex seul car nous voulons assujétir des r
 Comment peut on à moindre coût rendre tous les sites internets compatibles mobile ?"
 
 
-Ue solution pas chère au rabai est faitepar défaut :
+Ue solution pas chère est faite par défaut :
 
  * générer le site sur un écran viruel 800 par 600 
  * Faire un scalling pour faire "rentrer cela" dans l'écran du smartphone
- * Considérer que l'utilisateur connait le pinch to zoom pour naviguer dans le site .
+ * Considérer que l'utilisateur connait le pinch to zoom pour naviguer dans le site.
 
  Et çà marche ! 
 
 Cela marche mais on ne peut pas dire que cela est forcément le mieux.
-L'utilisateur mobile n'a pas la même attente que l'utilisateur sur ordinateur, il veut avoir accès rpidement aux informations essentielles, sans fioritures.
-On imagine que sur une smart watch par exemple un site comme méteo france serait largement plus dépouillé.
+L'utilisateur mobile n'a pas la même attente que l'utilisateur sur ordinateur, il veut avoir accès rapidement aux informations essentielles, sans fioritures.
+On imagine que sur une smart watch par exemple un site comme méteo france serait largement plus dépouillé (sur une smartwatch elle afficherait un nuage ou un soleil et la temperature par exemple).
 
 Typiquement nous voulons enlever des parties entières du sites suivant la taille de l'écran.
-Nous allons voir cel dans la section suivante. 
+
 
 La première chose à faire donc c'est de demander aux navigateurs de ne plus faire l'algo précédent (puisqu'on va gérer nous-mêmes) dnas la balise `<head>` :
 
@@ -68,23 +139,12 @@ La première chose à faire donc c'est de demander aux navigateurs de ne plus fa
 Bon vous devez constatez que l'algo ne se fait plus. En gros le navigateur n'essait plus d'être intelligent : il va falloir prendre le relai.
 
 
-## Jargon plus ou moin bling-bling et/ou vraie révolution
-
-Les termes du jargon qui font plus ou moins bling-bling :
-
- * Responsive design
- * Mobile First
- * Fluid Layout/grid 
- * Progressive enhancement
- * Graceful Degradation
-
-
 
 ## Les outils pour travailler ?
 
 Outil de dévellopement Chrome !
 Jusqu'ici on considéré que tus les outils de dévellopement d'Internet EXplorer Firefox et Chrome étaient égaux.
-En fait celui de Chrome était déjà unp eu meilleur :
+En fait celui de Chrome était déjà un peu meilleur :
 
   * auto completion des règles css ajoutées dynamiquement,
   * liste déruolante des valeurs possibles des champs,
@@ -94,30 +154,38 @@ Suivant les habitudes des devellopeurs cela peut être plus ou moins sujet à co
 Mais pour le Reponsive design il n'y a pas photo : Chrome (ou son pendant libre Chromium) devient <strong>vraiment</strong> votre "best-friend-ever".
 
 * Allez sur le site 
+   https://iutdepinfo.iutmontp.univ-montp2.fr/
+   https://infolimon.iutmontp.univ-montp2.fr/public/windows/chrome-win32.zip
 * Appuyez sur F12 et cliquez sur la petite icone <img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil opur mobile" style="margin: 0 auto;display: block;">
 
 
-## La solution technique :  les media queries
+## La solution technique CSS3 :  les media queries
 
 
-<div class="exercise" >
-
- * Ouvrez maintenant votre site de Chuck Norris avec Chrome en choisissant un téléphone (genre Galaxy S3) pour la visualisation). 
- Constatez que le site s'affiche en tout petit. 
-</div>
 
 <div class= "exercise">
-
- * Allez sur le site  .... constater les points de ruptures 
+ * Ouvrez maintenant votre site de Chuck Norris avec Chrome en choisissant un téléphone (genre Galaxy S3) pour la visualisation). 
+ Constatez que le site s'affiche en tout petit. 
+ * Allez sur le site  Bootstrap .... constater les points de ruptures 
 
 </div>
 
 Idée :
+3 Poiins de ruptures : 
+480px
+768px
+992px
+1200px
+<div class="exercise">
+ - en dessous de 768px ne plus afficher la table de comparaison. (De toute façon s'il ne doit rester qu'un seul, ce sera Chuck Norris)
+ - supprimer les marges latérales en dessous de 768px
+ - optionnel sur une smartwatch (width 168 pixels) n'affichez que les citations de Chuck Norris contenu dans le aside.
+</div>
 
-* Soit supprimer le aside soit le mettre en ligne quand trop petit
-* bouton burger
-* supprimer les marges latérales  quand trop petit
-* Changer la taille de la police ?
+
+
+### Le bouton burger !
+
 
 * menu burger qui arrive de la gauche, par dessus la page, et qui grise le reste
 de la page ? Le grisé avec une couche noire et de la transparence
@@ -129,9 +197,6 @@ Note :
   en 2ème année.
 
 
-<div class="exercise">
-
-</div>
 
 ## Une solution plus pratique que les media queries 
 
@@ -140,7 +205,7 @@ Note :
 
 ### Responsive images 
 
-* image responsive avec srcset ? Est-ce pérenne ? Selon caniuse, c'est assez bien supporté .
+* image responsive avec srcset ?
 
 ## Coment çà il est moche votre site de Chuck Norris ?
 
