@@ -6,21 +6,20 @@ layout: tutorial
 
 ## Introduction
 
-Les mobiles, les tablettes (les smartwatch ?  les lunettes de réalité vituelles/augmentées ?) sont apparues il y a peu, 
-le CSS évolue donc aussi. Concevoir un site internet ou une web application pour tout ces médias n'est pas une tache triviale, et les solutions ne manques pas :
+Les mobiles, les tablettes sont apparues il y a peu, le CSS évolue donc aussi. Concevoir un site internet ou une web application en adressant tout ces médias n'est pas une tache triviale, et les solutions ne manquent pas :
 
  - applications natives Android, IOS en Windows Phone ?
  - utilisation de Phone Gap pour faire une application hybride (le site web est "converti" en application, on a un seul code source)
- - coder deux sites : un pour les ordinateurs et un pour les smartphones (et un pour les tablette ? et un pour les smartwatch ?)
- - utiliser du Javacript pour faire des layouts adaptatifs ?
+ - coder deux sites : un pour les ordinateurs et un pour les smartphones (et un pour les tablettes ? et un pour les smartwatch ?)
+ - utiliser du Javacript pour faire des layouts adaptatifs ? (et dire du mal de Javascript ensuite...)
  - une solution en pur CSS ?
  - faire le site en Flash (non !!!!)
  - React Native,...
 
-Plus pour nous positionner dans cette jungle, que par considération de puristes, nous prendrons deux hypothèses de départ :
+Plus pour nous positionner dans cette jungle que par purisme, nous prendrons deux hypothèses de départ :
 
  - "il n'y a pas besoin d'applications pour cela !". Pas besoin de faire du natif Android ou IOS.
- - "il n'y a pas besoin de faire deux sites web pour cela!". On s'interdit de faire deux sites web : un pour mobile et un pour ordinateurs.
+ - "il n'y a pas besoin de faire deux sites web pour cela!". On s'interdit de faire deux sites web : un pour mobile et un pour ordinateur.
 
 
 Nous adopterons dans ce td une approche itérative, en rajoutant au fur et à mesure des contraintes pour arriver à ce qui se fait aujourd'hui dans le responsive design.
@@ -28,22 +27,23 @@ Nous adopterons dans ce td une approche itérative, en rajoutant au fur et à me
 
 ## CSS2
 
+Certaines propriétés n'ont pas attendues les nouveaux médias pour s'imposer aux dévellopeurs. 
+Elles prenaient déjà du sens sur des sites partculirement fournis et/ou sur des petis écrans 15 Pouces.
+
 ### Les pourcentages '%'
 
-On peut commmencer par exprimer toutes les tailles en relatif, en prenant appuit sur la taille de l'écran.
-Nous avons déjà utilisé le `%`. 
+On peut commmencer par exprimer toutes les tailles en relatif, en prenant appui sur la taille de l'écran.
+C'est ce que nous avons déjà fait en utilisant des dimensions en `%`.
 
 
 <div class="exercices">
-
  - Donnez au body une width de `100%` et changer les dimensions relatives de `<article>``et `<aside>` de repectivment `67%` et `33%`
-
 </div>
 
 
 <strong>Note</strong> : Si adapter les éléments en `%` par rapport à la largeur `width` marche bien, ce n'est pas le cas en `height`.
-Cela est du au fait que la width max est connue : c'est celle du navigateur alors que la `height` ne l'est pas encore...(puisque pas encore affichée...)
-Dans ce dernier cas nous avons en fait plus à l'esprit la taille de l'écran (`viewport`) que nous avons confondu avec la taille de la page [^somesamplefootnote].
+Cela est du au fait que la width max est connue : c'est celle du navigateur alors que la `height` ne l'est pas encore...(puisque la page n'est pas encore affichée...)
+La taille de l'écran (`viewport`) n'est pas focément la taille de la page [^somesamplefootnote].
 
 [^somesamplefootnote]: L'unité `vh` permet maintenant de définir une taille de 0 à 100 relative au viewport.
 
@@ -56,15 +56,15 @@ Les règles précédentes permettent d'avoir un rapport homogène, mais pas un r
  - sur de petit écrans ordinateurs, des éléments ne peuvent pas être correctement affichés (des images, des colonnes, ...)
  - sur des très grands écran, le texte devient illisible : les yeux fatiguent dans les retours à la ligne.
  
+Pour contraindre les dimensions par des limitations, nous utiliserons `max-width`, `max-height`, `min-width` et `min-height`, qui prennent le même type de valeur que `widht` et `height`. 
 
 
 <div class="exercices">
 
- - Limitez les photos de Chuck Norris à ne pas avoir une width plus petite que `150px`, (et encore mieux vaut ne pas en parler à Chuck).
+ - Ajoutez une limite minimale pour les photos de Chuck Norris à `150px`, (et encore, mieux vaut ne pas en parler à Chuck).
  - Ajoutez une limite maximum de largeur à l'`<article>` et à l'`<aside>` de `600px` et de `300px`.
  - Ajoutez une limite minimum de largeur à l'`<article>` et à `<aside>` de `300px`.
 </div>
-
 
 
 ### Overconstraint (solution : FlexBox)
@@ -73,7 +73,7 @@ Evidement lorsqu'on joue avec des `min-width` et un petit écran...à un moment 
 
 Il va falloir donc utiliser des règles subtiles pour savoir qui relache sa contrainte entre `<aside>` et `<article>`.
 
-On va utiliser cette super page sur [FlexBox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+On va utiliser FlexBox pour exprimer cela en se servant de [cette super page sur FlexBox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 Grosso-modo nous avons déjà vu les règles de la colonne de gauche de cette page : c'est celles qui s'appliquent aux parent.
 Nous allons maintenant découvir les règles de droites : celles qui s'appliquent aux ...éléments.
 
@@ -96,8 +96,8 @@ Que se passe-t-il si on fait 2 colonnes à 50% avec flex-shrink:0 et flex-wrap:n
 
 Il arrive un moment ...ou diminuer encore la taille même relative n'a plus de sens. Il faut prendre des mesures draconiennes.
 
-Supposons maintenant que nous voulons carrément supprimer visuellement un élément d'un visuel sur notre mobile.
-Ou même changer le layout de row en column pour utiliser le défilement. 
+Nous voulons pour cela carrément supprimer visuellement un élément d'un visuel sur notre mobile.
+ou sinon changer le layout de row en column pour utiliser le défilement. 
 Ici nous n'avons pas de solution via Flex seul car nous voulons assujétir des règles CSS à certaines caractéristiques (des règles spéciales pour une taille d'écran maximum par exemple). Nous verrons dans la prochaine section comment cela est possible en CSS3.
 
 
@@ -143,24 +143,22 @@ Bon vous devez constatez que l'algo ne se fait plus. En gros le navigateur n'ess
 ## Les outils pour travailler ?
 
 Outil de dévellopement Chrome !
-Jusqu'ici on considéré que tus les outils de dévellopement d'Internet EXplorer Firefox et Chrome étaient égaux.
+Jusqu'ici on pouvait considéré que tous les outils de dévellopement d'Internet EXplorer Firefox et Chrome étaient égaux.
 En fait celui de Chrome était déjà un peu meilleur :
 
   * auto completion des règles css ajoutées dynamiquement,
-  * liste déruolante des valeurs possibles des champs,
-  * plus rapide, etc.
+  * liste déroulante des valeurs possibles des champs,
+  * plus rapide, plus stable (un process par onglet)
+  * etc.
 
-Suivant les habitudes des devellopeurs cela peut être plus ou moins sujet à contreverse.
-Mais pour le Reponsive design il n'y a pas photo : Chrome (ou son pendant libre Chromium) devient <strong>vraiment</strong> votre "best-friend-ever".
+Suivant les habitudes des devellopeurs cela peut être plus ou moins sujet à contreverse, Mais pour le Reponsive design il n'y a pas photo : 
+Chrome (ou son pendant libre Chromium) est <strong>vraiment</strong> votre "best-friend-ever".
 
-* Allez sur le site 
-   https://iutdepinfo.iutmontp.univ-montp2.fr/
-   https://infolimon.iutmontp.univ-montp2.fr/public/windows/chrome-win32.zip
-* Appuyez sur F12 et cliquez sur la petite icone <img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil opur mobile" style="margin: 0 auto;display: block;">
+* Si vous n'avez pas Chrome ou Chromium, ou si en appuyant sur F12 vous ne voyez pas la petite icone <img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil opur mobile" style="margin: 0 auto;display: block;"> allez sur le [site de l'IUT](https://iutdepinfo.iutmontp.univ-montp2.fr/), identifiez vous et téléchargez directement [le lien](https://infolimon.iutmontp.univ-montp2.fr/public/windows/chrome-win32.zip).
+
 
 
 ## La solution technique CSS3 :  les media queries
-
 
 
 <div class= "exercise">
@@ -170,12 +168,16 @@ Mais pour le Reponsive design il n'y a pas photo : Chrome (ou son pendant libre 
 
 </div>
 
-Idée :
-3 Poiins de ruptures : 
-480px
-768px
-992px
-1200px
+
+### Les points de ruptures.
+
+Afin d'organiser notre media queries, on utilise en général 3 à 4 valeurs de largeur d'écrans : 
+ 
+ `480px` (SmartHpone)
+ `768px` (Tablette)
+ `992px` (écran d'ordinateur "Standard")
+ `1200px` (écran d'ordinateur "Large")
+
 <div class="exercise">
  - en dessous de 768px ne plus afficher la table de comparaison. (De toute façon s'il ne doit rester qu'un seul, ce sera Chuck Norris)
  - supprimer les marges latérales en dessous de 768px
@@ -183,8 +185,7 @@ Idée :
 </div>
 
 
-
-### Le bouton burger !
+### Un bouton burger (AKA la blague du burger au menu)
 
 
 * menu burger qui arrive de la gauche, par dessus la page, et qui grise le reste
