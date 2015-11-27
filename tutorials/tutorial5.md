@@ -4,10 +4,56 @@ subtitle: OverConstraint, Fluid Layout, Responsive design, Mobile first...
 layout: tutorial
 ---
 
+<!--
+
+Proposition de style cible où on veut les amener :
+
+body {
+    margin:auto;
+    width:100%;
+    max-width:768px;
+}
+
+article {
+    width:400px;
+    min-width:200px;
+    max-width:600px;
+    flex-shrink:2;
+    flex-grow:3;
+}
+
+aside {
+    width:200px;
+    min-width:150px;
+    max-width:300px;
+    flex-shrink:1;
+    flex-grow:1;
+}
+
+@media(max-width:768px) {
+    table, #table {
+	display:none;
+    }
+}
+
+@media(max-width:480px) {
+    main {
+	flex-direction:column;
+    }
+    article, aside {
+	width:100%;
+	max-width:480px;
+    }
+}
+
+-->
+
 ## Introduction
 
-Les smarthpones, les tablettes et tous les appareils de la mobilité demandent de repenser le web d'aujourd'hui. Concevoir un site ou une application Web s'adressant à tous ces
-médias n'est pas une tache triviale. Voici un aperçu des nombreuses solutions existantes :
+Les smartphones, les tablettes et tous les appareils de la mobilité demandent de
+repenser le web d'aujourd'hui. Concevoir un site ou une application Web
+s'adressant à tous ces médias n'est pas une tache triviale. Voici un aperçu des
+nombreuses solutions existantes :
 
 * Une solution en pur CSS. En effet, le CSS est le langage de base pour la mise
   en page des pages Web. Il est donc en constante évolution (CSS3 en cours
@@ -197,94 +243,141 @@ comportement. Il nous faut une façon d'écrire du CSS qui ne sera valide que da
 des cas précis. Nous verrons dans la prochaine section comment cela est possible
 en CSS3.
 
+
+## Les outils pour travailler ?
+
+Outil de dévellopement Chrome !  Jusqu'ici on pouvait considéré que tous les
+outils de dévellopement d'Internet Explorer / Firefox / Chrome étaient égaux.
+
+En fait celui de Chrome était déjà un peu meilleur :
+
+  * auto completion des règles CSS ajoutées dynamiquement,
+  * liste déroulante des valeurs possibles des champs,
+  * plus rapide, plus stable (un process par onglet)
+  * etc.
+
+Suivant les habitudes des développeurs cela peut être plus ou moins sujet à
+contreverse. Mais pour le Reponsive design il n'y a pas photo : Chrome (ou son
+pendant libre Chromium) est <strong>vraiment</strong> votre "best-friend-ever".
+
+**Attention :** Si vous n'avez pas Chrome ou Chromium, ou si en appuyant sur F12
+vous ne voyez pas la petite icone :
+
+<img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil opur mobile"
+style="margin: 0 auto;display: block;">
+
+allez sur le [site de l'IUT](https://iutdepinfo.iutmontp.univ-montp2.fr/),
+identifiez vous et téléchargez directement
+[le lien](https://infolimon.iutmontp.univ-montp2.fr/public/windows/chrome-win32.zip).
+
+Veuillez alors choisir dans *Device*, l'appareil *Samsung Galaxy SIII*.
+
 ## Que fait mon navigateur web sur téléphone par défaut pour un site ?
 
+Comment peut-on rendre un site internet compatible mobile à moindre coût ?
 
+Voici une solution pas chère par défaut :
 
-Comment peut on à moindre coût rendre tous les sites internets compatibles mobile ?
+ * Générer le site sur une taille d'écran virtuel, disons 800px par 600px ;
+ * Faire un *scaling* pour faire "rentrer cela" dans l'écran du smartphone ;
+   <!-- Tu veux dire avoir des tailles relatives partout qui ont étés étudiées pour 800x600 ? -->
+ * Considérer que l'utilisateur connait le *pinch to zoom* pour naviguer dans le site.
 
+<!--
 
-Ue solution pas chère est faite par défaut :
+OK, d'après mes tests avec le device mode, le comportement par défaut est
+bien de générer le site pour 960px de largeur puis de le scaler
 
- * Générer le site sur un écran viruel 800 par 600 
- * Faire un scalling pour faire "rentrer cela" dans l'écran du smartphone
- * Considérer que l'utilisateur connait le pinch to zoom pour naviguer dans le site.
+As-tu des références sur cela ?
 
- Et çà marche ! 
+Attention, si on touche au page scale des device mode alors il faut modifier la
+page puis la recharger pour retrouver le comportement par défaut.
+
+-->
+
+Et çà marche ! De fait, c'est ce que font par défaut les smartphones quand ils
+tombent sur un site non responsive.
+
+<div class="exercise">
+
+1. Passez dans le device mode "Samsumg Galaxy SIII" sous Chrome/Chromium et
+rechargez votre page. Constatez que le site s'affiche en tout petit.
+1. Inspectez le `<body>` de votre page pour voir sa largeur.
+
+   <!-- largeur : 980 px sur mon PC -->
+
+1. Zoomez et dézoomez avec les boutons - et + de <img
+src="{{site.baseurl}}/assets/zoom-button.png" alt="Bouton pour le zoom"
+style="vertical-align:middle"> (émulation du *pinch-to-zoom*). Passez au niveau
+de zoom 1 pour voir le site non zoomé.  
+
+</div>
 
 Cela marche mais on ne peut pas dire que cela est forcément le mieux.
-L'utilisateur mobile n'a pas la même attente que l'utilisateur sur ordinateur, il veut avoir accès rapidement aux informations essentielles, sans fioritures.
-On imagine que sur une smart watch par exemple un site comme méteo france serait largement plus dépouillé (sur une smartwatch elle afficherait un nuage ou un soleil et la temperature par exemple).
+L'utilisateur mobile n'a pas la même attente que l'utilisateur sur ordinateur,
+il veut avoir accès rapidement aux informations essentielles, sans fioritures.
+On imagine que sur une smart watch par exemple un site comme méteo france serait
+largement plus dépouillé (sur une smartwatch elle afficherait un nuage ou un
+soleil et la temperature par exemple).
 
-Typiquement nous voulons enlever des parties entières du sites suivant la taille de l'écran.
+Typiquement nous voulons enlever des parties entières du sites suivant la taille
+de l'écran.
 
-
-La première chose à faire donc c'est de demander aux navigateurs de ne plus faire l'algo précédent (puisqu'on va gérer nous-mêmes) dnas la balise `<head>` :
+La première chose à faire est donc de demander aux navigateurs de ne plus faire
+l'algo précédent (puisqu'on va gérer nous-mêmes) dans la balise `<head>` :
 
 ~~~
  <meta name="viewport" content="width=device-width, initial-scale=1">
 ~~~
 {:.html}
+
+<!--
+C'est encore au stade de Working draft !!
+Mais çà marche sur chrome ...
+Référence :
+https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes
+-->
+
 <div class="exercise">
-  Ajouter cette instruction au site de Chuck Norris et visualisez avec Chrome en choissisant un smartphone. Que constatez vous ?
+
+Ajouter cette instruction au site de Chuck Norris et visualisez avec Chrome en
+choisissant un smartphone. Inspectez la largeur de `<body>`. Que constatez vous
+?
+
 </div>
 
-
-Bon vous devez constatez que l'algo ne se fait plus. En gros le navigateur n'essait plus d'être intelligent : il va falloir prendre le relai.
-
-
-
-## Les outils pour travailler ?
-
-Outil de dévellopement Chrome !
-Jusqu'ici on pouvait considéré que tous les outils de dévellopement d'Internet EXplorer Firefox et Chrome étaient égaux.
-En fait celui de Chrome était déjà un peu meilleur :
-
-  * auto completion des règles css ajoutées dynamiquement,
-  * liste déroulante des valeurs possibles des champs,
-  * plus rapide, plus stable (un process par onglet)
-  * etc.
-
-Suivant les habitudes des devellopeurs cela peut être plus ou moins sujet à contreverse, Mais pour le Reponsive design il n'y a pas photo : 
-Chrome (ou son pendant libre Chromium) est <strong>vraiment</strong> votre "best-friend-ever".
-
-* Si vous n'avez pas Chrome ou Chromium, ou si en appuyant sur F12 vous ne voyez pas la petite icone :
-<img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil opur mobile" style="margin: 0 auto;display: block;"> 
-
-allez sur le [site de l'IUT](https://iutdepinfo.iutmontp.univ-montp2.fr/), identifiez vous et téléchargez directement [le lien](https://infolimon.iutmontp.univ-montp2.fr/public/windows/chrome-win32.zip).
-
-
+Bon vous devez constatez que l'algo ne se fait plus. En gros le navigateur
+n'essait plus d'être intelligent : il va falloir prendre le relai.
 
 ## La solution technique CSS3 :  les media queries
 
 Les
-media queries sont un jeu d'options ajoutées à la norme CSS 3 et qui permettent
+media queries sont un jeu d'options ajoutées à la norme CSS3 et qui permettent
 de définir des règles CSS qui ne s'appliqueront que sous certaines conditions
 spécifiques.
 
 Il existe deux manières de faire appel à une media query:
 
 * charger un fichier CSS spécifique en entier, uniquement dans certaines
-  conditions. Il faut ajouter à l'élément “head” de la page web une déclaration
-  de fichier CSS standard, à laquelle on rajoute l'attribut “media” et une
-  condition spécifique. Cette option n'est pas disponible en XHTML. N'oubliez
-  pas que le dernier CSS chargé prend le pas sur les précédents. Pensez donc à
-  toujours déclarer vos media-queries en dernier, sinon elles seront
-  systématiquement écrasées par votre CSS “standard”
+  conditions. Il faut ajouter à l'en-tête `<head>` de la page web une
+  déclaration de fichier CSS standard, à laquelle on rajoute l'attribut `media`
+  et une condition spécifique.  
+  N'oubliez pas que le dernier CSS chargé prend le pas sur les
+  précédents. Pensez donc à toujours déclarer vos media-queries en dernier,
+  sinon elles seront systématiquement écrasées par votre CSS *“standard"*.
 
   ~~~
-  <link rel="stylesheet" media="[condition]" href="[mon css spécial].css"/>
+  <link rel="stylesheet" media="condition" href="mon_css_spécial.css"/>
   ~~~
   {:.html}
 
-* au sein même d'un fichier CSS, définir certains règles qui ne s'appliqueront
-  que sous certaines conditions
+* au sein même d'un fichier CSS, on peut définir certaines règles qui ne
+  s'appliqueront que sous certaines conditions :
 
   ~~~
-  @media ([ma condition]) {
-  	[mon sélecteur css] {
-      		[mes propriétés]: [mes valeurs];
-    	}
+  @media(ma_condition) {
+     ...
   }
   ~~~
   {:.css}
@@ -304,13 +397,17 @@ complexes en utilisant les opérateurs logiques:
 * “not” (NON): la condition de base qui suit le not doit être fausse pour que la
   condition soit vraie
 
-Exemple : la règle media="(min-width: 500px) and (min-height: 800px)" 
-Nous nous limiterons aux média queries sur la max-width 
+**Exemple :** la règle `(min-width: 500px) and (min-height: 800px)` n'est
+vraie que si la largeur de l'affichage est supérieure (ou égale) à `500px` et la
+hauteur à `800px`.
+
+Nous nous limiterons aux média queries sur la `max-width`. 
 
 <div class="exercise">
- 1. Ouvrez maintenant votre site de Chuck Norris avec Chrome en choisissant un téléphone (genre Galaxy S3) pour la visualisation). 
- Constatez que le site s'affiche en tout petit. 
- 1. Allez sur le site  Bootstrap .... constater les points de ruptures 
+
+Allez sur le site Bootstrap et constatez les 2 points de ruptures. Aidez-vous du
+bouton *"media query"* <img src="{{site.baseurl}}/assets/media-query-icon.png"
+alt="Bouton pour découvrir les media-query" style="vertical-align:middle">.
 
 </div>
 
@@ -319,16 +416,22 @@ Nous nous limiterons aux média queries sur la max-width
 
 Afin d'organiser notre media queries, on utilise en général 3 à 4 valeurs de largeur d'écrans, par exemple : 
  
- `480px` (SmartHpone)
+ `480px` (Smartphone)
  `768px` (Tablette)
  `992px` (écran d'ordinateur "Standard")
  `1200px` (écran d'ordinateur "Large")
 
 <div class="exercise">
- 1. en dessous de 768px ne plus afficher la table de comparaison. (De toute façon s'il ne doit rester qu'un seul, ce sera Chuck Norris)
- 1. supprimer les marges latérales en dessous de 768px
- 1. en dessous de 480px faire en sorte qu"`<aside>` et `<article>` soit en ligne et plus en colonne
- 1. optionnel sur une smartwatch (width `168px`), n'affichez que les citations de Chuck Norris contenues dans le `<aside>`.
+ 1. en dessous de 768px ne plus afficher la table de comparaison (de toute façon
+    s'il ne doit rester qu'un seul, ce sera Chuck Norris).
+ 1. supprimer les marges latérales en dessous de 768px.
+    <!-- De quelle marge parles-tu ? De celle de body ? Comment fait pour que
+    cela soit compatible avec les exercices d'avant ?-->
+ 1. en dessous de 480px faire en sorte qu'`<aside>` et `<article>` soit en
+    colonne et plus en ligne.
+ 1. (Optionnel) Sur une smartwatch (width `168px`), n'affichez que les citations
+ de Chuck Norris contenues dans le `<aside>`.
+
 </div>
 
 
