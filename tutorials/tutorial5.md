@@ -103,8 +103,7 @@ des dimensions en `%`.
 
 <div class="exercise">
 
-1. Donnez à `<body>` la `width` de `100%`.
-   <!-- et les marges doivent rester à 0 ou à auto -->
+1. Donnez à `<body>` la `width` de `100%`. Donner à la propriété `margin` la valeur `auto` si ce n'est pas le cas.
 1. Enlevez au besoin la marge de gauche de `10%` sur le `<aside>` et changez les
    dimensions relatives de `<article>` et `<aside>` à respectivement `67%` et
    `33%`.
@@ -172,13 +171,6 @@ compréhension.)
 
 <!-- Attention, le comportement de l'exercice précédent est déjà déformé par les
 propriétés par défaut flex-grow:0; flex-shrink:1 -->
-
-<!-- ANCIEN EXERCICE QUI NE ME SEMBLE PAS FAISABLE -->
-<!--  1. Quand l'écran est trop petit pour afficher `<article>` et `<aside>` avec -->
-<!--     leurs contraintes de tailles minimales de la section précente, fait en sorte -->
-<!--     qu'`<article>` prenne les deux tiers de la place et `<aside>` le reste. -->
-<!--  1. Quand l'écran est trop grand, faites en sorte qu'`<article>` soit 3 fois -->
-<!--     plus grand qu'`<aside>`. -->
 
 <!-- NOUVEL EXERCICE : ON EN PARLE -->
 <div class="exercise">
@@ -267,7 +259,7 @@ Comment peut-on rendre un site internet compatible mobile à moindre coût ?
 
 Voici une solution pas chère par défaut :
 
- * Générer le site sur une taille d'écran virtuel, disons 800px par 600px ;
+ * Générer le site sur une taille d'écran virtuel, disons 980px par 600px ;
  * Faire un *scaling* pour faire "rentrer cela" dans l'écran du smartphone ;
    <!-- Tu veux dire avoir des tailles relatives partout qui ont étés étudiées pour 800x600 ? -->
  * Considérer que l'utilisateur connait le *pinch to zoom* pour naviguer dans le site.
@@ -340,8 +332,7 @@ n'essait plus d'être intelligent : il va falloir prendre le relai.
 
 ## La solution technique CSS3 :  les media queries
 
-Les
-media queries sont un jeu d'options ajoutées à la norme CSS3 et qui permettent
+Les media queries sont un jeu d'options ajoutées à la norme CSS3 et qui permettent
 de définir des règles CSS qui ne s'appliqueront que sous certaines conditions
 spécifiques.
 
@@ -404,37 +395,64 @@ alt="Bouton pour découvrir les media-query" style="vertical-align:middle">.
 
 Afin d'organiser notre media queries, on utilise en général 3 à 4 valeurs de largeur d'écrans, par exemple : 
  
- `480px` (Smartphone)
- `768px` (Tablette)
- `992px` (écran d'ordinateur "Standard")
- `1200px` (écran d'ordinateur "Large")
+ * `480px` (Smartphone)
+ * `768px` (Tablette)
+ * `992px` (écran d'ordinateur "Standard")
+ * `1200px` (écran d'ordinateur "Large")
 
 <div class="exercise">
  1. en dessous de 768px ne plus afficher la table de comparaison (de toute façon
     s'il ne doit rester qu'un seul, ce sera Chuck Norris).
- 1. supprimer les marges latérales en dessous de 768px.
-    <!-- De quelle marge parles-tu ? De celle de body ? Comment fait pour que
-    cela soit compatible avec les exercices d'avant ?-->
  1. en dessous de 480px faire en sorte qu'`<aside>` et `<article>` soit en
     colonne et plus en ligne.
  1. (Optionnel) Sur une smartwatch (width `168px`), n'affichez que les citations
  de Chuck Norris contenues dans le `<aside>`.
-
 </div>
 
 
 ### Un bouton burger (AKA la blague du burger au menu)
 
 
-* menu burger qui arrive de la gauche, par dessus la page, et qui grise le reste
-de la page ? Le grisé avec une couche noire et de la transparence
+<img alt="Burger button, three horizontal lines, (two corresponding to the bread, and the one for the meal) " src="{{site.baseurl}}/assets/burger.png" style="margin:0
+auto;display: block;">
+
+
+On utilise le bounton burger en Responsive Design.
+Pour fixer les idées, nous voulons quelque chose se rapprochant de cela :
+http://codepen.io/gungorbudak/pen/XbazEX
+http://codepen.io/drewr/pen/uxvdt
+(Au passage noté que Codepen est un très bon outil pour découvrir de nouvelles techniques)
+
+Pour simplifier nous allons faire un deuxième menu identique dans son contenu au premier mais disposé différemment.
+
+1. Ajouter un div avec pour image le burger dans le menu du haut (à gauche du premier menu).
+1. A partir du point de rupture Smartphone, faite disparaitre l'ancien menu et faite apparaitre le button burger justifié à droite de la page.
+1. Implémentez le deuxième menu avec les caractéristiques suivantes:
+  * il est disposé verticalement contrairement au premier.
+    * il ne se positionne par rapport au `<body>` 
+    * il est contenu dans le div du burger
+    * il n'a PAS de sous-menus.
+    * il occupe 80% de la largeur du body et 100% de sa hauteur (vous pouvez utiliser l'unité de mesure `vh`, cherchez sur le web)
+    * il est visuellement au-dessus des autres éléments du site (vous pouvez utiliser l'attribut `z-index`, cherchez sur le web)
+    * son contenu est :
+      
+      ~~~
+        <div id="menu2">
+          <div><a href="./index.html">Accueil</a></div>
+          <div><a href="./facts.html">Facts</a></div>
+          <div><a href="./news.html">News</a></div>
+        </div>
+      ~~~
+      {:.css}
+
+1. Cachez par défaut en css le `menu2` réalisé, au survol du menu burger, faire le réapparaître.
+1. (optionnel) chnager la logique pour masquer le menu2 avec la propriété `left` (par défaut le menu2 n'est pas visible car il est décalé de sa width à droite) et faire une transition dessus. (ohhhh! c'est beauuuu!)
 
 Note :
 
 * le hover sur les sous-menus n'a pas de sens sur téléphone portable. Il faudra
-  gérer le clic avec du JS. Et dire, la bonne solution est ... et vous la verrer
+  gérer le clic avec du JS. Et dire, la bonne solution est ... vous la verrer
   en 2ème année.
-
 
 
 ## Une solution plus pratique que les media queries 
@@ -453,8 +471,9 @@ Note :
 
 Les contraintes liées à la mobilité ne se limitent pas au repsonive design.
 D'autres contraintes fortes viennent aussi s'ajouter :
--débit du réseau
--faible capacité du média (processeur, memoire vive,...)
--mode offline (on peut passer sous un pont... il faut prévoir pour le cas échéant un cache local qui stoque les opérations courantes, afin de les consommmer lorsque le réseau revient) 
--changement de paradigme IHM (mouse over, menu déroulant,... )
--....
+
+ * débit du réseau
+ * faible capacité du média (processeur, memoire vive,...)
+ * mode offline (on peut passer sous un pont... il faut prévoir pour le cas échéant un cache local qui stoque les opérations courantes, afin de les consommmer lorsque le réseau revient) 
+ * changement de paradigme IHM (mouse over, menu déroulant,... )
+ -....
