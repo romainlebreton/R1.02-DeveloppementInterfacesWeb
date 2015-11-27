@@ -6,8 +6,7 @@ layout: tutorial
 
 ## Introduction
 
-Les mobiles, les tablettes sont appareils récents et 
-concevoir un site internet ou une application Web s'adressant à tous ces
+Les smarthpones, les tablettes et tous les appareils de la mobilité demandent de repenser le web d'aujourd'hui. Concevoir un site ou une application Web s'adressant à tous ces
 médias n'est pas une tache triviale. Voici un aperçu des nombreuses solutions existantes :
 
 * Une solution en pur CSS. En effet, le CSS est le langage de base pour la mise
@@ -47,7 +46,7 @@ responsive design.
 ## CSS2
 
 Certaines propriétés n'ont pas attendu ni les nouveaux médias ni le CSS3 pour
-s'imposer aux développeurs.  Elles prenaient déjà tout leur sens sur des sites
+s'imposer aux développeurs. Elles prenaient déjà tout leur sens sur des sites
 particulièrement fournis et/ou sur des petits écrans 15 pouces.
 
 ### Les pourcentages '%'
@@ -112,8 +111,7 @@ relative. Veux-tu passer plus de choses en taille relative ? -->
 Évidement lorsque l'on joue avec des `min-width` et un petit écran à un moment
 çà dépasse.
 
-Il va falloir donc utiliser des règles subtiles pour savoir qui relachent la
-contrainte entre `<aside>` et `<article>`.
+Il va falloir donc utiliser des règles subtiles pour relacher une ou des contraintes lorsqu'elles ne peuvent pas être toutes satisfaites (on parle d'overconstraint pour faire bien).
 
 On va utiliser FlexBox pour exprimer cela en se servant de
 [cette super page sur FlexBox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
@@ -357,3 +355,15 @@ Note :
 
 * image responsive avec srcset ?
 
+
+
+### La mobilité en général
+
+
+Les contraintes liées à la mobilité ne se limitent pas au repsonive design.
+D'autres contraintes fortes viennent aussi s'ajouter :
+-débit du réseau
+-faible capacité du média (processeur, memoire vive,...)
+-mode offline (on peut passer sous un pont... il faut prévoir pour le cas échéant un cache local qui stoque les opérations courantes, afin de les consommmer lorsque le réseau revient) 
+-changement de paradigme IHM (mouse over, menu déroulant,... )
+-....
