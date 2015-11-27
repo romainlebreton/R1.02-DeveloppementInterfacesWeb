@@ -145,10 +145,8 @@ type de valeur que `width` et `height`.
 <!-- ATTENTION : on n'a pas encore fixé la taille de l'image comme étant
 relative. Veux-tu passer plus de choses en taille relative ? -->
 
- 1. Ajoutez une limite maximum de largeur à l'`<article>` et à l'`<aside>` de `500px` et de `250px`.
- 1. Ajoutez une limite minimum de largeur à l'`<article>` et à `<aside>` de `200px` et `150px`.
- <!-- ATTENTION 150px pas assez pour afficher les liens <a> du aside -->
- <!-- Et quelle taille pour afficher le tableau comparatif du article ? -->
+1. Ajoutez une limite maximum de largeur à l'`<article>` et à l'`<aside>` de `500px` et de `250px`.
+1. Ajoutez une limite minimum de largeur à l'`<article>` et à `<aside>` de `200px` et `150px`.
 </div>
 
 
@@ -175,11 +173,6 @@ compréhension.)
 <!-- Attention, le comportement de l'exercice précédent est déjà déformé par les
 propriétés par défaut flex-grow:0; flex-shrink:1 -->
 
-<!-- Voilà comme je le comprend : -->
-<!-- D'abord on calcule la largeur des blocs en utilisant width -->
-<!-- Enfin on réparti l'espace restant sur la largeur -->
-<!-- Puis on applique les contraintes min-max-width -->
-
 <!-- ANCIEN EXERCICE QUI NE ME SEMBLE PAS FAISABLE -->
 <!--  1. Quand l'écran est trop petit pour afficher `<article>` et `<aside>` avec -->
 <!--     leurs contraintes de tailles minimales de la section précente, fait en sorte -->
@@ -203,10 +196,6 @@ soient par défaut de `300px` et `200px` et que :
     `<article>` soit 3 fois plus grand que celui gagné par `<aside>`.
 
    Bien sûr, toutes ces largeurs respecteront les anciennes contraintes `min-width` et `max-width`.
-
-   <!-- Utiliser le device mode pour forcer facilement la largeur de la
-   fenetre. Mais je ne comprends pas toujours comment ce mode fonctionne
-   À cause de l'ascenceur déjà -->
 
 2. Dimensionnez votre fenêtre de sorte à ce que `<body>` ait une largeur de
    `620px`. Inspectez les largeurs de `<article>` et `<aside>`. Vérifiez que
@@ -332,8 +321,7 @@ l'algo précédent (puisqu'on va gérer nous-mêmes) dans la balise `<head>` :
 {:.html}
 
 <!--
-C'est encore au stade de Working draft !!
-Mais çà marche sur chrome ...
+C'est encore au stade de Working draft !! Mais çà marche sur chrome ...
 Référence :
 https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes
