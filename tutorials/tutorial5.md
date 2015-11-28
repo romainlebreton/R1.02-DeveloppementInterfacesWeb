@@ -1,52 +1,9 @@
 ---
-title: TD5
-subtitle: OverConstraint, Fluid Layout, Responsive design, Mobile first...
+title: TD5 &ndash; Responsive Design
+subtitle: 
 layout: tutorial
 ---
 
-<!--
-
-Proposition de style cible où on veut les amener :
-
-body {
-    margin:auto;
-    width:100%;
-    max-width:768px;
-}
-
-article {
-    width:400px;
-    min-width:200px;
-    max-width:600px;
-    flex-shrink:2;
-    flex-grow:3;
-}
-
-aside {
-    width:200px;
-    min-width:150px;
-    max-width:300px;
-    flex-shrink:1;
-    flex-grow:1;
-}
-
-@media(max-width:768px) {
-    table, #table {
-	display:none;
-    }
-}
-
-@media(max-width:480px) {
-    main {
-	flex-direction:column;
-    }
-    article, aside {
-	width:100%;
-	max-width:480px;
-    }
-}
-
--->
 
 ## Introduction
 
@@ -140,10 +97,10 @@ type de valeur que `width` et `height`.
 
 
 <div class="exercise">
-1. Ajoutez une limite minimale pour les photos de Chuck Norris à `150px`, (et encore, mieux vaut ne pas en parler à Chuck).
-<!-- ATTENTION : on n'a pas encore fixé la taille de l'image comme étant
+1. Ajoutez une limite minimale pour les photos de Chuck Norris à `150px`, (et
+   encore, mieux vaut ne pas en parler à Chuck).
+   <!-- ATTENTION : on n'a pas encore fixé la taille de l'image comme étant
 relative. Veux-tu passer plus de choses en taille relative ? -->
-
 1. Ajoutez une limite maximum de largeur à l'`<article>` et à l'`<aside>` de `500px` et de `250px`.
 1. Ajoutez une limite minimum de largeur à l'`<article>` et à `<aside>` de `200px` et `150px`.
 </div>
@@ -259,7 +216,7 @@ Comment peut-on rendre un site internet compatible mobile à moindre coût ?
 
 Voici une solution pas chère par défaut :
 
- * Générer le site sur une taille d'écran virtuel, disons 980px par 600px ;
+ * Générer le site sur une taille d'écran virtuel, disons d'une largeur de 980px ;
  * Faire un *scaling* pour faire "rentrer cela" dans l'écran du smartphone ;
    <!-- Tu veux dire avoir des tailles relatives partout qui ont étés étudiées pour 800x600 ? -->
  * Considérer que l'utilisateur connait le *pinch to zoom* pour naviguer dans le site.
@@ -407,57 +364,82 @@ Afin d'organiser notre media queries, on utilise en général 3 à 4 valeurs de 
     colonne et plus en ligne.
  1. (Optionnel) Sur une smartwatch (width `168px`), n'affichez que les citations
  de Chuck Norris contenues dans le `<aside>`.
+ <!-- Peut-être que le sélecteur :not() peut grandement faciliter la suppression
+ de tout le contenu SAUF quelques petites choses -->
+
 </div>
 
 
-### Un bouton burger (AKA la blague du burger au menu)
+### Mettez-moi un burger au menu !
 
+Quand la taille de l'écran est limité, une bonne pratique en *responsive design*
+est de changer l'affichage du menu pour un bouton burger :
 
-<img alt="Burger button, three horizontal lines, (two corresponding to the bread, and the one for the meal) " src="{{site.baseurl}}/assets/burger.png" style="margin:0
-auto;display: block;">
+<img alt="Burger button, three horizontal lines, (two corresponding to the
+bread, and the one for the meal) " src="{{site.baseurl}}/assets/burger.png"
+style="margin:0 auto;display: block;">
 
-
-On utilise le bounton burger en Responsive Design.
-Pour fixer les idées, nous voulons quelque chose se rapprochant de cela :
+Lorsque l'on cliquera dessus, le menu apparaîtra. Cela permet de ne pas perdre
+de place sur la page lorsque le menu est fermé. Pour fixer les idées, nous
+voulons quelque chose se rapprochant de cela :
  
- * http://codepen.io/gungorbudak/pen/XbazEX
- * http://codepen.io/drewr/pen/uxvdt
+ * [http://codepen.io/gungorbudak/pen/XbazEX](http://codepen.io/gungorbudak/pen/XbazEX)
+ * [http://codepen.io/drewr/pen/uxvdt](http://codepen.io/drewr/pen/uxvdt)
 
-(Au passage noté que [codepen.io](http://codepen.io/) est un très bon outil pour découvrir de nouvelles techniques)
+(Notez au passage que [codepen.io](http://codepen.io/) est un très bon outil pour
+découvrir de nouvelles techniques !)
 
-Pour simplifier nous allons faire un deuxième menu identique dans son contenu au premier mais disposé différemment.
+<div class="exercise">
 
-1. Ajouter un div avec pour image le burger dans le menu du haut (à gauche du premier menu) de dimension `50px`.
-1. A partir du point de rupture Smartphone, faite disparaitre l'ancien menu et faite apparaitre le button burger justifié à droite de la page.
-1. Implémentez le deuxième menu avec les caractéristiques suivantes:
-  * il est disposé verticalement contrairement au premier.
-    * il se positionne par rapport au `<body>` avec un `top` et un `left` de 0, 
-    * il est contenu dans le div du burger
-    * il n'a PAS de sous-menus.
-    * il occupe 80% de la largeur du body et 100% de sa hauteur (vous pouvez utiliser l'unité de mesure `vh`, cherchez sur le web)
-    * il est visuellement au-dessus des autres éléments du site (vous pouvez utiliser l'attribut `z-index`, cherchez sur le web)
-    * son contenu est :
-      
-      ~~~
-       <div class="burger">
-         <div id="menu2">
-          <div><a href="./index.html">Accueil</a></div>
-          <div><a href="./facts.html">Facts</a></div>
-          <div><a href="./contact.html">Contact</a></div>
-         </div>
-       </div>
+Nous allons coder un deuxième menu, identique au premier dans son contenu, mais
+avec une mise en page différente. Nous allons afficher l'un ou l'autre des menus
+en fonction de la taille de l'écran.
 
-      ~~~
-      {:.css}
+1. Ajouter un `<div>` de classe `burger` contenant l'image de burger (largeur
+   `50px`) juste avant le menu `<nav>`.
+1. À partir du point de rupture 'Smartphone', faites disparaître l'ancien menu
+et faites le `<div class="burger">` à droite de la page (à la place du menu).
+1. Implémentez le deuxième menu avec les caractéristiques suivantes :
 
-1. Cachez par défaut en css le `menu2` réalisé, au survol du menu burger, faire le réapparaître.
-1. (optionnel) chnager la logique pour masquer le menu2 avec la propriété `left` (par défaut le menu2 n'est pas visible car il est décalé de sa width à droite) et faire une transition dessus. (ohhhh! c'est beauuuu!)
+   * Son contenu est
 
-Note :
+     ~~~
+     <div class="burger">
+       <img src="images/burger.png" alt="burger" width="50px">
+       <div id="menu2">
+         <div><a href="./index.html">Accueil</a></div>
+         <div><a href="./facts.html">Facts</a></div>
+         <div><a href="./news.html">Actualités</a></div>
+         <div><a href="./contact.html">Contact</a></div>
+      </div>
+     </div>
+     ~~~
+     {:.html}
 
-* le hover sur les sous-menus n'a pas de sens sur téléphone portable. Il faudra
-  gérer le clic avec du JS. Et dire, la bonne solution est ... vous la verrer
-  en 2ème année.
+
+    * il se positionne par rapport à la fenêtre d'affichage (quel valeur de
+    `position` faut-il mettre ?), tout en haut à gauche.
+	* il occupe 80% de la largeur de la fenêtre d'affichage et 100% de sa
+      hauteur (Cherchez sur le Web les unité de mesure `vh` et `vw`)
+    * il est visuellement au-dessus des autres éléments du site (Cherchez sur le
+    Web la propriété `z-index`)
+	* les sous-menus sont disposés verticalement.
+
+1. Cachez par défaut en CSS le `menu2`. Au survol du `<div class="burger">`,
+   faites-le réapparaître.
+1. (Optionnel) Changez la logique pour masquer le `menu2` : À la manière de
+   [http://codepen.io/gungorbudak/pen/XbazEX](http://codepen.io/gungorbudak/pen/XbazEX),
+   cachez le menu en le décalant sur sa gauche de sa largeur avec la propriété
+   `margin-left`. Faites une transition dessus (ohhhh! c'est beauuuu!)
+
+<!-- PROBLEME : ON NE PEUT PAS CLIQUER SUR LE MENU CAR IL DISPARAIT LE TEMPS QUE
+LA SOURIS L'ATTEIGNE -->
+
+</div>
+
+**Note :** Le hover sur les sous-menus n'a pas de sens sur téléphone
+  portable. Il faudra gérer le clic avec du JS. La bonne solution est
+  ... suspense, vous la verrez en 2ème année.
 
 
 ## Une solution plus pratique que les media queries 
@@ -472,7 +454,6 @@ Note :
 
 
 ### La mobilité en général
-
 
 Les contraintes liées à la mobilité ne se limitent pas au repsonive design.
 D'autres contraintes fortes viennent aussi s'ajouter :
