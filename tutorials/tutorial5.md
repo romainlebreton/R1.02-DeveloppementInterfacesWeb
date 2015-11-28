@@ -419,17 +419,19 @@ auto;display: block;">
 
 On utilise le bounton burger en Responsive Design.
 Pour fixer les idées, nous voulons quelque chose se rapprochant de cela :
-http://codepen.io/gungorbudak/pen/XbazEX
-http://codepen.io/drewr/pen/uxvdt
-(Au passage noté que Codepen est un très bon outil pour découvrir de nouvelles techniques)
+ 
+ * http://codepen.io/gungorbudak/pen/XbazEX
+ * http://codepen.io/drewr/pen/uxvdt
+
+(Au passage noté que [codepen.io](http://codepen.io/) est un très bon outil pour découvrir de nouvelles techniques)
 
 Pour simplifier nous allons faire un deuxième menu identique dans son contenu au premier mais disposé différemment.
 
-1. Ajouter un div avec pour image le burger dans le menu du haut (à gauche du premier menu).
+1. Ajouter un div avec pour image le burger dans le menu du haut (à gauche du premier menu) de dimension `50px`.
 1. A partir du point de rupture Smartphone, faite disparaitre l'ancien menu et faite apparaitre le button burger justifié à droite de la page.
 1. Implémentez le deuxième menu avec les caractéristiques suivantes:
   * il est disposé verticalement contrairement au premier.
-    * il ne se positionne par rapport au `<body>` 
+    * il se positionne par rapport au `<body>` avec un `top` et un `left` de 0, 
     * il est contenu dans le div du burger
     * il n'a PAS de sous-menus.
     * il occupe 80% de la largeur du body et 100% de sa hauteur (vous pouvez utiliser l'unité de mesure `vh`, cherchez sur le web)
@@ -437,11 +439,14 @@ Pour simplifier nous allons faire un deuxième menu identique dans son contenu a
     * son contenu est :
       
       ~~~
-        <div id="menu2">
+       <div class="burger">
+         <div id="menu2">
           <div><a href="./index.html">Accueil</a></div>
           <div><a href="./facts.html">Facts</a></div>
-          <div><a href="./news.html">News</a></div>
-        </div>
+          <div><a href="./contact.html">Contact</a></div>
+         </div>
+       </div>
+
       ~~~
       {:.css}
 
