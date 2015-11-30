@@ -147,8 +147,8 @@ soient par défaut de `300px` et `200px` et que :
 
    <!-- Réponse : article 390 px et aside 230px car 120px de rab réparti en 30px de rab par unité -->
 
-3. Redimensionnez la fenêtre du navigateur  pour que la largeur de `<body>` soit de `380px`. Inspectez les largeurs de `<article>` et `<aside>`. Vérifiez que
-   votre comportement satisfait le cahier des charges.
+<!-- 3. Redimensionnez la fenêtre du navigateur  pour que la largeur de `<body>` soit de `380px`. Inspectez les largeurs de `<article>` et `<aside>`. Vérifiez que -->
+<!--    votre comportement satisfait le cahier des charges. -->
 
    <!-- Réponse : article 220 px et aside 160px car 120px à gagner réparti en 40px à enlever par unité   -->
    <!-- Je ne sais pas pourquoi chromium fait 210 / 170 ??? -->
@@ -175,36 +175,35 @@ comportement. Il nous faut une façon d'écrire du CSS qui ne sera valide que da
 des cas précis. Nous verrons dans la prochaine section comment cela est possible
 en CSS3.
 
+## Votre site de Chuck Norris sur mobile
 
-## Les outils pour travailler ?
+### Les outils pour travailler ?
 
-Outil de développement Chrome !  Jusqu'ici on pouvait considérer que tous les
-outils de développement d'Internet Explorer / Firefox / Chrome étaient égaux.
-
-En fait celui de Chrome était déjà un peu meilleur :
+Jusqu'ici on pouvait considérer que tous les outils de développement d'Internet
+Explorer / Firefox / Chrome étaient égaux. En fait celui de Chrome était déjà un
+peu meilleur :
+<!-- (Suivant les habitudes des développeurs cela peut être plus ou moins sujet à -->
+<!-- controverse.) -->
 
   * auto complétion des règles CSS ajoutées dynamiquement,
   * liste déroulante des valeurs possibles des champs,
   * plus rapide, plus stable (un processus par onglet)
   * etc.
 
-Suivant les habitudes des développeurs cela peut être plus ou moins sujet à
-controverse. Mais pour le Reponsive design il n'y a pas photo : Chrome (ou son
+En tout cas, pour le Reponsive design il n'y a pas photo : Chrome (ou son
 pendant libre Chromium) est <strong>vraiment</strong> votre "best-friend-ever".
 
 **Attention :** Si vous n'avez pas Chrome ou Chromium, ou si en appuyant sur F12
-vous ne voyez pas la petite icône :
-
+vous ne voyez pas la petite icône 
 <img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil pour mobile"
 style="margin: 0 auto;width:100px;vertical-align:middle;">
-
 allez sur le [site de l'IUT](https://iutdepinfo.iutmontp.univ-montp2.fr/),
 identifiez-vous et téléchargez directement
 [le lien](https://infolimon.iutmontp.univ-montp2.fr/public/windows/chrome-win32.zip).
 
-Veuillez alors choisir dans *Device*, l'appareil *Samsung Galaxy SIII*.
+<!-- Veuillez alors choisir dans *Device*, l'appareil *Samsung Galaxy SIII*. -->
 
-## Que fait mon navigateur web sur téléphone par défaut pour un site ?
+### Que fait mon navigateur Web sur téléphone par défaut pour un site ?
 
 Comment peut-on rendre un site internet compatible mobile à moindre coût ?
 
@@ -234,8 +233,9 @@ tombent sur un site non responsive.
 
 <div class="exercise">
 
-1. Passez dans le device mode "Samsumg Galaxy SIII" sous Chrome/Chromium et
-rechargez votre page. Constatez que le site s'affiche en tout petit.
+1. Dans les outils développeurs (`F12`) de Chrome/Chromium, passez dans le
+device mode "Samsumg Galaxy SIII" sous Chrome/Chromium et rechargez votre
+page. Constatez que le site s'affiche en tout petit.
 1. Inspectez le `<body>` de votre page pour voir sa largeur.
 
    <!-- largeur : 980 px sur mon PC -->
@@ -280,8 +280,8 @@ choisissant un smartphone. Inspectez la largeur de `<body>`. Que constatez-vous
 
 </div>
 
-Bon vous devez constatez que l'algo ne se fait plus. En gros le navigateur
-n'essaie plus d'être intelligent : il va falloir prendre le relai.
+Vous devez constatez que l'algorithme précédent ne s'applique plus. En gros le
+navigateur n'essaie plus d'être intelligent : il vous laisse prendre le relai.
 
 ## La solution technique CSS3 :  les media queries
 
@@ -339,7 +339,7 @@ hauteur à `800px`.
 Allez sur le site [Bootstrap](http://getbootstrap.com/) et constatez les 2 points de ruptures. Aidez-vous du
 bouton *"media query"* <img src="{{site.baseurl}}/assets/media-query-icon.png"
 alt="Bouton pour découvrir les media-query" style="vertical-align:middle">. (Au besoin actualisez la page pour que l'outil puisse correctement émuler le comportement sur mobile).
-Que ce passe t il visuellement dans le menu lorsque vous redimensionnnez la fenêtre autour du point de rupture situé à `768px` ?
+Que ce passe-t-il visuellement dans le menu lorsque vous redimensionnnez la fenêtre autour du point de rupture situé à `768px` ?
 
 
 
@@ -396,7 +396,8 @@ en fonction de la taille de l'écran.
 1. Ajouter un `<div>` de classe `burger` contenant l'image de burger (largeur
    `50px`) juste avant le menu `<nav>`.
 1. À partir du point de rupture 'Smartphone', faites disparaître l'ancien menu
-et faites le `<div class="burger">` à droite de la page (à la place du menu).
+et faites apparaître le `<div class="burger">` à droite de la page (à la place
+du menu).
 1. Implémentez le deuxième menu avec les caractéristiques suivantes :
 
    * Son contenu est
@@ -418,7 +419,8 @@ et faites le `<div class="burger">` à droite de la page (à la place du menu).
     * il se positionne par rapport à la fenêtre d'affichage (quelle valeur de
     `position` faut-il mettre ?), tout en haut à gauche.
 	* il occupe 80% de la largeur de la fenêtre d'affichage et 100% de sa
-      hauteur (Cherchez sur le Web les unités de mesure `vh` et `vw`)
+      hauteur (Cherchez sur le Web les unités de mesure `vh` et `vw`
+      [^somesamplefootnote])
     * il est visuellement au-dessus des autres éléments du site (cherchez sur le
     Web la propriété `z-index`)
 	* les sous-menus sont disposés verticalement.
