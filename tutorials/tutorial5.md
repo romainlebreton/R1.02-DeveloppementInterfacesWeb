@@ -70,12 +70,12 @@ des dimensions en `%`.
 
 **Note :** Si adapter les largeurs en pourcentage marche bien, ce n'est pas le
 cas des hauteurs.  Cela est dû au fait que la largeur de la page est connue
-(c'est la largeur du navigateur) mais sa hauteur ne l'est pas encore
-... (puisque la page n'est pas encore affichée et que la hauteur va dépendre de
-la quantité de contenu). Autrement dit, la hauteur de la zone du navigateur où
-s'affiche la page (`viewport height`) n'est pas forcément la hauteur de la page
-[^somesamplefootnote] (c'est lié à la présence d'un ascenseur à droite pour
-descendre dans la page).
+(c'est la largeur de la fenêtre d'affichage du navigateur) mais sa hauteur ne
+l'est pas encore ... (puisque la page n'est pas encore affichée et que la
+hauteur va dépendre de la quantité de contenu). Autrement dit, la hauteur de la
+zone du navigateur où s'affiche la page (`viewport height`) n'est pas forcément
+la hauteur de la page [^somesamplefootnote] (et c'est lié à la présence d'un
+ascenseur à droite pour descendre dans la page).
 
 [^somesamplefootnote]: L'unité `vh` permet maintenant de définir une taille de 0 à 100 relative au viewport.
 
@@ -418,7 +418,7 @@ du menu).
 
 
     * il se positionne par rapport à la fenêtre d'affichage (quelle valeur de
-    `position` faut-il mettre ?), tout en haut à gauche.
+    `position` faut-il mettre ?), tout en haut à droite.
 	* il occupe 80% de la largeur de la fenêtre d'affichage et 100% de sa
       hauteur (Cherchez sur le Web les unités de mesure `vh` et `vw`
       [^somesamplefootnote])
