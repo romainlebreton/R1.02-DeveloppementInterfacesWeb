@@ -210,8 +210,8 @@ Comment peut-on rendre un site internet compatible mobile à moindre coût ?
 Voici l'algorithme (simplifié) opérant par défaut :
 
  * Générer le site sur une taille d'écran virtuel, disons d'une largeur de `980px` ;
- * Faire un zoom arrière de manière à faire rentrer le site dans l'écran du smartphone ; (oui, cela fait de petits éléments)
-   <!-- Tu veux dire avoir des tailles relatives partout qui ont étés étudiées pour 800x600 ? -->
+ * Faire un zoom arrière de manière à faire rentrer le site dans l'écran du
+   smartphone ; (oui, cela fait de petits éléments)
  * Supposer que l'utilisateur connaît le *pinch to zoom* pour naviguer dans le site :
  <img src="{{site.baseurl}}/assets/pinch_zoom.png " alt="Pinch to zoom schema"
 style="margin: 0 auto;height:100px;vertical-align:middle;">
@@ -336,12 +336,13 @@ hauteur à `800px`.
 
 <div class="exercise">
 
-Allez sur le site [Bootstrap](http://getbootstrap.com/) et constatez les 2 points de ruptures. Aidez-vous du
-bouton *"media query"* <img src="{{site.baseurl}}/assets/media-query-icon.png"
-alt="Bouton pour découvrir les media-query" style="vertical-align:middle">. (Au besoin actualisez la page pour que l'outil puisse correctement émuler le comportement sur mobile).
-Que ce passe-t-il visuellement dans le menu lorsque vous redimensionnnez la fenêtre autour du point de rupture situé à `768px` ?
-
-
+Allez sur le site [Bootstrap](http://getbootstrap.com/) et constatez les 2
+points de ruptures. Aidez-vous du bouton *"media query"* <img
+src="{{site.baseurl}}/assets/media-query-icon.png" alt="Bouton pour découvrir
+les media-query" style="vertical-align:middle">. (Au besoin actualisez la page
+pour que l'outil puisse correctement émuler le comportement sur mobile).  Que se
+passe-t-il visuellement dans le menu lorsque vous redimensionnnez la fenêtre
+autour du point de rupture situé à `768px` ?
 
 </div>
 
