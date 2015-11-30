@@ -17,8 +17,8 @@ Cours à l'IUT de Montpellier - 1ère année
 1. Semaine du 19 Octobre 2015 -- [TD 3 -- CSS Avancés 2/2](tutorials/tutorial3.html)
 1. Semaine du  2 Novembre 2015 -- [TD 4 -- Les Formulaires](tutorials/tutorial4.html)
 1. Semaine du 16 Novembre 2015 -- Évaluation ergonomie (20 min) puis [lancement du projet](projet.html)
-<!-- 1. Semaine du 03 Décembre 2015 -- [TD 5 -- Responsive Design](tutorials/tutorial5.html) puis projet
--->
+1. Semaine du 03 Décembre 2015 -- [TD 5 -- Responsive Design](tutorials/tutorial5.html) puis projet
+
 ## Instructions du projet
 
 [Instructions du projet](projet.html)

@@ -14,7 +14,7 @@ nombreuses solutions existantes :
 
 * Une solution en pur CSS. En effet, le CSS est le langage de base pour la mise
   en page des pages Web. Il est donc en constante évolution (CSS3 en cours
-  d'élaboration) pour s'adapter aux nouveau besoins.
+  d'élaboration) pour s'adapter aux nouveaux besoins.
 
 * Coder deux sites en HTML/CSS : un pour les ordinateurs et un pour les
    smartphones (et un pour les tablettes ? et un pour les smartwatch ?). Exemple
@@ -22,8 +22,8 @@ nombreuses solutions existantes :
 
 * Des applications natives pour chaque système (Android, iOS, Windows Phone, ...)
 
-* L'utilisation de la puissance de JavaScript pour faire des mises en page
-  adaptative. 
+* L'utilisation de la puissance de Javascript pour faire des mises en page
+  adaptatives. 
   <!-- (et dire du mal de Javascript ensuite...) -->
 
 * Faire le site en Flash (très mauvaise idée car il n'est plus supporté sur
@@ -54,7 +54,7 @@ particulièrement fournis et/ou sur des petits écrans 15 pouces.
 
 ### Les pourcentages '%'
 
-On peut commmencer par exprimer toutes les tailles en relatif, en prenant comme
+On peut commencer par exprimer toutes les tailles en relatif, en prenant comme
 référence la largeur de l'écran. C'est ce que nous avons déjà fait en utilisant
 des dimensions en `%`.
 
@@ -74,7 +74,7 @@ cas des hauteurs.  Cela est dû au fait que la largeur de la page est connue
 ... (puisque la page n'est pas encore affichée et que la hauteur va dépendre de
 la quantité de contenu). Autrement dit, la hauteur de la zone du navigateur où
 s'affiche la page (`viewport height`) n'est pas forcément la hauteur de la page
-[^somesamplefootnote] (c'est lié à la présence d'un ascenceur à droite pour
+[^somesamplefootnote] (c'est lié à la présence d'un ascenseur à droite pour
 descendre dans la page).
 
 [^somesamplefootnote]: L'unité `vh` permet maintenant de définir une taille de 0 à 100 relative au viewport.
@@ -86,7 +86,7 @@ descendre dans la page).
 Les règles précédentes permettent d'avoir un rapport homogène, mais pas un rendu
 optimal :
 
- - sur de petits écrans d'ordinateurs, des éléments ne peuvent pas être
+ - sur de petits écrans d'ordinateur, des éléments ne peuvent pas être
    correctement affichés (des images, des colonnes, ...)
  - sur de très grands écrans, le texte devient illisible : les yeux fatiguent à
    cause des lignes trop longues.
@@ -108,16 +108,16 @@ relative. Veux-tu passer plus de choses en taille relative ? -->
 
 ### Overconstraint
 
-Évidement lorsque l'on joue avec des `min-width` et un petit écran à un moment
+Évidemment lorsque l'on joue avec des `min-width` et un petit écran à un moment
 çà dépasse.
 
-Il va falloir donc utiliser des règles subtiles pour relacher une ou des contraintes lorsqu'elles ne peuvent pas être toutes satisfaites (on parle d'overconstraint pour faire bien).
+Il va falloir donc utiliser des règles subtiles pour relâcher une ou des contraintes lorsqu'elles ne peuvent pas être toutes satisfaites (on parle d'overconstraint pour faire bien).
 
 On va utiliser FlexBox pour exprimer cela en se servant de
 [cette super page sur FlexBox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 Grosso-modo nous avons déjà vu les règles de la colonne de gauche de cette
-page : c'est celles qui s'appliquent aux parent.  Nous allons maintenant
-découvir les règles de droites : celles qui s'appliquent aux éléments. Regardez
+page : c'est celles qui s'appliquent au parent.  Nous allons maintenant
+découvrir les règles de droites : celles qui s'appliquent aux éléments. Regardez
 particulièrement les propriétés `flex-shrink`, `flex-grow`. Nous ne toucherons
 pas à `flex-basis` (qui gardera donc son comportement par défaut `auto`).
 
@@ -178,28 +178,28 @@ en CSS3.
 
 ## Les outils pour travailler ?
 
-Outil de dévellopement Chrome !  Jusqu'ici on pouvait considéré que tous les
-outils de dévellopement d'Internet Explorer / Firefox / Chrome étaient égaux.
+Outil de développement Chrome !  Jusqu'ici on pouvait considérer que tous les
+outils de développement d'Internet Explorer / Firefox / Chrome étaient égaux.
 
 En fait celui de Chrome était déjà un peu meilleur :
 
-  * auto completion des règles CSS ajoutées dynamiquement,
+  * auto complétion des règles CSS ajoutées dynamiquement,
   * liste déroulante des valeurs possibles des champs,
-  * plus rapide, plus stable (un process par onglet)
+  * plus rapide, plus stable (un processus par onglet)
   * etc.
 
 Suivant les habitudes des développeurs cela peut être plus ou moins sujet à
-contreverse. Mais pour le Reponsive design il n'y a pas photo : Chrome (ou son
+controverse. Mais pour le Reponsive design il n'y a pas photo : Chrome (ou son
 pendant libre Chromium) est <strong>vraiment</strong> votre "best-friend-ever".
 
 **Attention :** Si vous n'avez pas Chrome ou Chromium, ou si en appuyant sur F12
-vous ne voyez pas la petite icone :
+vous ne voyez pas la petite icône :
 
 <img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil pour mobile"
 style="margin: 0 auto;width:100px;vertical-align:middle;">
 
 allez sur le [site de l'IUT](https://iutdepinfo.iutmontp.univ-montp2.fr/),
-identifiez vous et téléchargez directement
+identifiez-vous et téléchargez directement
 [le lien](https://infolimon.iutmontp.univ-montp2.fr/public/windows/chrome-win32.zip).
 
 Veuillez alors choisir dans *Device*, l'appareil *Samsung Galaxy SIII*.
@@ -211,9 +211,9 @@ Comment peut-on rendre un site internet compatible mobile à moindre coût ?
 Voici l'algorithme (simplifié) opérant par défaut :
 
  * Générer le site sur une taille d'écran virtuel, disons d'une largeur de `980px` ;
- * Faire un zoom arrière de manière à faire rentré le site dans l'écran du smartphone ; (oui, cela fait de petits éléments)
+ * Faire un zoom arrière de manière à faire rentrer le site dans l'écran du smartphone ; (oui, cela fait de petits éléments)
    <!-- Tu veux dire avoir des tailles relatives partout qui ont étés étudiées pour 800x600 ? -->
- * Considérer que l'utilisateur connait le *pinch to zoom* pour naviguer dans le site :
+ * Supposer que l'utilisateur connaît le *pinch to zoom* pour naviguer dans le site :
  <img src="{{site.baseurl}}/assets/pinch_zoom.png " alt="Pinch to zoom schema"
 style="margin: 0 auto;height:100px;vertical-align:middle;">
 
@@ -252,13 +252,13 @@ L'utilisateur mobile n'a pas la même attente que l'utilisateur sur ordinateur,
 il veut avoir accès rapidement aux informations essentielles, sans fioritures.
 On imagine que sur une smart watch par exemple un site comme méteo france serait
 largement plus dépouillé (sur une smartwatch elle afficherait un nuage ou un
-soleil et la temperature par exemple).
+soleil et la température par exemple).
 
-Typiquement nous voulons enlever des parties entières du sites suivant la taille
+Typiquement nous voulons enlever des parties entières du site suivant la taille
 de l'écran.
 
 La première chose à faire est donc de demander aux navigateurs de ne plus faire
-l'algo précédent (puisqu'on va gérer nous-mêmes) dans la balise `<head>` :
+l'algo précédent (puisqu'on va le gérer nous-mêmes) dans la balise `<head>` :
 
 ~~~
  <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -275,13 +275,13 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes
 <div class="exercise">
 
 Ajouter cette instruction au site de Chuck Norris et visualisez avec Chrome en
-choisissant un smartphone. Inspectez la largeur de `<body>`. Que constatez vous
+choisissant un smartphone. Inspectez la largeur de `<body>`. Que constatez-vous
 ?
 
 </div>
 
 Bon vous devez constatez que l'algo ne se fait plus. En gros le navigateur
-n'essait plus d'être intelligent : il va falloir prendre le relai.
+n'essaie plus d'être intelligent : il va falloir prendre le relai.
 
 ## La solution technique CSS3 :  les media queries
 
@@ -333,7 +333,6 @@ complexes en utilisant les opérateurs logiques:
 vraie que si la largeur de l'affichage est supérieure (ou égale) à `500px` et la
 hauteur à `800px`.
 
-Nous nous limiterons aux média queries sur la `max-width`. 
 
 <div class="exercise">
 
@@ -371,7 +370,7 @@ Afin d'organiser notre media queries, on utilise en général 3 à 4 valeurs de 
 
 ### Mettez-moi un burger au menu !
 
-Quand la taille de l'écran est limité, une bonne pratique en *responsive design*
+Quand la taille de l'écran est limitée, une bonne pratique en *responsive design*
 est de changer l'affichage du menu pour un bouton burger :
 
 <img alt="Burger button, three horizontal lines, (two corresponding to the
@@ -416,11 +415,11 @@ et faites le `<div class="burger">` à droite de la page (à la place du menu).
      {:.html}
 
 
-    * il se positionne par rapport à la fenêtre d'affichage (quel valeur de
+    * il se positionne par rapport à la fenêtre d'affichage (quelle valeur de
     `position` faut-il mettre ?), tout en haut à gauche.
 	* il occupe 80% de la largeur de la fenêtre d'affichage et 100% de sa
-      hauteur (Cherchez sur le Web les unité de mesure `vh` et `vw`)
-    * il est visuellement au-dessus des autres éléments du site (Cherchez sur le
+      hauteur (Cherchez sur le Web les unités de mesure `vh` et `vw`)
+    * il est visuellement au-dessus des autres éléments du site (cherchez sur le
     Web la propriété `z-index`)
 	* les sous-menus sont disposés verticalement.
 
@@ -441,6 +440,7 @@ LA SOURIS L'ATTEIGNE -->
   ... suspense, vous la verrez en 2ème année.
 
 
+<!--
 ## Une solution plus pratique que les media queries 
 
 ### Le classique 12 colonnes.
@@ -462,3 +462,4 @@ D'autres contraintes fortes viennent aussi s'ajouter :
  * mode offline (on peut passer sous un pont... il faut prévoir pour le cas échéant un cache local qui stoque les opérations courantes, afin de les consommmer lorsque le réseau revient) 
  * changement de paradigme IHM (mouse over, menu déroulant,... )
  -....
+-->
