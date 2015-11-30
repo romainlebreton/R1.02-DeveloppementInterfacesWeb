@@ -121,10 +121,6 @@ découvir les règles de droites : celles qui s'appliquent aux éléments. Regar
 particulièrement les propriétés `flex-shrink`, `flex-grow`. Nous ne toucherons
 pas à `flex-basis` (qui gardera donc son comportement par défaut `auto`).
 
-Nous n'en disons pas plus sur cette page volontairement : le travail d'un
-développeur Web consiste pour une bonne partie chercher des solutions sur le
-Web. (Nous restons bien sûr à votre disposition pour parler de votre
-compréhension.)
 
 <!-- Attention, le comportement de l'exercice précédent est déjà déformé par les
 propriétés par défaut flex-grow:0; flex-shrink:1 -->
@@ -146,14 +142,12 @@ soient par défaut de `300px` et `200px` et que :
 
    Bien sûr, toutes ces largeurs respecteront les anciennes contraintes `min-width` et `max-width`.
 
-2. Dimensionnez votre fenêtre de sorte à ce que `<body>` ait une largeur de
-   `620px`. Inspectez les largeurs de `<article>` et `<aside>`. Vérifiez que
+2. Redimensionnez la fenêtre du navigateur pour que la largeur de `<body>` soit de `620px`. Inspectez les largeurs de `<article>` et `<aside>`. Vérifiez que
    votre comportement satisfait le cahier des charges.
 
    <!-- Réponse : article 390 px et aside 230px car 120px de rab réparti en 30px de rab par unité -->
 
-3. Dimensionnez votre fenêtre de sorte à ce que `<body>` ait une largeur de
-   `380px`. Inspectez les largeurs de `<article>` et `<aside>`. Vérifiez que
+3. Redimensionnez la fenêtre du navigateur  pour que la largeur de `<body>` soit de `380px`. Inspectez les largeurs de `<article>` et `<aside>`. Vérifiez que
    votre comportement satisfait le cahier des charges.
 
    <!-- Réponse : article 220 px et aside 160px car 120px à gagner réparti en 40px à enlever par unité   -->
@@ -201,8 +195,8 @@ pendant libre Chromium) est <strong>vraiment</strong> votre "best-friend-ever".
 **Attention :** Si vous n'avez pas Chrome ou Chromium, ou si en appuyant sur F12
 vous ne voyez pas la petite icone :
 
-<img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil opur mobile"
-style="margin: 0 auto;display: block;">
+<img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil pour mobile"
+style="margin: 0 auto;width:100px;vertical-align:middle;">
 
 allez sur le [site de l'IUT](https://iutdepinfo.iutmontp.univ-montp2.fr/),
 identifiez vous et téléchargez directement
@@ -214,12 +208,14 @@ Veuillez alors choisir dans *Device*, l'appareil *Samsung Galaxy SIII*.
 
 Comment peut-on rendre un site internet compatible mobile à moindre coût ?
 
-Voici une solution pas chère par défaut :
+Voici l'algorithme (simplifié) opérant par défaut :
 
- * Générer le site sur une taille d'écran virtuel, disons d'une largeur de 980px ;
- * Faire un *scaling* pour faire "rentrer cela" dans l'écran du smartphone ;
+ * Générer le site sur une taille d'écran virtuel, disons d'une largeur de `980px` ;
+ * Faire un zoom arrière de manière à faire rentré le site dans l'écran du smartphone ; (oui, cela fait de petits éléments)
    <!-- Tu veux dire avoir des tailles relatives partout qui ont étés étudiées pour 800x600 ? -->
- * Considérer que l'utilisateur connait le *pinch to zoom* pour naviguer dans le site.
+ * Considérer que l'utilisateur connait le *pinch to zoom* pour naviguer dans le site :
+ <img src="{{site.baseurl}}/assets/pinch_zoom.png " alt="Pinch to zoom schema"
+style="margin: 0 auto;height:100px;vertical-align:middle;">
 
 <!--
 
@@ -341,9 +337,12 @@ Nous nous limiterons aux média queries sur la `max-width`.
 
 <div class="exercise">
 
-Allez sur le site Bootstrap et constatez les 2 points de ruptures. Aidez-vous du
+Allez sur le site [Bootstrap](http://getbootstrap.com/) et constatez les 2 points de ruptures. Aidez-vous du
 bouton *"media query"* <img src="{{site.baseurl}}/assets/media-query-icon.png"
-alt="Bouton pour découvrir les media-query" style="vertical-align:middle">.
+alt="Bouton pour découvrir les media-query" style="vertical-align:middle">. (Au besoin actualisez la page pour que l'outil puisse correctement émuler le comportement sur mobile).
+Que ce passe t il visuellement dans le menu lorsque vous redimensionnnez la fenêtre autour du point de rupture situé à `768px` ?
+
+
 
 </div>
 
