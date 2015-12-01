@@ -249,12 +249,12 @@ tombent sur un site non responsive.
 device mode *"Samsumg Galaxy SIII"* sous Chrome/Chromium et rechargez votre
 page. Constatez que le site s'affiche en tout petit.
 
-   **Attention :** Si vous n'avez pas Chrome ou Chromium à jour (vous devez voir
-la petite icône <img src="{{site.baseurl}}/assets/phone-responsive.png"
-alt="Outil pour mobile" style="margin: 0
-auto;width:60px;vertical-align:middle;"> en appuyant sur `F12`), allez sur le
-[site de l'IUT](https://iutdepinfo.iutmontp.univ-montp2.fr/), identifiez-vous
-puis téléchargez
+**Attention :** En appuyant sur `F12` sur Chrome/Chromium, vous devez voir la
+petite icône <img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil
+pour mobile" style="margin: 0 auto;width:60px;vertical-align:middle;">. Sinon,
+c'est que votre version de Chrome ou Chromium n'est pas à jour. Dans ce cas,
+allez sur le [site de l'IUT](https://iutdepinfo.iutmontp.univ-montp2.fr/),
+identifiez-vous puis téléchargez
 [l'archive suivante](https://infolimon.iutmontp.univ-montp2.fr/public/windows/chrome-win32.zip)
 (à décompresser avec *7-zip*).  Il faudra d'abord fermer toutes vos fenêtres de
 Chrome avant de lancer l'exécutable `chrome.exe` contenu dans l'archive.
