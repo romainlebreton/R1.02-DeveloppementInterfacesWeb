@@ -158,12 +158,22 @@ pour ces deux éléments à `0`.
    <!-- Bien sûr, toutes ces largeurs respecteront les anciennes contraintes `min-width` et `max-width`. -->
 
 <!-- 3. Redimensionnez la fenêtre du navigateur pour que la largeur de `<body>` soit -->
-<!--    de `380px`. Inspectez les largeurs de `<article>` et `<aside>`. Vérifiez que -->
+<!--    de `476px`. Inspectez les largeurs de `<article>` et `<aside>`. Vérifiez que -->
 <!--    votre comportement satisfait le cahier des charges. -->
 
-   <!-- Réponse : article 220 px et aside 160px car 120px à gagner réparti en 40px à enlever par unité   -->
-   <!-- Je ne sais pas pourquoi chromium fait 210 / 170 ??? -->
-   <!-- EXERCICE 3.3 buggé à cause de flex-shrink buggé ??? -->
+<!-- Réponse : -->
+
+<!-- La mauvaise réponse tentante est : article 284 px et aside 192px car 24px à -->
+<!-- gagner réparti en 8px à enlever par unité. -->
+
+<!-- Cependant le rétrécissement se fait en proportion de la taille des -->
+<!-- éléments. Donc on doit enlever 6% à 300px (282) et 3% à 200px (194). -->
+
+<!-- Référence : http://www.w3.org/TR/css3-flexbox/#flex-property -->
+<!-- Note: The flex shrink factor is multiplied by the flex base size when -->
+<!-- distributing negative space. This distributes negative space in proportion to -->
+<!-- how much the item is able to shrink, so that e.g. a small item won’t shrink to -->
+<!-- zero before a larger item has been noticeably reduced. -->
    
 <!--
 ATTENTION :
