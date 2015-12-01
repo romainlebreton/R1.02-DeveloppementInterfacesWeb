@@ -121,33 +121,44 @@ découvrir les règles de droites : celles qui s'appliquent aux éléments. Rega
 particulièrement les propriétés `flex-shrink`, `flex-grow`. Nous ne toucherons
 pas à `flex-basis` (qui gardera donc son comportement par défaut `auto`).
 
+Nous vous invitons à faire d'autres recherches pour mieux comprendre
+`flex-shrink` et `flex-grow` si nécessaire. En particulier, le site du
+[Mozilla Developer Network](https://developer.mozilla.org/fr/) est une mine
+d'information.
 
 <!-- Attention, le comportement de l'exercice précédent est déjà déformé par les
 propriétés par défaut flex-grow:0; flex-shrink:1 -->
 
-<!-- NOUVEL EXERCICE : ON EN PARLE -->
 <div class="exercise">
 
-1. Implémentez le comportement suivant :  
-Changez les largeurs de `<article>` et `<aside>` pour qu'elles
-soient par défaut de `300px` et `200px` et que :
+1. Changez les largeurs de `<article>` et `<aside>` pour qu'elles soient par
+défaut de `300px` et `200px`. Mettez les propriétés `flex-shrink` et `flex-grow`
+pour ces deux éléments à `0`.  
+**Bougez** la largeur de la page. Est-ce que les largeurs de `<article>` et
+`<aside>` changent ?
 
-   1. Quand l'écran est trop petit pour afficher `<article>` et `<aside>`,
-    `<article>` diminuera de deux tiers de la largeur à supprimer et `<aside>`
-    diminuera du reste.
-	
-   1. Quand l'écran est trop grand, faites en sorte que l'espace restant soit
-    réparti entre `<article>` et `<aside>` de telle sorte que l'espace gagné par
-    `<article>` soit 3 fois plus grand que celui gagné par `<aside>`.
+1. Nous souhaitons que quand l'écran est trop large, l'espace restant soit
+   réparti entre `<article>` et `<aside>` de telle sorte que l'espace gagné par
+   `<article>` soit 3 fois plus grand que celui gagné par `<aside>`.  
+   **Quelle propriété** CSS devez-vous utiliser pour avoir ce comportement ?
+   Implémentez ce comportement.
 
-   Bien sûr, toutes ces largeurs respecteront les anciennes contraintes `min-width` et `max-width`.
-
-2. Redimensionnez la fenêtre du navigateur pour que la largeur de `<body>` soit de `620px`. Inspectez les largeurs de `<article>` et `<aside>`. Vérifiez que
-   votre comportement satisfait le cahier des charges.
-
+1. Pour vérifier que vous avez bien répondu à la question précédente,
+   redimensionnez la fenêtre du navigateur pour que la largeur de `<body>` soit
+   de `620px`.   
+   Quelles devraient être selon vous les largeurs de `<article>` et `<aside>` ?
+   Inspectez maintenant les largeurs de `<article>` et `<aside>` pour vérifier votre calcul.
    <!-- Réponse : article 390 px et aside 230px car 120px de rab réparti en 30px de rab par unité -->
 
-<!-- 3. Redimensionnez la fenêtre du navigateur  pour que la largeur de `<body>` soit de `380px`. Inspectez les largeurs de `<article>` et `<aside>`. Vérifiez que -->
+1.  Nous souhaitons que quand l'écran est trop petit, `<article>` diminuera de
+    deux tiers de la largeur à supprimer et `<aside>` diminuera du reste.  
+   **Quelle propriété** CSS devez-vous utiliser pour avoir ce comportement ?
+   Implémentez ce comportement.
+
+   <!-- Bien sûr, toutes ces largeurs respecteront les anciennes contraintes `min-width` et `max-width`. -->
+
+<!-- 3. Redimensionnez la fenêtre du navigateur pour que la largeur de `<body>` soit -->
+<!--    de `380px`. Inspectez les largeurs de `<article>` et `<aside>`. Vérifiez que -->
 <!--    votre comportement satisfait le cahier des charges. -->
 
    <!-- Réponse : article 220 px et aside 160px car 120px à gagner réparti en 40px à enlever par unité   -->
@@ -193,15 +204,6 @@ peu meilleur :
 En tout cas, pour le Reponsive design il n'y a pas photo : Chrome (ou son
 pendant libre Chromium) est <strong>vraiment</strong> votre "best-friend-ever".
 
-**Attention :** Si vous n'avez pas Chrome ou Chromium, ou si en appuyant sur F12
-vous ne voyez pas la petite icône 
-<img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil pour mobile"
-style="margin: 0 auto;width:100px;vertical-align:middle;">
-allez sur le [site de l'IUT](https://iutdepinfo.iutmontp.univ-montp2.fr/),
-identifiez-vous et téléchargez directement
-[le lien](https://infolimon.iutmontp.univ-montp2.fr/public/windows/chrome-win32.zip).
-
-<!-- Veuillez alors choisir dans *Device*, l'appareil *Samsung Galaxy SIII*. -->
 
 ### Que fait mon navigateur Web sur téléphone par défaut pour un site ?
 
@@ -234,8 +236,19 @@ tombent sur un site non responsive.
 <div class="exercise">
 
 1. Dans les outils développeurs (`F12`) de Chrome/Chromium, passez dans le
-device mode "Samsumg Galaxy SIII" sous Chrome/Chromium et rechargez votre
+device mode *"Samsumg Galaxy SIII"* sous Chrome/Chromium et rechargez votre
 page. Constatez que le site s'affiche en tout petit.
+
+   **Attention :** Si vous n'avez pas Chrome ou Chromium à jour (vous devez voir
+la petite icône <img src="{{site.baseurl}}/assets/phone-responsive.png"
+alt="Outil pour mobile" style="margin: 0
+auto;width:60px;vertical-align:middle;"> en appuyant sur `F12`), allez sur le
+[site de l'IUT](https://iutdepinfo.iutmontp.univ-montp2.fr/), identifiez-vous
+puis téléchargez
+[l'archive suivante](https://infolimon.iutmontp.univ-montp2.fr/public/windows/chrome-win32.zip)
+(à décompresser avec *7-zip*).  Il faudra d'abord fermer toutes vos fenêtres de
+Chrome avant de lancer l'exécutable `chrome.exe` contenu dans l'archive.
+
 1. Inspectez le `<body>` de votre page pour voir sa largeur.
 
    <!-- largeur : 980 px sur mon PC -->
@@ -243,22 +256,26 @@ page. Constatez que le site s'affiche en tout petit.
 1. Zoomez et dézoomez avec les boutons - et + de <img
 src="{{site.baseurl}}/assets/zoom-button.png" alt="Bouton pour le zoom"
 style="vertical-align:middle"> (émulation du *pinch-to-zoom*). Passez au niveau
-de zoom 1 pour voir le site non zoomé.  
+de zoom 1 pour voir le site non zoomé.
+
+1. Vérifiez que la taille du `<body>` est de `980px`, ce qui signifie que
+   l'algorithme précédent a été utilisé pour l'affichage.
 
 </div>
 
-Cela marche mais on ne peut pas dire que cela est forcément le mieux.
-L'utilisateur mobile n'a pas la même attente que l'utilisateur sur ordinateur,
-il veut avoir accès rapidement aux informations essentielles, sans fioritures.
-On imagine que sur une smart watch par exemple un site comme méteo france serait
-largement plus dépouillé (sur une smartwatch elle afficherait un nuage ou un
-soleil et la température par exemple).
+Même si cela marche, on ne peut pas dire que cela soit optimal. L'utilisateur
+mobile n'a pas la même attente que l'utilisateur sur ordinateur, il veut avoir
+accès rapidement aux informations essentielles, sans fioritures.  On imagine que
+sur une smart watch par exemple un site comme méteo france serait largement plus
+dépouillé (sur une smartwatch elle afficherait un nuage ou un soleil et la
+température par exemple).
 
 Typiquement nous voulons enlever des parties entières du site suivant la taille
 de l'écran.
 
 La première chose à faire est donc de demander aux navigateurs de ne plus faire
-l'algo précédent (puisqu'on va le gérer nous-mêmes) dans la balise `<head>` :
+l'algorithme précédent (puisqu'on va le gérer nous-mêmes) dans la balise
+`<head>` :
 
 ~~~
  <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -289,23 +306,24 @@ Les media queries sont un jeu d'options ajoutées à la norme CSS3 et qui permet
 de définir des règles CSS qui ne s'appliqueront que sous certaines conditions
 spécifiques.
 
-Il existe deux manières de faire appel à une media query:
+Il existe deux manières différentes de faire appel à une *media query*:
 
-* charger un fichier CSS spécifique en entier, uniquement dans certaines
-  conditions. Il faut ajouter à l'en-tête `<head>` de la page web une
-  déclaration de fichier CSS standard, à laquelle on rajoute l'attribut `media`
-  et une condition spécifique.  
-  N'oubliez pas que le dernier CSS chargé prend le pas sur les
-  précédents. Pensez donc à toujours déclarer vos media-queries en dernier,
-  sinon elles seront systématiquement écrasées par votre CSS *“standard"*.
+* Soit vous souhaitez un fichier CSS spécifique en entier, mais uniquement dans
+  certaines conditions. Alors il faut ajouter à l'en-tête `<head>` de la page
+  web une déclaration de fichier CSS standard, à laquelle on rajoute l'attribut
+  `media` et une condition spécifique.
 
   ~~~
   <link rel="stylesheet" media="condition" href="mon_css_spécial.css"/>
   ~~~
   {:.html}
+  
+  N'oubliez pas que le dernier CSS chargé prend le pas sur les
+  précédents. Pensez donc à toujours déclarer vos media-queries en dernier,
+  sinon elles seront systématiquement écrasées par votre CSS *“standard"*.
 
-* au sein même d'un fichier CSS, on peut définir certaines règles qui ne
-  s'appliqueront que sous certaines conditions :
+* Soit vous souhaitez que juste certaines règles s'appliquent sous
+  certaines conditions. Alors vous englobez vos règles avec la syntaxe suivante :
 
   ~~~
   @media(ma_condition) {
@@ -318,9 +336,35 @@ Une media query fonctionne de la manière suivante: la condition est évaluée e
 retourne une valeur “vrai” ou “faux”. Si la valeur est vraie, le fichier CSS/ la
 règle CSS (selon la méthode employée) est appliquée.
 
-Chaque condition est formée à partir d'une ou plusieurs conditions de base. Les
-conditions de base peuvent être combinées ensemble pour former des conditions
-complexes en utilisant les opérateurs logiques:
+Chaque condition est formée à partir d'une ou plusieurs conditions de
+base. Parmi
+[l'ensemble des conditions possibles](https://developer.mozilla.org/fr/docs/Web/CSS/Media_queries),
+nous allons nous intéresser particulièrement aux suivantes:
+
+* `min-width`, `max-width`, `min-height` et `max-height` : permettent de renseigner une
+  dimension minimale/maximale à remplir pour que la condition soit vraie.
+  <!-- Définies dans l'une des unités supportées par le CSS (px, em, cm, in...). Si -->
+  <!-- ni “min” ni “max” n'est utilisé, alors la condition se réfère à une taille -->
+  <!-- exacte. -->
+  <!-- * « color » : le nombre de bits par couleur supportés par l'écran (0 = noir et -->
+  <!--   blanc, 8 = 256 couleurs, 16 = 65000 couleurs) -->
+* `orientation` : prend les valeurs `landscape` (écran horizontal) ou `portrait`
+  (écran vertical)
+
+<!-- * « type de média »: prend l'une de ces valeurs. Vous pouvez créer avec un jeu -->
+<!--   de règles CSS qui ne s'appliquera que pour une impression ou un système de -->
+<!--   synthèse vocale pour les aveugles. -->
+
+<!-- * « monochrome »: 0 si l'écran est couleur, sinon une valeur en nombre de bits -->
+<!--   par couleur pour les écrans supportant des niveaux de gris. Il est donc -->
+<!--   possible en combinant les conditions de base “color” et “monochrome” de cibler -->
+<!--   spécifiquement les devices “noir et blanc”, “niveau de gris” ou “couleur” pour -->
+<!--   adapter par exemple les couleurs de police de caractère -->
+
+
+
+Les conditions de base peuvent être combinées ensemble pour former des
+conditions complexes en utilisant les opérateurs logiques:
 
 * “and” (ET): les deux conditions de base doivent être vraies pour que la
   condition soit vraie
@@ -331,25 +375,26 @@ complexes en utilisant les opérateurs logiques:
 
 **Exemple :** la règle `(min-width: 500px) and (min-height: 800px)` n'est
 vraie que si la largeur de l'affichage est supérieure (ou égale) à `500px` et la
-hauteur à `800px`.
+hauteur supérieure à `800px`.
 
 
 <div class="exercise">
 
-Allez sur le site [Bootstrap](http://getbootstrap.com/) et constatez les 2
+* Allez sur le site [Bootstrap](http://getbootstrap.com/) et constatez les 2
 points de ruptures. Aidez-vous du bouton *"media query"* <img
 src="{{site.baseurl}}/assets/media-query-icon.png" alt="Bouton pour découvrir
-les media-query" style="vertical-align:middle">. (Au besoin actualisez la page
-pour que l'outil puisse correctement émuler le comportement sur mobile).  Que se
-passe-t-il visuellement dans le menu lorsque vous redimensionnnez la fenêtre
-autour du point de rupture situé à `768px` ?
+les media-query" style="vertical-align:middle">.  
+(Au besoin actualisez la page pour que l'outil puisse correctement émuler le
+comportement sur mobile).
+* Que se passe-t-il visuellement dans le menu lorsque vous redimensionnnez la
+fenêtre autour du point de rupture situé à `768px` ?
 
 </div>
 
 
 ### Les points de ruptures.
 
-Afin d'organiser notre media queries, on utilise en général 3 à 4 valeurs de largeur d'écrans, par exemple : 
+Afin d'organiser nos *media queries*, on utilise en général 3 à 4 valeurs de largeur d'écrans, par exemple : 
  
  * `480px` (Smartphone)
  * `768px` (Tablette)
@@ -380,7 +425,7 @@ style="margin:0 auto;display: block;">
 
 Lorsque l'on cliquera dessus, le menu apparaîtra. Cela permet de ne pas perdre
 de place sur la page lorsque le menu est fermé. Pour fixer les idées, nous
-voulons quelque chose se rapprochant de cela :
+voulons un menu qui apparaît latéralement à la manière des exemples suivants :
  
  * [http://codepen.io/gungorbudak/pen/XbazEX](http://codepen.io/gungorbudak/pen/XbazEX)
  * [http://codepen.io/drewr/pen/uxvdt](http://codepen.io/drewr/pen/uxvdt)
