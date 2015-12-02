@@ -520,4 +520,9 @@ D'autres contraintes fortes viennent aussi s'ajouter :
  * mode offline (on peut passer sous un pont... il faut prévoir pour le cas échéant un cache local qui stoque les opérations courantes, afin de les consommmer lorsque le réseau revient) 
  * changement de paradigme IHM (mouse over, menu déroulant,... )
  -....
+
+## Autre page intéressante pour avoir des idées
+
+https://developer.mozilla.org/en-US/Apps/Design/UI_layout_basics/responsive_design_building_blocks
+
 -->
