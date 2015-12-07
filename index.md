@@ -23,6 +23,10 @@ Cours à l'IUT de Montpellier - 1ère année
    [TD 5 (2/2) -- Responsive Design](tutorials/tutorial5.html) (max 2h) puis projet
 1. Semaine du 14 Décembre 2015 -- projet (3h)
 
+## Compléments optionels
+
+1. [Complément du TD5](assets/tut5-complement.html)
+
 ## Instructions du projet
 
 [Instructions du projet](projet.html)
