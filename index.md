@@ -18,7 +18,10 @@ Cours à l'IUT de Montpellier - 1ère année
 1. Semaine du  2 Novembre 2015 -- [TD 4 -- Les Formulaires](tutorials/tutorial4.html)
 1. Semaine du 16 Novembre 2015 -- Évaluation ergonomie (20 min) puis [lancement du projet](projet.html)
 1. Semaine du 30 Novembre 2015 --
-   [TD 5 -- Responsive Design](tutorials/tutorial5.html) (~2h) puis projet (1h)
+   [TD 5 (1/2) -- Responsive Design](tutorials/tutorial5.html) (~2h) puis projet (1h)
+1. Semaine du 07 Décembre 2015 --
+   [TD 5 (2/2) -- Responsive Design](tutorials/tutorial5.html) (max 2h) puis projet
+1. Semaine du 14 Décembre 2015 -- projet (3h)
 
 ## Instructions du projet
 
