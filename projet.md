@@ -75,7 +75,7 @@ questions et réponses plus bas dans la page (utilisation des ancres).
 1. la liste des display autorisés est : block, inline, flex et none.
 1. l’utilisation des float ou des tableaux n’est pas autorisée pour la mise en page. 
 1. le visuel du site (charte graphique) doit être cohérent sur toutes les pages du site. 
-1. Un seul fichier CSS pour toutes les pages.
+<!-- 1. Un seul fichier CSS pour toutes les pages. -->
 1. Le CSS devra être synthétique: Par exemple, il devra privilégier
    l’utilisation des classes en CSS à l’usage d’identifiant et de règles qui ne
    s’appliquent qu’à un seul élément.
