@@ -73,7 +73,10 @@ questions et réponses plus bas dans la page (utilisation des ancres).
    balises de structuration : header, nav, main, article, aside, footer, div.
 1. l’utilisation de framework tels que bootstrap, foundation, etc… n’est pas autorisée. 
 1. la liste des display autorisés est : block, inline, flex et none.
-1. l’utilisation des float ou des tableaux n’est pas autorisée pour la mise en page. 
+1. l’utilisation des float ou des tableaux n’est pas autorisée pour la mise en
+   page, c'est-à-dire par exemple pour mettre une colonne à côté d'une autre
+   ... Par contre, on peut bien sûr s'en servir pour son usage historique :
+   entourer une image de texte.
 1. le visuel du site (charte graphique) doit être cohérent sur toutes les pages du site. 
 <!-- 1. Un seul fichier CSS pour toutes les pages. -->
 1. Le CSS devra être synthétique: Par exemple, il devra privilégier
