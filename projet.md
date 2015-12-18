@@ -102,9 +102,9 @@ Le site Web devra être mis en place dans le dossier existant **public_html** de
 l'un des membres de l'équipe. Un fichier compressé **sources.zip** contenant les
 sources du site Web devra aussi être placé dans le dossier **public_html**.
 
-Pour mémoire, voici
-[les groupes de projet tutoré](https://docs.google.com/spreadsheets/d/1MSJYHpXNsjZGFl1xLberYLjEJRdtej37z3JFqSnq4fY/edit?usp=sharing)
-et leurs produits vendus.
+<!-- Pour mémoire, voici -->
+<!-- [les groupes de projet tutoré](https://docs.google.com/spreadsheets/d/1MSJYHpXNsjZGFl1xLberYLjEJRdtej37z3JFqSnq4fY/edit?usp=sharing) -->
+<!-- et leurs produits vendus. -->
 
 
 
