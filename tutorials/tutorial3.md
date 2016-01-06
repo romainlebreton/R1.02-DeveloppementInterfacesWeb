@@ -431,7 +431,7 @@ Dans ce premier exercice, nous allons créer un menu dans un style `block`.
 dimensions. Donnez-lui la largeur `50%`. Que constatez-vous ?
 
    **Explication :** La largeur d'une balise en `display:block`
-     est relative celle de son *containing block* (`<header>`
+     est relative à celle de son *containing block* (`<header>`
      ici). **Inspectez** `<header>` puis `<nav>` pour connaître leur
      largeurs. **Vérifiez** qu'on a bien un rapport de `50%`.
 
@@ -477,6 +477,19 @@ espaces dans le HTML, qui sont affichés lorsque les éléments sont `inline`.
      [au TD dernier](tutorial2.html).
 
 </div>
+
+<!--
+
+Préciser ici la règle "Centrer horizontalement" :
+
+* Pour des éléments en display:inline (comme du texte ou des
+  balises au niveau du texte comme `<em>` )  : `text-align: center`
+* Pour des éléments en display:block (comme des balises de structure) moins
+large que leur balise parent : `margin : auto` sur la balise de structure.
+
+Redire la règle du containing block ?
+
+-->
 
 ### `display:none`
 
