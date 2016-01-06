@@ -19,7 +19,8 @@ attendrons la même quantité de travail.
 3.  7 Décembre -- TD sur le **responsive design 2/2** (2h) puis projet (1h)
 4. 14 Décembre -- projet (3h)
 5.  4 Janvier  -- Examen écrit HTML/CSS
-6. 11 Janvier  -- Soutenances projet tutoré (20 min/groupe) et TD installation Joomla (3h)
+6. 11 & 12 Janvier  -- Soutenances projet tutoré (20 min/groupe)
+7. 18 janvier -- TD installation Joomla (3h)
 
 ### Architecture minimum de votre site :
 
