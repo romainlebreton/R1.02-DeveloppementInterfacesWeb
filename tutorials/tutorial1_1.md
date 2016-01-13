@@ -4,6 +4,8 @@ subtitle: Doctype et premières balises
 layout: tutorial
 ---
 
+<!-- Faire une note plus complète sur l'encodage des caractères -->
+
 Le but de ce TD est de comprendre comment sont écrites les pages Web basiques,
 aussi appelées pages statiques (Web 1.0). Une telle page Web contient deux
 parties :

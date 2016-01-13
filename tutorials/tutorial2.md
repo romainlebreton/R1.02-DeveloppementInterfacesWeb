@@ -6,6 +6,8 @@ layout: tutorial
 
 <!--
 nth-child odd sur ie 11 background color
+
+définir clairement sélecteur
 -->
 
 
