@@ -31,4 +31,8 @@ Cours à l'IUT de Montpellier - 1ère année
 
 [Instructions du projet](projet.html)
 
+## Joomla
+
+Semaine du 18 janvier -- [TD sur l'installation et la prise en main de Joomla](assets/TDJoomla.pdf)
+
 
