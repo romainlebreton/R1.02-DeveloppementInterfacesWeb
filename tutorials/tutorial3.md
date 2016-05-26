@@ -4,6 +4,12 @@ subtitle: display et mise-en-page
 layout: tutorial
 ---
 
+<!--
+Remarque des élèves au Jury A1 :
+plus d'exemples de comment utiliser Flex
+Faire des références (et aller voir) à alsacreation et W3schools (bon tuto sur internet)
+Et dire clairement qu'il faut qu'ils aillent lire ces docs
+-->
 
 ## Ordre d'application des sélecteurs CSS.
 
