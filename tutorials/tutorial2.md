@@ -92,7 +92,7 @@ Vous allez d'abord structurer logiquement le contenu du site. Voici un *template
 page Web.
 
 
-~~~
+```html
 <!DOCTYPE html>
 <html>
     <head>...</head>
@@ -111,8 +111,7 @@ page Web.
         </footer>
     </body>
 </html>
-~~~
-{:.html}
+```
 
 Pour fixer les idées, voici un aperçu d'une mise en page correspondante à
 l'exemple précédent :
@@ -171,19 +170,17 @@ CSS complexe.
 La première façon de composer des sélecteurs est le regroupement.
 Les trois règles suivantes :
 
-~~~
+```css
 h1 {color: red}
 h2 {color: red}
 h3 {color: red}
-~~~
-{:.css}
+```
 
 peuvent s'écrire :
 
-~~~
+```css
 h1,h2,h3 {color: red}
-~~~
-{:.css}
+```
 
 
 ### Combinaison
@@ -191,17 +188,15 @@ h1,h2,h3 {color: red}
 Pour préciser un élément, il suffit d'apposer plusieurs sélecteurs de base
 (balise, classe ou identifiant). Par exemple :
 
-~~~
+```css
 div.toto
-~~~
-{:.css}
+```
 
 correspond au sélecteur des `<div>` qui ont la classe 'toto'. Ou encore 
 
-~~~
+```css
 .titi.toto
-~~~
-{:.css}
+```
 
 correspond aux éléments qui ont la classe `toto` <strong>ET</strong> `titi`.
 
@@ -216,10 +211,9 @@ On veut pouvoir limiter une règle css à une sous partie de l'arborescence HTML
 
 La relation de descendance directe est signifiée par le caractère `>`. Par exemple,
 
-~~~
+```css
 #titi > .toto
-~~~
-{:.css}
+```
 
 sélectionne les éléments de la classe `toto` qui sont <strong>enfant</strong>
 (direct) de l'élément d'identifiant `titi`.
@@ -230,10 +224,9 @@ sélectionne les éléments de la classe `toto` qui sont <strong>enfant</strong>
 La relation de descendance indirecte est signifiée par le caractère
 d'espacement. Par exemple,
 
-~~~
+```css
 #titi .toto
-~~~
-{:.css}
+```
 
 signifie les éléments qui ont la classe `toto` qui sont
 <strong>descendants</strong> (direct ou indirect) de l'élément d'identifiant
@@ -260,7 +253,7 @@ les niveaux de 1 à 11 et le niveau 14.
 Une pseudo-classe est un moyen d'indiquer un état particulier de l'élément qui
 doit être sélectionné. Voici quelques exemples :
 
-~~~
+```css
 /* Style des liens <a> n'ayant pas été visités */
 a:link {color: yellow;}
 /* Style des liens <a> ayant été visités */
@@ -275,8 +268,7 @@ p:nth-child(3) {color: green;}
 /* les textes des éléments li impairs seront verts et les pairs rouges */
 li:nth-child(odd) {color: green;}
 li:nth-child(even) {color: red;}
-~~~
-{:.css}
+```
 
 
 <div class="exercise">
@@ -310,7 +302,7 @@ ligne du tableau). Il peut être utilisé à la place d'un élément `<td>`.
 
 Voici un squelette de table :
 
-~~~
+```html
 <table>
    <tr>
       <th>Caract1</th>
@@ -332,8 +324,7 @@ Voici un squelette de table :
    </tr>
    ...
 </table>
-~~~
-{:.html}
+```
 
 <div class="exercise">
 
@@ -437,14 +428,13 @@ auto;display: block;">
 
 Par exemple le code suivant
 
-~~~
+```css
 .maboite {
   padding:20px 50px 20px 50px;
   border:5px solid green;
   background-color:gold;
 }
-~~~
-{:.css}
+```
 
 s'affiche comme ceci (inspectez l'élément)
 
@@ -470,12 +460,11 @@ Il y a trois syntaxes différentes pour donner des valeurs au `margin`, au
 
 Exemples : 
 
-~~~
+```css
 #titi {margin : 5px 0 4px 7px;}
  div {margin: 10px 5px;} // Marges verticales (haute et basse) de 10px et horizontales de 5px
 .toto {padding : 5px}    // Le padding dans toutes les directions est de 5px
-~~~
-{:.css}
+```
 
 **Note :** On peut aussi préciser (péniblement) les valeurs unitaires des
   propriétés `margin-top`, `margin-left`, `margin-bottom`,...

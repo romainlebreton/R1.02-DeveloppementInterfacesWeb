@@ -43,13 +43,12 @@ pouvons définir des largeurs variables pour nos colonnes.
   `row`) qui sera divisé en deux colonnes dont la largeur dépend de la taille de
   l'écran.
 
-~~~
+```html
 <div class="row">
   <div class="small-8 medium-6 large-4">8/6/4 columns</div>
   <div class="small-4 medium-6 large-8">4/6/8 columns</div>
 </div>
-~~~
-{:.html}
+```
 
 <div class="row">
 <div class="small-8 medium-6 large-4">
@@ -82,7 +81,7 @@ La classe `columns` permet de définir le comportement par défaut *"je prend la
 place restante"*. Si plusieurs éléments ont la classe colonne, alors ils se
 partagent équitablement la largeur restante.
 
-~~~
+```html
 <div class="row">
   <div class="small-4 columns">4 columns</div>
   <div class="columns">Whatever's left!</div>
@@ -92,8 +91,7 @@ partagent équitablement la largeur restante.
   <div class="small-8 medium-6 large-4">8/6/4 columns</div>
   <div class="small-4 medium-6 large-8">4/6/8 columns</div>
 </div>
-~~~
-{:.html}
+```
 
 <div class="row">
 <div class="small-2 columns">
@@ -128,13 +126,12 @@ colonnes selon si l'écran est `small`, `medium` ou `large` ?
 
 À l'inverse, la classe `shrink` indique que le bloc ne prend que la place nécessaire.
 
-~~~
+```html
 <div class="row">
   <div class="shrink columns">Shrink!</div>
   <div class="columns">Expand!</div>
 </div>
-~~~
-{:.html}
+```
 
 <div class="row">
 <div class="shrink">
@@ -151,7 +148,7 @@ Pour faire que les colonnes s'empilent, il faut spécifier leur largeur à `12`
 unités. Dans l'exemple suivant, les colonnes s'empilent sur petit écran et se
 mettent côte à côte sinon.
 
-~~~
+```html
 <div class="row">
   <div class="small-12 large-expand columns">One</div>
   <div class="small-12 large-expand columns">Two</div>
@@ -160,8 +157,7 @@ mettent côte à côte sinon.
   <div class="small-12 large-expand columns">Five</div>
   <div class="small-12 large-expand columns">Six</div>
 </div>
-~~~
-{:.html}
+```
 
 <div class="row">
 <div class="small-12 large-expand columns">
@@ -206,54 +202,48 @@ techniques.
 
 <!-- Flexgrid foundation -->
 
-<!-- ~~~ -->
+<!-- ```html
 <!-- <div class="row"> -->
 <!--   <div class="small-4 columns">4 columns</div> -->
 <!--   <div class="columns">Whatever's left!</div> -->
 <!-- </div> -->
-<!-- ~~~ -->
-<!-- {:.html} -->
+<!-- ```
 
-<!-- ~~~ -->
+<!-- ```css
 <!-- .row { -->
 <!--   dislay:flex; -->
 <!--   flex-wrap:wrap; -->
 <!-- } -->
-<!-- ~~~ -->
-<!-- {:.css} -->
+<!-- ```
 
-<!-- ~~~ -->
+<!-- ```css
 <!-- @media () { -->
 <!-- .small-4 { -->
 <!-- flex: 0 0 33.33333%; -->
 <!-- box-sizing : border-box; -->
 <!-- } -->
 <!-- } -->
-<!-- ~~~ -->
-<!-- {:.css} -->
+<!-- ```
 
-<!-- ~~~ -->
+<!-- ```css
 <!-- .columns { -->
 <!--   flex: 1 1 0px; -->
 <!-- } -->
-<!-- ~~~ -->
-<!-- {:.css} -->
+<!-- ```
 
-<!-- ~~~ -->
+<!-- ```css
 <!-- .shrink { -->
 <!--   flex: 0 0 auto; -->
 <!-- } -->
-<!-- ~~~ -->
-<!-- {:.css} -->
+<!-- ```
 
-<!-- ~~~ -->
+<!-- ```css
 <!-- @media() { -->
 <!-- .medium-expand { -->
 <!--   flex: 1 1 0px; -->
 <!--   } -->
 <!--   } -->
-<!-- ~~~ -->
-<!-- {:.css} -->
+<!-- ``` -->
 
 
 <style type="text/css">

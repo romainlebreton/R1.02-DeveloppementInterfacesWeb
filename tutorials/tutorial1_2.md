@@ -39,10 +39,9 @@ Une règle CSS est composée de deux parties:
 
 Par exemple la règle CSS suivante donne à tous les `h3` le style italique et défini comme couleur de texte le bleu : 
 
-~~~
+```css
 h3 {  font-style:italic;color:blue;}
-~~~
-{:.css}
+```
 
  * le sélecteur est `h3`,
  * le bloc de déclaration est `font-style:italic;color:blue;`.
@@ -56,10 +55,9 @@ Nous déclarerons dans ce fichier des règles CSS.
 2. Dans le fichier `index.html`, ajouter la ligne suivante dans l'en-tête du
 document HTML (dans la partie `head`) :
 
-   ~~~
+   ```html
    <link rel="stylesheet" type="text/css" href="css/styles.css">
-   ~~~
-   {:.html}
+   ```
 
    Cette ligne permet de lier notre fichier de style CSS à la page Web. Il sera
    donc chargé avec la page.
@@ -176,15 +174,14 @@ small {font-size: 0.8em;}
 Les dimensions sont utilisées sur différentes parties d'un élément.
 **Exemple :**
 
-~~~ 
+```css
 .ma_class {
   height:150px;
   width:50px;
   padding:15px;
   border-width:1px;
 }
-~~~
-{:.css}
+```
 
 <!-- padding -->
 
@@ -195,10 +192,9 @@ Nous allons lister ici les propriétés les plus utilisées sur les fontes :
 1. **`font-family` :** Cette propriété permet de choisir la fonte que vous
    souhaitez utiliser. Exemple :
 
-   ~~~
+   ```css
    font-family: "Lucida Sans Unicode", "Arial", "sans-serif";
-   ~~~
-   {:.css}
+   ```
 
    **Important :** Les deux dernières fontes précisées par la règle sont des
 fontes de secours (fallback) : elles seront utilisées si et seulement si les
@@ -208,25 +204,22 @@ classiques sont répertoriées sur
 
 1. **`font-size` :** Cette propriété permet de définir la taille de la police. Exemple :
 
-   ~~~
+   ```css
    font-size:12px;
-   ~~~
-   {:.css}
+   ```
 
 1. **`font-weight` :** Cette propriété permet de passer en mode **gras**. Exemple :
 
-   ~~~
+   ```css
    font-weight:bold;
-   ~~~
-   {:.css}
+   ```
 
 1. **`font-style` :** Cette propriété permet de définir le style de la fonte
    (*i.e.* italique ou non). Exemple :
 
-   ~~~
+   ```css
    font-style:italic;
-   ~~~
-   {:.css}
+   ```
 
 
 **Référence :** [http://www.w3.org/TR/CSS21/fonts.html](http://www.w3.org/TR/CSS21/fonts.html) et [http://www.w3.org/TR/css-fonts-3/](http://www.w3.org/TR/css-fonts-3/).
@@ -234,13 +227,12 @@ classiques sont répertoriées sur
 **Note optionnelle :** Vous pouvez associer à votre page Web de nouvelles fontes
   à l'aide de la règle `@font-face`. Exemple :
 
-~~~
+```css
 @font-face {
     font-family: myFont;
     src: url(path/to/font/font.otf);
 }
-~~~
-{:.css}
+```
 
 <!--
 L'URL est relative au fichier CSS
@@ -260,10 +252,9 @@ des paragraphes de texte :
 
 1. **`text-align` :** Cette propriété affecte l'alignement des lignes de texte. Exemple :
 
-   ~~~
-   text-align:center; \* ou left, right, justify *\
-   ~~~
-   {:.css}
+   ```css
+   text-align:center; /* ou left, right, justify */
+   ```
    
    Pour rappel, un paragraphe justifié est un paragraphe où les lignes s'arrêtent à
    la marge à droite et à gauche.
@@ -271,18 +262,16 @@ des paragraphes de texte :
 1. **`line-height` :** Cette propriété permet d'espacer vertivalement les lignes
    de texte. Exemple :
 
-   ~~~
+   ```css
    line-height:150%;
-   ~~~
-   {:.css}
+   ```
    
 1. **`text-indent` :** Cette propriété indente la première ligne du texte,
    c'est-à-dire qu'elle la décale horizontaliement. Exemple :
 
-   ~~~
+   ```css
    text-indent:12px;
-   ~~~
-   {:.css}
+   ```
 
    <!--  text-indent:1em; serait plus naturel -->
 
@@ -303,10 +292,9 @@ l'identifiant `id` et la classe `class` d'une balise.
 
 Par exemple :
 
-~~~
+```html
 <div id="monidentifiant" class="skill feature">...</div>
-~~~
-{:.html}
+```
 
 Ce code HTML déclare un élément de type `div` avec comme identifiant unique
 `monidentifiant` et ayant deux classes : `skill` et `feature`.  Un identifiant
@@ -323,12 +311,11 @@ Il s'agit juste d'utiliser le nom de la balise (`a`, `p`, `img`,...) sans autre
 décorateur. Si on veut donner la couleur rose à tous les liens d'une page, il
 faut écrire
 
-~~~
+```css
 a {
   color: purple ;
 }
-~~~
-{:.css}
+```
 
 
 ### Les sélecteurs d'identifiant
@@ -337,24 +324,22 @@ Le décorateur associé à l'identifiant est le caractère `'#'`. Si on veut
 donner une largeur de `100px` à l'unique balise d'identifiant `monidentifiant`,
 il faut écrire
 
-~~~
+```css
 #monidentifiant {
   width: 100px;
 }
-~~~
-{:.css}
+```
 
 ### Les sélecteurs de classes
 
 Le décorateur associé aux classes est le caractère `.`. Si on veut donner une
 hauteur de `200px` à tous les éléments qui ont la classe `skill`, il faut écrire
 
-~~~
+```css
 .skill {
   height: 200px;
 }
-~~~
-{:.css}
+```
 
 ## Exercices 
 

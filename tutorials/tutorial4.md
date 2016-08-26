@@ -70,13 +70,12 @@ Nous allons voir comment est envoyée la valeur d'un `<input>` lorsque l'on soum
 
 1. Ajoutez à la page `inscription.html` le formulaire suivant :
 
-   ~~~
+   ```html
    <form action="sendToMySecondYearInIut.php" method="post">
      <input name="uname" type="text" >
      <input type="submit" value="Envoyer">
    </form>
-   ~~~
-   {:.html}
+   ```
 
   1. <strong>Sous Chrome relativement récent uniquement</strong> : Affichez la page et ouvrez la console (F12) pour aller sur l'onglet
   'Réseau', cocher la case "Preserve log", donnez la valeur `dupont` au champ texte, puis cliquez sur le bouton
@@ -107,11 +106,10 @@ Il serait bien de préciser à l'utilisateur à quoi notre champ `<input>` fait 
 
 1. Remplacez le code de votre champ `<input>` par le code suivant :
 
-   ~~~
+   ```html
    <label for="surname">Nom</label>
    <input id="surname" name="uname" type="text">
-   ~~~
-   {:.html}
+   ```
 
  1. Rajoutez au formulaire une entrée qui correspondra au prénom (calqué sur l'exemple précédent).
  1. Validez ce dernier et vérifiez que vos deux champs sont bien présents dans

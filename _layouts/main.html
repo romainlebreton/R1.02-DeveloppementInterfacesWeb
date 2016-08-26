@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>{{ page.title | strip_html }}</title>
 
-    {% if page.plugins contains 'highlight' %}
+    {% if layout.plugins contains 'highlight' %}
     <link rel="stylesheet" href="{{ site.baseurl }}/css/highlight-default.css">
     {% endif %}
 
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ s }}">
     {% endfor %}
 
-    {% if page.plugins contains 'slideshow' %}
+    {% if layout.plugins contains 'slideshow' %}
     <link class="slideshow-css" rel="stylesheet" href="{{ site.baseurl }}/css/dz-slides.css" disabled>
     <link class="slideshow-css" rel="stylesheet" href="{{ site.baseurl }}/css/dz-slides-customization.css" disabled>
     <script>
@@ -36,7 +36,7 @@
       <li><a href="{{ site.github.zip_url | replace: 'zipball', 'blob' }}/{{ page.path }}">Source</a></li>
       <li><a href="{{ site.github.zip_url | replace: 'zipball', 'edit' }}/{{ page.path }}">Quick edit</a></li>
       <li><a href="javascript:window.print()">Print</a></li>
-      {% if page.plugins contains 'slideshow' %}
+      {% if layout.plugins contains 'slideshow' %}
       <li><a href="javascript:Dz.play()">Start slideshow</a>
 	<script src="{{ site.baseurl }}/js/dz-slides.js"></script>
       </li>
@@ -72,7 +72,7 @@
       </footer>
     </div>
 
-    {% if page.plugins contains 'mathjax' %}
+    {% if layout.plugins contains 'mathjax' %}
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
         config: ["MMLorHTML.js"],
@@ -86,7 +86,7 @@
     <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
     {% endif %}
 
-    {% if page.plugins contains 'highlight' %}
+    {% if layout.plugins contains 'highlight' %}
     <script src="{{ site.baseurl }}/js/highlight.pack.js"></script>
     <script>
       hljs.configure({

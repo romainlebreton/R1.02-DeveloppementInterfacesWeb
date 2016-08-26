@@ -49,11 +49,10 @@ n'acceptent pas de contenu et consistent juste d'une balise ouvrante.
 
 **Exemple :**
 
-~~~
+```html
 <p>Ceci est un paragraphe HTML puisqu'il est entouré des balises 'p' </p>
 La balise 'br' du saut de ligne ne prend pas de contenu <br>
-~~~
-{:.html}
+```
 
 Nous allons commencer par des balises un peu particulières qui sont là pour
 donner des informations sur le document.
@@ -90,10 +89,9 @@ même.
    Pour que le document soit valide et reconnu comme un document HTML 5,
    **ajoutez** la ligne
 
-   ~~~
+   ```html
    <!DOCTYPE html>
-   ~~~
-   {:.html}
+   ```
    
    au tout début du fichier. **Retestez** la conformité de votre document.
 
@@ -104,10 +102,9 @@ nous utiliserons toujours l'encodage UTF-8.
    **Rajoutez** donc la ligne suivante qui déclare l'encodage dans l'en-tête du
    document juste après le DOCTYPE. **Retestez** la conformité de votre document.
 
-   ~~~
+   ```html
    <meta charset="utf-8">
-   ~~~
-   {:.html}
+   ```
 
    **Note :** Vous avez sûrement rencontré des pages Web avec des **Ã©**, **Ã¨**,
      .... Ceci est dû à une mauvaise détection de l'encodage. En effet, le code
@@ -117,10 +114,9 @@ nous utiliserons toujours l'encodage UTF-8.
 4. La dernière erreur nous parle d'un élément `head` auquel il manque un `title`.
 Corrigez votre page Web en insérant un titre après le `<meta>`.
 
-   ~~~
+   ```html
    <title>Le site non officiel de Chuck Norris</title>
-   ~~~
-   {:.html}
+   ```
 
 </div>
 
@@ -136,7 +132,7 @@ Nous allons corriger cela dans la section suivante.
 
 La bonne structure d'une page HTML est :
 
-~~~
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -147,8 +143,7 @@ La bonne structure d'une page HTML est :
 	   <!-- Le corps du document -->
 	</body>
 </html>
-~~~
-{:.html}
+```
 
 
 Après la ligne `<!DOCTYPE html>` de déclaration du langage, le document est
@@ -160,7 +155,7 @@ inclus dans la balise `<html>` et est composé de deux parties :
 Les balises HTML donnent une structure d'arbre au document. Dans notre exemple
 `index.html`
 
-~~~
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -171,8 +166,7 @@ Les balises HTML donnent une structure d'arbre au document. Dans notre exemple
 	   ...
 	</body>
 </html>
-~~~
-{:.html}
+```
 
 <div style="float:right">
 <p style="margin:0">
@@ -235,10 +229,9 @@ des développeurs pour des développeurs. On les place entre les balises `<!--`
 et `-->` :
 
 
-~~~
+```html
 <!--Cela est un commentaire dans un fichier HTML  -->
-~~~
-{:.html}
+```
 
 Il y a justement des commentaires dans le fichier index.html, comme autant de consignes afin de les remplacer par du HTML.
 Nous expliciterons ces dernières dans les sections suivantes.
@@ -256,10 +249,9 @@ sections :
 Par exemple, le titre ci-dessus est obtenu avec le code suivant (et vous pouvez
 le vérifier en inspectant) :
 
-~~~
+```html
 <h2>Titres</h2>
-~~~
-{:.html}
+```
 
 Si vous cherchez un bon exemple d'utilisation de balises `<h2>`, inspectez le
 titre **Titres** juste au-dessus en faisant un clic droit dessus.
@@ -287,7 +279,7 @@ ce paragraphe, vous verrez justement que ce texte est dans un paragraphe.
 
 En HTML nous pouvons faire des listes ordonnées (numérotées) ou non ordonnées :
 
-~~~
+```html
 <ul> <!-- ul pour unordered list -->
   <li>premier item non ordonné </li> <!-- li pour list item -->
   <li>deuxième item</li>
@@ -296,8 +288,7 @@ En HTML nous pouvons faire des listes ordonnées (numérotées) ou non ordonnée
   <li>premier item ordonné </li>
   <li>deuxième item</li>
 </ol>
-~~~
-{:.html}
+```
 
 Ce qui donne une fois interprété par le moteur de rendu du navigateur :
 
@@ -326,10 +317,9 @@ Ce qui donne une fois interprété par le moteur de rendu du navigateur :
 
 Pour insérer une image, on peut utiliser la balise
 
-~~~
+```html
 <img src="adresse_image" alt="texte alternatif mais obligatoire">
-~~~
-{:.html}
+```
 
 Cette balise n'a pas de balise fermante car elle ne peut avoir de contenu
 (cf. [le début du TD](#transformation-dun-document-texte-en-un-document-html)).
@@ -352,10 +342,9 @@ répertoire `images` par rapport à votre fichier `index.html`.
 2. Remplacez le commentaire `<!--l'image de Chuck Young doit être positionnée
 ici -->` par la balise `<img>` suivante
 
-   ~~~
+   ```html
    <img src="./images/chuck-jeune.jpg" alt="Une photo de Chuck Jeune, la légende est en marche."/>
-   ~~~
-   {:.html}
+   ```
 
 3. Faites de même avec l'image [beware.jpg]({{site.baseurl}}/assets/beware.jpg)
    à positionner en lieu et place du commentaire `<!--l'image de Chuck Beware
@@ -371,25 +360,22 @@ L'un des éléments les plus emblématiques du HTML est sans doute la balise
 Un lien est composé principalement d'une URL cible et d'un libellé (le texte
 cliquable souvent souligné en bleu):
 
-~~~
+```html
 <a href="http://urlcible">le libellé</a>
-~~~
-{:.html}
+```
 
 On peut renseigner l'URL complète de la
 cible (URL en chemin absolu):
 
-~~~
+```html
 <a href="http://lynx.browser.org/">Lynx</a>
-~~~
-{:.html}
+```
    
 ou donner une adresse relative à la page courante (URL en chemin relatif)
    
-~~~
+```html
 <a href="images/chuck-jeune.png">Image</a>
-~~~
-{:.html}
+```
 
 1. Remplacez les commentaires `<!-- lien externe ...` par des balises `<a>` avec
    la bonne adresse.
@@ -400,19 +386,17 @@ On peut rajouter à ces *liens externes* une partie *lien interne* basée sur le
 ancres `#monancre`. Toutes les balises peuvent prendre un attribut `id` comme
 dans l'exemple suivant
 
-~~~
+```html
 <h2 id="un_identifiant">
-~~~
-{:.html}
+```
 
 Attention, la valeur de cet attribut doit être unique dans le document. On peut
 alors faire un lien vers cette balise en rajoutant `#un_identifiant` à la fin
 de l'URL. Exemple de lien interne à la page Web courante `index.html` :
 
-~~~
+```html
 <a href="index.html#un_identifiant">Exemple de lien interne</a>
-~~~
-{:.html}
+```
 
 <!-- verif cette adresse -->
 

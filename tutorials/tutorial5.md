@@ -288,10 +288,9 @@ La première chose à faire est donc de demander aux navigateurs de ne plus fair
 l'algorithme précédent (puisqu'on va le gérer nous-mêmes) dans la balise
 `<head>` :
 
-~~~
+```html
  <meta name="viewport" content="width=device-width, initial-scale=1">
-~~~
-{:.html}
+```
 
 <!--
 C'est encore au stade de Working draft !! Mais çà marche sur chrome ...
@@ -324,10 +323,9 @@ Il existe deux manières différentes de faire appel à une *media query*:
   web une déclaration de fichier CSS standard, à laquelle on rajoute l'attribut
   `media` et une condition spécifique.
 
-  ~~~
+  ```html
   <link rel="stylesheet" media="condition" href="mon_css_spécial.css"/>
-  ~~~
-  {:.html}
+  ```
   
   N'oubliez pas que le dernier CSS chargé prend le pas sur les
   précédents. Pensez donc à toujours déclarer vos media-queries en dernier,
@@ -336,12 +334,11 @@ Il existe deux manières différentes de faire appel à une *media query*:
 * Soit vous souhaitez que juste certaines règles s'appliquent sous
   certaines conditions. Alors vous englobez vos règles avec la syntaxe suivante :
 
-  ~~~
+  ```css
   @media(ma_condition) {
      ...
   }
-  ~~~
-  {:.css}
+  ```
 
 Une media query fonctionne de la manière suivante: la condition est évaluée et
 retourne une valeur “vrai” ou “faux”. Si la valeur est vraie, le fichier CSS/ la
@@ -459,7 +456,7 @@ du menu).
 
    * Son contenu est
 
-     ~~~
+     ```html
      <div class="burger">
        <img src="images/burger.png" alt="burger" width="50px">
        <div id="menu2">
@@ -469,8 +466,7 @@ du menu).
          <div><a href="./contact.html">Contact</a></div>
       </div>
      </div>
-     ~~~
-     {:.html}
+     ```
 
 
     * il se positionne par rapport à la fenêtre d'affichage (quelle valeur de

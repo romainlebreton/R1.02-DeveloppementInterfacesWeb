@@ -22,11 +22,10 @@ Plusieurs règles CSS peuvent porter sur un même élément HTML. Si ces règles
 peuvent coexister, elles sont toutes appliquées. Par exemple, si vous avez le
 code CSS suivant :
 
-~~~
+```css
 div    { background-color:blue; }
 .skill { color:red; }
-~~~
-{:.css}
+```
 
 alors un `<div class="skill">` aura les deux propriétés `background-color:blue`
 et `color:red`.
@@ -35,11 +34,10 @@ Mais il peut aussi arriver que ces dernières soient contradictoires.  Par
 exemple, si vous avez le code CSS suivant, **de quelle couleur** sera le texte
 d'un `<div>` de classe `skill` ?
 
-~~~
+```css
 div    { color:blue; }
 .skill { color:red; }
-~~~
-{:.css}
+```
 
 
 
@@ -53,20 +51,19 @@ En fait, il y a plusieurs emplacements possibles pour déclarer du style CSS :
 1. **Style externe** : (Conseillé) On peut utiliser un fichier de style externe et le lier au
 document HTML avec la balise `<link>`  dans le `<head>` :
 
-   ~~~
+   ```html
    <html>
      <head>
        <link rel="stylesheet" type="text/css" href="css/styles.css">
      </head>
      <body> ... </body>
    </html>
-   ~~~
-   {:.html}
+   ```
 
 1. **Style interne** : (Déconseillé) On peut inclure des règles CSS directement dans
    le `<head>` à l'aide de la balise `<style>` :
 
-   ~~~
+   ```html
    <html>
      <head>
        <style type="text/css">
@@ -75,18 +72,16 @@ document HTML avec la balise `<link>`  dans le `<head>` :
      </head>
      <body> ... </body>
    </html>
-   ~~~
-   {:.html}
+   ```
 
 1. **Style inline** : (Fortement déconseillé) On peut inclure du style CSS directement
    dans une balise avec l'attribut `style` :
  
-   ~~~
+   ```html
    <p style="font-size: 12pt; color: fuchsia">
       Aren't style sheets wonderful?
    </p>
-   ~~~
-   {:.html}
+   ```
 
    Attention à ne pas confondre le style inline avec le futur `display:inline`.
 
@@ -106,11 +101,10 @@ style CSS.
 
 Reprenons l'exemple précédent :
 
-~~~
+```css
 div    { color:blue; }
 .skill { color:red; }
-~~~
-{:.css}
+```
 
 Afin de savoir la couleur qui sera appliquée sur les éléments `<div
 class="skill">`, des priorités sont définies sur les sélecteurs CSS. Dans
@@ -135,11 +129,10 @@ de priorité décroissante, nous avons
 Pour revenir à l'exemple précédent, les règles ont donc comme priorité (en
 supposant qu'elles sont écrites dans un fichier de style externe) :
 
-~~~
- div    -> (1,0,0,1) (un sélecteur de balise div)
- .skill -> (1,0,1,0) (un sélecteur de classe skill)
-~~~
-{:.html}
+```css
+ div    /* -> (1,0,0,1) (un sélecteur de balise div)   */
+ .skill /* -> (1,0,1,0) (un sélecteur de classe skill) */
+```
 
 ### L'ordre de priorité
 
@@ -169,7 +162,7 @@ suivants et classez les du plus prioritaire au moins prioritaire. On supppose
 que toutes ces règles sont définies dans un fichier externe, donc a=1, et la
 valuation recherchée commence toujours pas `(1,...)`.
 
-~~~
+```css
  .titi span
  div span
  nav.titi .tata div div div div div
@@ -177,8 +170,7 @@ valuation recherchée commence toujours pas `(1,...)`.
  #id
  div > a
  div + a
-~~~
-{:.css}
+```
 
 </div>
 
@@ -197,7 +189,7 @@ deux cas suivant ? Quelle règle de priorité CSS explique votre réponse ?
 
 1. Le fichier `styles.css` contient `p {color:blue;}`, et le fichier `index.html` contient
 
-   ~~~
+   ```html
    <html>
      <head>
        <style type="text/css">
@@ -207,12 +199,11 @@ deux cas suivant ? Quelle règle de priorité CSS explique votre réponse ?
      </head>
      <body><p style="color:red">Priorité CSS</p></body>
    </html>
-   ~~~
-   {:.html}
+   ```
 
 1. Le même fichier `styles.css` et le fichier `index.html` sans la règle inline
 
-   ~~~
+   ```html
    <html>
      <head>
        <style type="text/css">
@@ -222,8 +213,7 @@ deux cas suivant ? Quelle règle de priorité CSS explique votre réponse ?
      </head>
      <body><p>Priorité CSS</p></body>
    </html>
-   ~~~
-   {:.html}
+   ```
 
 </div>
 
@@ -234,11 +224,10 @@ deux cas suivant ? Quelle règle de priorité CSS explique votre réponse ?
 <!-- certaines de ces règles pourtant très précises.  Pour cela le CSS propose la -->
 <!-- règle !important : -->
 
-<!-- ~~~  -->
+<!-- ```css
 <!-- div {color: yellow !important;}  -->
 <!-- div.skill {color: red;}  -->
-<!-- ~~~  -->
-<!--  {:.css}  -->
+<!-- ```
 
 <!-- Elle permet de rendre la règle plus prioritaire que l'ordre (a,b,c,d) de -->
 <!-- n'importe quelle règle qui n'a pas le `!important`.  Nous en parlons juste pour -->
@@ -324,7 +313,7 @@ Si on est display:inline, toutes les règles de texte s'appliquent à nous : les
 
 Le code HTML suivant
 
-~~~
+```html
 <p style="display:block;">display:block</p> 
 <p style="display:inline;">display:inline</p> 
 ...
@@ -332,8 +321,7 @@ Le code HTML suivant
 <p style="display:block;">display:block</p>
 <p style="display:block;">display:block</p> 
 <p style="display:inline;">display:inline</p> 
-~~~
-{:.html}
+```
 
 s'affiche comme suit :
 
@@ -413,15 +401,14 @@ Dans ce premier exercice, nous allons créer un menu dans un style `block`.
 
 1. Changez le menu de votre site par le suivant
 
-   ~~~
+   ```html
    <nav>
    	<div><a href="./index.html">Accueil</a></div>
    	<div><a href="./facts.html">Facts</a></div>
    	<div><a href="./news.html">Actualités</a></div>
    	<div><a href="./contact.html">Contact</a></div>
    </nav>
-   ~~~
-   {:.html}
+   ```
 
 1. Puisque `<nav>` est `display:block` par défaut (le vérifier sur Chrome si
    possible), il doit prendre toute la largeur. **Inspectez** donc votre `<nav>` pour
@@ -464,15 +451,14 @@ espaces dans le HTML, qui sont affichés lorsque les éléments sont `inline`.
    **Solution :** pour supprimer les espaces, changez le code des `<div>` enfant de
    la balise `<nav>` en mettant des commentaires :
 
-   ~~~
+   ```html
    <nav>
    	<div><a href="./index.html">Accueil</a></div><!--
  --><div><a href="./facts.html">Facts</a></div><!--
  --><div><a href="./news.html">Actualités</a></div><!--
  --><div><a href="./contact.html">Contact</a></div>
    </nav>
-   ~~~
-   {:.html}
+   ```
 
 1. Donnez au `<nav>` une hauteur de `50px` (`<nav>` est `block` donc on peut lui
    donner une hauteur),
@@ -511,24 +497,22 @@ d'espace à l'endroit où il aurait dû être.
 
    * pour l'ancre "Accueil" 
 
-     ~~~
+     ```html
      <div class="submenu">
        <div><a href="./one.html">one</a></div>
        <div><a href="./two.html">two</a></div>
        <div><a href="./three.html">three</a></div>
      </div>
-     ~~~
-     {:.html}
+     ```
 
    * pour l'ancre "Contact"
 
-     ~~~
+     ```html
      <div class="submenu">
        <div><a href="./other.html">other</a></div>
        <div><a href="./another.html">another</a></div>
      </div>
-     ~~~
-     {:.html}
+     ```
 
 1. Positionnons bien ces sous-menus : nous souhaitons que l'affichage du reste de la page
    fasse comme si ces sous-menus n'existaient pas. De plus, nous souhaitons que les
@@ -735,10 +719,9 @@ Voyons un usage de `visibility:hidden` :
 
  Nous voulons marquer visuellement le menu sous la souris par une petite puce dans les `<a>` du menu. 
 
-~~~
+```html
 <span class="puce">■</span>
-~~~
-{:.html}
+```
 Elle se positionne à gauche du texte, elle n'est visible que lorsque la souris survole le `<div>` contenenant. Dans le cas contraire l'espace reste occupé (pour ne pas faire un effet de flicker/tremblement au survol du menu)
 
 
