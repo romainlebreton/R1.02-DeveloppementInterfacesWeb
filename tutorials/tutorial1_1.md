@@ -6,6 +6,8 @@ layout: tutorial
 
 <!-- Faire une note plus complète sur l'encodage des caractères -->
 
+
+
 Le but de ce TD est de comprendre comment sont écrites les pages Web basiques,
 aussi appelées pages statiques (Web 1.0). Une telle page Web contient deux
 parties :
@@ -35,81 +37,111 @@ que l'on peut ajouter à notre contenu brut. Nous verrons ensuite dans la
 
 ## Transformation d'un document texte en un document HTML
 
-Le HTML, qui signifie *HyperText Markup Language* (langage de balisage
-d’hypertexte), est donc un langage à balise contenant des liens, dits
-*hypertextes*, vers d'autres documents.
+### Le rôle du navigateur
 
-Les balises permettent de structurer le document. La plupart des balises
-commencent par une *balise ouvrante* `<mabalise>`, puis du *contenu* et
-finissent par une *balise fermante*
-`</mabalise>`. [Certaines balises](http://www.w3.org/TR/html5/syntax.html#void-elements)
-n'acceptent pas de contenu et consistent juste d'une balise ouvrante.
-
-<!--  http://www.w3.org/TR/html5/syntax.html#void-elements -->
-
-**Exemple :**
-
-```html
-<p>Ceci est un paragraphe HTML puisqu'il est entouré des balises 'p' </p>
-La balise 'br' du saut de ligne ne prend pas de contenu <br>
-```
-
-Nous allons commencer par des balises un peu particulières qui sont là pour
-donner des informations sur le document.
+Comme dit précédemment, le rôle du navigateur (Firefox, Chrome, Safari, IE/Edge,
+...) est de visualiser les pages Web. Donc le navigateur transforme un fichier
+texte contenant du langage HTML / CSS en un affichage mis en page, avec des
+images... 
 
 <div class="exercise">
 
-1. Ouvrez le fichier [index.txt]({{site.baseurl}}/assets/index.txt) dans le navigateur.
+1. La page du TD est une page Web. Ouvrez les sources de cette page pour voir le
+code HTML qui est utilisé pour afficher cette page (clic droit puis code
+source ou `Ctrl+U`).
 
-2. Sauvegardez ce fichier en local dans un dossier `HTMLCSS/TD1/` en le
-renommant `index.html`. Ouvrir le fichier dans un navigateur. Quelles
-différences observez-vous ?
+</div>
 
+<div class="exercise">
+
+Pour créer une page Web, il suffit de créer un fichier texte et de lui donner
+l'extension `.html` pour que le navigateur comprenne qu'il doit l'interprété
+comme un document HTML.
+
+1. Sauvegardez le fichier [index.txt]({{site.baseurl}}/assets/index.txt) en local dans un dossier `HTMLCSS/TD1/`.  
+   Sauvegardez le même fichier [index.txt]({{site.baseurl}}/assets/index.txt) en
+local dans le dossier `HTMLCSS/TD1/` en **le renommant** `index.html`.
+
+1. Ouvrez les deux fichiers [index.txt]({{site.baseurl}}/assets/index.txt) et `index.html` dans le navigateur.  
+   Quelles différences d'affichage observez-vous ? Pourquoi ?  
+   Comment sont affichés des sauts de ligne d'un document HTML ?  
+   Comment est affiché un texte HTML entouré de `<!--` et `-->` ?
+   <!-- saut de ligne mangés, mauvais accents, commentaire coupés : interprétation du HTML -->
+
+</div>
+
+
+### Le standard du langage HTML
+
+Notre document `index.html` est bien interprété comme un document HTML par le
+navigateur.
+
+Le HTML, qui signifie *HyperText Markup Language* (langage de balisage
+d’hypertexte), est donc un langage à balise contenant des liens, dits
+*hypertextes*, vers d'autres documents. 
+
+Le HTML5 est un standard, c'est-à-dire un langage complètement
+décrit (n'hésitez pas à jeter un rapide coup d'œil
+[à sa spécification](http://www.w3.org/TR/html5/), un document très technique
+mais complet).
+
+<div class="exercise">
   
-3. Notre document `index.html` est bien interprété comme un document HTML par le
-navigateur. Cependant que se passe-t-il lorsque l'on teste sa conformité au
-standard html à l'aide du validateur
-[http://validator.w3.org/](http://validator.w3.org/) . Quelles sont les erreurs
-indiquées ?
+1. Testons la conformité de `index.html` au standard HTML à l'aide
+du validateur [https://html5.validator.nu/](https://html5.validator.nu/). Quelles
+sont les erreurs indiquées ?
 
-   **Note :**
+2. Commençons par l'erreur
 
-   * Le HTML5 est un standard, c'est-à-dire un langage complètement
-   décrit. N'hésitez pas à jeter un rapide coup d'œil
-   [à sa spécification](http://www.w3.org/TR/html5/). Ce document est très technique
-   mais complet.
-   * Si le validateur ne marche plus, un validateur alternatif est
-   [https://html5.validator.nu/](https://html5.validator.nu/).
+   ```text
+   Error: Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>.
+   ```
 
-4. Commençons par l'erreur **Unable to Determine Parse Mode!**. La validateur
-veut vous dire qu'il ne sait pas dans quel langage est écrit votre document. Il
-existe plusieurs standards de "langages HTML" : HTML4, XHTML, HTML5,
-.... Aujourd'hui, les gens utilisent majoritairement HTML5 et nous ferons de
-même.  
+   Le validateur nous dit qu'il s'attendait à voir `<!DOCTYPE html>` au début de
+   notre document.  Cette balise sert à déclarer que le document est écrit en
+   HTML5. En effet, il existe plusieurs standards de "langages HTML" : HTML4,
+   XHTML, HTML5, ... Aujourd'hui, les gens utilisent majoritairement HTML5 et
+   nous ferons de même.
+
    Pour que le document soit valide et reconnu comme un document HTML 5,
-   **ajoutez** la ligne
+   **ajoutez** la balise `<!DOCTYPE html>` au tout début du
+   fichier.  
+   **Retestez** la conformité de votre document.
 
-   ```html
-   <!DOCTYPE html>
-   ```
-   
-   au tout début du fichier. **Retestez** la conformité de votre document.
+   <!-- **Unable to Determine Parse Mode!** avec https://validator.w3.org/ -->
 
-5. Le validateur nous indique **The character encoding was not declared**.
-Spécifier l'encodage des caractères est nécessaire pour que les caractères
-spéciaux (accents, œ, ...) de votre page soient bien affichés. Dans notre cas,
-nous utiliserons toujours l'encodage UTF-8.  
-   **Rajoutez** donc la ligne suivante qui déclare l'encodage dans l'en-tête du
-   document juste après le DOCTYPE. **Retestez** la conformité de votre document.
+3. Le validateur nous indique **The character encoding was not declared**.
 
-   ```html
-   <meta charset="utf-8">
-   ```
+   L'encodage indique la façon dont le fichier est enregistré (UTF-8, ANSI,
+   `iso-8859-15`, ...). Si la plupart des caractères sont enregistrés de manière
+   standard, les caractères spéciaux (accents, œ, ...) peuvent être enregistrés de
+   manière très différente.
 
-   **Note :** Vous avez sûrement rencontré des pages Web avec des **Ã©**, **Ã¨**,
-     .... Ceci est dû à une mauvaise détection de l'encodage. En effet, le code
-     du caractère **é** en UTF-8 correspond à **Ã©** en `iso-8859-15` (encodage
-     encore très utilisé dans Windows).
+   Lorsque l'encodage n'est pas spécifié, le navigateur risque d'afficher **Ã©** au
+   lieu de **é** à cause d'une mauvaise détection de l'encodage. En effet, le
+   caractère **é** est enregistré en UTF-8 de la même manière que **Ã©** est
+   enregistré en `iso-8859-15` (encodage encore très utilisé dans Windows).
+
+   Spécifier l'encodage des caractères est donc nécessaire pour que les caractères
+   spéciaux de votre page soient bien affichés. Nous utiliserons toujours
+   l'encodage UTF-8 (et idéalement tout le monde devrait aussi l'utiliser).
+
+   1. **Rajoutez** donc la ligne suivante qui déclare l'encodage dans l'en-tête du
+   document juste après le DOCTYPE. 
+
+      ```html
+      <meta charset="utf-8">
+      ```
+
+   1. Réouvrez `index.html` dans le navigateur et vérifiez que tous les accents s'affichent bien.
+
+      **Note :** Si les accents ne marchent toujours pas, c'est parce qu'**il ne
+        suffit pas** de dire que votre fichier est en UTF-8. Il faut aussi que
+        votre fichier soit **bien enregistré en UTF-8**. Par exemple dans
+        Notepad++, l'encodage est marqué tout en bas à droite. Vous pouvez
+        convertir votre fichier en UTF-8 en cherchant dans les menus.
+
+   1. **Retestez** la conformité de votre document.
 
 4. La dernière erreur nous parle d'un élément `head` auquel il manque un `title`.
 Corrigez votre page Web en insérant un titre après le `<meta>`.
@@ -123,14 +155,37 @@ Corrigez votre page Web en insérant un titre après le `<meta>`.
 À ce stade, le validateur indique que le fichier `index.html` est un document
 HTML5 valide.
 
-<!--
-La dernière erreur nous parle d'un élément `head` auquel il manque un `title`.
-Nous allons corriger cela dans la section suivante.
--->
+## Structure usuelle d'un document HTML
 
-## Structure standard d'un document HTML
+### Les balises HTML
 
-La bonne structure d'une page HTML est :
+Nous avons vu dans l'exercice précédent nos premières balises `<meta>` et
+`<title>`.  Les balises permettent de structurer le document. Elles annotent le
+texte qu'elles contiennent et permettent donc d'y rajouter du sens. On distingue
+deux types de balises :
+
+1. La plupart des balises **englobent du contenu** : elles commencent par une
+*balise ouvrante* `<mabalise>`, puis le *contenu* que l'on veut "annoter" et
+finissent par une *balise fermante* `</mabalise>`.  
+Par exemple, la balise `<title>` sert à dire que le texte qu'elle englobe sera
+le titre du document.
+
+2. [Certaines balises](http://www.w3.org/TR/html5/syntax.html#void-elements)
+**n'acceptent pas de contenu** : elles consistent juste d'une balise
+ouvrante.  
+Par exemple, nous avons vu la balise `<meta>` et nous verrons bientôt `<img>`,
+`<br>` ...
+
+**Autres exemples :**
+
+```html
+<p>Ceci est un paragraphe HTML puisqu'il est entouré des balises 'p' </p>
+La balise 'br' du saut de ligne ne prend pas de contenu <br>
+```
+
+### La structure de base
+
+Servons-nous donc des balises pour créer une bonne structure de base de document HTML :
 
 ```html
 <!DOCTYPE html>
@@ -149,8 +204,14 @@ La bonne structure d'une page HTML est :
 Après la ligne `<!DOCTYPE html>` de déclaration du langage, le document est
 inclus dans la balise `<html>` et est composé de deux parties :
 
-* l'en-tête `<head>` contient des informations sur le document HTML
-* le corps `<body>` contient le vrai contenu
+* l'en-tête `<head>` contient des informations sur le document HTML, comme
+  * un `<title>` (balise obligatoire)
+  * un `<meta>` pour définir l'encodage
+
+* le corps `<body>` contient le vrai contenu. Nous verrons des exemples de
+  balises dans la section *Balises communes*.
+
+### Un document HTML est comme un arbre
 
 Les balises HTML donnent une structure d'arbre au document. Dans notre exemple
 `index.html`
@@ -177,14 +238,16 @@ Les balises HTML donnent une structure d'arbre au document. Dans notre exemple
 l'arbre est le suivant :
 
 
-* html est l'élément racine
-* head et body sont les deux fils de l'élément html
-* title et meta sont deux fils de l'élément head
-* "Le site non officiel de Chuck Norris" est un fils de l'élément title.
+* `<html>` est l'élément racine
+* `<head>` et `<body>` sont les deux fils de l'élément `<html>`
+* `<title>` et `<meta>` sont deux fils de l'élément `<head>`
+* "Le site non officiel de Chuck Norris" est un fils de l'élément `<title>`.
 
 <div style="clear:both" class="exercise">
-Mettez à jour votre page `index.html` pour qu'elle respecte la structure HTML
+
+1. Mettez à jour votre page `index.html` pour qu'elle respecte la structure HTML
 ci-dessus. (Vous devez rajouter les balises `<html>`, `<head>` et `<body>`)
+2. **Retestez** la conformité de votre document.
 </div>
 
 <!-- Explication orale sur l'importance de la validation : standard, uniformité -->
@@ -210,17 +273,19 @@ survol avec la souris).
 
 <div class="exercise">
 
-Familiarisez-vous avec ces trois techniques en inspectant la page du TD.  Par
-exemple faite un clic droit sur l'élément "il y a trois façons..." puis
+Familiarisez-vous avec ces trois techniques en inspectant la page du TD.  
+Par exemple faites un clic droit sur l'élément "il y a trois façons..." puis
 "inspecter l'élément".  L'outil de développement doit vous présenter le code
-HTML et vous positionner directement sur `<p>Il y a `.
+HTML et vous positionner directement sur `<p>Il y a ...`.
 
 </div>
 
 <!-- Hé ! ceci est un commentaire HTML, vous n'êtes pas censé le voir, à moins
 que vous ne sachiez utiliser les outils de développeurs ? -->
 
-## Les Commentaires en HTML
+## Les balises communes du HTML
+
+### Les commentaires en HTML
 
 Il est possible de rajouter des commentaires dans le HTML. Ces commentaires ne
 sont pas interprétés par le navigateur, et ne sont donc pas affichés (mais ils
@@ -233,39 +298,42 @@ et `-->` :
 <!--Cela est un commentaire dans un fichier HTML  -->
 ```
 
-Il y a justement des commentaires dans le fichier index.html, comme autant de consignes afin de les remplacer par du HTML.
-Nous expliciterons ces dernières dans les sections suivantes.
+Il y a justement des commentaires dans le fichier `index.html`, comme autant de
+consignes afin de les remplacer par du HTML.  Nous expliciterons ces dernières
+dans les sections suivantes.
 
-## Titres
+### Titres
 
 Nous allons commencer par rajouter de la structure à notre page.  Pour ce faire
-nous allons utiliser les balises `<h1>` à `<h6>` pour identifier les différentes
-sections :
+nous allons utiliser les balises à contenu `<h1>` à `<h6>` pour identifier les
+différentes sections :
 
 * `<h1>` est utilisé pour les gros titres du document
 * `<h2>` est utilisé pour les sections du document
 * `<h3>` est utilisé pour les sous-sections du document et ainsi de suite.
 
-Par exemple, le titre ci-dessus est obtenu avec le code suivant (et vous pouvez
-le vérifier en inspectant) :
+Par exemple, le titre ci-dessus est obtenu avec le code suivant :
 
 ```html
 <h2>Titres</h2>
 ```
 
-Si vous cherchez un bon exemple d'utilisation de balises `<h2>`, inspectez le
-titre **Titres** juste au-dessus en faisant un clic droit dessus.
+Vous pouvez le vérifier en inspectant le titre **Titres** juste au-dessus en
+faisant un clic droit dessus.
 
 <div class="exercise">
 
 1. Ajoutez la balise `<h2>` aux éléments de `index.html` marqués par les commentaires : `<!-- section -->`.
-2. Ajoutez la balise `<h3>` aux éléments de `index.html` marqués par les commentaires : `<!-- sous section -->`. 
+2. Ajoutez la balise `<h3>` aux éléments de `index.html` marqués par les commentaires : `<!-- sous section -->`.
+3. **Retestez** la conformité de votre document.
 
 </div>
 
-## Éléments de regroupement
+### Éléments de regroupement
 
-### Paragraphes
+#### Paragraphes
+
+<div class="exercise">
 
 Utilisez maintenant les balises `<p>` et `</p>` autour des paragraphes du
 document. Les paragraphes vous sont signifiés par `<!--début paragraphe -->` et
@@ -274,8 +342,9 @@ document. Les paragraphes vous sont signifiés par `<!--début paragraphe -->` e
 **Note :** Si vous faites un clic droit suivit de "inspecter l'élément" sur
 ce paragraphe, vous verrez justement que ce texte est dans un paragraphe.
 
+</div>
 
-### Listes
+#### Listes
 
 En HTML nous pouvons faire des listes ordonnées (numérotées) ou non ordonnées :
 
@@ -292,7 +361,7 @@ En HTML nous pouvons faire des listes ordonnées (numérotées) ou non ordonnée
 
 Ce qui donne une fois interprété par le moteur de rendu du navigateur :
 
-<div class="codeexample">
+<div class="codeexample" style="margin:1em 0px;">
 <ul>
   <li>premier item</li>
   <li>deuxième item</li>
@@ -303,17 +372,17 @@ Ce qui donne une fois interprété par le moteur de rendu du navigateur :
 </ol>
 </div>
 
-<b>Exercice : </b>
-
+<div class="exercise">
 1. Utilisez les balises `<ul>` et `<li>` pour structurer la liste à puces
 `<!--liste -->` dans `index.html`.  
 (Ne vous souciez pas encore des commentaires `<!-- lien externe -->`)
 2. Utiliser les balises `<ol>` et `<li>` pour structurer la liste numérotée
    `<!--liste numérotée -->` dans `index.html`.
-3. Pensez à valider régulièrement votre page pour la vérifier. Rappel : adresse
-   du validateur [https://validator.w3.org/nu/](https://validator.w3.org/nu/).
+3. **Retestez** la conformité de votre document. (En fait vous devriez le tester
+régulièrement de vous même, mais on vous tient par la main pour ce premier TD)
+</div>
 
-## Image : un exemple d'élément embarqué
+### Image : un exemple d'élément embarqué
 
 Pour insérer une image, on peut utiliser la balise
 
@@ -322,11 +391,14 @@ Pour insérer une image, on peut utiliser la balise
 ```
 
 Cette balise n'a pas de balise fermante car elle ne peut avoir de contenu
-(cf. [le début du TD](#transformation-dun-document-texte-en-un-document-html)).
-On remarque qu'elle possède deux champs `src` et `alt` que l'on appelle les
-*attributs* de la balise. Précédemment, on avait vu une autre balise avec un
-attribut: `<meta>` avec l'attribut `charset`. Les attributs se trouvent toujours
-dans la balise ouvrante.
+(cf. [le début du TD](#les-balises-html)).  On remarque qu'elle possède deux
+champs `src` et `alt` que l'on appelle les **attributs** de la balise. Les
+attributs se trouvent **toujours** dans la balise ouvrante.
+
+<div class="exercise">
+Précédemment, on avait vu une autre balise avec un attribut : quelle était cette balise ?
+<!-- `<meta>` avec l'attribut `charset`. -->
+</div>
 
 L'attribut `src` doit contenir l'adresse de l'image. L'attribut `alt` permet
 d'ajouter un texte alternatif pour les navigateurs ne pouvant les afficher
@@ -334,7 +406,7 @@ d'ajouter un texte alternatif pour les navigateurs ne pouvant les afficher
 personnes ne pouvant pas bien les distinguer (aveugles ou déficits visuels légers).
 
 
-
+<div class="exercise">
 1. Enregistrez l'image
 [chuck-jeune.jpg]({{site.baseurl}}/assets/chuck-jeune.jpg) dans un
 répertoire `images` par rapport à votre fichier `index.html`.
@@ -343,88 +415,110 @@ répertoire `images` par rapport à votre fichier `index.html`.
 ici -->` par la balise `<img>` suivante
 
    ```html
-   <img src="./images/chuck-jeune.jpg" alt="Une photo de Chuck Jeune, la légende est en marche."/>
+   <img src="./images/chuck-jeune.jpg" alt="Une photo de Chuck Jeune, la légende est en marche.">
    ```
+ 
+   **Note :** L'adresse `./images/chuck-jeune.jpg` est une adresse relative. Le
+     point signifie "le dossier de la page Web courante". Donc on va aller
+     chercher l'image dans le dossier `images` du répertoire contenant la page
+     Web `index.html`.
 
 3. Faites de même avec l'image [beware.jpg]({{site.baseurl}}/assets/beware.jpg)
    à positionner en lieu et place du commentaire `<!--l'image de Chuck Beware
    ici -->`.
 
-## Éléments sémantiques
+4. Devinez quoi ? Il faut **retester** la conformité de votre document.
+</div>
 
-### Liens externes
+### Éléments sémantiques
+
+#### Liens externes
 
 L'un des éléments les plus emblématiques du HTML est sans doute la balise
 `<a>`. Elle permet de faire des liens hypertextes (le HT dans HTML).
 
 Un lien est composé principalement d'une URL cible et d'un libellé (le texte
-cliquable souvent souligné en bleu):
+cliquable souvent souligné en bleu) :
 
 ```html
 <a href="http://urlcible">le libellé</a>
 ```
 
 On peut renseigner l'URL complète de la
-cible (URL en chemin absolu):
+cible (URL en chemin absolu), par exemple :
 
 ```html
 <a href="http://lynx.browser.org/">Lynx</a>
 ```
    
-ou donner une adresse relative à la page courante (URL en chemin relatif)
+ou donner une adresse relative à la page courante (URL en chemin relatif), par exemple :
    
 ```html
-<a href="images/chuck-jeune.png">Image</a>
+<a href="./images/chuck-jeune.png">Image</a>
 ```
 
-1. Remplacez les commentaires `<!-- lien externe ...` par des balises `<a>` avec
-   la bonne adresse.
+<div class="exercise">
 
-### Liens internes
+1. Remplacez les commentaires `<!-- lien externe ...` par des balises `<a>` avec la
+   bonne adresse.
+2. **Testez** la conformité ...
+</div>
+
+#### Liens internes
 
 On peut rajouter à ces *liens externes* une partie *lien interne* basée sur les
 ancres `#monancre`. Toutes les balises peuvent prendre un attribut `id` comme
-dans l'exemple suivant
+dans l'exemple suivant. **Attention**, la valeur de cet attribut doit être
+**unique** dans le document.
 
 ```html
 <h2 id="un_identifiant">
 ```
 
-Attention, la valeur de cet attribut doit être unique dans le document. On peut
-alors faire un lien vers cette balise en rajoutant `#un_identifiant` à la fin
-de l'URL. Exemple de lien interne à la page Web courante `index.html` :
+On peut alors faire un lien vers cette balise en rajoutant `#un_identifiant` à
+la fin de l'URL. Par exemple, voici un lien vers la balise d'identifiant
+`un_identifiant` interne à la page Web courante `index.html` :
 
 ```html
 <a href="index.html#un_identifiant">Exemple de lien interne</a>
 ```
 
-<!-- verif cette adresse -->
+On peut raccourcir l'URL comme suit. Si on n'indique pas le document, c'est que
+l'on pointe vers le document courant par défaut.
 
-Un exemple important est l'URL `#ancre` : le lien externe est vide, ce qui
-correspond au document courant. Donc ce lien va vers la balise d'identifiant
-`id="ancre"` du document courant.
+```html
+<a href="#un_identifiant">Exemple de lien interne</a>
+```
+
+
+<div class="exercise">
 
 1. Remplacez le commentaire `<!-- lien interne ...-->` de `index.html` par une
-balise `<a>` qui pointera sur l'une des premières balises. Vous aurez donc
-besoin de rajouter un identifiant à cette balise cible.
+   balise `<a>` qui pointera sur l'une des premières balises. Vous aurez donc
+   besoin de rajouter un identifiant à cette balise cible.
+2. Testez vos liens en cliquant dessus. Ils doivent vous emmener sur la balise
+   dont l'identifiant correspond.
+3. **Testez** la conformité ...
 
-<!--
-### Table 
+</div>
 
-Les tables.
--->
-
-### Emphase
+#### Emphase
 
 La balise `<em>` permet de mettre en évidence des passages importants dans un
 texte. 
 
-1. Justement, il faut mettre en exergue le fait que Chuck Norris est très fort dans différents arts martiaux.
-Pour cela il faut mettre en emphase la phrase qui suit le commentaire : `<!-- mettre en emphase cette phrase -->` dans le fichier `index.html`.
+<div class="exercise">
+
+Justement, il faut mettre en exergue le fait que Chuck Norris est très fort dans
+différents arts martiaux.  Pour cela il faut mettre en emphase la phrase qui
+suit le commentaire : `<!-- mettre en emphase cette phrase -->` dans le fichier
+`index.html`.
+
+</div>
 
 **Note :** Il existe un autre type d'emphase qui s'obtient avec la balise `<strong>`.
 
-### Citation
+#### Citation
 
 Voici un magnifique exemple de citation :
 
@@ -438,31 +532,40 @@ y a la vie potentielle.
 Les citations permettent d'identifier un court texte sur lequel on veut attirer l'attention.
 Cela est utilisé notamment pour montrer qu'on a du 'spirit'.
 
+<div class="exercise">
+
 1. Allez voir le code source de notre citation à l'aide des outils de
-développement. Quels sont les deux balises utilisées ?
+développement. Quels sont les deux **nouvelles** balises utilisées ?
 <!-- `<blockquote>` et `<cite>` -->
 
-1. La première balise (qui commence par un **b**) entoure la citation complète
-   tandis que la deuxième (qui commence par un **c**) contient uniquement la
-   référence (l'auteur, le livre, ...). Utilisez ces deux balises pour mettre en
+   La première balise (qui commence par un `b`) entoure la citation complète
+   tandis que la deuxième (qui commence par un `c`) contient uniquement la
+   référence (l'auteur, le livre, ...). 
+
+1. Utilisez ces deux balises pour mettre en
    avant la citation en tout début de document (rechercher `<!-- utiliser
    blockquote ici -->`).
 
 2. Avez-vous vérifié tout au long du TD que votre page HTML reste valide ?
 
+</div>
+
 ## Fini !
 
 Nous en avons fini en ce qui concerne le contenu et la structure de notre site.
-Nous savons ajouter de la structure à une page HTML avec les balises spécifiques.
+Nous savons ajouter de la structure à une page HTML avec des balises spécifiques.
 
+Dans la [partie 2 de ce TD](tutorial1_2.html), nous verrons comment améliorer l'aspect
+du site.
 
-Une remarque peut être informulée de votre part : mais pourquoi le fait de
-rajouter `<h1>` à un titre change effectivement l'apparence des titres ? cela
-n'est pas à la charge du CSS justement ?  Les navigateurs appliquent des CSS par
-défaut associés aux balises HTML (exemple : par convention les liens `<a>` sont en
-bleus et soulignés sans que l'on est rien à faire).  Cela évite d'avoir
-justement TOUT à refaire en CSS : des styles par défaut sont proposés.  Dans le
-[TD suivant](tutorial1_2.html) nous verrons comment améliorer l'aspect du site.
+**Remarque :** Pourquoi le fait de rajouter `<h1>` à un titre change
+effectivement l'apparence des titres ? Cela n'est pas à la charge du CSS
+justement ?  
+En fait, les navigateurs appliquent des styles CSS par défaut à certaines
+balises HTML. Par exemple, les liens `<a>` sont en bleus et soulignés sans que
+l'on ait rien à faire. Cela évite d'avoir justement TOUT à refaire en CSS :
+le navigateur propose un style par défaut.
+
 
 <!-- Dans le devtools, elles s'appelent user agent rules -->
 
@@ -487,3 +590,11 @@ Questions complémentaires :
 <!-- Pour afficher les extensions de fichier Dans l'explorateur : alt pour
 afficher les menus, outils, options des dossiers, affichage, décocher cacher les
 extentions dont le type est connu -->
+
+<!--
+Idée Openclassrooms:
+https://openclassrooms.com/courses/apprenez-a-creer-votre-site-web-avec-html5-et-css3/comment-fait-on-pour-creer-des-sites-web
+* du langage HTML vers l'affichage dans le navigateur
+* Affichage avec et sans CSS
+*  différences entre navigateurs : fonctionnalités prise en charge, caniuse
+-->

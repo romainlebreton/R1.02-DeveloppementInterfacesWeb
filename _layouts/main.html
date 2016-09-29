@@ -99,5 +99,10 @@
     {% for s in page.scripts %}
     <script src="{{ s }}"></script>
     {% endfor %}
+
+    {% if jekyll.environment == "development" %}
+    <script src="http://localhost:5678/livereload.js"></script>
+    {% endif %}
+    
   </body>
 </html>

@@ -8,22 +8,18 @@ Les standards définissant le CSS sont publiés par le World Wide Web Consortium
 (<a href="http://www.w3.org/">W3C</a>) à l'adresse
 [http://www.w3.org/Style/CSS/](http://www.w3.org/Style/CSS/).
 
-<!-- lien pour HTML et compléter le lien pour CSS -->
-
-
 > Cascading Style Sheets (CSS) est un mécanisme simple pour ajouter du style
 > (exemple fonte, couleurs, espace) à un document web.  
 > <cite><a href="http://www.w3.org/Style/CSS/">W3C</a></cite>
 
-Le CSS est responsable du rendu du site sur votre écran, mais aussi sur un
+Le CSS est responsable du rendu du site sur votre écran, mais aussi sur
 smartphone et des impressions papier (des ensembles de règles CSS peuvent être
 spécifiés pour chacun de ces médias).
 
-
-Bien que l'acronyme signifie donc **des** feuilles de style, on parlera
-**du** CSS (le langage utilisé ou le mécanisme), mais on ne fera pas les pédants
-tant les deux sont confondus à l'usage (l'usage fait très souvent loi lorsque
-l'on fait du CSS !).
+<!-- Bien que l'acronyme signifie donc **des** feuilles de style, on parlera -->
+<!-- **du** CSS (le langage utilisé ou le mécanisme), mais on ne fera pas les pédants -->
+<!-- tant les deux sont confondus à l'usage (l'usage fait très souvent loi lorsque -->
+<!-- l'on fait du CSS !). -->
 
 Savoir les bases du CSS est relativement facile et indispensable pour qui veut
 travailler dans les métiers du Web. En maîtriser tous les aspects est un métier
@@ -45,6 +41,11 @@ h3 {  font-style:italic;color:blue;}
 
  * le sélecteur est `h3`,
  * le bloc de déclaration est `font-style:italic;color:blue;`.
+
+<!-- Here :
+https://openclassrooms.com/courses/apprenez-a-creer-votre-site-web-avec-html5-et-css3/mettre-en-place-le-css#/id/r-1604942
+Dire plus clairement ce qu'est un sélecteur
+-->
 
 Mettons en place nos règles CSS :
 
