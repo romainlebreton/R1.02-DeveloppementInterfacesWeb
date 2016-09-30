@@ -97,6 +97,10 @@ balise.
 
 2. Désactiver la déclaration `color:#d00` et remarquez le changement.
 
+3. Remarquez que vos changements disparaissent quand vous rafraîchissez la page
+   (`F5`). En effet, il faut les reporter dans la feuille de style pour les
+   sauvegarder.
+
 </div>
 
 <!--
@@ -325,6 +329,14 @@ traiter grossièrement le problème, limitez la largeur de l'élément `<body>` 
 5. le texte doit être aéré : utiliser une hauteur de ligne de `150%`.
 
 6. Chaque paragraphe doit être indenté de `5px`.
+
+3. Allez chercher une fonte de votre choix sur
+   [http://www.fontsquirrel.com](http://www.fontsquirrel.com). Liez-là à votre
+   document avec la règle `@font-face`. Appliquez-la aux titres de section
+   `<h2>` en n'oubliant pas de mettre des fontes en *fallback* (fonte de
+   recours).  
+   **Attention :** Ne mettez pas d'espaces dans le nom de votre fonte, ou sinon
+   entourez-là avec des guillemets.
 
 10. Le CSS est un standard au même titre que le HTML. Testez la conformité de
     votre fichier CSS avec le validateur
