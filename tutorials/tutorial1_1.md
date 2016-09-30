@@ -566,35 +566,8 @@ balises HTML. Par exemple, les liens `<a>` sont en bleus et soulignés sans que
 l'on ait rien à faire. Cela évite d'avoir justement TOUT à refaire en CSS :
 le navigateur propose un style par défaut.
 
-
 <!-- Dans le devtools, elles s'appelent user agent rules -->
-
-<!--
-iframe
-span
-div
-table
--->
-
-<!--
-Questions complémentaires :
-- em et exemple avec marge de taille différentes à cause d'une taille de fonte parente différente
-- comprendre les subtilités de px
-- favicon
-- background image (il m'a fait une valeur cover qui étire l'image)
-- bord rond
-- inclusion de mp3
-<audio controls="controls><source ..> texte alternatif ..
--->
 
 <!-- Pour afficher les extensions de fichier Dans l'explorateur : alt pour
 afficher les menus, outils, options des dossiers, affichage, décocher cacher les
 extentions dont le type est connu -->
-
-<!--
-Idée Openclassrooms:
-https://openclassrooms.com/courses/apprenez-a-creer-votre-site-web-avec-html5-et-css3/comment-fait-on-pour-creer-des-sites-web
-* du langage HTML vers l'affichage dans le navigateur
-* Affichage avec et sans CSS
-*  différences entre navigateurs : fonctionnalités prise en charge, caniuse
--->
