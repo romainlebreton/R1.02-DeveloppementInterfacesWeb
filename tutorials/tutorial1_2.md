@@ -42,8 +42,8 @@ italique et défini comme couleur de texte le bleu.
 
 Une règle CSS est composée de deux parties: 
 
-* un sélecteur CSS qui indique à quels éléments HTML s'applique le stype. Dans
-   notre exemple, le séléecteur `h3` signifie que nous allons appliquer le style
+* un sélecteur CSS qui indique à quels éléments HTML s'applique le style. Dans
+   notre exemple, le sélecteur `h3` signifie que nous allons appliquer le style
    suivant à toutes les balises HTML `<h3>` ;
 * un bloc de déclarations composé de plusieurs paires propriété CSS /
  valeur. Dans notre exemple, le bloc contient deux déclarations :
@@ -296,7 +296,7 @@ des paragraphes de texte :
    ```
    
 1. **`text-indent` :** Cette propriété indente la première ligne du texte,
-   c'est-à-dire qu'elle la décale horizontaliement. Exemple :
+   c'est-à-dire qu'elle la décale horizontalement. Exemple :
 
    ```css
    text-indent:12px;
@@ -426,7 +426,7 @@ Norris. Pour ce faire :
 Questions complémentaires :
 - autre unité de dimension (par exemple em) et créer un exemple de marge de
   taille différentes à cause d'une taille de fonte parente différente
-  (margin:1em; qui se comportera différement si sont-size différent)
+  (margin:1em; qui se comportera différement si font-size différent)
 - comprendre les subtilités de px
 - favicon
 - background image (il m'a fait une valeur cover qui étire l'image)

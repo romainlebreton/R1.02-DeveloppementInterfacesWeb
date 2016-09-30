@@ -55,7 +55,7 @@ source ou `Ctrl+U`).
 <div class="exercise">
 
 Pour créer une page Web, il suffit de créer un fichier texte et de lui donner
-l'extension `.html` pour que le navigateur comprenne qu'il doit l'interprété
+l'extension `.html` pour que le navigateur comprenne qu'il doit l'interpréter
 comme un document HTML.
 
 1. Sauvegardez le fichier [index.txt]({{site.baseurl}}/assets/index.txt) en local dans un dossier `HTMLCSS/TD1/`.  
