@@ -58,11 +58,13 @@ Pour créer une page Web, il suffit de créer un fichier texte et de lui donner
 l'extension `.html` pour que le navigateur comprenne qu'il doit l'interpréter
 comme un document HTML.
 
-1. Sauvegardez le fichier [index.txt]({{site.baseurl}}/assets/index.txt) en local dans un dossier `HTMLCSS/TD1/`.  
+1. Sauvegardez le fichier [index.txt]({{site.baseurl}}/assets/index.txt) en
+   local dans un dossier `HTMLCSS/TD1/`.  
    Sauvegardez le même fichier [index.txt]({{site.baseurl}}/assets/index.txt) en
-local dans le dossier `HTMLCSS/TD1/` en **le renommant** `index.html`.
+   local dans le dossier `HTMLCSS/TD1/` en **le renommant** `index.html`.
 
-1. Ouvrez les deux fichiers [index.txt]({{site.baseurl}}/assets/index.txt) et `index.html` dans le navigateur.  
+1. Ouvrez les deux fichiers [index.txt]({{site.baseurl}}/assets/index.txt) et
+   `index.html` dans le navigateur.  
    Quelles différences d'affichage observez-vous ? Pourquoi ?  
    Comment sont affichés des sauts de ligne d'un document HTML ?  
    Comment est affiché un texte HTML entouré de `<!--` et `-->` ?
@@ -78,18 +80,18 @@ navigateur.
 
 Le HTML, qui signifie *HyperText Markup Language* (langage de balisage
 d’hypertexte), est donc un langage à balise contenant des liens, dits
-*hypertextes*, vers d'autres documents. 
+*hypertextes*, vers d'autres documents.
 
-Le HTML5 est un standard, c'est-à-dire un langage complètement
-décrit (n'hésitez pas à jeter un rapide coup d'œil
+Le HTML est un standard, c'est-à-dire un langage complètement décrit (n'hésitez
+pas à jeter un rapide coup d'œil
 [à sa spécification](http://www.w3.org/TR/html5/), un document très technique
 mais complet).
 
 <div class="exercise">
   
-1. Testons la conformité de `index.html` au standard HTML à l'aide
-du validateur [https://html5.validator.nu/](https://html5.validator.nu/). Quelles
-sont les erreurs indiquées ?
+1. Testons la conformité de `index.html` au standard HTML5 à l'aide du validateur
+   [https://html5.validator.nu/](https://html5.validator.nu/). Quelles sont les
+   erreurs indiquées ?
 
 2. Commençons par l'erreur
 
@@ -98,7 +100,7 @@ sont les erreurs indiquées ?
    ```
 
    Le validateur nous dit qu'il s'attendait à voir `<!DOCTYPE html>` au début de
-   notre document.  Cette balise sert à déclarer que le document est écrit en
+   notre document. Cette balise sert à déclarer que le document est écrit en
    HTML5. En effet, il existe plusieurs standards de "langages HTML" : HTML4,
    XHTML, HTML5, ... Aujourd'hui, les gens utilisent majoritairement HTML5 et
    nous ferons de même.
@@ -107,8 +109,6 @@ sont les erreurs indiquées ?
    **ajoutez** la balise `<!DOCTYPE html>` au tout début du
    fichier.  
    **Retestez** la conformité de votre document.
-
-   <!-- **Unable to Determine Parse Mode!** avec https://validator.w3.org/ -->
 
 3. Le validateur nous indique **The character encoding was not declared**.
 
@@ -133,7 +133,8 @@ sont les erreurs indiquées ?
       <meta charset="utf-8">
       ```
 
-   1. Réouvrez `index.html` dans le navigateur et vérifiez que tous les accents s'affichent bien.
+   1. Réouvrez `index.html` dans le navigateur et vérifiez que tous les accents
+      s'affichent bien.
 
       **Note :** Si les accents ne marchent toujours pas, c'est parce qu'**il ne
         suffit pas** de dire que votre fichier est en UTF-8. Il faut aussi que
@@ -237,7 +238,6 @@ Les balises HTML donnent une structure d'arbre au document. Dans notre exemple
 
 l'arbre est le suivant :
 
-
 * `<html>` est l'élément racine
 * `<head>` et `<body>` sont les deux fils de l'élément `<html>`
 * `<title>` et `<meta>` sont deux fils de l'élément `<head>`
@@ -246,8 +246,10 @@ l'arbre est le suivant :
 <div style="clear:both" class="exercise">
 
 1. Mettez à jour votre page `index.html` pour qu'elle respecte la structure HTML
-ci-dessus. (Vous devez rajouter les balises `<html>`, `<head>` et `<body>`)
+   ci-dessus.  
+   (Vous devez rajouter les balises `<html>`, `<head>` et `<body>`)
 2. **Retestez** la conformité de votre document.
+   
 </div>
 
 <!-- Explication orale sur l'importance de la validation : standard, uniformité -->
@@ -318,13 +320,14 @@ Par exemple, le titre ci-dessus est obtenu avec le code suivant :
 <h2>Titres</h2>
 ```
 
-Vous pouvez le vérifier en inspectant le titre **Titres** juste au-dessus en
-faisant un clic droit dessus.
-
 <div class="exercise">
 
-1. Ajoutez la balise `<h2>` aux éléments de `index.html` marqués par les commentaires : `<!-- section -->`.
-2. Ajoutez la balise `<h3>` aux éléments de `index.html` marqués par les commentaires : `<!-- sous section -->`.
+1. Vérifier que le titre **Titres** juste au-dessus est bien un `<h2>` à l'aide
+   des outils de développement en faisant un clic droit dessus.
+1. Ajoutez la balise `<h2>` aux éléments de `index.html` marqués par les
+   commentaires : `<!-- section -->`.
+2. Ajoutez la balise `<h3>` aux éléments de `index.html` marqués par les
+   commentaires : `<!-- sous section -->`.
 3. **Retestez** la conformité de votre document.
 
 </div>
@@ -350,11 +353,11 @@ En HTML nous pouvons faire des listes ordonnées (numérotées) ou non ordonnée
 
 ```html
 <ul> <!-- ul pour unordered list -->
-  <li>premier item non ordonné </li> <!-- li pour list item -->
+  <li>premier item non ordonné</li> <!-- li pour list item -->
   <li>deuxième item</li>
 </ul>
 <ol> <!-- ol pour ordered list -->
-  <li>premier item ordonné </li>
+  <li>premier item ordonné</li>
   <li>deuxième item</li>
 </ol>
 ```
@@ -363,11 +366,11 @@ Ce qui donne une fois interprété par le moteur de rendu du navigateur :
 
 <div class="codeexample" style="margin:1em 0px;">
 <ul>
-  <li>premier item</li>
+  <li>premier item non ordonné</li>
   <li>deuxième item</li>
 </ul>
 <ol>
-  <li>premier item</li>
+  <li>premier item ordonné</li>
   <li>deuxième item</li>
 </ol>
 </div>
@@ -403,7 +406,8 @@ Précédemment, on avait vu une autre balise avec un attribut : quelle était ce
 L'attribut `src` doit contenir l'adresse de l'image. L'attribut `alt` permet
 d'ajouter un texte alternatif pour les navigateurs ne pouvant les afficher
 (navigateur textuel <a href="http://lynx.browser.org/">Lynx</a>) ou pour les
-personnes ne pouvant pas bien les distinguer (aveugles ou déficits visuels légers).
+personnes ne pouvant pas bien les distinguer (aveugles ou déficits visuels
+légers). **Attention**, l'attribut `alt` est obligatoire.
 
 
 <div class="exercise">
@@ -444,8 +448,8 @@ cliquable souvent souligné en bleu) :
 <a href="http://urlcible">le libellé</a>
 ```
 
-On peut renseigner l'URL complète de la
-cible (URL en chemin absolu), par exemple :
+On peut renseigner l'URL complète de la cible (URL en chemin absolu), par
+exemple :
 
 ```html
 <a href="http://lynx.browser.org/">Lynx</a>
@@ -542,9 +546,8 @@ développement. Quels sont les deux **nouvelles** balises utilisées ?
    tandis que la deuxième (qui commence par un `c`) contient uniquement la
    référence (l'auteur, le livre, ...). 
 
-1. Utilisez ces deux balises pour mettre en
-   avant la citation en tout début de document (rechercher `<!-- utiliser
-   blockquote ici -->`).
+1. Utilisez ces deux balises pour mettre en avant la citation en tout début de
+   document (rechercher `<!-- utiliser blockquote ici -->`).
 
 2. Avez-vous vérifié tout au long du TD que votre page HTML reste valide ?
 
