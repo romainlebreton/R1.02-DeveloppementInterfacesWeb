@@ -322,7 +322,7 @@ Par exemple, le titre ci-dessus est obtenu avec le code suivant :
 
 <div class="exercise">
 
-1. Vérifier que le titre **Titres** juste au-dessus est bien un `<h2>` à l'aide
+1. Vérifier que le titre **Titres** juste au-dessus est bien un `<h3>` à l'aide
    des outils de développement en faisant un clic droit dessus.
 1. Ajoutez la balise `<h2>` aux éléments de `index.html` marqués par les
    commentaires : `<!-- section -->`.
