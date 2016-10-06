@@ -27,7 +27,7 @@ will produce a website whose rendering corresponds to the file
 the website to achieve.
 
 We start by clarifying the structure (the HTML) that we can add to our raw
-content. Then we will see in the [second part of TD](tutorial1_2.html) how to
+content. Then we will see in the [second part of TD](tutorial1_2-en.html) how to
 obtain the rendering proposed by [target.png]({{site.baseurl}}/assets/target.png)
 by means of a CSS file.
 

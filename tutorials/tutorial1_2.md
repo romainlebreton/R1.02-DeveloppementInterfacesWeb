@@ -151,7 +151,7 @@ Le CSS3 les a complétés par 147 mots-clés de couleurs que vous pouvez retrouv
 [http://www.w3.org/TR/css3-color/#svg-color](http://www.w3.org/TR/css3-color/#svg-color).
 
 Vous pouvez être plus précis et accéder aux 16 millions de couleurs que peut
-afficher un écran, on donne les valeurs `R`, `V` et `B` en hexadécimal des
+afficher un écran en donnant les valeurs `R`, `V` et `B` en hexadécimal des
 composantes Rouge, Verte et Bleue respectivement de la couleur. Cela s'écrit
 avec le format `#RRVVBB` (ou `#RVB` qui est un raccourci). Par exemple :
 
@@ -459,11 +459,11 @@ la présentation du contenu. Mais cette séparation est indispensable et très p
  * Elle permet de réutiliser une présentation d'une page à l'autre. Par exemple
    quand *lemonde.fr* publie un nouvel article, il ne refait pas le style
    expressément pour ce dernier: il s'agit d'un nouveau document HTML partageant
-   le même CSS que les articles précédents.
+   le même CSS que les articles précédents ;
  * Elle permet de refaire un site Web en se concentrant sur les CSS sans (trop)
    toucher au HTML ;
  * Elle permet de changer la présentation d'un document suivant s'il est destiné à
- 	l'impression ou à être visualisé avec un navigateur ; 
+ 	l'impression ou à être visualisé avec un navigateur.
 
 <!--
 ### Compatibilité des navigateurs
