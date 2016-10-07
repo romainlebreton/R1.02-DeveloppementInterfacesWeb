@@ -271,6 +271,8 @@ of text. Example:
 
 ### Exercises
 
+<div class="exercise">
+
 1. **Colors:** The background of our page is all white by default. We are going to
 change this and give `<body>` the color choosen by our web-designer: `#838892`.
 
@@ -296,6 +298,8 @@ change this and give `<body>` the color choosen by our web-designer: `#838892`.
 10. The CSS is a standard just like HTML. Test the conformity of your CSS file
     with the validator
     [https://jigsaw.w3.org/css-validator](https://jigsaw.w3.org/css-validator).
+
+</div>
 
 ## The basics of CSS selectors
 
@@ -363,7 +367,7 @@ must write
 
 ### Exercises
 
-Everything will happen in `styles.css`.
+<div class="exercise">
 
 2. In accordance with the model of the designer
    [target.png]({{site.baseurl}}/assets/target.png), the background colors for
@@ -390,6 +394,7 @@ Everything will happen in `styles.css`.
 10. Test the conformity of your CSS file with the validator
     [https://jigsaw.w3.org/css-validator](https://jigsaw.w3.org/css-validator).
 
+</div>
 
 ## Concluding Remarks
 
