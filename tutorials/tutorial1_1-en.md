@@ -398,7 +398,7 @@ deficits). **Careful**, the `alt` attribute is mandatory.
 
 <div class="exercise">
 
-1. Save the image [chuck-young.jpg]({{site.baseurl}}/assets/chuck-young.jpg) in
+1. Save the image [chuck-jeune.jpg]({{site.baseurl}}/assets/chuck-jeune.jpg) in
 a directory `images` located where `index.html` is.
 
 2. Replace the comment `<!--l'image de Chuck Young doit être positionnée ici
@@ -408,7 +408,7 @@ a directory `images` located where `index.html` is.
    <img src="./images/chuck-jeune.jpg" alt="Une photo de Chuck Jeune, la légende est en marche.">
    ```
 
-   **Note:** The address `./images/chuck-young.jpg` is a relative address. The
+   **Note:** The address `./images/chuck-jeune.jpg` is a relative address. The
    point means "the folder of the current web page". Therefore we will go and
    get the image in the folder `images` of the directory containing the
    web page `index.html`.
