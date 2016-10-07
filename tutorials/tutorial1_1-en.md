@@ -62,7 +62,7 @@ folder `HTMLCSS/TD1/`.
 
 1. Open both files [index.txt]({{site.baseurl}}/assets/index.txt) and
    `index.html` in the browser.  
-   What display in the rendering do you observe? Why?  
+   What differences do you observe in the rendring? Why?  
    How are displayed line breaks in an HTML document?  
    How is displayed a HTML text surrounded by `<!--` et `-->`?
    <!-- saut de ligne mangés, mauvais accents, commentaire coupés : interprétation du HTML -->
@@ -307,7 +307,7 @@ For example, the above title is obtained with the following code:
 
 <div class="exercise">
 
-1. Check that the title **Titles** just above is an `<h2>` tag using the dev
+1. Check that the title **Titles** just above is an `<h3>` tag using the dev
    tools by right-clicking on it.
 1. Add the Tag `<h2>` to the elements of `index.html` marked by the comments:
    `<!-- section -->`.
