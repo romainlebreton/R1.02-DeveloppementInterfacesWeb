@@ -45,7 +45,7 @@ value. In our example, the block contains two statements:
 1. We give the value `italic` to the CSS property `font-style`;
 1. We give the value `blue` to the CSS property `color`.
 
-<div class = "exercise">
+<div class="exercise">
 
 Let's set up our CSS rules:
 
@@ -61,7 +61,7 @@ Let's set up our CSS rules:
    document (in the `<head>` part ):
 
    ```html
-   <link rel = "stylesheet" type = "text / css" href = "css / styles.css">
+   <link rel="stylesheet" type="text/css" href="css/styles.css">
    ```
 
    This line loads the CSS stylesheet `styles.css` and applies it to the Web
@@ -83,7 +83,7 @@ with the development tools not only allows to see the CSS rules applied to the
 latter, it allows also to **change** them. Suffice to say that it is advisable
 to abuse this tool during the tutorials for tweaking everything and anything.
 
-<div class = "exercise">
+<div class="exercise">
 
 1. Inspect with the development tools (`F12`) one of the red texts. In the
    column on the right, you see the CSS styles applied to the inspected tag.
@@ -102,7 +102,7 @@ In CSS, only comments with `/*` and `*/` are allowed. If you
 use `//` in your file `styles.css` you will have problems
 (the following CSS rules will not be applied).
  
-<div class = "exercise">
+<div class="exercise">
 
 Comment the CSS rule `h3 {...}` in `styles.css` and notice that the titles
 `<h3>` are no longer blue or italic.
@@ -128,7 +128,7 @@ The following 16 keywords can be used to define a color: `aqua`,` gray`,
 `white`,` fuchsia`, `maroon`,` red`, `yellow`. They were chosen to designate 16
 well-distributed colors as shown in the following diagram:
 
-<div style = "text-align: center">
+<div style="text-align: center">
 ![Symmetry of 16 colors]({{site.baseurl}}/assets/HSL14colors.png).
 </div>
 
