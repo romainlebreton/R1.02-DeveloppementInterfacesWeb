@@ -443,7 +443,7 @@ Questions complémentaires :
 - favicon
 - background image (il m'a fait une valeur cover qui étire l'image)
 - bord rond (border-radius)
-- inclusion de mp3
+- inclusion de mp3 de assets/citation.mp3
 <audio controls="controls><source ..> texte alternatif ..
 -->
 
