@@ -20,11 +20,12 @@ allons ici nous intéresser à deux types spécifiques :
   logique de la page web en la découpant en différentes sections. Par défaut,
   ces balises découpent la page web en sections horizontales qu'elles occupent
   en entier (du bord gauche au bord droit de la section). Deux balises de flux
-  ne peuvent pas partager une même section horizontale aussi les espaces
+  ne peuvent pas partager une même section horizontale, donc les espaces
   qu'elles délimitent dans la page s'enchaînent-ils verticalement.
 
 * les balises au niveau du texte : elles apportent une précision sur la
-  sémantique d'une partie du texte (mise en avant d'une partie de texte importante, ajout d'un type exposant, time,...).
+  sémantique d'une partie du texte (mise en avant d'une partie de texte
+  importante, ajout d'un type exposant, time,...).
 
 Quelques exemples :
 
@@ -38,7 +39,7 @@ Quelques exemples :
      spécifique à cette page. Cette balise ne peut être présente dans une autre
      balise présentée ici à l'exception de `<div>`.
      <!-- Elle n'est pas supportée par Internet Explorer <= 10 mais le support peut -->
-     <!-- en être ajouté grâce à Javascript et en utilisant la règle css « main -->
+     <!-- en être ajouté grâce à Javascript et en utilisant la règle CSS « main -->
      <!-- {display : block} ». -->
    * `<article>` : section contenant un document « auto-suffisant », *i.e.* qui
      peut être séparé du reste de la page et gardera cependant tout son
@@ -74,22 +75,23 @@ associé (les `<em>` seront stylisées par une mise en italique, les `<sup>` en
 exposants,...).  Les navigateurs se chargent d'ajouter pour nous certains styles
 par défaut très courant.
 
-Il existe encore beaucoup d'autres balises HTML. Cela dit, il arrive qu'aucune ne
-corresponde à ce que l'on veut exprimer (lors d'une construction de layout par exemple). Deux balises neutres ont été ajoutées
-pour ces constructions :
+Il existe encore beaucoup d'autres balises HTML. Cela dit, il arrive qu'aucune
+ne corresponde à ce que l'on veut exprimer (lors d'une construction de layout
+par exemple). Deux balises neutres ont été ajoutées pour ces constructions :
 
-   * Au niveau du texte : `<span>` : cette balise est neutre, sans signification
+   * Au niveau du texte `<span>` : cette balise est neutre, sans signification
      particulière. Son utilisation permet entre autres de créer des règles de
      formatage spécifiques du contenu textuel (par exemple lorsque nous avons
      ajouter la class `skill`).
-   * Balise de structure : `<div>` : cette balise est « neutre », son
-utilisation permet de distinguer une section qui ne revêt aucune signification
-particulière. Contrairement au `span` elle provoque un saut de ligne.
+   * Balise de structure `<div>` : cette balise est neutre, son utilisation
+     permet de distinguer une section qui ne revêt aucune signification
+     particulière. Contrairement au `span` elle provoque un saut de ligne.
 
 ## Structuration de la page
 
-Vous allez d'abord structurer logiquement le contenu du site. Voici un *template* HTML d'une structuration classique de
-page Web.
+Vous allez d'abord structurer logiquement le contenu du site. Voici un
+*template* HTML (modèle HTML en français) d'une structuration classique de page
+Web.
 
 
 ```html
@@ -120,25 +122,25 @@ l'exemple précédent :
 
 <div class="exercise">
 
-1. Ajouter une balise `<header>`. Son contenu sera la citation du TD1 et une
+1. Ajoutez une balise `<header>`. Son contenu sera la citation du TD1 et une
    barre de navigation `<nav>` vide pour l'instant,
-2. Ajouter une balise `<main>`, une balise `<article>` et une balise `<aside>`
+2. Ajoutez une balise `<main>`, une balise `<article>` et une balise `<aside>`
    comme dans le *template* précédent. Mettez l'ancien contenu de la page dans
    `<article>` sauf les deux dernières sections ("Les sites amis" et
    "Le Top 10 des derniers facts proposés") qui vont dans `<aside>`,
-3. Ajouter une balise `<footer>` qui contient le lien vers le retour au début du site,
-4. Ajouter dans la balise `<nav>` deux liens dans une structure de liste
+3. Ajoutez une balise `<footer>` qui contient le lien vers le retour au début du site,
+4. Ajoutez dans la balise `<nav>` deux liens dans une structure de liste
    contenant : Un lien nommé "Accueil" qui pointe sur la page courante `index.html`
    et un nommé "Contact" qui pointe vers une page `contact.html`,
 5. Construire cette page `contact.html` au même niveau que `index.html`. Elle
    doit contenir l'image [contact.jpg]({{site.baseurl}}/assets/contact.jpg) pour
-   illustrer que nous sommes bien à l'écoute. Ajouter l'adresse avec la balise
+   illustrer que nous sommes bien à l'écoute. Ajoutez l'adresse avec la balise
    `<address>` contenant :
  * Email : chuckn@yopmail.com
  * IUT de Montpellier Sète <br>
    99 avenue d'Occitanie <br>
    34296 Montpellier Cedex 5
-6. Valider vos pages HTML sur le validateur
+6. Validez vos pages HTML sur le validateur
 [https://html5.validator.nu/](https://html5.validator.nu/). (Faites-le
 systématiquement sans qu'on vous le demande :-) ).
 
@@ -153,12 +155,18 @@ TD, nous allons ajouter du style aux éléments de la page courante.
 
 ## Règles de compositions des CSS
 
-À partir des sélecteurs de bases présentés
-[dans le TD précédent]({{site.baseurl}}/tutorials/tutorial1_2.html#les-slecteurs-css-de-base), il est
-possible de créer des
-[sélecteurs complexes](http://www.w3.org/TR/css3-selectors/#combinators).
-Par exemple, nous allons voir comment sélectionner les `<div>` ayant la classe `toto` et
-qui sont fils d'un élément d'identifiant `titi`.
+[Rappelons qu'une règle CSS]({{site.baseurl}}/tutorials/tutorial1_2.html#tutoriel-dintroduction)
+est composé d'un sélecteur CSS et d'un bloc de déclaration composé de plusieurs
+paires propriété CSS / valeur. Un sélecteur CSS qui indique à quels éléments
+HTML s’applique le style.
+
+À partir des sélecteurs de bases (de balise, de classe et d'identifiant)
+présentés
+[dans le TD précédent]({{site.baseurl}}/tutorials/tutorial1_2.html#les-slecteurs-css-de-base),
+il est possible de créer des
+[sélecteurs complexes](http://www.w3.org/TR/css3-selectors/#combinators).  Par
+exemple, nous allons voir comment sélectionner les `<div>` ayant la classe
+`toto` et qui sont fils d'un élément d'identifiant `titi`.
 
 
 Nous exposons dans cette section les principaux moyens de composer un sélecteur
@@ -185,14 +193,14 @@ h1,h2,h3 {color: red}
 
 ### Combinaison
 
-Pour préciser un élément, il suffit d'apposer plusieurs sélecteurs de base
-(balise, classe ou identifiant). Par exemple :
+Pour préciser un élément, il suffit de concaténer (sans espaces entre eux)
+plusieurs sélecteurs de base (balise, classe ou identifiant). Par exemple :
 
 ```css
 div.toto
 ```
 
-correspond au sélecteur des `<div>` qui ont la classe 'toto'. Ou encore 
+correspond au sélecteur des `<div>` qui ont la classe `toto`. Ou encore 
 
 ```css
 .titi.toto
@@ -204,10 +212,11 @@ correspond aux éléments qui ont la classe `toto` <strong>ET</strong> `titi`.
 
 <!-- changer descendance directe en enfant  -->
 
-On veut pouvoir limiter une règle css à une sous partie de l'arborescence HTML, pour cela on utilise la relation de descendance.
+On veut pouvoir limiter une règle CSS à une sous partie de l'arborescence HTML,
+pour cela on utilise la relation de descendance.
 
 
-#### Directe (enfant)
+#### Descendance directe (enfant)
 
 La relation de descendance directe est signifiée par le caractère `>`. Par exemple,
 
@@ -218,7 +227,7 @@ La relation de descendance directe est signifiée par le caractère `>`. Par exe
 sélectionne les éléments de la classe `toto` qui sont <strong>enfant</strong>
 (direct) de l'élément d'identifiant `titi`.
 
-#### Indirecte (descendant)
+#### Descendance indirecte (descendant)
 
 
 La relation de descendance indirecte est signifiée par le caractère
@@ -230,12 +239,12 @@ d'espacement. Par exemple,
 
 signifie les éléments qui ont la classe `toto` qui sont
 <strong>descendants</strong> (direct ou indirect) de l'élément d'identifiant
-'titi'. Donc la différence avec `>` est qu'on n'est plus limité aux fils
-puisqu'on intègre aussi les petits-fils, arrières-petits-fils ...
+`titi`. Donc la différence avec `>` est qu'on n'est plus limité aux enfants
+puisqu'on intègre aussi les petits-enfants, arrières-petits-enfants ...
 
 <div class="exercise">
 
-Aller sur [http://flukeout.github.io/](http://flukeout.github.io/) et passez
+Allez sur [http://flukeout.github.io/](http://flukeout.github.io/) et passez
 les niveaux de 1 à 11 et le niveau 14.
 
 **Notes :**
@@ -272,7 +281,7 @@ li:nth-child(even) {color: red;}
 
 
 <div class="exercise">
-3. Enlever le fait que (tous) les liens soient soulignés. Pour cela, aller vous
+3. Enlevez le fait que (tous) les liens soient soulignés. Pour cela, allez vous
 renseigner sur
 [la propriété text-decoration](https://developer.mozilla.org/fr/docs/Web/CSS/text-decoration).
 1. Dans la page de Chuck Norris de la semaine dernière, faites en sorte que les
@@ -281,7 +290,7 @@ liens `<a>` visités apparaissent en bleu plus léger `#0088FF`.
 </div>
 
 <!-- Les règles hover et visited peuvent être en conflit en cas de lien visité
-sur lequel on passe la souris. Comme les deux règles ont la priorité, c'est
+sur lequel on passe la souris. Comme les deux règles ont la même priorité, c'est
 l'ordre qui va importer.  -->
 
 ## Table
@@ -328,12 +337,13 @@ Voici un squelette de table :
 
 <div class="exercise">
 
-1. Créer une table avec les sept noms de colonnes suivants : `Acteurs, Karaté,
+1. Créez une table avec les sept noms de colonnes suivants : `Acteurs, Karaté,
 Taekwondo, Judo, Chun Kuk Do, Tangsudo, Ju-jitsu`. Cette table doit se trouver
 en bas de la page `index.html`, dans la partie complémentaire `<aside>`. Les noms
 doivent être contenus dans des balises `<span>`.
-1. Ajouter la classe  "skill" aux `<span>` contenant les noms des arts martiaux.
-1. Ajouter les six lignes suivantes (les nombres correspondent à la valeur de
+1. Ajoutez la classe `skill` aux `<span>` correspondant à des noms d'arts
+   martiaux.
+1. Ajoutez les six lignes suivantes (les nombres correspondent à la valeur de
    l'acteur dans l'art martial correspondant) :
 
      * Chuck Norris, 5, 5, 5, 5, 5, 5
@@ -342,6 +352,8 @@ doivent être contenus dans des balises `<span>`.
      * Jean-Claude Van Damne, 5, 3, 3, 3, 4, 3
      * Bolo Yeung, 2, 4, 4, 2, 5, 3
      * Dolph Lundgren, 2, 4, 4, 2, 5, 3
+
+1. Testez la conformité de votre site.
 
 </div>
 
@@ -355,8 +367,10 @@ Les éléments `<thead>` et `<tbody>` servent à définir plus explicitement la 
 
 <div class="exercise">
 
-Ajouter ces balises pour englober ces deux parties (en oubliant pas leurs
-balises fermantes `</thead>` et `</tbody>`)
+1. Ajoutez ces balises pour englober ces deux parties (en oubliant pas leurs
+   balises fermantes `</thead>` et `</tbody>`)
+
+1. Testez la conformité de votre site.
 
 </div>
 
@@ -366,14 +380,14 @@ Voyons maintenant comment la styliser.
 
 <div class="exercise">
 <!--
- 1. Ajouter une règle pour que les textes dans les colonnes ne soient pas sur plusieurs lignes (notamment 'Chun Kuk Do') en utilisant la bonne valeur pour la propriété `white-space`,
+ 1. Ajoutez une règle pour que les textes dans les colonnes ne soient pas sur plusieurs lignes (notamment 'Chun Kuk Do') en utilisant la bonne valeur pour la propriété `white-space`,
  -->
  1. Définissez une couleur de fond `#00AAFF` pour la partie en-tête `thead` du tableau.
- 1. Donner la couleur violette `#640051` au texte des skills dans le tableau sans
+ 1. Donnez la couleur violette `#640051` au texte des skills dans le tableau sans
  modifier le style des éléments ayant la classe `skill` dans les paragraphes,
  (voir la
  [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
- 1. ajouter une règle pour que le fond d'une ligne (*row*) sur deux du corps de
+ 1. ajoutez une règle pour que le fond d'une ligne (*row*) sur deux du corps de
  la table apparaisse en blanc et l'autre avec la couleur `#CCC`
  <strong>SANS</strong> modifier de quelque façon le HTML (voir la
  [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))  
@@ -470,10 +484,10 @@ Exemples :
   propriétés `margin-top`, `margin-left`, `margin-bottom`,...
 
 <div class="exercise">
- 1. Ajouter du padding vertical de `10px` aux titres de sections,
- 1. Ajouter du margin vertical de `30px` aux paragraphes,
- 1. Ajouter du padding horizontal de `5px` aux éléments ayant la class `skill` dans la table (mais pas aux éléments ayant la class `skill` dans les paragraphes).
- 1. ajouter une bordure aux titres `<H3>` de `1px`, de style `solid` et de couleur `#CCCCCC`. 
+ 1. Ajoutez du padding vertical de `10px` aux titres de sections,
+ 1. Ajoutez du margin vertical de `30px` aux paragraphes,
+ 1. Ajoutez du padding horizontal de `5px` aux éléments ayant la class `skill` dans la table (mais pas aux éléments ayant la class `skill` dans les paragraphes).
+ 1. ajoutez une bordure aux titres `<H3>` de `1px`, de style `solid` et de couleur `#CCCCCC`. 
 </div>
 
 
@@ -499,8 +513,8 @@ Les valeurs de la propriété float sont  `left`, `right`, `none` et `inherit`.
 
 <div class="exercise">
 
- 1. Placer l'image de Chuck jeune de class `young_chuck` à gauche du texte, 
- 1. Placer l'image beware `beware_img` à droite du texte.
+ 1. Placez l'image de Chuck jeune de class `young_chuck` à gauche du texte, 
+ 1. Placez l'image beware `beware_img` à droite du texte.
 
 </div>
 
@@ -565,7 +579,7 @@ Référence : [Mozilla Developer Network (MDN)](https://developer.mozilla.org/fr
    relative;top:20px;left:20px;` précédente en les appliquant temporairement sur
    l'image `chuck-jeune.jpg`.
 
-2. Ajouter les icônes de réseaux sociaux
+2. Ajoutez les icônes de réseaux sociaux
 [facebook.png ![Facebook]({{site.baseurl}}/assets/facebook.png)]({{site.baseurl}}/assets/facebook.png)
 et
 [twitter.png ![Twitter]({{site.baseurl}}/assets/twitter.png)]({{site.baseurl}}/assets/twitter.png)

@@ -4,6 +4,8 @@ subtitle: Les formulaires.
 layout: tutorial
 ---
 
+<!-- Rajouter mise-en-page "Solved by flexbox" des formulaires -->
+
 ## Introduction
 
 Nous allons ajouter un formulaire d'inscription à notre site de fans de
