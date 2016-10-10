@@ -287,7 +287,7 @@ a:visited {color: purple;}
 /* Style des liens <a> si la souris les survole */
 a:hover {text-decoration: underline;} 
 
-/* le premier caractère d'un texte */
+/* un paragraphe qui est le premier fils de son père */
 p:first-child {color:red;}
 /* le troisième paragraphe */
 p:nth-child(3) {color: green;}
