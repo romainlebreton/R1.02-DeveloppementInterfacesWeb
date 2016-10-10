@@ -5,9 +5,8 @@ layout: tutorial
 ---
 
 <!--
-nth-child odd sur ie 11 background color
-
-définir clairement sélecteur
+nth-child odd sur ie 11
+background color
 -->
 
 
@@ -124,25 +123,45 @@ l'exemple précédent :
 
 1. Ajoutez une balise `<header>`. Son contenu sera la citation du TD1 et une
    barre de navigation `<nav>` vide pour l'instant,
+
 2. Ajoutez une balise `<main>`, une balise `<article>` et une balise `<aside>`
    comme dans le *template* précédent. Mettez l'ancien contenu de la page dans
-   `<article>` sauf les deux dernières sections ("Les sites amis" et
-   "Le Top 10 des derniers facts proposés") qui vont dans `<aside>`,
+   `<article>` sauf les deux dernières sections ("Les sites amis" et "Le Top 10
+   des derniers facts proposés") qui vont dans `<aside>`,
+
 3. Ajoutez une balise `<footer>` qui contient le lien vers le retour au début du site,
+   
 4. Ajoutez dans la balise `<nav>` deux liens dans une structure de liste
-   contenant : Un lien nommé "Accueil" qui pointe sur la page courante `index.html`
-   et un nommé "Contact" qui pointe vers une page `contact.html`,
-5. Construire cette page `contact.html` au même niveau que `index.html`. Elle
-   doit contenir l'image [contact.jpg]({{site.baseurl}}/assets/contact.jpg) pour
-   illustrer que nous sommes bien à l'écoute. Ajoutez l'adresse avec la balise
-   `<address>` contenant :
- * Email : chuckn@yopmail.com
- * IUT de Montpellier Sète <br>
-   99 avenue d'Occitanie <br>
-   34296 Montpellier Cedex 5
-6. Validez vos pages HTML sur le validateur
-[https://html5.validator.nu/](https://html5.validator.nu/). (Faites-le
-systématiquement sans qu'on vous le demande :-) ).
+   contenant : Un lien nommé "Accueil" qui pointe sur la page courante
+   `index.html` et un nommé "Contact" qui pointe vers une future page
+   `contact.html`,
+   
+5. Validez votre pages HTML sur le validateur
+   [https://html5.validator.nu/](https://html5.validator.nu/). (Faites-le
+   systématiquement sans qu'on vous le demande :-) ).
+
+</div>
+<div class="exercise">
+
+1. Construire une page `contact.html` au même niveau que `index.html`. Elle doit
+   contenir le même template HTML (patron HTML) que `index.html`. En particulier:
+
+   1. elle reprend les mêmes  `<header>` et `<footer>` que `index.html`,
+   1. elle appelle la même feuille de style CSS,   
+   1. elle définit son propre `<title>`.
+
+2. Dans la partie `<main>` de la page, ajoutez
+
+   1. un titre `Adresse`   
+   1. l'image [contact.jpg]({{site.baseurl}}/assets/contact.jpg) pour illustrer
+   que nous sommes bien à l'écoute.   
+   1. Ajoutez l'adresse avec la balise `<address>` contenant :  
+      IUT de Montpellier Sète <br>
+      99 avenue d'Occitanie <br>
+      34296 Montpellier Cedex 5 <br>
+      Email : chuckn@yopmail.com
+   
+3. Validez votre page HTML.
 
 </div>
 
@@ -209,8 +228,6 @@ correspond au sélecteur des `<div>` qui ont la classe `toto`. Ou encore
 correspond aux éléments qui ont la classe `toto` <strong>ET</strong> `titi`.
 
 ### Descendance
-
-<!-- changer descendance directe en enfant  -->
 
 On veut pouvoir limiter une règle CSS à une sous partie de l'arborescence HTML,
 pour cela on utilise la relation de descendance.
@@ -425,16 +442,24 @@ qui est le patron.
 Comme vous l'avez vu précédemment, les balises de type structure définissent des
 boîtes. Ces boîtes disposent toutes des propriétés CSS suivantes :
 
-* `padding` : espacement entre le contenu et la bordure de la boîte. Le padding
-  partage le même arrière plan (`background-color`) que la boîte,
-* `border` : bordure qui entoure le contenu. Cette propriété attend trois
-  valeurs : un width (par ex. `1px`), un style (par ex. `solid`, `dotted`, `dashed`
-  ...) et une couleur (par ex. `black`).  
-   **Attention :** Un border n'a pas de style par défaut, donc lui donner une
-width ne suffit pas pour le voir.
 * `margin` : marge à l’extérieur de la bordure, entre cette boîte et la
-  suivante, et/ou entre cette boite et son parent. La zone couverte par la marge est de la même couleur que sont parent,
+  suivante, et/ou entre cette boite et son parent. La zone couverte par la marge
+  est de la même couleur que son parent,
+* `border` : bordure qui entoure le contenu. Cette propriété attend trois
+   valeurs :
+
+   1. `width`, par ex. `1px`,
+   1. `style`, par ex. `solid`, `dotted`, `dashed`,  ...
+   1. `color`, par ex. `black`.  
+   **Attention :** Un border n'a pas de style par défaut, donc lui donner une
+   width ne suffit pas pour le voir.
+   
+* `padding` : marge intérieure à la bordure, c'est-à-dire espacement entre le
+   contenu et la bordure de la boîte. Le padding partage le même arrière plan
+   (`background-color`) que la boîte,
+
 * `width` : la largeur du contenu, *i.e.* de la boîte *content*
+
 * `height` : la hauteur du contenu, *i.e.* de la boîte *content*
 
 <img alt="Box model" src="{{site.baseurl}}/assets/boxmodel.png" style="margin:0
@@ -465,10 +490,12 @@ La zone de contenu
 Il y a trois syntaxes différentes pour donner des valeurs au `margin`, au
 `padding` et au `border` :
 
- * `margin : t r b l;` : Si on donne 4 tailles t, r, b et l, alors t est associé
-   à la valeur du haut (top), r est la valeur droite (right), b au bas (bottom)
-   et l à la gauche (left);
- * `padding : v h;` : Si on ne donne que 2 tailles v et h alors v est associé aux valeurs verticales et  h horizontales. C'est donc équivalent à `padding: v h v h;`.
+ * `margin : t r b l;` : Si on donne 4 tailles `t`, `r`, `b` et `l`, alors `t`
+   est associé à la valeur du haut (top), `r` est la valeur droite (right), `b`
+   au bas (bottom) et `l` à la gauche (left);
+ * `padding : v h;` : Si on ne donne que 2 tailles `v` et `h` alors `v` est
+   associé aux valeurs verticales et `h` horizontales. C'est donc équivalent à
+   `padding: v h v h;`.
  * `padding : a;` Si on donne une seule valeur, elle sera associée aux quatre
    coté de la boite, comme si on avait écrit `padding: a a a a;`.
 
@@ -476,8 +503,10 @@ Exemples :
 
 ```css
 #titi {margin : 5px 0 4px 7px;}
- div {margin: 10px 5px;} // Marges verticales (haute et basse) de 10px et horizontales de 5px
-.toto {padding : 5px}    // Le padding dans toutes les directions est de 5px
+/* Marges verticales (haute et basse) de 10px et horizontales de 5px */
+div {margin: 10px 5px;} 
+/* Le padding dans toutes les directions est de 5px */
+.toto {padding : 5px}    
 ```
 
 **Note :** On peut aussi préciser (péniblement) les valeurs unitaires des
@@ -487,7 +516,7 @@ Exemples :
  1. Ajoutez du padding vertical de `10px` aux titres de sections,
  1. Ajoutez du margin vertical de `30px` aux paragraphes,
  1. Ajoutez du padding horizontal de `5px` aux éléments ayant la class `skill` dans la table (mais pas aux éléments ayant la class `skill` dans les paragraphes).
- 1. ajoutez une bordure aux titres `<H3>` de `1px`, de style `solid` et de couleur `#CCCCCC`. 
+ 1. ajoutez une bordure aux titres `<h3>` de `1px`, de style `solid` et de couleur `#CCCCCC`. 
 </div>
 
 
@@ -502,7 +531,7 @@ Pour centrer le contenu d'une balise :
 
 
 <div class="exercise">
- 1. Centrer le body horizontalement,
+ 1. Centrer le `body` horizontalement,
  1. Dans la table, centrer le texte des cellules, (le 5 de Chuck notamment est encore trop discret)
 </div>
 
@@ -513,7 +542,7 @@ Les valeurs de la propriété float sont  `left`, `right`, `none` et `inherit`.
 
 <div class="exercise">
 
- 1. Placez l'image de Chuck jeune de class `young_chuck` à gauche du texte, 
+ 1. Placez l'image de Chuck jeune à gauche du texte (comment faire un sélecteur uniquement pour cette balise ?), 
  1. Placez l'image beware `beware_img` à droite du texte.
 
 </div>
@@ -563,11 +592,11 @@ Un élément est dit <strong>positionné</strong> s'il a une position autre que 
 Pour indiquer le décalage de position, on utilise les propriétés `top`, `left`,
 `right` et `bottom`. Par exemple, les propriétés
 
-~~~
+```css
 position:relative; 
 top:20px; 
 left:20px; 
-~~~
+```
 
 vont positionner un élément `20px` plus à droite et en bas qu'il n'aurait dû l'être.
 
