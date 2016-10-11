@@ -261,15 +261,17 @@ puisqu'on intègre aussi les petits-enfants, arrières-petits-enfants ...
 
 <div class="exercise">
 
-Allez sur [http://flukeout.github.io/](http://flukeout.github.io/) et passez
+Nous allons vous faire jouer à un jeu qui permet de vérifier votre compréhension
+des sélecteurs. Le jeu consiste à écrire le sélecteur qui répond à la consigne
+donnée. La partie de droite de la page est là pour vous aider.
+
+**Allez sur** [http://flukeout.github.io/](http://flukeout.github.io/) et passez
 les niveaux de 1 à 11 et le niveau 14.
 
 **Notes :**
 
-* Le jeu consiste à écrire le sélecteur qui répond à la consigne donnée ;
 * Vous pouvez passer directement à l'exercice que vous voulez en rentrant le
    numéro de l'exercice à la place du sélecteur ;
-* La partie de droite de la page est là pour vous aider.
 
 
 </div>
