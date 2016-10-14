@@ -45,7 +45,7 @@ value. In our example, the block contains two statements:
 1. We give the value `italic` to the CSS property `font-style`;
 1. We give the value `blue` to the CSS property `color`.
 
-<div class="exercise">
+<div class="exercise-en">
 
 Let's set up our CSS rules:
 
@@ -83,7 +83,7 @@ with the development tools not only allows to see the CSS rules applied to the
 latter, it allows also to **change** them. Suffice to say that it is advisable
 to abuse this tool during the tutorials for tweaking everything and anything.
 
-<div class="exercise">
+<div class="exercise-en">
 
 1. Inspect with the development tools (`F12`) one of the red texts. In the
    column on the right, you see the CSS styles applied to the inspected tag.
@@ -102,7 +102,7 @@ In CSS, only comments with `/*` and `*/` are allowed. If you
 use `//` in your file `styles.css` you will have problems
 (the following CSS rules will not be applied).
  
-<div class="exercise">
+<div class="exercise-en">
 
 Comment the CSS rule `h3 {...}` in `styles.css` and notice that the titles
 `<h3>` are no longer blue or italic.
@@ -271,7 +271,7 @@ of text. Example:
 
 ### Exercises
 
-<div class="exercise">
+<div class="exercise-en">
 
 1. **Colors:** The background of our page is all white by default. We are going to
 change this and give `<body>` the color choosen by our web-designer: `#838892`.
@@ -367,7 +367,7 @@ must write
 
 ### Exercises
 
-<div class="exercise">
+<div class="exercise-en">
 
 2. In accordance with the model of the designer
    [target.png]({{site.baseurl}}/assets/target.png), the background colors for

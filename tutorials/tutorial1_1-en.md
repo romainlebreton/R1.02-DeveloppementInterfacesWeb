@@ -41,7 +41,7 @@ As said previously, the role of the browser (Firefox, Chrome, Safari, IE/Edge,
 containing HTML/CSS to a display with proper layout, with images ...
 
 
-<div class="exercise">
+<div class="exercise-en">
 
 1. This tutorial is a Web page. Open the sources of this page to see the HTML
 source code that is used to display this page (right-click and then source code
@@ -49,7 +49,7 @@ or `Ctrl+U`).
 
 </div>
 
-<div class="exercise">
+<div class="exercise-en">
 
 To create a Web page, it is enough to create a text file and to give him the
 extension `.html` so that the browser understands that it must interpret it as
@@ -83,7 +83,7 @@ hesitate to throw a quick glance
 [to its specification](http://www.w3.org/TR/html5/), a highly technical document
 but very complete).
 
-<div class="exercise">
+<div class="exercise-en">
 
 1. Test the conformity of `index.html` to the HTML5 standard using the validator
    [https://html5.validator.nu/](https://html5.validator.nu/). What are the
@@ -232,7 +232,7 @@ The tree is the following:
 * `<title>` and `<meta>` are two children of the node `<head>`
 * "The non official website of Chuck Norris" is a child of the node `<title>`.
 
-<div style="clear:both" class="exercise">
+<div style="clear:both" class="exercise-en">
 
 1. Update your page `index.html` so that it respects the HTML structure
    above.  
@@ -260,7 +260,7 @@ overview with the mouse).
 * When you pass the mouse over an item in the development tool panel, this
 element gets highlighted on the Web page.
 
-<div class="exercise">
+<div class="exercise-en">
 
 Familiarize yourself with these three techniques by inspecting the page of the
 tutorial.  For instance, make a right click on the element "There are three
@@ -305,7 +305,7 @@ For example, the above title is obtained with the following code:
 <h2>Titles</h2>
 ```
 
-<div class="exercise">
+<div class="exercise-en">
 
 1. Check that the title **Titles** just above is an `<h3>` tag using the dev
    tools by right-clicking on it.
@@ -321,7 +321,7 @@ For example, the above title is obtained with the following code:
 
 #### Paragraphs
 
-<div class="exercise">
+<div class="exercise-en">
 
 Use the tags `<p>` and `</p>` around the paragraphs in the document. The
 paragraphs are indicated by the comments `<!--début paragraphe -->` and `<!--fin
@@ -360,7 +360,7 @@ Once interpreted by the rendering engine of the browser, it gives:
 </ol>
 </div>
 
-<div class="exercise">
+<div class="exercise-en">
 
 1. Use the tags `<ul>` and `<li>` to structure the bullet list `<!--liste -->`
 in `index.html`.  (Do not worry yet about comments `<!-- lien externe -->`)
@@ -384,7 +384,7 @@ This tag has no closing tag because it can not have content
 fields `src` and `alt` that are called the **attributes** of the tag. The
 attributes are **always** located in the opening tag.
 
-<div class="exercise">
+<div class="exercise-en">
 Previously, we had seen another tag with an attribute: What was this tag?
 <!-- `<meta>` avec l'attribut `charset`. -->
 </div>
@@ -396,7 +396,7 @@ persons who can not see images clearly (blind or people with visual
 deficits). **Careful**, the `alt` attribute is mandatory.
 
 
-<div class="exercise">
+<div class="exercise-en">
 
 1. Save the image [chuck-jeune.jpg]({{site.baseurl}}/assets/chuck-jeune.jpg) in
 a directory `images` located where `index.html` is.
@@ -447,7 +447,7 @@ or give a relative address to the current page (relative path), for example:
 <a href="./images/chuck-jeune.png">Image</a>
 ```
 
-<div class="exercise">
+<div class="exercise-en">
 
 1. Replace the comments `<!-- lien externe ...` by tags `<a>` with the correct
    address.
@@ -481,7 +481,7 @@ points to the current document by default :
 <a href="#an_identifier">Example of internal link</a>
 ```
 
-<div class="exercise">
+<div class="exercise-en">
 
 1. Replace the comment `<!-- lien interne ...-->` of `index.html` by a tag `<a>`
    which will point to one of the first tags. Therefore you will need to add an
@@ -496,7 +496,7 @@ points to the current document by default :
 
 The tag `<em>` allows you to highlight important parts in a text.
 
-<div class="exercise">
+<div class="exercise-en">
 
 Precisely, it is necessary to underline the fact that Chuck Norris is very strong in
 different martial arts. For this it is necessary to put in emphasis the sentence which
@@ -521,7 +521,7 @@ y a la vie potentielle.
 The quotes are used to identify a short text on which one wants to attract the
 attention. This is used in particular to show that one has some `spirit`.
 
-<div class="exercise">
+<div class="exercise-en">
 
 1. Go see the source code of our quote using the dev tools. What are the two
    **new** tags used?

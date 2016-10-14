@@ -5,6 +5,13 @@ layout: tutorial
 ---
 
 <!--
+
+Recopier la partie du position au bon endroit
+? Dire qu'il faut avoir fini jusqu'à position le TD précédent ?
+
+-->
+
+<!--
 Remarque des élèves au Jury A1 :
 plus d'exemples de comment utiliser Flex
 Faire des références (et aller voir) à alsacreation et W3schools (bon tuto sur internet)

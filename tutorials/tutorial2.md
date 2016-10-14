@@ -16,63 +16,26 @@ balises/éléments selon leurs caractéristiques
 allons ici nous intéresser à deux types spécifiques :
 
 * les balises de structure : elles permettent de délimiter l'articulation
-  logique de la page web en la découpant en différentes sections. Par défaut,
-  ces balises découpent la page web en sections horizontales qu'elles occupent
-  en entier (du bord gauche au bord droit de la section). Deux balises de flux
-  ne peuvent pas partager une même section horizontale, donc les espaces
-  qu'elles délimitent dans la page s'enchaînent-ils verticalement.
+  logique de la page web en la découpant en différentes sections. Nous y
+  consacrerons la prochaine section.
 
 * les balises au niveau du texte : elles apportent une précision sur la
   sémantique d'une partie du texte (mise en avant d'une partie de texte
   importante, ajout d'un type exposant, time,...).
 
-Quelques exemples :
+  Voici quelques exemples de balises au niveau du texte :
 
-* balises de structure :
-
-   * `<header>` : section contenant l'en-tête affichée de la page (à ne pas
-     confondre avec `<head>`, qui sont les méta-informations de la page Web)
-   * `<nav>` : section contenant une série de liens hypertextes pour la navigation
-     sur le site
-   * `<main>` : section principale de la page, celle qui contient le contenu
-     spécifique à cette page. Cette balise ne peut être présente dans une autre
-     balise présentée ici à l'exception de `<div>`.
-     <!-- Elle n'est pas supportée par Internet Explorer <= 10 mais le support peut -->
-     <!-- en être ajouté grâce à Javascript et en utilisant la règle CSS « main -->
-     <!-- {display : block} ». -->
-   * `<article>` : section contenant un document « auto-suffisant », *i.e.* qui
-     peut être séparé du reste de la page et gardera cependant tout son
-     sens. Une page peut contenir plusieurs articles, dans le cas d'un blog par
-     exemple, de commentaires, d'une page listant les publications récentes ...
-   * `<aside>` : section contenant du matériel périphérique au contenu
-     principal. Cela peut-être par ex. une série de liens spécifiques au document
-     principal, un bandeau de publicités …
-   * `<footer>` : section contenant le pied de page.
-   * `<section>` : une section non spécifique, ou une sous-section d'un article,
-     d'un menu... Doit typiquement commencer par un titre `<hX>`.
-   * `<figure>` : une illustration (au sens large) « auto-suffisante » illustrant le
-     document principal ou un article, et qui doit pouvoir être placée librement
-     dans la page sans en altérer le déroulement (par ex. dans le texte, dans un
-     appendice...)
-   * `<h1>`- `<h6>` : titres de section
-   * `<blockquote>` : une citation avec en particulier `<cite>` pour la
-     référence de la citation.
-   * `<p>` : paragraphes de texte
-   * `<address>` : coordonnées de contact de l'auteur. Il ne peut y avoir qu'un bloc
-     « address » par article et un pour le restant de la page
-
-* balises au niveau du texte :
-   * `<sup>` : un exposant
-   * `<time>` : mise en valeur d'une date
-   * `<em>` : emphase sur du texte
-   * `<strong>` : on rajoute de l'importance à un texte
-   * `<br>` : saut de ligne
+  * `<sup>` : un exposant
+  * `<time>` : mise en valeur d'une date
+  * `<em>` : emphase sur du texte
+  * `<strong>` : on rajoute de l'importance à un texte
+  * `<br>` : saut de ligne
 
 
-Ces balises au niveau du texte sont souvent naturellement liées à un style
-associé (les `<em>` seront stylisées par une mise en italique, les `<sup>` en
-exposants,...).  Les navigateurs se chargent d'ajouter pour nous certains styles
-par défaut très courant.
+  Ces balises au niveau du texte sont souvent naturellement liées à un style
+  associé (les `<em>` seront stylisées par une mise en italique, les `<sup>` en
+  exposants,...).  Les navigateurs se chargent d'ajouter pour nous certains
+  styles par défaut très courant.
 
 Il existe encore beaucoup d'autres balises HTML. Cela dit, il arrive qu'aucune
 ne corresponde à ce que l'on veut exprimer (lors d'une construction de layout
@@ -118,6 +81,49 @@ Pour fixer les idées, voici un aperçu d'une mise en page correspondante à
 l'exemple précédent :
 
 <img src="{{site.baseurl}}/assets/sections.png" alt="Structuration d'une page" style="margin: 0 auto;display: block;">
+
+Par défaut, ces balises découpent la page web en sections horizontales qu'elles
+occupent en entier (du bord gauche au bord droit de la section). Par défaut Les
+balises de structure s'empilent verticalement car elles ne peuvent pas partager
+une même section horizontale (donc nous devrons appliquer un style particulier
+pour `<aside>`).
+
+Expliquons le rôle de quelques balises de structure:
+
+* `<header>` : section contenant l'en-tête affichée de la page (à ne pas
+  confondre avec `<head>`, qui sont les méta-informations de la page Web)
+* `<nav>` : section contenant une série de liens hypertextes pour la navigation
+   sur le site
+ * `<main>` : section principale de la page, celle qui contient le contenu
+   spécifique à cette page. Cette balise ne peut être présente dans une autre
+   balise présentée ici à l'exception de `<div>`.
+   <!--
+   Elle n'est pas supportée par Internet Explorer <= 10 mais le support peut en
+   être ajouté grâce à Javascript et en utilisant la règle CSS « main
+   -->
+   <!-- {display : block} ». -->
+ * `<article>` : section contenant un document « auto-suffisant », *i.e.* qui
+   peut être séparé du reste de la page et gardera cependant tout son
+   sens. Une page peut contenir plusieurs articles, dans le cas d'un blog par
+   exemple, de commentaires, d'une page listant les publications récentes ...
+ * `<aside>` : section contenant du matériel périphérique au contenu
+   principal. Cela peut-être par ex. une série de liens spécifiques au document
+   principal, un bandeau de publicités …
+ * `<footer>` : section contenant le pied de page.
+ * `<section>` : une section non spécifique, ou une sous-section d'un article,
+   d'un menu... Doit typiquement commencer par un titre `<hX>`.
+ * `<figure>` : une illustration (au sens large) « auto-suffisante » illustrant
+   le document principal ou un article, et qui doit pouvoir être placée
+   librement dans la page sans en altérer le déroulement (par ex. dans le texte,
+   dans un appendice...)
+ * `<h1>`- `<h6>` : titres de section
+ * `<blockquote>` : une citation avec en particulier `<cite>` pour la
+   référence de la citation.
+ * `<p>` : paragraphes de texte
+ * `<address>` : coordonnées de contact de l'auteur. Il ne peut y avoir qu'un
+   bloc `<adress>` par article et un pour le restant de la page
+
+
 
 <div class="exercise">
 
@@ -168,16 +174,16 @@ l'exemple précédent :
 À ce point, le travail de division du site n'a pas encore de résultat visuel
 marquant. C'est avant tout un travail de structuration logique qui permet au
 navigateur, ou à un moteur de recherche, de mieux comprendre votre page web.
-Nous verrons comment structurer la page dans les TDs suivants. Pour la suite du
-TD, nous allons ajouter du style aux éléments de la page courante.
+Nous verrons comment changer la mise en page globale dans les TDs suivants. Pour
+la suite du TD, nous allons ajouter du style aux éléments de la page courante.
 
 
 ## Règles de compositions des CSS
 
 [Rappelons qu'une règle CSS]({{site.baseurl}}/tutorials/tutorial1_2.html#tutoriel-dintroduction)
 est composé d'un sélecteur CSS et d'un bloc de déclaration composé de plusieurs
-paires propriété CSS / valeur. Un sélecteur CSS qui indique à quels éléments
-HTML s’applique le style.
+paires propriété CSS / valeur. Un sélecteur CSS indique à quels éléments HTML
+s’applique le style.
 
 À partir des sélecteurs de bases (de balise, de classe et d'identifiant)
 présentés
@@ -263,7 +269,9 @@ puisqu'on intègre aussi les petits-enfants, arrières-petits-enfants ...
 
 Nous allons vous faire jouer à un jeu qui permet de vérifier votre compréhension
 des sélecteurs. Le jeu consiste à écrire le sélecteur qui répond à la consigne
-donnée. La partie de droite de la page est là pour vous aider.
+donnée. Les balises de ce jeu (`<plate>`, `<bento>`, ...) ne sont pas des
+balises HTML5 mais le principe des sélecteurs reste le même. La partie de droite
+de la page est là pour vous aider.
 
 **Allez sur** [http://flukeout.github.io/](http://flukeout.github.io/) et passez
 les niveaux de 1 à 11 et le niveau 14.
@@ -271,7 +279,7 @@ les niveaux de 1 à 11 et le niveau 14.
 **Notes :**
 
 * Vous pouvez passer directement à l'exercice que vous voulez en rentrant le
-   numéro de l'exercice à la place du sélecteur ;
+   numéro de l'exercice à la place du sélecteur.
 
 
 </div>
@@ -303,8 +311,8 @@ li:nth-child(even) {color: red;}
 3. Enlevez le fait que (tous) les liens soient soulignés. Pour cela, allez vous
 renseigner sur
 [la propriété text-decoration](https://developer.mozilla.org/fr/docs/Web/CSS/text-decoration).
-1. Dans la page de Chuck Norris de la semaine dernière, faites en sorte que les
-liens `<a>` visités apparaissent en bleu plus léger `#0088FF`.
+1. Faites en sorte que les liens `<a>` visités apparaissent en bleu plus léger
+`#0088FF`.
 2. Lorsque la souris passe sur un lien, lui donner la couleur orange.
 </div>
 
@@ -312,7 +320,7 @@ liens `<a>` visités apparaissent en bleu plus léger `#0088FF`.
 sur lequel on passe la souris. Comme les deux règles ont la même priorité, c'est
 l'ordre qui va importer.  -->
 
-## Table
+## Tableaux
 
 L'élément `<table>` correspond à une structuration récurrente, qui sert à représenter un ensemble de données sous forme de colonnes et de lignes.
 
@@ -477,12 +485,24 @@ Par exemple le code suivant
 }
 ```
 
-s'affiche comme ceci (inspectez l'élément)
+s'affiche comme ceci.
 
 <div style="text-align:center">
 <div style="display:inline-block;padding:20px 50px;border:5px solid green;background-color:gold;">
 La zone de contenu
 </div>
+</div>
+
+<div class="exercise">
+
+Inspectez la boite ci-dessus pour voir le style qui y est appliqué. Trouvez dans
+la partie Style des outils de développement le modèle de boite (comme
+ci-dessous) et inspectez les quatre boites *content*, *padding*, *border* et
+*margin* pour les voir se dessiner à l'écran.
+
+<img alt="Box model" src="{{site.baseurl}}/assets/boxmodeldevtool.png"
+style="margin:0 auto;display: block;">
+
 </div>
 
 <!-- À noter que la taille réelle d'une boîte est égale à la taille du contenu -->
