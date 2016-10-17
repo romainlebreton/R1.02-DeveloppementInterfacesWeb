@@ -18,13 +18,14 @@ Faire des références (et aller voir) à alsacreation et W3schools (bon tuto su
 Et dire clairement qu'il faut qu'ils aillent lire ces docs
 -->
 
-## Ordre d'application des sélecteurs CSS.
+## Ordre d'application des sélecteurs CSS
 
 Comme vous vous en souvenez, les sélecteurs servent à sélectionner un ensemble
 de balises sur lesquels on applique une règle CSS. Nous avons appris lors du
 [TD1 les sélecteurs de base](tutorial1_2.html#les-slecteurs-css-de-base) et lors
 du
 [TD2 la combinaison de sélecteurs](tutorial2.html#rgles-de-compositions-des-css).
+
 Plusieurs règles CSS peuvent porter sur un même élément HTML. Si ces règles
 peuvent coexister, elles sont toutes appliquées. Par exemple, si vous avez le
 code CSS suivant :
@@ -42,18 +43,18 @@ exemple, si vous avez le code CSS suivant, **de quelle couleur** sera le texte
 d'un `<div>` de classe `skill` ?
 
 ```css
-div    { color:blue; }
 .skill { color:red; }
+div    { color:blue; }
 ```
 
-
-
 Pour régler ces conflits, le CSS définit une notion de priorité basée sur
-l'emplacement des règles CSS puis sur la spécificité des sélecteurs CSS.
+l'emplacement des règles CSS puis sur la spécificité des sélecteurs CSS. Dans
+l'exemple précédent, c'est la première règle qui prévaut comme nous le verrons
+dans la suite.
 
 ### Différents emplacements
 
-En fait, il y a plusieurs emplacements possibles pour déclarer du style CSS :
+Il y a plusieurs emplacements possibles pour déclarer du style CSS :
 
 1. **Style externe** : (Conseillé) On peut utiliser un fichier de style externe et le lier au
 document HTML avec la balise `<link>`  dans le `<head>` :
@@ -95,12 +96,26 @@ document HTML avec la balise `<link>`  dans le `<head>` :
 Enfin les navigateurs appliquent un style par défaut sur les éléments. Cela
 permet de ne pas avoir à définir à chaque fois les styles les plus
 classiques. On peut observer le style par défaut dans les outils de
-développement de Chrome : ce sont les règles de styles sont associée à *user
-agent stylesheet*.
+développement de Chrome : ce sont les règles de styles associées à *user agent
+stylesheet*.
 
 Pour prendre de bonnes habitudes, on préférera les styles externes comme
-"styles.css", qui respectent mieux la distinction entre la structure HTML et le
-style CSS.
+`styles.css` qui permet une séparation plus claire entre les rôles du HTML
+(contenu avec des balises pour donner du sens) et du CSS (présentation / mise en
+page). Comme dit
+[à la fin du TD 1 partie 2]({{site.baseurl}}/tutorials/tutorial1_2.html#le-css-et-html--des-rles-bien-distincts-et-complmentaires),
+cette séparation est indispensable et très puissante :
+
+ * Elle permet de réutiliser une présentation d'une page à l'autre. Par exemple
+   quand *lemonde.fr* publie un nouvel article, il ne refait pas le style
+   expressément pour ce dernier: il s'agit d'un nouveau document HTML partageant
+   le même CSS que les articles précédents ;
+ * Elle permet de refaire un site Web en se concentrant sur les CSS sans (trop)
+   toucher au HTML ;
+ * Elle permet de changer la présentation d'un document suivant s'il est destiné
+   à l'impression ou à être visualisé avec un navigateur. Dans ce cas, on
+   appliquera un style CSS différent selon le média.
+
 
 
 ### Priorité des sélecteurs
@@ -109,8 +124,8 @@ style CSS.
 Reprenons l'exemple précédent :
 
 ```css
-div    { color:blue; }
 .skill { color:red; }
+div    { color:blue; }
 ```
 
 Afin de savoir la couleur qui sera appliquée sur les éléments `<div
@@ -130,8 +145,8 @@ de priorité décroissante, nous avons
    (`:over`,`:visited`,...) <!-- et sélecteur d'attribut -->
  * *d* compte le nombre de sélecteur de balise (e.g. `div`, `span`) ou de
    pseudo-élements (e.g. `::first-letter`, `::after`)
- * ni les opérateurs de combinaison, ni le sélecteur universel `*` ne
-   contribuent pas à la priorité.
+ * les opérateurs de combinaison et le sélecteur universel `*` ne contribuent
+   pas à la priorité.
 
 Pour revenir à l'exemple précédent, les règles ont donc comme priorité (en
 supposant qu'elles sont écrites dans un fichier de style externe) :
@@ -269,7 +284,7 @@ Les éléments block sont des éléments :
  * dont on peut définir la taille en CSS via les propriétés `height` et `width`.
 
 
-On utilise à l'usage des éléments de display `block` : 
+En pratique, on utilise des éléments de display `block` : 
 
  * dès que l'on veut expliciter l'agencement (layout) de certains éléments HTML
  d'une page. Par exemple nous voulons que l'en-tête (header) ait une hauteur de
@@ -277,6 +292,10 @@ On utilise à l'usage des éléments de display `block` :
  * dès qu'il est naturel de prendre toute la place par défaut (exemple un titre
    `<h2>`).
 
+Notez que
+[les balises de structure que l'on a présenté au TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#structuration-de-la-page)
+ont `display:block` comme style par défaut dans le navigateur, ce qui explique
+qu'elles s'empilent verticalement comme on l'avait expliqué.
 
 <!--
 Horizontal formatting : Expliquer la content box du containing block, les
@@ -300,7 +319,7 @@ Les éléments inline sont des éléments :
  * dont on ne peut pas définir la taille en css via les propriétés `height` et `width`,
 
 
-On utilise à l'usage des éléments de display `inline` : 
+En pratique, on utilise des éléments de display `inline` : 
 
  1. dans du texte, pour ajouter de la sémantique sans interrompre la lecture du
     lecteur (mettre en exposant un nombre par `<sup>`, préciser l'importance
@@ -310,6 +329,11 @@ On utilise à l'usage des éléments de display `inline` :
 
 Puisque associé au texte (`<strong>`, `<a>`, ...), on trouve en majorité les
 éléments `inline` comme feuilles de l'arborescence du HTML.
+
+Notez que
+[les balises au niveau du texte que l'on a présenté au TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#top-menu)
+ont `display:inline` comme style par défaut dans le navigateur, ce qui explique
+qu'elles se comportent comme du texte.
 
 <!--
 Lire Meyer
@@ -384,17 +408,18 @@ On remarque bien que les `display:block` prennent toute la largeur, avec un saut
 de ligne avant et après. Tandis que les `display:inline` s'affichent les uns à
 la suite des autres comme le texte d'un paragraphe.
 
-**Note (optionnelle): Règle d'inclusion des éléments `inline` et `block` du point de vue du HTML et du CSS**
+**Note (optionnelle)** -- Règle d'inclusion des éléments `inline` et `block` du
+point de vue du HTML et du CSS :
 
-[^somesamplefootnote]: En fait le HTML5 permet cette inclusion dans [certains cas](http://html5doctor.com/block-level-links-in-html-5/).
-
-Inclure des éléments `block` dans des éléments `inline` n'est pas conforme en
-HTML[^somesamplefootnote], mais cela l'est du point du vue du CSS.  En modifiant
-la propriété `display` d'un élément, nous pouvons donc inclure des éléments
-`block` dans des éléments `inline`. Mais modifier sempiternellement le `display`
-naturel du HTML signifie que l'on n'a pas utilisé la bonne méthode (et que le
-code risque d'être incompréhensible). Nous nous imposons donc de respecter la
-règle HTML.
+  [^somesamplefootnote]: En fait le HTML5 permet cette inclusion dans [certains cas](http://html5doctor.com/block-level-links-in-html-5/).
+  
+>   Inclure des éléments `block` dans des éléments `inline` n'est pas conforme
+>   en HTML[^somesamplefootnote], mais cela l'est du point du vue du CSS.  En
+>   modifiant la propriété `display` d'un élément, nous pouvons donc inclure des
+>   éléments `block` dans des éléments `inline`. Mais modifier sempiternellement
+>   le `display` naturel du HTML signifie que l'on n'a pas utilisé la bonne
+>   méthode (et que le code risque d'être incompréhensible). Nous nous imposons
+>   donc de respecter la règle HTML.
 
 ### Exercices
 
@@ -438,12 +463,17 @@ dimensions. Donnez-lui la largeur `50%`. Que constatez-vous ?
 1. Pour centrer le `<nav>` dans son parent `<header>`, on va lui donner des
 marges horizontales `auto` (gardez les marges verticales à 0).
 
-   **Explication :** Quand les marges horizontales sont `auto`, elles se règlent
-     automatiquement pour compléter l'espace manquant. Ceci n'est pas valable pour
-     les marges verticales.
+   **Rappel :** Nous avons vu dans
+   [le dernier TD comment centrer horizontalement]({{site.baseurl}}/tutorials/tutorial2.html#centrer-horizontalement-).
+   Pour centrer un `display:block` dont le *containing block* est plus large, il
+   faut mettre les marges horizontales en `auto` : elles se règlent alors
+   automatiquement pour compléter la largeur manquante entre le `block` courant
+   et le *containing bloack*. Ceci n'est pas valable pour les marges verticales.
 
-1. Rajoutez des règles CSS pour que les fils `<div>` **enfants de** `<nav>` aient une couleur de fond `#5BBDBF`,
-1. Ajoutez une règle CSS pour que les éléments `<a>` **descendants de** `<nav>` aient la couleur de fond `#7F8C8D`.
+1. Rajoutez des règles CSS pour que les fils `<div>` **enfants de** `<nav>`
+   aient une couleur de fond `#5BBDBF`,
+1. Ajoutez une règle CSS pour que les éléments `<a>` **descendants de** `<nav>`
+   aient la couleur de fond `#c0d5c2`.
 
 </div>
 
@@ -455,7 +485,7 @@ Nouvelle mise en page du menu en `display:inline` cette fois-ci.
 1. Donnez aux `<div>` enfants de `<nav>` le display `inline`.
 1. Vous constatez des espaces entre les entrées du menu, ces derniers sont dû aux
 espaces dans le HTML, qui sont affichés lorsque les éléments sont `inline`.  
-   **Solution :** pour supprimer les espaces, changez le code des `<div>` enfant de
+   **Une solution temporaire :** pour supprimer les espaces, changez le code des `<div>` enfant de
    la balise `<nav>` en mettant des commentaires :
 
    ```html
@@ -467,13 +497,15 @@ espaces dans le HTML, qui sont affichés lorsque les éléments sont `inline`.
    </nav>
    ```
 
+   <!-- en attendant display flex (ou inline block)  -->
+
 1. Donnez au `<nav>` une hauteur de `50px` (`<nav>` est `block` donc on peut lui
    donner une hauteur),
 1. (Optionnel) Ajoutez du padding horizontal de `10px` sur les éléments `<a>`.
 1. (Optionnel) Ajoutez à ces mêmes éléments `<a>` une bordure sur la gauche de `2px` de style `solid` et de couleur noire.
 1. (Optionnel) Enlevez la bordure sur le premier de ces éléments.  
    **Astuce :** Il faut utiliser une pseudo-classe vue
-     [au TD dernier](tutorial2.html).
+     [au TD dernier]({{site.baseurl}}/tutorials/tutorial2.html#pseudo-classes).
 
 </div>
 
