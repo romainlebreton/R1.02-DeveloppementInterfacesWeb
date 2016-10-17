@@ -595,9 +595,7 @@ Référence : [Mozilla Developer Network (MDN)](https://developer.mozilla.org/fr
    sous-menus se placent sous leur titre de menu (le `<div>` parent "Accueil" ou
    "Contact"). Nous allons procéder en plusieurs étapes :
 
-   1. Quelle valeur de `position` correspond à ce comportement ? Pour plus de
-      détails sur `position`, retournez voir
-      [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position).
+   1. Quelle valeur de `position` correspond à ce comportement des sous-menus ?
       <!-- position:absolute -->
    2. Créez la règle CSS qui affecte cette valeur de `position` aux balises de
       classe `submenu` avec un décalage de `50px` par rapport au haut et de
