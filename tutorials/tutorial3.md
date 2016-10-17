@@ -5,13 +5,6 @@ layout: tutorial
 ---
 
 <!--
-
-Recopier la partie du position au bon endroit
-? Dire qu'il faut avoir fini jusqu'à position le TD précédent ?
-
--->
-
-<!--
 Remarque des élèves au Jury A1 :
 plus d'exemples de comment utiliser Flex
 Faire des références (et aller voir) à alsacreation et W3schools (bon tuto sur internet)
@@ -508,19 +501,6 @@ espaces dans le HTML, qui sont affichés lorsque les éléments sont `inline`.
 
 </div>
 
-<!--
-
-Préciser ici la règle "Centrer horizontalement" :
-
-* Pour des éléments en display:inline (comme du texte ou des
-  balises au niveau du texte comme `<em>` )  : `text-align: center`
-* Pour des éléments en display:block (comme des balises de structure) moins
-large que leur balise parent : `margin : auto` sur la balise de structure.
-
-Redire la règle du containing block ?
-
--->
-
 ## `display:none`
 
 La valeur `display:none` enlève complètement un élément du rendu, sans laisser
@@ -612,6 +592,9 @@ Référence : [Mozilla Developer Network (MDN)](https://developer.mozilla.org/fr
         bien placé.
       <!-- position:relative -->
 
+1. Donnez une largeur fixe de `100px` à tous les `<div>` **descendants** de
+   `<nav>` pour que les sous-menus soient de la bonne largeur.
+
 </div>
 
 ### Menu déroulant : Partie 2 -- affichage lors du survol
@@ -693,7 +676,7 @@ contenus dans le `<nav>`.
 
 Ses valeurs sont  :
 
- * `stretch` : étirer pour prendre tout l'espace ;
+ * `stretch` : étirer pour prendre tout l'espace (valeur par défaut);
  * `center` : centrer sans étirer ;
  * `baseline` : aligne les lignes de base des éléments ;
  * `flex-start` : alignement au début de l'axe perpendiculaire au sens de `flex-direction` ;
@@ -704,17 +687,50 @@ Référence : [Mozilla Developper Network](https://developer.mozilla.org/fr/docs
 
 <div class="exercise" >
 
-1. Centrez les éléments enfants de `<nav>` à l'aide de la propriété
-`align-items` de `<nav>`. Que constatez-vous ?  Si rien de ne se passe, utiliser
-l'inspecteur du navigateur pour comprendre ce qui est centré (la marge automatique placée sur le `<nav>` par exemple peut expliquer des choses).
+Dans cet exercice, nous souhaitons que les `<div>` titres des menus soient
+centrés verticalement mais qu'ils prennent toute la hauteur.
 
-1. Donnez une hauteur de `200px` et la couleur de fond `#FF00FF`  à `<nav>`, et utilisez maintenant la valeur `stretch`. Que constatez-vous à propos de
-   l'accessibilité des sous-menus avec la souris ?
+<!-- Expliquer ce qu'on veut faire :
+centrer les titres des sous-menus et qu'ils prennent toutes la hauteur ?
+Il faut changer le top:50px pour top:200px ?
+Puis revenir en arrière
+-->
+
+1. Pour mieux voir le comportement, nous allons donner jusqu'à la fin de cet
+   exercice une hauteur de `200px` et la couleur de fond `#FF00FF` à `<nav>` et
+   un décalage de `200px` vers le bas de sous-menu.
+
+1. Centrez les éléments enfants de `<nav>` à l'aide de la propriété
+   `align-items` de `<nav>`. Que constatez-vous sur la hauteur des `<div>` et
+   l'accessibilité des sous-menus avec la souris ? Est-ce que le `<div>` est
+   centré verticalement ?
+
+   <!-- Menu centrés verticalement mais ne prennent pas toute la hauteur et du
+   coup on n'arrive pas à accéder aux sous-menus -->
+
+   **Note :** Si rien de ne se passe, utiliser l'inspecteur du navigateur pour
+   comprendre ce qui est centré (la marge automatique placée sur le `<nav>` par
+   exemple peut expliquer des choses).
+
+1. Utilisez maintenant la valeur `stretch`.  Que constatez-vous sur la hauteur
+   des `<div>` et l'accessibilité des sous-menus avec la souris ? Est-ce que le
+   `<div>` est centré verticalement ?
+
+   <!-- Menu non centrés verticalement mais prennent toute la hauteur et du
+   coup accéde aux sous-menus -->
 
 1. Faites en sorte que les sous-menus restent accessibles et que les textes
-"Accueil" et "Contact" soient centrés verticalement dans la barre de navigation ?  
-**Indice :** Il faut pour cela que les `<div>` enfants du `<nav>` soient `flex`,
-  ce qui va permettre de centrer verticalement ses enfants.
+   "Accueil" et "Contact" soient centrés verticalement dans la barre de
+   navigation. Pour ceci :
+   
+   1. Faites en sorte que les `<div>` prennent toute la hauteur à l'aide des 2
+      question précédentes.
+   1. Centrez verticalement les liens `<a>` au sein des `<div>` : il faut pour
+      cela que les `<div>` enfants du `<nav>` soient `flex`, ce qui va permettre
+      de centrer verticalement ses enfants `<a>` à l'aide de l'un des 2
+      comportements vues précédemment.
+
+1. Annulez (commentez) les propriétés temporaires de la question 1.
 
 </div>
 
@@ -736,9 +752,7 @@ Les valeurs possibles sont :
 <div class="exercise" >
 
  1. Justifiez le menu de navigation non à gauche mais à droite, avec votre display favori.
- 1. Placez la citation et le menu de navigation sur la même ligne (la citation sera à gauche et le menu à sa droite) toujours avec votre
-    display favori.
- 1. Repositionnez le menu pour qu'il soit en bas de la balise `<header>` (oui, encore avec flexBox).
+
 </div>
 
 ### Flexbox, une valeur relativement récente
@@ -761,18 +775,37 @@ Il y a d'autres propriétés intéressantes autour de flexbox, la référence su
 est très instructive :
 [https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
-## Mise en page en deux colonnes
+## Mise en page globale
+
+### En-tête
+
+<div class="exercise" >
+ 1. Placez la citation et le menu de navigation sur la même ligne (la citation
+    sera à gauche et le menu à sa droite) toujours avec votre display favori.
+ 1. Repositionnez le menu pour qu'il soit en bas de la balise `<header>` (oui,
+    encore avec flexBox).
+ 1. Mettez un fond blanc au `<header>`.
+ 1. Enlevez la couleur de fond des liens dans le menu.
+
+</div>
+
+
+### Deux colonnes
 
 Il est temps d'avoir un layout (aménagement de l'espace) pour notre site.
 
 <div class="exercise" > 
  1. Donnez au body la `width` de `900px`.
- 1. Déplacez dans le HTML la section contenant la `<table>` dans `<aside>` si cela n'est pas déjà fait
+ 1. Déplacez dans le HTML la section contenant la `<table>` dans `<aside>` si
+    cela n'est pas déjà fait.
+    <!-- Vraiment ??? -->
+
  1. Utilisez la valeur de display `flex` sur la balise `<main>` et, comme pour
     le menu de navigation, mettez ses enfants `<article>` et `<aside>` en
     colonne.
- 1. Fixez la largeur de `<article>` à `60%`, et celle de `<aside>` à `30%`. Ce dernier élément aura une marge gauche de `10%`.
- 1. Donnez à `<aside>` la couleur de fond `#CCC` et à `<article>` la couleur de fond `#731373`.
+ 1. Fixez la largeur de `<article>` à `60%`, et celle de `<aside>` à `30%`. Ce
+    dernier élément aura une marge gauche de `10%`.
+ 1. Donnez à `<aside>` et à `<article>` la couleur de fond `#CCC`.
 
  <!--
  1. Dans la page "contact", alignez l'image de Chuck avec l'adresse de contact.
@@ -780,7 +813,10 @@ Il est temps d'avoir un layout (aménagement de l'espace) pour notre site.
 -->
 </div>
 
-<!-- besoin de box-sizing : border-box pour le two column layout ? -->
+<!--
+besoin de box-sizing : border-box pour le two column layout ?
+Non car pas de bordure et les espaces ne sont pas affichés avec display:flex
+-->
 
 
 ## Cacher ou Enlever un élément du rendu
@@ -808,8 +844,8 @@ Elle se positionne à gauche du texte, elle n'est visible que lorsque la souris 
 
 
 1. Ajoutez cette puce devant le texte des liens `<a>`,
-1. Ajoutez le style de décoration `text-decoration:none;` aux liens `<a>`,
-1. Ajoutez `visibility:hidden` à l'élement de classe `puce` et la valeur `visible` sur le survole de la souris sur le `<div>` parent.
+1. Ajoutez `visibility:hidden` à l'élement de classe `puce` et la valeur
+   `visible` sur le survole de la souris sur le `<div>` parent.
 1. Supprimez la couleur de fond sur les balises `<a>` pour plus de lisibilité.
 1. (Optionnel) Styliser les sous-menus.
 
