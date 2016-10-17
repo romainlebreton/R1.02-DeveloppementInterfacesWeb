@@ -602,9 +602,8 @@ Référence : [Mozilla Developer Network (MDN)](https://developer.mozilla.org/fr
       `0px` par rapport à la gauche.
    3. Les sous-menus ne sont pas encore bien placés car ils se positionnent par
       rapport à la mauvaise balise. **Quelle est cette balise** par rapport à
-      laquelle ils se sont positionnés ? Relisez
-      [la section sur `position` du TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#position)
-      pour confirmer votre impression.
+      laquelle ils se sont positionnés ? Relisez la section sur les éléments
+      dits positionnés pour confirmer votre impression.
    4. Nous souhaitons que nos sous-menus se placent par rapport à leur `<div>`
       parent. Il va donc falloir rendre ce `<div>` *positionné*, sans que cela
       ne le déplace ni que le reste de la page ne bouge.  
