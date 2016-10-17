@@ -485,8 +485,9 @@ Nouvelle mise en page du menu en `display:inline` cette fois-ci.
 1. Donnez aux `<div>` enfants de `<nav>` le display `inline`.
 1. Vous constatez des espaces entre les entrées du menu, ces derniers sont dû aux
 espaces dans le HTML, qui sont affichés lorsque les éléments sont `inline`.  
-   **Une solution temporaire :** pour supprimer les espaces, changez le code des `<div>` enfant de
-   la balise `<nav>` en mettant des commentaires :
+   **Une solution temporaire (en attendant `display:flex`) :** pour supprimer
+   les espaces, changez le code des `<div>` enfant de la balise `<nav>` en
+   mettant des commentaires :
 
    ```html
    <nav>
@@ -496,8 +497,6 @@ espaces dans le HTML, qui sont affichés lorsque les éléments sont `inline`.
  --><div><a href="./contact.html">Contact</a></div>
    </nav>
    ```
-
-   <!-- en attendant display flex (ou inline block)  -->
 
 1. Donnez au `<nav>` une hauteur de `50px` (`<nav>` est `block` donc on peut lui
    donner une hauteur),
@@ -522,11 +521,49 @@ Redire la règle du containing block ?
 
 -->
 
-### `display:none`
+## `display:none`
 
 La valeur `display:none` enlève complètement un élément du rendu, sans laisser
-d'espace à l'endroit où il aurait dû être.
+d'espace à l'endroit où il aurait dû être. Nous allons coder en exercice un menu
+déroulant.
 
+### Menu déroulant : Partie 1 -- positionnement
+
+Dans un premier temps, nous
+allons juste positionner les sous-menus en dessous de leur titre. Cette exercice
+met en pratique les `position` que nous avons vu au TD précédent et que nous
+vous rappelons.
+
+#### Position
+
+La propriété CSS `position` offre de nouvelles possibilités pour le
+positionnement des éléments. Ses valeurs sont :
+
+* `static` : comportement normal (par défaut), l'élément est inséré normalement.
+* `relative`: le reste de la page fait comme si l'élément était positionné
+  "normalement". De son côté, l'élément est positionné *relativement* à la
+  position où il aurait dû être. On voit donc un espace où l'élément aurait dû
+  être en `position:static`.
+* `absolute` : le reste de la page fait comme si l'élément n'existait
+pas. L'élément se positionne relativement à son plus proche ancêtre
+<strong>positionné</strong> (voir ci-dessous) ou sinon à `<body>` (si aucun
+ancêtre n'est positionné).
+* `fixed` : le reste de la page fait comme si l'élément n'existait
+pas. L'élément se positionne relativement à la fenêtre d'affichage ; il paraît donc *fixé* lors d'un défilement de la page.
+
+Un élément est dit <strong>positionné</strong> s'il a une position autre que `static` (qui est la valeur par défaut).
+Pour indiquer le décalage de position, on utilise les propriétés `top`, `left`,
+`right` et `bottom`. Par exemple, les propriétés
+
+```css
+position:relative; 
+top:20px; 
+left:20px; 
+```
+
+vont positionner un élément `20px` plus à droite et en bas qu'il n'aurait dû l'être.
+
+Référence : [Mozilla Developer Network (MDN)](https://developer.mozilla.org/fr/docs/Web/CSS/position)
 
 <div class="exercise">
 
@@ -577,6 +614,15 @@ d'espace à l'endroit où il aurait dû être.
         description précédente ? Créez la règle CSS et le menu doit être enfin
         bien placé.
       <!-- position:relative -->
+
+</div>
+
+### Menu déroulant : Partie 2 -- affichage lors du survol
+
+Nous allons maintenant nous servir de `display:none` pour afficher le sous-menu
+juste quand la souris est au dessus du titre correspondant.
+
+<div class="exercise">
 
 1. Donnez aux sous-menus la couleur de fond `#aca`. Puis masquez-les
    par défaut en CSS.
