@@ -800,9 +800,9 @@ Il est temps d'avoir un layout (aménagement de l'espace) pour notre site.
     cela n'est pas déjà fait.
     <!-- Vraiment ??? -->
 
- 1. Utilisez la valeur de display `flex` sur la balise `<main>` et, comme pour
-    le menu de navigation, mettez ses enfants `<article>` et `<aside>` en
-    colonne.
+ 1. Utilisez la valeur de display `flex` sur la balise `<main>` pour que ses 
+    enfants `<article>` et `<aside>` s'affichent comme deux colonnes côte à 
+    côte.
  1. Fixez la largeur de `<article>` à `60%`, et celle de `<aside>` à `30%`. Ce
     dernier élément aura une marge gauche de `10%`.
  1. Donnez à `<aside>` et à `<article>` la couleur de fond `#CCC`.
