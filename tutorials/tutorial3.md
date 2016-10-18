@@ -461,7 +461,7 @@ marges horizontales `auto` (gardez les marges verticales à 0).
    Pour centrer un `display:block` dont le *containing block* est plus large, il
    faut mettre les marges horizontales en `auto` : elles se règlent alors
    automatiquement pour compléter la largeur manquante entre le `block` courant
-   et le *containing bloack*. Ceci n'est pas valable pour les marges verticales.
+   et le *containing block*. Ceci n'est pas valable pour les marges verticales.
 
 1. Rajoutez des règles CSS pour que les fils `<div>` **enfants de** `<nav>`
    aient une couleur de fond `#5BBDBF`,
