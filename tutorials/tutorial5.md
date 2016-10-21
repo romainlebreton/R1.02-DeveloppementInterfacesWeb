@@ -4,6 +4,7 @@ subtitle:
 layout: tutorial
 ---
 
+<!-- L'iconographie et les points de rupture ont changés ? -->
 
 ## Introduction
 

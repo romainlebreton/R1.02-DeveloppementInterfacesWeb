@@ -6,6 +6,8 @@ layout: tutorial
 
 <!-- Rajouter mise-en-page "Solved by flexbox" des formulaires -->
 
+<!-- Il faudrait pour cela avoir vu flex-grow avant -->
+
 ## Introduction
 
 Nous allons ajouter un formulaire d'inscription à notre site de fans de

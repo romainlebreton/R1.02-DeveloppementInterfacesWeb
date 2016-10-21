@@ -592,9 +592,6 @@ Référence : [Mozilla Developer Network (MDN)](https://developer.mozilla.org/fr
         bien placé.
       <!-- position:relative -->
 
-1. Donnez une largeur fixe de `100px` à tous les `<div>` **descendants** de
-   `<nav>` pour que les sous-menus soient de la bonne largeur.
-
 </div>
 
 ### Menu déroulant : Partie 2 -- affichage lors du survol
@@ -661,6 +658,9 @@ conflit.
  1. Changez la valeur du display des `<div>` directement enfants de `<nav>` en `block` puis en `inline`. Que cela change-t-il ?
  1. Donnez à l'élément `<nav>` le bloc de déclaration `flex-direction:column`, que cela change-t-il ? 
  1. Remettez la direction dans sa valeur par défaut, `row`.
+ 1. Donnez une largeur fixe de `100px` à tous les `<div>` **descendants** de
+   `<nav>` pour que les menus et les sous-menus soient de la même largeur.
+
 </div>
 
 
