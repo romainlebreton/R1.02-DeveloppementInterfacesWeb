@@ -14,9 +14,9 @@ Let's focus on two specific types of tags:
 articulation of the web page by cutting it in different sections.
 
 
-* The tags at the level of the text: they bring a precision on the
-semantics of a part of the text (put in front of a part of
-important text, adding a type exhibitor, time,...).
+* The tags at the level of the text: they bring a precision on the semantics of
+  a part of the text (highlight an important part of text, write an exponent,
+  time,...).
 
   Here are a few examples of text-level tags :
 
@@ -35,8 +35,8 @@ corresponds to what we want to express (during a layout construction for
 example). Two neutral tags have been added for these constructions:
 
    * At the text-level `<span>`: this tag is neutral, with no special
-     meaning. Its use allows to create specific formatting rules for textual
-     content (eg when we add the class `skill`).
+     meaning. It is used to create specific formatting rules for textual content
+     (*e.g.* when we add the class `skill`).
    * Structure tag `<div>`: this tag is neutral, it is used to create a
      **div**ision in the code which no special meaning. Unlike `span` it causes
      a line break.
@@ -75,9 +75,9 @@ example:
 <img src="{{site.baseurl}}/assets/sections.png" alt="Structuration d'une page" style="margin: 0 auto;display: block;">
 
 By default, the structure tags cut the web page in horizontal sections that they
-occupy in full (from the left to the right edge). by default, two structure tags
-will pile up vertically because they can share the same horizontal section (so
-we will have to add a special layout to `<aside>`).
+occupy in full (from the left to the right edge). By default, two structure tags
+will pile up vertically because they can not share the same horizontal section
+(so we will have to add a special layout to `<aside>`).
 
 
 Let us explain the role of some structure tags:
@@ -86,8 +86,7 @@ Let us explain the role of some structure tags:
      with `<head>`, which are the meta-informations about the web page)
    * `<nav>`: section containing a series of hyperlinks for navigation
      on the site
-   * `<main>`: main section of the page that contains the content
-     specific to this page.
+   * `<main>`: main section of the page with the specific content to this page.
    * `<article>`: section containing a document "self-sufficient", *i.e.* which
      can be separated from the rest of the page and yet retains all its
      meaning. A page can contain several articles, in the case of a blog, of
@@ -99,8 +98,8 @@ Let us explain the role of some structure tags:
    * `<section>`: non-specific section or subsection of an article,
      a menu ... Must typically begin with a title `<h*>`.
    * `<figure>`: an "self-sufficient" illustration (at large) illustrating the
-     main document or article, and which must be placed freely the page without
-     changing the course (eg. in the text, in a appendix ...)
+     main document or article, and which must be placed freely in the page
+     without changing its course (eg. in the text, in an appendix ...)
    * `<h1>` - `<h6>`: section titles
    * `<blockquote>`: a quote with in particular `<cite>` for the reference of
      this citation.
@@ -110,20 +109,22 @@ Let us explain the role of some structure tags:
 
 <div class="exercise-en">
 
+Let us improve our previous `index.html` Web page of Chuck Norris.
+
 1. Add a `<header>` tag. Its content will be the citation of the TD1 and a
    navigation bar `<nav>` empty for the time being,
 
 2. Add a tag `<main>`, a tag `<article>` and a tag `<aside>` as in the *HTML
    Template*. Put the old content of the page in `<article>` except the last two
    sections ("Les sites amis” and “Le Top 10 des derniers facts proposés”) which
-   will in `<aside>`,
+   will go in `<aside>`,
 
 3. Add a tag `<footer>` which contains the link to go back to the beginning of
    the site,
 
-4. Add in the tag `<nav>` a list (remember the tag) of two links: a link named
-   "Home" that points to the current page `index.html` and a link named
-   "Contact" that points to a future page `contact.html`,
+4. Add in the tag `<nav>` a list (do you remember the list tags ?) of two links:
+   a link named "Home" that points to the current page `index.html` and a link
+   named "Contact" that points to a future page `contact.html`,
 
 5. Validate your HTML pages on the validator
    [https://html5.validator.nu/](https://html5.validator.nu/). (Do it
@@ -141,14 +142,14 @@ Let us explain the role of some structure tags:
 
 2. In the `<main>` part of the page, add
 
-   1. a heading `Address`
+   1. a heading `Address` (the required tag is not `<head>` nor `<header>`)
    1. the image [contact.jpg]({{site.baseurl}}/assets/contact.jpg) to illustrate
       that we are listening.
    1. add our address with the tag `<address>` containing:
-      IUT of Montpellier Sete <br>
-      99 avenue of Occitania <br>
+      IUT de Montpellier Sète <br>
+      99 avenue d'Occitanie <br>
       34296 Montpellier Cedex 5 <br>
-      Email: chuckn@yopmail.com
+      Email : chuckn@yopmail.com
 
 3. Validate your HTML page.
 
@@ -172,7 +173,7 @@ Starting from the basic selectors (of tag, class and id) presented
 [in the previous tutorial]({{site.baseurl}}/tutorials/tutorial1_2-en.html#The-slecteurs-css-of-base),
 it is possible to create
 [complex selectors](http://www.w3.org/TR/css3-selectors/#combinators). For
-example, we will see how to select the `<div>` tags with class `foo` and who
+example, we will see how to select the `<div>` tags with class `toto` and who
 are sons of an element of identifier `titi`.
 
 We present in this section the most common ways to compose CSS selectors.
@@ -204,13 +205,13 @@ spaces between them) several basic selectors (tag, class or id). For example:
 div.toto
 ```
 
-will select tags of type `<div>` which have the class `foo`. Or
+will select tags of type `<div>` which have the class `toto`. Or
 
 ```css
 .titi.toto
 ```
 
-will select tags that have both the class `foo` **and**
+will select tags that have both the class `toto` **and**
 `titi`.
 
 ### Combinators
@@ -221,14 +222,14 @@ matter, we will use combinators.
 #### Child combinators
 
 We can express that a tag has to be the child of another tag with the combinator
-`&gt;`. For example,
+`>`. For example,
 
 ```css
-#titi> .toto
+#titi > .toto
 ```
 
-selects the tags of the class `foo` who are **child**
-(direct) of the element of identifier `titi`.
+selects the tags of the class `toto` who are **children** of the element of
+identifier `titi`.
 
 #### Descendant combinator
 
@@ -239,9 +240,10 @@ One can select a descendant with a spacing. For example,
 ```
 
 selects the tags of class `toto` **descendants** of a tag of identifier
-`titi`. Therefore the difference with `&gt;` is that this is no longer limited
-to the children since it also incorporates the grandchildren,
-great-grandchildren ...
+`titi`.
+
+Therefore the difference with `>` is that this is no longer limited to the
+children since it also incorporates the grandchildren, great-grandchildren ...
 
 <div class="exercise-en">
 
