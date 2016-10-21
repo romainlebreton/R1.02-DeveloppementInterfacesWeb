@@ -279,7 +279,7 @@ a:hover {text-decoration: underline;}
 
 /* a paragraph which is the first child of his parent */
 p:first-child {color:red;}
-/* a paragrah that is the third child */
+/* a paragraph that is the third child */
 p:nth-child(3) {color: green;}
 /* first li will be red, then second green, third red, fourth green */
 li:nth-child(odd) {color: green;}
@@ -292,25 +292,25 @@ li:nth-child(even) {color: red;}
 3. Remove the fact that links are underlined. To do this, go read the
    documentation of
    [the property text-decoration](https://developer.mozilla.org/fr/docs/Web/CSS/text-decoration).
-1. Ensure that the links `<a>` visited appear in blue lighter `#0088FF`.
-2. When the mouse passes over a link, give him the color orange.
+1. Ensure that the links `<a>` visited appear in lighter blue `#0088FF`.
+2. When the mouse passes over a link, give him the color `orange`.
 
 </div>
 
 ## Tables
 
-The tag `<table>` is used to represent a set of data in the form of columns and
-rows.
+The tag `<table>` is used to create tables or more generally to represent a set
+of data in the form of columns and rows.
 
 ### Common table tags
 
 The tag `<table>` contains the table.  The table is composed of rows (tag `<tr>`
 for **t**able **r**ow) containing cells (tag `<td>` for **t**able **d**ata).
 
-A tag `<th>` must be a child of `<tr>`. It represents a header cell (the title
-of a column or a row). It can be used in place of `<td>`.
+A tag `<th>` (**t**able **h**eader) must be a child of `<tr>`. It represents a
+header cell (the title of a column or a row). It can be used in place of `<td>`.
 
-Here is a typical table strcuture:
+Here is a typical table structure:
 
 ```html
 <table>
@@ -338,9 +338,9 @@ Here is a typical table strcuture:
 
 <div class="exercise-en">
 
-1. Create a table with seven columns labeld: 'Acteurs, Karaté, Taekwondo, Judo,
-   Chun Kuk Do, Tangsudo, Ju-jitsu'. This table must be at the bottom of the
-   page `index.html`, in the complementary part `<aside>`.
+1. Create a table with seven columns labeld: `Acteurs, Karaté, Taekwondo, Judo,
+   Chun Kuk Do, Tangsudo, Ju-jitsu`. This table must be at the bottom of the
+   page `index.html`, in the additional part `<aside>`.
 
 1. Put the labels corresponding to names of martial arts in tags `<span>`
    with class `skill`.
@@ -387,7 +387,7 @@ to put. Let us now look at how to stylize it.
 1. Give the color purple `#640051` to the text of the skills in the table
    without changing the style of elements with class `skill` outside (see the
    [section on the selectors]({{site.baseurl}}/tutorials/tutorial2.html#rules-of-compositions-of-CSS)).
-1. Add a rule for that the background of every other row appears in white and
+1. Add a rule so that the background of every other row appears in white and
    the other with the color `#CCC` **without** changing in any way the HTML (see
    the
    [section on the selectors]({{site.baseurl}}/tutorials/tutorial2.html#rules-of-compositions-of-CSS))
@@ -429,10 +429,10 @@ width. These boxes all have the following CSS properties:
    values:
 
    1. `width`, e.g. `1px`,
-   1. `style`, e.g., `solid`, `dotted`, `dashed`, ...
-   1. `color`, e.g. `black`.  
+   1. `style`, e.g., `solid`, `dotted`, `dashed`, ...  
       **Attention:** a border has no visible default style, therefore giving it
       a width is not enough to see it.
+   1. `color`, e.g. `black`.
 
 * `padding`: inner margin to the border, that is to say spacing between the
    content and the edge of the box. The padding is sharing the same background
