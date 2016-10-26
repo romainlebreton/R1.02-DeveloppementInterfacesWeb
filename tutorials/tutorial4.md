@@ -233,7 +233,7 @@ regroupez les champs sur ces trois grands axes suivant :
 Pour les utilisateurs avancés, la navigation à l'aide de la touche “tabulation”
 permet de parcourir très vite le formulaire. L'attribut “autofocus” permet de
 spécifier au navigateur quel élément du formulaire doit avoir le focus quand la page est chargée. L'attribut “tabindex” permet de spécifier l'ordre
-dans lequel les éléments sont parcouris en appuyant sur “tabulation”.
+dans lequel les éléments sont parcourus en appuyant sur “tabulation”.
 
 <div class="exercise" id="extab">
  * Vérifiez que vous pouvez accéder à tous les champs avec la touche tabulation. Modifier l'ordre de tabulation avec la propriété “tabindex”.
