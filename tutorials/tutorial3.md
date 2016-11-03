@@ -174,8 +174,8 @@ pour `div.skill`.
 
 Dans un fichier texte ou sur papier, écrivez les priorités des sélecteurs
 suivants et classez les du plus prioritaire au moins prioritaire. On supppose
-que toutes ces règles sont définies dans un fichier externe, donc a=1, et la
-valuation recherchée commence toujours pas `(1,...)`.
+que toutes ces règles sont définies dans un fichier externe, donc *a*=1, et les
+valeurs recherchées commencent toujours par `(1,...)`.
 
 ```css
  .titi span
@@ -526,12 +526,12 @@ positionnement des éléments. Ses valeurs sont :
   être en `position:static`.
 * `absolute` : le reste de la page fait comme si l'élément n'existait
 pas. L'élément se positionne relativement à son plus proche ancêtre
-<strong>positionné</strong> (voir ci-dessous) ou sinon à `<body>` (si aucun
+**positionné** (voir ci-dessous) ou sinon à `<body>` (si aucun
 ancêtre n'est positionné).
 * `fixed` : le reste de la page fait comme si l'élément n'existait
 pas. L'élément se positionne relativement à la fenêtre d'affichage ; il paraît donc *fixé* lors d'un défilement de la page.
 
-Un élément est dit <strong>positionné</strong> s'il a une position autre que `static` (qui est la valeur par défaut).
+Un élément est dit **positionné** s'il a une position autre que `static` (qui est la valeur par défaut).
 Pour indiquer le décalage de position, on utilise les propriétés `top`, `left`,
 `right` et `bottom`. Par exemple, les propriétés
 
@@ -624,9 +624,9 @@ remédier à ce problème d'accessibilité.
 
 La valeur de display `flex` correspond au layout appellé FlexBox.
 Appliquée à un élément, la valeur de display `flex` va permettre de modifier la
-disposition <strong>de ses enfants</strong>. C'est donc une différence
+disposition **de ses enfants**. C'est donc une différence
 fondamentale avec les valeurs `block` et `inline`, qui eux avaient un impact
-directement <strong>sur l'élément lui-même</strong>.
+directement **sur l'élément lui-même**.
 
 Lorsque le display est `flex`, on peut par exemple :
 
