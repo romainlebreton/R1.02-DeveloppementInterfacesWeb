@@ -276,6 +276,7 @@ Les éléments block sont des éléments :
    diminué sa largeur ou pas)
  * dont on peut définir la taille en CSS via les propriétés `height` et `width`.
 
+<!-- Expliquer ici le containing block et qu'on prend sa largeur ? -->
 
 En pratique, on utilise des éléments de display `block` : 
 

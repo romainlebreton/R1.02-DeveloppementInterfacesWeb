@@ -26,9 +26,8 @@ div    { background-color:blue; }
 then a `<div class="skill">` will have both properties `background-color:blue`
 and `color:red`.
 
-But it can also happen that rules are contradictory. By
-example, if you have the following CSS code, **what color** will the text
-a `<div>` of class `skill` be ?
+But it can also happen that rules are contradictory. By example, if you have the
+following CSS code, **what color** will the text of a `<div class="skill">` be ?
 
 ```css
 .skill { color:red; }
@@ -79,11 +78,12 @@ There are several possible locations for declaring CSS:
    </p>
    ```
 
-   Be careful not to confuse the inline style with the future `display: inline`.
+   Be careful not to get confused between the inline style with the future
+   `display: inline`.
 
 Finally browsers apply a default style on the elements, so you don't have to set
-each time the most classic styles. One can observe the default style in tools
-development of Chrome: it is the style rules associated with *user agent
+the most classic styles everytime. One can observe the default style in
+development tools of Chrome: it is the style rules associated with *user agent
 stylesheet*.
 
 Take good habits and use external stylesheets such as `styles.css` which allows
@@ -124,7 +124,7 @@ The *priority of a CSS selector* is a value *(a, b, c, d)* defined as follows:
    * *a*=0 for default browser style.
  * *b* counts the number of identifier selectors (e.g. `#id`),
  * *c* counts the number of class selectors (e.g. `.skill`) or pseudo-class
-   selectors (`:over`,`:visited`,...)
+   selectors (`:over`, `:visited`,...)
  * *d* counts the number of tag selectors (e.g. `div`, `span`) or pseudo-element
    selectors (e.g. `::first-letter`, `::after`)
  * combinators and the universal selector `*` have no impact on the priority.
@@ -133,8 +133,8 @@ Returning to the previous example, we get these priorities for our rules
 (assuming they are written in an external style file) :
 
 ```css
- div    /* -> (1,0,0,1) (div tag selector)   */
- .skill /* -> (1,0,1,0) (skill class selector) */
+ div    /* -> (1,0,0,1) (one div tag selector)   */
+ .skill /* -> (1,0,1,0) (one skill class selector) */
 ```
 
 ###  The order of priority
@@ -145,18 +145,18 @@ priority is the order of dictionary (*lexicographical ordering*):
 * First we look at the "first letter" *a*. If *a* is strictly greater
 then the CSS rule has a higher priority. In case of equality,
 * we look at the "second letter" *b*: If *b* is strictly greater (and therefore
-*a* is equal) then the CSS rule has a higher priority. In case of equality of
-*both *a* and *b*
+  *a* is equal) then the CSS rule has a higher priority. In case of equality of
+  both *a* and *b*
 * we look at the "third letter" *c*. In case of equality,
 * we look at the "fourth letter" *d*.
 * **In case of equalities everywhere**, the last written rule has priority.
 
-This priority mechanism is called the cascade and corresponds to the C of CSS
-(Cascading Style Sheet).
-
 **Example :** the selector `div.skill` (priority (1,0,1,1)) has higher priority
 than the selector `div` (priority (1,0,0,1)) because we have equality on *a* and
 *b* but *c* is greater for `div.skill`.
+
+This priority mechanism is called the cascade and corresponds to the C of CSS
+(Cascading Style Sheet).
 
 <div class="exercise-en">
 
@@ -241,7 +241,7 @@ will see in this section the three main values of the `display` property.
 The block elements are elements:
 
  * that occupy the entire width by default,
- * that cause a line break before and after its outer box,
+ * that cause a line break before and after,
  * whose sizes can be set via the CSS properties `height` and `width`.
 
 In practice, `display:block` elements are used:
@@ -274,7 +274,7 @@ In practice, `display:inline` elements are used:
  * when one wants to position elements one after another.
 
 Since they only contain text most of the time, inline elements such as
-`<strong>`, `<a>`, ... are leaves of the HTML tree.
+`<strong>`, `<a>`, ... are generally leaves of the HTML tree.
 
 Note that
 [text-level tags that were presented in the previous tutorial]({{site.baseurl}}/tutorials/tutorial2.html#top-menu)
@@ -394,14 +394,14 @@ In this first exercise we will create a menu with the `display:block` style.
    **Reminder:** We saw
    [in the previous tutorial how to center horizontally]({{site.baseurl}}/tutorials/tutorial2-en.html#center-horizontally).
    To center a `display:block` element whose *containing block* is wider, one
-   must set the vertical margins to `auto`: the margins will adjust
+   must set the horizontal margins to `auto`: the margins will adjust
    automatically to fill up the width difference between the element and its
    containing block. This does not work for vertical margins.
 
-1. Add a CSS rule so that the `<div>` **children of** `<nav>` have a background
-   color of `#5BBDBF`,
-1. Add a CSS rule so that the `<a>` **descendant of** `<nav>` have a background
-   color of `#c0d5c2`.
+1. Add a CSS rule so that all the `<div>` **children of** `<nav>` have a
+   background color of `#5BBDBF`,
+1. Add a CSS rule so that all the `<a>` **descendant of** `<nav>` have a
+   background color of `#c0d5c2`.
 
 </div>
 
@@ -516,7 +516,8 @@ Reference : [Mozilla Developer Network (MDN)](https://developer.mozilla.org/fr/d
    these sub-menus are positioned below their menu title (the parent `<div>`
    "Accueil" or "Contact"). Let's proceed in several steps:
 
-   1. What is the value of `position` that corresponds to this behavior ?
+   1. What is the value of `position` that corresponds to this behavior for the
+      sub-menus ?
    2. Create CSS rules that sets this value for the `position` of tags of class
       `submenu`, and indicate that the position should be offset by `50px` from the
       top, and `0px` from the left with respect to the menu title.
@@ -584,10 +585,10 @@ while learning new `flex` properties to help understand them.
 The `flex-direction` property specifies whether the children will place themselves
 in a row or column and in which order. Its values ​​are:
 
- * `row` : children are placed on a row from left to right;
- * `row-reverse` : children are placed on a row from right to left;
- * `column` : children are placed on a row from top to bottom;
- * `column-reverse` : children are placed on a row from bottom to top.
+ * `row` : children are placed in a row from left to right;
+ * `row-reverse` : children are placed in a row from right to left;
+ * `column` : children are placed in a column from top to bottom;
+ * `column-reverse` : children are placed in a column from bottom to top.
 
 Because the `flex-direction` attribute applies to children, it may conflict with
 display values `block` or `inline` of those children. The following exercise
@@ -620,7 +621,7 @@ Its possible values are:
 
  * `stretch` : stretch to take the entire space (default);
  * `center` : center without stretching;
- * `baseline` : Aligns the baselines (line on top of which text is written) of
+ * `baseline` : aligns the baselines (line on top of which text is written) of
     the children;
  * `flex-start` : alignment at the beginning of the axis perpendicular to the
     direction of` flex-direction`;
@@ -639,9 +640,9 @@ In this exercise, we want the `<div>` menu titles to be centered vertically
    [the complete guide to flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
    to check your understanding.
 
-1. To see the behaviors more clearly, we will set until the end of this
-   exercise a height of `200px` and a background color of `#FF00FF` to `<nav>`
-   and change the offset from the top to `200px`.
+1. To see the behaviors more clearly, we will set until the end of this exercise
+   a height of `200px` and a background color of `#FF00FF` to `<nav>` and change
+   the top offset of sub-menus from `50px` to `200px`.
 
 1. Center vertically the children of `<nav>` using `align-items` on `<nav>`.
    What do you notice about the height of the `<div>` and the accessibility of
@@ -660,7 +661,7 @@ In this exercise, we want the `<div>` menu titles to be centered vertically
       you to center vertically the links using the other of the two previous
       questions.
 
-1. Cancel (comment) the CSS rules written in question 1.
+1. Cancel (comment) the CSS rules written in question 2.
 
 </div>
 
@@ -698,15 +699,15 @@ the behavior of elements on the remaining space, etc.).
 Today flexbox is implemented in
 [many different browsers](http://caniuse.com/#search=flexbox). Therefore we will
 not present some other display values that have become unnecessary
-(`display:inline-block`,`display:table`) or even alignment techniques based on
-`float` which have technically always been crappy.
+(`display:inline-block`, `display:table`) or even alignment techniques based on
+`float` which have always been technically crappy.
 
 ## Global layout
 
 ### Header part
 
 <div class="exercise-en" >
- 1. Place the quote and the navigation menu on the same line (the quote will be
+ 1. Place the quote and the navigation menu on the same row (the quote will be
     on the left and the menu to the right), using your favorite display value.
  1. Replace the menu to the bottom of the `<header>` tag (yes, still using
     `flex`).
@@ -732,7 +733,7 @@ It's time to have a better layout for our website.
 
 ##  Hide or remove an element from the rendering
 
-There are many ways to make an HTML element from the screen:
+There are many ways to make an HTML element disappear from the screen:
 
  * `display:none` 
  * `visibility:hidden`
@@ -746,7 +747,7 @@ Let's use `visibility:hidden`:
 <div class="exercise-en">
 
 We want to visually mark the menu under the mouse by a small bullet in the `<a>`
-of the menu.
+of the menu title.
 
 ```html
 <span class="puce">■</span>
