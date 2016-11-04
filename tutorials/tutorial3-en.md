@@ -380,13 +380,13 @@ In this first exercise we will create a menu with the `display:block` style.
    The closest `block` parent is called the *containing block*.
 
 1. Since `<nav>` is `block`, we can fix its dimensions. Fix its width to
-   `50%`. What do you notice?
+   `75%`. What do you notice?
 
    **Explanation :** The width of a `block` element is relative to its
    containing block (`<header>` here).
 
 1. **Inspect** `<header>` then `<nav>` to know their width. **Verify** that they
-   have a ratio of `50%` as expected.
+   have a ratio of `75%` as expected.
 
 1. Center `<nav>` with respect to its parent `<header>`: to do so, set the
    horizontal margins to `auto` (and keep the vertical margins at `0`).
@@ -683,7 +683,9 @@ The possible values are:
 
 <div class="exercise-en" >
 
- 1. Justify the navigation menu to the right, with your favorite display `flex`.
+ 1. Justify the menu titles to the right of `<nav>`, with your favorite display
+    `flex`. Put temporary a background color to `<nav>` to check that the menu
+    titles moved to the right of `<nav>`.
 
 </div>
 

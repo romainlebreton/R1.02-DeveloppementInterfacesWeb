@@ -447,12 +447,12 @@ Dans ce premier exercice, nous allons créer un menu dans un style `block`.
      Le plus proche `block` parent s'appelle le *containing block*.
 
 1. Puisque `<nav>` est de type `block`, nous pouvons fixer ses
-dimensions. Donnez-lui la largeur `50%`. Que constatez-vous ?
+dimensions. Donnez-lui la largeur `75%`. Que constatez-vous ?
 
    **Explication :** La largeur d'une balise en `display:block`
      est relative à celle de son *containing block* (`<header>`
      ici). **Inspectez** `<header>` puis `<nav>` pour connaître leur
-     largeurs. **Vérifiez** qu'on a bien un rapport de `50%`.
+     largeurs. **Vérifiez** qu'on a bien un rapport de `75%`.
 
 1. Pour centrer le `<nav>` dans son parent `<header>`, on va lui donner des
 marges horizontales `auto` (gardez les marges verticales à 0).
@@ -752,7 +752,10 @@ Les valeurs possibles sont :
 
 <div class="exercise" >
 
- 1. Justifiez le menu de navigation non à gauche mais à droite, avec votre display favori.
+ 1. Justifiez les blocs de titres de menus non à gauche mais à droite de
+    `<nav>`, avec votre display favori. Colorez temporairement le fond de
+    `<nav>` pour pouvoir vérifier que les titres se sont bien déplacés sur la
+    droite de `<nav>`.
 
 </div>
 
