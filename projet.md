@@ -11,8 +11,6 @@ logiciel révolutionnaire fictif. <!-- Pas un magasin avec plusieurs produits !
 --> La taille des groupes est de 4 personnes au plus. Si vous êtes moins, nous
 attendrons la même quantité de travail.
 
-
-
 ### Emploi du temps prévisionnel :
 
 1. Semaine du 14 Novembre 2016 -- Évaluation ergonomie (20 min) puis lancement du projet
@@ -95,11 +93,41 @@ questions et réponses plus bas dans la page (utilisation des ancres).
    important d'avoir d'abord un site grossièrement fini plutôt qu'une section de
    page parfaite.
 
+## Modalités de contrôle
+
+Le projet compte pour deux modules ; en effet le projet tutoré de S1 est adossé
+à notre cours de "Conception documentaire". Pour information, il est prévu 60h
+de travail personnel sur ce projet dans les programmes officiels.
+
+Module 1105 - Conception de documents | Module 1106 - Projet tutoré
+Coefficient 2,5                       | Coefficient 1,5
+--------------------------------------|- --------------------------
+Ergonomie (30%)                       | Projet (100%)
+Examen écrit (40%)                    |
+Projet (30%)                          | 
+{:.controle}
+
+<style scoped>
+table.controle td, table.controle th {
+  border:2px solid black;
+}
+
+table.controle th {
+background-color:#EEE;
+}
+
+table.controle {
+  margin:auto;
+}
+
+</style>
+
 ### Détails de la soutenance
 
 La soutenance sera composée d'une série questions sur votre projet (Qu'est-ce
 qui a été implémenté ? Qui a fait quoi ? Expliquez ce qui a été codé. ) et
-possiblement des questions de cours à chacun des membres de votre groupe.
+possiblement des questions de cours à chacun des membres de votre groupe. Il n’y
+a **pas** de rapport à écrire, ni de présentation à préparer.
 
 Voici
 [la grille de notation](https://docs.google.com/spreadsheets/d/1C_zVXJytwIJ9EVgveuuzpiyS7qjHLG0_BmbPLpxxdsk/edit?usp=sharing)
@@ -114,6 +142,12 @@ sources du site Web devra aussi être placé dans le dossier **public_html**.
 <!-- [les groupes de projet tutoré](https://docs.google.com/spreadsheets/d/1MSJYHpXNsjZGFl1xLberYLjEJRdtej37z3JFqSnq4fY/edit?usp=sharing) -->
 <!-- et leurs produits vendus. -->
 
+### Détails sur l'examen écrit
+
+L'examen écrit ne demandera quasiment pas d'écrire de code HTML/CSS. L'examen
+sera concentré sur le contrôle de votre compréhension de codes HTML/CSS et des
+techniques employées dans les TDs : Pourquoi a-t-on vu telle notion ? Pour
+répondre à quel problème ? Comment marche la solution ? ...
 
 
 
