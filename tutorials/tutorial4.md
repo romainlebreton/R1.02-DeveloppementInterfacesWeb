@@ -4,9 +4,21 @@ subtitle: Les formulaires.
 layout: tutorial
 ---
 
-<!-- Rajouter mise-en-page "Solved by flexbox" des formulaires -->
+<!--
+Rajouter mise-en-page "Solved by flexbox" des formulaires
+Il faudrait pour cela avoir vu flex-grow avant
+-->
 
-<!-- Il faudrait pour cela avoir vu flex-grow avant -->
+
+<!--
+Input type : date, email, file, hidden, range, color, number, tel, url, search
+multiple
+input list avec datalist (avec autocomplétion)
+input/textarea Spellcheck
+https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input
+https://openclassrooms.com/courses/apprenez-a-creer-votre-site-web-avec-html5-et-css3/les-formulaires-8
+
+-->
 
 ## Introduction
 

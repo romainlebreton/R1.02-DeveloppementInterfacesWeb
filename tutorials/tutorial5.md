@@ -4,6 +4,23 @@ subtitle:
 layout: tutorial
 ---
 
+<!--
+Antoire Affouard:
+
+J'ai fait l'exercice 3 (flex shrink et grow) et je pense que je vais perdre un
+bon nombre d'étudiants sur cette partie.
+
+Je n'arrive pas à comprendre le rendu attendu ? avec des tailles 67% / 33% et
+des grow de 3 / 1 et des shrink de 0.67 / 0.33, ça ne change rien dans aucun des
+cas (cf correction de GitLab). Je pense qu'il faut remplacer ça par des tailles
+fixes (cf énoncé du TD5) et surtout supprimer les min et max width qui empêchent
+de voir le rendu des flex.
+-->
+
+<!--
+Exemple utilisation flex-grow/shrink non triviale : solved by flex
+-->
+
 <!-- L'iconographie et les points de rupture ont changés ? -->
 
 ## Introduction
@@ -103,8 +120,8 @@ type de valeur que `width` et `height`.
    encore, mieux vaut ne pas en parler à Chuck).
    <!-- ATTENTION : on n'a pas encore fixé la taille de l'image comme étant
 relative. Veux-tu passer plus de choses en taille relative ? -->
-1. Ajoutez une limite maximum de largeur à l'`<article>` et à l'`<aside>` de `500px` et de `250px`.
-1. Ajoutez une limite minimum de largeur à l'`<article>` et à `<aside>` de `200px` et `150px`.
+1. Ajoutez une limite maximum de largeur à `<article>` et à `<aside>` de `500px` et de `250px`.
+1. Ajoutez une limite minimum de largeur à `<article>` et à `<aside>` de `200px` et `150px`.
 </div>
 
 
@@ -298,6 +315,8 @@ C'est encore au stade de Working draft !! Mais çà marche sur chrome ...
 Référence :
 https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes
+
+http://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html
 -->
 
 <div class="exercise">
@@ -325,7 +344,7 @@ Il existe deux manières différentes de faire appel à une *media query*:
   `media` et une condition spécifique.
 
   ```html
-  <link rel="stylesheet" media="condition" href="mon_css_spécial.css"/>
+  <link rel="stylesheet" media="condition" href="mon_css_special.css"/>
   ```
   
   N'oubliez pas que le dernier CSS chargé prend le pas sur les

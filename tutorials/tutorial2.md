@@ -9,6 +9,10 @@ nth-child odd sur ie 11
 background color
 -->
 
+<!--
+border-collapse pour avoir des ordures collées entre elles
+caption : titre du tableau ?
+-->
 
 La spécification HTML5 propose différentes manières de classer les
 balises/éléments selon leurs caractéristiques
