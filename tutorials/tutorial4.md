@@ -20,10 +20,12 @@ https://openclassrooms.com/courses/apprenez-a-creer-votre-site-web-avec-html5-et
 
 -->
 
+<!-- Corriger absence d'explications sur <option value=""> et selected -->
+
 ## Introduction
 
 Nous allons ajouter un formulaire d'inscription à notre site de fans de
-<strong>Chuck Norris</strong>, en utilisant la balise `<form>`.  Cette balise
+**Chuck Norris**, en utilisant la balise `<form>`.  Cette balise
 `<form>` nous permettra d'avoir des réponses à des questions des plus ouvertes
 ("Que voulez-vous dire à Chuck ?") aux plus fermées ("Parmi ces trois choix
 quel est votre sport favori ?", "Quel est votre sexe ?" ... ).  Il y a
@@ -93,7 +95,7 @@ Nous allons voir comment est envoyée la valeur d'un `<input>` lorsque l'on soum
    </form>
    ```
 
-  1. <strong>Sous Chrome relativement récent uniquement</strong> : Affichez la page et ouvrez la console (F12) pour aller sur l'onglet
+  1. **Sous Chrome relativement récent uniquement** : Affichez la page et ouvrez la console (F12) pour aller sur l'onglet
   'Réseau', cocher la case "Preserve log", donnez la valeur `dupont` au champ texte, puis cliquez sur le bouton
   "Envoyer" du formulaire.  Vous devez voir une requête contenant
   `sendToMySecondYearInIut` dans la console. Cliquez sur cette ligne et cherchez
@@ -106,8 +108,8 @@ Nous allons voir comment est envoyée la valeur d'un `<input>` lorsque l'on soum
 
 </div>
 
-<strong>Note</strong> : il est normal que l'URL `sendToMySecondYearInIut.php`
-n'existe pas (le fameux code de retour HTTP <strong>404</strong> apparaît dans
+**Note** : il est normal que l'URL `sendToMySecondYearInIut.php`
+n'existe pas (le fameux code de retour HTTP **404** apparaît dans
 la console), puisque vous êtes en première année. Nous verrons en deuxième année
 dans le cours "Programmation Web - Côté Serveur" comment le serveur peut
 récupérer les données envoyées par notre formulaire et les traiter.
@@ -171,7 +173,7 @@ possibles.
 </div>
 
 
-<strong>Notes :</strong> 
+**Notes :** 
 
  * Certains de ces inputs sont issus de la norme HTML5. De
 fait leurs adoptions au sein des navigateurs n'est pas uniforme. Les
@@ -281,7 +283,7 @@ temps à l'utilisateur.
 </div>
 
 
-<strong>Note : </strong> Il existe depuis peu un pseudo attribut css `::placeholder`, mais celui-ci est [moins](http://caniuse.com/#search=placeholder%20css) bien supporté que 
+**Note :** Il existe depuis peu un pseudo attribut css `::placeholder`, mais celui-ci est [moins](http://caniuse.com/#search=placeholder%20css) bien supporté que 
 l'[attribut](http://caniuse.com/#search=placeholder%20attribute).
 
 
@@ -326,5 +328,5 @@ de vérifier le contenu du formulaire:
 
 </div>
 
-<strong> Note : </strong> Pour être toujours protégé contre les bugs lorsque vous cogitez sur une expression régulière, ne sortez jamais sans votre [Regulex](https://jex.im/regulex). Regulex, le visualisateur de machine d'état qu'il vous faut pour vos expressions régulières.
+**Note :** Pour être toujours protégé contre les bugs lorsque vous cogitez sur une expression régulière, ne sortez jamais sans votre [Regulex](https://jex.im/regulex). Regulex, le visualisateur de machine d'état qu'il vous faut pour vos expressions régulières.
 
