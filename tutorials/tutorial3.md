@@ -11,6 +11,12 @@ Faire des références (et aller voir) à alsacreation et W3schools (bon tuto su
 Et dire clairement qu'il faut qu'ils aillent lire ces docs
 -->
 
+<!--
+dans l'exercice position:absolute du sous-menu,
+mettre width:100% pour le sous-menu et fixer la largeur des titres de menus
+même si position absolute, width se rapporte au père
+-->
+
 ## Ordre d'application des sélecteurs CSS
 
 Comme vous vous en souvenez, les sélecteurs servent à sélectionner un ensemble

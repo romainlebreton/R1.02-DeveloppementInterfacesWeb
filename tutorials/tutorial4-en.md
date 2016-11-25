@@ -19,11 +19,11 @@ there is a corresponding tag such as `<input>` or `<textarea>` as we will see.
 The heart of the form consists of two types of tags: `<form>` and `<input>`.
 
 The tag `<form>` must englobe all the form related tags. Its attributes also
-contain many important information about the form :
+contain many important information about the form:
 
 * `method`: Forms contain data (mostly typed by the user) that must be sent to
   another page to be processed. The values of the `method` attribute (`post` or
-  `get`) tells the form how it will send the data to the process webpage :
+  `get`) tells the form how it will send the data to the processing webpage:
 
   * `get` sends data through the URL with a syntax like
     `index.html?name=Dupont&login=dupo`. This method limits the size of the data
@@ -33,21 +33,21 @@ contain many important information about the form :
 
   More information about these methods in next year's PHP course.
 
-* `action` : URL of the webpage to which we will send the data of the form.
+* `action`: URL of the webpage to which we will send the data of the form.
 
 The `<input>` tag allows you to define different fields in which the user can
 enter data. The `<input>` tag has attributes:
 
-* [`type`](http://www.w3schools.com/tags/att_input_type.asp) : defines the
+* [`type`](http://www.w3schools.com/tags/att_input_type.asp): defines the
   visual appearance of the field and the nature of the data that can be entered.
-* [`name`](http://www.w3schools.com/tags/att_input_name.asp) : the variable name
+* [`name`](http://www.w3schools.com/tags/att_input_name.asp): the variable name
   of the data filled in this `<input>`. In our previous example of
   `method="get"`, the form had two `<input>` of name `name` and `login`.
 * [`value`](http://www.w3schools.com/tags/att_input_value.asp) (optional):
   Default value of the `<input>`, that is to say that the `<input>` will be
   prefilled with this value.
 
-Every form must contain a tag `<input type="submit">` : this tag creates the
+Every form must contain a tag `<input type="submit">`: this tag creates the
 *Submit* button that will trigger the sending of data when clicked on.
 
 <div class="exercise-en" id="start">
@@ -57,10 +57,10 @@ Let us see by ourselves how the value of an `<input>` is sent by a form.
 1. Create a new webpage `inscription.html` in the Chuck Norris website. This page
    will contain the inscription form to Chuck Norris' fan-club.
 
-   **Tip :** Do not forget to start every HTML webpage with the html basic
+   **Tip:** Do not forget to start every HTML webpage with the html basic
    structure seen in [tutorial 2]({{site.baseurl}}/tutorials/tutorial2-en.html).
 
-1. Add to `inscription.html` the following form :
+1. Add to `inscription.html` the following form:
 
    ```html
    <form action="sendToMySecondYearInIut.php" method="get">
@@ -73,7 +73,7 @@ Let us see by ourselves how the value of an `<input>` is sent by a form.
     on this button should send you to a page finishing by
     `sendToMySecondYearInIut.php?user_name=dupont`.
 
-   **Note** : it's normal that the URL `sendToMySecondYearInIut.php` does not
+   **Note**: it's normal that the URL `sendToMySecondYearInIut.php` does not
    exist and that you see the famous **404** error. We will see next year how to
    write server-side scripts (in PHP) to process the form data.
 
@@ -92,7 +92,7 @@ label will place the keyboard prompt in the corresponding `<input>` (try it!).
 
 <div class="exercise-en" id="exlabel">
 
-1. Replace the first `<input>` by the following code :
+1. Replace the first `<input>` by the following code:
 
    ```html
    <label for="surname">Nom</label>
@@ -129,7 +129,7 @@ There are quite a number of types of `<input>`:
 <div class="exercise-en" id="exinput">
  
  With the help of [w3schools](http://www.w3schools.com/tags/att_input_type.asp),
- add to the form the following `<input>` whose labels are :
+ add to the form the following `<input>` whose labels are:
 
  1. "Date de naissance" with the input type `date`.
  1. "Mot de passe" with the input type `password`.
@@ -147,7 +147,7 @@ There are quite a number of types of `<input>`:
 </div>
 
 
-**Notes :** 
+**Notes:** 
 
 * Some of those input types were introduced with HTML5 and are not fully
   supported by all browsers (especially old versions of Internet Explorer). We
@@ -156,7 +156,7 @@ There are quite a number of types of `<input>`:
   `date` and `time` are
   [more or less compatible](http://caniuse.com/#search=date). The type `number`
   is a [bit more accepted](http://caniuse.com/#search=number). You can notice
-  some changes of appearance depending on the browser you are using.
+  some changes in appearance depending on the browser you are using.
 
 * About the password, you can notice that it is written in plain text the URL if
   you use `method="get"`. For this type of sensitive data, you should use
@@ -175,7 +175,7 @@ tag.
 
 By default, you can only choose one of the possible
 options. However, you can enable multiple values by adding the attribute
-`multiple` to `<select>` : this attribute is not waiting for a value so we
+`multiple` to `<select>`: this attribute is not waiting for a value so we
 usually write
 
 ```html
@@ -193,11 +193,11 @@ tag.
 
 <div class="exercise-en" id="exlabel">
 
-With the help of [developer.mozilla.org](https://developer.mozilla.org/fr/docs/Web/HTML/Element/select), add the following `<input>` whose labels are :
+With the help of [developer.mozilla.org](https://developer.mozilla.org/fr/docs/Web/HTML/Element/select), add the following `<input>` whose labels are:
 
 1. Add a `<select>` labeled "Pays d'origine" with possible options `U.S.A` ,
    `France`, `Allemagne`, `Chine` and `Viêt Nam` whose associated values must not
-   depend on the language of the form (the `value` associated to `France` could
+   depend on the language of the form (the `value` associated with `France` could
    be `fr` for instance). The user can select only one option. Group the options
    by continent.
 
@@ -212,7 +212,7 @@ With the help of [developer.mozilla.org](https://developer.mozilla.org/fr/docs/W
 
 The
 [`<textarea>` tag](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Textarea)
-proposes a large text box so that the user can express themselves.
+proposes a large textbox so that the users can express themselves.
 
 <div class="exercise-en" id="exlabel">
 
@@ -246,14 +246,14 @@ regroup our inputs inside the three following groups:
 
 ### Navigation
 
-For advanced users, navigation using the key `Tab` allows to browse very quickly
-the form. The attribute `autofocus` allows to specify what element of the form
+For advanced users, navigation using the key `Tab` allows browsing very quickly
+the form. The attribute `autofocus` allows to specifying what element of the form
 must have the focus when the page is loaded. The attribute `tabindex` specifies
 the order of elements when pressing the key `Tab`.
 
 <div class="exercise-en" id="extab">
 
-Verify that you can access all the inputs using with the key `Tab`. Change the
+Verify that you can access all the inputs using the key `Tab`. Change the
 order with the property `tabindex`.
 
 </div>
@@ -270,8 +270,8 @@ A few attributes improve the user-friendliness of the fields in your form:
 
   Example:  `placeholder=“Entrez votre nom ici"`
 
-* `checked` / `selected` : for inputs of type “radio” or “checkbox”, and for
-  `<option>` respectively. This attributes is used to select/check an option by
+* `checked` / `selected`: for inputs of type “radio” or “checkbox”, and for
+  `<option>` respectively. This attribute is used to select/check an option by
   default. Useful when you know that one of the options will be used much more
   frequently than the others. You then save time for the user.
 
@@ -288,8 +288,8 @@ A few attributes improve the user-friendliness of the fields in your form:
 ### Content validation
 
 The data that the user types in has to be checked by the server (cf. next year
-course). However, checks by the server requires that the data is sent, that the
-server tests, then responds : the operation may be long.
+course). However, checks by the server require that the data is sent, that the
+server tests, then responds: the operation may be long.
 
 In order to avoid a useless wait to users of your form, you can ask the browser
 to directly perform certain validation tests, in order to prevent the common
@@ -302,14 +302,14 @@ Two attributes allow you to check the content of the form:
 * `pattern`: attribute specific to open answers, `pattern` let you specify
   [a regular expression](http://www.rexegg.com/). This string obeys
   [a particular syntax](http://www.rexegg.com/regex-quickstart.html#ref) and
-  indicate to the browser which entries of the input are valid. The browser will
+  indicates to the browser which entries of the input are valid. The browser will
   refuse to send the form as long as some input is invalid.
 
-  Example : The pattern `0[1-9](\.\d{2}){4}` validates french phone numbers,
+  Example: The pattern `0[1-9](\.\d{2}){4}` validates french phone numbers,
   while the pattern `[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,4}` will block the most
   obvious email address mistakes. You can find a large variety of patterns
   examples at [HTML5pattern](http://html5pattern.com/).  
-  **Note :** HTML pattern test if the whole input is valid. So there is no need
+  **Note:** HTML pattern test if the whole input is valid. So there is no need
   to use `^` and `$` as in classic regular expressions.
 
 <div class="exercise-en" id="regulex" >
@@ -321,7 +321,7 @@ Two attributes allow you to check the content of the form:
     Latin alphabet or digits are allowed.
  1. Make sure that the password is at least 8 characters long.
 
- **Note :** To prevent bugs while writing regular expressions, always use
+ **Note:** To prevent bugs while writing regular expressions, always use
    [Regulex](https://jex.im/regulex) while developing a regular
    expression. Regulex will help you to visualize the state machine behind the
    regular expression.
