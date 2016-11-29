@@ -40,7 +40,7 @@ et le logo de l’entreprise (créé tel que vu dans le TD d’infographie) ;
    1. les informations sur le demandeur (nom, prénom, adresse email, code postal, champs de sélection du pays),
    1. une question "vous avez entendu parlé de nous via ?” avec plusieurs choix possibles <!-- checkbox -->
    1. un champ "date à laquelle vous souhaitez être recontacté" 
-   1. un champ texte libre de plusieurs ligne d'expression libre
+   1. un champ texte libre de plusieurs lignes d'expression libre
 
    Pour chacun des champs, un exemple sera donné, une vérification du format sera
    faite à l’aide des types prédéfinis en HTML5 (l’utilisation d’expressions régulières
@@ -70,14 +70,14 @@ questions et réponses plus bas dans la page (utilisation des ancres).
 1. le site sera responsive. Au minimum le menu s'adaptera à la taille de la
    page. De plus la page **Équipe** doit être responsive : la présentation se
    fera en grille sur une grande page ou en liste quand la page est trop petite.
-1. les site sera encodé en UTF8.
+1. le site sera encodé en UTF8.
 1. les codes CSS et HTML seront correctement indentés. 
 1. Le texte LOREM IPSUM est autorisé. Ne perdez pas trop de temps à inventer du
     contenu à votre site. <!-- under construction, ne pas passer trop de temps
     sur le contenu -->
 1. le site doit être valide HTML5 et CSS3, et bien structuré à l’aide des
    balises de structuration : header, nav, main, article, aside, footer, div.
-1. l’utilisation de framework tels que bootstrap, foundation, etc… n’est pas autorisée. 
+1. l’utilisation de framework tels que bootstrap, foundation, etc. n’est pas autorisée. 
 1. la liste des display autorisés est : block, inline, flex et none.
 1. l’utilisation des float ou des tableaux n’est pas autorisée pour la mise en
    page, c'est-à-dire par exemple pour mettre une colonne à côté d'une autre
