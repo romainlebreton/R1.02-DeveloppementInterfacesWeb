@@ -51,7 +51,7 @@ avec photo et courte biographie pour chacun.
 
 1. **Presse :** Une page qui donne les contacts du responsable presse ainsi qu'une liste de communiqués de presse ;
 
-1. **Nous rejoindre :** Une page qui renvoient sur différentes fiches d'offres de
+1. **Nous rejoindre :** Une page qui renvoie sur différentes fiches d'offres de
 postes de l'entreprise. Chaque offre de poste aura son sous menu déroulant du type :
 
    1. Métier 1
