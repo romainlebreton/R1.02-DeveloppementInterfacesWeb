@@ -5,6 +5,15 @@ layout: tutorial
 ---
 
 <!--
+Expliquer le pb de l'overconstraint comme en anglais
+-->
+
+<!--
+Où est-il dit que poucentage relatif au containing block ?
+tut3 : le redire ici !
+-->
+
+<!--
 Antoire Affouard:
 
 J'ai fait l'exercice 3 (flex shrink et grow) et je pense que je vais perdre un
@@ -99,7 +108,7 @@ ascenseur à droite pour descendre dans la page).
 [^somesamplefootnote]: L'unité `vh` permet maintenant de définir une taille de 0 à 100 relative au viewport.
 
 
-### `max-with` et `min-with`
+### `max-width` et `min-width`
 
 
 Les règles précédentes permettent d'avoir un rapport homogène, mais pas un rendu
