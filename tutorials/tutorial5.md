@@ -279,7 +279,7 @@ page. Constatez que le site s'affiche en tout petit.
 
 **Attention :** En appuyant sur `F12` sur Chrome/Chromium, vous devez voir la
 petite icône <img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil
-pour mobile" style="margin: 0 auto;width:60px;vertical-align:middle;">. Sinon,
+pour mobile" style="margin: 0 auto;width:45px;vertical-align:middle;">. Sinon,
 c'est que votre version de Chrome ou Chromium n'est pas à jour. Dans ce cas,
 allez sur le [site de l'IUT](https://iutdepinfo.iutmontp.univ-montp2.fr/),
 identifiez-vous puis téléchargez
