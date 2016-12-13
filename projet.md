@@ -25,7 +25,7 @@ puis
 
 1. Semaine du 2 Janvier -- Examen écrit (2h max)
 1. 9-10-11 Janvier -- Soutenances projet tutoré (20 min/groupe)
-1. Semaine du 16 janvier -- TD installation Joomla (3h)
+1. ~~Semaine du 16 janvier -- TD installation Joomla (3h)~~ **Annulé**
 
 ### Architecture minimum de votre site :
 
