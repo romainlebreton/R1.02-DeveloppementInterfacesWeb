@@ -13,19 +13,19 @@ attendrons la même quantité de travail.
 
 ### Emploi du temps prévisionnel :
 
-1. Semaine du 14 Novembre 2016 -- Évaluation ergonomie (20 min) puis lancement du projet
-1. Semaine du 21 Novembre 2016 --
+1. Semaine du 14 Novembre 2017 -- Évaluation ergonomie (20 min) puis lancement du projet
+1. Semaine du 21 Novembre 2017 --
    TD 5 (1/2) -- Responsive Design (~2h) puis projet (1h)
-1. Semaine du 28 Novembre 2016 --
+1. Semaine du 28 Novembre 2017 --
    TD 5 (2/2) -- Responsive Design (max 2h) puis projet
-1. Semaine du 05 Décembre 2016 -- projet (3h)
-1. Semaine du 12 Décembre 2016 -- projet (3h)
+1. Semaine du 05 Décembre 2017 -- projet (3h)
+1. Semaine du 12 Décembre 2017 -- projet (3h)
 
 puis
 
 1. Semaine du 2 Janvier -- Examen écrit (2h max)
 1. 9-10-11 Janvier -- Soutenances projet tutoré (20 min/groupe)
-1. ~~Semaine du 16 janvier -- TD installation Joomla (3h)~~ **Annulé**
+<!-- 1. ~~Semaine du 16 janvier -- TD installation Joomla (3h)~~ **Annulé** -->
 
 ### Architecture minimum de votre site :
 
