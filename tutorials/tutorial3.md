@@ -21,9 +21,9 @@ même si position absolute, width se rapporte au père
 
 Comme vous vous en souvenez, les sélecteurs servent à sélectionner un ensemble
 de balises sur lesquels on applique une règle CSS. Nous avons appris lors du
-[TD1 les sélecteurs de base](tutorial1_2.html#les-slecteurs-css-de-base) et lors
+[TD1 les sélecteurs de base](tutorial1_2.html#les-sélecteurs-css-de-base) et lors
 du
-[TD2 la combinaison de sélecteurs](tutorial2.html#rgles-de-compositions-des-css).
+[TD2 la combinaison de sélecteurs](tutorial2.html#règles-de-compositions-des-css).
 
 Plusieurs règles CSS peuvent porter sur un même élément HTML. Si ces règles
 peuvent coexister, elles sont toutes appliquées. Par exemple, si vous avez le
@@ -102,7 +102,7 @@ Pour prendre de bonnes habitudes, on préférera les styles externes comme
 `styles.css` qui permet une séparation plus claire entre les rôles du HTML
 (contenu avec des balises pour donner du sens) et du CSS (présentation / mise en
 page). Comme dit
-[à la fin du TD 1 partie 2]({{site.baseurl}}/tutorials/tutorial1_2.html#le-css-et-html--des-rles-bien-distincts-et-complmentaires),
+[à la fin du TD 1 partie 2]({{site.baseurl}}/tutorials/tutorial1_2.html#le-css-et-html--des-rôles-bien-distincts-et-complémentaires),
 cette séparation est indispensable et très puissante :
 
  * Elle permet de réutiliser une présentation d'une page à l'autre. Par exemple
@@ -261,7 +261,7 @@ deux cas suivant ? Quelle règle de priorité CSS explique votre réponse ?
 
 Comme nous l'avons vu au TD précédent, à chaque balise correspond quatre boîtes
 (*content*, *padding*, *border* et *margin*,
-[voir la section sur le modèle de boîte du TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#le-modle-de-boite)).
+[voir la section sur le modèle de boîte du TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#le-modèle-de-boite)).
 
 <img alt="Box model" src="{{site.baseurl}}/assets/boxmodel.png" style="margin:0
 auto;display: block;">
@@ -775,7 +775,7 @@ expertise véritable de l'intégrateur (exemple : le centrage vertical), ou
 comportement des éléments sur l'espace restant, etc.).
 
 Aujourd'hui flexbox est bien implémenté dans
-[les différents navigateurs](http://caniuse.com/#search=flexbox).  Nous ne vous
+[les différents navigateurs](https://caniuse.com/#feat=flexbox).  Nous ne vous
 présenterons donc pas d'autres valeurs de display, car elles sont devenues
 inutiles (`display:inline-block`, `display:table`), ni encore moins des
 techniques d'alignement avec des `float`, qui ont toujours été techniquement

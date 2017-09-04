@@ -191,7 +191,7 @@ s’applique le style.
 
 À partir des sélecteurs de bases (de balise, de classe et d'identifiant)
 présentés
-[dans le TD précédent]({{site.baseurl}}/tutorials/tutorial1_2.html#les-slecteurs-css-de-base),
+[dans le TD précédent]({{site.baseurl}}/tutorials/tutorial1_2.html#les-sélecteurs-css-de-base),
 il est possible de créer des
 [sélecteurs complexes](http://www.w3.org/TR/css3-selectors/#combinators).  Par
 exemple, nous allons voir comment sélectionner les `<div>` ayant la classe
@@ -417,11 +417,11 @@ Voyons maintenant comment la styliser.
  1. Donnez la couleur violette `#640051` au texte des skills dans le tableau sans
  modifier le style des éléments ayant la classe `skill` dans les paragraphes,
  (voir la
- [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))
+ [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#règles-de-compositions-des-css))
  1. ajoutez une règle pour que le fond d'une ligne (*row*) sur deux du corps de
  la table apparaisse en blanc et l'autre avec la couleur `#CCC`
  <strong>SANS</strong> modifier de quelque façon le HTML (voir la
- [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#rgles-de-compositions-des-css))  
+ [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#règles-de-compositions-des-css))  
  **Attention :** La ligne du `<thead>` doit rester bleue.
 
 </div>

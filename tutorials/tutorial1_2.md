@@ -77,8 +77,8 @@ document HTML (dans la partie `head`) :
 </div>
 
 
-Nous allons vous présenter quelques [propriétés CSS](#quelques-proprits-css) et la
-façon de concevoir des [sélecteurs](#les-slecteurs-css).
+Nous allons vous présenter quelques [propriétés CSS](#quelques-propriétés-css) et la
+façon de concevoir des [sélecteurs](#les-sélecteurs-css).
 
 ## Les outils de développement sont vos amis
 

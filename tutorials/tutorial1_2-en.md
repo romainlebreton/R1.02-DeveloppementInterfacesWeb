@@ -72,7 +72,7 @@ Let's set up our CSS rules:
 </div>
 
 
-We will present you some [CSS properties](#few-properties-css) and how to
+We will present you some [CSS properties](#some-css-properties) and how to
 design [selectors](#the-basics-of-css-selectors).
 
 ## Development tools are your friends

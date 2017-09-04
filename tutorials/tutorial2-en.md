@@ -164,13 +164,13 @@ our page.
 
 ## CSS composition rules
 
-[Recall that a CSS rule]({{site.baseurl}}/tutorials/tutorial1_2-en.html#tutorial-introduction)
+[Recall that a CSS rule]({{site.baseurl}}/tutorials/tutorial1_2-en.html#introductory-tutorial)
 is composed of a CSS selector and a statement block composed of several pairs
 CSS property / value. A CSS selector indicates to which HTML elements the
 style applies.
 
 Starting from the basic selectors (of tag, class and id) presented
-[in the previous tutorial]({{site.baseurl}}/tutorials/tutorial1_2-en.html#The-slecteurs-css-of-base),
+[in the previous tutorial]({{site.baseurl}}/tutorials/tutorial1_2-en.html#the-basics-of-css-selectors),
 it is possible to create
 [complex selectors](http://www.w3.org/TR/css3-selectors/#combinators). For
 example, we will see how to select the `<div>` tags with class `toto` and who
@@ -386,11 +386,11 @@ to put. Let us now look at how to stylize it.
 1. Set a background color `#00AAFF` for the header part `thead` of the table.
 1. Give the color purple `#640051` to the text of the skills in the table
    without changing the style of elements with class `skill` outside (see the
-   [section on the selectors]({{site.baseurl}}/tutorials/tutorial2.html#rules-of-compositions-of-CSS)).
+   [section on the selectors]({{site.baseurl}}/tutorials/tutorial2.html#css-composition-rules)).
 1. Add a rule so that the background of every other row appears in white and
    the other with the color `#CCC` **without** changing in any way the HTML (see
    the
-   [section on the selectors]({{site.baseurl}}/tutorials/tutorial2.html#rules-of-compositions-of-CSS))
+   [section on the selectors]({{site.baseurl}}/tutorials/tutorial2.html#css-composition-rules))
    **Attention:** `<thead>` must remain blue.
 
 </div>
@@ -413,7 +413,7 @@ martial arts.
 2. Give some more importance to the 5 of Chuck with a tag `<strong>` to show who
    is the boss.
 3. (Optional) If you want to center the 5, go see
-   [later in the tutorial](#center-horizontally-) how to do it.
+   [later in the tutorial](#center-horizontally) how to do it.
 
 </div>
 
