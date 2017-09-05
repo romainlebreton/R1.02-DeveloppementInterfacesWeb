@@ -314,7 +314,7 @@ des paragraphes de texte :
 ### Exercices
 
 1. **Couleurs :** Le fond de notre page est tout blanc par défaut. Nous allons
-changer cela en donner au `<body>` la couleur qu'à choisi le graphiste / Web-designer :
+changer cela en donnant au `<body>` la couleur qu'a choisi le graphiste / Web-designer :
 `#838892`.  
 
 2. **Dimensions :** plusieurs études (cf.
@@ -361,7 +361,7 @@ Par exemple :
 <h2 id="monidentifiant" class="skill feature">...</h2>
 ```
 
-Ce code HTML déclare une balise HTML `<div>` avec comme identifiant unique
+Ce code HTML déclare une balise HTML `<h2>` avec comme identifiant unique
 `monidentifiant` et ayant deux classes : `skill` et `feature`. **Attention**, un
 identifiant est unique pour toute la page HTML. Un élément peut avoir plusieurs
 classes comme dans l'exemple précédent et ces classes sont faites pour être
