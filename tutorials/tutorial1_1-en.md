@@ -203,7 +203,7 @@ tags in the section *Common Tags*.
 
 ### An HTML document is like a tree
 
-HTML tags provide a structure of tree to the document. In our example
+HTML tags provide a tree structure to the document. In our example
 `index.html`
 
 ```html
