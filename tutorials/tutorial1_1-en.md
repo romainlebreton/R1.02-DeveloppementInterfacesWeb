@@ -64,7 +64,7 @@ folder `HTMLCSS/TD1/`.
    `index.html` in the browser.  
    What differences do you observe in the rendring? Why?  
    How are displayed line breaks in an HTML document?  
-   How is displayed a HTML text surrounded by `<!--` et `-->`?
+   How is displayed a HTML text surrounded by `<!--` and `-->`?
    <!-- saut de ligne mangés, mauvais accents, commentaire coupés : interprétation du HTML -->
 
 </div>
