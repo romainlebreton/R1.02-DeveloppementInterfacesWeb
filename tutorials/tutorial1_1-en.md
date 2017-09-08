@@ -338,12 +338,12 @@ In HTML we can obtain ordered (numbered) lists or unordered lists:
 
 ```html
 <ul> <!-- ul stands for unordered list -->
-<li>First unordered item</li> <!-- li stands for list item -->
-<li>Second item </li>
+  <li>First unordered item</li> <!-- li stands for list item -->
+  <li>Second item </li>
 </ul>
 <ol> <!-- ol stands for ordered list -->
-<li>First ordered item</li>
-<li>Second item </li>
+  <li>First ordered item</li>
+  <li>Second item </li>
 </ol>
 ```
 
