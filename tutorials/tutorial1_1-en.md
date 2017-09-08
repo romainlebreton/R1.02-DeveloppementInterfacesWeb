@@ -443,7 +443,7 @@ You can specify the complete URL of the target (absolute path), for example:
 
 or give a relative address to the current page (relative path), for example:
 
-```HTML
+```html
 <a href="./images/chuck-jeune.png">Image</a>
 ```
 
