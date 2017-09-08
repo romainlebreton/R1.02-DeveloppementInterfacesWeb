@@ -102,7 +102,7 @@ but very complete).
 
    For the document to be valid and recognized as an HTML5 document, **add** the
    tag `<!DOCTYPE html>` at the very beginning of the file.  
-   **Retest** The conformity of your document.
+   **Retest** the conformity of your document.
 
 3. The validator now indicates **The character encoding was not declared**.
 
