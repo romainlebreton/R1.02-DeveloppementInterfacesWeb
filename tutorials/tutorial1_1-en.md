@@ -98,7 +98,7 @@ but very complete).
    The validator is telling us that he expected to see `<!DOCTYPE html>` at the
    beginning of our document. This tag is used to declare that the document is
    written in HTML5. Indeed, there are several standards of "HTML": HTML4,
-   XHTML, HTML5, ... Today, the people mainly use HTML5 and we will do the same.
+   XHTML, HTML5, ... Today, people mainly use HTML5 and we will do the same.
 
    For the document to be valid and recognized as an HTML5 document, **add** the
    tag `<!DOCTYPE html>` at the very beginning of the file.  
