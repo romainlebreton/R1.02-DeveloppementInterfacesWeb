@@ -246,7 +246,7 @@ of text:
 1. **`text-align`:** This property affects the alignment of lines of text. Example:
 
    ```css
-   text-align:center; /* or Left, Right, Justify */
+   text-align:center; /* or left, right, justify */
    ```
    
    For reminder, a justified paragraph is a paragraph where the lines go all the
