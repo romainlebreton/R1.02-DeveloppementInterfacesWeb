@@ -343,9 +343,9 @@ a {
 
 ### Identifier selectors
 
-The designer associated with the identifier is the character `#`.  The decorator
-associated with identifiers is the character `#`. If one wants to give a width
-of `100px` to the unique tag with identifier `myidentifier`, he must write
+The decorator associated with identifiers is the character `#`. If one wants to
+give a width of `100px` to the unique tag with the identifier `myidentifier`, he
+must write
 
 ```css
 #myidentifier {
