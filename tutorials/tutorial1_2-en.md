@@ -12,7 +12,7 @@ The standards defining the CSS are published by the World Wide Web Consortium
 > (e.g. font, color, space) to a Web document.  
 > <cite><a href="http://www.w3.org/Style/CSS/"> W3C </a></cite>
 
-The CSS is responsible for rendering of the rendering the site on your screen,
+The CSS is responsible for rendering of the site on your screen,
 but also on smartphone and paper printouts (CSS rules sets can be specified for
 each of these media).
 
