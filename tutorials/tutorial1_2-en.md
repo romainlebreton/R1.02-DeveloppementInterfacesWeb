@@ -279,8 +279,8 @@ change this and give `<body>` the color choosen by our web-designer: `#838892`.
 2. **Dimensions:** several studies (cf.
    [1](https://viget.com/inspire/the-line-length-misconception) and
    [2](https://en.wikipedia.org/wiki/Line_length)) suggest that lines too long
-   or too short seriously impair the readability of a site. For coarsely treat
-   the problem, limit the width of the `<body>` to `600px`.
+   or too short seriously impair the readability of a site. To give a first
+   treatment of the problem, limit the width of the `<body>` to `600px`.
 
 4. Section titles must have their text centered.
 

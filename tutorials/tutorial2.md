@@ -10,7 +10,7 @@ background color
 -->
 
 <!--
-border-collapse pour avoir des ordures collées entre elles
+border-collapse pour avoir des bordures collées entre elles
 caption : titre du tableau ?
 -->
 
