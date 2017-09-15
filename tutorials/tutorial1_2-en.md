@@ -332,7 +332,7 @@ us take a look at the syntax to use them.
 ### Tag selectors
 
 You just have to use the name of the tag (`a`, `p`, `img`,...) without further
-decorator. If we want to give the pink color for all links `<a>` on a page, you
+decorator. If we want to give the purple color for all links `<a>` on a page, you
 must write
 
 ```css
