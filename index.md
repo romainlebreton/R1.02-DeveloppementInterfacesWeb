@@ -19,11 +19,11 @@ Cours à l'IUT de Montpellier - 1ère année
    ([English version](tutorials/tutorial2-en.html))
 1. Semaine du 18 Septembre 2017 -- [TD 3 -- CSS Avancés 2/2](tutorials/tutorial3.html)
 	 ([English version](tutorials/tutorial3-en.html))
-<!-- 1. Semaine du 25 Septembre 2017 -- [lancement du projet](projet.html) -->
-<!-- 1. Semaine du 02 Octobre 2017 : -->
-<!--    * [TD 4 -- Les Formulaires](tutorials/tutorial4.html) (~2h) -->
-<!-- 	 ([English version](tutorials/tutorial4-en.html))  -->
-<!--    * puis projet (1h) -->
+1. Semaine du 25 Septembre 2017 :
+   * [TD 4 -- Les Formulaires](tutorials/tutorial4.html)
+	 ([English version](tutorials/tutorial4-en.html))
+   * puis [lancement du projet](projet.html)
+<!-- 1. Semaine du 02 Octobre 2017-- [Projet](projet.html) -->
 <!-- 1. Semaine du 09 Octobre 2017 -- -->
 <!--    * Entamer [TD 5 -- Responsive Design](tutorials/tutorial5.html) (~2h) -->
 <!--    ([English version](tutorials/tutorial5-en.html))  -->
@@ -35,6 +35,7 @@ Cours à l'IUT de Montpellier - 1ère année
 <!-- 1. Semaine du 06 Novembre 2017 -- projet (3h) -->
 <!-- 1. Semaine du 13 Novembre 2017 -- projet (3h) -->
 <!-- 1. Semaine du 08 Janvier 2018 -- Soutenances de projet -->
+
 <!-- ## Compléments optionels -->
 
 <!-- 1. [Complément du TD5](assets/tut5-complement.html) -->

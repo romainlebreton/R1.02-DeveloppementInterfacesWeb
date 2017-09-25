@@ -200,9 +200,9 @@ valeurs recherchées commencent toujours par `(1,...)`.
 nav.titi .tata div div div div div    (1,0,2,6)
 ul li div.skill                       (1,0,1,3)
 .titi span                            (1,0,1,1)
-div span                              (1,0,0,2)
-div > a                               (1,0,0,2)
 div + a                               (1,0,0,2)
+div > a                               (1,0,0,2)
+div span                              (1,0,0,2)
 -->
 
 <div class="exercise"> Quelle est la couleur du texte "Priorité CSS" dans les
@@ -235,6 +235,9 @@ deux cas suivant ? Quelle règle de priorité CSS explique votre réponse ?
      <body><p>Priorité CSS</p></body>
    </html>
    ```
+
+<!-- Couleur rouge puis couleur bleue -->
+
 
 </div>
 

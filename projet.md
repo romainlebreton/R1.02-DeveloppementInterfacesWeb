@@ -6,26 +6,44 @@ layout: tutorial
 
 ## Sujet
 
-Vous devez réaliser le site Web d'une boite fictive avec un **unique** produit /
-logiciel révolutionnaire fictif. <!-- Pas un magasin avec plusieurs produits !
---> La taille des groupes est de 4 personnes au plus. Si vous êtes moins, nous
-attendrons la même quantité de travail.
+Vous devez réaliser le site Web d'une entreprise fictive avec un **unique**
+produit / logiciel révolutionnaire fictif.  La taille des groupes est de 4
+personnes au plus. Si vous êtes moins, nous attendrons la même quantité de
+travail. Si vous êtes plus, vous aurez une petite pénalité.
+
+<!-- Pas un magasin avec plusieurs produits ! -->
 
 ### Emploi du temps prévisionnel :
 
-1. Semaine du 14 Novembre 2017 -- Évaluation ergonomie (20 min) puis lancement du projet
-1. Semaine du 21 Novembre 2017 --
-   TD 5 (1/2) -- Responsive Design (~2h) puis projet (1h)
-1. Semaine du 28 Novembre 2017 --
-   TD 5 (2/2) -- Responsive Design (max 2h) puis projet
-1. Semaine du 05 Décembre 2017 -- projet (3h)
-1. Semaine du 12 Décembre 2017 -- projet (3h)
+<!-- 1. Semaine du 02 Octobre 2017 : -->
+<!--    * [TD 4 -- Les Formulaires](tutorials/tutorial4.html) (~2h) -->
+<!-- 	 ([English version](tutorials/tutorial4-en.html))  -->
+<!--    * puis projet (1h) -->
+<!-- 1. Semaine du 09 Octobre 2017 -- -->
+<!--    * Entamer [TD 5 -- Responsive Design](tutorials/tutorial5.html) (~2h) -->
+<!--    ([English version](tutorials/tutorial5-en.html))  -->
+<!--    * puis projet (1h) -->
+<!-- 1. Semaine du 16 Octobre 2017 -- -->
+<!--    * Finir le [TD 5 -- Responsive Design](tutorials/tutorial5.html) (max 2h) -->
+<!--    ([English version](tutorials/tutorial5-en.html))  -->
+<!--    * puis projet (1h) -->
+<!-- 1. Semaine du 06 Novembre 2017 -- projet (3h) -->
+<!-- 1. Semaine du 13 Novembre 2017 -- projet (3h) -->
+<!-- 1. Semaine du 08 Janvier 2018 -- Soutenances de projet -->
 
-puis
+1. Semaine du 25 Septembre 2017 : TD 4 -- Les Formulaires puis lancement du projet
+1. Semaine du 02 Octobre 2017 : Projet
+1. Semaine du 09 Octobre 2017 : Début TD 5 -- Responsive Design (~2h) puis projet (1h)
+1. Semaine du 16 Octobre 2017 : Fin TD 5 -- Responsive Design puis projet (1h)
+1. Semaine du 23 Octobre 2017 : Cours d'Infographie
+1. Semaine du 06 Novembre 2017 -- projet (3h)
+1. Semaine du 13 Novembre 2017 -- projet (3h)
+1. Semaines du 20 & 27 Novembre et 04 & 11 Décembre : Ergonomie
 
-1. Semaine du 2 Janvier -- Examen écrit (2h max)
-1. 9-10-11 Janvier -- Soutenances projet tutoré (20 min/groupe)
-<!-- 1. ~~Semaine du 16 janvier -- TD installation Joomla (3h)~~ **Annulé** -->
+**Examen & soutenances :**
+
+1. Semaine du 18 Décembre -- Examen écrit (2h max)
+1. Semaine du 8 Janvier -- Soutenances projet tutoré (20 min/groupe)
 
 ### Architecture minimum de votre site :
 
