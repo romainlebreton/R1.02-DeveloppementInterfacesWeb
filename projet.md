@@ -157,7 +157,7 @@ l'un des membres de l'équipe. Un fichier compressé **sources.zip** contenant l
 sources du site Web devra aussi être placé dans le dossier **public_html**.
 
 <!-- Pour mémoire, voici -->
-<!-- [les groupes de projet tutoré](https://docs.google.com/spreadsheets/d/1MSJYHpXNsjZGFl1xLberYLjEJRdtej37z3JFqSnq4fY/edit?usp=sharing) -->
+<!-- [les groupes de projet tutoré](https://docs.google.com/spreadsheets/d/1MPLEN5XZsSCNCMt_4FgzTS8SuXYp2lO2VmAEro4BCpo/edit) -->
 <!-- et leurs produits vendus. -->
 
 ### Détails sur l'examen écrit
