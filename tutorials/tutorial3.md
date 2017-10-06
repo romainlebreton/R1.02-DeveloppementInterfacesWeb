@@ -820,7 +820,8 @@ Il est temps d'avoir un layout (aménagement de l'espace) pour notre site.
     dernier élément aura une marge gauche de `10%`.
  1. Donnez à `<aside>` et à `<article>` la couleur de fond `#CCC`.
 
- <!--
+
+<!--
  1. Dans la page "contact", alignez l'image de Chuck avec l'adresse de contact.
  1. Donnez à l'image la hauteur de `300px`, centrez le texte verticalement.
 -->
