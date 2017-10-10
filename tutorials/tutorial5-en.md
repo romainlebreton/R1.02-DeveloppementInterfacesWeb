@@ -67,7 +67,8 @@ it displays the page (`viewport height`) is not necessarily the height of the
 page [^somesamplefootnote] (and it is linked to the presence of a scrollbar to
 the right to go down the page).
 
-[^somesamplefootnote]: The `vh` unit (for `viewport height`) can be used to define heights relatively to the viewport.
+[^somesamplefootnote]: The `vh` unit (for `viewport height`) can be used to
+    define heights relatively to the viewport.
 
 
 ### `max-width` and `min-width`
@@ -112,7 +113,7 @@ you have
 
 then it displays like this
 
-<div style="display:flex">
+<div style="display:flex;border:1px solid black;">
 <div style="width:50%;max-width:400px;background-color:orange;">
 Div1
 </div>
@@ -171,7 +172,7 @@ default value `auto`.
    
    displays like this
    
-   <div style="display:flex">
+   <div style="display:flex;border:1px solid black;">
    <div style="width:50%;max-width:400px;background-color:orange;">
    Div1
    </div>
@@ -340,11 +341,11 @@ let's focus on the following ones.
 * `min-width`, `max-width`, `min-height` and `max-height` : Say if some
   dimension should be less/greater than some value. For instance
 
-```css
-  @media(min-width:100px) {
-    div {background-color:white;}
-  }
-```
+  ```css
+    @media(min-width:100px) {
+      div {background-color:white;}
+    }
+  ```
 
 * `orientation` : its values are `landscape` (horizontal screen) or `portrait`
   (vertical screen)

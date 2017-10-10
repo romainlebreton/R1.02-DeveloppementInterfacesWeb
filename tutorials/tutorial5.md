@@ -136,28 +136,102 @@ relative. Veux-tu passer plus de choses en taille relative ? -->
 
 ### Overconstraint
 
-Évidemment lorsque l'on joue avec des `min-width` et un petit écran à un moment
-çà dépasse.
+Mais que se passet-t-il quand on mélange `min-width` et des tailles en
+poucentage ? Prenons l'exemple suivant
 
-Il va falloir donc utiliser des règles subtiles pour relâcher une ou des contraintes lorsqu'elles ne peuvent pas être toutes satisfaites (on parle d'overconstraint pour faire bien).
 
-On va utiliser FlexBox pour exprimer cela en se servant de
-[cette super page sur FlexBox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
-Grosso-modo nous avons déjà vu les règles de la colonne de gauche de cette
-page : c'est celles qui s'appliquent au parent.  Nous allons maintenant
-découvrir les règles de droites : celles qui s'appliquent aux éléments. Regardez
-particulièrement les propriétés `flex-shrink`, `flex-grow`. Nous ne toucherons
-pas à `flex-basis` (qui gardera donc son comportement par défaut `auto`).
+```html
+<div style="display:flex">
+	<div style="width:50%;max-width:200px;">
+		Div1
+	</div>
+	<div style="width:50%;">
+		Div2
+	</div>
+</div>
+```
 
-Nous vous invitons à faire d'autres recherches pour mieux comprendre
-`flex-shrink` et `flex-grow` si nécessaire. En particulier, le site du
-[Mozilla Developer Network](https://developer.mozilla.org/fr/) est une mine
-d'information.
+qui s'affiche comme suit
+
+<div style="display:flex;border:1px solid black;">
+<div style="width:50%;max-width:400px;background-color:orange;">
+Div1
+</div>
+<div style="width:50%;background-color: cornflowerblue;">
+Div2
+</div>
+</div>
+
+<br>
+
+<div class="exercise">
+
+**Remarquez** en changeant la largeur de votre fenêtre (ou en zoomant) que :
+
+1. les deux `<div>` prennent toute la largeur quand `<body>` a une largeur
+   inférieure à `800px` (donc le premier `<div>` a une largeur de moins de
+   `400px`)
+2. mais quand la largeur de `<body>` est supérieure à `800px`, alors les deux
+   `<div>` ne remplissent plus toute la largeur de `<body>`.
+
+</div>
+
+
+Nous allons utiliser `display:flex` pour mieux mélanger les tailles relatives et
+les contraintes `min-width`/`max-width`. Nous avions déjà vu les règles de la
+colonne de gauche de
+[cette super page sur FlexBox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+; c'était celles qui s'appliquaient au parent. Nous allons maintenant nous
+pencher sur la colonne de droite qui s'applique aux balises enfants. Regardez
+particulièrement les propriétés `flex-shrink` (valeur par défaut `1`),
+`flex-grow` (valeur par défaut `0`). Pour l'instant, nous ne toucherons pas à
+`flex-basis` (qui gardera donc son comportement par défaut `auto`).
+
+<!-- Nous vous invitons à faire d'autres recherches pour mieux comprendre -->
+<!-- `flex-shrink` et `flex-grow` si nécessaire. En particulier, le site du -->
+<!-- [Mozilla Developer Network](https://developer.mozilla.org/fr/) est une mine -->
+<!-- d'information. -->
 
 <!-- Attention, le comportement de l'exercice précédent est déjà déformé par les
 propriétés par défaut flex-grow:0; flex-shrink:1 -->
 
 <div class="exercise">
+
+1. Lisez la section sur `flex-shrink` et `flex-grow` dans [le guide de
+   FlexBox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) ou tout
+   autre page Web. N'hésitez pas à parler de votre compréhension avec votre
+   professeur.
+
+1. Donnons un exemple d'utilisation de `flex-grow`. Votre boulot est de vérifier
+   que vous comprenez son fonctionnement.
+
+   Nous pouvons désormais résoudre le problème précédent avec `flex-grow:1;`.
+
+   ```html
+   <div style="display:flex">
+   	<div style="width:50%;max-width:200px;">
+   		Div1
+   	</div>
+   	<div style="width:50%;flex-grow:1;">
+   		Div2
+   	</div>
+   </div>
+   ```
+   
+   qui s'affiche comme suit
+   
+   <div style="display:flex;border:1px solid black;">
+   <div style="width:50%;max-width:400px;background-color:orange;">
+   Div1
+   </div>
+   <div style="width:50%;flex-grow:1;background-color: cornflowerblue;">
+   Div2
+   </div>
+   </div>
+
+   Maintenant que la largeur de `<body>` est supérieure à `800px`, alors le
+   second `<div>` voit sa largeur augmenter grâce à `flex-grow:1;`. Donc les
+   deux `<div>` remplissent toujours la largeur de `<body>`.
 
 1. Changez les largeurs de `<article>` et `<aside>` pour qu'elles soient par
 défaut de `300px` et `200px`. Mettez les propriétés `flex-shrink` et `flex-grow`
@@ -274,30 +348,34 @@ tombent sur un site non responsive.
 <div class="exercise">
 
 1. Dans les outils développeurs (`F12`) de Chrome/Chromium, passez dans le
-device mode *"Samsumg Galaxy SIII"* sous Chrome/Chromium et rechargez votre
-page. Constatez que le site s'affiche en tout petit.
+device mode 
+<img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil pour mobile" style="margin: 0 auto;width:45px;vertical-align:middle;">
+*"Samsumg Galaxy S5"* sous Chrome/Chromium et rechargez votre page. Constatez
+que le site s'affiche en tout petit.
 
-**Attention :** En appuyant sur `F12` sur Chrome/Chromium, vous devez voir la
-petite icône <img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil
-pour mobile" style="margin: 0 auto;width:45px;vertical-align:middle;">. Sinon,
-c'est que votre version de Chrome ou Chromium n'est pas à jour. Dans ce cas,
-allez sur le [site de l'IUT](https://iutdepinfo.iutmontp.univ-montp2.fr/),
-identifiez-vous puis téléchargez
-[l'archive suivante](https://infolimon.iutmontp.univ-montp2.fr/public/windows/chrome-win32.zip)
-(à décompresser avec *7-zip*).  Il faudra d'abord fermer toutes vos fenêtres de
-Chrome avant de lancer l'exécutable `chrome.exe` contenu dans l'archive.
+<!-- **Attention :** En appuyant sur `F12` sur Chrome/Chromium, vous devez voir la -->
+<!-- petite icône <img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil -->
+<!-- pour mobile" style="margin: 0 auto;width:45px;vertical-align:middle;">. Sinon, -->
+<!-- c'est que votre version de Chrome ou Chromium n'est pas à jour. Dans ce cas, -->
+<!-- allez sur le [site de l'IUT](https://iutdepinfo.iutmontp.univ-montp2.fr/), -->
+<!-- identifiez-vous puis téléchargez -->
+<!-- [l'archive suivante](https://infolimon.iutmontp.univ-montp2.fr/public/windows/chrome-win32.zip) -->
+<!-- (à décompresser avec *7-zip*).  Il faudra d'abord fermer toutes vos fenêtres de -->
+<!-- Chrome avant de lancer l'exécutable `chrome.exe` contenu dans l'archive. -->
 
-1. Inspectez le `<body>` de votre page pour voir sa largeur.
+<!-- 1. Inspectez le `<body>` de votre page pour voir sa largeur. -->
 
-   <!-- largeur : 980 px sur mon PC -->
+<!--    <\!-- largeur : 980 px sur mon PC -\-> -->
 
-1. Zoomez et dézoomez avec les boutons - et + de <img
-src="{{site.baseurl}}/assets/zoom-button.png" alt="Bouton pour le zoom"
-style="vertical-align:middle"> (émulation du *pinch-to-zoom*). Passez au niveau
-de zoom 1 pour voir le site non zoomé.
+<!-- 1. Zoomez et dézoomez avec les boutons - et + de <img -->
+<!-- src="{{site.baseurl}}/assets/zoom-button.png" alt="Bouton pour le zoom" -->
+<!-- style="vertical-align:middle"> (émulation du *pinch-to-zoom*). Passez au niveau -->
+<!-- de zoom 1 pour voir le site non zoomé. -->
 
 1. Vérifiez que la taille du `<body>` est de `980px`, ce qui signifie que
-   l'algorithme précédent a été utilisé pour l'affichage.
+   l'algorithme précédent a été utilisé pour l'affichage.  
+   Remarquez aussi que la largeur de l'affichage est de `360px`, ce qui signifie
+   d'un zoom arrière est effectué.
 
 </div>
 
@@ -326,6 +404,11 @@ https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes
 
 http://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html
+
+Meta name viewport viendrait de Apple et serait propriétaire
+
+Pré-norme de remplacement avec @viewport dans CSS
+https://www.w3.org/TR/css-device-adapt-1/
 -->
 
 <div class="exercise">
@@ -365,6 +448,7 @@ Il existe deux manières différentes de faire appel à une *media query*:
 
   ```css
   @media(ma_condition) {
+    div {background-color:white;}
      ...
   }
   ```
@@ -378,13 +462,22 @@ base. Parmi
 [l'ensemble des conditions possibles](https://developer.mozilla.org/fr/docs/Web/CSS/Media_queries),
 nous allons nous intéresser particulièrement aux suivantes:
 
-* `min-width`, `max-width`, `min-height` et `max-height` : permettent de renseigner une
-  dimension minimale/maximale à remplir pour que la condition soit vraie.
+* `min-width`, `max-width`, `min-height` et `max-height` : permettent de
+  renseigner une dimension minimale/maximale à remplir pour que la condition
+  soit vraie. Par exemple,
+
+  ```css
+    @media(min-width:100px) {
+      div {background-color:white;}
+    }
+  ```
+
   <!-- Définies dans l'une des unités supportées par le CSS (px, em, cm, in...). Si -->
   <!-- ni “min” ni “max” n'est utilisé, alors la condition se réfère à une taille -->
   <!-- exacte. -->
   <!-- * « color » : le nombre de bits par couleur supportés par l'écran (0 = noir et -->
   <!--   blanc, 8 = 256 couleurs, 16 = 65000 couleurs) -->
+  
 * `orientation` : prend les valeurs `landscape` (écran horizontal) ou `portrait`
   (écran vertical)
 
@@ -417,12 +510,10 @@ hauteur supérieure à `800px`.
 
 <div class="exercise">
 
-* Allez sur le site [Bootstrap](http://getbootstrap.com/) et constatez les 2
-points de ruptures. Aidez-vous du bouton *"media query"* <img
-src="{{site.baseurl}}/assets/media-query-icon.png" alt="Bouton pour découvrir
-les media-query" style="vertical-align:middle">.  
-(Au besoin actualisez la page pour que l'outil puisse correctement émuler le
-comportement sur mobile).
+* Allez sur le site [Bootstrap](http://getbootstrap.com/) et constatez qu'il y a
+  2 largeurs pour laquelle la mise en page change.
+* Utilisez le *device mode* pour afficher les *media queries* (cliquer sur les 3
+  points verticaux du *device mode* pour afficher ces *media queries*).
 * Que se passe-t-il visuellement dans le menu lorsque vous redimensionnnez la
 fenêtre autour du point de rupture situé à `768px` ?
 
@@ -441,7 +532,7 @@ Afin d'organiser nos *media queries*, on utilise en général 3 à 4 valeurs de 
 <div class="exercise">
  1. en dessous de 768px ne plus afficher la table de comparaison (de toute façon
     s'il ne doit rester qu'un seul, ce sera Chuck Norris).
- 1. en dessous de 480px faire en sorte qu'`<aside>` et `<article>` soit en
+ 1. en dessous de 480px faire en sorte qu'`<aside>` et `<article>` soient en
     colonne et plus en ligne.
  1. (Optionnel) Sur une smartwatch (width `168px`), n'affichez que les citations
  de Chuck Norris contenues dans le `<aside>`.
