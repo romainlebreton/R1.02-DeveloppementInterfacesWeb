@@ -28,10 +28,10 @@ Cours à l'IUT de Montpellier - 1ère année
    * Entamer [TD 5 -- Responsive Design](tutorials/tutorial5.html) (~2h)
    ([English version](tutorials/tutorial5-en.html))
    * puis projet (1h)
-<!-- 1. Semaine du 16 Octobre 2017 : -->
-<!--    * Finir le [TD 5 -- Responsive Design](tutorials/tutorial5.html) (max 2h) -->
-<!--    ([English version](tutorials/tutorial5-en.html))  -->
-<!--    * puis projet (1h) -->
+1. Semaine du 16 Octobre 2017 :
+   * Finir le [TD 5 -- Responsive Design](tutorials/tutorial5.html) (max 2h)
+   ([English version](tutorials/tutorial5-en.html))
+   * puis projet (1h)
 <!-- 1. Semaine du 06 Novembre 2017 -- projet (3h) -->
 <!-- 1. Semaine du 13 Novembre 2017 -- projet (3h) -->
 <!-- 1. Semaine du 08 Janvier 2018 -- Soutenances de projet -->
