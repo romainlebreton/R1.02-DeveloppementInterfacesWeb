@@ -125,7 +125,7 @@ Expliquons le rôle de quelques balises de structure:
    référence de la citation.
  * `<p>` : paragraphes de texte
  * `<address>` : coordonnées de contact de l'auteur. Il ne peut y avoir qu'un
-   bloc `<adress>` par article et un pour le restant de la page
+   bloc `<address>` par article et un pour le restant de la page
 
 
 
