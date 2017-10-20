@@ -154,7 +154,9 @@ en TP. Cette grille **peut évoluer** jusqu'à la soutenance.
 
 Le site Web devra être mis en place dans le dossier existant **public_html** de
 l'un des membres de l'équipe. Un fichier compressé **sources.zip** contenant les
-sources du site Web devra aussi être placé dans le dossier **public_html**.
+sources du site Web devra aussi être placé dans le dossier **public_html**.  Il
+n'y a pas de **date de rendu** : votre site Web et ses sources devront juste être
+disponibles au moment de la soutenance.
 
 <!-- Pour mémoire, voici -->
 <!-- [les groupes de projet tutoré](https://docs.google.com/spreadsheets/d/1MPLEN5XZsSCNCMt_4FgzTS8SuXYp2lO2VmAEro4BCpo/edit) -->
