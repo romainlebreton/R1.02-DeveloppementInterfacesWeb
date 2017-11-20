@@ -4,7 +4,7 @@ subtitle: Framework CSS, grille à 12 colonnes
 layout: tutorial
 ---
 
-## Compléments (optionels) au TD
+## Compléments (optionnels) au TD
 
 <!-- ### Responsive images  -->
 <!-- * image responsive avec srcset ? -->
