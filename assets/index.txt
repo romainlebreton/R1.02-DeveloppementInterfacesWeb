@@ -1,8 +1,13 @@
-<!--positionner les balises doctype, html et head ici -->
+<!--positionner les balises doctype, html ici -->
+
+  <!-- Ouvrir la balise head ici -->
+
+    <!-- Mettre un titre au document ici -->
+
+  <!-- Fermer la balise head ici -->
 
 <!-- ouvrir la balise body ici -->
 
-<!-- Mettre un titre au document ici -->
 
 	<!-- utiliser blockquote ici  -->
 	

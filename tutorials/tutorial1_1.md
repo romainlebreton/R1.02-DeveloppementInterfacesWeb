@@ -561,16 +561,6 @@ Nous savons ajouter de la structure à une page HTML avec des balises spécifiqu
 Dans la [partie 2 de ce TD](tutorial1_2.html), nous verrons comment améliorer l'aspect
 du site.
 
-**Remarque :** Pourquoi le fait de rajouter `<h1>` à un titre change
-effectivement l'apparence des titres ? Cela n'est pas à la charge du CSS
-justement ?  
-En fait, les navigateurs appliquent des styles CSS par défaut à certaines
-balises HTML. Par exemple, les liens `<a>` sont en bleus et soulignés sans que
-l'on ait rien à faire. Cela évite d'avoir justement TOUT à refaire en CSS :
-le navigateur propose un style par défaut.
-
-<!-- Dans le devtools, elles s'appelent user agent rules -->
-
 <!-- Pour afficher les extensions de fichier Dans l'explorateur : alt pour
 afficher les menus, outils, options des dossiers, affichage, décocher cacher les
 extentions dont le type est connu -->

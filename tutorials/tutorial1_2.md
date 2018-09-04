@@ -452,7 +452,7 @@ Questions complémentaires :
 ### Le CSS et HTML : des rôles bien distincts et complémentaires
 
 Il y a une séparation claire entre les rôles du HTML (Contenu avec des balises
-pour donner du sens ) et des CSS (présentation / mise en page). Ce choix n'est
+pour donner du sens) et des CSS (présentation / mise en page). Ce choix n'est
 pas évident au premier abord : par exemple votre document "Word" ne sépare pas
 la présentation du contenu. Mais cette séparation est indispensable et très puissante :
 
@@ -464,6 +464,20 @@ la présentation du contenu. Mais cette séparation est indispensable et très p
    toucher au HTML ;
  * Elle permet de changer la présentation d'un document suivant s'il est destiné à
  	l'impression ou à être visualisé avec un navigateur.
+	
+**Un petit piège ?** Quand on entoure un texte de la balise `<h1>`, cela
+signifie que ce texte est un titre. C'est du HTML et donne de la structure. Mais
+cela change aussi l'aspect visuel du texte en le mettant en gros et gras. Or
+nous venons d'insister sur la séparation contenu HTML / présentation CSS, et
+donc que le HTML ne doit pas changer la mise en page. Bizarre non ?
+
+En fait, les navigateurs appliquent des styles CSS par défaut à certaines
+balises HTML. Par exemple, les liens `<a>` sont en bleus et soulignés sans que
+l'on ait rien à faire. Cela évite d'avoir justement TOUT à refaire en CSS : le
+navigateur propose un style par défaut. Cela ne contredit pas le fait que la
+mise en page soit le rôle du CSS.
+
+<!-- Dans le devtools, elles s'appelent user agent rules -->
 
 <!--
 ### Compatibilité des navigateurs
