@@ -193,6 +193,7 @@ Servons-nous donc des balises pour créer une bonne structure de base de documen
 <html>
     <head>
         <!-- L'en-tête du document avec au moins un titre -->
+        <meta charset="utf-8">
         <title>Un titre qui s'affiche dans l'onglet du navigateur</title>
     </head>
     <body>

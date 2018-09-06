@@ -183,6 +183,7 @@ Let us tags to create a well structured HTML document:
 <html>
     <head>
         <!-- The header must include at least a title -->
+        <meta charset="utf-8">
         <title>A title that is displayed in the tab of the browser</title>
     </head>
     <body>
