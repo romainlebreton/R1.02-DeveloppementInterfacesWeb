@@ -318,7 +318,7 @@ différentes sections :
 Par exemple, le titre ci-dessus est obtenu avec le code suivant :
 
 ```html
-<h2>Titres</h2>
+<h3>Titres</h3>
 ```
 
 <div class="exercise">
