@@ -386,11 +386,11 @@ to put. Let us now look at how to stylize it.
 1. Set a background color `#00AAFF` for the header part `thead` of the table.
 1. Give the color purple `#640051` to the text of the skills in the table
    without changing the style of elements with class `skill` outside (see the
-   [section on the selectors]({{site.baseurl}}/tutorials/tutorial2.html#css-composition-rules)).
+   [section on the selectors]({{site.baseurl}}/tutorials/tutorial2-en#css-composition-rules)).
 1. Add a rule so that the background of every other row appears in white and
    the other with the color `#CCC` **without** changing in any way the HTML (see
    the
-   [section on the selectors]({{site.baseurl}}/tutorials/tutorial2.html#css-composition-rules))
+   [section on the selectors]({{site.baseurl}}/tutorials/tutorial2-en#css-composition-rules))
    **Attention:** `<thead>` must remain blue.
 
 </div>

@@ -78,7 +78,7 @@ document HTML (dans la partie `head`) :
 
 
 Nous allons vous présenter quelques [propriétés CSS](#quelques-propriétés-css) et la
-façon de concevoir des [sélecteurs](#les-sélecteurs-css).
+façon de concevoir des [sélecteurs](#les-sélecteurs-css-de-base).
 
 ## Les outils de développement sont vos amis
 
@@ -351,7 +351,7 @@ développement Web que nous verrons l'année prochaine.  Bref vous en aurez au
 partiel, c'est sûr.
 
 Comme vous le savez depuis le
-[TD1 HTML]({{site.baseurl}}/tutorials/tutorial1_1.md) une balise peut prendre des
+[TD1 HTML]({{site.baseurl}}/tutorials/tutorial1_1) une balise peut prendre des
 attributs. Deux attributs sont très importants pour les règles CSS :
 l'identifiant `id` et la classe `class` d'une balise.
 
