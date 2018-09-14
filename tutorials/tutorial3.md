@@ -778,9 +778,9 @@ expertise véritable de l'intégrateur (exemple : le centrage vertical), ou
 comportement des éléments sur l'espace restant, etc.).
 
 Aujourd'hui flexbox est bien implémenté dans
-[les différents navigateurs](https://caniuse.com/#feat=flexbox).  Nous ne vous
-présenterons donc pas d'autres valeurs de display, car elles sont devenues
-inutiles (`display:inline-block`, `display:table`), ni encore moins des
+[les différents navigateurs](https://www.caniuse.com/#search=flexbox).
+Nous ne vous présenterons donc pas d'autres valeurs de display, car elles sont
+devenues inutiles (`display:inline-block`, `display:table`), ni encore moins des
 techniques d'alignement avec des `float`, qui ont toujours été techniquement
 merdiques.
 
@@ -833,7 +833,7 @@ Non car pas de bordure et les espaces ne sont pas affichés avec display:flex
 -->
 
 
-## Cacher ou Enlever un élément du rendu
+## Cacher ou enlever un élément du rendu
 
 
 

@@ -698,9 +698,9 @@ properties were part of a real expertise of the integrator (e.g. vertical
 centering), or were even confined to the realm of fantasy (the justifications,
 the behavior of elements on the remaining space, etc.).
 
-Today flexbox is implemented in
-[many different browsers](http://caniuse.com/#search=flexbox). Therefore we will
-not present some other display values that have become unnecessary
+Today flexbox is implemented in [many different
+browsers](https://www.caniuse.com/#search=flexbox). Therefore we will not
+present some other display values that have become unnecessary
 (`display:inline-block`, `display:table`) or even alignment techniques based on
 `float` which have always been technically crappy.
 

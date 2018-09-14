@@ -17,8 +17,8 @@ Cours à l'IUT de Montpellier - 1ère année
      ([English version](tutorials/tutorial1_2-en.html))
 1. Semaine du 10 Septembre 2018 -- [TD 2 -- CSS Avancés 1/2](tutorials/tutorial2.html)
    ([English version](tutorials/tutorial2-en.html))
-<!-- 1. Semaine du 17 Septembre 2018 -- [TD 3 -- CSS Avancés 2/2](tutorials/tutorial3.html) -->
-<!-- 	 ([English version](tutorials/tutorial3-en.html)) -->
+1. Semaine du 17 Septembre 2018 -- [TD 3 -- CSS Avancés 2/2](tutorials/tutorial3.html)
+	 ([English version](tutorials/tutorial3-en.html))
 <!-- 1. Semaine du 24 Septembre 2018 : -->
 <!--    * [TD 4 -- Les Formulaires](tutorials/tutorial4.html) -->
 <!-- 	 ([English version](tutorials/tutorial4-en.html)) -->
