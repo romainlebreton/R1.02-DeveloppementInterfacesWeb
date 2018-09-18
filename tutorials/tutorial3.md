@@ -139,10 +139,10 @@ de priorité décroissante, nous avons
    * *a*=2 pour les styles inline,
    * *a*=1 pour les styles externes et internes,
    * *a*=0 pour le style par défaut du navigateur.
- * *b* compte le nombre de sélecteur d'identifiant (e.g. `#id`),
- * *c* compte le nombre de sélecteur de classe (e.g. `.skill`) ou pseudo-classes
+ * *b* compte le nombre de sélecteurs d'identifiants (e.g. `#id`),
+ * *c* compte le nombre de sélecteurs de classes (e.g. `.skill`) ou pseudo-classes
    (`:over`,`:visited`,...) <!-- et sélecteur d'attribut -->
- * *d* compte le nombre de sélecteur de balise (e.g. `div`, `span`) ou de
+ * *d* compte le nombre de sélecteurs de balises (e.g. `div`, `span`) ou de
    pseudo-élements (e.g. `::first-letter`, `::after`)
  * les opérateurs de combinaison et le sélecteur universel `*` ne contribuent
    pas à la priorité.
@@ -296,7 +296,7 @@ En pratique, on utilise des éléments de display `block` :
    `<h2>`).
 
 Notez que
-[les balises de structure que l'on a présenté au TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#structuration-de-la-page)
+[les balises de structure que l'on a présentées au TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#structuration-de-la-page)
 ont `display:block` comme style par défaut dans le navigateur, ce qui explique
 qu'elles s'empilent verticalement comme on l'avait expliqué.
 
@@ -317,7 +317,7 @@ Collapsing vertical margins : entre pères & fils, entre frères
 Les éléments inline sont des éléments :
 
  * qui prennent leur taille en fonction de leur contenu,
- * qui ne provoquent pas un saut de ligne, ils sont écrit comme du texte les uns
+ * qui ne provoquent pas un saut de ligne, ils sont écrits comme du texte les uns
    à la suite des autres
  * dont on ne peut pas définir la taille en css via les propriétés `height` et `width`,
 
@@ -330,11 +330,11 @@ En pratique, on utilise des éléments de display `inline` :
  1. lorsque l'on veut positionner des éléments à la suite.
 
 
-Puisque associé au texte (`<strong>`, `<a>`, ...), on trouve en majorité les
+Puisqu'associés au texte (`<strong>`, `<a>`, ...), on trouve en majorité les
 éléments `inline` comme feuilles de l'arborescence du HTML.
 
 Notez que
-[les balises au niveau du texte que l'on a présenté au TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#top-menu)
+[les balises au niveau du texte que l'on a présentées au TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#top-menu)
 ont `display:inline` comme style par défaut dans le navigateur, ce qui explique
 qu'elles se comportent comme du texte.
 
@@ -417,7 +417,7 @@ point de vue du HTML et du CSS :
   [^somesamplefootnote]: En fait le HTML5 permet cette inclusion dans [certains cas](http://html5doctor.com/block-level-links-in-html-5/).
   
 >   Inclure des éléments `block` dans des éléments `inline` n'est pas conforme
->   en HTML[^somesamplefootnote], mais cela l'est du point du vue du CSS.  En
+>   en HTML[^somesamplefootnote], mais cela l'est du point de vue du CSS.  En
 >   modifiant la propriété `display` d'un élément, nous pouvons donc inclure des
 >   éléments `block` dans des éléments `inline`. Mais modifier sempiternellement
 >   le `display` naturel du HTML signifie que l'on n'a pas utilisé la bonne
