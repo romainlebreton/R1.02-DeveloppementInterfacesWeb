@@ -624,7 +624,7 @@ top:20px;
 left:20px; 
 ```
 
-vont positionner un élément `20px` plus à droite et en bas qu'il n'aurait dû l'être.
+vont positionner un élément `20px` plus à droite et en bas qu'il aurait dû l'être.
 
 Référence : [Mozilla Developer Network (MDN)](https://developer.mozilla.org/fr/docs/Web/CSS/position)
 
