@@ -15,35 +15,21 @@ travail. Si vous êtes plus, vous aurez une petite pénalité.
 
 ### Emploi du temps prévisionnel :
 
-<!-- 1. Semaine du 02 Octobre 2017 : -->
-<!--    * [TD 4 -- Les Formulaires](tutorials/tutorial4.html) (~2h) -->
-<!-- 	 ([English version](tutorials/tutorial4-en.html))  -->
-<!--    * puis projet (1h) -->
-<!-- 1. Semaine du 09 Octobre 2017 -- -->
-<!--    * Entamer [TD 5 -- Responsive Design](tutorials/tutorial5.html) (~2h) -->
-<!--    ([English version](tutorials/tutorial5-en.html))  -->
-<!--    * puis projet (1h) -->
-<!-- 1. Semaine du 16 Octobre 2017 -- -->
-<!--    * Finir le [TD 5 -- Responsive Design](tutorials/tutorial5.html) (max 2h) -->
-<!--    ([English version](tutorials/tutorial5-en.html))  -->
-<!--    * puis projet (1h) -->
-<!-- 1. Semaine du 06 Novembre 2017 -- projet (3h) -->
-<!-- 1. Semaine du 13 Novembre 2017 -- projet (3h) -->
-<!-- 1. Semaine du 08 Janvier 2018 -- Soutenances de projet -->
-
-1. Semaine du 25 Septembre 2017 : TD 4 -- Les Formulaires puis lancement du projet
-1. Semaine du 02 Octobre 2017 : Projet
-1. Semaine du 09 Octobre 2017 : Début TD 5 -- Responsive Design (~2h) puis projet (1h)
-1. Semaine du 16 Octobre 2017 : Fin TD 5 -- Responsive Design puis projet (1h)
-1. Semaine du 23 Octobre 2017 : Cours d'Infographie
-1. Semaine du 06 Novembre 2017 -- projet (3h)
-1. Semaine du 13 Novembre 2017 -- projet (3h)
-1. Semaines du 20 & 27 Novembre et 04 & 11 Décembre : Ergonomie
+1. Semaine du 24 Septembre 2018 : TD 4 -- Les Formulaires puis lancement du projet
+1. Semaine du 01 Octobre 2018 : Projet
+1. Semaine du 08 Octobre 2018 : Début TD 5 -- Responsive Design (~2h) puis projet (1h)
+1. Semaine du 15 Octobre 2018 : Fin TD 5 -- Responsive Design puis projet (1h)
+1. Semaine du 22 Octobre 2018 : Pas de TD pour cause de partiels (pas en HTML mais dans les autres matières)
+1. Semaine du 29 Octobre 2018 : Vacances
+1. Semaine du 05 Novembre 2018 -- projet (3h)
+1. Semaine du 12 Novembre 2018 : Cours d'Infographie
+1. Semaine du 19 Novembre 2018 -- projet (3h)
+1. Semaines du 26 Novembre et 03 & 10 & 17 Décembre : Ergonomie
 
 **Examen & soutenances :**
 
-1. Semaine du 18 Décembre -- Examen écrit (2h max)
-1. Semaine du 8 Janvier -- Soutenances projet tutoré (20 min/groupe)
+1. 7, 8 ou 9 Janvier -- Examen écrit (~1h30)
+1. 10 ou 11 Janvier -- Soutenances projet tutoré (20 min/groupe)
 
 ### Architecture minimum de votre site :
 
@@ -83,34 +69,6 @@ questions et réponses plus bas dans la page (utilisation des ancres).
 <!-- Équipe : Cette page sera responsive: présentation en grille si grande page ou liste si visualisation sur mobile. -->
 <!-- - une page simple de site "under construction"/"coming soon", -->
 
-### Consignes générales
-
-1. le site sera responsive. Au minimum le menu s'adaptera à la taille de la
-   page. De plus la page **Équipe** doit être responsive : la présentation se
-   fera en grille sur une grande page ou en liste quand la page est trop petite.
-1. le site sera encodé en UTF8.
-1. les codes CSS et HTML seront correctement indentés. 
-1. Le texte LOREM IPSUM est autorisé. Ne perdez pas trop de temps à inventer du
-    contenu à votre site. <!-- under construction, ne pas passer trop de temps
-    sur le contenu -->
-1. le site doit être valide HTML5 et CSS3, et bien structuré à l’aide des
-   balises de structuration : header, nav, main, article, aside, footer, div.
-1. l’utilisation de framework tels que bootstrap, foundation, etc. n’est pas autorisée. 
-1. la liste des display autorisés est : block, inline, flex et none.
-1. l’utilisation des float ou des tableaux n’est pas autorisée pour la mise en
-   page, c'est-à-dire par exemple pour mettre une colonne à côté d'une autre
-   ... Par contre, on peut bien sûr s'en servir pour son usage historique :
-   entourer une image de texte.
-1. le visuel du site (charte graphique) doit être cohérent sur toutes les pages du site. 
-<!-- 1. Un seul fichier CSS pour toutes les pages. -->
-1. Le CSS devra être synthétique: Par exemple, il devra privilégier
-   l’utilisation des classes en CSS à l’usage d’identifiant et de règles qui ne
-   s’appliquent qu’à un seul élément.
-1. L’utilisation de CSS dans le style inline est interdit. 
-1. Il est très facile de perdre des heures sur un petit détail en CSS. Il est
-   important d'avoir d'abord un site grossièrement fini plutôt qu'une section de
-   page parfaite.
-
 ## Modalités de contrôle
 
 Le projet compte pour deux modules ; en effet le projet tutoré de S1 est adossé
@@ -140,6 +98,45 @@ table.controle {
 
 </style>
 
+### Consignes générales
+
+Le but pédagogique de ce projet est de mettre en application toutes les
+techniques que vous avez apprises lors des TDs. Voici donc
+[les critères sur lesquels vous serez
+notés.](https://docs.google.com/spreadsheets/d/1CHQ6imNxRFWHETmVZbRyPIxg8hV8nVrNcHthe1TGHxg/edit?usp=sharing)
+
+<!-- Cette grille **peut évoluer** jusqu'à la soutenance. -->
+
+1. les codes CSS et HTML seront lisibles et correctement indentés. L’utilisation
+   de CSS de style inline est interdit.
+1. les codes CSS seront divisés entre plusieurs fichiers de style, selon ce à
+   quoi il s'applique, si il est commun à toutes les pages...
+   <!-- En faire un attendu ? -->
+1. Le texte 
+   ["LOREM IPSUM ..."](https://www.qwant.com/?q=lorem+ipsum&client=opensearch)
+    est autorisé. Ne perdez pas trop de temps à inventer du contenu à votre
+    site. <!-- under construction, ne pas passer trop de temps sur le contenu
+    -->
+1. le visuel du site (charte graphique) doit être cohérent sur toutes les pages du site.
+1. l’utilisation de framework tels que bootstrap, foundation, etc. n’est pas autorisée. 
+1. l’utilisation des *float* ou des tableaux n’est pas autorisée pour la mise en
+   page, c'est-à-dire par exemple pour mettre une colonne à côté d'une autre
+   ... Par contre, on peut bien sûr se servir de *float* pour son usage
+   historique : entourer une image de texte.
+1. le site sera responsive. Au minimum le menu s'adaptera à la taille de la
+   page. De plus la page **Équipe** doit être responsive : la présentation se
+   fera en grille sur une grande page ou en liste verticale quand la page est
+   trop petite.
+
+<!-- 1. la liste des display autorisés est : block, inline, flex et none. -->
+<!-- <\!-- 1. Un seul fichier CSS pour toutes les pages. -\-> -->
+<!-- 1. Le CSS devra être synthétique: Par exemple, il devra privilégier -->
+<!--    l’utilisation des classes en CSS à l’usage d’identifiant et de règles qui ne -->
+<!--    s’appliquent qu’à un seul élément. -->
+<!-- 1. Il est très facile de perdre des heures sur un petit détail en CSS. Il est -->
+<!--    important d'avoir d'abord un site grossièrement fini plutôt qu'une section de -->
+<!--    page parfaite. -->
+
 ### Détails de la soutenance
 
 La soutenance sera composée d'une série questions sur votre projet (Qu'est-ce
@@ -147,20 +144,12 @@ qui a été implémenté ? Qui a fait quoi ? Expliquez ce qui a été codé. ) e
 possiblement des questions de cours à chacun des membres de votre groupe. Il n’y
 a **pas** de rapport à écrire, ni de présentation à préparer.
 
-Voici
-[la grille de notation](https://docs.google.com/spreadsheets/d/1C_zVXJytwIJ9EVgveuuzpiyS7qjHLG0_BmbPLpxxdsk/edit?usp=sharing)
-qui sera utilisée pour vous noter et qui est basée sur les compétences acquises
-en TP. Cette grille **peut évoluer** jusqu'à la soutenance.
 
 Le site Web devra être mis en place dans le dossier existant **public_html** de
 l'un des membres de l'équipe. Un fichier compressé **sources.zip** contenant les
 sources du site Web devra aussi être placé dans le dossier **public_html**.  Il
 n'y a pas de **date de rendu** : votre site Web et ses sources devront juste être
 disponibles au moment de la soutenance.
-
-<!-- Pour mémoire, voici -->
-<!-- [les groupes de projet tutoré](https://docs.google.com/spreadsheets/d/1MPLEN5XZsSCNCMt_4FgzTS8SuXYp2lO2VmAEro4BCpo/edit) -->
-<!-- et leurs produits vendus. -->
 
 ### Détails sur l'examen écrit
 
