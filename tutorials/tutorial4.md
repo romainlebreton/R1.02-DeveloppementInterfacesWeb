@@ -135,7 +135,7 @@ Il serait bien de préciser à l'utilisateur à quoi notre champ `<input>` fait 
     `sendToMySecondYearInIut.php?uname=dupont&firstname=super` et la `method` du
     formulaire doit toujours être `get`).
  1. Les deux champs apparaissent les uns à la suite des autres. Avec quelle
-    balise vue dans le TD précédent peut-on les englober pour qu'il y est un saut
+    balise vue dans le TD précédent peut-on les englober pour qu'il y ait un saut
     de ligne entre les deux ?
 
 </div>
@@ -147,8 +147,7 @@ Il existe un assez grand nombre de types d'input :
 
  * Le type `radio` permet de ne sélectionner qu'une seule des options
 possibles.
- * Le type `checkbox` (case à cocher) permettent de sélectionner autant des
-   options que l'utilisateur le souhaite.
+ * Le type `checkbox` (case à cocher) permettent de sélectionner autant d'options que l'utilisateur le souhaite.
  * Le type `password` masque automatiquement les caractères entrés.
  * Les types `email`, `URL`, `tel`, `date`, `time` et `number`, etc. permettent
  d'adapter le clavier virtuel quand la page est affichée sur un smartphone.
@@ -184,7 +183,7 @@ est la version d'Internet Explorer encore en cours sur votre parc ?"). Le site
 tel ou tel aspect pour la réalisation d'un site. Les types `date` et `time` par
 exemple sont [plus ou moins bien supportés](http://caniuse.com/#search=date) par
 les navigateurs. Le type `number` l'est
-[un peu plus](http://caniuse.com/#search=number). Vous pouvez constatez quelques différences d'apparence dans votre formulaire suivant si vous êtes sur Chrome, Firefox, Internet Explorer ou Edge.
+[un peu plus](http://caniuse.com/#search=number). Vous pouvez constater quelques différences d'apparence dans votre formulaire suivant si vous êtes sur Chrome, Firefox, Internet Explorer ou Edge.
 
  * A propos du mot de passe, remarquez que ce dernier
 apparaît en clair dans l'URL si vous êtes en `get` lors de l'envoi via à
@@ -311,9 +310,9 @@ de vérifier le contenu du formulaire:
   s'assurer qu'un numéro de téléphone respecte bien les règles de numérotation
   françaises, tandis que le pattern `[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,4}`
   bloquera les erreurs d'adresse email les plus grossières. Vous trouverez de
-  nombreux exemples de patterns utilisables dans ce cas du
+  nombreux exemples de patterns utilisables sur le site
   [HTML5pattern](http://html5pattern.com/).  
-  **Note :** les patterns HTML sont automatiquement évalués contre la totalité de
+  **Note :** les patterns HTML sont automatiquement évalués sur la totalité de
   l'entrée. Il est donc inutile de les encadrer entre ^ et $ comme une
   expression régulière classique.
 
@@ -321,7 +320,7 @@ de vérifier le contenu du formulaire:
  1. Rendre la coche "J'ai bien lu les clauses que je n'ai pas lues" obligatoire. Vérifiez si l'envoi du formulaire est bien impossible alors.
  1. Rendre aussi les champs "Nom" "Mot de passe" et "Email" obligatoires.
  1. Par convention d'usage, le nom des champs obligatoires est suivi d'une "*". Ajoutez la aux labels des `<input>` obligatoires.
- 1. Ajoutez au champ password un pattern pour que ne soit accepter que des caractères de l'alphabet latin ou numériques.
+ 1. Ajoutez au champ password un pattern pour que ne soient acceptés que des caractères de l'alphabet latin ou numériques.
  1. Faites en sorte que le mot de passe acceptable soit d'une longueur de 8 caractères minimum.
  <!-- 1. (optionnel) Ajoutez un pattern au champ mot de passe afin que celui-ci contienne obligatoirement 8 ou plus caractères avec au moins un chiffre, une lettre majuscule et une lettre minuscule.
 -->
