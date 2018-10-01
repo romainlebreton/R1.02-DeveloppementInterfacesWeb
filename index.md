@@ -23,7 +23,7 @@ Cours à l'IUT de Montpellier - 1ère année
    * [TD 4 -- Les Formulaires](tutorials/tutorial4.html)
 	 ([English version](tutorials/tutorial4-en.html))
    * puis [lancement du projet](projet.html)
-<!-- 1. Semaine du 01 Octobre 2018-- [Projet](projet.html) -->
+1. Semaine du 01 Octobre 2018-- [Projet](projet.html)
 <!-- 1. Semaine du 08 Octobre 2018 : -->
 <!--    * Entamer [TD 5 -- Responsive Design](tutorials/tutorial5.html) (~2h) -->
 <!--    ([English version](tutorials/tutorial5-en.html)) -->
