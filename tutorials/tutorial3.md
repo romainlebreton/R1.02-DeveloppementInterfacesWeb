@@ -854,7 +854,9 @@ Voyons un usage de `visibility:hidden` :
 ```html
 <span class="puce">■</span>
 ```
-Elle se positionne à gauche du texte, elle n'est visible que lorsque la souris survole le `<div>` contenenant. Dans le cas contraire l'espace reste occupé (pour ne pas faire un effet de flicker/tremblement au survol du menu)
+Elle se positionne à gauche du texte, elle n'est visible que lorsque la souris
+survole le `<div>` contenant. Dans le cas contraire l'espace reste occupé (pour
+ne pas faire un effet de flicker/tremblement au survol du menu)
 
 
 1. Ajoutez cette puce devant le texte des liens `<a>`,
