@@ -86,7 +86,7 @@ an optimal rendering:
  `width` and `height`.
 
 <div class="exercise">
-1. Set a minimal width of `150px` to the pictures of Chuck Norris.
+<!-- 1. Set a minimal width of `150px` to the pictures of Chuck Norris. -->
 1. Set a maximal width to `<article>` and `<aside>` of respectively `500px` and
    `250px`.
 1. Set a minimal width to `<article>` and `<aside>` of respectively `200px` and
@@ -102,7 +102,7 @@ you have
 
 ```html
 <div style="display:flex">
-	<div style="width:50%;max-width:200px;">
+	<div style="width:50%;max-width:400px;">
 		Div1
 	</div>
 	<div style="width:50%;">
@@ -161,7 +161,7 @@ default value `auto`.
 
    ```html
    <div style="display:flex">
-   	<div style="width:50%;max-width:200px;">
+   	<div style="width:50%;max-width:400px;">
    		Div1
    	</div>
    	<div style="width:50%;flex-grow:1;">

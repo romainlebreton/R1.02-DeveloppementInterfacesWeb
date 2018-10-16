@@ -5,10 +5,6 @@ layout: tutorial
 ---
 
 <!--
-Expliquer le pb de l'overconstraint comme en anglais
--->
-
-<!--
 Où est-il dit que poucentage relatif au containing block ?
 tut3 : le redire ici !
 -->
@@ -82,9 +78,19 @@ particulièrement fournis et/ou sur des petits écrans 15 pouces.
 
 ### Les pourcentages '%'
 
-On peut commencer par exprimer toutes les tailles en relatif, en prenant comme
-référence la largeur de l'écran. C'est ce que nous avons déjà fait en utilisant
-des dimensions en `%`.
+On peut commencer par exprimer toutes les tailles en relatif. C'est ce que nous
+avons déjà fait en utilisant des dimensions en `%`. [Rappelez
+vous]({{site.baseurl}}/tutorials/tutorial3#exercices) que la largeur d'un
+élément en `display:block` ou en `display:flex` se calcule par rapport à son
+*containing block*, c'est-à-dire son plus proche ancêtre `block` ou `flex`. Par
+défaut, les éléments en `block` ou `flex` prennent toute la largeur de leur
+*containing block*. Et si on fixe une largeur en pourcentage, ce sera
+relativement à la largeur du *containing block*.
+
+<!-- 
+A-t-on un "vrai" exemple où on fixe une largeur (donc l'élément est block ou
+flex) et où le containing block n'est pas le père ?
+-->
 
 <div class="exercise">
 
@@ -125,10 +131,11 @@ type de valeur que `width` et `height`.
 
 
 <div class="exercise">
-1. Ajoutez une limite minimale pour les photos de Chuck Norris à `150px` (et
-   encore, mieux vaut ne pas en parler à Chuck).
-   <!-- ATTENTION : on n'a pas encore fixé la taille de l'image comme étant
-relative. Veux-tu passer plus de choses en taille relative ? -->
+<!-- 1. Ajoutez une limite minimale pour les photos de Chuck Norris à `150px` de -->
+<!--    hauteur (et encore, mieux vaut ne pas en parler à Chuck).   -->
+<!--    <\!-- ATTENTION : -->
+<!--    on n'a pas encore fixé la taille de l'image comme étant relative. Veux-tu -->
+<!--    passer plus de choses en taille relative ? -\-> -->
 1. Ajoutez une limite maximum de largeur à `<article>` et à `<aside>` de `500px` et de `250px`.
 1. Ajoutez une limite minimum de largeur à `<article>` et à `<aside>` de `200px` et `150px`.
 </div>
@@ -142,7 +149,7 @@ poucentage ? Prenons l'exemple suivant
 
 ```html
 <div style="display:flex">
-	<div style="width:50%;max-width:200px;">
+	<div style="width:50%;max-width:400px;">
 		Div1
 	</div>
 	<div style="width:50%;">
@@ -172,7 +179,9 @@ Div2
    inférieure à `800px` (donc le premier `<div>` a une largeur de moins de
    `400px`)
 2. mais quand la largeur de `<body>` est supérieure à `800px`, alors les deux
-   `<div>` ne remplissent plus toute la largeur de `<body>`.
+   `<div>` ne remplissent plus toute la largeur de `<body>`. Div2 garde une
+   largeur de 50% mais Div1 ne peut plus prendre les `50%` restant car il est
+   contraint par sa largeur maximale de `400px`.
 
 </div>
 
@@ -209,7 +218,7 @@ propriétés par défaut flex-grow:0; flex-shrink:1 -->
 
    ```html
    <div style="display:flex">
-   	<div style="width:50%;max-width:200px;">
+   	<div style="width:50%;max-width:400px;">
    		Div1
    	</div>
    	<div style="width:50%;flex-grow:1;">
