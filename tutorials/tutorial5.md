@@ -36,7 +36,7 @@ Exemple utilisation flex-grow/shrink non triviale : solved by flex
 
 Les smartphones, les tablettes et tous les appareils de la mobilité demandent de
 repenser le web d'aujourd'hui. Concevoir un site ou une application Web
-s'adressant à tous ces médias n'est pas une tache triviale. Voici un aperçu des
+s'adressant à tous ces médias n'est pas une tâche triviale. Voici un aperçu des
 nombreuses solutions existantes :
 
 * Une solution en pur CSS. En effet, le CSS est le langage de base pour la mise
@@ -65,7 +65,7 @@ deux hypothèses de départ :
 
 * *"Il n'y a pas besoin d'applications pour cela !"* : Pas besoin de faire du
    natif Android ou iOS.
-* *"Il n'y a pas besoin de faire deux sites web pour cela!"* : On s'interdit de
+* *"Il n'y a pas besoin de faire deux sites web pour cela !"* : On s'interdit de
    faire un site Web pour mobile et un pour ordinateur.
 
 
@@ -88,7 +88,7 @@ des dimensions en `%`.
 
 <div class="exercise">
 
-1. Donnez à `<body>` la `width` de `100%`. Donner à la propriété `margin` la valeur `auto` si ce n'est pas le cas.
+1. Donnez à `<body>` la `width` de `100%`. Donnez à la propriété `margin` la valeur `auto` si ce n'est pas le cas.
 1. Enlevez au besoin la marge de gauche de `10%` sur le `<aside>` et changez les
    dimensions relatives de `<article>` et `<aside>` à respectivement `67%` et
    `33%`.
@@ -99,7 +99,7 @@ des dimensions en `%`.
 **Note :** Si adapter les largeurs en pourcentage marche bien, ce n'est pas le
 cas des hauteurs.  Cela est dû au fait que la largeur de la page est connue
 (c'est la largeur de la fenêtre d'affichage du navigateur) mais sa hauteur ne
-l'est pas encore ... (puisque la page n'est pas encore affichée et que la
+l'est pas encore... (puisque la page n'est pas encore affichée et que la
 hauteur va dépendre de la quantité de contenu). Autrement dit, la hauteur de la
 zone du navigateur où s'affiche la page (`viewport height`) n'est pas forcément
 la hauteur de la page [^somesamplefootnote] (et c'est lié à la présence d'un
@@ -125,7 +125,7 @@ type de valeur que `width` et `height`.
 
 
 <div class="exercise">
-1. Ajoutez une limite minimale pour les photos de Chuck Norris à `150px`, (et
+1. Ajoutez une limite minimale pour les photos de Chuck Norris à `150px` (et
    encore, mieux vaut ne pas en parler à Chuck).
    <!-- ATTENTION : on n'a pas encore fixé la taille de l'image comme étant
 relative. Veux-tu passer plus de choses en taille relative ? -->
@@ -252,8 +252,8 @@ pour ces deux éléments à `0`.
    Inspectez maintenant les largeurs de `<article>` et `<aside>` pour vérifier votre calcul.
    <!-- Réponse : article 390 px et aside 230px car 120px de rab réparti en 30px de rab par unité -->
 
-1.  Nous souhaitons que quand l'écran est trop petit, `<article>` diminuera de
-    deux tiers de la largeur à supprimer et `<aside>` diminuera du reste.  
+1.  Nous souhaitons que quand l'écran est trop petit, `<article>` diminue de
+    deux tiers de la largeur à supprimer et `<aside>` diminue du reste.  
    **Quelle propriété** CSS devez-vous utiliser pour avoir ce comportement ?
    Implémentez ce comportement.
 
@@ -313,7 +313,7 @@ peu meilleur :
   * plus rapide, plus stable (un processus par onglet)
   * etc.
 
-En tout cas, pour le Reponsive design il n'y a pas photo : Chrome (ou son
+En tout cas, pour le *reponsive design* il n'y a pas photo : Chrome (ou son
 pendant libre Chromium) est <strong>vraiment</strong> votre "best-friend-ever".
 
 
