@@ -136,7 +136,7 @@ relative. Veux-tu passer plus de choses en taille relative ? -->
 
 ### Overconstraint
 
-Mais que se passet-t-il quand on mélange `min-width` et des tailles en
+Mais que se passe-t-il quand on mélange `min-width` et des tailles en
 poucentage ? Prenons l'exemple suivant
 
 
