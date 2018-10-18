@@ -37,9 +37,9 @@ Cours à l'IUT de Montpellier - 1ère année
 <!-- 1. Semaine du 19 Novembre 2018 -- projet (3h) -->
 <!-- 1. Semaine du 07 Janvier 2019 -- Soutenances de projet -->
 
-<!-- ## Compléments optionnels -->
+## Compléments optionnels
  
-<!-- 1. [Complément du TD5](assets/tut5-complement.html) -->
+1. [Complément du TD5](assets/tut5-complement.html)
 
 ## Instructions du projet
 
