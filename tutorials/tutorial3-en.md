@@ -124,7 +124,7 @@ The *priority of a CSS selector* is a value *(a, b, c, d)* defined as follows:
    * *a*=0 for default browser style.
  * *b* counts the number of identifier selectors (e.g. `#id`),
  * *c* counts the number of class selectors (e.g. `.skill`) or pseudo-class
-   selectors (`:over`, `:visited`,...)
+   selectors (`:hover`, `:visited`,...)
  * *d* counts the number of tag selectors (e.g. `div`, `span`) or pseudo-element
    selectors (e.g. `::first-letter`, `::after`)
  * combinators and the universal selector `*` have no impact on the priority.

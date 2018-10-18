@@ -141,7 +141,7 @@ de priorité décroissante, nous avons
    * *a*=0 pour le style par défaut du navigateur.
  * *b* compte le nombre de sélecteurs d'identifiants (e.g. `#id`),
  * *c* compte le nombre de sélecteurs de classes (e.g. `.skill`) ou pseudo-classes
-   (`:over`,`:visited`,...) <!-- et sélecteur d'attribut -->
+   (`:hover`,`:visited`,...) <!-- et sélecteur d'attribut -->
  * *d* compte le nombre de sélecteurs de balises (e.g. `div`, `span`) ou de
    pseudo-élements (e.g. `::first-letter`, `::after`)
  * les opérateurs de combinaison et le sélecteur universel `*` ne contribuent
