@@ -57,8 +57,8 @@ avec photo et courte biographie pour chacun.
 
 1. **Nous rejoindre :** Une page qui renvoie sur différentes fiches d'offres de
 postes de l'entreprise. Chaque offre de poste aura sa propre page Web présentant
-le métier du poste. Le menu "Nous Rejoindre" contiendra un sous-menu déroulant
-du type :
+le métier du poste. L'item "Nous Rejoindre" du menu contiendra un sous-menu
+déroulant du type :
 
    1. Métier 1
    1. Métier 2
