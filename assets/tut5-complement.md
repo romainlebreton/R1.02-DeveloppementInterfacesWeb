@@ -11,7 +11,7 @@ layout: tutorial
 
 ### Les framework CSS
 
-Dans vos futurs projets Web, vous serez sûrement amener à utiliser des framework
+Dans vos futurs projets Web, vous serez sûrement amenés à utiliser des framework
 CSS tels que [Foundation](http://foundation.zurb.com/) et
 [Bootstrap](http://getbootstrap.com/css/). Ces logiciels vous donneront accès à
 un certain nombre éléments d'interface CSS clés en main pour pouvoir concevoir
@@ -35,12 +35,12 @@ Nous suivrons la présentation des fonctionnalités faites dans [le système de 
 
 Le système de grille permet de créer une boîte `<div>` qui se partitionne en
 plusieurs colonnes. La largeur de ces colonnes est indiquée par un entier,
-sachant que la largeur totale est de 12 unité. Selon la largeur totale de
+sachant que la largeur totale est de 12 unités. Selon la largeur totale de
 l'affichage (`small` si `<640px`, `medium` pour `<1024px` et `large` sinon) nous
 pouvons définir des largeurs variables pour nos colonnes.
 
 **Exemple :** Le HTML suivant sert (en Foundation) à créer une boîte (de classe
-  `row`) qui sera divisé en deux colonnes dont la largeur dépend de la taille de
+  `row`) qui sera divisée en deux colonnes dont la largeur dépend de la taille de
   l'écran.
 
 ```html
@@ -77,7 +77,7 @@ taille des colonnes varier selon la taille de l'écran.
 
 #### Dimensionnement avancé
 
-La classe `columns` permet de définir le comportement par défaut *"je prend la
+La classe `columns` permet de définir le comportement par défaut *"je prends la
 place restante"*. Si plusieurs éléments ont la classe colonne, alors ils se
 partagent équitablement la largeur restante.
 
@@ -110,7 +110,7 @@ Whatever's left!
 précédemment), pour découvrir les points de rupture de la page. Observez la
 taille des colonnes varier selon la taille de l'écran.
 
-1. Pour cet exemple précis, combien d'unité prennent respectivement les trois
+1. Pour cet exemple précis, combien d'unités prennent respectivement les trois
 colonnes selon si l'écran est `small`, `medium` ou `large` ?
 
    <!-- small 2/5/5, medium et large 4/4/4  -->
@@ -186,7 +186,7 @@ de passer à la ligne quand elle est pleine.
 #### Autres
 
 Nous vous laissons trouver par vous-même à quelles propriétés du Flexbox model
-correspondent la fonctionnalités d'après. Vous pouvez toujours inspecter le CSS
+correspondent les autres fonctionnalités. Vous pouvez toujours inspecter le CSS
 sur le site de Foundation pour découvrir la réponse et apprendre de nouvelles
 techniques.
 
