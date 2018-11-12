@@ -33,9 +33,9 @@ Cours à l'IUT de Montpellier - 1ère année
    ([English version](tutorials/tutorial5-en.html))
    * puis [projet](projet.html) (1h)
 1. Semaine du 05 Novembre 2018 -- [Projet](projet.html) (3h)
-<!-- 1. Semaine du 12 Novembre 2018 -- Infographie -->
-<!-- 1. Semaine du 19 Novembre 2018 -- [Projet](projet.html) (3h) -->
-<!-- 1. Semaine du 07 Janvier 2019 -- Soutenances de projet -->
+1. Semaine du 12 Novembre 2018 -- Infographie
+1. Semaine du 19 Novembre 2018 -- [Projet](projet.html) (3h)
+1. Semaine du 07 Janvier 2019 -- Soutenances de projet
 
 ## Compléments optionnels
  
