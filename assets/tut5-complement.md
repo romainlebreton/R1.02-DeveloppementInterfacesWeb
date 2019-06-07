@@ -29,7 +29,7 @@ facilement le modèle de grille. **Attention :** Nous n'utiliserons pas ces
 frameworks dans ce cours (et encore moins dans le projet) mais nous souhaitons
 démystifier leur fonctionnement.
 
-Nous suivrons la présentation des fonctionnalités faites dans [le système de grille à 12 colonnes](le système de grille à 12 colonnes).
+Nous suivrons la présentation des fonctionnalités faites dans [le système de grille à 12 colonnes](https://getbootstrap.com/docs/3.4/css/#grid).
 
 #### Les bases
 

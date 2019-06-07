@@ -39,7 +39,7 @@ Cours à l'IUT de Montpellier - 1ère année
 
 ## Compléments optionnels
  
-1. [Complément du TD5](assets/tut5-complement.html)
+1. [Coder des colonnes responsive à la Bootstrap](assets/tut5-complement.html)
 
 ## Instructions du projet
 
