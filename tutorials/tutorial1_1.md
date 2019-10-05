@@ -34,6 +34,27 @@ que l'on peut ajouter à notre contenu brut. Nous verrons ensuite dans la
 [deuxième partie du TD](tutorial1_2.html) comment atteindre le rendu proposé par
 [target.png]({{site.baseurl}}/assets/target.png) en réalisant un fichier CSS.
 
+<div class="exercise">
+
+Avant toute chose, nous allons nous servir de ce que nous avons appris dans
+[l'introduction à
+Git](https://gitlabinfo.iutmontp.univ-montp2.fr/valicov/tutoGit1ereAnnee/blob/master/README.md)
+et créer un projet Git pour stocker les fichiers des TDs. Cela aura des
+avantages : vous pourrez y accéder de chez vous, garder une trace de
+votre avancée grâce aux messages de commit, ...
+
+1. Allez sur le [GitLab de l'IUT](https://gitlabinfo.iutmontp.univ-montp2.fr/)
+   puis créez un projet HTMLCSS.
+   
+1. Dans un terminal, clonez votre projet git et ajoutez-y un dossier `TD1` :
+   ```sh
+   ~$ git clone git@gitlabinfo.iutmontp.univ-montp2.fr:votre_login/htmlcss.git HTMLCSS
+   ~$ cd HTMLCSS
+   ~/HTMLCSS$ mkdir TD1
+   ```
+
+</div>
+
 
 ## Transformation d'un document texte en un document HTML
 
@@ -59,7 +80,7 @@ l'extension `.html` pour que le navigateur comprenne qu'il doit l'interpréter
 comme un document HTML.
 
 1. Sauvegardez le fichier [index.txt]({{site.baseurl}}/assets/index.txt) en
-   local dans un dossier `HTMLCSS/TD1/`.  
+   local dans le dossier `HTMLCSS/TD1/`.  
    Sauvegardez le même fichier [index.txt]({{site.baseurl}}/assets/index.txt) en
    local dans le dossier `HTMLCSS/TD1/` en **le renommant** `index.html`.
 
@@ -250,6 +271,15 @@ l'arbre est le suivant :
    ci-dessus.  
    (Vous devez rajouter les balises `<html>`, `<head>` et `<body>`)
 2. **Retestez** la conformité de votre document.
+3. Enregistrez de temps en temps votre progression sous Git. Par exemple, 
+   ```sh
+   # Pour enregistrer l'état de tous les fichiers dans le dossier TD1
+   ~/HTMLCSS$ git add TD1
+   ~/HTMLCSS$ git commit -m "Exercice 5 TD1"
+   ~/HTMLCSS$ git push
+   # Pour vérifier que tout est en ordre
+   ~/HTMLCSS$ git status
+   ```
    
 </div>
 
@@ -551,6 +581,10 @@ développement. Quels sont les deux **nouvelles** balises utilisées ?
    document (rechercher `<!-- utiliser blockquote ici -->`).
 
 2. Avez-vous vérifié tout au long du TD que votre page HTML reste valide ?
+
+1. N'oubliez pas d'enregistrer régulièrement votre travail sous Git avec `git
+   status/add/commit/push`.
+
 
 </div>
 
