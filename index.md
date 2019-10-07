@@ -11,10 +11,10 @@ Cours à l'IUT de Montpellier - 1ère année
 ## TDs
 
 1. Semaine du 7 Octobre 2019 -- TD 1 :
-   * [Introduction à Git (45min)](https://gitlabinfo.iutmontp.univ-montp2.fr/valicov/tutoGit1ereAnnee/blob/master/README.md)
-   * [Partie 1 -- Introduction à HTML (1h30)](tutorials/tutorial1_1.html)
+   * [Introduction à Git <!-- (45min) -->](https://gitlabinfo.iutmontp.univ-montp2.fr/valicov/tutoGit1ereAnnee/blob/master/README.md)
+   * [Partie 1 -- Introduction à HTML <!-- (1h30) -->](tutorials/tutorial1_1.html)
      ([English version](tutorials/tutorial1_1-en.html))
-   * [Partie 2 -- Introduction à CSS (45min)](tutorials/tutorial1_2.html)
+   * [Partie 2 -- Introduction à CSS <!-- (45min) -->](tutorials/tutorial1_2.html)
      ([English version](tutorials/tutorial1_2-en.html))
 <!-- 1. Semaine du 14 Octobre 2019 -- [TD 2 -- CSS Avancés 1/2](tutorials/tutorial2.html) -->
 <!--    ([English version](tutorials/tutorial2-en.html)) -->
