@@ -81,8 +81,9 @@ comme un document HTML.
 
 1. Sauvegardez le fichier [index.txt]({{site.baseurl}}/assets/index.txt) en
    local dans le dossier `HTMLCSS/TD1/`.  
-   Sauvegardez le même fichier [index.txt]({{site.baseurl}}/assets/index.txt) en
-   local dans le dossier `HTMLCSS/TD1/` en **le renommant** `index.html`.
+   Faites une copie `index.html` de `index.txt` dans le même dossier.
+   <!-- Sauvegardez le même fichier [index.txt]({{site.baseurl}}/assets/index.txt) en -->
+   <!-- local dans le dossier `HTMLCSS/TD1/` en **le renommant** `index.html`. -->
 
 1. Ouvrez les deux fichiers [index.txt]({{site.baseurl}}/assets/index.txt) et
    `index.html` dans le navigateur.  
