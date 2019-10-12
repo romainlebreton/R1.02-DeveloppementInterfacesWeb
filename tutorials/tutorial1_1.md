@@ -195,7 +195,7 @@ le titre du document.
 
 2. [Certaines balises](http://www.w3.org/TR/html5/syntax.html#void-elements)
 **n'acceptent pas de contenu** : elles consistent juste d'une balise
-ouvrante.  
+ouvrante. On les appelle aussi balises auto-fermantes.
 Par exemple, nous avons vu la balise `<meta>` et nous verrons bientôt `<img>`,
 `<br>` ...
 
