@@ -81,8 +81,9 @@ comme un document HTML.
 
 1. Sauvegardez le fichier [index.txt]({{site.baseurl}}/assets/index.txt) en
    local dans le dossier `HTMLCSS/TD1/`.  
-   Sauvegardez le même fichier [index.txt]({{site.baseurl}}/assets/index.txt) en
-   local dans le dossier `HTMLCSS/TD1/` en **le renommant** `index.html`.
+   Faites une copie `index.html` de `index.txt` dans le même dossier.
+   <!-- Sauvegardez le même fichier [index.txt]({{site.baseurl}}/assets/index.txt) en -->
+   <!-- local dans le dossier `HTMLCSS/TD1/` en **le renommant** `index.html`. -->
 
 1. Ouvrez les deux fichiers [index.txt]({{site.baseurl}}/assets/index.txt) et
    `index.html` dans le navigateur.  
@@ -194,7 +195,7 @@ le titre du document.
 
 2. [Certaines balises](http://www.w3.org/TR/html5/syntax.html#void-elements)
 **n'acceptent pas de contenu** : elles consistent juste d'une balise
-ouvrante.  
+ouvrante. On les appelle aussi balises auto-fermantes.
 Par exemple, nous avons vu la balise `<meta>` et nous verrons bientôt `<img>`,
 `<br>` ...
 
