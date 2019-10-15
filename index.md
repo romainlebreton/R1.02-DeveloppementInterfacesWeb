@@ -16,8 +16,8 @@ Cours à l'IUT de Montpellier - 1ère année
      ([English version](tutorials/tutorial1_1-en.html))
    * [Partie 2 -- Introduction à CSS <!-- (45min) -->](tutorials/tutorial1_2.html)
      ([English version](tutorials/tutorial1_2-en.html))
-<!-- 1. Semaine du 14 Octobre 2019 -- [TD 2 -- CSS Avancés 1/2](tutorials/tutorial2.html) -->
-<!--    ([English version](tutorials/tutorial2-en.html)) -->
+1. Semaine du 14 Octobre 2019 -- [TD 2 -- CSS Avancés 1/2](tutorials/tutorial2.html)
+   ([English version](tutorials/tutorial2-en.html))
 <!-- 1. Semaine du 04 Novembre 2019-- [TD 3 -- CSS Avancés 2/2](tutorials/tutorial3.html) -->
 <!-- 	 ([English version](tutorials/tutorial3-en.html)) -->
 <!-- 1. Semaine du 11 Novembre 2019 : -->
