@@ -277,7 +277,7 @@ donnée. Les balises de ce jeu (`<plate>`, `<bento>`, ...) ne sont pas des
 balises HTML5 mais le principe des sélecteurs reste le même. La partie de droite
 de la page est là pour vous aider.
 
-**Allez sur** [http://flukeout.github.io/](http://flukeout.github.io/) et passez
+**Allez sur** [http://flukeout.github.io/](http://flukeout.github.io/) et faites
 les niveaux de 1 à 11 et le niveau 14.
 
 **Notes :**
@@ -428,7 +428,7 @@ Voyons maintenant comment la styliser.
 
 ### Les attributs `rowspan` et `colspan` 
 
-Les balises `<th>` et `<td>` peuvent prendre des attribut `rowspan` et/ou
+Les balises `<th>` et `<td>` peuvent prendre des attributs `rowspan` et/ou
 `colspan`, qui permettent d'étirer la cellule courante pour prendre la place de
 plusieurs cellules :
 
