@@ -707,8 +707,8 @@ Puis revenir en arrière
 -->
 
 1. Pour mieux voir le comportement, nous allons donner jusqu'à la fin de cet
-   exercice une hauteur de `200px` et la couleur de fond `#FF00FF` à `<nav>` et
-   un décalage de `200px` vers le bas de sous-menu.
+   exercice une hauteur de `200px` et la couleur de fond `#FF00FF` à `<nav>` et,
+   pour les sous-menus, un décalage de `200px` vers le bas.
 
 1. Centrez les éléments enfants de `<nav>` à l'aide de la propriété
    `align-items` de `<nav>`. Que constatez-vous sur la hauteur des `<div>` et
