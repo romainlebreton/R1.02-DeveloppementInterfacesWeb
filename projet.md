@@ -15,21 +15,17 @@ travail. Si vous êtes plus, vous aurez une petite pénalité.
 
 ### Emploi du temps prévisionnel :
 
-1. Semaine du 24 Septembre 2018 : TD 4 -- Les Formulaires puis lancement du projet
-1. Semaine du 01 Octobre 2018 : Projet
-1. Semaine du 08 Octobre 2018 : Début TD 5 -- Responsive Design (~2h) puis projet (1h)
-1. Semaine du 15 Octobre 2018 : Fin TD 5 -- Responsive Design puis projet (1h)
-1. Semaine du 22 Octobre 2018 : Pas de TD pour cause de partiels (pas en HTML mais dans les autres matières)
-1. Semaine du 29 Octobre 2018 : Vacances
-1. Semaine du 05 Novembre 2018 -- projet (3h)
-1. Semaine du 12 Novembre 2018 : Cours d'Infographie
-1. Semaine du 19 Novembre 2018 -- projet (3h)
-1. Semaines du 26 Novembre et 03 & 10 & 17 Décembre : Ergonomie
+1. Semaine du 11 Novembre 2019 : TD 4 -- Les Formulaires puis lancement du projet
+1. Semaine du 18 Novembre 2019 : TD 5 -- Responsive Design (~2h) puis projet (1h)
+1. Semaine du 25 Novembre 2019 : Fin TD 5 -- Responsive Design (~2h) puis projet (1h)
+1. Semaine du 02 décembre 2019 : Projet
+1. Semaine du 09 décembre 2019 : Infographie
+1. Semaine du 16 décembre 2019 : Projet
 
 **Examen & soutenances :**
 
-1. 7, 8 ou 9 Janvier -- Examen écrit (~1h30)
-1. 10 ou 11 Janvier -- Soutenances projet tutoré (20 min/groupe)
+1. Semaine du 06 janvier 2020  : Examen écrit (~1h30)
+1. Semaine du 13 janvier 2020  : Soutenance projet (20 min / groupe)
 
 ### Architecture minimum de votre site :
 
