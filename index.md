@@ -24,27 +24,27 @@ Cours à l'IUT de Montpellier - 1ère année
    * [TD 4 -- Les Formulaires](tutorials/tutorial4.html)
 	 ([English version](tutorials/tutorial4-en.html))
    * puis [lancement du projet](projet.html)
-<!-- 1. Semaine du 18 Novembre 2019 : -->
-<!--    * Entamer [TD 5 -- Responsive Design](tutorials/tutorial5.html) (~2h) -->
-<!--    ([English version](tutorials/tutorial5-en.html)) -->
-<!--    * puis [projet](projet.html) (1h) -->
-<!-- 1. Semaine du 25 Novembre 2019 : -->
-<!--    * Finir le [TD 5 -- Responsive Design](tutorials/tutorial5.html) (max 2h) -->
-<!--    ([English version](tutorials/tutorial5-en.html)) -->
-<!--    * puis [projet](projet.html) (1h) -->
-<!-- 1. Semaine du 02 décembre 2019 -- [Projet](projet.html) (3h) -->
-<!-- 1. Semaine du 09 décembre 2019 -- Infographie -->
-<!-- 1. Semaine du 16 décembre 2019 -- [Projet](projet.html) (3h) -->
-<!-- 1. Semaine du 06 janvier 2020 -- Partiel -->
-<!-- 1. Semaine du 13 janvier 2020 -- Soutenance de projet -->
+1. Semaine du 18 Novembre 2019 :
+   * Entamer [TD 5 -- Responsive Design](tutorials/tutorial5.html) (~2h)
+   ([English version](tutorials/tutorial5-en.html))
+   * puis [projet](projet.html) (1h)
+1. Semaine du 25 Novembre 2019 :
+   * Finir le [TD 5 -- Responsive Design](tutorials/tutorial5.html) (max 2h)
+   ([English version](tutorials/tutorial5-en.html))
+   * puis [projet](projet.html) (1h)
+1. Semaine du 02 décembre 2019 -- [Projet](projet.html) (3h)
+1. Semaine du 09 décembre 2019 -- Infographie
+1. Semaine du 16 décembre 2019 -- [Projet](projet.html) (3h)
+1. Semaine du 06 janvier 2020 -- Partiel
+1. Semaine du 13 janvier 2020 -- Soutenance de projet
 
-<!-- ## Compléments optionnels -->
+## Compléments optionnels
  
-<!-- 1. [Coder des colonnes responsive à la Bootstrap](assets/tut5-complement.html) -->
+1. [Coder des colonnes responsive à la Bootstrap](assets/tut5-complement.html)
 
-<!-- ## Instructions du projet -->
+## Instructions du projet
 
-<!-- [Instructions du projet](projet.html) -->
+[Instructions du projet](projet.html)
 
 <!-- ## Joomla -->
 
