@@ -567,8 +567,11 @@ voulons un menu qui apparaît latéralement à la manière des exemples suivants
  * [http://codepen.io/gungorbudak/pen/XbazEX](http://codepen.io/gungorbudak/pen/XbazEX)
  * [http://codepen.io/drewr/pen/uxvdt](http://codepen.io/drewr/pen/uxvdt)
 
-(Notez au passage que [codepen.io](http://codepen.io/) est un très bon outil pour
-découvrir de nouvelles techniques !)
+Dans l'exercice suivant, nous allons coder un menu burger HTML/CSS (donc sans
+JavaScript) qui apparait quand la souris passe au dessus du burger (la gestion
+du clic nécessiterait du JavaScript).  (Notez au passage que
+[codepen.io](http://codepen.io/) est un très bon outil pour découvrir de
+nouvelles techniques !)
 
 <div class="exercise">
 
