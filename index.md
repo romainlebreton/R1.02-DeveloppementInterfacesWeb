@@ -36,7 +36,8 @@ Cours à l'IUT de Montpellier - 1ère année
 1. Semaine du 09 décembre 2019 -- Infographie
 1. Semaine du 16 décembre 2019 -- [Projet](projet.html) (3h)
 1. Semaine du 06 janvier 2020 -- Partiel
-1. Semaine du 13 janvier 2020 -- Soutenance de projet
+1. 13 & 14 janvier 2020
+-- Soutenance de projet
 
 ## Compléments optionnels
  
