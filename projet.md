@@ -100,8 +100,8 @@ table.controle {
 
 Le but pédagogique de ce projet est de mettre en application toutes les
 techniques que vous avez apprises lors des TDs. Voici donc
-[les critères sur lesquels vous serez
-notés.](https://docs.google.com/spreadsheets/d/1CHQ6imNxRFWHETmVZbRyPIxg8hV8nVrNcHthe1TGHxg/edit?usp=sharing)
+**[les critères sur lesquels vous serez
+notés.](https://docs.google.com/spreadsheets/d/1CHQ6imNxRFWHETmVZbRyPIxg8hV8nVrNcHthe1TGHxg/edit?usp=sharing)**
 
 <!-- Cette grille **peut évoluer** jusqu'à la soutenance. -->
 
