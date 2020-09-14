@@ -88,7 +88,7 @@ comme un document HTML.
 1. Ouvrez les deux fichiers [index.txt]({{site.baseurl}}/assets/index.txt) et
    `index.html` dans le navigateur.  
    Quelles différences d'affichage observez-vous ? Pourquoi ?  
-   Comment sont affichés des sauts de ligne d'un document HTML ?  
+   Comment sont affichés les sauts de ligne d'un document HTML ?  
    Comment est affiché un texte HTML entouré de `<!--` et `-->` ?
    <!-- saut de ligne mangés, mauvais accents, commentaire coupés : interprétation du HTML -->
 
@@ -166,8 +166,9 @@ mais complet).
 
    1. **Retestez** la conformité de votre document.
 
-4. La dernière erreur nous parle d'un élément `head` auquel il manque un `title`.
-Corrigez votre page Web en insérant un titre après le `<meta>`.
+4. La dernière erreur nous parle d'un élément `head` auquel il manque un
+`title`.  Corrigez votre page Web en insérant un titre après le
+`<meta>`. Avez-vous trouvé ce qui change à l'affichage ?
 
    ```html
    <title>Le site non officiel de Chuck Norris</title>
@@ -448,16 +449,16 @@ légers). **Attention**, l'attribut `alt` est obligatoire.
 répertoire `images` par rapport à votre fichier `index.html`.
 
 2. Remplacez le commentaire `<!--l'image de Chuck Young doit être positionnée
-ici -->` par la balise `<img>` suivante
+ici -->` par la balise `<img>` qui affichera l'image précédente.
 
-   ```html
-   <img src="./images/chuck-jeune.jpg" alt="Une photo de Chuck Jeune, la légende est en marche.">
-   ```
+   <!-- ```html -->
+   <!-- <img src="./images/chuck-jeune.jpg" alt="Une photo de Chuck Jeune, la légende est en marche."> -->
+   <!-- ``` -->
  
-   **Note :** L'adresse `./images/chuck-jeune.jpg` est une adresse relative. Le
-     point signifie "le dossier de la page Web courante". Donc on va aller
-     chercher l'image dans le dossier `images` du répertoire contenant la page
-     Web `index.html`.
+   **Note :** Vous pouvez utiliser l'adresse `./images/chuck-jeune.jpg`. C'est
+     une adresse relative : le point signifie "le dossier de la page Web
+     courante". Donc on va aller chercher l'image dans le dossier `images` du
+     répertoire contenant la page Web `index.html`.
 
 3. Faites de même avec l'image [beware.jpg]({{site.baseurl}}/assets/beware.jpg)
    à positionner en lieu et place du commentaire `<!--l'image de Chuck Beware
