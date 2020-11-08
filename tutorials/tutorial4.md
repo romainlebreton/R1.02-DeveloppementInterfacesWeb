@@ -203,7 +203,7 @@ qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut `mu
 <div class="exercise" id="exlabel">
 
 
- A l'aide de [developer.mozilla.org](https://developer.mozilla.org/fr/docs/Web/HTML/Element/select), ajoutez dans le formulaire les `<input>` libellés :
+ A l'aide de [developer.mozilla.org](https://developer.mozilla.org/fr/docs/Web/HTML/Element/select) :
 
  1. Ajoutez un `<select>` libellé "Pays d'origine" qui prend comme valeur de pays `U.S.A` , `France`, `Chine` et `Viêt Nam`, les `values` associées ne doivent pas dépendre de la langue du formulaire (la `value` associée à `France` doit être `fr` par exemple). L'utilisateur ne peut pas sélectionner plusieurs valeurs, le pays sélectionné par défaut est la France (indépendamment de l'ordre des balises `<option>` dans le HTML).
 
@@ -275,10 +275,9 @@ temps à l'utilisateur.
 
 <div class="exercise" >
 
- 1. Ajouter un placeholder de valeur “yourmail@domain.com” au champ Email.
+ 1. Ajoutez un placeholder de valeur “yourmail@domain.com” au champ Email.
  1. Ajoutez un attribut `placeholder` dans le `<textarea>` avec le texte suivant "Un inscrit sera tiré au sort, et verra son message transmis à Chuck Norris."
- 1. Faite en sorte que le pays sélectionné par défaut dans "Pays d'origine" soit la France (et cela indépendamment de l'ordre des balises `<option>` dans le HTML).
-
+ <!-- 1. Faite en sorte que le pays sélectionné par défaut dans "Pays d'origine" soit la France (et cela indépendamment de l'ordre des balises `<option>` dans le HTML). -->
 </div>
 
 
