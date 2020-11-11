@@ -24,10 +24,10 @@ Cours à l'IUT de Montpellier - 1ère année
    * [TD 4 -- Les Formulaires](tutorials/tutorial4.html)
 	 <!-- ([English version](tutorials/tutorial4-en.html)) -->
    * puis [lancement du projet](projet.html)
-<!-- 1. Semaine du 09 Novembre 2020 : -->
-<!--    * Entamer [TD 5 -- Responsive Design](tutorials/tutorial5.html) (~2h) -->
-<!--    <\!-- ([English version](tutorials/tutorial5-en.html)) -\-> -->
-<!--    * puis [projet](projet.html) (1h) -->
+1. Semaine du 09 Novembre 2020 :
+   * Entamer [TD 5 -- Responsive Design](tutorials/tutorial5.html) (~2h)
+   <!-- ([English version](tutorials/tutorial5-en.html)) -->
+   * puis [projet](projet.html) (1h)
 <!-- 1. Semaine du 16 Novembre 2020 : -->
 <!--    * Finir le [TD 5 -- Responsive Design](tutorials/tutorial5.html) (max 2h) -->
 <!--    ([English version](tutorials/tutorial5-en.html)) -->
@@ -39,9 +39,9 @@ Cours à l'IUT de Montpellier - 1ère année
 <!-- 1. Semaine du 04 janvier 2021 -- Partiel -->
 <!-- 1. 13 & 14 janvier 2021 -- Soutenance de projet -->
 
-<!-- ## Compléments optionnels -->
+## Compléments optionnels
  
-<!-- 1. [Coder des colonnes responsive à la Bootstrap](assets/tut5-complement.html) -->
+1. [Coder des colonnes responsive à la Bootstrap](assets/tut5-complement.html)
 
 ## Instructions du projet
 

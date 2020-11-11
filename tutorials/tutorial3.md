@@ -361,55 +361,56 @@ s'affiche comme suit :
 
 <div class="codeexample" style="padding:0;text-align:initial;"> 
 <p style="display:block;background-color:#A4AFFC;border: 1px solid black;margin:0;">
-display:block
+display:block1
 </p> 
 <p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
-display:inline
+display:inline1
 </p> 
 <p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
-display:inline
+display:inline2
 </p> 
 <p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
-display:inline
+display:inline3
 </p> 
 <p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
-display:inline
+display:inline4
 </p> 
 <p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
-display:inline
+display:inline5
 </p> 
 <p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
-display:inline
+display:inline6
 </p> 
 <p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
-display:inline
+display:inline7
 </p> 
 <p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
-display:inline
+display:inline8
 </p> 
 <p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
-display:inline
+display:inline9
 </p> 
 <p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
-display:inline
+display:inline10
 </p> 
 <p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
-display:inline
+display:inline11
 </p> 
 <p style="display:block;background-color:#A4AFFC;border: 1px solid black;margin:0;">
-display:block
+display:block2
 </p>
 <p style="display:block;background-color:#A4AFFC;border: 1px solid black;margin:0;">
-display:block
+display:block3
 </p> 
 <p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
-display:inline
+display:inline12
 </p> 
 </div>
 
 On remarque bien que les `display:block` prennent toute la largeur, avec un saut
 de ligne avant et après. Tandis que les `display:inline` s'affichent les uns à
-la suite des autres comme le texte d'un paragraphe.
+la suite des autres comme le texte d'un paragraphe. Faites varier la largeur de
+la fenêtre pour voir comment l'affichage s'adapte.
 
 **Note (optionnelle)** -- Règle d'inclusion des éléments `inline` et `block` du
 point de vue du HTML et du CSS :
