@@ -28,16 +28,16 @@ Cours à l'IUT de Montpellier - 1ère année
    * Entamer [TD 5 -- Responsive Design](tutorials/tutorial5.html) (~2h)
    <!-- ([English version](tutorials/tutorial5-en.html)) -->
    * puis [projet](projet.html) (1h)
-<!-- 1. Semaine du 16 Novembre 2020 : -->
-<!--    * Finir le [TD 5 -- Responsive Design](tutorials/tutorial5.html) (max 2h) -->
-<!--    ([English version](tutorials/tutorial5-en.html)) -->
-<!--    * puis [projet](projet.html) (1h) -->
-<!-- 1. Semaine du 23 Novembre 2020 -- [Projet](projet.html) (3h) -->
-<!-- 1. Semaine du 30 Novembre 2020 -- Infographie -->
-<!-- 1. Semaine du 07 décembre 2020 -- [Projet](projet.html) (3h) -->
-<!-- 1. Semaine du 14 décembre 2020 -- [Projet](projet.html) (3h) -->
-<!-- 1. Semaine du 04 janvier 2021 -- Partiel -->
-<!-- 1. 13 & 14 janvier 2021 -- Soutenance de projet -->
+1. Semaine du 16 Novembre 2020 :
+   * Finir le [TD 5 -- Responsive Design](tutorials/tutorial5.html) (max 2h)
+   ([English version](tutorials/tutorial5-en.html))
+   * puis [projet](projet.html) (1h)
+1. Semaine du 23 Novembre 2020 -- [Projet](projet.html) (3h)
+1. Semaine du 30 Novembre 2020 -- Infographie
+1. Semaine du 07 décembre 2020 -- [Projet](projet.html) (3h)
+1. Semaine du 14 décembre 2020 -- [Projet](projet.html) (3h)
+1. Semaine du 04 janvier 2021 -- Partiel
+1. 13 & 14 janvier 2021 -- Soutenance de projet
 
 ## Compléments optionnels
  
