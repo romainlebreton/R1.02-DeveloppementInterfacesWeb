@@ -33,14 +33,14 @@ Exemple utilisation flex-grow/shrink non triviale : solved by flex
 Les smartphones, les tablettes et tous les appareils de la mobilité demandent de
 repenser le web d'aujourd'hui. Concevoir un site ou une application Web
 s'adressant à tous ces médias n'est pas une tâche triviale. Voici un aperçu des
-nombreuses solutions existantes :
+nombreuses solutions existantes :
 
 * Une solution en pur CSS. En effet, le CSS est le langage de base pour la mise
   en page des pages Web. Il est donc en constante évolution (CSS3 en cours
   d'élaboration) pour s'adapter aux nouveaux besoins.
 
-* Coder deux sites en HTML/CSS : un pour les ordinateurs et un pour les
-   smartphones (et un pour les tablettes ? et un pour les smartwatch ?). Exemple
+* Coder deux sites en HTML/CSS : un pour les ordinateurs et un pour les
+   smartphones (et un pour les tablettes ? et un pour les smartwatch ?). Exemple
    [lemonde.fr](http://lemonde.fr) et [mobile.lemonde.fr](http://mobile.lemonde.fr).
 
 * Des applications natives pour chaque système (Android, iOS, Windows Phone, ...)
@@ -57,11 +57,11 @@ nombreuses solutions existantes :
  <!-- - React Native,... -->
 
 Plus pour nous positionner dans cette jungle que par purisme, nous prendrons
-deux hypothèses de départ :
+deux hypothèses de départ :
 
-* *"Il n'y a pas besoin d'applications pour cela !"* : Pas besoin de faire du
+* *"Il n'y a pas besoin d'applications pour cela !"* : Pas besoin de faire du
    natif Android ou iOS.
-* *"Il n'y a pas besoin de faire deux sites web pour cela !"* : On s'interdit de
+* *"Il n'y a pas besoin de faire deux sites web pour cela !"* : On s'interdit de
    faire un site Web pour mobile et un pour ordinateur.
 
 
@@ -118,11 +118,11 @@ ascenseur à droite pour descendre dans la page).
 
 
 Les règles précédentes permettent d'avoir un rapport homogène, mais pas un rendu
-optimal :
+optimal :
 
  - sur de petits écrans d'ordinateur, des éléments ne peuvent pas être
    correctement affichés (des images, des colonnes, ...)
- - sur de très grands écrans, le texte devient illisible : les yeux fatiguent à
+ - sur de très grands écrans, le texte devient illisible : les yeux fatiguent à
    cause des lignes trop longues.
  
 Pour contraindre les dimensions maximales et minimales, nous utiliserons
@@ -144,7 +144,7 @@ type de valeur que `width` et `height`.
 ### Overconstraint
 
 Mais que se passe-t-il quand on mélange `min-width` et des tailles en
-poucentage ? Prenons l'exemple suivant
+poucentage ? Prenons l'exemple suivant
 
 
 ```html
@@ -173,7 +173,7 @@ Div2
 
 <div class="exercise">
 
-**Remarquez** en changeant la largeur de votre fenêtre (ou en zoomant) que :
+**Remarquez** en changeant la largeur de votre fenêtre (ou en zoomant) que :
 
 1. les deux `<div>` prennent toute la largeur quand `<body>` a une largeur
    inférieure à `800px` (donc le premier `<div>` a une largeur de moins de
@@ -246,24 +246,24 @@ propriétés par défaut flex-grow:0; flex-shrink:1 -->
 défaut de `300px` et `200px`. Mettez les propriétés `flex-shrink` et `flex-grow`
 pour ces deux éléments à `0`.  
 **Bougez** la largeur de la page. Est-ce que les largeurs de `<article>` et
-`<aside>` changent ?
+`<aside>` changent ?
 
 1. Nous souhaitons que quand l'écran est trop large, l'espace restant soit
    réparti entre `<article>` et `<aside>` de telle sorte que l'espace gagné par
    `<article>` soit 3 fois plus grand que celui gagné par `<aside>`.  
-   **Quelle propriété** CSS devez-vous utiliser pour avoir ce comportement ?
+   **Quelle propriété** CSS devez-vous utiliser pour avoir ce comportement ?
    Implémentez ce comportement.
 
 1. Pour vérifier que vous avez bien répondu à la question précédente,
    redimensionnez la fenêtre du navigateur pour que la largeur de `<body>` soit
    de `620px`.   
-   Quelles devraient être selon vous les largeurs de `<article>` et `<aside>` ?
+   Quelles devraient être selon vous les largeurs de `<article>` et `<aside>` ?
    Inspectez maintenant les largeurs de `<article>` et `<aside>` pour vérifier votre calcul.
-   <!-- Réponse : article 390 px et aside 230px car 120px de rab réparti en 30px de rab par unité -->
+   <!-- Réponse : article 390 px et aside 230px car 120px de rab réparti en 30px de rab par unité -->
 
 1.  Nous souhaitons que quand l'écran est trop petit, `<article>` diminue de
     deux tiers de la largeur à supprimer et `<aside>` diminue du reste.  
-   **Quelle propriété** CSS devez-vous utiliser pour avoir ce comportement ?
+   **Quelle propriété** CSS devez-vous utiliser pour avoir ce comportement ?
    Implémentez ce comportement.
 
    <!-- Bien sûr, toutes ces largeurs respecteront les anciennes contraintes `min-width` et `max-width`. -->
@@ -272,22 +272,22 @@ pour ces deux éléments à `0`.
 <!--    de `476px`. Inspectez les largeurs de `<article>` et `<aside>`. Vérifiez que -->
 <!--    votre comportement satisfait le cahier des charges. -->
 
-<!-- Réponse : -->
+<!-- Réponse : -->
 
-<!-- La mauvaise réponse tentante est : article 284 px et aside 192px car 24px à -->
+<!-- La mauvaise réponse tentante est : article 284 px et aside 192px car 24px à -->
 <!-- gagner réparti en 8px à enlever par unité. -->
 
 <!-- Cependant le rétrécissement se fait en proportion de la taille des -->
 <!-- éléments. Donc on doit enlever 6% à 300px (282) et 3% à 200px (194). -->
 
-<!-- Référence : http://www.w3.org/TR/css3-flexbox/#flex-property -->
+<!-- Référence : http://www.w3.org/TR/css3-flexbox/#flex-property -->
 <!-- Note: The flex shrink factor is multiplied by the flex base size when -->
 <!-- distributing negative space. This distributes negative space in proportion to -->
 <!-- how much the item is able to shrink, so that e.g. a small item won’t shrink to -->
 <!-- zero before a larger item has been noticeably reduced. -->
    
 <!--
-ATTENTION :
+ATTENTION :
 * ne pas utiliser le raccourci flex: 3 2; ne va pas car il force flex-basis:0% au
 lieu de flex-basis: auto;
 -->
@@ -309,11 +309,11 @@ en CSS3.
 
 ## Votre site de Chuck Norris sur mobile
 
-### Les outils pour travailler ?
+### Les outils pour travailler ?
 
 Jusqu'ici on pouvait considérer que tous les outils de développement d'Internet
 Explorer / Firefox / Chrome étaient égaux. En fait celui de Chrome était déjà un
-peu meilleur :
+peu meilleur :
 <!-- (Suivant les habitudes des développeurs cela peut être plus ou moins sujet à -->
 <!-- controverse.) -->
 
@@ -322,20 +322,20 @@ peu meilleur :
   * plus rapide, plus stable (un processus par onglet)
   * etc.
 
-En tout cas, pour le *reponsive design* il n'y a pas photo : Chrome (ou son
+En tout cas, pour le *reponsive design* il n'y a pas photo : Chrome (ou son
 pendant libre Chromium) est <strong>vraiment</strong> votre "best-friend-ever".
 
 
-### Que fait mon navigateur Web sur téléphone par défaut pour un site ?
+### Que fait mon navigateur Web sur téléphone par défaut pour un site ?
 
-Comment peut-on rendre un site internet compatible mobile à moindre coût ?
+Comment peut-on rendre un site internet compatible mobile à moindre coût ?
 
-Voici l'algorithme (simplifié) opérant par défaut :
+Voici l'algorithme (simplifié) opérant par défaut :
 
- * Générer le site sur une taille d'écran virtuel, disons d'une largeur de `980px` ;
+ * Générer le site sur une taille d'écran virtuel, disons d'une largeur de `980px` ;
  * Faire un zoom arrière de manière à faire rentrer le site dans l'écran du
    smartphone ; (oui, cela fait de petits éléments)
- * Supposer que l'utilisateur connaît le *pinch to zoom* pour naviguer dans le site :
+ * Supposer que l'utilisateur connaît le *pinch to zoom* pour naviguer dans le site :
  <img src="{{site.baseurl}}/assets/pinch_zoom.png " alt="Pinch to zoom schema"
 style="margin: 0 auto;height:100px;vertical-align:middle;">
 
@@ -351,7 +351,7 @@ page puis la recharger pour retrouver le comportement par défaut.
 
 -->
 
-Et çà marche ! De fait, c'est ce que font par défaut les smartphones quand ils
+Et ça marche ! De fait, c'est ce que font par défaut les smartphones quand ils
 tombent sur un site non responsive.
 
 <div class="exercise">
@@ -362,7 +362,7 @@ device mode
 *"Samsumg Galaxy S5"* sous Chrome/Chromium et rechargez votre page. Constatez
 que le site s'affiche en tout petit.
 
-<!-- **Attention :** En appuyant sur `F12` sur Chrome/Chromium, vous devez voir la -->
+<!-- **Attention :** En appuyant sur `F12` sur Chrome/Chromium, vous devez voir la -->
 <!-- petite icône <img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil -->
 <!-- pour mobile" style="margin: 0 auto;width:45px;vertical-align:middle;">. Sinon, -->
 <!-- c'est que votre version de Chrome ou Chromium n'est pas à jour. Dans ce cas, -->
@@ -400,7 +400,7 @@ de l'écran.
 
 La première chose à faire est donc de demander aux navigateurs de ne plus faire
 l'algorithme précédent (puisqu'on va le gérer nous-mêmes) dans la balise
-`<head>` :
+`<head>` :
 
 ```html
  <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -423,21 +423,20 @@ https://www.w3.org/TR/css-device-adapt-1/
 <div class="exercise">
 
 Ajouter cette instruction au site de Chuck Norris et visualisez avec Chrome en
-choisissant un smartphone. Inspectez la largeur de `<body>`. Que constatez-vous
-?
+choisissant un smartphone. Inspectez la largeur de `<body>`. Que constatez-vous ?
 
 </div>
 
 Vous devez constatez que l'algorithme précédent ne s'applique plus. En gros le
-navigateur n'essaie plus d'être intelligent : il vous laisse prendre le relai.
+navigateur n'essaie plus d'être intelligent : il vous laisse prendre le relai.
 
-## La solution technique CSS3 :  les media queries
+## La solution technique CSS3 :  les media queries
 
 Les media queries sont un jeu d'options ajoutées à la norme CSS3 et qui permettent
 de définir des règles CSS qui ne s'appliqueront que sous certaines conditions
 spécifiques.
 
-Il existe deux manières différentes de faire appel à une *media query*:
+Il existe deux manières différentes de faire appel à une *media query* :
 
 * Soit vous souhaitez un fichier CSS spécifique en entier, mais uniquement dans
   certaines conditions. Alors il faut ajouter à l'en-tête `<head>` de la page
@@ -453,7 +452,7 @@ Il existe deux manières différentes de faire appel à une *media query*:
   sinon elles seront systématiquement écrasées par votre CSS *“standard"*.
 
 * Soit vous souhaitez que juste certaines règles s'appliquent sous
-  certaines conditions. Alors vous englobez vos règles avec la syntaxe suivante :
+  certaines conditions. Alors vous englobez vos règles avec la syntaxe suivante :
 
   ```css
   @media(ma_condition) {
@@ -462,16 +461,16 @@ Il existe deux manières différentes de faire appel à une *media query*:
   }
   ```
 
-Une media query fonctionne de la manière suivante: la condition est évaluée et
+Une media query fonctionne de la manière suivante : la condition est évaluée et
 retourne une valeur “vrai” ou “faux”. Si la valeur est vraie, le fichier CSS/ la
 règle CSS (selon la méthode employée) est appliquée.
 
 Chaque condition est formée à partir d'une ou plusieurs conditions de
 base. Parmi
 [l'ensemble des conditions possibles](https://developer.mozilla.org/fr/docs/Web/CSS/Media_queries),
-nous allons nous intéresser particulièrement aux suivantes:
+nous allons nous intéresser particulièrement aux suivantes :
 
-* `min-width`, `max-width`, `min-height` et `max-height` : permettent de
+* `min-width`, `max-width`, `min-height` et `max-height` : permettent de
   renseigner une dimension minimale/maximale à remplir pour que la condition
   soit vraie. Par exemple,
 
@@ -484,17 +483,17 @@ nous allons nous intéresser particulièrement aux suivantes:
   <!-- Définies dans l'une des unités supportées par le CSS (px, em, cm, in...). Si -->
   <!-- ni “min” ni “max” n'est utilisé, alors la condition se réfère à une taille -->
   <!-- exacte. -->
-  <!-- * « color » : le nombre de bits par couleur supportés par l'écran (0 = noir et -->
+  <!-- * « color » : le nombre de bits par couleur supportés par l'écran (0 = noir et -->
   <!--   blanc, 8 = 256 couleurs, 16 = 65000 couleurs) -->
   
-* `orientation` : prend les valeurs `landscape` (écran horizontal) ou `portrait`
+* `orientation` : prend les valeurs `landscape` (écran horizontal) ou `portrait`
   (écran vertical)
 
-<!-- * « type de média »: prend l'une de ces valeurs. Vous pouvez créer avec un jeu -->
+<!-- * « type de média » : prend l'une de ces valeurs. Vous pouvez créer avec un jeu -->
 <!--   de règles CSS qui ne s'appliquera que pour une impression ou un système de -->
 <!--   synthèse vocale pour les aveugles. -->
 
-<!-- * « monochrome »: 0 si l'écran est couleur, sinon une valeur en nombre de bits -->
+<!-- * « monochrome » : 0 si l'écran est couleur, sinon une valeur en nombre de bits -->
 <!--   par couleur pour les écrans supportant des niveaux de gris. Il est donc -->
 <!--   possible en combinant les conditions de base “color” et “monochrome” de cibler -->
 <!--   spécifiquement les devices “noir et blanc”, “niveau de gris” ou “couleur” pour -->
@@ -503,16 +502,16 @@ nous allons nous intéresser particulièrement aux suivantes:
 
 
 Les conditions de base peuvent être combinées ensemble pour former des
-conditions complexes en utilisant les opérateurs logiques:
+conditions complexes en utilisant les opérateurs logiques :
 
-* “and” (ET): les deux conditions de base doivent être vraies pour que la
+* “and” (ET) : les deux conditions de base doivent être vraies pour que la
   condition soit vraie
-* “,” (OU): au moins l'un des conditions de base doit être vraie pour que la
+* “,” (OU) : au moins l'un des conditions de base doit être vraie pour que la
   condition soit vraie
-* “not” (NON): la condition de base qui suit le not doit être fausse pour que la
+* “not” (NON) : la condition de base qui suit le not doit être fausse pour que la
   condition soit vraie
 
-**Exemple :** la règle `(min-width: 500px) and (min-height: 800px)` n'est
+**Exemple :** la règle `(min-width: 500px) and (min-height: 800px)` n'est
 vraie que si la largeur de l'affichage est supérieure (ou égale) à `500px` et la
 hauteur supérieure à `800px`.
 
@@ -524,7 +523,7 @@ hauteur supérieure à `800px`.
 * Utilisez le *device mode* pour afficher les *media queries* (cliquer sur les 3
   points verticaux du *device mode* pour afficher ces *media queries*).
 * Que se passe-t-il visuellement dans le menu lorsque vous redimensionnnez la
-fenêtre autour du point de rupture situé à `768px` ?
+fenêtre autour du point de rupture situé à `768px` ?
 
 </div>
 
@@ -551,10 +550,10 @@ Afin d'organiser nos *media queries*, on utilise en général 3 à 4 valeurs de 
 </div>
 
 
-### Mettez-moi un burger au menu !
+### Mettez-moi un burger au menu !
 
 Quand la taille de l'écran est limitée, une bonne pratique en *responsive design*
-est de changer l'affichage du menu pour un bouton burger :
+est de changer l'affichage du menu pour un bouton burger :
 
 <img alt="Burger button, three horizontal lines, (two corresponding to the
 bread, and the one for the meal) " src="{{site.baseurl}}/assets/burger.png"
@@ -571,7 +570,7 @@ Dans l'exercice suivant, nous allons coder un menu burger HTML/CSS (donc sans
 JavaScript) qui apparait quand la souris passe au dessus du burger (la gestion
 du clic nécessiterait du JavaScript).  (Notez au passage que
 [codepen.io](http://codepen.io/) est un très bon outil pour découvrir de
-nouvelles techniques !)
+nouvelles techniques !)
 
 <div class="exercise">
 
@@ -584,7 +583,7 @@ en fonction de la taille de l'écran.
 1. À partir du point de rupture 'Smartphone', faites disparaître l'ancien menu
 et faites apparaître le `<div class="burger">` à droite de la page (à la place
 du menu).
-1. Implémentez le deuxième menu avec les caractéristiques suivantes :
+1. Implémentez le deuxième menu avec les caractéristiques suivantes :
 
    * Son contenu est
 
@@ -602,7 +601,7 @@ du menu).
 
 
     * il se positionne par rapport à la fenêtre d'affichage (quelle valeur de
-    `position` faut-il mettre ?), tout en haut à droite.
+    `position` faut-il mettre ?), tout en haut à droite.
 	* il occupe 80% de la largeur de la fenêtre d'affichage et 100% de sa
       hauteur (Cherchez sur le Web les unités de mesure `vh` et `vw`
       [^somesamplefootnote])
@@ -612,7 +611,7 @@ du menu).
 
 1. Cachez par défaut en CSS le `menu2`. Au survol du `<div class="burger">`,
    faites-le réapparaître.
-1. (Optionnel) Changez la logique pour masquer le `menu2` : À la manière de
+1. (Optionnel) Changez la logique pour masquer le `menu2` : À la manière de
    [http://codepen.io/gungorbudak/pen/XbazEX](http://codepen.io/gungorbudak/pen/XbazEX),
    cachez le menu en le décalant sur sa gauche de sa largeur avec la propriété
    `margin-left`. Faites une transition dessus (ohhhh! c'est beauuuu!)
@@ -622,7 +621,7 @@ LA SOURIS L'ATTEIGNE -->
 
 </div>
 
-**Note :** Le hover sur les sous-menus n'a pas de sens sur téléphone
+**Note :** Le hover sur les sous-menus n'a pas de sens sur téléphone
   portable. Il faudra gérer le clic avec du JS. La bonne solution est
   ... suspense, vous la verrez en 2ème année.
 
@@ -631,7 +630,7 @@ LA SOURIS L'ATTEIGNE -->
 
 Les contraintes liées à la mobilité ne se limitent pas au responsive design.
 Pour vous donner une idée plus complète, voici d'autres exemples de contraintes
-fortes qui viennent s'ajouter :
+fortes qui viennent s'ajouter :
 
  * débit du réseau
  * faible capacité du média (processeur, mémoire vive,...)
