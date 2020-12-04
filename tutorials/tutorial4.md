@@ -11,7 +11,7 @@ Il faudrait pour cela avoir vu flex-grow avant
 
 
 <!--
-Input type : date, email, file, hidden, range, color, number, tel, url, search
+Input type : date, email, file, hidden, range, color, number, tel, url, search
 multiple
 input list avec datalist (avec autocomplétion)
 input/textarea Spellcheck
@@ -27,25 +27,25 @@ https://openclassrooms.com/courses/apprenez-a-creer-votre-site-web-avec-html5-et
 Nous allons ajouter un formulaire d'inscription à notre site de fans de
 **Chuck Norris**, en utilisant la balise `<form>`.  Cette balise
 `<form>` nous permettra d'avoir des réponses à des questions des plus ouvertes
-("Que voulez-vous dire à Chuck ?") aux plus fermées ("Parmi ces trois choix
-quel est votre sport favori ?", "Quel est votre sexe ?" ... ).  Il y a
+("Que voulez-vous dire à Chuck ?") aux plus fermées ("Parmi ces trois choix
+quel est votre sport favori ?", "Quel est votre sexe ?" ... ).  Il y a
 beaucoup de types de questions, correspondant chacune à un type de balises
 `<input>` ou `<textarea>` que nous verrons par la suite.
 
 ## La balise  `<form>` et les balises `<input>`
 
-Le coeur du formulaire est constitué par deux types de balises: `<form>` et
+Le coeur du formulaire est constitué par deux types de balises : `<form>` et
 `<input>`.
 
 
 La balise `<form>` délimite le contenu du formulaire et renseigne plusieurs
-attributs nécessaires au fonctionnement du formulaire:
+attributs nécessaires au fonctionnement du formulaire :
 
 * `method`: nom de la méthode HTTP utilisée pour envoyer les données. Peut
-  prendre pour valeur `post` ou `get` :
+  prendre pour valeur `post` ou `get` :
 
    * `get` envoie les données comme composantes de l'URL du serveur et requiert
-   par conséquent que :
+   par conséquent que :
 
       1. les données soient encodées pour être compatibles avec les
    spécifications URL,
@@ -56,19 +56,19 @@ attributs nécessaires au fonctionnement du formulaire:
    * `post` envoie les données dans le corps de la requête HTTP et ne
    présente pas la limitation de taille, elle est donc à privilégier.
 
-* `action` : URL du serveur où les données du formulaire doivent être
+* `action` : URL du serveur où les données du formulaire doivent être
   envoyées. 
 
 La balise `<input>` permet de définir différents champs dans lesquels
 l'utilisateur peut entrer des données. Ces champs offrent plus ou moins de
 liberté d'expression selon le type utilisé. La balise `<input>` a pour attributs:
 
-* [`type`](http://www.w3schools.com/tags/att_input_type.asp) : définit l'apparence
+* [`type`](http://www.w3schools.com/tags/att_input_type.asp) : définit l'apparence
   visuelle du champ et la nature des données qui peuvent y être renseignées.
-* [`value`](http://www.w3schools.com/tags/att_input_value.asp) : la valeur
+* [`value`](http://www.w3schools.com/tags/att_input_value.asp) : la valeur
 envoyée au serveur. Si elle est déjà renseignée lors de la création du formulaire,
  elle fait office de valeur par défaut.
-* [`name`](http://www.w3schools.com/tags/att_input_name.asp) : le nom que prendra la donnée envoyée au serveur.  Si l'input a pour `name` "firstname" et pour valeur "Éric", dans le cas d'une method `get` l'URL lors la soumission du formulaire contiendra 'firstname=Éric' et si la méthode est `post` ces valeurs seront transmises via les champs `Form Data` de la requête HTTP.
+* [`name`](http://www.w3schools.com/tags/att_input_name.asp) : le nom que prendra la donnée envoyée au serveur.  Si l'input a pour `name` "firstname" et pour valeur "Éric", dans le cas d'une method `get` l'URL lors la soumission du formulaire contiendra 'firstname=Éric' et si la méthode est `post` ces valeurs seront transmises via les champs `Form Data` de la requête HTTP.
 
 
 Afin de pouvoir être envoyé, votre formulaire doit obligatoirement contenir une
@@ -86,7 +86,7 @@ Nous allons voir comment est envoyée la valeur d'un `<input>` lorsque l'on soum
  va contenir le formulaire d'inscription au fan-club de Chuck que nous allons
  construire dans ce TD.
 
-1. Ajoutez à la page `inscription.html` le formulaire suivant :
+1. Ajoutez à la page `inscription.html` le formulaire suivant :
 
    ```html
    <form action="sendToMySecondYearInIut.php" method="post">
@@ -95,7 +95,7 @@ Nous allons voir comment est envoyée la valeur d'un `<input>` lorsque l'on soum
    </form>
    ```
 
-  1. **Sous Chrome relativement récent uniquement** : Affichez la page et ouvrez la console (F12) pour aller sur l'onglet
+  1. **Sous Chrome relativement récent uniquement** : Affichez la page et ouvrez la console (F12) pour aller sur l'onglet
   'Réseau', cocher la case "Preserve log", donnez la valeur `dupont` au champ texte, puis cliquez sur le bouton
   "Envoyer" du formulaire.  Vous devez voir une requête contenant
   `sendToMySecondYearInIut` dans la console. Cliquez sur cette ligne et cherchez
@@ -108,7 +108,7 @@ Nous allons voir comment est envoyée la valeur d'un `<input>` lorsque l'on soum
 
 </div>
 
-**Note** : il est normal que l'URL `sendToMySecondYearInIut.php`
+**Note** : il est normal que l'URL `sendToMySecondYearInIut.php`
 n'existe pas (le fameux code de retour HTTP **404** apparaît dans
 la console), puisque vous êtes en première année. Nous verrons en deuxième année
 dans le cours "Programmation Web - Côté Serveur" comment le serveur peut
@@ -122,7 +122,7 @@ Il serait bien de préciser à l'utilisateur à quoi notre champ `<input>` fait 
 
 <div class="exercise" id="exlabel">
 
-1. Remplacez le code de votre champ `<input>` par le code suivant :
+1. Remplacez le code de votre champ `<input>` par le code suivant :
 
    ```html
    <label for="surname">Nom</label>
@@ -136,14 +136,14 @@ Il serait bien de préciser à l'utilisateur à quoi notre champ `<input>` fait 
     formulaire doit toujours être `get`).
  1. Les deux champs apparaissent les uns à la suite des autres. Avec quelle
     balise vue dans le TD précédent peut-on les englober pour qu'il y ait un saut
-    de ligne entre les deux ?
+    de ligne entre les deux ?
 
 </div>
 
 ## Les principaux types de balises `<input>` 
 
 
-Il existe un assez grand nombre de types d'input :
+Il existe un assez grand nombre de types d'input :
 
  * Le type `radio` permet de ne sélectionner qu'une seule des options
 possibles.
@@ -156,7 +156,7 @@ possibles.
 
 <div class="exercise" id="exinput">
  
- A l'aide de [w3schools](http://www.w3schools.com/tags/att_input_type.asp), ajoutez dans le formulaire les `<input>` libellés :
+ A l'aide de [w3schools](http://www.w3schools.com/tags/att_input_type.asp), ajoutez dans le formulaire les `<input>` libellés :
 
  1. "Sexe" avec les deux valeurs que vous connaissez.
  1. "Date de naissance" avec le type d'input `date`.
@@ -172,13 +172,13 @@ possibles.
 </div>
 
 
-**Notes :** 
+**Notes :** 
 
  * Certains de ces inputs sont issus de la norme HTML5. De
 fait leurs adoptions au sein des navigateurs n'est pas uniforme. Les
 développeurs web peuvent être amenés à demander la nature du parc informatique
-cible du site web qu'ils doivent implémenter (en clair ils demandent : "quelle
-est la version d'Internet Explorer encore en cours sur votre parc ?"). Le site
+cible du site web qu'ils doivent implémenter (en clair ils demandent : "quelle
+est la version d'Internet Explorer encore en cours sur votre parc ?"). Le site
 [caniuse.com](http://caniuse.com/) permet ensuite de savoir si nous pouvons utiliser
 tel ou tel aspect pour la réalisation d'un site. Les types `date` et `time` par
 exemple sont [plus ou moins bien supportés](http://caniuse.com/#search=date) par
@@ -203,7 +203,7 @@ qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut `mu
 <div class="exercise" id="exlabel">
 
 
- A l'aide de [developer.mozilla.org](https://developer.mozilla.org/fr/docs/Web/HTML/Element/select) :
+ A l'aide de [developer.mozilla.org](https://developer.mozilla.org/fr/docs/Web/HTML/Element/select) :
 
  1. Ajoutez un `<select>` libellé "Pays d'origine" qui prend comme valeur de pays `U.S.A` , `France`, `Chine` et `Viêt Nam`, les `values` associées ne doivent pas dépendre de la langue du formulaire (la `value` associée à `France` doit être `fr` par exemple). L'utilisateur ne peut pas sélectionner plusieurs valeurs, le pays sélectionné par défaut est la France (indépendamment de l'ordre des balises `<option>` dans le HTML).
 
@@ -229,7 +229,7 @@ La balise `<fieldset>` permet de regrouper visuellement différents champs `<inp
 
 <div class="exercise" id="exfield">
 A l'aide de [cette page](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Comment_structurer_un_formulaire_HTML),
-regroupez les champs sur ces trois grands axes suivant :
+regroupez les champs sur ces trois grands axes suivant :
 
 * "Informations personnelles" (contenant "Nom", "Prénom", "Email", etc.),
 * "Les sports de combat" (contenenant "Sport de combat préféré"" et "Niveau en karaté"),
@@ -255,9 +255,9 @@ dans lequel les éléments sont parcourus en appuyant sur “tabulation”.
 
 ### Convivialité
 
-Quelques attributs permettent d'améliorer la convivialité des champs de votre formulaire:
+Quelques attributs permettent d'améliorer la convivialité des champs de votre formulaire :
 
-* `placeholder`: permet d'afficher une ligne de texte dans le champ qui disparaît
+* `placeholder` : permet d'afficher une ligne de texte dans le champ qui disparaît
   dès lors que l'utilisateur tape une information. Cela permet de donner à
   l'utilisateur des renseignements sur le contenu attendu. À utiliser
   impérativement avec les champs pour lesquels vous avez spécifié un “pattern”,
@@ -265,9 +265,9 @@ Quelques attributs permettent d'améliorer la convivialité des champs de votre 
   utiliser l'attribut `placeholder` pour spécifier le format attendu, les
   caractères interdits/autorisés, etc.
 
-   ex:  placeholder=“Entrez votre nom ici."
+   ex :  placeholder=“Entrez votre nom ici."
 
-* `checked` / `selected` : pour les types “radio” et “checkbox”, et pour `<option>`
+* `checked` / `selected` : pour les types “radio” et “checkbox”, et pour `<option>`
 respectivement. Cet attribut permet de spécifier que l'option en question est
 sélectionnée/cochée par défaut. Utile quand vous savez que l'une des options
 sera utilisée beaucoup plus fréquemment que les autres. Vous épargnez alors du
@@ -281,7 +281,7 @@ temps à l'utilisateur.
 </div>
 
 
-**Note :** Il existe depuis peu un pseudo attribut css `::placeholder`, mais celui-ci est [moins](http://caniuse.com/#search=placeholder%20css) bien supporté que 
+**Note :** Il existe depuis peu un pseudo attribut css `::placeholder`, mais celui-ci est [moins](http://caniuse.com/#search=placeholder%20css) bien supporté que 
 l'[attribut](http://caniuse.com/#search=placeholder%20attribute).
 
 
@@ -294,13 +294,13 @@ envoyées, que le serveur teste, puis réponde ; l'opération peut être longue.
 
 Afin d'éviter une attente inutile aux utilisateurs de votre formulaire, vous
 pouvez demander au navigateur d'effectuer directement certains tests de validation, afin de prévenir 
-les erreurs courantes (ex: mauvais numéro de téléphone, mauvaise date...). 
-Attention: cela ne vous dispense quand même pas de procéder aux vérifications côté serveur !  Deux attributs permettent
-de vérifier le contenu du formulaire:
+les erreurs courantes (ex : mauvais numéro de téléphone, mauvaise date...). 
+Attention : cela ne vous dispense quand même pas de procéder aux vérifications côté serveur !  Deux attributs permettent
+de vérifier le contenu du formulaire :
 
-* `required`: spécifie que le champ doit être obligatoirement rempli. Attribut à
+* `required` : spécifie que le champ doit être obligatoirement rempli. Attribut à
   ajouter à tous les champs dont la légende comporte une *
-* `pattern`: attribut spécifique aux champs “libres”, il permet de spécifier une
+* `pattern` : attribut spécifique aux champs “libres”, il permet de spécifier une
   [expression régulière](http://www.rexegg.com/). Cette chaîne de caractère au
   [format particulier](http://www.rexegg.com/regex-quickstart.html#ref) indique
   au navigateur tous les formats d'entrée autorisés pour le champ et le
@@ -311,7 +311,7 @@ de vérifier le contenu du formulaire:
   bloquera les erreurs d'adresse email les plus grossières. Vous trouverez de
   nombreux exemples de patterns utilisables sur le site
   [HTML5pattern](http://html5pattern.com/).  
-  **Note :** les patterns HTML sont automatiquement évalués sur la totalité de
+  **Note :** les patterns HTML sont automatiquement évalués sur la totalité de
   l'entrée. Il est donc inutile de les encadrer entre ^ et $ comme une
   expression régulière classique.
 
@@ -326,5 +326,5 @@ de vérifier le contenu du formulaire:
 
 </div>
 
-**Note :** Pour être toujours protégé contre les bugs lorsque vous cogitez sur une expression régulière, ne sortez jamais sans votre [Regulex](https://jex.im/regulex). Regulex, le visualisateur de machine d'état qu'il vous faut pour vos expressions régulières.
+**Note :** Pour être toujours protégé contre les bugs lorsque vous cogitez sur une expression régulière, ne sortez jamais sans votre [Regulex](https://jex.im/regulex). Regulex, le visualisateur de machine d'état qu'il vous faut pour vos expressions régulières.
 
