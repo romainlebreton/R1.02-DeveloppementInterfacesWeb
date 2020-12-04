@@ -26,7 +26,7 @@ travail. Si vous êtes plus, vous aurez une petite pénalité.
 **Examen & soutenances :**
 
 1. Semaine du 04 janvier 2021  : Examen écrit (~1h30)
-1. 13 & 14 janvier 2021  : Soutenance projet (20 min / groupe)
+1. 11 & 12 janvier 2021  : Soutenance projet (20 min / groupe)
 
 ### Architecture minimum de votre site :
 
