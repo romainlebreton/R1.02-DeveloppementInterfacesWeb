@@ -5,12 +5,12 @@ layout: index
 # How to use/edit this site
 
 This is a
-[*static website*](http://en.wikipedia.org/wiki/Static_web_page)
-automatically generated with [Jekyll](http://jekyllrb.com/) by
-[GitHub Pages](http://pages.github.com/). The source code is
+[*static website*](https://en.wikipedia.org/wiki/Static_web_page)
+automatically generated with [Jekyll](https://jekyllrb.com/) by
+[GitHub Pages](https://pages.github.com/). The source code is
 [available on GitHub]({{ site.github.repository_url }}) and you are
 free to copy it, modify it and share it under the terms of the
-[Creative Commons 4.0 BY-SA license](http://creativecommons.org/licenses/by-sa/4.0/deed.en_GB).
+[Creative Commons 4.0 BY-SA license](https://creativecommons.org/licenses/by-sa/4.0/deed.en_GB).
 
 You are a student, a collaborator, or a casual visitor to this site
 and want to learn how to take advantage of the
@@ -28,18 +28,18 @@ on top.
 
 This will drop you in GitHub's file editing interface, where you can
 modify the source code, preview it, and
-[commit your changes](http://readwrite.com/2013/10/02/github-for-beginners-part-2)
+[commit your changes](https://readwrite.com/2013/10/02/github-for-beginners-part-2)
 by giving a short description of what you modified.
 
 Most of the pages are written in
-[Markdown](http://daringfireball.net/projects/markdown/), which is a
+[Markdown](https://daringfireball.net/projects/markdown/), which is a
 textual format for generating formatted text. Markdown syntax is very
 intuitive, you can get a quick review
 [here](https://help.github.com/articles/github-flavored-markdown/) or
-[here](http://kramdown.gettalong.org/syntax.html).
+[here](https://kramdown.gettalong.org/syntax.html).
 
 **CAVEATS:** The Markdown engine used by this site is
-[Kramdown](http://kramdown.gettalong.org/). Its syntax definitions are
+[Kramdown](https://kramdown.gettalong.org/). Its syntax definitions are
 slightly different form
 [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/),
 thus the preview feature in GitHub might not render source as in the
@@ -54,7 +54,7 @@ results are:
   [this one]({{ site.github.zip_url | replace: 'zipball', 'blob' }}/{{ page.path }}))
   use them to access site-wide configuration variables.
 - Use of special purpose markup, HTML, and scripts, such as
-  mathematical excerpts written in [MathJax](http://mathjax.org/).
+  mathematical excerpts written in [MathJax](https://mathjax.org/).
   
 
 ## Copying the site for your own use
@@ -63,7 +63,7 @@ You want to get a copy of the website and its source code to analyze
 it, or because you are afraid that I might take it down someday, this
 is very easily done, even if you're not (yet!) the technical type.
 
-All you need is a [GitHub account](http://github.com/). Once your
+All you need is a [GitHub account](https://github.com/). Once your
 account is setup,
 [forking the repository]({{site.github.repository_url}}/fork) will
 create your own copy in your GitHub account.
@@ -71,7 +71,7 @@ create your own copy in your GitHub account.
 Now you can make changes to your own copy of the site. Edit some
 files, commit the changes, and examine the result. The compiled static
 site will be served at
-**http://*username*.github.io/{{site.github.project_title}}** (replace
+**https://*username*.github.io/{{site.github.project_title}}** (replace
 *username* by your GitHub user name).
 
 **Note:** the website will not be compiled when you first fork the
@@ -110,7 +110,7 @@ preview are too limited for this, and handling git history via
 GitHub's web interface becomes too clumsy at this point. You need to
 work locally on your computer.
 
-All you need to work locally is a [Git client](http://git-scm.com/).
+All you need to work locally is a [Git client](https://git-scm.com/).
 [Clone the repository](https://help.github.com/articles/fork-a-repo/#step-2-create-a-local-clone-of-your-fork)
 and start coding right away.
 

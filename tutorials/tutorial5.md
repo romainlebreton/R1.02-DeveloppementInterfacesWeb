@@ -41,7 +41,7 @@ nombreuses solutions existantes :
 
 * Coder deux sites en HTML/CSS : un pour les ordinateurs et un pour les
    smartphones (et un pour les tablettes ? et un pour les smartwatch ?). Exemple
-   [lemonde.fr](http://lemonde.fr) et [mobile.lemonde.fr](http://mobile.lemonde.fr).
+   [lemonde.fr](https://lemonde.fr) et [mobile.lemonde.fr](https://mobile.lemonde.fr).
 
 * Des applications natives pour chaque système (Android, iOS, Windows Phone, ...)
 
@@ -280,7 +280,7 @@ pour ces deux éléments à `0`.
 <!-- Cependant le rétrécissement se fait en proportion de la taille des -->
 <!-- éléments. Donc on doit enlever 6% à 300px (282) et 3% à 200px (194). -->
 
-<!-- Référence : http://www.w3.org/TR/css3-flexbox/#flex-property -->
+<!-- Référence : https://www.w3.org/TR/css3-flexbox/#flex-property -->
 <!-- Note: The flex shrink factor is multiplied by the flex base size when -->
 <!-- distributing negative space. This distributes negative space in proportion to -->
 <!-- how much the item is able to shrink, so that e.g. a small item won’t shrink to -->
@@ -412,7 +412,7 @@ Référence :
 https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes
 
-http://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html
+https://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html
 
 Meta name viewport viendrait de Apple et serait propriétaire
 
@@ -518,7 +518,7 @@ hauteur supérieure à `800px`.
 
 <div class="exercise">
 
-* Allez sur le site [Bootstrap](http://getbootstrap.com/) et constatez qu'il y a
+* Allez sur le site [Bootstrap](https://getbootstrap.com/) et constatez qu'il y a
   2 largeurs pour laquelle la mise en page change.
 * Utilisez le *device mode* pour afficher les *media queries* (cliquer sur les 3
   points verticaux du *device mode* pour afficher ces *media queries*).
@@ -563,13 +563,13 @@ Lorsque l'on cliquera dessus, le menu apparaîtra. Cela permet de ne pas perdre
 de place sur la page lorsque le menu est fermé. Pour fixer les idées, nous
 voulons un menu qui apparaît latéralement à la manière des exemples suivants :
  
- * [http://codepen.io/gungorbudak/pen/XbazEX](http://codepen.io/gungorbudak/pen/XbazEX)
- * [http://codepen.io/drewr/pen/uxvdt](http://codepen.io/drewr/pen/uxvdt)
+ * [https://codepen.io/gungorbudak/pen/XbazEX](https://codepen.io/gungorbudak/pen/XbazEX)
+ * [https://codepen.io/drewr/pen/uxvdt](https://codepen.io/drewr/pen/uxvdt)
 
 Dans l'exercice suivant, nous allons coder un menu burger HTML/CSS (donc sans
 JavaScript) qui apparait quand la souris passe au dessus du burger (la gestion
 du clic nécessiterait du JavaScript).  (Notez au passage que
-[codepen.io](http://codepen.io/) est un très bon outil pour découvrir de
+[codepen.io](https://codepen.io/) est un très bon outil pour découvrir de
 nouvelles techniques !)
 
 <div class="exercise">
@@ -612,7 +612,7 @@ du menu).
 1. Cachez par défaut en CSS le `menu2`. Au survol du `<div class="burger">`,
    faites-le réapparaître.
 1. (Optionnel) Changez la logique pour masquer le `menu2` : À la manière de
-   [http://codepen.io/gungorbudak/pen/XbazEX](http://codepen.io/gungorbudak/pen/XbazEX),
+   [https://codepen.io/gungorbudak/pen/XbazEX](https://codepen.io/gungorbudak/pen/XbazEX),
    cachez le menu en le décalant sur sa gauche de sa largeur avec la propriété
    `margin-left`. Faites une transition dessus (ohhhh! c'est beauuuu!)
 

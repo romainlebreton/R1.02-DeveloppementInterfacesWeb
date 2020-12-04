@@ -38,12 +38,12 @@ contain many important information about the form:
 The `<input>` tag allows you to define different fields in which the user can
 enter data. The `<input>` tag has attributes:
 
-* [`type`](http://www.w3schools.com/tags/att_input_type.asp): defines the
+* [`type`](https://www.w3schools.com/tags/att_input_type.asp): defines the
   visual appearance of the field and the nature of the data that can be entered.
-* [`name`](http://www.w3schools.com/tags/att_input_name.asp): the variable name
+* [`name`](https://www.w3schools.com/tags/att_input_name.asp): the variable name
   of the data filled in this `<input>`. In our previous example of
   `method="get"`, the form had two `<input>` of name `name` and `login`.
-* [`value`](http://www.w3schools.com/tags/att_input_value.asp) (optional):
+* [`value`](https://www.w3schools.com/tags/att_input_value.asp) (optional):
   Default value of the `<input>`, that is to say that the `<input>` will be
   prefilled with this value.
 
@@ -84,7 +84,7 @@ Let us see by ourselves how the value of an `<input>` is sent by a form.
 ## The tag `<label>`
 
 It would be nice to tell the user what our `<input>` field refers to. The
-[`<label>` tag](http://www.w3schools.com/tags/tag_label.asp) will associate the
+[`<label>` tag](https://www.w3schools.com/tags/tag_label.asp) will associate the
 question ("*Name ?*") to the `<input>`. The `for` attribute of the `<label>`
 must contain the identifier (attribute `id`) of the associated `<input>` (so you
 must add this identifier). When the label is correctly filled, a click on the
@@ -128,7 +128,7 @@ There are quite a number of types of `<input>`:
  
 <div class="exercise-en" id="exinput">
  
- With the help of [w3schools](http://www.w3schools.com/tags/att_input_type.asp),
+ With the help of [w3schools](https://www.w3schools.com/tags/att_input_type.asp),
  add to the form the following `<input>` whose labels are:
 
  1. "Date de naissance" with the input type `date`.
@@ -151,11 +151,11 @@ There are quite a number of types of `<input>`:
 
 * Some of those input types were introduced with HTML5 and are not fully
   supported by all browsers (especially old versions of Internet Explorer). We
-  recommend the website [caniuse.com](http://caniuse.com/) to check the
+  recommend the website [caniuse.com](https://caniuse.com/) to check the
   compatibility of HTML features. For instance, you can see that the types
   `date` and `time` are
-  [more or less compatible](http://caniuse.com/#search=date). The type `number`
-  is a [bit more accepted](http://caniuse.com/#search=number). You can notice
+  [more or less compatible](https://caniuse.com/#search=date). The type `number`
+  is a [bit more accepted](https://caniuse.com/#search=number). You can notice
   some changes in appearance depending on the browser you are using.
 
 * About the password, you can notice that it is written in plain text the URL if
@@ -300,15 +300,15 @@ Two attributes allow you to check the content of the form:
 * `required`: Specifies that the field must be completed. We commonly indicate
   required inputs to the user with a * in the label.
 * `pattern`: attribute specific to open answers, `pattern` let you specify
-  [a regular expression](http://www.rexegg.com/). This string obeys
-  [a particular syntax](http://www.rexegg.com/regex-quickstart.html#ref) and
+  [a regular expression](https://www.rexegg.com/). This string obeys
+  [a particular syntax](https://www.rexegg.com/regex-quickstart.html#ref) and
   indicates to the browser which entries of the input are valid. The browser will
   refuse to send the form as long as some input is invalid.
 
   Example: The pattern `0[1-9](\.\d{2}){4}` validates french phone numbers,
   while the pattern `[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,4}` will block the most
   obvious email address mistakes. You can find a large variety of patterns
-  examples at [HTML5pattern](http://html5pattern.com/).  
+  examples at [HTML5pattern](https://html5pattern.com/).  
   **Note:** HTML pattern test if the whole input is valid. So there is no need
   to use `^` and `$` as in classic regular expressions.
 

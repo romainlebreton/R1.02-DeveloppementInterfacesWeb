@@ -5,12 +5,12 @@ layout: tutorial
 ---
 
 Les standards définissant le CSS sont publiés par le World Wide Web Consortium
-(<a href="http://www.w3.org/">W3C</a>) à l'adresse
-[http://www.w3.org/Style/CSS/](http://www.w3.org/Style/CSS/).
+(<a href="https://www.w3.org/">W3C</a>) à l'adresse
+[https://www.w3.org/Style/CSS/](https://www.w3.org/Style/CSS/).
 
 > Cascading Style Sheets (CSS) est un mécanisme simple pour ajouter du style
 > (exemple fonte, couleurs, espace) à un document web.  
-> <cite><a href="http://www.w3.org/Style/CSS/">W3C</a></cite>
+> <cite><a href="https://www.w3.org/Style/CSS/">W3C</a></cite>
 
 Le CSS est responsable du rendu du site sur votre écran, mais aussi sur
 smartphone et des impressions papier (des ensembles de règles CSS peuvent être
@@ -148,7 +148,7 @@ suivant :
 
 Le CSS3 les a complétés par 147 mots-clés de couleurs que vous pouvez retrouver
 à l'adresse
-[http://www.w3.org/TR/css3-color/#svg-color](http://www.w3.org/TR/css3-color/#svg-color).
+[https://www.w3.org/TR/css3-color/#svg-color](https://www.w3.org/TR/css3-color/#svg-color).
 
 Vous pouvez être plus précis et accéder aux 16 millions de couleurs que peut
 afficher un écran en donnant les valeurs `R`, `V` et `B` en hexadécimal des
@@ -161,7 +161,7 @@ avec le format `#RRVVBB` (ou `#RVB` qui est un raccourci). Par exemple :
  * `#FF00FF` est rose, que l'on peut aussi accéder avec le mot clé `pink`.
 
 **Remarque :** Vous pouvez utiliser le site Web
-  [http://www.colorpicker.com/](http://www.colorpicker.com/) pour trouver
+  [https://www.colorpicker.com/](https://www.colorpicker.com/) pour trouver
   facilement le code `#RRVVBB` de n'importe quelle couleur.
 
 ### Dimensions
@@ -194,7 +194,7 @@ diminuer de moitié la largeur par rapport à celle qui aurait été calculée
 normalement.
 
 **Référence :** Pour plus de détails sur les unités disponibles
-[http://www.w3.org/TR/css3-values/#absolute-lengths](http://www.w3.org/TR/css3-values/#absolute-lengths)
+[https://www.w3.org/TR/css3-values/#absolute-lengths](https://www.w3.org/TR/css3-values/#absolute-lengths)
 <!-- les autres unitées sont in cm mm pt pc => font de plus de sens pour
 d'autres médias-->
 
@@ -250,7 +250,7 @@ Nous allons lister ici les propriétés les plus utilisées sur les fontes :
 fontes de secours (fallback) : elles seront utilisées si et seulement si les
 précédentes ne sont pas disponibles sur le navigateur. Quelques fontes
 classiques sont répertoriées sur
-[http://www.w3schools.com/cssref/css_websafe_fonts.asp](http://www.w3schools.com/cssref/css_websafe_fonts.asp).
+[https://www.w3schools.com/cssref/css_websafe_fonts.asp](https://www.w3schools.com/cssref/css_websafe_fonts.asp).
 
 
 **Importer de nouvelles fontes :** Vous pouvez associer à votre page Web de
@@ -271,12 +271,12 @@ Attention aux extensions non reconnues par Firefox (comme .eot)
 Si vous souhaitez en savoir plus, allez sur
 [https://developer.mozilla.org/fr/docs/Web/CSS/@font-face](https://developer.mozilla.org/fr/docs/Web/CSS/@font-face). Voici
 deux sites pratiques pour télécharger de nouvelles fontes : 
-[http://www.1001fonts.com](http://www.1001fonts.com) et 
-[http://www.fontsquirrel.com](http://www.fontsquirrel.com).
+[https://www.1001fonts.com](https://www.1001fonts.com) et 
+[https://www.fontsquirrel.com](https://www.fontsquirrel.com).
 
 **Référence :**
-  [http://www.w3.org/TR/CSS21/fonts.html](http://www.w3.org/TR/CSS21/fonts.html)
-  et [http://www.w3.org/TR/css-fonts-3/](http://www.w3.org/TR/css-fonts-3/).
+  [https://www.w3.org/TR/CSS21/fonts.html](https://www.w3.org/TR/CSS21/fonts.html)
+  et [https://www.w3.org/TR/css-fonts-3/](https://www.w3.org/TR/css-fonts-3/).
 
 ### Textes
 
@@ -331,7 +331,7 @@ traiter grossièrement le problème, limitez la largeur de l'élément `<body>` 
 6. Chaque paragraphe doit être indenté de `5px`.
 
 3. Allez chercher une fonte de votre choix sur
-   [http://www.fontsquirrel.com](http://www.fontsquirrel.com). Liez-là à votre
+   [https://www.fontsquirrel.com](https://www.fontsquirrel.com). Liez-là à votre
    document avec la règle `@font-face`. Appliquez-la aux titres de section
    `<h2>` en n'oubliant pas de mettre des fontes en *fallback* (fonte de
    recours).  

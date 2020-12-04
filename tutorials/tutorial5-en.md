@@ -12,8 +12,8 @@ task trivial. Here is an overview of the many existing solutions:
 
 * Coding two sites in HTML / CSS: one for computers and one for smartphones (and
   one for tablets? And one for smartwatches?). Example:
-  [lemonde.fr](http://lemonde.fr) and
-  [mobile.lemonde.fr](http://mobile.lemonde.fr)
+  [lemonde.fr](https://lemonde.fr) and
+  [mobile.lemonde.fr](https://mobile.lemonde.fr)
 * Native applications for each system (Android, iOS, Windows Phone, ...)
 * Use JavaScript to adapt the layout dynamically
 * Make the site in Flash (very bad idea because it is no longer supported on
@@ -361,7 +361,7 @@ logical operators `and`, `,` (or) and `not`.
 
 <div class="exercise">
 
-* Go to the [Bootstrap website](http://getbootstrap.com/) and find the widths
+* Go to the [Bootstrap website](https://getbootstrap.com/) and find the widths
   for which the layout is changing.
 * Use the device mode of chrome to show the media queries (click on the 3 dots
   on the top right corner of the window to do this). Check your previous
@@ -406,10 +406,10 @@ When clicked, the menu will appear. The page is not wasting any space when the
 menu is closed. To fix the ideas, we want a menu that appears sideways in the
 manner of the following examples (don't look at the JavaScript):
 
- * [http://codepen.io/gungorbudak/pen/XbazEX](http://codepen.io/gungorbudak/pen/XbazEX)
- * [http://codepen.io/drewr/pen/uxvdt](http://codepen.io/drewr/pen/uxvdt)
+ * [https://codepen.io/gungorbudak/pen/XbazEX](https://codepen.io/gungorbudak/pen/XbazEX)
+ * [https://codepen.io/drewr/pen/uxvdt](https://codepen.io/drewr/pen/uxvdt)
 
-(Note by the way that [codepen.io](http://codepen.io/) is a very useful tool to
+(Note by the way that [codepen.io](https://codepen.io/) is a very useful tool to
 learn new techniques !)
 
 <div class="exercise">
@@ -449,7 +449,7 @@ of the screen.
 1. Hide by default the `menu2` using CSS. When the mouse is over `<div
    class="burger">`, show it again.
 1. (Optional) Change the way to hide `menu2` : In the same way that
-   [http://codepen.io/gungorbudak/pen/XbazEX](http://codepen.io/gungorbudak/pen/XbazEX),
+   [https://codepen.io/gungorbudak/pen/XbazEX](https://codepen.io/gungorbudak/pen/XbazEX),
    hide the menu by shifting it to its right with the property
    `margin-left`. Add a transition on the margin-left (ohhhh! it's beautiful!)
 

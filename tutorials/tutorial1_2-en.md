@@ -5,12 +5,12 @@ layout: tutorial
 ---
 
 The standards defining the CSS are published by the World Wide Web Consortium
-(<a Href="http://www.w3.org/"> </a> W3C) at the address
-[http://www.w3.org/Style/CSS/](http://www.w3.org/Style/CSS/).
+(<a Href="https://www.w3.org/"> </a> W3C) at the address
+[https://www.w3.org/Style/CSS/](https://www.w3.org/Style/CSS/).
 
 > Cascading Style Sheets (CSS) is a simple mechanism for adding style
 > (e.g. font, color, space) to a Web document.  
-> <cite><a href="http://www.w3.org/Style/CSS/"> W3C </a></cite>
+> <cite><a href="https://www.w3.org/Style/CSS/"> W3C </a></cite>
 
 The CSS is responsible for rendering the site on your screen,
 but also on smartphone and paper printouts (CSS rules sets can be specified for
@@ -133,7 +133,7 @@ well-distributed colors as shown in the following diagram:
 </div>
 
 CSS3 has added 147 keywords of colors that you can find at the address
-[http://www.w3.org/TR/css3-color/#svg-color](http://www.w3.org/TR/css3-color/#svg-color).
+[https://www.w3.org/TR/css3-color/#svg-color](https://www.w3.org/TR/css3-color/#svg-color).
 
 You can be more specific and access to the 16 million colors that a screen can
 display by the hexadecimal values `R`,` G` and `B` of respectively the Red,
@@ -146,7 +146,7 @@ Green and Blue components of the color. This is written with the format
  * `#FF00FF` is pink, which can also be accessed with the keyword` pink`.
 
 **Note** You can use the website
-  [http://www.colorpicker.com/](http://www.colorpicker.com/) to easily find the
+  [https://www.colorpicker.com/](https://www.colorpicker.com/) to easily find the
   `# RRVVBB` code of any color.
 
 ### Dimensions
@@ -179,7 +179,7 @@ decrease by half the width compared to that which would have been calculated
 normally.
 
 **Reference:** For details on available units
-[http://www.w3.org/TR/css3-values/#absolute-lengths](http://www.w3.org/TR/css3-values/#absolute-lengths)
+[https://www.w3.org/TR/css3-values/#absolute-lengths](https://www.w3.org/TR/css3-values/#absolute-lengths)
 
 ### Fonts
 
@@ -215,7 +215,7 @@ We will list here the most used properties on fonts:
 **Important:** The last two fonts specified by the rule are fallback fonts: they
 will be used if and only if the previous are not available on the browser. A few
 classic fonts are listed on
-[http://www.w3schools.com/cssref/css_websafe_fonts.asp](http://www.w3schools.com/cssref/css_websafe_fonts.asp).
+[https://www.w3schools.com/cssref/css_websafe_fonts.asp](https://www.w3schools.com/cssref/css_websafe_fonts.asp).
 
 
 **Import new fonts:** You can import new fonts in your web page by using the
@@ -231,12 +231,12 @@ classic fonts are listed on
 If you want to learn more, go to
 [https://developer.mozilla.org/fr/docs/Web/CSS/@font-face](https://developer.mozilla.org/fr/docs/Web/CSS/@font-face).
 Here are two practical websites to download new fonts:
-[http://www.1001fonts.com](http://www.1001fonts.com) and
-[http://www.fontsquirrel.com](http://www.fontsquirrel.com).
+[https://www.1001fonts.com](https://www.1001fonts.com) and
+[https://www.fontsquirrel.com](https://www.fontsquirrel.com).
 
 **Reference:**
-  [http://www.w3.org/TR/CSS21/fonts.html](http://www.w3.org/TR/CSS21/fonts.html)
-  and [http://www.w3.org/TR/css-fonts-3/](http://www.w3.org/TR/css-fonts-3/).
+  [https://www.w3.org/TR/CSS21/fonts.html](https://www.w3.org/TR/CSS21/fonts.html)
+  and [https://www.w3.org/TR/css-fonts-3/](https://www.w3.org/TR/css-fonts-3/).
 
 ### Texts
 
@@ -289,7 +289,7 @@ change this and give `<body>` the color choosen by our web-designer: `#838892`.
 6. Each paragraph should be indented `5px`.
 
 3. Go get a font of your choice on
-   [http://www.fontsquirrel.com](http://www.fontsquirrel.com). Link it to your
+   [https://www.fontsquirrel.com](https://www.fontsquirrel.com). Link it to your
    document with `@font-face`. Apply it to the section titles `<h2>` and do not forget to give fallback fonts.
 
    **Warning:** If you use spaces in the name of your font, you will have to
