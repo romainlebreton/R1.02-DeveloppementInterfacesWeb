@@ -146,7 +146,7 @@ Green and Blue components of the color. This is written with the format
  * `#FF00FF` is pink, which can also be accessed with the keyword` pink`.
 
 **Note** You can use the website
-  [https://www.colorpicker.com/](https://www.colorpicker.com/) to easily find the
+  [https://www.webfx.com/web-design/color-picker/](https://www.webfx.com/web-design/color-picker/) to easily find the
   `# RRVVBB` code of any color.
 
 ### Dimensions

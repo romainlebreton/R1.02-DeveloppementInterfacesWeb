@@ -161,7 +161,7 @@ avec le format `#RRVVBB` (ou `#RVB` qui est un raccourci). Par exemple :
  * `#FF00FF` est rose, que l'on peut aussi accéder avec le mot clé `pink`.
 
 **Remarque :** Vous pouvez utiliser le site Web
-  [https://www.colorpicker.com/](https://www.colorpicker.com/) pour trouver
+  [https://www.webfx.com/web-design/color-picker/](https://www.webfx.com/web-design/color-picker/) pour trouver
   facilement le code `#RRVVBB` de n'importe quelle couleur.
 
 ### Dimensions
