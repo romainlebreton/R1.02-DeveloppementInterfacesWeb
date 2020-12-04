@@ -11,7 +11,7 @@ background color
 
 <!--
 border-collapse pour avoir des bordures collées entre elles
-caption : titre du tableau ?
+caption : titre du tableau ?
 -->
 
 La spécification HTML5 propose différentes manières de classer les
@@ -23,17 +23,17 @@ allons ici nous intéresser à deux types spécifiques :
   logique de la page web en la découpant en différentes sections. Nous y
   consacrerons la prochaine section.
 
-* les balises au niveau du texte : elles apportent une précision sur la
+* les balises au niveau du texte : elles apportent une précision sur la
   sémantique d'une partie du texte (mise en avant d'une partie de texte
   importante, ajout d'un type exposant, time,...).
 
-  Voici quelques exemples de balises au niveau du texte :
+  Voici quelques exemples de balises au niveau du texte :
 
   * `<sup>` : un exposant
   * `<time>` : mise en valeur d'une date
-  * `<em>` : emphase sur du texte
-  * `<strong>` : on rajoute de l'importance à un texte
-  * `<br>` : saut de ligne
+  * `<em>` : emphase sur du texte
+  * `<strong>` : on rajoute de l'importance à un texte
+  * `<br>` : saut de ligne
 
 
   Ces balises au niveau du texte sont souvent naturellement liées à un style
@@ -43,7 +43,7 @@ allons ici nous intéresser à deux types spécifiques :
 
 Il existe encore beaucoup d'autres balises HTML. Cela dit, il arrive qu'aucune
 ne corresponde à ce que l'on veut exprimer (lors d'une construction de layout
-par exemple). Deux balises neutres ont été ajoutées pour ces constructions :
+par exemple). Deux balises neutres ont été ajoutées pour ces constructions :
 
    * Au niveau du texte `<span>` : cette balise est neutre, sans signification
      particulière. Son utilisation permet entre autres de créer des règles de
@@ -82,7 +82,7 @@ Web.
 ```
 
 Pour fixer les idées, voici un aperçu d'une mise en page correspondante à
-l'exemple précédent :
+l'exemple précédent :
 
 <img src="{{site.baseurl}}/assets/sections.png" alt="Structuration d'une page" style="margin: 0 auto;display: block;">
 
@@ -142,13 +142,13 @@ Expliquons le rôle de quelques balises de structure:
 3. Ajoutez une balise `<footer>` qui contient le lien vers le retour au début du site,
    
 4. Ajoutez dans la balise `<nav>` deux liens dans une structure de liste
-   contenant : Un lien nommé "Accueil" qui pointe sur la page courante
+   contenant : Un lien nommé "Accueil" qui pointe sur la page courante
    `index.html` et un nommé "Contact" qui pointe vers une future page
    `contact.html`,
    
 5. Validez votre pages HTML sur le validateur
    [https://html5.validator.nu/](https://html5.validator.nu/). (Faites-le
-   systématiquement sans qu'on vous le demande :-) ).
+   systématiquement sans qu'on vous le demande :-) ).
 
 </div>
 <div class="exercise">
@@ -165,11 +165,11 @@ Expliquons le rôle de quelques balises de structure:
    1. un titre `Adresse`   
    1. l'image [contact.jpg]({{site.baseurl}}/assets/contact.jpg) pour illustrer
    que nous sommes bien à l'écoute.   
-   1. Ajoutez l'adresse avec la balise `<address>` contenant :  
+   1. Ajoutez l'adresse avec la balise `<address>` contenant :  
       IUT de Montpellier Sète <br>
       99 avenue d'Occitanie <br>
       34296 Montpellier Cedex 5 <br>
-      Email : chuckn@yopmail.com
+      Email : chuckn@yopmail.com
    
 3. Validez votre page HTML.
 
@@ -205,7 +205,7 @@ CSS complexe.
 ### Regroupement 
 
 La première façon de composer des sélecteurs est le regroupement.
-Les trois règles suivantes :
+Les trois règles suivantes :
 
 ```css
 h1 {color: red}
@@ -213,7 +213,7 @@ h2 {color: red}
 h3 {color: red}
 ```
 
-peuvent s'écrire :
+peuvent s'écrire :
 
 ```css
 h1,h2,h3 {color: red}
@@ -223,7 +223,7 @@ h1,h2,h3 {color: red}
 ### Combinaison
 
 Pour préciser un élément, il suffit de concaténer (sans espaces entre eux)
-plusieurs sélecteurs de base (balise, classe ou identifiant). Par exemple :
+plusieurs sélecteurs de base (balise, classe ou identifiant). Par exemple :
 
 ```css
 div.toto
@@ -280,7 +280,7 @@ de la page est là pour vous aider.
 **Allez sur** [http://flukeout.github.io/](http://flukeout.github.io/) et faites
 les niveaux de 1 à 11 et le niveau 14.
 
-**Notes :**
+**Notes :**
 
 * Vous pouvez passer directement à l'exercice que vous voulez en rentrant le
    numéro de l'exercice à la place du sélecteur.
@@ -291,7 +291,7 @@ les niveaux de 1 à 11 et le niveau 14.
 ### Pseudo Classes
 
 Une pseudo-classe est un moyen d'indiquer un état particulier de l'élément qui
-doit être sélectionné. Voici quelques exemples :
+doit être sélectionné. Voici quelques exemples :
 
 ```css
 /* Style des liens <a> n'ayant pas été visités */
@@ -340,7 +340,7 @@ Dans l'arborescence du document, un élément `<th>` doit être le fils d'un él
 `<tr>`. Il représente une cellule en-tête (le titre d'une colonne ou le titre d'une
 ligne du tableau). Il peut être utilisé à la place d'un élément `<td>`.
 
-Voici un squelette de table :
+Voici un squelette de table :
 
 ```html
 <table>
@@ -368,14 +368,14 @@ Voici un squelette de table :
 
 <div class="exercise">
 
-1. Créez une table avec les sept noms de colonnes suivants : `Acteurs, Karaté,
+1. Créez une table avec les sept noms de colonnes suivants : `Acteurs, Karaté,
 Taekwondo, Judo, Chun Kuk Do, Tangsudo, Ju-jitsu`. Cette table doit se trouver
 en bas de la page `index.html`, dans la partie complémentaire `<aside>`. Les noms
 doivent être contenus dans des balises `<span>`.
 1. Ajoutez la classe `skill` aux `<span>` correspondant à des noms d'arts
    martiaux.
 1. Ajoutez les six lignes suivantes (les nombres correspondent à la valeur de
-   l'acteur dans l'art martial correspondant) :
+   l'acteur dans l'art martial correspondant) :
 
      * Chuck Norris, 5, 5, 5, 5, 5, 5
      * Steven Seagal, 3, 5, 3, 2, 3, 5
@@ -392,8 +392,8 @@ doivent être contenus dans des balises `<span>`.
 
 Les éléments `<thead>` et `<tbody>` servent à définir plus explicitement la structure de notre table:
 
- * `<thead>` : la définition des colonnes (`Acteurs, Karaté,`...) 
- * `<tbody>` : le corps du tableau, c'est-à-dire les lignes (nos héros et leurs
+ * `<thead>` : la définition des colonnes (`Acteurs, Karaté,`...) 
+ * `<tbody>` : le corps du tableau, c'est-à-dire les lignes (nos héros et leurs
    niveaux de compétence).
 
 <div class="exercise">
@@ -422,7 +422,7 @@ Voyons maintenant comment la styliser.
  la table apparaisse en blanc et l'autre avec la couleur `#CCC`
  <strong>SANS</strong> modifier de quelque façon le HTML (voir la
  [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#règles-de-compositions-des-css))  
- **Attention :** La ligne du `<thead>` doit rester bleue.
+ **Attention :** La ligne du `<thead>` doit rester bleue.
 
 </div>
 
@@ -430,7 +430,7 @@ Voyons maintenant comment la styliser.
 
 Les balises `<th>` et `<td>` peuvent prendre des attributs `rowspan` et/ou
 `colspan`, qui permettent d'étirer la cellule courante pour prendre la place de
-plusieurs cellules :
+plusieurs cellules :
 
  * `rowspan` permet d'étirer la cellule sur plusieurs lignes (i.e rows),
  * `colspan` permet d'étirer la cellule sur plusieurs colonnes.
@@ -460,12 +460,12 @@ boîtes. Ces boîtes disposent toutes des propriétés CSS suivantes :
   suivante, et/ou entre cette boite et son parent. La zone couverte par la marge
   est de la même couleur que son parent,
 * `border` : bordure qui entoure le contenu. Cette propriété attend trois
-   valeurs :
+   valeurs :
 
    1. `width`, par ex. `1px`,
    1. `style`, par ex. `solid`, `dotted`, `dashed`,  ...
    1. `color`, par ex. `black`.  
-   **Attention :** Un border n'a pas de style par défaut, donc lui donner une
+   **Attention :** Un border n'a pas de style par défaut, donc lui donner une
    width ne suffit pas pour le voir.
    
 * `padding` : marge intérieure à la bordure, c'est-à-dire espacement entre le
@@ -514,28 +514,28 @@ style="margin:0 auto;display: block;">
 <!-- la marge.   -->
 
 Il y a trois syntaxes différentes pour donner des valeurs au `margin`, au
-`padding` et au `border` :
+`padding` et au `border` :
 
- * `margin : t r b l;` : Si on donne 4 tailles `t`, `r`, `b` et `l`, alors `t`
+ * `margin : t r b l;` : Si on donne 4 tailles `t`, `r`, `b` et `l`, alors `t`
    est associé à la valeur du haut (top), `r` est la valeur droite (right), `b`
    au bas (bottom) et `l` à la gauche (left);
- * `padding : v h;` : Si on ne donne que 2 tailles `v` et `h` alors `v` est
+ * `padding : v h;` : Si on ne donne que 2 tailles `v` et `h` alors `v` est
    associé aux valeurs verticales et `h` horizontales. C'est donc équivalent à
    `padding: v h v h;`.
- * `padding : a;` Si on donne une seule valeur, elle sera associée aux quatre
+ * `padding : a;` Si on donne une seule valeur, elle sera associée aux quatre
    coté de la boite, comme si on avait écrit `padding: a a a a;`.
 
-Exemples : 
+Exemples : 
 
 ```css
-#titi {margin : 5px 0 4px 7px;}
+#titi {margin : 5px 0 4px 7px;}
 /* Marges verticales (haute et basse) de 10px et horizontales de 5px */
 div {margin: 10px 5px;} 
 /* Le padding dans toutes les directions est de 5px */
-.toto {padding : 5px}    
+.toto {padding : 5px}    
 ```
 
-**Note :** On peut aussi préciser (péniblement) les valeurs unitaires des
+**Note :** On peut aussi préciser (péniblement) les valeurs unitaires des
   propriétés `margin-top`, `margin-left`, `margin-bottom`,...
 
 <div class="exercise">
@@ -546,7 +546,7 @@ div {margin: 10px 5px;}
 </div>
 
 
-### Centrer horizontalement :
+### Centrer horizontalement :
 
 Pour centrer le contenu d'une balise :
 
@@ -577,19 +577,19 @@ Les valeurs de la propriété float sont  `left`, `right`, `none` et `inherit`.
 1. Rajoutez un nouveau paragraphe qui commence à la phrase "Spécialiste en arts
 martiaux, ..." de la section "L'enfance".
 
-   Vous devez alors avoir le rendu suivant :
+   Vous devez alors avoir le rendu suivant :
    
    <img src="{{site.baseurl}}/assets/noclear.png" alt="Sans clear"
    style="display:block;margin:0 auto;">
    
-2. Nous souhaitons plutôt ce rendu :
+2. Nous souhaitons plutôt ce rendu :
    
    <img src="{{site.baseurl}}/assets/clear.png" alt="Sans clear"
    style="display:block;margin:0 auto;">
 
    Pour interdire à notre paragraphe d'avoir un élément flottant sur son côté gauche,
 rajoutez-lui la règle `clear:left`.  
-**Note :** On peut aussi interdire le côté droit avec `clear:right` et les deux
+**Note :** On peut aussi interdire le côté droit avec `clear:right` et les deux
   en même temps avec `clear:both`.
 
 </div>
@@ -600,18 +600,18 @@ de positionnement du sous-menu -->
 ## Position
 
 La propriété CSS `position` offre de nouvelles possibilités pour le
-positionnement des éléments. Ses valeurs sont :
+positionnement des éléments. Ses valeurs sont :
 
-* `static` : comportement normal (par défaut), l'élément est inséré normalement.
+* `static` : comportement normal (par défaut), l'élément est inséré normalement.
 * `relative`: le reste de la page fait comme si l'élément était positionné
   "normalement". De son côté, l'élément est positionné *relativement* à la
   position où il aurait dû être. On voit donc un espace où l'élément aurait dû
   être en `position:static`.
-* `absolute` : le reste de la page fait comme si l'élément n'existait
+* `absolute` : le reste de la page fait comme si l'élément n'existait
 pas. L'élément se positionne relativement à son plus proche ancêtre
 <strong>positionné</strong> (voir ci-dessous) ou sinon à `<body>` (si aucun
 ancêtre n'est positionné).
-* `fixed` : le reste de la page fait comme si l'élément n'existait
+* `fixed` : le reste de la page fait comme si l'élément n'existait
 pas. L'élément se positionne relativement à la fenêtre d'affichage ; il paraît donc *fixé* lors d'un défilement de la page.
 
 Un élément est dit <strong>positionné</strong> s'il a une position autre que `static` (qui est la valeur par défaut).
@@ -626,7 +626,7 @@ left:20px;
 
 vont positionner un élément `20px` plus à droite et en bas qu'il aurait dû l'être.
 
-Référence : [Mozilla Developer Network (MDN)](https://developer.mozilla.org/fr/docs/Web/CSS/position)
+Référence : [Mozilla Developer Network (MDN)](https://developer.mozilla.org/fr/docs/Web/CSS/position)
 
 <div class="exercise">
 

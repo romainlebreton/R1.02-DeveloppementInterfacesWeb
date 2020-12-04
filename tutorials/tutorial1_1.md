@@ -10,14 +10,14 @@ layout: tutorial
 
 Le but de ce TD est de comprendre comment sont écrites les pages Web basiques,
 aussi appelées pages statiques (Web 1.0). Une telle page Web contient deux
-parties :
+parties :
 
-1. **HTML** : Le fichier HTML contient la structure de la page et son contenu ;
+1. **HTML** : Le fichier HTML contient la structure de la page et son contenu ;
 en plus du texte brut, il donne du sens au texte en indiquant ce qui relève
 d'un paragraphe, d'un titre, *etc*, à l'aide de balises (exemple `<p>`,
 `<title>`,...);
 
-2. **CSS** : Le fichier CSS est responsable de la mise en page de ces éléments
+2. **CSS** : Le fichier CSS est responsable de la mise en page de ces éléments
    (mettre ce paragraphe en rose, utiliser la fonte "Sans Serif" pour ce
    titre,... )
 
@@ -40,13 +40,13 @@ que l'on peut ajouter à notre contenu brut. Nous verrons ensuite dans la
 <!-- [l'introduction à -->
 <!-- Git](https://gitlabinfo.iutmontp.univ-montp2.fr/valicov/tutoGit1ereAnnee/blob/master/README.md) -->
 <!-- et créer un projet Git pour stocker les fichiers des TDs. Cela aura des -->
-<!-- avantages : vous pourrez y accéder de chez vous, garder une trace de -->
+<!-- avantages : vous pourrez y accéder de chez vous, garder une trace de -->
 <!-- votre avancée grâce aux messages de commit, ... -->
 
 <!-- 1. Allez sur le [GitLab de l'IUT](https://gitlabinfo.iutmontp.univ-montp2.fr/) -->
 <!--    puis créez un projet HTMLCSS. -->
    
-<!-- 1. Dans un terminal, clonez votre projet git et ajoutez-y un dossier `TD1` : -->
+<!-- 1. Dans un terminal, clonez votre projet git et ajoutez-y un dossier `TD1` : -->
 <!--    ```sh -->
 <!--    ~$ git clone git@gitlabinfo.iutmontp.univ-montp2.fr:votre_login/htmlcss.git HTMLCSS -->
 <!--    ~$ cd HTMLCSS -->
@@ -90,7 +90,7 @@ comme un document HTML.
    Quelles différences d'affichage observez-vous ? Pourquoi ?  
    Comment sont affichés les sauts de ligne d'un document HTML ?  
    Comment est affiché un texte HTML entouré de `<!--` et `-->` ?
-   <!-- saut de ligne mangés, mauvais accents, commentaire coupés : interprétation du HTML -->
+   <!-- saut de ligne mangés, mauvais accents, commentaire coupés : interprétation du HTML -->
 
 </div>
 
@@ -123,7 +123,7 @@ mais complet).
 
    Le validateur nous dit qu'il s'attendait à voir `<!DOCTYPE html>` au début de
    notre document. Cette balise sert à déclarer que le document est écrit en
-   HTML5. En effet, il existe plusieurs standards de "langages HTML" : HTML4,
+   HTML5. En effet, il existe plusieurs standards de "langages HTML" : HTML4,
    XHTML, HTML5, ... Aujourd'hui, les gens utilisent majoritairement HTML5 et
    nous ferons de même.
 
@@ -158,7 +158,7 @@ mais complet).
    1. Réouvrez `index.html` dans le navigateur et vérifiez que tous les accents
       s'affichent bien.
 
-      **Note :** Si les accents ne marchent toujours pas, c'est parce qu'**il ne
+      **Note :** Si les accents ne marchent toujours pas, c'est parce qu'**il ne
         suffit pas** de dire que votre fichier est en UTF-8. Il faut aussi que
         votre fichier soit **bien enregistré en UTF-8**. Par exemple dans
         Notepad++, l'encodage est marqué tout en bas à droite. Vous pouvez
@@ -186,21 +186,21 @@ HTML5 valide.
 Nous avons vu dans l'exercice précédent nos premières balises `<meta>` et
 `<title>`.  Les balises permettent de structurer le document. Elles annotent le
 texte qu'elles contiennent et permettent donc d'y rajouter du sens. On distingue
-deux types de balises :
+deux types de balises :
 
-1. La plupart des balises **englobent du contenu** : elles commencent par une
+1. La plupart des balises **englobent du contenu** : elles commencent par une
 *balise ouvrante* `<mabalise>`, puis le *contenu* que l'on veut "annoter" et
 finissent par une *balise fermante* `</mabalise>`.  
 Par exemple, la balise `<title>` sert à dire que le texte qu'elle englobe sera
 le titre du document.
 
 2. [Certaines balises](http://www.w3.org/TR/html5/syntax.html#void-elements)
-**n'acceptent pas de contenu** : elles consistent juste d'une balise
+**n'acceptent pas de contenu** : elles consistent juste d'une balise
 ouvrante. On les appelle aussi balises auto-fermantes.
 Par exemple, nous avons vu la balise `<meta>` et nous verrons bientôt `<img>`,
 `<br>` ...
 
-**Autres exemples :**
+**Autres exemples :**
 
 ```html
 <p>Ceci est un paragraphe HTML puisqu'il est entouré des balises 'p' </p>
@@ -209,7 +209,7 @@ La balise 'br' du saut de ligne ne prend pas de contenu <br>
 
 ### La structure de base
 
-Servons-nous donc des balises pour créer une bonne structure de base de document HTML :
+Servons-nous donc des balises pour créer une bonne structure de base de document HTML :
 
 ```html
 <!DOCTYPE html>
@@ -227,7 +227,7 @@ Servons-nous donc des balises pour créer une bonne structure de base de documen
 
 
 Après la ligne `<!DOCTYPE html>` de déclaration du langage, le document est
-inclus dans la balise `<html>` et est composé de deux parties :
+inclus dans la balise `<html>` et est composé de deux parties :
 
 * l'en-tête `<head>` contient des informations sur le document HTML, comme
   * un `<title>` (balise obligatoire)
@@ -260,7 +260,7 @@ Les balises HTML donnent une structure d'arbre au document. Dans notre exemple
 </p>
 </div>
 
-l'arbre est le suivant :
+l'arbre est le suivant :
 
 * `<html>` est l'élément racine
 * `<head>` et `<body>` sont les deux fils de l'élément `<html>`
@@ -285,7 +285,7 @@ l'arbre est le suivant :
    
 </div>
 
-<!-- Explication orale sur l'importance de la validation : standard, uniformité -->
+<!-- Explication orale sur l'importance de la validation : standard, uniformité -->
 
 ## Outils de développement Web
 
@@ -295,7 +295,7 @@ la touche `F12`. Les outils de développement affichent deux parties bien
 distinctes, une dédiée au HTML et l'autre...aux CSS.  Ces outils sont fabuleux
 pour apprendre comment se construit une page internet.
 
-Il y a trois façons de s'intéresser à un élément en particulier :
+Il y a trois façons de s'intéresser à un élément en particulier :
 
 * Un clic droit avec la souris dans la page affichée, suivi d'un
   "Inspecter/Examiner l'élément", permet de voir le code HTML correspondant dans
@@ -326,7 +326,7 @@ Il est possible de rajouter des commentaires dans le HTML. Ces commentaires ne
 sont pas interprétés par le navigateur, et ne sont donc pas affichés (mais ils
 restent présents dans le code source).  Il s'agit donc d'informations laissées par
 des développeurs pour des développeurs. On les place entre les balises `<!--`
-et `-->` :
+et `-->` :
 
 
 ```html
@@ -341,13 +341,13 @@ dans les sections suivantes.
 
 Nous allons commencer par rajouter de la structure à notre page.  Pour ce faire
 nous allons utiliser les balises à contenu `<h1>` à `<h6>` pour identifier les
-différentes sections :
+différentes sections :
 
 * `<h1>` est utilisé pour les gros titres du document
 * `<h2>` est utilisé pour les sections du document
 * `<h3>` est utilisé pour les sous-sections du document et ainsi de suite.
 
-Par exemple, le titre ci-dessus est obtenu avec le code suivant :
+Par exemple, le titre ci-dessus est obtenu avec le code suivant :
 
 ```html
 <h3>Titres</h3>
@@ -358,9 +358,9 @@ Par exemple, le titre ci-dessus est obtenu avec le code suivant :
 1. Vérifier que le titre **Titres** juste au-dessus est bien un `<h3>` à l'aide
    des outils de développement en faisant un clic droit dessus.
 1. Ajoutez la balise `<h2>` aux éléments de `index.html` marqués par les
-   commentaires : `<!-- section -->`.
+   commentaires : `<!-- section -->`.
 2. Ajoutez la balise `<h3>` aux éléments de `index.html` marqués par les
-   commentaires : `<!-- sous section -->`.
+   commentaires : `<!-- sous section -->`.
 3. **Retestez** la conformité de votre document.
 
 </div>
@@ -375,14 +375,14 @@ Utilisez maintenant les balises `<p>` et `</p>` autour des paragraphes du
 document. Les paragraphes vous sont signifiés par `<!--début paragraphe -->` et
 `<!--fin paragraphe -->`.
 
-**Note :** Si vous faites un clic droit suivit de "inspecter l'élément" sur
+**Note :** Si vous faites un clic droit suivit de "inspecter l'élément" sur
 ce paragraphe, vous verrez justement que ce texte est dans un paragraphe.
 
 </div>
 
 #### Listes
 
-En HTML nous pouvons faire des listes ordonnées (numérotées) ou non ordonnées :
+En HTML nous pouvons faire des listes ordonnées (numérotées) ou non ordonnées :
 
 ```html
 <ul> <!-- ul pour unordered list -->
@@ -395,7 +395,7 @@ En HTML nous pouvons faire des listes ordonnées (numérotées) ou non ordonnée
 </ol>
 ```
 
-Ce qui donne une fois interprété par le moteur de rendu du navigateur :
+Ce qui donne une fois interprété par le moteur de rendu du navigateur :
 
 <div class="codeexample" style="margin:1em 0px;">
 <ul>
@@ -418,7 +418,7 @@ Ce qui donne une fois interprété par le moteur de rendu du navigateur :
 régulièrement de vous même, mais on vous tient par la main pour ce premier TD)
 </div>
 
-### Image : un exemple d'élément embarqué
+### Image : un exemple d'élément embarqué
 
 Pour insérer une image, on peut utiliser la balise
 
@@ -432,7 +432,7 @@ champs `src` et `alt` que l'on appelle les **attributs** de la balise. Les
 attributs se trouvent **toujours** dans la balise ouvrante.
 
 <div class="exercise">
-Précédemment, on avait vu une autre balise avec un attribut : quelle était cette balise ?
+Précédemment, on avait vu une autre balise avec un attribut : quelle était cette balise ?
 <!-- `<meta>` avec l'attribut `charset`. -->
 </div>
 
@@ -455,8 +455,8 @@ ici -->` par la balise `<img>` qui affichera l'image précédente.
    <!-- <img src="./images/chuck-jeune.jpg" alt="Une photo de Chuck Jeune, la légende est en marche."> -->
    <!-- ``` -->
  
-   **Note :** Vous pouvez utiliser l'adresse `./images/chuck-jeune.jpg`. C'est
-     une adresse relative : le point signifie "le dossier de la page Web
+   **Note :** Vous pouvez utiliser l'adresse `./images/chuck-jeune.jpg`. C'est
+     une adresse relative : le point signifie "le dossier de la page Web
      courante". Donc on va aller chercher l'image dans le dossier `images` du
      répertoire contenant la page Web `index.html`.
 
@@ -475,20 +475,20 @@ L'un des éléments les plus emblématiques du HTML est sans doute la balise
 `<a>`. Elle permet de faire des liens hypertextes (le HT dans HTML).
 
 Un lien est composé principalement d'une URL cible et d'un libellé (le texte
-cliquable souvent souligné en bleu) :
+cliquable souvent souligné en bleu) :
 
 ```html
 <a href="http://urlcible">le libellé</a>
 ```
 
 On peut renseigner l'URL complète de la cible (URL en chemin absolu), par
-exemple :
+exemple :
 
 ```html
 <a href="http://lynx.browser.org/">Lynx</a>
 ```
    
-ou donner une adresse relative à la page courante (URL en chemin relatif), par exemple :
+ou donner une adresse relative à la page courante (URL en chemin relatif), par exemple :
    
 ```html
 <a href="./images/chuck-jeune.png">Image</a>
@@ -514,7 +514,7 @@ dans l'exemple suivant. **Attention**, la valeur de cet attribut doit être
 
 On peut alors faire un lien vers cette balise en rajoutant `#un_identifiant` à
 la fin de l'URL. Par exemple, voici un lien vers la balise d'identifiant
-`un_identifiant` interne à la page Web courante `index.html` :
+`un_identifiant` interne à la page Web courante `index.html` :
 
 ```html
 <a href="index.html#un_identifiant">Exemple de lien interne</a>
@@ -548,16 +548,16 @@ texte.
 
 Justement, il faut mettre en exergue le fait que Chuck Norris est très fort dans
 différents arts martiaux.  Pour cela il faut mettre en emphase la phrase qui
-suit le commentaire : `<!-- mettre en emphase cette phrase -->` dans le fichier
+suit le commentaire : `<!-- mettre en emphase cette phrase -->` dans le fichier
 `index.html`.
 
 </div>
 
-**Note :** Il existe un autre type d'emphase qui s'obtient avec la balise `<strong>`.
+**Note :** Il existe un autre type d'emphase qui s'obtient avec la balise `<strong>`.
 
 #### Citation
 
-Voici un magnifique exemple de citation :
+Voici un magnifique exemple de citation :
 
 <blockquote> 
 Un biscuit ça n'a pas de 'spirit', c'est juste un biscuit. 
@@ -598,6 +598,6 @@ Nous savons ajouter de la structure à une page HTML avec des balises spécifiqu
 Dans la [partie 2 de ce TD](tutorial1_2.html), nous verrons comment améliorer l'aspect
 du site.
 
-<!-- Pour afficher les extensions de fichier Dans l'explorateur : alt pour
+<!-- Pour afficher les extensions de fichier Dans l'explorateur : alt pour
 afficher les menus, outils, options des dossiers, affichage, décocher cacher les
 extentions dont le type est connu -->
