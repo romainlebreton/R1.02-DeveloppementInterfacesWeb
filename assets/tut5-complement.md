@@ -12,7 +12,7 @@ layout: tutorial
 ### Les framework CSS
 
 Dans vos futurs projets Web, vous serez sûrement amenés à utiliser des framework
-CSS tels que [Foundation](https://foundation.zurb.com/) et
+CSS tels que [Foundation](https://get.foundation/) et
 [Bootstrap](https://getbootstrap.com/css/). Ces logiciels vous donneront accès à
 un certain nombre éléments d'interface CSS clés en main pour pouvoir concevoir
 un site Web responsive (boutons, formulaires, menus, ...). 
@@ -22,7 +22,7 @@ L'un des éléments les plus importants des frameworks CSS est un systèmes de
 grille qui permet de créer facilement des mises en pages. L'arrivée du modèle
 FlexBox a considérablement simplifié le code CSS derrière le framework (par
 exemple, regardez le
-[Flex Grid de Foundation](https://foundation.zurb.com/sites/docs/flex-grid.html)).
+[Flex Grid de Foundation](https://get.foundation/sites/docs/flex-grid.html)).
 
 Notre but dans ce TD est de comprendre comment le modèle FlexBox permet de coder
 facilement le modèle de grille. **Attention :** Nous n'utiliserons pas ces
