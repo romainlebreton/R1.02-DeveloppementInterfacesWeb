@@ -118,10 +118,14 @@ notés.](https://docs.google.com/spreadsheets/d/1CHQ6imNxRFWHETmVZbRyPIxg8hV8nVr
     -->
 1. le visuel du site (charte graphique) doit être cohérent sur toutes les pages du site.
 1. l’utilisation de framework tels que bootstrap, foundation, etc. n’est pas autorisée. 
-1. l’utilisation des *float* ou des tableaux n’est pas autorisée pour la mise en
-   page, c'est-à-dire par exemple pour mettre une colonne à côté d'une autre
-   ... Par contre, on peut bien sûr se servir de *float* pour son usage
+1. l’utilisation des *float* ou des tableaux **n’est pas autorisée pour la mise
+   en page**, c'est-à-dire par exemple pour mettre une colonne à côté d'une
+   autre ... Par contre, on peut bien sûr se servir de *float* pour son usage
    historique : entourer une image de texte.
+1. l’utilisation des `<br\>` **n’est pas autorisée pour la mise en page**. Si
+   vous voulez sauter à la ligne dans un texte, cela correspond sûrement à un
+   paragraphe `<p>`.  Si vous voulez espacer des blocs, il faut mettre des
+   marges en bas.
 1. le site sera responsive. Au minimum le menu s'adaptera à la taille de la
    page. De plus la page **Équipe** doit être responsive : la présentation se
    fera en grille sur une grande page ou en liste verticale quand la page est
