@@ -415,7 +415,7 @@ la fenêtre pour voir comment l'affichage s'adapte.
 **Note (optionnelle)** -- Règle d'inclusion des éléments `inline` et `block` du
 point de vue du HTML et du CSS :
 
-  [^somesamplefootnote]: En fait le HTML5 permet cette inclusion dans [certains cas](http://html5doctor.com/block-level-links-in-html-5/).
+  [^somesamplefootnote]: En fait le HTML5 permet cette inclusion dans [certains cas](https://html5doctor.com/block-level-links-in-html-5/).
   
 >   Inclure des éléments `block` dans des éléments `inline` n'est pas conforme
 >   en HTML[^somesamplefootnote], mais cela l'est du point de vue du CSS.  En

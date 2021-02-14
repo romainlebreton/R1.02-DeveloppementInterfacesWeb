@@ -106,7 +106,7 @@ d’hypertexte), est donc un langage à balise contenant des liens, dits
 
 Le HTML est un standard, c'est-à-dire un langage complètement décrit (n'hésitez
 pas à jeter un rapide coup d'œil
-[à sa spécification](http://www.w3.org/TR/html5/), un document très technique
+[à sa spécification](https://www.w3.org/TR/html5/), un document très technique
 mais complet).
 
 <div class="exercise">
@@ -194,7 +194,7 @@ finissent par une *balise fermante* `</mabalise>`.
 Par exemple, la balise `<title>` sert à dire que le texte qu'elle englobe sera
 le titre du document.
 
-2. [Certaines balises](http://www.w3.org/TR/html5/syntax.html#void-elements)
+2. [Certaines balises](https://www.w3.org/TR/html5/syntax.html#void-elements)
 **n'acceptent pas de contenu** : elles consistent juste d'une balise
 ouvrante. On les appelle aussi balises auto-fermantes.
 Par exemple, nous avons vu la balise `<meta>` et nous verrons bientôt `<img>`,
@@ -438,7 +438,7 @@ Précédemment, on avait vu une autre balise avec un attribut : quelle était c
 
 L'attribut `src` doit contenir l'adresse de l'image. L'attribut `alt` permet
 d'ajouter un texte alternatif pour les navigateurs ne pouvant les afficher
-(navigateur textuel <a href="http://lynx.browser.org/">Lynx</a>) ou pour les
+(navigateur textuel <a href="https://lynx.browser.org/">Lynx</a>) ou pour les
 personnes ne pouvant pas bien les distinguer (aveugles ou déficits visuels
 légers). **Attention**, l'attribut `alt` est obligatoire.
 
@@ -478,14 +478,14 @@ Un lien est composé principalement d'une URL cible et d'un libellé (le texte
 cliquable souvent souligné en bleu) :
 
 ```html
-<a href="http://urlcible">le libellé</a>
+<a href="https://urlcible">le libellé</a>
 ```
 
 On peut renseigner l'URL complète de la cible (URL en chemin absolu), par
 exemple :
 
 ```html
-<a href="http://lynx.browser.org/">Lynx</a>
+<a href="https://lynx.browser.org/">Lynx</a>
 ```
    
 ou donner une adresse relative à la page courante (URL en chemin relatif), par exemple :

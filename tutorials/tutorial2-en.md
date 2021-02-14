@@ -172,7 +172,7 @@ style applies.
 Starting from the basic selectors (of tag, class and id) presented
 [in the previous tutorial]({{site.baseurl}}/tutorials/tutorial1_2-en.html#the-basics-of-css-selectors),
 it is possible to create
-[complex selectors](http://www.w3.org/TR/css3-selectors/#combinators). For
+[complex selectors](https://www.w3.org/TR/css3-selectors/#combinators). For
 example, we will see how to select the `<div>` tags with class `toto` and who
 are sons of an element of identifier `titi`.
 
@@ -253,7 +253,7 @@ instruction. The right part of the page is there to help you. The tags in the
 game (`<plate>`, `<bento>`, ...) are not HTML5 tags but the principle of
 selectors remains the same.
 
-**Go on** [http://flukeout.github.io/](http://flukeout.github.io/) and pass
+**Go on** [https://flukeout.github.io/](https://flukeout.github.io/) and pass
 the levels 1 to 11 and the level 14.
 
 **Notes:**

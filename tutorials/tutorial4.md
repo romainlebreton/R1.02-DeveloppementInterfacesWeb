@@ -63,12 +63,12 @@ La balise `<input>` permet de définir différents champs dans lesquels
 l'utilisateur peut entrer des données. Ces champs offrent plus ou moins de
 liberté d'expression selon le type utilisé. La balise `<input>` a pour attributs:
 
-* [`type`](http://www.w3schools.com/tags/att_input_type.asp) : définit l'apparence
+* [`type`](https://www.w3schools.com/tags/att_input_type.asp) : définit l'apparence
   visuelle du champ et la nature des données qui peuvent y être renseignées.
-* [`value`](http://www.w3schools.com/tags/att_input_value.asp) : la valeur
+* [`value`](https://www.w3schools.com/tags/att_input_value.asp) : la valeur
 envoyée au serveur. Si elle est déjà renseignée lors de la création du formulaire,
  elle fait office de valeur par défaut.
-* [`name`](http://www.w3schools.com/tags/att_input_name.asp) : le nom que prendra la donnée envoyée au serveur.  Si l'input a pour `name` "firstname" et pour valeur "Éric", dans le cas d'une method `get` l'URL lors la soumission du formulaire contiendra 'firstname=Éric' et si la méthode est `post` ces valeurs seront transmises via les champs `Form Data` de la requête HTTP.
+* [`name`](https://www.w3schools.com/tags/att_input_name.asp) : le nom que prendra la donnée envoyée au serveur.  Si l'input a pour `name` "firstname" et pour valeur "Éric", dans le cas d'une method `get` l'URL lors la soumission du formulaire contiendra 'firstname=Éric' et si la méthode est `post` ces valeurs seront transmises via les champs `Form Data` de la requête HTTP.
 
 
 Afin de pouvoir être envoyé, votre formulaire doit obligatoirement contenir une
@@ -117,7 +117,7 @@ récupérer les données envoyées par notre formulaire et les traiter.
 
 ## La balise `<label>`
 
-Il serait bien de préciser à l'utilisateur à quoi notre champ `<input>` fait référence. La balise [`<label>`](http://www.w3schools.com/tags/tag_label.asp) permet d'associer la question sous-tendue ("Nom?") à l'input. Cette balise comporte un attribut `for` qui doit prendre pour valeur la valeur de l'attribut `id` du champ auquel est associé le `label`  (il faut donc penser à donner un `id` à notre `<input>`).
+Il serait bien de préciser à l'utilisateur à quoi notre champ `<input>` fait référence. La balise [`<label>`](https://www.w3schools.com/tags/tag_label.asp) permet d'associer la question sous-tendue ("Nom?") à l'input. Cette balise comporte un attribut `for` qui doit prendre pour valeur la valeur de l'attribut `id` du champ auquel est associé le `label`  (il faut donc penser à donner un `id` à notre `<input>`).
 
 
 <div class="exercise" id="exlabel">
@@ -156,7 +156,7 @@ possibles.
 
 <div class="exercise" id="exinput">
  
- A l'aide de [w3schools](http://www.w3schools.com/tags/att_input_type.asp), ajoutez dans le formulaire les `<input>` libellés :
+ A l'aide de [w3schools](https://www.w3schools.com/tags/att_input_type.asp), ajoutez dans le formulaire les `<input>` libellés :
 
  1. "Sexe" avec les deux valeurs que vous connaissez.
  1. "Date de naissance" avec le type d'input `date`.
@@ -179,11 +179,11 @@ fait leurs adoptions au sein des navigateurs n'est pas uniforme. Les
 développeurs web peuvent être amenés à demander la nature du parc informatique
 cible du site web qu'ils doivent implémenter (en clair ils demandent : "quelle
 est la version d'Internet Explorer encore en cours sur votre parc ?"). Le site
-[caniuse.com](http://caniuse.com/) permet ensuite de savoir si nous pouvons utiliser
+[caniuse.com](https://caniuse.com/) permet ensuite de savoir si nous pouvons utiliser
 tel ou tel aspect pour la réalisation d'un site. Les types `date` et `time` par
-exemple sont [plus ou moins bien supportés](http://caniuse.com/#search=date) par
+exemple sont [plus ou moins bien supportés](https://caniuse.com/#search=date) par
 les navigateurs. Le type `number` l'est
-[un peu plus](http://caniuse.com/#search=number). Vous pouvez constater quelques différences d'apparence dans votre formulaire suivant si vous êtes sur Chrome, Firefox, Internet Explorer ou Edge.
+[un peu plus](https://caniuse.com/#search=number). Vous pouvez constater quelques différences d'apparence dans votre formulaire suivant si vous êtes sur Chrome, Firefox, Internet Explorer ou Edge.
 
  * A propos du mot de passe, remarquez que ce dernier
 apparaît en clair dans l'URL si vous êtes en `get` lors de l'envoi via à
@@ -281,8 +281,8 @@ temps à l'utilisateur.
 </div>
 
 
-**Note :** Il existe depuis peu un pseudo attribut css `::placeholder`, mais celui-ci est [moins](http://caniuse.com/#search=placeholder%20css) bien supporté que 
-l'[attribut](http://caniuse.com/#search=placeholder%20attribute).
+**Note :** Il existe depuis peu un pseudo attribut css `::placeholder`, mais celui-ci est [moins](https://caniuse.com/#search=placeholder%20css) bien supporté que 
+l'[attribut](https://caniuse.com/#search=placeholder%20attribute).
 
 
 ### Contrôle du contenu
@@ -301,8 +301,8 @@ de vérifier le contenu du formulaire :
 * `required` : spécifie que le champ doit être obligatoirement rempli. Attribut à
   ajouter à tous les champs dont la légende comporte une *
 * `pattern` : attribut spécifique aux champs “libres”, il permet de spécifier une
-  [expression régulière](http://www.rexegg.com/). Cette chaîne de caractère au
-  [format particulier](http://www.rexegg.com/regex-quickstart.html#ref) indique
+  [expression régulière](https://www.rexegg.com/). Cette chaîne de caractère au
+  [format particulier](https://www.rexegg.com/regex-quickstart.html#ref) indique
   au navigateur tous les formats d'entrée autorisés pour le champ et le
   navigateur refusera d'envoyer le formulaire si un champ n'est pas correctement
   rempli. Par exemple, un “pattern” égal à `0[1-9](\.\d{2}){4}` permettra de
@@ -310,7 +310,7 @@ de vérifier le contenu du formulaire :
   françaises, tandis que le pattern `[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,4}`
   bloquera les erreurs d'adresse email les plus grossières. Vous trouverez de
   nombreux exemples de patterns utilisables sur le site
-  [HTML5pattern](http://html5pattern.com/).  
+  [HTML5pattern](https://html5pattern.com/).  
   **Note :** les patterns HTML sont automatiquement évalués sur la totalité de
   l'entrée. Il est donc inutile de les encadrer entre ^ et $ comme une
   expression régulière classique.

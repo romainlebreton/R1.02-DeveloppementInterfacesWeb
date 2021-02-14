@@ -80,7 +80,7 @@ annotate. A markup language annotates its content to give it structure.
 
 HTML is a standard, that is to say a language described completely (do not
 hesitate to throw a quick glance
-[to its specification](http://www.w3.org/TR/html5/), a highly technical document
+[to its specification](https://www.w3.org/TR/html5/), a highly technical document
 but very complete).
 
 <div class="exercise-en">
@@ -163,7 +163,7 @@ and therefore allow to add meaning to it. There are two types of tags:
 tag* `</mytag>`. For example, the tag `<title>` is used to say that the text
 inside will be the title of the document.
 
-2. [Some tags](http://www.w3.org/TR/html5/syntax.html#void-elements) **do not
+2. [Some tags](https://www.w3.org/TR/html5/syntax.html#void-elements) **do not
 accept any content**: they just consist of an opening tag.  For example, we
 have seen the tag `<meta>` and we will soon see `<img>`, `<br>` ...
 
@@ -392,7 +392,7 @@ Previously, we had seen another tag with an attribute: What was this tag?
 
 The attribute `src` must contain the location of the image. The attribute `alt`
 allows you to add an alternative text for browsers that cannot display images
-(e.g. textual browser <a href="http://lynx.browser.org/">Lynx</a>) or for the
+(e.g. textual browser <a href="https://lynx.browser.org/">Lynx</a>) or for the
 persons who can not see images clearly (blind or people with visual
 deficits). **Careful**, the `alt` attribute is mandatory.
 
@@ -433,13 +433,13 @@ A link is composed mainly of a target URL and a label (the clickable text often
 underlined in blue):
 
 ```html
-<a href="http://target_url">The label</a>
+<a href="https://target_url">The label</a>
 ```
 
 You can specify the complete URL of the target (absolute path), for example:
 
 ```html
-<a href="http://lynx.browser.org/">Lynx</a>
+<a href="https://lynx.browser.org/">Lynx</a>
 ```
 
 or give a relative address to the current page (relative path), for example:

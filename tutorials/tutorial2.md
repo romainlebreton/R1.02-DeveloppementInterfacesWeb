@@ -193,7 +193,7 @@ s’applique le style.
 présentés
 [dans le TD précédent]({{site.baseurl}}/tutorials/tutorial1_2.html#les-sélecteurs-css-de-base),
 il est possible de créer des
-[sélecteurs complexes](http://www.w3.org/TR/css3-selectors/#combinators).  Par
+[sélecteurs complexes](https://www.w3.org/TR/css3-selectors/#combinators).  Par
 exemple, nous allons voir comment sélectionner les `<div>` ayant la classe
 `toto` et qui sont fils d'un élément d'identifiant `titi`.
 
@@ -277,7 +277,7 @@ donnée. Les balises de ce jeu (`<plate>`, `<bento>`, ...) ne sont pas des
 balises HTML5 mais le principe des sélecteurs reste le même. La partie de droite
 de la page est là pour vous aider.
 
-**Allez sur** [http://flukeout.github.io/](http://flukeout.github.io/) et faites
+**Allez sur** [https://flukeout.github.io/](https://flukeout.github.io/) et faites
 les niveaux de 1 à 11 et le niveau 14.
 
 **Notes :**
