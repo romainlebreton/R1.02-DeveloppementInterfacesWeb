@@ -1,5 +1,5 @@
 ---
-title: TD4 &ndash; HTML / CSS avancé 2/2
+title: TD3 &ndash; HTML / CSS avancé 2/2
 subtitle: display et mise-en-page
 layout: tutorial
 ---
@@ -16,14 +16,14 @@ dans l'exercice position:absolute du sous-menu,
 mettre width:100% pour le sous-menu et fixer la largeur des titres de menus
 même si position absolute, width se rapporte au père
 -->
-Nous allons continuer de modifier notre site pour obtenir le rendu suivant [target_TD4.png]({{site.baseurl}}/assets/target_TD4.png), nous nous conentrerons aussi sur la contrusction d'un menu déroulant.
 
 ## Ordre d'application des sélecteurs CSS
 
 Comme vous vous en souvenez, les sélecteurs servent à sélectionner un ensemble
-de balises sur lesquels on applique une règle CSS. Nous avons appris lors du TD2 
-[les sélecteurs de base](tutorial2.html#les-sélecteurs-css-de-base) et 
-[la combinaison de sélecteurs](tutorial2.html#règles-de-compositions-des-css).
+de balises sur lesquels on applique une règle CSS. Nous avons appris lors du
+[TD1 les sélecteurs de base](tutorial1_2.html#les-sélecteurs-css-de-base) et lors
+du
+[TD2 la combinaison de sélecteurs](tutorial2.html#règles-de-compositions-des-css).
 
 Plusieurs règles CSS peuvent porter sur un même élément HTML. Si ces règles
 peuvent coexister, elles sont toutes appliquées. Par exemple, si vous avez le
@@ -102,7 +102,7 @@ Pour prendre de bonnes habitudes, on préférera les styles externes comme
 `styles.css` qui permet une séparation plus claire entre les rôles du HTML
 (contenu avec des balises pour donner du sens) et du CSS (présentation / mise en
 page). Comme dit
-[à la fin du TD 2]({{site.baseurl}}/tutorials/tutorial2.html#le-css-et-html--des-rôles-bien-distincts-et-complémentaires),
+[à la fin du TD 1 partie 2]({{site.baseurl}}/tutorials/tutorial1_2.html#le-css-et-html--des-rôles-bien-distincts-et-complémentaires),
 cette séparation est indispensable et très puissante :
 
  * Elle permet de réutiliser une présentation d'une page à l'autre. Par exemple
@@ -264,7 +264,7 @@ deux cas suivant ? Quelle règle de priorité CSS explique votre réponse ?
 
 Comme nous l'avons vu au TD précédent, à chaque balise correspond quatre boîtes
 (*content*, *padding*, *border* et *margin*,
-[voir la section sur le modèle de boîte du TD précédent]({{site.baseurl}}/tutorials/tutorial3.html#le-modèle-de-boite)).
+[voir la section sur le modèle de boîte du TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#le-modèle-de-boite)).
 
 <img alt="Box model" src="{{site.baseurl}}/assets/boxmodel.png" style="margin:0
 auto;display: block;">
@@ -296,7 +296,7 @@ En pratique, on utilise des éléments de display `block` :
    `<h2>`).
 
 Notez que
-[les balises de structure que l'on a présentées au TD précédent]({{site.baseurl}}/tutorials/tutorial3.html#structuration-de-la-page)
+[les balises de structure que l'on a présentées au TD précédent]({{site.baseurl}}/tutorials/tutorial2.html#structuration-de-la-page)
 ont `display:block` comme style par défaut dans le navigateur, ce qui explique
 qu'elles s'empilent verticalement comme on l'avait expliqué.
 
@@ -516,7 +516,7 @@ espaces dans le HTML, qui sont affichés lorsque les éléments sont `inline`.
 
 La valeur `display:none` enlève complètement un élément du rendu, sans laisser
 d'espace à l'endroit où il aurait dû être. Nous allons coder en exercice un menu
-déroulant. On veut produire un menu comme [ceci ]({{site.baseurl}}/assets/menu_flex_TD4.png).
+déroulant.
 
 ### Menu déroulant : Partie 1 -- positionnement
 
@@ -797,7 +797,7 @@ est très instructive :
  1. Placez la citation et le menu de navigation sur la même ligne (la citation
     sera à gauche et le menu à sa droite) toujours avec votre display favori.
  1. Repositionnez le menu pour qu'il soit en bas de la balise `<header>` (oui,
-    encore avec flexBox). Si ça n'a pas l'air de fonctionner, pensez à utiliser l'inspecteur pour verifier les marges des différentes boîtes.
+    encore avec flexBox).
  1. Mettez un fond blanc au `<header>`.
  1. Enlevez la couleur de fond des liens dans le menu.
 

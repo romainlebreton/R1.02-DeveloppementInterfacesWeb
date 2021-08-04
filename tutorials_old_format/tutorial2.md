@@ -1,5 +1,5 @@
 ---
-title: TD3 &ndash; HTML / CSS avancé 1/3
+title: TD2 &ndash; HTML / CSS avancé 1/2
 subtitle: structuration et stylisation, block & inline, combinaison de sélecteurs
 layout: tutorial
 ---
@@ -13,7 +13,6 @@ background color
 border-collapse pour avoir des bordures collées entre elles
 caption : titre du tableau ?
 -->
-Nous allons continuer de modifier notre site et l'objectif de cette séance est de contruire une seconde page et d'obtenir le rendu suivant pour notre page principale [target_TD3.png]({{site.baseurl}}/assets/target_TD3.png).
 
 La spécification HTML5 propose différentes manières de classer les
 balises/éléments selon leurs caractéristiques
@@ -183,7 +182,147 @@ Nous verrons comment changer la mise en page globale dans les TDs suivants. Pour
 la suite du TD, nous allons ajouter du style aux éléments de la page courante.
 
 
+## Règles de compositions des CSS
 
+[Rappelons qu'une règle CSS]({{site.baseurl}}/tutorials/tutorial1_2.html#tutoriel-dintroduction)
+est composé d'un sélecteur CSS et d'un bloc de déclaration composé de plusieurs
+paires propriété CSS / valeur. Un sélecteur CSS indique à quels éléments HTML
+s’applique le style.
+
+À partir des sélecteurs de bases (de balise, de classe et d'identifiant)
+présentés
+[dans le TD précédent]({{site.baseurl}}/tutorials/tutorial1_2.html#les-sélecteurs-css-de-base),
+il est possible de créer des
+[sélecteurs complexes](http://www.w3.org/TR/css3-selectors/#combinators).  Par
+exemple, nous allons voir comment sélectionner les `<div>` ayant la classe
+`toto` et qui sont fils d'un élément d'identifiant `titi`.
+
+
+Nous exposons dans cette section les principaux moyens de composer un sélecteur
+CSS complexe.
+
+
+### Regroupement 
+
+La première façon de composer des sélecteurs est le regroupement.
+Les trois règles suivantes :
+
+```css
+h1 {color: red}
+h2 {color: red}
+h3 {color: red}
+```
+
+peuvent s'écrire :
+
+```css
+h1,h2,h3 {color: red}
+```
+
+
+### Combinaison
+
+Pour préciser un élément, il suffit de concaténer (sans espaces entre eux)
+plusieurs sélecteurs de base (balise, classe ou identifiant). Par exemple :
+
+```css
+div.toto
+```
+
+correspond au sélecteur des `<div>` qui ont la classe `toto`. Ou encore 
+
+```css
+.titi.toto
+```
+
+correspond aux éléments qui ont la classe `toto` <strong>ET</strong> `titi`.
+
+### Descendance
+
+On veut pouvoir limiter une règle CSS à une sous partie de l'arborescence HTML,
+pour cela on utilise la relation de descendance.
+
+
+#### Descendance directe (enfant)
+
+La relation de descendance directe est signifiée par le caractère `>`. Par exemple,
+
+```css
+#titi > .toto
+```
+
+sélectionne les éléments de la classe `toto` qui sont <strong>enfant</strong>
+(direct) de l'élément d'identifiant `titi`.
+
+#### Descendance indirecte (descendant)
+
+
+La relation de descendance indirecte est signifiée par le caractère
+d'espacement. Par exemple,
+
+```css
+#titi .toto
+```
+
+signifie les éléments qui ont la classe `toto` qui sont
+<strong>descendants</strong> (direct ou indirect) de l'élément d'identifiant
+`titi`. Donc la différence avec `>` est qu'on n'est plus limité aux enfants
+puisqu'on intègre aussi les petits-enfants, arrières-petits-enfants ...
+
+<div class="exercise">
+
+Nous allons vous faire jouer à un jeu qui permet de vérifier votre compréhension
+des sélecteurs. Le jeu consiste à écrire le sélecteur qui répond à la consigne
+donnée. Les balises de ce jeu (`<plate>`, `<bento>`, ...) ne sont pas des
+balises HTML5 mais le principe des sélecteurs reste le même. La partie de droite
+de la page est là pour vous aider.
+
+**Allez sur** [http://flukeout.github.io/](http://flukeout.github.io/) et faites
+les niveaux de 1 à 11 et le niveau 14.
+
+**Notes :**
+
+* Vous pouvez passer directement à l'exercice que vous voulez en rentrant le
+   numéro de l'exercice à la place du sélecteur.
+
+
+</div>
+
+### Pseudo Classes
+
+Une pseudo-classe est un moyen d'indiquer un état particulier de l'élément qui
+doit être sélectionné. Voici quelques exemples :
+
+```css
+/* Style des liens <a> n'ayant pas été visités */
+a:link {color: yellow;}
+/* Style des liens <a> ayant été visités */
+a:visited {color: purple;}
+/* Style des liens <a> si la souris les survole */
+a:hover {text-decoration: underline;} 
+
+/* un paragraphe qui est le premier fils de son père */
+p:first-child {color:red;}
+/* le troisième paragraphe */
+p:nth-child(3) {color: green;}
+/* les textes des éléments li impairs seront verts et les pairs rouges */
+li:nth-child(odd) {color: green;}
+li:nth-child(even) {color: red;}
+```
+
+
+<div class="exercise">
+3. Enlevez le fait que (tous) les liens soient soulignés. Pour cela, allez vous
+renseigner sur
+[la propriété text-decoration](https://developer.mozilla.org/fr/docs/Web/CSS/text-decoration).
+1. Faites en sorte que les liens `<a>` visités apparaissent en bleu plus léger
+`#0088FF`.
+2. Lorsque la souris passe sur un lien, lui donner la couleur orange.
+</div>
+
+<!-- Les règles hover et visited peuvent être en conflit en cas de lien visité
+sur lequel on passe la souris. Comme les deux règles ont la même priorité, c'est
+l'ordre qui va importer.  -->
 
 ## Tableaux
 
@@ -430,7 +569,6 @@ Les valeurs de la propriété float sont  `left`, `right`, `none` et `inherit`.
 <div class="exercise">
 
  1. Placez l'image de Chuck jeune à gauche du texte (comment faire un sélecteur uniquement pour cette balise ?), 
- 1. Profitez-en pour réduire la taille de l'image Chuck jeune pour limiter sa hauteur à 150 pixels,
  1. Placez l'image beware `beware_img` à droite du texte.
 
 </div>
@@ -448,7 +586,7 @@ martiaux, ..." de la section "L'enfance".
    
    <img src="{{site.baseurl}}/assets/clear.png" alt="Sans clear"
    style="display:block;margin:0 auto;">
-   Il faut d'abord régler le problème du texte collé à l'image, pour ça on peut simplement ajouter une marge de 5 pixels à droite de l'image (il faut corriger ça pour l'autre image aussi).
+
    Pour interdire à notre paragraphe d'avoir un élément flottant sur son côté gauche,
 rajoutez-lui la règle `clear:left`.  
 **Note :** On peut aussi interdire le côté droit avec `clear:right` et les deux
@@ -501,7 +639,7 @@ Référence : [Mozilla Developer Network (MDN)](https://developer.mozilla.org/f
 et
 [twitter.png ![Twitter]({{site.baseurl}}/assets/twitter.png)]({{site.baseurl}}/assets/twitter.png)
 toujours positionnées en bas à droite de la fenêtre d'affichage l'une au-dessus
-de l'autre comme ceci [ceci]({{site.baseurl}}/assets/target_logos_fixed.png). Essayez aussi temporairement de les afficher tout en bas à droite du
+de l'autre. Essayez aussi temporairement de les afficher tout en bas à droite du
 document.
 
 </div>
