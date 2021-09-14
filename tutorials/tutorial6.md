@@ -602,27 +602,27 @@ du menu).
 
     * il se positionne par rapport à la fenêtre d'affichage (quelle valeur de
     `position` faut-il mettre ?), tout en haut à droite.
-	* il occupe 80% de la largeur de la fenêtre d'affichage et 100% de sa
-      hauteur (Cherchez sur le Web les unités de mesure `vh` et `vw`
-      [^somesamplefootnote])
     * il est visuellement au-dessus des autres éléments du site (cherchez sur le
     Web la propriété `z-index`)
 	* les sous-menus sont disposés verticalement.
 
 1. Cachez par défaut en CSS le `menu2`. Au survol du `<div class="burger">`,
    faites-le réapparaître.
-1. (Optionnel) Changez la logique pour masquer le `menu2` : À la manière de
+<!-- 1. (Optionnel) Changez la logique pour masquer le `menu2` : À la manière de
    [http://codepen.io/gungorbudak/pen/XbazEX](http://codepen.io/gungorbudak/pen/XbazEX),
    cachez le menu en le décalant sur sa gauche de sa largeur avec la propriété
-   `margin-left`. Faites une transition dessus (ohhhh! c'est beauuuu!)
+   `margin-left`. Faites une transition dessus (ohhhh! c'est beauuuu!) -->
 
+
+   
+Voilà ce qu'on devrait pouvoir obtenir [menu_burger.gif]({{site.baseurl}}/assets/menu_burger.gif)  
 <!-- PROBLEME : ON NE PEUT PAS CLIQUER SUR LE MENU CAR IL DISPARAIT LE TEMPS QUE
 LA SOURIS L'ATTEIGNE -->
 
 </div>
 
 **Note :** Le hover sur les sous-menus n'a pas de sens sur téléphone
-  portable. Il faudra gérer le clic avec du JS. La bonne solution est
+  portable (mais certains explorateurs contournent cela, par exemple en déclenchant le hover avec un "clique" sur l'élément à hover). Il faudra gérer le clic avec du JS. La bonne solution est
   ... suspense, vous la verrez en 2ème année.
 
 

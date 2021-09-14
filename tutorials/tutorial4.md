@@ -16,7 +16,7 @@ dans l'exercice position:absolute du sous-menu,
 mettre width:100% pour le sous-menu et fixer la largeur des titres de menus
 même si position absolute, width se rapporte au père
 -->
-Nous allons continuer de modifier notre site pour obtenir le rendu suivant [target_TD4.png]({{site.baseurl}}/assets/target_TD4.png), nous nous conentrerons aussi sur la contrusction d'un menu déroulant.
+Nous allons continuer de modifier notre site pour obtenir le rendu suivant [target_TD4.png]({{site.baseurl}}/assets/target_TD4.png), nous nous conentrerons aussi sur la contruction d'un menu déroulant comme ceci [first_menu.gif]({{site.baseurl}}/assets/first_menu.gif).
 
 ## Ordre d'application des sélecteurs CSS
 

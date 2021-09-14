@@ -1,5 +1,5 @@
 ---
-title: TD3 &ndash; HTML / CSS avancé 1/3
+title: TD3 &ndash; HTML / CSS avancé 1/2
 subtitle: structuration et stylisation, block & inline, combinaison de sélecteurs
 layout: tutorial
 ---
