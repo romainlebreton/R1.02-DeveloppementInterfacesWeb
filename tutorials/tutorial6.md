@@ -615,7 +615,9 @@ du menu).
 
 
    
-Voilà ce qu'on devrait pouvoir obtenir [menu_burger.gif]({{site.baseurl}}/assets/menu_burger.gif)  
+Voilà ce qu'on devrait pouvoir obtenir:
+
+![menu_burger.gif]({{site.baseurl}}/assets/menu_burger.gif)  
 <!-- PROBLEME : ON NE PEUT PAS CLIQUER SUR LE MENU CAR IL DISPARAIT LE TEMPS QUE
 LA SOURIS L'ATTEIGNE -->
 
