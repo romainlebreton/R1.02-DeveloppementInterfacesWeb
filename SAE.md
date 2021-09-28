@@ -13,13 +13,13 @@ La date limite de rendu est le lundi 29/11 à 23h59.
 ### Le contenu de votre site :
 
 Il y aura un menu de navigation avec sous-menus commun à toutes vos pages 
-(on peut par exemple imaginer une ligne du menu dédiée à chaque page avec au moins un sous-menu déroulant qui permet d'accéder directement à différents point de la page avec une ancre). 
+(on peut par exemple imaginer une ligne du menu dédiée à chaque page avec au moins un sous-menu déroulant qui permet d'accéder directement à différents points d'ancrage de la page). 
 Comme vu en TD, ce menu devra être responsive et donc être remplacé par un menu burger équivalent si la zone d'affichage est petite. 
 Voici une liste minimale de pages que vous devez avoir :
 
 1. Une page d'accueil introduisant le sujet.
 1. Au moins deux autres pages regroupants chacunes certains aspects du sujets 
-(ça peut être 3 ou 4 pages si cela permet un découpage plus pertinent pour couvrir les différents aspect à traiter).
+(ça peut être 3 ou 4 pages si cela permet un découpage plus pertinent pour couvrir les différents aspects à traiter).
 1. **Contact :** Une page formulaire ”contactez nous”, avec
 
    1. les informations sur le demandeur (nom, prénom, adresse email, code postal, champs de sélection du pays),
