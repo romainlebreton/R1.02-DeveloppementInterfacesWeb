@@ -6,7 +6,7 @@ layout: tutorial
 
 ## Sujet
 
-Vous devez réaliser le site Web présentant votre controverse sociotechnique de la SAÉ 1.6.
+Vous devez réaliser le site Web présentant votre controverse sociotechnique de la [SAÉ 1.6]({{site.baseurl}}/assets/Sae1-6.pdf).
 Pour rendre ce site web accessible vous utiliserez le dossier public_html de l'un des membres du groupes comme vu en TD. 
 La date limite de rendu est le lundi 29/11 à 23h59.
 
