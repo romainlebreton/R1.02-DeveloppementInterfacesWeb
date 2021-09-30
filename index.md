@@ -20,13 +20,14 @@ Cours à l'IUT de Montpellier - 1ère année
 <!-- 1. Semaine du 8 novembre 2021 : Finir le [TD 6 -- Responsive Design](tutorials/tutorial6.html) -->
 
 
-## Compléments optionnels
+<!--## Compléments optionnels-->
  
-1. [Coder des colonnes responsive à la Bootstrap](assets/tut5-complement.html)
+<!--1. [Coder des colonnes responsive à la Bootstrap](assets/tut5-complement.html)-->
 
 <!--## Instructions du projet
+<!--[Consigne pour la SAÉ](SAE.html)-->
 
-[Instructions du projet](projet.html)-->
+<!--[Instructions du projet](projet.html)-->
 
 <!-- ## Joomla -->
 
