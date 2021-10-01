@@ -854,7 +854,7 @@ Voyons un usage de `visibility:hidden` :
 
 <div class="exercise">
 
- Nous voulons marquer visuellement le menu sous la souris par une petite puce dans les `<a>` du menu. 
+ Nous voulons marquer visuellement le menu sous la souris par une petite puce dans les `<a>` du sous-menu. 
 
 ```html
 <span class="puce">■</span>
