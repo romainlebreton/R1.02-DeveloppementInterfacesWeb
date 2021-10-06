@@ -7,7 +7,7 @@ layout: tutorial
 ## Sujet
 
 Vous devez réaliser le site Web présentant votre controverse sociotechnique de la [SAÉ 1.6]({{site.baseurl}}/assets/Sae1-6.pdf).
-Pour rendre ce site web accessible vous utiliserez le dossier public_html de l'un des membres du groupes comme vu en TD. 
+Pour rendre ce site web accessible vous utiliserez le dossier `public_html` de l'un des membres du groupes comme vu en TD. 
 La date limite de rendu est le lundi 29/11 à 23h59.
 
 ### Le contenu de votre site :
@@ -18,7 +18,7 @@ Comme vu en TD, ce menu devra être responsive et donc être remplacé par un me
 Voici une liste minimale de pages que vous devez avoir :
 
 1. Une page d'accueil introduisant le sujet.
-1. Au moins deux autres pages regroupants chacunes certains aspects du sujets 
+1. Au moins deux autres pages regroupant chacune certains aspects du sujets 
 (ça peut être 3 ou 4 pages si cela permet un découpage plus pertinent pour couvrir les différents aspects à traiter).
 1. **Contact :** Une page formulaire ”contactez nous”, avec
 
@@ -55,13 +55,13 @@ notés:
 1. le site sera responsive. Au minimum le menu s'adaptera à la taille de la
    page.
 
-Quelques points suplémentaires que nous vérifierons pour l'évaluation:
+Quelques points supplémentaires que nous vérifierons pour l'évaluation:
 
-1. Valider vos fichiers HTML et CSS avec les validateurs HTML5 et CSS3 déja utilisés en TD.
+1. Valider vos fichiers HTML et CSS avec les validateurs HTML5 et CSS3 déjà utilisés en TD.
 1. Déclarer l'encodage UTF8 des caractères.
-1. Plusieurs fontes importés avec fallback.
-1. Maitrise des différentes propriétés de flex.
-1. Variétés des balises utilisées.
+1. Plusieurs fontes importés avec fonte de secours (fallback).
+1. Maîtrise des différentes propriétés de flex.
+1. Variété des balises utilisées.
 
 <!-- ————————————— -->
 <!-- Pour nous plus tard:  éléments de la grille de notation: -->
