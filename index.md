@@ -24,8 +24,8 @@ Cours à l'IUT de Montpellier - 1ère année
  
 <!--1. [Coder des colonnes responsive à la Bootstrap](assets/tut5-complement.html)-->
 
-<!--## Instructions du projet
-<!--[Consigne pour la SAÉ](SAE.html)-->
+## Instructions pour la SAÉ
+[Consigne pour la SAÉ](SAE.html)
 
 <!--[Instructions du projet](projet.html)-->
 
