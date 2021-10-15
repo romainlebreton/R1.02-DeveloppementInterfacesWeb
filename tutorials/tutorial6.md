@@ -1,5 +1,5 @@
 ---
-title: TD5 &ndash; Responsive Design
+title: TD6 &ndash; Responsive Design
 subtitle: 
 layout: tutorial
 ---
@@ -601,7 +601,7 @@ du menu).
 
 
     * il se positionne par rapport à la fenêtre d'affichage (quelle valeur de
-    `position` faut-il mettre ?), tout en haut à droite.
+    `position` faut-il mettre ?), tout en haut à gauche.
     * il est visuellement au-dessus des autres éléments du site (cherchez sur le
     Web la propriété `z-index`)
 	* les sous-menus sont disposés verticalement.
