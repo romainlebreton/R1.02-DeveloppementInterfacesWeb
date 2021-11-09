@@ -10,6 +10,12 @@ Vous devez réaliser le site Web présentant votre controverse sociotechnique de
 Pour rendre ce site web accessible vous utiliserez le dossier `public_html` de l'un des membres du groupes comme vu en TD. 
 La date limite de rendu est le lundi 29/11 à 23h59.
 
+### Héberger le site
+En déposant une page `page.html` dans votre dossier `public_html` cette page devrait être accessible à l'adresse http://webinfo.iutmontp.univ-montp2.fr/~mon_login_IUT/page.html
+Si la page ne s'affiche pas, il est peut être necessaire de donner les droits au serveur avec les commandes suivantes:
+1. `setfacl -m u:www-data:--x nom_du_répertoire` pour chaque répertoire menant à votre page Web,
+1. `setfacl -m u:www-data:r-- nom_du-fichier` pour chaque fichier de votre page web.
+
 ### Le contenu de votre site :
 
 Il y aura un menu de navigation avec sous-menus commun à toutes vos pages 
