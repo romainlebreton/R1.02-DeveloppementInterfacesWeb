@@ -3,7 +3,7 @@ title: Cours de programmation Web - HTML, CSS
 layout: main
 ---
 
-# Cours de programmation Web - HTML, CSS
+# R1.02 -- Développement d'interfaces Web
 Cours à l'IUT de Montpellier - 1ère année
 
 **Mots clés :** HTML, CSS
