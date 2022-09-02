@@ -1,4 +1,4 @@
-baseurl: /ProgWeb-HTMLCSS
+baseurl: /R1.02-DeveloppementInterfacesWeb
 permalink: /:categories/:title
 
 markdown: kramdown
