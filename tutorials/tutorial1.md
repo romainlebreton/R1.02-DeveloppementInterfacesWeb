@@ -31,7 +31,7 @@ Pour cela nous allons réaliser un site dont le rendu correspond au fichier
 
 Nous allons tout d'abord nous consacrer à préciser la structure (le HTML donc)
 que l'on peut ajouter à notre contenu brut, ce qui nous permettra de produire la page suivante [target_TD1.png]({{site.baseurl}}/assets/target_TD1.png). Nous verrons ensuite dans la
-[deuxième partie du TD](tutorial1_2.html) comment commencer à s'approcher du rendu désiré
+[deuxième partie du TD](tutorial2.html) comment commencer à s'approcher du rendu désiré
 [target.png]({{site.baseurl}}/assets/target.png) en réalisant un fichier CSS.
 
 <!-- <div class="exercise"> -->
@@ -112,7 +112,7 @@ mais complet).
 <div class="exercise">
   
 1. Testons la conformité de `index.html` au standard HTML5 à l'aide du validateur
-   [https://html5.validator.nu/](https://html5.validator.nu/). Quelles sont les
+   [https://validator.w3.org/](https://validator.w3.org/). Quelles sont les
    erreurs indiquées ?
 
 2. Commençons par l'erreur
