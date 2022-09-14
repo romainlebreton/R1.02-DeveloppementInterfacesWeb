@@ -176,8 +176,10 @@ mais complet).
 
 </div>
 
-À ce stade, le validateur indique que le fichier `index.html` est un document
-HTML5 valide.
+À ce stade, le validateur n'indique plus d'erreur dans le fichier `index.html`. 
+Il reste cependant un warning à régler (les warnings sont moins grave que les erreurs, mais c'est une bonne pratique de ne pas laisser de warning non plus). 
+En effet, le validateur recommande d'indiquer le langage du document ce qu'on peut indiquer dans la balise `<head>` en écrivant `<head lang="fr">` (on écrirait `en` au lieu de `fr` pour un document en anglais).
+Ça y est, le fichier est un document HTML5 valide.
 
 ## Structure usuelle d'un document HTML
 
@@ -213,7 +215,7 @@ Servons-nous donc des balises pour créer une bonne structure de base de documen
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang ="fr">
     <head>
         <!-- L'en-tête du document avec au moins un titre -->
         <meta charset="utf-8">
@@ -243,7 +245,7 @@ Les balises HTML donnent une structure d'arbre au document. Dans notre exemple
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang ="fr">
     <head>
         <meta charset="utf-8">
         <title>Le site non officiel de Chuck Norris</title>
