@@ -178,7 +178,7 @@ mais complet).
 
 À ce stade, le validateur n'indique plus d'erreur dans le fichier `index.html`. 
 Il reste cependant un warning à régler (les warnings sont moins grave que les erreurs, mais c'est une bonne pratique de ne pas laisser de warning non plus). 
-En effet, le validateur recommande d'indiquer le langage du document ce qu'on peut indiquer dans la balise `<head>` en écrivant `<head lang="fr">` (on écrirait `en` au lieu de `fr` pour un document en anglais).
+En effet, le validateur recommande d'indiquer le langage du document ce qu'on peut indiquer dans la balise `<html>` en écrivant `<html lang="fr">` (on écrirait `en` au lieu de `fr` pour un document en anglais).
 Ça y est, le fichier est un document HTML5 valide.
 
 ## Structure usuelle d'un document HTML
