@@ -13,7 +13,7 @@ background color
 border-collapse pour avoir des bordures collées entre elles
 caption : titre du tableau ?
 -->
-Nous allons continuer de modifier notre site et l'objectif de cette séance est de contruire une seconde page et d'obtenir le rendu suivant pour notre page principale [target_TD3.png]({{site.baseurl}}/assets/target_TD3.png).
+Nous allons continuer de modifier notre site et l'objectif de cette séance est de construire une seconde page et d'obtenir le rendu suivant pour notre page principale [target_TD3.png]({{site.baseurl}}/assets/target_TD3.png).
 
 La spécification HTML5 propose différentes manières de classer les
 balises/éléments selon leurs caractéristiques
@@ -63,7 +63,7 @@ Web.
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang ="fr">
     <head>...</head>
     <body>
         <header>
@@ -148,7 +148,7 @@ Expliquons le rôle de quelques balises de structure:
    `contact.html`,
    
 5. Validez votre pages HTML sur le validateur
-   [https://html5.validator.nu/](https://html5.validator.nu/). (Faites-le
+   [https://validator.w3.org/](https://validator.w3.org/). (Faites-le
    systématiquement sans qu'on vous le demande :-) ).
 
 </div>
@@ -306,7 +306,7 @@ plus en exergue.
 2. Mettez le 5 de Chuck en avant avec une balise `<strong>` pour bien montrer
 qui est le patron.
 3. (Optionnel) Si vous souhaitez centrer le 5, allez voir
-   [dans la suite du TD](#centrer-horizontalement-) comme faire.
+   [dans la suite du TD](#centrer-horizontalement) comme faire.
 
 <!-- Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages Wikipedia. -->
 
