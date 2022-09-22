@@ -316,6 +316,8 @@ des paragraphes de texte :
 
 ### Exercices
 
+<div class="exercise">
+
 1. **Couleurs :** Le fond de notre page est tout blanc par défaut. Nous allons
 changer cela en donnant au `<body>` la couleur qu'a choisi le graphiste / Web-designer :
 `#838892`.  
@@ -345,6 +347,7 @@ traiter grossièrement le problème, limitez la largeur de l'élément `<body>` 
     votre fichier CSS avec le validateur
     [https://jigsaw.w3.org/css-validator](https://jigsaw.w3.org/css-validator).
 
+</div>
 
 ## Les sélecteurs CSS de base
 
@@ -411,6 +414,8 @@ hauteur de `200px` à tous les éléments qui ont la classe `skill`, il faut éc
 
 ### Exercices 
 
+<div class="exercise">
+
 Tout va principalement se passer dans `styles.css`.
 
 2. Conformément à la maquette du designer
@@ -436,6 +441,8 @@ Norris. Pour ce faire :
 
 10. Testez la conformité de votre fichier CSS avec le validateur
     [https://jigsaw.w3.org/css-validator](https://jigsaw.w3.org/css-validator).
+
+</div>
 
 <!--
 Questions complémentaires :
