@@ -13,7 +13,7 @@ Cours à l'IUT de Montpellier - 1ère année
 1. Semaine du 12 septembre 2022 -- [TD1 -- Introduction à HTML](tutorials/tutorial1.html)
 1. Semaine du 19 septembre 2022 -- [TD2 -- Introduction à CSS ](tutorials/tutorial2.html)
 1. Semaine du 26 septembre 2022 -- [TD 3 -- CSS Avancés 1/2](tutorials/tutorial3.html)
-<!-- 1. Semaine du 3 octobre 2022 -- [TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html) et presentation site SAE 1.05 -->
+1. Semaine du 3 octobre 2022 -- [TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html) et presentation site SAE 1.05 
 <!-- 1. Semaine du 10 octobre 2022 -- [ Fin TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html)  -->
 <!-- 1. Semaine du 17 octobre 2022 -- [TD 5 -- Les Formulaires](tutorials/tutorial5.html) et travail sur SAE 1.05\\ -->
 <!-- 23 octobre rendu SAE 1.05 -->

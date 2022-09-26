@@ -518,9 +518,9 @@ espaces dans le HTML, qui sont affichés lorsque les éléments sont `inline`.
 
 La valeur `display:none` enlève complètement un élément du rendu, sans laisser
 d'espace à l'endroit où il aurait dû être. Nous allons coder en exercice un menu
-déroulant. On veut produire un menu comme ceci:
+déroulant comme ceci:
 
-![first_menu.gif]({{site.baseurl}}/assets/first_menu.gif).
+![first_menu.gif]({{site.baseurl}}/assets/first_menu.gif)
 
 ### Menu déroulant : Partie 1 -- positionnement
 
@@ -847,18 +847,24 @@ Pour cela on va s'interesser à la propriété CSS `overflow-x` qui permet de d�
  * `scroll`: empêche le contenu de dépasser et ajoute une barre de défilement horizontale pour rendre accessible l'ensemble de l'élément.
  * `auto`: est laissé à l'appréciation du navigateur. La plupart des navigateurs appliquent scroll dans ce cas.
 
-Cette proprieté n'est compatible qu'avec des éléments qui sont en `display:block` ou en `display:flex`. Vous pouvez modifier les propriétés CSS de la table pour faire apparaître la barre de défilement.
+Cette proprieté n'est compatible qu'avec des éléments qui sont en `display:block` ou en `display:flex`. 
 
-Comme la table est trop large par rapport à son conteneur, le navigateur essaie de minimiser sa largeur et les noms de la première colonne se retrouvent sur deux lignes au lieu d'une seule. 
-On peut interdire ce comportement au navigateur en ajoutant la propriété `white-space: nowrap;` à la table. 
+<div class="exercise">
+  Modifiez les propriétés CSS de la table pour faire apparaître la barre de défilement.
 
+
+  Comme la table est trop large par rapport à son conteneur, le navigateur essaie de minimiser sa largeur et les noms de la première colonne se retrouvent sur deux lignes au lieu d'une seule. 
+  On peut interdire ce comportement au navigateur en ajoutant la propriété `white-space: nowrap;` à la table. 
+</div>
+ 
 Finalement, on aimerait bien que la colonne de gauche reste visible quand on scroll pour pouvoir lire le tableau correctement. 
 On va utiliser un autre positionnement qu'on a pas encore vu `position: sticky;`. 
-Ce positionnement "adhérent" fonctionne comme relative (c'est-à-dire qu'il occupe sa place normale dans le document) jusqu'à ce qu'un certain seuil soit franchi et l'élément devient alors positionné de façon fixe.
+Ce positionnement "adhérent" fonctionne comme `relative` (c'est-à-dire qu'il occupe sa place normale dans le document) jusqu'à ce qu'un certain seuil soit franchi et l'élément devient alors positionné de façon fixe.
 Par exemple, en indiquant `position: sticky;` et `top: 10px;`, l'élément concerné serra affiché normalement dans la page jusqu'à ce qu'il se retrouve à `10px` du bord haut de son ancêtre positionné et il devient alors fixe.
-Utilisez `position: sticky;` avec la bonne valeur de positionnement sur la première case de chaque ligne du tableau (on pourra utiliser la pseudo-classe `:first-child`).
-Pour améliorer le résultat il est peut être necessaire de donner un fond coloré à chaque case (pour qu'elle cache celle qu'elle recouvre) et ajouter une bordure à droite des premières cases de chaque ligne.
-
+<div class="exercise">
+  Utilisez `position: sticky;` avec la bonne valeur de positionnement sur la première case de chaque ligne du tableau (on pourra utiliser la pseudo-classe `:first-child`).
+  Pour améliorer le résultat il est peut être necessaire de donner un fond coloré à chaque case (pour qu'elle cache celle qu'elle recouvre) et ajouter une bordure à droite des premières cases de chaque ligne.
+</div>
 
 ## Cacher ou enlever un élément du rendu
 
