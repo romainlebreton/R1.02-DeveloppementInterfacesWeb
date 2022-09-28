@@ -839,7 +839,7 @@ Non car pas de bordure et les espaces ne sont pas affichés avec display:flex
 
 ## Améliorer la présentation de la table
 
-La table est trop large pour le aside et le résultat est assez peu satisfaisant. On va améliorer ça en ajoutant une barre de défilement horizontal dans la table pour obtenir le résultat suivant [table_scroll.gif]({{site.baseurl}}/assets/table_scroll.gif).
+La table est trop large pour le aside et le résultat est assez peu satisfaisant. On va améliorer ça en ajoutant une barre de défilement horizontal dans la table pour obtenir le résultat suivant [table_scroll.mp4]({{site.baseurl}}/assets/table_scroll.mp4).
 
 Pour cela on va s'interesser à la propriété CSS `overflow-x` qui permet de décrire le comportement d'une boite qui dépasse horizontalement de son conteneur (devinez ce que fait `overflow-y`). On peut lui donner 4 valeurs différentes:
  * `visible`: la partie de la boîte qui dépasse reste visible. C'est le comportement par défaut.
