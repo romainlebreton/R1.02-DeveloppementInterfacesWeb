@@ -2,6 +2,7 @@
 title: TD4 &ndash; HTML / CSS avancé 2/2
 subtitle: display et mise-en-page
 layout: tutorial
+lang: fr
 ---
 
 <!--
@@ -839,32 +840,52 @@ Non car pas de bordure et les espaces ne sont pas affichés avec display:flex
 
 ## Améliorer la présentation de la table
 
-La table est trop large pour le aside et le résultat est assez peu satisfaisant. On va améliorer ça en ajoutant une barre de défilement horizontal dans la table pour obtenir le résultat suivant [table_scroll.mp4]({{site.baseurl}}/assets/table_scroll.mp4).
+La table est trop large pour le `<aside>` et le résultat est assez peu
+satisfaisant. On va améliorer ça en ajoutant une barre de défilement horizontal
+dans la table pour obtenir le résultat suivant
+[table_scroll.mp4]({{site.baseurl}}/assets/table_scroll.mp4).
 
-Pour cela on va s'interesser à la propriété CSS `overflow-x` qui permet de décrire le comportement d'une boite qui dépasse horizontalement de son conteneur (devinez ce que fait `overflow-y`). On peut lui donner 4 valeurs différentes:
+Pour cela on va s'intéresser à la propriété CSS `overflow-x` qui permet de
+décrire le comportement d'une boite qui dépasse horizontalement de son conteneur
+(devinez ce que fait `overflow-y`). On peut lui donner 4 valeurs différentes :
  * `visible`: la partie de la boîte qui dépasse reste visible. C'est le comportement par défaut.
  * `hidden`: la partie de la boîte qui dépasse est invisible.
- * `scroll`: empêche le contenu de dépasser et ajoute une barre de défilement horizontale pour rendre accessible l'ensemble de l'élément.
- * `auto`: est laissé à l'appréciation du navigateur. La plupart des navigateurs appliquent scroll dans ce cas.
+ * `scroll`: empêche le contenu de dépasser et ajoute une barre de défilement
+   horizontale pour rendre accessible l'ensemble de l'élément.
+ * `auto`: est laissé à l'appréciation du navigateur. La plupart des navigateurs
+   appliquent la valeur `scroll` dans ce cas.
 
 Cette proprieté n'est pas compatible avec les éléments en `display:inline` et il faudra donc utiliser `display:block` (ou `display:flex` ou `display:inline-block;`. 
 
 <div class="exercise">
   Modifiez les propriétés CSS de la table pour faire apparaître la barre de défilement.
 
-
-  Comme la table est trop large par rapport à son conteneur, le navigateur essaie de minimiser sa largeur et les noms de la première colonne se retrouvent sur deux lignes au lieu d'une seule. 
-  On peut interdire ce comportement au navigateur en ajoutant la propriété `white-space: nowrap;` à la table. 
+  Comme la table est trop large par rapport à son conteneur, le navigateur
+  essaie de minimiser sa largeur et les noms de la première colonne se
+  retrouvent sur deux lignes au lieu d'une seule. On peut interdire ce
+  comportement au navigateur en ajoutant la propriété `white-space: nowrap;` à
+  la table. 
 </div>
  
-Finalement, on aimerait bien que la colonne de gauche reste visible quand on scroll pour pouvoir lire le tableau correctement. 
-On va utiliser un autre positionnement qu'on a pas encore vu `position: sticky;`. 
-Ce positionnement "adhérent" fonctionne comme `relative` (c'est-à-dire qu'il occupe sa place normale dans le document) jusqu'à ce qu'un certain seuil soit franchi et l'élément devient alors positionné de façon fixe.
-Par exemple, en indiquant `position: sticky;` et `top: 10px;`, l'élément concerné serra affiché normalement dans la page jusqu'à ce qu'il se retrouve à `10px` du bord haut de son ancêtre positionné et il devient alors fixe.
+Finalement, on aimerait bien que la colonne de gauche reste visible quand on
+fait défiler la page. Ainsi le tableau reste toujours lisible. On va utiliser un
+autre positionnement que l'on n'a pas encore vu `position: sticky;`. 
+
+Ce positionnement "collant" fonctionne comme `relative` (c'est-à-dire qu'il
+occupe sa place normale dans le document) jusqu'à ce qu'un certain seuil soit
+franchi ; l'élément devient alors positionné de façon fixe. Par exemple, en
+indiquant `position: sticky;` et `top: 10px;`, l'élément concerné sera affiché
+normalement dans la page jusqu'à ce qu'il se retrouve à `10px` du bord haut de
+son ancêtre positionné et il devient alors fixe.
 <div class="exercise">
-  1. Utilisez `position: sticky;` avec la bonne valeur de positionnement sur la première case de chaque ligne du tableau (on pourra utiliser la pseudo-classe `:first-child`).
-  2. Pour améliorer le résultat il est peut être necessaire de donner un fond coloré à chaque case (pour qu'elle cache celle qu'elle recouvre) et ajouter une bordure à droite des premières cases de chaque ligne.
-  3. Pour éliminer les espaces entre les cases, on pourra utiliser la propriété `border-spacing:0px;`sur la table. Elle indique la quantité d'espace à mettre entres les bordures des cases dans une table.
+  1. Utilisez `position: sticky;` avec la bonne valeur de positionnement sur 
+  la première case de chaque ligne du tableau (on pourra utiliser la pseudo-classe `:first-child`).
+  2. Pour améliorer le résultat il est peut être necessaire de donner un fond 
+  coloré à chaque case (pour qu'elle cache celle qu'elle recouvre) et ajouter 
+  une bordure à droite des premières cases de chaque ligne.
+  3. Pour éliminer les espaces entre les cases, on pourra utiliser la propriété 
+  `border-spacing:0px;`sur la table. Elle indique la quantité d'espace à mettre 
+  entres les bordures des cases dans une table.
 </div>
 
 ## Cacher ou enlever un élément du rendu
