@@ -17,7 +17,7 @@ Cours à l'IUT de Montpellier - 1ère année
 1. Semaine du 10 octobre 2022 -- [ Fin TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html) 
 1. Semaine du 17 octobre 2022 -- [TD 5 -- Les Formulaires](tutorials/tutorial5.html) et travail sur SAE 1.05
 * 23 octobre rendu SAE 1.05 
-<!-- 1. Semaine du 24 octobre 2022 -- Entamer [TD 6 -- Responsive Design](tutorials/tutorial6.html) -->
+1. Semaine du 24 octobre 2022 -- Entamer [TD 6 -- Responsive Design](tutorials/tutorial6.html)
 <!-- 1. Semaine du 7 novembre 2022 -- Finir le [TD 6 -- Responsive Design](tutorials/tutorial6.html) et presentation site de la SAE 1.06 -->
 
 <!-- 1. Semaine du 28 novembre 2022 -- Seance de travail sur la  SAE 1.06 -->
