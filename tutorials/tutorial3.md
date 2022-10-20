@@ -2,6 +2,7 @@
 title: TD3 &ndash; HTML / CSS avancé 1/2
 subtitle: structuration et stylisation, block & inline, combinaison de sélecteurs
 layout: tutorial
+lang: fr
 ---
 
 <!--
@@ -26,7 +27,7 @@ allons ici nous intéresser à deux types spécifiques :
 
 * les balises au niveau du texte : elles apportent une précision sur la
   sémantique d'une partie du texte (mise en avant d'une partie de texte
-  importante, ajout d'un type exposant, time,...).
+  importante, ajout d'un type exposant, time, ...).
 
   Voici quelques exemples de balises au niveau du texte :
 
@@ -39,17 +40,17 @@ allons ici nous intéresser à deux types spécifiques :
 
   Ces balises au niveau du texte sont souvent naturellement liées à un style
   associé (les `<em>` seront stylisées par une mise en italique, les `<sup>` en
-  exposants,...).  Les navigateurs se chargent d'ajouter pour nous certains
+  exposants, ...). Les navigateurs se chargent d'ajouter pour nous certains
   styles par défaut très courant.
 
 Il existe encore beaucoup d'autres balises HTML. Cela dit, il arrive qu'aucune
-ne corresponde à ce que l'on veut exprimer (lors d'une construction de layout
+ne corresponde à ce que l'on veut exprimer (lors d'une construction de *layout*
 par exemple). Deux balises neutres ont été ajoutées pour ces constructions :
 
    * Au niveau du texte `<span>` : cette balise est neutre, sans signification
      particulière. Son utilisation permet entre autres de créer des règles de
      formatage spécifiques du contenu textuel (par exemple lorsque nous avons
-     ajouter la class `skill`).
+     ajouté la classe `skill`).
    * Balise de structure `<div>` : cette balise est neutre, son utilisation
      permet de distinguer une section qui ne revêt aucune signification
      particulière. Contrairement au `span` elle provoque un saut de ligne.
@@ -85,7 +86,7 @@ Web.
 Pour fixer les idées, voici un aperçu d'une mise en page correspondante à
 l'exemple précédent :
 
-<img src="{{site.baseurl}}/assets/sections.png" alt="Structuration d'une page" style="margin: 0 auto;display: block;">
+![Structuration d'une page]({{site.baseurl}}/assets/sections.png){: .blockcenter}
 
 Par défaut, ces balises découpent la page web en sections horizontales qu'elles
 occupent en entier (du bord gauche au bord droit de la section). Par défaut Les
@@ -93,7 +94,7 @@ balises de structure s'empilent verticalement car elles ne peuvent pas partager
 une même section horizontale (donc nous devrons appliquer un style particulier
 pour `<aside>`).
 
-Expliquons le rôle de quelques balises de structure:
+Expliquons le rôle de quelques balises de structure :
 
 * `<header>` : section contenant l'en-tête affichée de la page (à ne pas
   confondre avec `<head>`, qui sont les méta-informations de la page Web)
@@ -112,7 +113,7 @@ Expliquons le rôle de quelques balises de structure:
    sens. Une page peut contenir plusieurs articles, dans le cas d'un blog par
    exemple, de commentaires, d'une page listant les publications récentes ...
  * `<aside>` : section contenant du matériel périphérique au contenu
-   principal. Cela peut-être par ex. une série de liens spécifiques au document
+   principal. Cela peut être par ex. une série de liens spécifiques au document
    principal, un bandeau de publicités …
  * `<footer>` : section contenant le pied de page.
  * `<section>` : une section non spécifique, ou une sous-section d'un article,
@@ -147,7 +148,7 @@ Expliquons le rôle de quelques balises de structure:
    `index.html` et un nommé "Contact" qui pointe vers une future page
    `contact.html`,
    
-5. Validez votre pages HTML sur le validateur
+5. Validez votre page HTML sur le validateur
    [https://validator.w3.org/](https://validator.w3.org/). (Faites-le
    systématiquement sans qu'on vous le demande :-) ).
 
@@ -155,9 +156,9 @@ Expliquons le rôle de quelques balises de structure:
 <div class="exercise">
 
 1. Construire une page `contact.html` au même niveau que `index.html`. Elle doit
-   contenir le même template HTML (patron HTML) que `index.html`. En particulier:
+   contenir le même *template* HTML (patron HTML) que `index.html`. En particulier :
 
-   1. elle reprend les mêmes  `<header>` et `<footer>` que `index.html`,
+   1. elle reprend les mêmes `<header>` et `<footer>` que `index.html`,
    1. elle appelle la même feuille de style CSS,   
    1. elle définit son propre `<title>`.
 
@@ -251,7 +252,7 @@ doivent être contenus dans des balises `<span>`.
 
 ### Les éléments `<thead>` et `<tbody>`
 
-Les éléments `<thead>` et `<tbody>` servent à définir plus explicitement la structure de notre table:
+Les éléments `<thead>` et `<tbody>` servent à définir plus explicitement la structure de notre table :
 
  * `<thead>` : la définition des colonnes (`Acteurs, Karaté,`...) 
  * `<tbody>` : le corps du tableau, c'est-à-dire les lignes (nos héros et leurs
@@ -259,7 +260,7 @@ Les éléments `<thead>` et `<tbody>` servent à définir plus explicitement la 
 
 <div class="exercise">
 
-1. Ajoutez ces balises pour englober ces deux parties (en oubliant pas leurs
+1. Ajoutez ces balises pour englober ces deux parties (en n'oubliant pas leurs
    balises fermantes `</thead>` et `</tbody>`)
 
 1. Testez la conformité de votre site.
@@ -326,19 +327,18 @@ boîtes. Ces boîtes disposent toutes des propriétés CSS suivantes :
    1. `width`, par ex. `1px`,
    1. `style`, par ex. `solid`, `dotted`, `dashed`,  ...
    1. `color`, par ex. `black`.  
-   **Attention :** Un border n'a pas de style par défaut, donc lui donner une
-   width ne suffit pas pour le voir.
+   **Attention :** Un *border* n'a pas de style par défaut, donc lui donner une
+   *width* ne suffit pas pour le voir.
    
 * `padding` : marge intérieure à la bordure, c'est-à-dire espacement entre le
-   contenu et la bordure de la boîte. Le padding partage le même arrière plan
+   contenu et la bordure de la boîte. Le *padding* partage le même arrière-plan
    (`background-color`) que la boîte,
 
 * `width` : la largeur du contenu, *i.e.* de la boîte *content*
 
 * `height` : la hauteur du contenu, *i.e.* de la boîte *content*
 
-<img alt="Box model" src="{{site.baseurl}}/assets/boxmodel.png" style="margin:0
-auto;display: block;">
+![Box model]({{site.baseurl}}/assets/boxmodel.png){: .blockcenter}
 
 Par exemple le code suivant
 
@@ -365,8 +365,7 @@ la partie Style des outils de développement le modèle de boite (comme
 ci-dessous) et inspectez les quatre boites *content*, *padding*, *border* et
 *margin* pour les voir se dessiner à l'écran.
 
-<img alt="Box model" src="{{site.baseurl}}/assets/boxmodeldevtool.png"
-style="margin:0 auto;display: block;">
+![Box model]({{site.baseurl}}/assets/boxmodeldevtool.png){: .blockcenter}
 
 </div>
 
@@ -383,8 +382,7 @@ Il y a trois syntaxes différentes pour donner des valeurs au `margin`, au
  * `padding : v h;` : Si on ne donne que 2 tailles `v` et `h` alors `v` est
    associé aux valeurs verticales et `h` horizontales. C'est donc équivalent à
    `padding: v h v h;`.
- * `padding : a;` Si on donne une seule valeur, elle sera associée aux quatre
-   coté de la boite, comme si on avait écrit `padding: a a a a;`.
+ * `padding : a;` Si on donne une seule valeur, elle sera associée aux quatre cotés de la boite, comme si on avait écrit `padding: a a a a;`.
 
 Exemples : 
 
@@ -422,16 +420,16 @@ Pour centrer le contenu d'une balise :
  1. Dans la table, centrer le texte des cellules, (le 5 de Chuck notamment est encore trop discret)
 </div>
 
-## Les contenus flottant
+## Les contenus flottants
 
 La propriété `float` associée à un élément permet de faire flotter ce dernier complètement à gauche ou à droite de la ligne où il se trouve. 
-Les valeurs de la propriété float sont  `left`, `right`, `none` et `inherit`.
+Les valeurs de la propriété *float* sont `left`, `right`, `none` et `inherit`.
 
 <div class="exercise">
 
  1. Placez l'image de Chuck jeune à gauche du texte (comment faire un sélecteur uniquement pour cette balise ?), 
  1. Profitez-en pour réduire la taille de l'image Chuck jeune pour limiter sa hauteur à 150 pixels,
- 1. Placez l'image beware `beware_img` à droite du texte.
+ 1. Placez l'image *beware* `beware_img` à droite du texte.
 
 </div>
 
@@ -441,13 +439,12 @@ martiaux, ..." de la section "L'enfance".
 
    Vous devez alors avoir le rendu suivant :
    
-   <img src="{{site.baseurl}}/assets/noclear.png" alt="Sans clear"
-   style="display:block;margin:0 auto;">
+   ![Sans clear]({{site.baseurl}}/assets/noclear.png){: .blockcenter}
    
 2. Nous souhaitons plutôt ce rendu :
    
-   <img src="{{site.baseurl}}/assets/clear.png" alt="Sans clear"
-   style="display:block;margin:0 auto;">
+   ![Clear]({{site.baseurl}}/assets/clear.png){: .blockcenter}
+
    Il faut d'abord régler le problème du texte collé à l'image, pour ça on peut simplement ajouter une marge de 5 pixels à droite de l'image (il faut corriger ça pour l'autre image aussi).
    Pour interdire à notre paragraphe d'avoir un élément flottant sur son côté gauche,
 rajoutez-lui la règle `clear:left`.  
@@ -465,7 +462,7 @@ La propriété CSS `position` offre de nouvelles possibilités pour le
 positionnement des éléments. Ses valeurs sont :
 
 * `static` : comportement normal (par défaut), l'élément est inséré normalement.
-* `relative`: le reste de la page fait comme si l'élément était positionné
+* `relative` : le reste de la page fait comme si l'élément était positionné
   "normalement". De son côté, l'élément est positionné *relativement* à la
   position où il aurait dû être. On voit donc un espace où l'élément aurait dû
   être en `position:static`.
@@ -501,7 +498,7 @@ Référence : [Mozilla Developer Network (MDN)](https://developer.mozilla.org/f
 et
 [twitter.png ![Twitter]({{site.baseurl}}/assets/twitter.png)]({{site.baseurl}}/assets/twitter.png)
 toujours positionnées en bas à droite de la fenêtre d'affichage l'une au-dessus
-de l'autre comme ceci [ceci]({{site.baseurl}}/assets/target_logos_fixed.png). Essayez aussi temporairement de les afficher tout en bas à droite du
+de l'autre comme [ceci]({{site.baseurl}}/assets/target_logos_fixed.png). Essayez aussi temporairement de les afficher tout en bas à droite du
 document.
 
 </div>
