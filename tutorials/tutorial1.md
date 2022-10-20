@@ -2,6 +2,7 @@
 title: TD1 &ndash; HTML - un langage à balises pour structurer les documents
 subtitle: Doctype et premières balises
 layout: tutorial
+lang: fr
 ---
 
 <!-- Faire une note plus complète sur l'encodage des caractères -->
@@ -167,7 +168,7 @@ mais complet).
    1. **Retestez** la conformité de votre document.
 
 4. La dernière erreur nous parle d'un élément `head` auquel il manque un
-`title`.  Corrigez votre page Web en insérant un titre après le
+`title`. Corrigez votre page Web en insérant un titre après le
 `<meta>`. Avez-vous trouvé ce qui change à l'affichage ?
 
    ```html
@@ -186,7 +187,7 @@ En effet, le validateur recommande d'indiquer le langage du document ce qu'on pe
 ### Les balises HTML
 
 Nous avons vu dans l'exercice précédent nos premières balises `<meta>` et
-`<title>`.  Les balises permettent de structurer le document. Elles annotent le
+`<title>`. Les balises permettent de structurer le document. Elles annotent le
 texte qu'elles contiennent et permettent donc d'y rajouter du sens. On distingue
 deux types de balises :
 
@@ -292,9 +293,9 @@ l'arbre est le suivant :
 ## Outils de développement Web
 
 Dans la suite du TD, nous allons utiliser notre navigateur pour "inspecter"
-notre page internet.  Pour cela nous conseillons Chrome ou Firefox. Appuyer sur
+notre page internet. Pour cela nous conseillons Chrome ou Firefox. Appuyer sur
 la touche `F12`. Les outils de développement affichent deux parties bien
-distinctes, une dédiée au HTML et l'autre...aux CSS.  Ces outils sont fabuleux
+distinctes, une dédiée au HTML et l'autre...aux CSS. Ces outils sont fabuleux
 pour apprendre comment se construit une page internet.
 
 Il y a trois façons de s'intéresser à un élément en particulier :
@@ -310,9 +311,9 @@ survol avec la souris).
 
 <div class="exercise">
 
-Familiarisez-vous avec ces trois techniques en inspectant la page du TD.  
+Familiarisez-vous avec ces trois techniques en inspectant la page du TD. 
 Par exemple faites un clic droit sur l'élément "il y a trois façons..." puis
-"inspecter l'élément".  L'outil de développement doit vous présenter le code
+"inspecter l'élément". L'outil de développement doit vous présenter le code
 HTML et vous positionner directement sur `<p>Il y a ...`.
 
 </div>
@@ -326,7 +327,7 @@ que vous ne sachiez utiliser les outils de développeurs ? -->
 
 Il est possible de rajouter des commentaires dans le HTML. Ces commentaires ne
 sont pas interprétés par le navigateur, et ne sont donc pas affichés (mais ils
-restent présents dans le code source).  Il s'agit donc d'informations laissées par
+restent présents dans le code source). Il s'agit donc d'informations laissées par
 des développeurs pour des développeurs. On les place entre les balises `<!--`
 et `-->` :
 
@@ -336,12 +337,12 @@ et `-->` :
 ```
 
 Il y a justement des commentaires dans le fichier `index.html`, comme autant de
-consignes afin de les remplacer par du HTML.  Nous expliciterons ces dernières
+consignes afin de les remplacer par du HTML. Nous expliciterons ces dernières
 dans les sections suivantes.
 
 ### Titres
 
-Nous allons commencer par rajouter de la structure à notre page.  Pour ce faire
+Nous allons commencer par rajouter de la structure à notre page. Pour ce faire
 nous allons utiliser les balises à contenu `<h1>` à `<h6>` pour identifier les
 différentes sections :
 
@@ -429,7 +430,7 @@ Pour insérer une image, on peut utiliser la balise
 ```
 
 Cette balise n'a pas de balise fermante car elle ne peut avoir de contenu
-(cf. [le début du TD](#les-balises-html)).  On remarque qu'elle possède deux
+(cf. [le début du TD](#les-balises-html)). On remarque qu'elle possède deux
 champs `src` et `alt` que l'on appelle les **attributs** de la balise. Les
 attributs se trouvent **toujours** dans la balise ouvrante.
 
@@ -549,7 +550,7 @@ texte.
 <div class="exercise">
 
 Justement, il faut mettre en exergue le fait que Chuck Norris est très fort dans
-différents arts martiaux.  Pour cela il faut mettre en emphase la phrase qui
+différents arts martiaux. Pour cela il faut mettre en emphase la phrase qui
 suit le commentaire : `<!-- mettre en emphase cette phrase -->` dans le fichier
 `index.html`.
 

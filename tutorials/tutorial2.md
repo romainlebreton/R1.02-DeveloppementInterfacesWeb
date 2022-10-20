@@ -2,6 +2,7 @@
 title: TD2 &ndash; Les bases du CSS
 subtitle: Un langage de mise en page
 layout: tutorial
+lang: fr
 ---
 
 Les standards définissant le CSS sont publiés par le World Wide Web Consortium
@@ -43,14 +44,14 @@ h3 {
 Cette règle CSS donne à toutes les balises `<h3>` le style
 italique et défini comme couleur de texte le bleu.
 
-Une règle CSS est composée de deux parties: 
+Une règle CSS est composée de deux parties : 
 
 * un sélecteur CSS qui indique à quels éléments HTML s'applique le style. Dans
    notre exemple, le sélecteur `h3` signifie que nous allons appliquer le style
    suivant à toutes les balises HTML `<h3>` ;
 * un bloc de déclarations composé de plusieurs paires propriété CSS /
  valeur. Dans notre exemple, le bloc contient deux déclarations :
-  1. nous donnons la valeur `italic` à la propriété CSS `font-style`;
+  1. nous donnons la valeur `italic` à la propriété CSS `font-style` ;
   1. nous donnons la valeur `blue` à la propriété CSS `color`.
 
 <div class="exercise">
@@ -86,7 +87,7 @@ façon de concevoir des [sélecteurs](#les-sélecteurs-css-de-base).
 ## Les outils de développement sont vos amis
 
 Pour la partie HTML, les outils de développement étaient déjà vos amis ; pour le
-CSS, ils sont promus au grade de "best-friend-forever".  Sélectionner un élément
+CSS, ils sont promus au grade de "best-friend-forever". Sélectionner un élément
 HTML avec les outils de développement ne permet pas seulement de voir les règles
 CSS appliquées à ce dernier, il permet aussi de les **changer**. Autant dire
 qu'il est conseillé d'abuser de cet outil pendant le TD pour bidouiller tout et
@@ -114,7 +115,7 @@ couleur des codes, la marge des blocs de codes, la taille de la police, ...
 
 ## Commentaires
 
-En CSS, seuls les commentaires avec `/*` et `*/` sont autorisés.  Si vous
+En CSS, seuls les commentaires avec `/*` et `*/` sont autorisés. Si vous
 utilisez `//` dans votre fichier `styles.css` vous allez avoir des problèmes
 (les règles CSS suivantes ne seront pas appliquées).
  
@@ -128,7 +129,7 @@ titres `<h3>` ne sont plus en bleu ni en italique.
 ## Quelques propriétés CSS
 
 Comme dit précédemment, les blocs de déclarations comportent plusieurs
-déclarations de la forme `proprieteCSS:valeur;`.  Nous présentons ici quelques
+déclarations de la forme `proprieteCSS:valeur;`. Nous présentons ici quelques
 exemples de propriétés CSS et de valeurs associées.
 
 ### Couleurs
@@ -145,9 +146,7 @@ Les 16 mots clés suivants peuvent être utilisés pour définir une couleur :
 choisis pour désigner 16 couleurs bien réparties comme le montre le diagramme
 suivant :
 
-<div style="text-align:center">
-![Symétrie des 16 couleurs]({{site.baseurl}}/assets/HSL14colors.png).
-</div>
+![Symétrie des 16 couleurs]({{site.baseurl}}/assets/HSL14colors.png){: .blockcenter}
 
 Le CSS3 les a complétés par 147 mots-clés de couleurs que vous pouvez retrouver
 à l'adresse
@@ -336,12 +335,12 @@ traiter grossièrement le problème, limitez la largeur de l'élément `<body>` 
 6. Chaque paragraphe doit être indenté de `5px`.
 
 3. Allez chercher une fonte de votre choix sur
-   [http://www.fontsquirrel.com](http://www.fontsquirrel.com). Liez-là à votre
+   [http://www.fontsquirrel.com](http://www.fontsquirrel.com). Liez-la à votre
    document avec la règle `@font-face`. Appliquez-la aux titres de section
    `<h2>` en n'oubliant pas de mettre des fontes en *fallback* (fonte de
    recours).  
    **Attention :** Ne mettez pas d'espaces dans le nom de votre fonte, ou sinon
-   entourez-là avec des guillemets.
+   entourez-la avec des guillemets.
 
 10. Le CSS est un standard au même titre que le HTML. Testez la conformité de
     votre fichier CSS avec le validateur
@@ -352,8 +351,8 @@ traiter grossièrement le problème, limitez la largeur de l'élément `<body>` 
 ## Les sélecteurs CSS de base
 
 Les sélecteurs CSS permettent de préciser les éléments qui vont être impactés
-par la règle CSS.  Ils sont aussi utilisés sur d'autres problématiques du
-développement Web que nous verrons l'année prochaine.  Bref vous en aurez au
+par la règle CSS. Ils sont aussi utilisés sur d'autres problématiques du
+développement Web que nous verrons l'année prochaine. Bref, vous en aurez au
 partiel, c'est sûr.
 
 Comme vous le savez depuis le
@@ -421,7 +420,7 @@ Tout va principalement se passer dans `styles.css`.
 2. Conformément à la maquette du designer
 [target.png]({{site.baseurl}}/assets/target.png), il faut alterner comme
 couleurs de fonds pour les titres des sections les valeurs `#5BBDBF` et
-`#FF5850`.  Pour cela il nous faudra rajouter une classe "pair" et "impair" aux
+`#FF5850`. Pour cela il nous faudra rajouter une classe "pair" et "impair" aux
 éléments `h2` et `h3` et leur associer le style adéquat dans `styles.css`.
 
 3. L'image `beware.jpg` a du style, mais elle prend un peu trop de place : 
@@ -466,7 +465,7 @@ s’applique le style.
 
 À partir des sélecteurs de bases (de balise, de classe et d'identifiant)
 il est possible de créer des
-[sélecteurs complexes](http://www.w3.org/TR/css3-selectors/#combinators).  Par
+[sélecteurs complexes](http://www.w3.org/TR/css3-selectors/#combinators). Par
 exemple, nous allons voir comment sélectionner les `<div>` ayant la classe
 `toto` et qui sont fils d'un élément d'identifiant `titi`.
 
@@ -609,7 +608,7 @@ la présentation du contenu. Mais cette séparation est indispensable et très p
 
  * Elle permet de réutiliser une présentation d'une page à l'autre. Par exemple
    quand *lemonde.fr* publie un nouvel article, il ne refait pas le style
-   expressément pour ce dernier: il s'agit d'un nouveau document HTML partageant
+   expressément pour ce dernier : il s'agit d'un nouveau document HTML partageant
    le même CSS que les articles précédents ;
  * Elle permet de refaire un site Web en se concentrant sur les CSS sans (trop)
    toucher au HTML ;
@@ -624,7 +623,7 @@ donc que le HTML ne doit pas changer la mise en page. Bizarre non ?
 
 En fait, les navigateurs appliquent des styles CSS par défaut à certaines
 balises HTML. Par exemple, les liens `<a>` sont en bleus et soulignés sans que
-l'on ait rien à faire. Cela évite d'avoir justement TOUT à refaire en CSS : le
+l'on n'ait rien à faire. Cela évite d'avoir justement TOUT à refaire en CSS : le
 navigateur propose un style par défaut. Cela ne contredit pas le fait que la
 mise en page soit le rôle du CSS.
 
