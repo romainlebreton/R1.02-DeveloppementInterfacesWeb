@@ -17,7 +17,7 @@ dans l'exercice position:absolute du sous-menu,
 mettre width:100% pour le sous-menu et fixer la largeur des titres de menus
 même si position absolute, width se rapporte au père
 -->
-Nous allons continuer de modifier notre site pour obtenir le rendu suivant [target_TD4.png]({{site.baseurl}}/assets/target_TD4.png), nous allons aussi construire un menu déroulant comme ceci:
+Nous allons continuer de modifier notre site pour obtenir le rendu suivant [target_TD4.png]({{site.baseurl}}/assets/target_TD4.png), nous allons aussi construire un menu déroulant comme ceci :
 
 ![first_menu.gif]({{site.baseurl}}/assets/first_menu.gif).
 
@@ -40,7 +40,7 @@ div    { background-color:blue; }
 alors un `<div class="skill">` aura les deux propriétés `background-color:blue`
 et `color:red`.
 
-Mais il peut aussi arriver que ces dernières soient contradictoires.  Par
+Mais il peut aussi arriver que ces dernières soient contradictoires. Par
 exemple, si vous avez le code CSS suivant, **de quelle couleur** sera le texte
 d'un `<div>` de classe `skill` ?
 
@@ -59,7 +59,7 @@ dans la suite.
 Il y a plusieurs emplacements possibles pour déclarer du style CSS :
 
 1. **Style externe** : (Conseillé) On peut utiliser un fichier de style externe et le lier au
-document HTML avec la balise `<link>`  dans le `<head>` :
+document HTML avec la balise `<link>` dans le `<head>` :
 
    ```html
    <html>
@@ -93,7 +93,7 @@ document HTML avec la balise `<link>`  dans le `<head>` :
    </p>
    ```
 
-   Attention à ne pas confondre le style inline avec le futur `display:inline`.
+   Attention à ne pas confondre le style *inline* avec le futur `display:inline`.
 
 Enfin les navigateurs appliquent un style par défaut sur les éléments. Cela
 permet de ne pas avoir à définir à chaque fois les styles les plus
@@ -110,7 +110,7 @@ cette séparation est indispensable et très puissante :
 
  * Elle permet de réutiliser une présentation d'une page à l'autre. Par exemple
    quand *lemonde.fr* publie un nouvel article, il ne refait pas le style
-   expressément pour ce dernier: il s'agit d'un nouveau document HTML partageant
+   expressément pour ce dernier : il s'agit d'un nouveau document HTML partageant
    le même CSS que les articles précédents ;
  * Elle permet de refaire un site Web en se concentrant sur les CSS sans (trop)
    toucher au HTML ;
@@ -146,7 +146,7 @@ de priorité décroissante, nous avons
  * *c* compte le nombre de sélecteurs de classes (e.g. `.skill`) ou pseudo-classes
    (`:hover`,`:visited`,...) <!-- et sélecteur d'attribut -->
  * *d* compte le nombre de sélecteurs de balises (e.g. `div`, `span`) ou de
-   pseudo-élements (e.g. `::first-letter`, `::after`)
+   pseudo-éléments (e.g. `::first-letter`, `::after`)
  * les opérateurs de combinaison et le sélecteur universel `*` ne contribuent
    pas à la priorité.
 
@@ -173,16 +173,16 @@ prioritaire. En cas d'égalité sur *a* et *b*,
 * on regarde la "quatrième lettre" *d*.
 * **en cas d'égalité absolue**, la règle écrite en dernier est prioritaire.
 
-Ce mécanisme de priorité s'appelle la cascade et correspond au C de CSS (Cascading Style Sheet).
+Ce mécanisme de priorité s'appelle la cascade et correspond au C de CSS (*Cascading Style Sheet*).
 
 **Exemple :** `div.skill` (priorité (1,0,1,1)) est plus prioritaire que `div`
-(priorité (1,0,0,1)) car on a égalité sur *a* et *b* mais *c* est plus grand
+(priorité (1,0,0,1)) car on a égalité sur *a* et *b*, mais *c* est plus grand
 pour `div.skill`.
 
 <div class="exercise">
 
 Dans un fichier texte ou sur papier, écrivez les priorités des sélecteurs
-suivants et classez les du plus prioritaire au moins prioritaire. On supppose
+suivants et classez-les du plus prioritaire au moins prioritaire. On suppose
 que toutes ces règles sont définies dans un fichier externe, donc *a*=1, et les
 valeurs recherchées commencent toujours par `(1,...)`.
 
@@ -274,13 +274,13 @@ auto;display: block;">
 
 
 La façon dont ces boîtes vont occuper l'espace est gérée par l'attribut
-`display`.  Nous allons voir dans cette partie les trois valeurs principales de
+`display`. Nous allons voir dans cette partie les trois valeurs principales de
 la propriété `display`.
 
 
 ### `display:block`
 
-Les éléments block sont des éléments :
+Les éléments *block* sont des éléments :
 
  * qui par défaut occupent toute la largeur, <!-- (si l'on n'a pas précisé de
    `width`) de son parent, -->
@@ -292,9 +292,9 @@ Les éléments block sont des éléments :
 
 En pratique, on utilise des éléments de display `block` : 
 
- * dès que l'on veut expliciter l'agencement (layout) de certains éléments HTML
- d'une page. Par exemple nous voulons que l'en-tête (header) ait une hauteur de
- `200px`, qu'un paragraphe prenne `50%` de la largeur,... .
+ * dès que l'on veut expliciter l'agencement (*layout*) de certains éléments HTML
+ d'une page. Par exemple, nous voulons que l'en-tête (*header*) ait une hauteur de
+ `200px`, qu'un paragraphe prenne `50%` de la largeur, ... 
  * dès qu'il est naturel de prendre toute la place par défaut (exemple un titre
    `<h2>`).
 
@@ -317,12 +317,12 @@ Collapsing vertical margins : entre pères & fils, entre frères
 
 ### `display:inline`
 
-Les éléments inline sont des éléments :
+Les éléments *inline* sont des éléments :
 
  * qui prennent leur taille en fonction de leur contenu,
  * qui ne provoquent pas un saut de ligne, ils sont écrits comme du texte les uns
    à la suite des autres
- * dont on ne peut pas définir la taille en css via les propriétés `height` et `width`,
+ * dont on ne peut pas définir la taille en *CSS* via les propriétés `height` et `width`,
 
 
 En pratique, on utilise des éléments de display `inline` : 
@@ -333,7 +333,7 @@ En pratique, on utilise des éléments de display `inline` :
  1. lorsque l'on veut positionner des éléments à la suite.
 
 
-Puisqu'associés au texte (`<strong>`, `<a>`, ...), on trouve en majorité les
+Puisque associés au texte (`<strong>`, `<a>`, ...), on trouve en majorité les
 éléments `inline` comme feuilles de l'arborescence du HTML.
 
 Notez que
@@ -421,7 +421,7 @@ point de vue du HTML et du CSS :
   [^somesamplefootnote]: En fait le HTML5 permet cette inclusion dans [certains cas](http://html5doctor.com/block-level-links-in-html-5/).
   
 >   Inclure des éléments `block` dans des éléments `inline` n'est pas conforme
->   en HTML[^somesamplefootnote], mais cela l'est du point de vue du CSS.  En
+>   en HTML[^somesamplefootnote], mais cela l'est du point de vue du CSS. En
 >   modifiant la propriété `display` d'un élément, nous pouvons donc inclure des
 >   éléments `block` dans des éléments `inline`. Mais modifier sempiternellement
 >   le `display` naturel du HTML signifie que l'on n'a pas utilisé la bonne
@@ -454,7 +454,7 @@ Dans ce premier exercice, nous allons créer un menu dans un style `block`.
    voir si c'est le cas. Que constatez-vous ?
 
    **Explication :** En fait, un élément `display:block` ne prend pas toute la
-     largeur de `<body>` mais de son plus proche `block` parent. Ici, le père de
+     largeur de `<body>`, mais de son plus proche `block` parent. Ici, le père de
      `<nav>` est le bloc `<header>` et donc `<nav>` prend toute la largeur de
      `<header>`.  
      Le plus proche `block` parent s'appelle le *containing block*.
@@ -464,8 +464,7 @@ dimensions. Donnez-lui la largeur `75%`. Que constatez-vous ?
 
    **Explication :** La largeur d'une balise en `display:block`
      est relative à celle de son *containing block* (`<header>`
-     ici). **Inspectez** `<header>` puis `<nav>` pour connaître leur
-     largeurs. **Vérifiez** qu'on a bien un rapport de `75%`.
+     ici). **Inspectez** `<header>` puis `<nav>` pour connaître leur largeur. **Vérifiez** qu'on a bien un rapport de `75%`.
 
 1. Pour centrer le `<nav>` dans son parent `<header>`, on va lui donner des
 marges horizontales `auto` (gardez les marges verticales à 0).
@@ -490,7 +489,7 @@ marges horizontales `auto` (gardez les marges verticales à 0).
 Nouvelle mise en page du menu en `display:inline` cette fois-ci.
 
 1. Donnez aux `<div>` enfants de `<nav>` le display `inline`.
-1. Vous constatez des espaces entre les entrées du menu, ces derniers sont dû aux
+1. Vous constatez des espaces entre les entrées du menu, ces derniers sont dus aux
 espaces dans le HTML, qui sont affichés lorsque les éléments sont `inline`.  
    **Une solution temporaire (en attendant `display:flex`) :** pour supprimer
    les espaces, changez le code des `<div>` enfant de la balise `<nav>` en
@@ -507,7 +506,7 @@ espaces dans le HTML, qui sont affichés lorsque les éléments sont `inline`.
 
 1. Donnez au `<nav>` une hauteur de `50px` (`<nav>` est `block` donc on peut lui
    donner une hauteur),
-1. (Optionnel) Ajoutez du padding horizontal de `10px` sur les éléments `<a>`.
+1. (Optionnel) Ajoutez du *padding* horizontal de `10px` sur les éléments `<a>`.
 1. (Optionnel) Ajoutez à ces mêmes éléments `<a>` une bordure sur la gauche de `2px` de style `solid` et de couleur noire.
 1. (Optionnel) Enlevez la bordure sur le premier de ces éléments.  
    **Astuce :** Il faut utiliser une pseudo-classe vue
@@ -519,14 +518,14 @@ espaces dans le HTML, qui sont affichés lorsque les éléments sont `inline`.
 
 La valeur `display:none` enlève complètement un élément du rendu, sans laisser
 d'espace à l'endroit où il aurait dû être. Nous allons coder en exercice un menu
-déroulant comme ceci:
+déroulant comme ceci :
 
 ![first_menu.gif]({{site.baseurl}}/assets/first_menu.gif)
 
 ### Menu déroulant : Partie 1 -- positionnement
 
 Dans un premier temps, nous
-allons juste positionner les sous-menus en dessous de leur titre. Cette exercice
+allons juste positionner les sous-menus en dessous de leur titre. Cet exercice
 met en pratique les `position` que nous avons vu au TD précédent et que nous
 vous rappelons.
 
@@ -564,7 +563,7 @@ Référence : [Mozilla Developer Network (MDN)](https://developer.mozilla.org/f
 <div class="exercise">
 
 1. Ajoutez les sous-menus suivants aux éléments de la navigation. Ces sous-menus
-   doivent être les petits frères des liens `<a>`, *c-à-d* qu'ils se placent
+   doivent être les petits frères des liens `<a>`, *c.-à-d.* qu'ils se placent
    juste après `<a>` tout en ayant le même père `<div>`.
 
    * pour l'ancre "Accueil" 
@@ -613,7 +612,7 @@ Référence : [Mozilla Developer Network (MDN)](https://developer.mozilla.org/f
 ### Menu déroulant : Partie 2 -- affichage lors du survol
 
 Nous allons maintenant nous servir de `display:none` pour afficher le sous-menu
-juste quand la souris est au dessus du titre correspondant.
+juste quand la souris est au-dessus du titre correspondant.
 
 <div class="exercise">
 
@@ -631,17 +630,17 @@ lorsque la souris passe au-dessus de "accueil" (resp. "contact") en CSS.
 </div>
 
 À ce stade les sous-menus apparaissent bien lorsque l'on survole les éléments
-"Accueil" et "Contact". Par contre il n'est pas possible d'entrer dans ces
-sous-menus.  Nous consacrons toute la prochaine section au comportement
+"Accueil" et "Contact". Par contre, il n'est pas possible d'entrer dans ces
+sous-menus. Nous consacrons toute la prochaine section au comportement
 `display:flex` qui va permettre d'améliorer l'apparence de notre menu et de
 remédier à ce problème d'accessibilité.
 
 ## `display:flex`
 
-La valeur de display `flex` correspond au layout appellé FlexBox.
+La valeur de display `flex` correspond au *layout* appelé *FlexBox*.
 Appliquée à un élément, la valeur de display `flex` va permettre de modifier la
 disposition **de ses enfants**. C'est donc une différence
-fondamentale avec les valeurs `block` et `inline`, qui eux avaient un impact
+fondamentale avec les valeurs `block` et `inline` qui eux avaient un impact
 directement **sur l'élément lui-même**.
 
 Lorsque le display est `flex`, on peut par exemple :
@@ -664,7 +663,7 @@ en ligne ou en colonne et dans quel ordre. Ses valeurs sont :
  * `column-reverse` : mise en colonne dans l'ordre inversé.
 
 L'attribut `flex-direction` s'appliquant aux enfants, il rentre en conflit avec
-les valeurs de display `block` ou `inline` de ces derniers.  L'exercice suivant
+les valeurs de display `block` ou `inline` de ces derniers. L'exercice suivant
 va nous permettre entre autres de savoir qui surcharge l'autre en cas de
 conflit.
 
@@ -690,9 +689,9 @@ nous permettre de préciser comment occuper l'espace vertical des `<div>`
 contenus dans le `<nav>`.
 
 
-Ses valeurs sont  :
+Ses valeurs sont :
 
- * `stretch` : étirer pour prendre tout l'espace (valeur par défaut);
+ * `stretch` : étirer pour prendre tout l'espace (valeur par défaut) ;
  * `center` : centrer sans étirer ;
  * `baseline` : aligne les lignes de base des éléments ;
  * `flex-start` : alignement au début de l'axe perpendiculaire au sens de `flex-direction` ;
@@ -728,7 +727,7 @@ Puis revenir en arrière
    comprendre ce qui est centré (la marge automatique placée sur le `<nav>` par
    exemple peut expliquer des choses).
 
-1. Utilisez maintenant la valeur `stretch`.  Que constatez-vous sur la hauteur
+1. Utilisez maintenant la valeur `stretch`. Que constatez-vous sur la hauteur
    des `<div>` et l'accessibilité des sous-menus avec la souris ? Est-ce que le
    `<div>` est centré verticalement ?
 
@@ -740,11 +739,11 @@ Puis revenir en arrière
    navigation. Pour ceci :
    
    1. Faites en sorte que les `<div>` prennent toute la hauteur à l'aide des 2
-      question précédentes.
+      questions précédentes.
    1. Centrez verticalement les liens `<a>` au sein des `<div>` : il faut pour
       cela que les `<div>` enfants du `<nav>` soient `flex`, ce qui va permettre
       de centrer verticalement ses enfants `<a>` à l'aide de l'un des 2
-      comportements vues précédemment.
+      comportements vus précédemment.
 
 1. Annulez (commentez) les propriétés temporaires de la question 1.
 
@@ -759,9 +758,9 @@ Les valeurs possibles sont :
  * `flex-start` : au début de l'axe donné par `flex-direction` ;
  * `flex-end` : à la fin de cet axe ;
  * `center` : centré sur cet axe ;
- * `space-between` : les élements vont du début à la fin de l'axe en rajoutant
+ * `space-between` : les éléments vont du début à la fin de l'axe en rajoutant
    des espaces entre les éléments ;
- * `space-around` : les élements vont du début à la fin de l'axe en rajoutant
+ * `space-around` : les éléments vont du début à la fin de l'axe en rajoutant
    des espaces autour des éléments (donc entre les éléments et avant le premier
    et après le dernier) ;
 
@@ -783,14 +782,14 @@ expertise véritable de l'intégrateur (exemple : le centrage vertical), ou
 étaient même confinées dans le domaine du fantasme (les justifications, le
 comportement des éléments sur l'espace restant, etc.).
 
-Aujourd'hui flexbox est bien implémenté dans
+Aujourd'hui *flexbox* est bien implémenté dans
 [les différents navigateurs](https://www.caniuse.com/#search=flexbox).
 Nous ne vous présenterons donc pas d'autres valeurs de display, car elles sont
 devenues inutiles (`display:inline-block`, `display:table`), ni encore moins des
 techniques d'alignement avec des `float`, qui ont toujours été techniquement
 merdiques.
 
-Il y a d'autres propriétés intéressantes autour de flexbox, la référence suivante
+Il y a d'autres propriétés intéressantes autour de *flexbox*, la référence suivante
 est très instructive :
 [https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
@@ -811,7 +810,7 @@ est très instructive :
 
 ### Deux colonnes
 
-Il est temps d'avoir un layout (aménagement de l'espace) pour notre site.
+Il est temps d'avoir un *layout* (aménagement de l'espace) pour notre site.
 
 <div class="exercise" > 
  1. Donnez au body la `width` de `900px`.
@@ -848,14 +847,14 @@ dans la table pour obtenir le résultat suivant
 Pour cela on va s'intéresser à la propriété CSS `overflow-x` qui permet de
 décrire le comportement d'une boite qui dépasse horizontalement de son conteneur
 (devinez ce que fait `overflow-y`). On peut lui donner 4 valeurs différentes :
- * `visible`: la partie de la boîte qui dépasse reste visible. C'est le comportement par défaut.
- * `hidden`: la partie de la boîte qui dépasse est invisible.
- * `scroll`: empêche le contenu de dépasser et ajoute une barre de défilement
+ * `visible` : la partie de la boîte qui dépasse reste visible. C'est le comportement par défaut.
+ * `hidden` : la partie de la boîte qui dépasse est invisible.
+ * `scroll` : empêche le contenu de dépasser et ajoute une barre de défilement
    horizontale pour rendre accessible l'ensemble de l'élément.
- * `auto`: est laissé à l'appréciation du navigateur. La plupart des navigateurs
+ * `auto` : est laissé à l'appréciation du navigateur. La plupart des navigateurs
    appliquent la valeur `scroll` dans ce cas.
 
-Cette proprieté n'est pas compatible avec les éléments en `display:inline` et il faudra donc utiliser `display:block` (ou `display:flex` ou `display:inline-block;`. 
+Cette propriété n'est pas compatible avec les éléments en `display:inline` et il faudra donc utiliser `display:block` (ou `display:flex`). 
 
 <div class="exercise">
   Modifiez les propriétés CSS de la table pour faire apparaître la barre de défilement.
@@ -897,8 +896,8 @@ Il existe plusieurs façons de faire disparaitre de l'écran un élément HTML a
  * `display:none` 
  * `visibility:hidden`
 
-Nous avons déjà utilisé le bloc de déclaration `display:none` dans le menu pour cacher un sous-menu sans que ce dernier marque la page par son abscence.
-Le bloc de déclaration `visibility:hidden` quant à lui laisse l'espace innocupé à la place de l'élément.
+Nous avons déjà utilisé le bloc de déclaration `display:none` dans le menu pour cacher un sous-menu sans que ce dernier marque la page par son absence.
+Le bloc de déclaration `visibility:hidden` quant à lui laisse l'espace inoccupé à la place de l'élément.
 
 Voyons un usage de `visibility:hidden` :
 
@@ -915,7 +914,7 @@ ne pas faire un effet de flicker/tremblement au survol du menu)
 
 
 1. Ajoutez cette puce devant le texte des liens `<a>`,
-1. Ajoutez `visibility:hidden` à l'élement de classe `puce` et la valeur
+1. Ajoutez `visibility:hidden` à l'élément de classe `puce` et la valeur
    `visible` sur le survole de la souris sur le `<div>` parent.
 1. Supprimez la couleur de fond sur les balises `<a>` pour plus de lisibilité.
 1. (Optionnel) Styliser les sous-menus.
