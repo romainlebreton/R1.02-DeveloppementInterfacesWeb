@@ -100,9 +100,15 @@ ul.menu {
 	&:last-child { border-right: none }
     }
 }
+
 .centered {
     margin: auto;
     text-align: center;
+}
+
+.blockcenter {
+    display: block;
+    margin: 0 auto;
 }
 
 /* Tables */

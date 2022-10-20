@@ -17,9 +17,11 @@ dans l'exercice position:absolute du sous-menu,
 mettre width:100% pour le sous-menu et fixer la largeur des titres de menus
 même si position absolute, width se rapporte au père
 -->
+
+
 Nous allons continuer de modifier notre site pour obtenir le rendu suivant [target_TD4.png]({{site.baseurl}}/assets/target_TD4.png), nous allons aussi construire un menu déroulant comme ceci :
 
-![first_menu.gif]({{site.baseurl}}/assets/first_menu.gif).
+![first_menu.gif]({{site.baseurl}}/assets/first_menu.gif){: .blockcenter}
 
 ## Ordre d'application des sélecteurs CSS
 
@@ -269,9 +271,7 @@ Comme nous l'avons vu au TD précédent, à chaque balise correspond quatre boî
 (*content*, *padding*, *border* et *margin*,
 [voir la section sur le modèle de boîte du TD précédent]({{site.baseurl}}/tutorials/tutorial3.html#le-modèle-de-boite)).
 
-<img alt="Box model" src="{{site.baseurl}}/assets/boxmodel.png" style="margin:0
-auto;display: block;">
-
+![Box model]({{site.baseurl}}/assets/boxmodel.png){: .blockcenter}
 
 La façon dont ces boîtes vont occuper l'espace est gérée par l'attribut
 `display`. Nous allons voir dans cette partie les trois valeurs principales de
@@ -520,7 +520,7 @@ La valeur `display:none` enlève complètement un élément du rendu, sans laiss
 d'espace à l'endroit où il aurait dû être. Nous allons coder en exercice un menu
 déroulant comme ceci :
 
-![first_menu.gif]({{site.baseurl}}/assets/first_menu.gif)
+![first_menu.gif]({{site.baseurl}}/assets/first_menu.gif){: .blockcenter}
 
 ### Menu déroulant : Partie 1 -- positionnement
 
@@ -842,7 +842,11 @@ Non car pas de bordure et les espaces ne sont pas affichés avec display:flex
 La table est trop large pour le `<aside>` et le résultat est assez peu
 satisfaisant. On va améliorer ça en ajoutant une barre de défilement horizontal
 dans la table pour obtenir le résultat suivant
-[table_scroll.mp4]({{site.baseurl}}/assets/table_scroll.mp4).
+
+<video autoplay loop muted class="blockcenter">
+  <source src="{{site.baseurl}}/assets/table_scroll.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
 Pour cela on va s'intéresser à la propriété CSS `overflow-x` qui permet de
 décrire le comportement d'une boite qui dépasse horizontalement de son conteneur
