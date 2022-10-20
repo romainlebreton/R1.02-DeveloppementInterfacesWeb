@@ -858,7 +858,9 @@ décrire le comportement d'une boite qui dépasse horizontalement de son contene
  * `auto` : est laissé à l'appréciation du navigateur. La plupart des navigateurs
    appliquent la valeur `scroll` dans ce cas.
 
-Cette propriété n'est pas compatible avec les éléments en `display:inline` et il faudra donc utiliser `display:block` (ou `display:flex`). 
+Cette propriété n'est pas compatible avec les éléments en `display:inline`, car
+on ne peut pas spécifier leur largeur. Cette propriété doit donc s'utiliser sur
+des balises en `display:block` ou `display:flex`. 
 
 <div class="exercise">
   Modifiez les propriétés CSS de la table pour faire apparaître la barre de défilement.
@@ -883,11 +885,11 @@ son ancêtre positionné et il devient alors fixe.
 <div class="exercise">
   1. Utilisez `position: sticky;` avec la bonne valeur de positionnement sur 
   la première case de chaque ligne du tableau (on pourra utiliser la pseudo-classe `:first-child`).
-  2. Pour améliorer le résultat il est peut être necessaire de donner un fond 
-  coloré à chaque case (pour qu'elle cache celle qu'elle recouvre) et ajouter 
-  une bordure à droite des premières cases de chaque ligne.
+  2. Pour améliorer le résultat, il est peut-être necessaire de donner un fond 
+  coloré à chaque case (`<th>` ou `<td>`) pour qu'elle cache celle qu'elle recouvre.  
+  Ajouter aussi une bordure à droite des premières cases de chaque ligne.
   3. Pour éliminer les espaces entre les cases, on pourra utiliser la propriété 
-  `border-spacing:0px;`sur la table. Elle indique la quantité d'espace à mettre 
+  `border-spacing:0px;` sur la table. Elle indique la quantité d'espace à mettre 
   entres les bordures des cases dans une table.
 </div>
 
@@ -926,10 +928,6 @@ ne pas faire un effet de flicker/tremblement au survol du menu)
 </div>
 
 
-
-
-
-
 ## Fini !
 
 Le mot de la fin à propos de flex ? 
@@ -939,7 +937,7 @@ Le mot de la fin à propos de flex ?
 Moi je stoppe sur mon flex.
 Quand je sticks ma vibes le dancefloor se breaks et se fluxe dans la vibes.
 
-<cite>Gad Elmaleh</cite>
+<cite><a href="https://www.youtube.com/watch?v=qQLGPpqGVPg&t=13">Gad Elmaleh qui chante du R'n'B</a></cite>
 </blockquote>
 
 
