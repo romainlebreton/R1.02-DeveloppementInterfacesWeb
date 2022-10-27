@@ -863,7 +863,7 @@ on ne peut pas spécifier leur largeur. Cette propriété doit donc s'utiliser s
 des balises en `display:block` ou `display:flex`. 
 
 <div class="exercise">
-  Modifiez les propriétés CSS de la table pour faire apparaître la barre de défilement.
+  Modifiez les propriétés CSS de la table pour faire apparaître la barre de défilement. Attention, il faudra peut-être changer le `display` de la table.
 
   Comme la table est trop large par rapport à son conteneur, le navigateur
   essaie de minimiser sa largeur et les noms de la première colonne se
