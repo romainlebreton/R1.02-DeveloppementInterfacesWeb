@@ -25,8 +25,12 @@ Cours à l'IUT de Montpellier - 1ère année
  
 <!--1. [Coder des colonnes responsive à la Bootstrap](assets/tut5-complement.html)-->
 
-## Instructions pour la SAÉ 1.05
-[Consigne pour la SAÉ 1.05](SAE_105.html)
+## Instructions pour les SAÉ
+* [Consigne pour la SAÉ 1.05](SAE_105.html)
+* [Consigne pour la SAÉ 1.06](SAE_106.html)
+
+## Petite interrogation de CSS
+* [Exemple et consignes](exempleTest.html)
 
 <!--[Instructions du projet](projet.html)-->
 
