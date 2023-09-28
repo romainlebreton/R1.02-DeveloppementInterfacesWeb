@@ -16,9 +16,8 @@ Cours à l'IUT de Montpellier - 1ère année
 1. Semaine du 2 octobre 2023 -- [TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html) et présentation site SAE 1.05  
 1. Semaine du 9 octobre 2023 -- [ Fin TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html) 
 1. Semaine du 16 octobre 2023 -- [TD 5 -- Les Formulaires](tutorials/tutorial5.html) et travail sur SAE 1.05
-   
-<!--   * 23 octobre rendu SAE 1.05 -->
-<!--1. Semaine du 23 octobre 2023 -- Entamer [TD 6 -- Responsive Design](tutorials/tutorial6.html)-->
+* 22 octobre rendu SAE 1.05 
+1. Semaine du 23 octobre 2023 -- Entamer [TD 6 -- Responsive Design](tutorials/tutorial6.html)
 <!--1. Semaine du 6 novembre 2023 -- Finir le [TD 6 -- Responsive Design](tutorials/tutorial6.html) et présentation site de la SAE 1.06-->
 <!--1. Semaine du 27 novembre 2023 -- Interro et séance de travail sur la  SAE 1.06-->
 <!--1. Semaine du 4 ou du 11 decembre 2023 -- Séance d'évaluation des sites de la SAE 1.06-->
