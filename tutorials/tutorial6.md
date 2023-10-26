@@ -518,8 +518,9 @@ hauteur supérieure à `800px`.
 
 <div class="exercise">
 
-* Allez sur le site [Bootstrap](http://getbootstrap.com/) et constatez qu'il y a
-  2 largeurs pour laquelle la mise en page change.
+* Allez sur le site [Bootstrap](http://getbootstrap.com/). Faites varier la
+  largeur du navigateur et constatez que la mise en page change (menu variable,
+  texte qui prend toute la largeur ou non, icône qui disparait, ...).
 * Utilisez le *device mode* pour afficher les *media queries* (cliquer sur les 3
   points verticaux du *device mode* pour afficher ces *media queries*).
 * Que se passe-t-il visuellement dans le menu lorsque vous redimensionnnez la
@@ -541,7 +542,7 @@ Afin d'organiser nos *media queries*, on utilise en général 3 à 4 valeurs de 
  1. en dessous de 768px ne plus afficher la table de comparaison (de toute façon
     s'il ne doit rester qu'un seul, ce sera Chuck Norris).
  1. en dessous de 480px faire en sorte qu'`<aside>` et `<article>` soient en
-    colonne et plus en ligne.
+    colonne et non plus en ligne.
  1. (Optionnel) Sur une smartwatch (width `168px`), n'affichez que les citations
  de Chuck Norris contenues dans le `<aside>`.
  <!-- Peut-être que le sélecteur :not() peut grandement faciliter la suppression
