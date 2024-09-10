@@ -113,7 +113,7 @@ mais complet).
 <div class="exercise">
   
 1. Testons la conformité de `index.html` au standard HTML5 à l'aide du validateur
-   [https://validator.w3.org/](https://validator.w3.org/). Quelles sont les
+   [https://validator.w3.org/](https://validator.w3.org/) (Onglet `Validate by File Upload`). Quelles sont les
    erreurs indiquées ?
 
 2. Commençons par l'erreur
@@ -577,7 +577,7 @@ Cela est utilisé notamment pour montrer qu'on a du 'spirit'.
 développement. Quels sont les deux **nouvelles** balises utilisées ?
 <!-- `<blockquote>` et `<cite>` -->
 
-   La première balise (qui commence par un `b`) entoure la citation complète
+   La première balise (qui commence par un `bl`) entoure la citation complète
    tandis que la deuxième (qui commence par un `c`) contient uniquement la
    référence (l'auteur, le livre, ...). 
 
