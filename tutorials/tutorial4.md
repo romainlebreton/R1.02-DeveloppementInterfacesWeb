@@ -506,9 +506,9 @@ espaces dans le HTML, qui sont affichés lorsque les éléments sont `inline`.
 
 1. Donnez au `<nav>` une hauteur de `50px` (`<nav>` est `block` donc on peut lui
    donner une hauteur),
-1. (Optionnel) Ajoutez du *padding* horizontal de `10px` sur les éléments `<a>`.
-1. (Optionnel) Ajoutez à ces mêmes éléments `<a>` une bordure sur la gauche de `2px` de style `solid` et de couleur noire.
-1. (Optionnel) Enlevez la bordure sur le premier de ces éléments.  
+1. Ajoutez du *padding* horizontal de `10px` sur les éléments `<a>`.
+1. Ajoutez à ces mêmes éléments `<a>` une bordure sur la gauche de `2px` de style `solid` et de couleur noire.
+1. Enlevez la bordure sur le premier de ces éléments.  
    **Astuce :** Il faut utiliser une pseudo-classe vue
      [au TD dernier]({{site.baseurl}}/tutorials/tutorial2.html#pseudo-classes).
 
