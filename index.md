@@ -23,7 +23,8 @@ Cours à l'IUT de Montpellier - 1ère année
 <!-- * 1 décembre rendu livrable SAE 1.05  -->
 <!-- 1. Semaine du 2 ou du 9 decembre 2023 -- Séance d'évaluation des sites de la SAE 1.06  -->
 
- ## Instructions pour les SAÉ
+
+## Instructions pour les SAÉ
 * [Consigne pour la SAÉ 1.05](SAE_105.html)
 <!-- * [Consigne pour la SAÉ 1.06](SAE_106.html) -->
 
