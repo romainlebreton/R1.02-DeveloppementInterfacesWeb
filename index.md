@@ -13,7 +13,7 @@ Cours à l'IUT de Montpellier - 1ère année
 1. Semaine du 9 septembre 2023 -- [TD1 -- Introduction à HTML](tutorials/tutorial1.html)
 1. Semaine du 16 septembre 2023 -- [TD2 -- Introduction à CSS ](tutorials/tutorial2.html)
 1. Semaine du 23 septembre 2023 -- [TD 3 -- CSS Avancés 1/2](tutorials/tutorial3.html)
-1. Semaine du 30septembre 2023 -- [TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html) et présentation site SAE 1.05
+1. Semaine du 30 septembre 2023 -- [TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html) et présentation site SAE 1.05
 1. Semaine du 7 octobre 2023 -- [ Fin TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html)
 1. Semaine du 14 octobre 2023 -- [TD 5 -- Les Formulaires](tutorials/tutorial5.html) et travail sur SAE 1.05
     * 20 octobre rendu livrable SAE 1.05  
