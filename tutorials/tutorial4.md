@@ -881,7 +881,8 @@ occupe sa place normale dans le document) jusqu'à ce qu'un certain seuil soit
 franchi ; l'élément devient alors positionné de façon fixe. Par exemple, en
 indiquant `position: sticky;` et `top: 10px;`, l'élément concerné sera affiché
 normalement dans la page jusqu'à ce qu'il se retrouve à `10px` du bord haut de
-son ancêtre positionné et il devient alors fixe.
+son ancêtre de défilement (qui a une valeur `overflow` autre que `auto`) et il
+devient alors fixe.
 <div class="exercise">
   1. Utilisez `position: sticky;` avec la bonne valeur de positionnement sur 
   la première case de chaque ligne du tableau (on pourra utiliser la pseudo-classe `:first-child`).
