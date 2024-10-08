@@ -134,6 +134,7 @@ Il serait bien de préciser à l'utilisateur à quoi notre champ `<input>` fait 
     l'URL du navigateur (l'URL doit finir par
     `sendToMySecondYearInIut.php?uname=dupont&firstname=super` et la `method` du
     formulaire doit toujours être `get`).
+ 1. Pour visualiser plus facilement le résultat de la requête effectuée par votre navigateur, remplacez l'action `sendToMySecondYearInIut.php` par `https://webinfo.iutmontp.univ-montp2.fr/~eturosenfeld/php_pour_TD4/exempleTraitement.php`. Nous vous fournissons ce fichier pour visualiser le résultat, mais vous apprendrez l'an prochain comment faire cela par vous-même.
  1. Les deux champs apparaissent les uns à la suite des autres. Avec quelle
     balise vue dans le TD précédent peut-on les englober pour qu'il y ait un saut
     de ligne entre les deux ?
