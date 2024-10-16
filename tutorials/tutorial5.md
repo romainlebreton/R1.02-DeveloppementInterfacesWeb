@@ -309,9 +309,8 @@ de vérifier le contenu du formulaire :
   rempli. Par exemple, un “pattern” égal à `0[1-9](\.\d{2}){4}` permettra de
   s'assurer qu'un numéro de téléphone respecte bien les règles de numérotation
   françaises, tandis que le pattern `[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,4}`
-  bloquera les erreurs d'adresse email les plus grossières. Vous trouverez de
-  nombreux exemples de patterns utilisables sur le site
-  [HTML5pattern](http://html5pattern.com/).  
+  bloquera les erreurs d'adresse email les plus grossières.
+  <!-- Vous trouverez de  nombreux exemples de patterns utilisables sur le site  [HTML5pattern](http://html5pattern.com/).  -->
   **Note :** les patterns HTML sont automatiquement évalués sur la totalité de
   l'entrée. Il est donc inutile de les encadrer entre ^ et $ comme une
   expression régulière classique.
