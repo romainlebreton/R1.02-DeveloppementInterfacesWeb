@@ -840,8 +840,7 @@ Non car pas de bordure et les espaces ne sont pas affichés avec display:flex
 ## Améliorer la présentation de la table
 
 La table est trop large pour le `<aside>` et le résultat est assez peu
-satisfaisant. On va améliorer ça en ajoutant une barre de défilement horizontal
-dans la table pour obtenir le résultat suivant
+satisfaisant. On va améliorer ça en ajoutant une barre de défilement horizontal sous la table pour obtenir le résultat suivant
 
 <video autoplay loop muted class="blockcenter">
   <source src="{{site.baseurl}}/assets/table_scroll.mp4" type="video/mp4">
@@ -856,16 +855,18 @@ décrire le comportement d'une boite qui dépasse horizontalement de son contene
  * `scroll` : empêche le contenu de dépasser et ajoute une barre de défilement
    horizontale pour rendre accessible l'ensemble de l'élément.
  * `auto` : est laissé à l'appréciation du navigateur. La plupart des navigateurs
-   appliquent la valeur `scroll` dans ce cas.
+   appliquent automatiquement une valeur entre `visible` et `scroll` en fonction des cas.
 
-Cette propriété n'est pas compatible avec les éléments en `display:inline`, car
-on ne peut pas spécifier leur largeur. Cette propriété doit donc s'utiliser sur
-des balises en `display:block` ou `display:flex`. 
+Cette propriété n'est pas compatible avec tous les display et en particulier ne fonctionne pas avec `display:inline` ou `display:table` (qui comme son nom l'indique est le `display` utilisé par les tables).
+Elle fonctionne par contre avec `display:block` ou `display:flex`. 
+
+Pour pouvoir ajouter un ascenseur de défilement à notre table, nous allons donc devoir ajouter une balise autour de la table, s'assurer que cette balise ait le bon display et lui ajouter la propriété `overflow-x`.
 
 <div class="exercise">
-  Modifiez les propriétés CSS de la table pour faire apparaître la barre de défilement. Attention, il faudra peut-être changer le `display` de la table.
 
-  Comme la table est trop large par rapport à son conteneur, le navigateur
+  1. Ajoutez une balise bien choisie avec les bonnes propriétés CSS autour la table pour faire apparaître la barre de défilement.
+
+  1. Par ailleurs, comme la table est trop large par rapport à son conteneur, le navigateur
   essaie de minimiser sa largeur et les noms de la première colonne se
   retrouvent sur deux lignes au lieu d'une seule. On peut interdire ce
   comportement au navigateur en ajoutant la propriété `white-space: nowrap;` à
@@ -884,6 +885,7 @@ normalement dans la page jusqu'à ce qu'il se retrouve à `10px` du bord haut de
 son ancêtre de défilement (qui a une valeur `overflow` autre que `auto`) et il
 devient alors fixe.
 <div class="exercise">
+
   1. Utilisez `position: sticky;` avec la bonne valeur de positionnement sur 
   la première case de chaque ligne du tableau (on pourra utiliser la pseudo-classe `:first-child`).
   2. Pour améliorer le résultat, il est peut-être necessaire de donner un fond 
