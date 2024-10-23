@@ -199,7 +199,11 @@ comme dans l'exercice 1 pour le voir).
 Voyons maintenant un autre élément important d'un formulaire, correspondant à la balise `<select>`.
 Il permet de choisir parmi un ensemble de valeurs présentées par un menu déroulant.
 Tout comme `<input>`, cet élément peut aussi être libellé via un `<label>`. La liste déroulante permet de base de ne sélectionner
-qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut `multiple` est ajouté à la balise `<select>`. Des groupes de choix peuvent être proposés avec la balise `<optgroup>`. 
+qu'une option.
+
+Plusieurs options peuvent être sélectionnées si l'attribut `multiple` est ajouté à la balise `<select>`. Il faudra alors adapter l'attribut `name` pour que le résultat soit stocké dans un tableau. Par exemple, `name=reponse` doit devenir `name=reponses[]`, et les crochets indique que le serveur récuperera les réponses dans un tableau. 
+
+Des groupes de choix peuvent être proposés avec la balise `<optgroup>`. 
 
 <div class="exercise" id="exlabel">
 
