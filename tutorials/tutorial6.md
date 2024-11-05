@@ -359,7 +359,7 @@ tombent sur un site non responsive.
 1. Dans les outils développeurs (`F12`) de Chrome/Chromium, passez dans le
 device mode 
 <img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil pour mobile" style="margin: 0 auto;width:45px;vertical-align:middle;">
-*"Samsumg Galaxy S5"* sous Chrome/Chromium et rechargez votre page. Constatez
+*"Samsumg Galaxy S8+"* sous Chrome/Chromium et rechargez votre page. Constatez
 que le site s'affiche en tout petit.
 
 <!-- **Attention :** En appuyant sur `F12` sur Chrome/Chromium, vous devez voir la -->
