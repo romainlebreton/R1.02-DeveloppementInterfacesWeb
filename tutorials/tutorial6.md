@@ -355,23 +355,6 @@ en CSS3.
 
 ## Votre site de Chuck Norris sur mobile
 
-### Les outils pour travailler ?
-
-Jusqu'ici on pouvait considérer que tous les outils de développement d'Internet
-Explorer / Firefox / Chrome étaient égaux. En fait celui de Chrome était déjà un
-peu meilleur :
-<!-- (Suivant les habitudes des développeurs cela peut être plus ou moins sujet à -->
-<!-- controverse.) -->
-
-  * auto complétion des règles CSS ajoutées dynamiquement,
-  * liste déroulante des valeurs possibles des champs,
-  * plus rapide, plus stable (un processus par onglet)
-  * etc.
-
-En tout cas, pour le *reponsive design* il n'y a pas photo : Chrome (ou son
-pendant libre Chromium) est <strong>vraiment</strong> votre "best-friend-ever".
-
-
 ### Que fait mon navigateur Web sur téléphone par défaut pour un site ?
 
 Comment peut-on rendre un site internet compatible mobile à moindre coût ?
