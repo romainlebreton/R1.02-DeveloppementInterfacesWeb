@@ -205,16 +205,15 @@ Un élément avec un `flex-grow` de 0 ne s’agrandira pas (c’est la valeur pa
 
 Voici un exemple où le div1 prend toujours `200px` le div2 prend 1/3 de la taille restante et le div3 prend 2/3 de la taille restante:
 ```html
-<div style="display:flex;">
-  <div style="width:200px;flex-grow:0;">
-    Div1
-  </div>
-  <div style="width:0px;flex-grow:1;">
-    Div2
-  </div>
-  <div style="width:0px;flex-grow:2;">
-    Div3
-  </div>
+
+<div style="display:flex;border:1px solid black;">
+	<div style="width:200px;flex-grow:0;background-color:orange;">
+		Div1
+	</div>
+	<div style="width:0px;flex-grow:1;background-color: cornflowerblue;">
+	</div>
+	<div style="width:0px;flex-grow:2;background-color: purple;">
+	</div>
 </div>
 ```
 
@@ -225,10 +224,8 @@ qui s'affiche comme suit
 Div1
 </div>
 <div style="width:0px;flex-grow:1;background-color: cornflowerblue;">
-Div2
 </div>
 <div style="width:0px;flex-grow:2;background-color: purple;">
-Div3
 </div>
 </div>
 
