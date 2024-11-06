@@ -196,6 +196,55 @@ particulièrement les propriétés `flex-shrink` (valeur par défaut `1`),
 `flex-grow` (valeur par défaut `0`). Pour l'instant, nous ne toucherons pas à
 `flex-basis` (qui gardera donc son comportement par défaut `auto`).
 
+
+La propriété `flex-grow` détermine comment les éléments enfants d’un conteneur en `display: flex` doivent se partager l’espace disponible en trop, c'est-à-dire l’espace libre restant après que les éléments aient pris leur taille initiale. Cet espace disponible est calculé dans la direction du flex (par exemple, horizontalement si `flex-direction` est en ligne).
+Si la somme des tailles des éléments enfants est inférieure à l’espace disponible du conteneur, les éléments peuvent se dilater pour occuper cet espace restant, qu’on appelle aussi "espace excédentaire". Ce n’est qu’après le calcul des dimensions initiales des éléments que le `flex-grow` intervient, en répartissant cet espace excédentaire.
+Un élément avec un `flex-grow` de 0 ne s’agrandira pas (c’est la valeur par défaut). Les autres éléments vont se répartir l'espace restant proportionnellement à leur valeur de `flex-grow`.
+
+
+
+Voici un exemple où le div1 prend toujours `200px` le div2 prend 1/3 de la taille restante et le div3 prend 2/3 de la taille restante:
+```html
+<div style="display:flex;">
+  <div style="width:200px;flex-grow:0;">
+    Div1
+  </div>
+  <div style="width:0px;flex-grow:1;">
+    Div2
+  </div>
+  <div style="width:0px;flex-grow:2;">
+    Div3
+  </div>
+</div>
+```
+
+qui s'affiche comme suit
+   
+<div style="display:flex;border:1px solid black;">
+<div style="width:200px;flex-grow:0;background-color:orange;">
+Div1
+</div>
+<div style="width:0px;flex-grow:1;background-color: cornflowerblue;">
+Div2
+</div>
+<div style="width:0px;flex-grow:2;background-color: purple;">
+Div3
+</div>
+</div>
+
+<div class="exercise">
+
+1. Augmentez et diminuez la largeur de la fenêtre pour constater le fonctionnement de l'exemple précédent.
+
+</div>
+
+La propriété flex-shrink fonctionne de manière complémentaire : elle spécifie comment les éléments rétrécissent si leur taille totale dépasse celle du conteneur en `display: flex`. Dans ce cas, les éléments vont se réduire pour éviter de déborder du conteneur. Plus valeur de flex-shrink est élevée, plus l’élément peut perdre de taille.
+Cependant, la répartition de la réduction d’espace est plus complexe que pour flex-grow. La réduction est proportionnelle à la valeur de flex-shrink de chaque élément, mais elle tient aussi compte de sa taille initiale. En effet, un élément ne peut pas rétrécir au-delà de sa taille d’origine, contrairement à l’expansion, qui peut dépasser la taille initiale. Par défaut, `flex-shink` vaut 1 donc les éléments peuvent diminuer leur taille pour ne pas déborder du conteneur `flex`.
+
+
+Pour plus de détails, vous pouvez lire la section sur `flex-shrink` et `flex-grow` dans [le guide de FlexBox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) ou tout
+autre page Web. N'hésitez pas à parler de votre compréhension avec votre professeur.
+
 <!-- Nous vous invitons à faire d'autres recherches pour mieux comprendre -->
 <!-- `flex-shrink` et `flex-grow` si nécessaire. En particulier, le site du -->
 <!-- [Mozilla Developer Network](https://developer.mozilla.org/fr/) est une mine -->
@@ -206,10 +255,6 @@ propriétés par défaut flex-grow:0; flex-shrink:1 -->
 
 <div class="exercise">
 
-1. Lisez la section sur `flex-shrink` et `flex-grow` dans [le guide de
-   FlexBox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) ou tout
-   autre page Web. N'hésitez pas à parler de votre compréhension avec votre
-   professeur.
 
 1. Donnons un exemple d'utilisation de `flex-grow`. Votre boulot est de vérifier
    que vous comprenez son fonctionnement.
@@ -261,10 +306,11 @@ pour ces deux éléments à `0`.
    Inspectez maintenant les largeurs de `<article>` et `<aside>` pour vérifier votre calcul.
    <!-- Réponse : article 390 px et aside 230px car 120px de rab réparti en 30px de rab par unité -->
 
-1.  Nous souhaitons que quand l'écran est trop petit, `<article>` diminue de
+1. Donnez un `flex-shrink` de 2 à `<article>` et de 1 à `<aside>` pour que l'article rende beaucoup plus d'espace que l'aside si besoin.
+<!-- 1.  Nous souhaitons que quand l'écran est trop petit, `<article>` diminue de
     deux tiers de la largeur à supprimer et `<aside>` diminue du reste.  
    **Quelle propriété** CSS devez-vous utiliser pour avoir ce comportement ?
-   Implémentez ce comportement.
+   Implémentez ce comportement. -->
 
    <!-- Bien sûr, toutes ces largeurs respecteront les anciennes contraintes `min-width` et `max-width`. -->
 
