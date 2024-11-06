@@ -2,6 +2,7 @@
 title: TD6 &ndash; Responsive Design
 subtitle: 
 layout: tutorial
+lang: fr
 ---
 
 <!--
@@ -40,12 +41,12 @@ nombreuses solutions existantes :
   d'élaboration) pour s'adapter aux nouveaux besoins.
 
 * Coder deux sites en HTML/CSS : un pour les ordinateurs et un pour les
-   smartphones (et un pour les tablettes ? et un pour les smartwatch ?). Exemple
+   smartphones (et un pour les tablettes ? et un pour les *smartwatch *?). Exemple
    [lemonde.fr](http://lemonde.fr) et [mobile.lemonde.fr](http://mobile.lemonde.fr).
 
 * Des applications natives pour chaque système (Android, iOS, Windows Phone, ...)
 
-* L'utilisation de la puissance de Javascript pour faire des mises en page
+* L'utilisation de la puissance de JavaScript pour faire des mises en page
   adaptatives. 
   <!-- (et dire du mal de Javascript ensuite...) -->
 
@@ -79,8 +80,7 @@ particulièrement fournis et/ou sur des petits écrans 15 pouces.
 ### Les pourcentages '%'
 
 On peut commencer par exprimer toutes les tailles en relatif. C'est ce que nous
-avons déjà fait en utilisant des dimensions en `%`. [Rappelez
-vous]({{site.baseurl}}/tutorials/tutorial4#exercices) que la largeur d'un
+avons déjà fait en utilisant des dimensions en `%`. [Rappelez-vous]({{site.baseurl}}/tutorials/tutorial4#exercices) que la largeur d'un
 élément en `display:block` ou en `display:flex` se calcule par rapport à son
 *containing block*, c'est-à-dire son plus proche ancêtre `block` ou `flex`. Par
 défaut, les éléments en `block` ou `flex` prennent toute la largeur de leur
@@ -103,7 +103,7 @@ flex) et où le containing block n'est pas le père ?
 
 
 **Note :** Si adapter les largeurs en pourcentage marche bien, ce n'est pas le
-cas des hauteurs.  Cela est dû au fait que la largeur de la page est connue
+cas des hauteurs. Cela est dû au fait que la largeur de la page est connue
 (c'est la largeur de la fenêtre d'affichage du navigateur) mais sa hauteur ne
 l'est pas encore... (puisque la page n'est pas encore affichée et que la
 hauteur va dépendre de la quantité de contenu). Autrement dit, la hauteur de la
@@ -111,7 +111,7 @@ zone du navigateur où s'affiche la page (`viewport height`) n'est pas forcémen
 la hauteur de la page [^somesamplefootnote] (et c'est lié à la présence d'un
 ascenseur à droite pour descendre dans la page).
 
-[^somesamplefootnote]: L'unité `vh` permet maintenant de définir une taille de 0 à 100 relative au viewport.
+[^somesamplefootnote]: L'unité `vh` permet maintenant de définir une taille de 0 à 100 relative au *viewport*.
 
 
 ### `max-width` et `min-width`
@@ -143,8 +143,8 @@ type de valeur que `width` et `height`.
 
 ### Overconstraint
 
-Mais que se passe-t-il quand on mélange `min-width` et des tailles en
-poucentage ? Prenons l'exemple suivant
+Mais que se passe-t-il quand on mélange `min-width`/`max-width` et des tailles en
+pourcentage ? Prenons l'exemple suivant
 
 
 ```html
@@ -179,8 +179,8 @@ Div2
    inférieure à `800px` (donc le premier `<div>` a une largeur de moins de
    `400px`)
 2. mais quand la largeur de `<body>` est supérieure à `800px`, alors les deux
-   `<div>` ne remplissent plus toute la largeur de `<body>`. Div2 garde une
-   largeur de 50% mais Div1 ne peut plus prendre les `50%` restant car il est
+   `<div>` ne remplissent plus toute la largeur de `<body>`. *Div2* garde une
+   largeur de 50% mais *Div1* ne peut plus prendre les `50%` restant car il est
    contraint par sa largeur maximale de `400px`.
 
 </div>
@@ -190,7 +190,7 @@ Nous allons utiliser `display:flex` pour mieux mélanger les tailles relatives e
 les contraintes `min-width`/`max-width`. Nous avions déjà vu les règles de la
 colonne de gauche de
 [cette super page sur FlexBox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-; c'était celles qui s'appliquaient au parent. Nous allons maintenant nous
+; c'étaient celles qui s'appliquaient au parent. Nous allons maintenant nous
 pencher sur la colonne de droite qui s'applique aux balises enfants. Regardez
 particulièrement les propriétés `flex-shrink` (valeur par défaut `1`),
 `flex-grow` (valeur par défaut `0`). Pour l'instant, nous ne toucherons pas à
@@ -405,7 +405,7 @@ tombent sur un site non responsive.
 1. Dans les outils développeurs (`F12`) de Chrome/Chromium, passez dans le
 device mode 
 <img src="{{site.baseurl}}/assets/phone-responsive.png" alt="Outil pour mobile" style="margin: 0 auto;width:45px;vertical-align:middle;">
-*"Samsumg Galaxy S5"* sous Chrome/Chromium et rechargez votre page. Constatez
+*"Samsumg Galaxy S8+"* sous Chrome/Chromium et rechargez votre page. Constatez
 que le site s'affiche en tout petit.
 
 <!-- **Attention :** En appuyant sur `F12` sur Chrome/Chromium, vous devez voir la -->
@@ -436,12 +436,12 @@ que le site s'affiche en tout petit.
 
 Même si cela marche, on ne peut pas dire que cela soit optimal. L'utilisateur
 mobile n'a pas la même attente que l'utilisateur sur ordinateur, il veut avoir
-accès rapidement aux informations essentielles, sans fioritures.  On imagine que
-sur une smart watch par exemple un site comme méteo france serait largement plus
-dépouillé (sur une smartwatch elle afficherait un nuage ou un soleil et la
+accès rapidement aux informations essentielles, sans fioritures. On imagine que
+sur une *smartwatch* par exemple un site comme Méteo France serait largement plus
+dépouillé (sur une *smartwatch*, elle afficherait un nuage ou un soleil et la
 température par exemple).
 
-Typiquement nous voulons enlever des parties entières du site suivant la taille
+Typiquement, nous voulons enlever des parties entières du site suivant la taille
 de l'écran.
 
 La première chose à faire est donc de demander aux navigateurs de ne plus faire
@@ -473,12 +473,12 @@ choisissant un smartphone. Inspectez la largeur de `<body>`. Que constatez-vous�
 
 </div>
 
-Vous devez constatez que l'algorithme précédent ne s'applique plus. En gros le
+Vous devez constater que l'algorithme précédent ne s'applique plus. En gros le
 navigateur n'essaie plus d'être intelligent : il vous laisse prendre le relai.
 
-## La solution technique CSS3 :  les media queries
+## La solution technique CSS3 : les *media queries*
 
-Les media queries sont un jeu d'options ajoutées à la norme CSS3 et qui permettent
+Les *media queries* sont un jeu d'options ajoutées à la norme CSS3 et qui permettent
 de définir des règles CSS qui ne s'appliqueront que sous certaines conditions
 spécifiques.
 
@@ -494,7 +494,7 @@ Il existe deux manières différentes de faire appel à une *media query* :
   ```
   
   N'oubliez pas que le dernier CSS chargé prend le pas sur les
-  précédents. Pensez donc à toujours déclarer vos media-queries en dernier,
+  précédents. Pensez donc à toujours déclarer vos *media queries* en dernier,
   sinon elles seront systématiquement écrasées par votre CSS *“standard"*.
 
 * Soit vous souhaitez que juste certaines règles s'appliquent sous
@@ -507,7 +507,7 @@ Il existe deux manières différentes de faire appel à une *media query* :
   }
   ```
 
-Une media query fonctionne de la manière suivante : la condition est évaluée et
+Une *media query* fonctionne de la manière suivante : la condition est évaluée et
 retourne une valeur “vrai” ou “faux”. Si la valeur est vraie, le fichier CSS/ la
 règle CSS (selon la méthode employée) est appliquée.
 
@@ -554,7 +554,7 @@ conditions complexes en utilisant les opérateurs logiques :
   condition soit vraie
 * “,” (OU) : au moins l'un des conditions de base doit être vraie pour que la
   condition soit vraie
-* “not” (NON) : la condition de base qui suit le not doit être fausse pour que la
+* “not” (NON) : la condition de base qui suit le *not* doit être fausse pour que la
   condition soit vraie
 
 **Exemple :** la règle `(min-width: 500px) and (min-height: 800px)` n'est
@@ -569,7 +569,7 @@ hauteur supérieure à `800px`.
   texte qui prend toute la largeur ou non, icône qui disparait, ...).
 * Utilisez le *device mode* pour afficher les *media queries* (cliquer sur les 3
   points verticaux du *device mode* pour afficher ces *media queries*).
-* Que se passe-t-il visuellement dans le menu lorsque vous redimensionnnez la
+* Que se passe-t-il visuellement dans le menu lorsque vous redimensionnez la
 fenêtre autour du point de rupture situé à `768px` ?
 
 </div>
@@ -614,8 +614,8 @@ voulons un menu qui apparaît latéralement à la manière des exemples suivants
  * [http://codepen.io/drewr/pen/uxvdt](http://codepen.io/drewr/pen/uxvdt)
 
 Dans l'exercice suivant, nous allons coder un menu burger HTML/CSS (donc sans
-JavaScript) qui apparait quand la souris passe au dessus du burger (la gestion
-du clic nécessiterait du JavaScript).  (Notez au passage que
+JavaScript) qui apparait quand la souris passe au-dessus du burger (la gestion
+du clic nécessiterait du JavaScript). (Notez au passage que
 [codepen.io](http://codepen.io/) est un très bon outil pour découvrir de
 nouvelles techniques !)
 
@@ -662,7 +662,7 @@ du menu).
 
 
    
-Voilà ce qu'on devrait pouvoir obtenir:
+Voilà ce qu'on devrait pouvoir obtenir :
 
 ![menu_burger.gif]({{site.baseurl}}/assets/menu_burger.gif)  
 <!-- PROBLEME : ON NE PEUT PAS CLIQUER SUR LE MENU CAR IL DISPARAIT LE TEMPS QUE
@@ -670,8 +670,8 @@ LA SOURIS L'ATTEIGNE -->
 
 </div>
 
-**Note :** Le hover sur les sous-menus n'a pas de sens sur téléphone
-  portable (mais certains explorateurs contournent cela, par exemple en déclenchant le hover avec un "clique" sur l'élément à hover). Il faudra gérer le clic avec du JS. La bonne solution est
+**Note :** Le *hover* sur les sous-menus n'a pas de sens sur téléphone
+  portable (mais certains explorateurs contournent cela, par exemple en déclenchant le *hover* avec un "clique" sur l'élément à *hover*). Il faudra gérer le clic avec du JS. La bonne solution est
   ... suspense, vous la verrez en 2ème année.
 
 
@@ -683,7 +683,7 @@ fortes qui viennent s'ajouter :
 
  * débit du réseau
  * faible capacité du média (processeur, mémoire vive,...)
- * mode offline (on peut passer sous un pont... il faut prévoir pour le cas échéant un cache local qui stocke les opérations courantes, afin de les consommmer lorsque le réseau revient) 
+ * mode *offline* (on peut passer sous un pont... il faut prévoir pour le cas échéant un cache local qui stocke les opérations courantes, afin de les consommer lorsque le réseau revient) 
  * changement de paradigme de l'interface homme machine (mouse over, menu déroulant,... )
 
 <!-- ## Autre page intéressante pour avoir des idées -->
