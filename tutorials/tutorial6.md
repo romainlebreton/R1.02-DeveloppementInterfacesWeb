@@ -207,7 +207,7 @@ Voici un exemple où le div1 prend toujours `200px` le div2 prend 1/3 de la tail
 ```html
 
 <div style="display:flex;border:1px solid black;">
-	<div style="width:200px;flex-grow:0;background-color:orange;">
+	<div style="width:500px;flex-grow:0;background-color:orange;">
 		Div1
 	</div>
 	<div style="width:0px;flex-grow:1;background-color: cornflowerblue;">
@@ -220,7 +220,7 @@ Voici un exemple où le div1 prend toujours `200px` le div2 prend 1/3 de la tail
 qui s'affiche comme suit
    
 <div style="display:flex;border:1px solid black;">
-<div style="width:200px;flex-grow:0;background-color:orange;">
+<div style="width:500px;flex-grow:0;background-color:orange;">
 Div1
 </div>
 <div style="width:0px;flex-grow:1;background-color: cornflowerblue;">
