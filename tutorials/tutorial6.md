@@ -557,6 +557,7 @@ fenêtre autour du point de rupture situé à `768px` ?
 
 </div>
 
+**Remarque :** Il existe une nouvelle syntaxe plus lisible qui autorise à écrire `450px<width <= 600px`. Cependant, elle n'a que récémment été adoptée par certains navigateurs majeurs (Firefox: 2018, Chrome: 2022, Safari: 2023). Et nous n'allons pas les utiliser pour l'instant puisque les vieilles versions non-compatibles de ces navigateurs représentent encore une part non négligeable du trafic (un peu plus de 6% en novembre 2024; [source](https://caniuse.com/css-media-range-syntax) ).
 
 ### Les points de ruptures.
 
