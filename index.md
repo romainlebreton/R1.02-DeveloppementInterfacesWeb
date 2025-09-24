@@ -13,7 +13,12 @@ Cours à l'IUT de Montpellier - 1ère année
 
 1. Semaine du 15 septembre 2025 -- [TD1 -- Introduction à HTML](tutorials/tutorial1.html)
 1. Semaine du 22 septembre 2025 -- [TD2 -- Introduction à CSS ](tutorials/tutorial2.html)
-1. Semaine du 29 septembre 2023 -- [TD 3 -- CSS Avancés 1/2](tutorials/tutorial3.html)
+1. Semaine du 29 septembre 2025 -- [TD 3 -- CSS Avancés 1/2](tutorials/tutorial3.html)
+1. Semaine du 6 octobre 2025 -- [TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html) et présentation site SAÉ 1.05
+1. Semaine du 13 octobre 2025 -- [ Fin TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html) et travail sur SAÉ 1.05
+   ##* 19 octobre rendu livrable SAÉ 1.05 
+1. Semaine du 20 octobre 2025 -- [TD 5 -- Les Formulaires](tutorials/tutorial5.html) 
+     
 
 <!--1. Semaine du 23 septembre 2023 -- [TD 3 -- CSS Avancés 1/2](tutorials/tutorial3.html)
 1. Semaine du 30 septembre 2023 -- [TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html) et présentation site SAÉ 1.05
