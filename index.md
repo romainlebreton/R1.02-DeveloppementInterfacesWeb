@@ -18,8 +18,8 @@ Cours à l'IUT de Montpellier - 1ère année
 1. Semaine du 13 octobre 2025 -- [ Fin TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html) et travail sur SAÉ 1.05
    * 19 octobre **rendu livrable SAÉ 1.05** 
 1. Semaine du 20 octobre 2025 -- [TD 5 -- Les Formulaires](tutorials/tutorial5.html)
-1. Semaine du 3 novembre -- Séance d'évaluation des sites de la SAE 1.05 (petite présentation par groupe + éval. via challengeme)
-1. Semaine du 10 novembre -- Entamer [TD 6 -- Responsive Design](tutorials/tutorial6.html) et présentation de la SAÉ 1.06
+1. Semaine du 3 novembre 2025 -- Séance d'évaluation des sites de la SAE 1.05 (petite présentation par groupe + éval. via challengeme)
+1. Semaine du 10 novembre 2025 -- Entamer [TD 6 -- Responsive Design](tutorials/tutorial6.html) et présentation de la SAÉ 1.06
      
 
 <!--1. Semaine du 23 septembre 2023 -- [TD 3 -- CSS Avancés 1/2](tutorials/tutorial3.html)
