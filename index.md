@@ -24,6 +24,7 @@ Cours à l'IUT de Montpellier - 1ère année
 1. Semaine du 11 décembre 2025 -- Fin des TDs, séance de travail sur la SAÉ 1.06     
 1. Semaine du 5 janvier 2026 -- Séance d'évaluation des sites de la SAÉ 1.06
 1. Devoir le 8/1/2026 à 15h30
+
 <!--1. Semaine du 23 septembre 2023 -- [TD 3 -- CSS Avancés 1/2](tutorials/tutorial3.html)
 1. Semaine du 30 septembre 2023 -- [TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html) et présentation site SAÉ 1.05
 1. Semaine du 7 octobre 2023 -- [ Fin TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html)
