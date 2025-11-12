@@ -39,8 +39,8 @@ Cours à l'IUT de Montpellier - 1ère année
 
 ## Instructions pour les SAÉ 
 * [Consignes pour la SAÉ 1.05](SAE_105.html)
-<!--* [Consignes pour la SAÉ 1.06](SAE_106.html)
--->
+* [Consignes pour la SAÉ 1.06](SAE_106.html)
+
 <!--## Compléments optionnels-->
  
 <!--1. [Coder des colonnes responsive à la Bootstrap](assets/tut5-complement.html)-->
