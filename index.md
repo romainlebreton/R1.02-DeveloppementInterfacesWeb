@@ -19,9 +19,9 @@ Cours à l'IUT de Montpellier - 1ère année
    * 19 octobre **rendu livrable SAÉ 1.05** 
 1. Semaine du 20 octobre 2025 -- [TD 5 -- Les Formulaires](tutorials/tutorial5.html)
 1. Semaine du 3 novembre 2025 -- Séance d'évaluation des sites de la SAE 1.05 (petite présentation par groupe + éval. via challengeme)
-1. Semaine du 10 novembre 2025 -- Entamer [TD 6 -- Responsive Design](tutorials/tutorial6.html) et présentation de la SAÉ 1.06
-1. Semaine du 17 novembre 2025 -- Finir le [TD 6 -- Responsive Design](tutorials/tutorial6.html) et travail sur la SAÉ 1.06 (si td terminé)
-1. Semaine du 11 décembre 2025 -- Fin des TDs, séance de travail sur la SAÉ 1.06     
+1. Semaine du 10 novembre 2025 -- Entamer [TD 6 -- Responsive Design](tutorials/tutorial6.html) et présentation de la [SAÉ 1.06](SAE_106.md)
+1. Semaine du 17 novembre 2025 -- Finir le [TD 6 -- Responsive Design](tutorials/tutorial6.html) et travail sur la [SAÉ 1.06 (si td terminé)](SAE_106.md)
+1. Semaine du 11 décembre 2025 -- Fin des TDs, séance de travail sur la [SAÉ 1.06](SAE_106.md)     
 1. Semaine du 5 janvier 2026 -- Séance d'évaluation des sites de la SAÉ 1.06
 1. Devoir le 8/1/2026 à 15h30
 
