@@ -376,22 +376,22 @@ ci-dessous) et inspectez les quatre boites *content*, *padding*, *border* et
 Il y a trois syntaxes différentes pour donner des valeurs au `margin`, au
 `padding` et au `border` :
 
- * `margin : t r b l;` : Si on donne 4 tailles `t`, `r`, `b` et `l`, alors `t`
+ * `margin: t r b l;` : Si on donne 4 tailles `t`, `r`, `b` et `l`, alors `t`
    est associé à la valeur du haut (top), `r` est la valeur droite (right), `b`
    au bas (bottom) et `l` à la gauche (left);
- * `padding : v h;` : Si on ne donne que 2 tailles `v` et `h` alors `v` est
+ * `padding: v h;` : Si on ne donne que 2 tailles `v` et `h` alors `v` est
    associé aux valeurs verticales et `h` horizontales. C'est donc équivalent à
    `padding: v h v h;`.
- * `padding : a;` Si on donne une seule valeur, elle sera associée aux quatre cotés de la boite, comme si on avait écrit `padding: a a a a;`.
+ * `padding: a;` Si on donne une seule valeur, elle sera associée aux quatre cotés de la boite, comme si on avait écrit `padding: a a a a;`.
 
 Exemples : 
 
 ```css
-#titi {margin : 5px 0 4px 7px;}
+#titi {margin: 5px 0 4px 7px;}
 /* Marges verticales (haute et basse) de 10px et horizontales de 5px */
 div {margin: 10px 5px;} 
 /* Le padding dans toutes les directions est de 5px */
-.toto {padding : 5px}    
+.toto {padding: 5px}    
 ```
 
 **Note :** On peut aussi préciser (péniblement) les valeurs unitaires des
