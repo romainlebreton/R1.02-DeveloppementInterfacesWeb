@@ -16,7 +16,7 @@ Cours à l'IUT de Montpellier - 1ère année
 1. Semaine du 28 septembre 2026 -- [TD 3 -- CSS Avancés 1/2](tutorials/tutorial3.html)
 1. Semaine du 5 octobre 2026 -- [TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html) et présentation site SAÉ 1.05
 1. Semaine du 12 octobre 2026 -- [ Fin TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html) et travail sur SAÉ 1.05
-   * 16 octobre **rendu livrable SAÉ 1.05** 
+   * <span style="color:red">21 octobre **rendu livrable SAÉ 1.05**</span> 
 1. Semaine du 19 octobre 2026 -- [TD 5 -- Les Formulaires](tutorials/tutorial5.html)
 1. Semaine du 2 novembre 2026 -- Séance d'évaluation des sites de la SAE 1.05 (petite présentation par groupe + éval. via challengeme)
 1. Semaine du 9 novembre 2026 -- Entamer [TD 6 -- Responsive Design](tutorials/tutorial6.html) et présentation de la [SAÉ 1.06](SAE_106.md)
