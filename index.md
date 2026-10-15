@@ -23,7 +23,7 @@ Cours à l'IUT de Montpellier - 1ère année
 1. Semaine du 16 novembre 2026 -- Finir le [TD 6 -- Responsive Design](tutorials/tutorial6.html) et travail sur la [SAÉ 1.06 (si td terminé)](SAE_106.md)
 1. Semaine du 14 décembre 2026 -- Fin des TDs, séance de travail sur la [SAÉ 1.06](SAE_106.md)     
 1. Semaine du 4 janvier 2026 -- Séance d'évaluation des sites de la SAÉ 1.06
-1. Devoir le 6 janvier 2027 à 15h30 (à préciser)
+1. Devoir le 14 janvier 2027 à 13h45
 
 <!--1. Semaine du 23 septembre 2023 -- [TD 3 -- CSS Avancés 1/2](tutorials/tutorial3.html)
 1. Semaine du 30 septembre 2023 -- [TD 4 -- CSS Avancés 2/2](tutorials/tutorial4.html) et présentation site SAÉ 1.05
