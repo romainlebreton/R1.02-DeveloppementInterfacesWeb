@@ -363,49 +363,49 @@ Le code HTML suivant
 s'affiche comme suit :
 
 <div class="codeexample" style="padding:0;text-align:initial;"> 
-<p style="display:block;background-color:#A4AFFC;border: 1px solid black;margin:0;">
+<p style="display:block;background-color:skyblue;border: 1px solid black;margin:0;">
 display:block1
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
+<p style="display:inline;background-color:lightgreen;border: 1px solid black;margin:0;">
 display:inline1
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
+<p style="display:inline;background-color:lightgreen;border: 1px solid black;margin:0;">
 display:inline2
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
+<p style="display:inline;background-color:lightgreen;border: 1px solid black;margin:0;">
 display:inline3
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
+<p style="display:inline;background-color:lightgreen;border: 1px solid black;margin:0;">
 display:inline4
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
+<p style="display:inline;background-color:lightgreen;border: 1px solid black;margin:0;">
 display:inline5
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
+<p style="display:inline;background-color:lightgreen;border: 1px solid black;margin:0;">
 display:inline6
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
+<p style="display:inline;background-color:lightgreen;border: 1px solid black;margin:0;">
 display:inline7
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
+<p style="display:inline;background-color:lightgreen;border: 1px solid black;margin:0;">
 display:inline8
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
+<p style="display:inline;background-color:lightgreen;border: 1px solid black;margin:0;">
 display:inline9
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
+<p style="display:inline;background-color:lightgreen;border: 1px solid black;margin:0;">
 display:inline10
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
+<p style="display:inline;background-color:lightgreen;border: 1px solid black;margin:0;">
 display:inline11
 </p> 
-<p style="display:block;background-color:#A4AFFC;border: 1px solid black;margin:0;">
+<p style="display:block;background-color:skyblue;border: 1px solid black;margin:0;">
 display:block2
 </p>
-<p style="display:block;background-color:#A4AFFC;border: 1px solid black;margin:0;">
+<p style="display:block;background-color:skyblue;border: 1px solid black;margin:0;">
 display:block3
 </p> 
-<p style="display:inline;background-color:#5EFC5E;border: 1px solid black;margin:0;">
+<p style="display:inline;background-color:lightgreen;border: 1px solid black;margin:0;">
 display:inline12
 </p> 
 </div>
@@ -877,13 +877,101 @@ Finalement, on aimerait bien que la colonne de gauche reste visible quand on
 fait défiler la page. Ainsi le tableau reste toujours lisible. On va utiliser un
 autre positionnement que l'on n'a pas encore vu `position: sticky;`. 
 
-Ce positionnement "collant" fonctionne comme `relative` (c'est-à-dire qu'il
-occupe sa place normale dans le document) jusqu'à ce qu'un certain seuil soit
-franchi ; l'élément devient alors positionné de façon fixe. Par exemple, en
-indiquant `position: sticky;` et `top: 10px;`, l'élément concerné sera affiché
-normalement dans la page jusqu'à ce qu'il se retrouve à `10px` du bord haut de
-son ancêtre de défilement (qui a une valeur `overflow` autre que `auto`) et il
-devient alors fixe.
+Avec `position: sticky; top: 10px;`, l'élément :
+
+1. est affiché à sa place normale (il est positionné comme `relative`) ;
+2. **colle** dès qu'il arrive à `10px` du haut de son *conteneur de
+   défilement* (plus proche ancêtre avec `overflow` à `auto`, `scroll` ou
+   `hidden`, sinon la fenêtre) ;
+3. **se décolle** quand le bas de son *containing block* (plus proche ancêtre
+   avec `display` à `block`) l'atteint : il ne sort jamais de ce dernier.
+
+**Exemple :** ci-dessous, le conteneur de défilement est le cadre gris et le
+containing block de l'élément vert est le bloc bleu. Faites défiler le cadre.
+
+```html
+<div class="scroll">      <!-- conteneur de défilement -->
+  <p>Texte avant...</p>
+  <div class="parent">    <!-- containing block -->
+    <div class="sticky">position: sticky; top: 10px;</div>
+    <p>Contenu du parent...</p>
+  </div>
+  <p>Texte après...</p>
+</div>
+```
+
+```css
+.scroll { height: 200px; overflow-y: auto; }
+.parent { background-color: skyblue; }
+.sticky { position: sticky; top: 10px; background-color: lightgreen; }
+```
+
+<div class="codeexample" style="padding:0;text-align:initial;height:200px;overflow-y:auto;">
+<p style="margin:10px;">Texte avant.</p>
+<p style="margin:10px;">Texte avant.</p>
+<p style="margin:10px;">Texte avant.</p>
+<div style="background-color:skyblue;padding:10px;">
+<div style="position:sticky;top:10px;background-color:lightgreen;border:1px solid black;padding:5px;">
+position: sticky; top: 10px;
+</div>
+<p>Contenu du parent.</p>
+<p>Contenu du parent.</p>
+<p>Contenu du parent.</p>
+<p style="margin-bottom:0;">Contenu du parent.</p>
+</div>
+<p style="margin:10px;">Texte après.</p>
+<p style="margin:10px;">Texte après.</p>
+<p style="margin:10px;">Texte après.</p>
+<p style="margin:10px;">Texte après.</p>
+</div>
+
+{% comment %}
+**Erreur classique :** mettre `nav { position: sticky; top: 0px; }` sur un
+`<nav>` placé dans `<header>`. Son containing block est alors `<header>`, à
+peine plus haut que lui : le menu se décolle dès que `<header>` sort de l'écran.
+
+<div class="codeexample" style="padding:0;text-align:initial;height:200px;overflow-y:auto;">
+<div style="background-color:skyblue;padding:10px;margin-top:20px;">
+<p style="margin:0 0 10px 0;">&lt;header&gt;</p>
+<div style="position:sticky;top:0px;background-color:lightgreen;border:1px solid black;padding:5px;">
+&lt;nav&gt; sticky
+</div>
+</div>
+<div style="padding:10px;">
+<p>&lt;main&gt;</p>
+<p>&lt;main&gt;</p>
+<p>&lt;main&gt;</p>
+<p>&lt;main&gt;</p>
+<p>&lt;main&gt;</p>
+<p>&lt;main&gt;</p>
+</div>
+</div>
+
+Il faut mettre le `sticky` sur `<header>`, dont le containing block est
+`<body>` :
+
+<div class="codeexample" style="padding:0;text-align:initial;height:200px;overflow-y:auto;">
+<div style="position:sticky;top:0px;background-color:skyblue;padding:10px;margin-top:20px;">
+<p style="margin:0 0 10px 0;">&lt;header&gt; sticky</p>
+<div style="background-color:lightgreen;border:1px solid black;padding:5px;">
+&lt;nav&gt;
+</div>
+</div>
+<div style="padding:10px;">
+<p>&lt;main&gt;</p>
+<p>&lt;main&gt;</p>
+<p>&lt;main&gt;</p>
+<p>&lt;main&gt;</p>
+<p>&lt;main&gt;</p>
+<p>&lt;main&gt;</p>
+</div>
+</div>
+{% endcomment %}
+
+
+Dans notre table, le containing block des cases est la table entière : la
+première case de chaque ligne reste donc collée tant que la table est visible.
+
 <div class="exercise">
 
   1. Utilisez `position: sticky;` avec la bonne valeur de positionnement sur 
@@ -895,6 +983,8 @@ devient alors fixe.
   `border-spacing:0px;` sur la table. Elle indique la quantité d'espace à mettre 
   entres les bordures des cases dans une table.
 </div>
+
+Référence : [MDN](https://developer.mozilla.org/fr/docs/Web/CSS/position)
 
 ## Cacher ou enlever un élément du rendu
 
