@@ -2,6 +2,7 @@
 title: TD5 &ndash; Responsive Design
 subtitle: 
 layout: tutorial
+lang: fr
 ---
 
 <!--
